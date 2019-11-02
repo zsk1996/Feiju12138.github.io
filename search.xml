@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>【骚操作】Windows10家庭版中开启组策略编辑器</title>
+    <url>/2019/11/02/Windows10%E5%AE%B6%E5%BA%AD%E7%89%88%E5%BC%80%E5%90%AF%E7%BB%84%E7%AD%96%E7%95%A5/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>经常有一些小伙伴，在使用Windows10家庭版的时候，需要打开组策略编辑器进行一些高端操作，然而不尽人意，Windows10家庭版默认没有开启此功能，通常会出现”Windows找不到’gpedit.msc’。请确定文件名是否正确后，再试一次。”的警告，今天我就教大家如何在Windows10家庭版中开启组策略编辑器</p>
+<p><img src="/images/20191102165614/01.png" alt="01.png"></p>
+<h2 id="创建文件"><a href="#创建文件" class="headerlink" title="创建文件"></a>创建文件</h2><ul>
+<li>在任意文件夹中空白处，右键-&gt;新建-&gt;文本文档</li>
+</ul>
+<p><img src="/images/20191102165614/02.png" alt="02.png"></p>
+<h2 id="修改文件扩展名"><a href="#修改文件扩展名" class="headerlink" title="修改文件扩展名"></a>修改文件扩展名</h2><ul>
+<li>右键-&gt;重命名-&gt;”垃圾清理.bat”-&gt;(是否更改扩展名)是</li>
+</ul>
+<p><img src="/images/20191102165614/03.png" alt="03.png"></p>
+<h2 id="写入代码"><a href="#写入代码" class="headerlink" title="写入代码"></a>写入代码</h2><ul>
+<li>右键-&gt;编辑-&gt;写入代码-&gt;保存-&gt;关闭</li>
+</ul>
+<p><img src="/images/20191102165614/04.png" alt="04.png"></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"></span><br><span class="line"><span class="built_in">pushd</span> <span class="string">"%~dp0"</span></span><br><span class="line"></span><br><span class="line">dir /b C:\Windows\servicing\Packages\Microsoft-Windows-GroupPolicy-ClientExtensions-Package~3*.mum &gt;List.txt</span><br><span class="line"></span><br><span class="line">dir /b C:\Windows\servicing\Packages\Microsoft-Windows-GroupPolicy-ClientTools-Package~3*.mum &gt;&gt;List.txt</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> /f %%i <span class="keyword">in</span> (<span class="string">'findstr /i . List.txt 2^&gt;nul'</span>) <span class="keyword">do</span> dism /online /norestart /add-package:<span class="string">"C:\Windows\servicing\Packages\%%i"</span></span><br><span class="line"></span><br><span class="line">pause</span><br></pre></td></tr></table></figure>
+
+<h2 id="运行程序"><a href="#运行程序" class="headerlink" title="运行程序"></a>运行程序</h2><ul>
+<li>右键-&gt;以管理员方式运行</li>
+</ul>
+<p><img src="/images/20191102165614/05.png" alt="05.png"></p>
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><p><img src="/images/20191102165614/06.png" alt="06.png"></p>
+<h2 id="打开”组策略编辑器”"><a href="#打开”组策略编辑器”" class="headerlink" title="打开”组策略编辑器”"></a>打开”组策略编辑器”</h2><ul>
+<li>开始菜单-&gt;Windows系统-&gt;运行</li>
+</ul>
+<p><img src="/images/20191102165614/07.png" alt="07.png"></p>
+<ul>
+<li>输入”gpedit.msc”</li>
+</ul>
+<p><img src="/images/20191102165614/08.png" alt="08.png"></p>
+<ul>
+<li>打开”本地组策略编辑器”</li>
+</ul>
+<p><img src="/images/20191102165614/09.png" alt="09.png"></p>
+<pre><code>参考文献：百度</code></pre>]]></content>
+  </entry>
+  <entry>
+    <title>【骚操作】垃圾清理</title>
+    <url>/2019/11/01/%E5%9E%83%E5%9C%BE%E6%B8%85%E7%90%86/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>经常有一些小伙伴，在使用Windows电脑时间久了，就会觉得电脑变卡，而通常情况下百度得到的答案大多是清理一下垃圾就变快了，可是下载清理软件，不但需要联网，而且市面上垃圾清理软件琳琅满目，有的使用的时候推销你下载他们公司的电脑管家，有的安装过后会经常弹小广告窗口，然而优秀的垃圾清理软件又比较难找，所以今天我带大家一起制作一个批处理文件，既能清理系统的垃圾，又不需要联网.</p>
+<h2 id="创建文件"><a href="#创建文件" class="headerlink" title="创建文件"></a>创建文件</h2><ul>
+<li>在任意文件夹中空白处，右键-&gt;新建-&gt;文本文档</li>
+</ul>
+<p><img src="/images/20191101204156/01.png" alt="01.png"></p>
+<h2 id="修改文件扩展名"><a href="#修改文件扩展名" class="headerlink" title="修改文件扩展名"></a>修改文件扩展名</h2><ul>
+<li>右键-&gt;重命名-&gt;”垃圾清理.bat”-&gt;(是否更改扩展名)是</li>
+</ul>
+<p><img src="/images/20191101204156/02.png" alt="02.png"></p>
+<h2 id="写入代码"><a href="#写入代码" class="headerlink" title="写入代码"></a>写入代码</h2><ul>
+<li>右键-&gt;编辑-&gt;写入代码-&gt;保存-&gt;关闭</li>
+</ul>
+<p><img src="/images/20191101204156/03.png" alt="03.png"></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="built_in">echo</span> 正在清除系统垃圾文件，请稍等......</span><br><span class="line">del /f /s /q %systemdrive%\*.tmp</span><br><span class="line">del /f /s /q %systemdrive%\*._mp</span><br><span class="line">del /f /s /q %systemdrive%\*.<span class="built_in">log</span></span><br><span class="line">del /f /s /q %systemdrive%\*.gid</span><br><span class="line">del /f /s /q %systemdrive%\*.chk</span><br><span class="line">del /f /s /q %systemdrive%\*.old</span><br><span class="line">del /f /s /q %systemdrive%\recycled\*.*</span><br><span class="line">del /f /s /q %windir%\*.bak</span><br><span class="line">del /f /s /q %windir%\prefetch\*.*</span><br><span class="line">rd /s /q %windir%\temp &amp; md %windir%\temp</span><br><span class="line">del /f /q %userprofile%\cookies\*.*</span><br><span class="line">del /f /q %userprofile%\recent\*.*</span><br><span class="line">del /f /s /q <span class="string">"%userprofile%\Local Settings\Temporary Internet Files\*.*"</span></span><br><span class="line">del /f /s /q <span class="string">"%userprofile%\Local Settings\Temp\*.*"</span></span><br><span class="line">del /f /s /q <span class="string">"%userprofile%\recent\*.*"</span></span><br><span class="line"><span class="built_in">echo</span>  清除系统垃圾完成！！！</span><br><span class="line"><span class="built_in">echo</span>. &amp; pause</span><br></pre></td></tr></table></figure>
+
+<h2 id="运行程序"><a href="#运行程序" class="headerlink" title="运行程序"></a>运行程序</h2><ul>
+<li>右键-&gt;以管理员方式运行</li>
+</ul>
+<p><img src="/images/20191101204156/04.png" alt="04.png"></p>
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><p><img src="/images/20191101204156/05.png" alt="05.png"></p>
+<pre><code>参考文献：百度</code></pre>]]></content>
+  </entry>
+  <entry>
+    <title>【置底】我的第一篇博客文章</title>
+    <url>/2019/11/01/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/</url>
+    <content><![CDATA[<h2 id="关于我"><a href="#关于我" class="headerlink" title="关于我"></a>关于我</h2><p>Hi，你好，欢迎你来到我的博客，这里是一只爱折腾，喜欢黑科技，爱好分享技术，有一颗少女心的小可爱绯鞠</p>
+<p>鄙人目前是一名大二学生狗，主专业Java开发，目标是成为一名全栈工程师，并为之努力奋斗着💪</p>
+<p>今天是我创建博客的第一天，以后我会经常在这里分享我的踩坑经历及学习笔记，因为我也不是什么大牛，所以创建博客的主要目的是为了培养自己良好的总结习惯，并能在有所涉猎的技术上留下些许痕迹，同时给小伙伴分享我的经验及教训，如果博文中出现什么不正确的地方，欢迎大家的指点</p>
+<p>最后，让我们一起共同进步，生命不息，折腾不止，Fighting🎉</p>
+]]></content>
+  </entry>
+</search>

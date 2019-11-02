@@ -57,13 +57,14 @@
 <meta property="og:site_name" content="绯鞠的博客">
 <meta property="og:description" content="前言经常有一些小伙伴，在使用Windows电脑时间久了，就会觉得电脑变卡，而通常情况下百度得到的答案大多是清理一下垃圾就变快了，可是下载清理软件，不但需要联网，而且市面上垃圾清理软件琳琅满目，有的使用的时候推销你下载他们公司的电脑管家，有的安装过后会经常弹小广告窗口，然而优秀的垃圾清理软件又比较难找，所以今天我带大家一起制作一个批处理文件，既能清理系统的垃圾，又不需要联网. 创建文件 在任意文件夹">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https:&#x2F;&#x2F;feiju12138.github.io&#x2F;article_img&#x2F;20191101204156&#x2F;01.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;feiju12138.github.io&#x2F;article_img&#x2F;20191101204156&#x2F;02.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;feiju12138.github.io&#x2F;article_img&#x2F;20191101204156&#x2F;04.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;feiju12138.github.io&#x2F;article_img&#x2F;20191101204156&#x2F;05.png">
-<meta property="og:updated_time" content="2019-11-02T09:13:38.597Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;feiju12138.github.io&#x2F;images&#x2F;20191101204156&#x2F;01.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;feiju12138.github.io&#x2F;images&#x2F;20191101204156&#x2F;02.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;feiju12138.github.io&#x2F;images&#x2F;20191101204156&#x2F;03.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;feiju12138.github.io&#x2F;images&#x2F;20191101204156&#x2F;04.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;feiju12138.github.io&#x2F;images&#x2F;20191101204156&#x2F;05.png">
+<meta property="og:updated_time" content="2019-11-02T09:46:12.977Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;feiju12138.github.io&#x2F;article_img&#x2F;20191101204156&#x2F;01.png">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;feiju12138.github.io&#x2F;images&#x2F;20191101204156&#x2F;01.png">
 
 <link rel="canonical" href="https://feiju12138.github.io/2019/11/01/%E5%9E%83%E5%9C%BE%E6%B8%85%E7%90%86/">
 
@@ -208,7 +209,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-11-02 17:13:38" itemprop="dateModified" datetime="2019-11-02T17:13:38+08:00">2019-11-02</time>
+                <time title="Modified: 2019-11-02 17:46:12" itemprop="dateModified" datetime="2019-11-02T17:46:12+08:00">2019-11-02</time>
               </span>
 
           
@@ -226,21 +227,22 @@
 <h2 id="创建文件"><a href="#创建文件" class="headerlink" title="创建文件"></a>创建文件</h2><ul>
 <li>在任意文件夹中空白处，右键-&gt;新建-&gt;文本文档</li>
 </ul>
-<p><img src="/article_img/20191101204156/01.png" alt="01.png"></p>
+<p><img src="/images/20191101204156/01.png" alt="01.png"></p>
 <h2 id="修改文件扩展名"><a href="#修改文件扩展名" class="headerlink" title="修改文件扩展名"></a>修改文件扩展名</h2><ul>
 <li>右键-&gt;重命名-&gt;”垃圾清理.bat”-&gt;(是否更改扩展名)是</li>
 </ul>
-<p><img src="/article_img/20191101204156/02.png" alt="02.png"></p>
+<p><img src="/images/20191101204156/02.png" alt="02.png"></p>
 <h2 id="写入代码"><a href="#写入代码" class="headerlink" title="写入代码"></a>写入代码</h2><ul>
 <li>右键-&gt;编辑-&gt;写入代码-&gt;保存-&gt;关闭</li>
 </ul>
+<p><img src="/images/20191101204156/03.png" alt="03.png"></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="built_in">echo</span> 正在清除系统垃圾文件，请稍等......</span><br><span class="line">del /f /s /q %systemdrive%\*.tmp</span><br><span class="line">del /f /s /q %systemdrive%\*._mp</span><br><span class="line">del /f /s /q %systemdrive%\*.<span class="built_in">log</span></span><br><span class="line">del /f /s /q %systemdrive%\*.gid</span><br><span class="line">del /f /s /q %systemdrive%\*.chk</span><br><span class="line">del /f /s /q %systemdrive%\*.old</span><br><span class="line">del /f /s /q %systemdrive%\recycled\*.*</span><br><span class="line">del /f /s /q %windir%\*.bak</span><br><span class="line">del /f /s /q %windir%\prefetch\*.*</span><br><span class="line">rd /s /q %windir%\temp &amp; md %windir%\temp</span><br><span class="line">del /f /q %userprofile%\cookies\*.*</span><br><span class="line">del /f /q %userprofile%\recent\*.*</span><br><span class="line">del /f /s /q <span class="string">"%userprofile%\Local Settings\Temporary Internet Files\*.*"</span></span><br><span class="line">del /f /s /q <span class="string">"%userprofile%\Local Settings\Temp\*.*"</span></span><br><span class="line">del /f /s /q <span class="string">"%userprofile%\recent\*.*"</span></span><br><span class="line"><span class="built_in">echo</span>  清除系统垃圾完成！！！</span><br><span class="line"><span class="built_in">echo</span>. &amp; pause</span><br></pre></td></tr></table></figure>
 
 <h2 id="运行程序"><a href="#运行程序" class="headerlink" title="运行程序"></a>运行程序</h2><ul>
 <li>右键-&gt;以管理员方式运行</li>
 </ul>
-<p><img src="/article_img/20191101204156/04.png" alt="04.png"></p>
-<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><p><img src="/article_img/20191101204156/05.png" alt="05.png"></p>
+<p><img src="/images/20191101204156/04.png" alt="04.png"></p>
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><p><img src="/images/20191101204156/05.png" alt="05.png"></p>
 <pre><code>参考文献：百度</code></pre>
     </div>
 

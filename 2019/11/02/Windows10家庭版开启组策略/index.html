@@ -50,12 +50,12 @@
   };
 </script>
 
-  <meta name="description" content="前言经常有一些小伙伴，在使用Windows10家庭版的时候，需要打开组策略编辑器进行一些高端操作，然而不尽人意，Windows10家庭版默认没有开启此功能，通常会出现”Windows找不到’gpedit.msc’。请确定文件名是否正确后，再试一次。”的警告，今天我就教大家如何在Windows10家庭版中开启组策略编辑器">
+  <meta name="description" content="前言经常有一些小伙伴，在使用Windows10家庭版的时候，需要打开组策略编辑器进行一些高端操作，然而不尽人意，Windows10家庭版默认没有开启此功能，通常会出现”Windows找不到’gpedit.msc’。请确定文件名是否正确后，再试一次。”的警告，今天我就教大家如何在Windows10家庭版中开启组策略编辑器  创建文件 在任意文件夹中空白处，右键-&amp;gt;新建-&amp;gt;文本文档   修">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【骚操作】Windows10家庭版中开启组策略编辑器">
 <meta property="og:url" content="https:&#x2F;&#x2F;feiju12138.github.io&#x2F;2019&#x2F;11&#x2F;02&#x2F;Windows10%E5%AE%B6%E5%BA%AD%E7%89%88%E5%BC%80%E5%90%AF%E7%BB%84%E7%AD%96%E7%95%A5&#x2F;index.html">
 <meta property="og:site_name" content="绯鞠的博客">
-<meta property="og:description" content="前言经常有一些小伙伴，在使用Windows10家庭版的时候，需要打开组策略编辑器进行一些高端操作，然而不尽人意，Windows10家庭版默认没有开启此功能，通常会出现”Windows找不到’gpedit.msc’。请确定文件名是否正确后，再试一次。”的警告，今天我就教大家如何在Windows10家庭版中开启组策略编辑器">
+<meta property="og:description" content="前言经常有一些小伙伴，在使用Windows10家庭版的时候，需要打开组策略编辑器进行一些高端操作，然而不尽人意，Windows10家庭版默认没有开启此功能，通常会出现”Windows找不到’gpedit.msc’。请确定文件名是否正确后，再试一次。”的警告，今天我就教大家如何在Windows10家庭版中开启组策略编辑器  创建文件 在任意文件夹中空白处，右键-&amp;gt;新建-&amp;gt;文本文档   修">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https:&#x2F;&#x2F;feiju12138.github.io&#x2F;images&#x2F;20191102165614&#x2F;01.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;feiju12138.github.io&#x2F;images&#x2F;20191102165614&#x2F;02.png">
@@ -238,6 +238,20 @@
               <span class="post-meta-item-text">Views: </span>
               <span class="leancloud-visitors-count"></span>
             </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2019/11/02/Windows10%E5%AE%B6%E5%BA%AD%E7%89%88%E5%BC%80%E5%90%AF%E7%BB%84%E7%AD%96%E7%95%A5/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2019/11/02/Windows10%E5%AE%B6%E5%BA%AD%E7%89%88%E5%BC%80%E5%90%AF%E7%BB%84%E7%AD%96%E7%95%A5/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
 
         </div>
       </header>
@@ -248,7 +262,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>经常有一些小伙伴，在使用Windows10家庭版的时候，需要打开组策略编辑器进行一些高端操作，然而不尽人意，Windows10家庭版默认没有开启此功能，通常会出现”Windows找不到’gpedit.msc’。请确定文件名是否正确后，再试一次。”的警告，今天我就教大家如何在Windows10家庭版中开启组策略编辑器</p><a id="more"></a>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>经常有一些小伙伴，在使用Windows10家庭版的时候，需要打开组策略编辑器进行一些高端操作，然而不尽人意，Windows10家庭版默认没有开启此功能，通常会出现”Windows找不到’gpedit.msc’。请确定文件名是否正确后，再试一次。”的警告，今天我就教大家如何在Windows10家庭版中开启组策略编辑器</p>
 <p><img src="/images/20191102165614/01.png" alt="01.png"></p>
 <h2 id="创建文件"><a href="#创建文件" class="headerlink" title="创建文件"></a>创建文件</h2><ul>
 <li>在任意文件夹中空白处，右键-&gt;新建-&gt;文本文档</li>
@@ -337,6 +351,7 @@
 
           </div>
           
+    <div class="comments" id="comments"></div>
 
         </div>
           
@@ -554,6 +569,33 @@
   
 
   
+
+
+<script>
+NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(item => {
+    return GUEST.includes(item);
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'VTJO3krndiL8ujBQ0sf7AWmn-gzGzoHsz',
+    appKey: 'qE9O6VXyNUhzul9L4fN1H4Nd',
+    placeholder: "Just go go",
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: false,
+    lang: '' || 'zh-cn',
+    path: location.pathname,
+    recordIP: false,
+    serverURLs: ''
+  });
+}, window.Valine);
+</script>
 
 </body>
 </html>

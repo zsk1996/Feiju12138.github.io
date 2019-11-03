@@ -1,6 +1,123 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>【笔记】安装 kali linux 操作系统</title>
+    <url>/2019/11/03/%E5%AE%89%E8%A3%85-kali-linux-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>今天与小伙伴一起，在他的电脑上的虚拟机(VMware 15)上安装了 kali linux 操作系统，故将笔记分享给需要的小伙伴</p>
+<h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><h3 id="虚拟机"><a href="#虚拟机" class="headerlink" title="虚拟机"></a>虚拟机</h3><p>首先下载一个虚拟机，市面上有很多优秀的虚拟机软件，例如：VMware（Windows &amp; MacOS）、VirtualBox（Windows &amp; MacOS）、Parallels Desktop（MacOS）。由于小伙伴的电脑是Windows操作系统，所以安装了一款VMware 15</p>
+<h3 id="系统镜像"><a href="#系统镜像" class="headerlink" title="系统镜像"></a>系统镜像</h3><p>其次要准备一个 kali linux 的系统镜像，可以直接去kali官网（<a href="https://www.kali.org）进行下载" target="_blank" rel="noopener">https://www.kali.org）进行下载</a></p>
+<h2 id="新建虚拟机"><a href="#新建虚拟机" class="headerlink" title="新建虚拟机"></a>新建虚拟机</h2><ul>
+<li><p>打开VMware虚拟机-&gt;选择新建虚拟机-&gt;弹出新建虚拟机向导</p>
+</li>
+<li><p>“您希望使用什么类型的配置？” 选择 “典型”</p>
+</li>
+</ul>
+<p><img src="/images/20191103123000/01.png" alt="01.png"></p>
+<h2 id="安装客户机操作系统"><a href="#安装客户机操作系统" class="headerlink" title="安装客户机操作系统"></a>安装客户机操作系统</h2><ul>
+<li>“安装来源” 选择 “安装程序光盘映像文件（iso）：”，点击浏览，选择kali系统映像</li>
+</ul>
+<p><img src="/images/20191103123000/02.png" alt="02.png"></p>
+<h2 id="选择客户机操作系统"><a href="#选择客户机操作系统" class="headerlink" title="选择客户机操作系统"></a>选择客户机操作系统</h2><ul>
+<li><p>“客户操作系统” 选择 “Linux”</p>
+</li>
+<li><p>“版本” 选择 “Debian 7.x 64 位”（这里如何有”kali linux”选项则选择”kali linux”，根据所下载系统镜像如果是”32位”则选择”Debian 7.x 32 位”）</p>
+</li>
+</ul>
+<p><img src="/images/20191103123000/03.png" alt="03.png"></p>
+<h2 id="命名虚拟机"><a href="#命名虚拟机" class="headerlink" title="命名虚拟机"></a>命名虚拟机</h2><ul>
+<li><p>“虚拟机名称”（既在VMware中显示的虚拟机名） 填写 “kali”（这里可以自定义名称）</p>
+</li>
+<li><p>“位置”（既虚拟机文件存放位置） 填写 “D:\kali”（这里为了防止C盘占用资源，将位置选择在D盘）</p>
+</li>
+</ul>
+<p><img src="/images/20191103123000/04.png" alt="04.png"></p>
+<h2 id="指定磁盘容量"><a href="#指定磁盘容量" class="headerlink" title="指定磁盘容量"></a>指定磁盘容量</h2><ul>
+<li><p>最大磁盘大小（是指给kali分配的硬盘大小） 填写 “20G”(这个值可以任意分配，但最小不要小于20G)</p>
+</li>
+<li><p>选择”将虚拟磁盘拆分成多个文件”</p>
+</li>
+</ul>
+<p><img src="/images/20191103123000/05.png" alt="05.png"></p>
+<h2 id="已准备好创建虚拟机"><a href="#已准备好创建虚拟机" class="headerlink" title="已准备好创建虚拟机"></a>已准备好创建虚拟机</h2><ul>
+<li>由于kali最低所需内存要求不是很高，所以可以点击”自定义硬件”，将内存由自动分配的”2G”改为”512MB”（内存值可以任意分配，但最小要不小于512MB），最后点击完成</li>
+</ul>
+<p><img src="/images/20191103123000/06.png" alt="06.png"></p>
+<p><img src="/images/20191103123000/07.png" alt="07.png"></p>
+<h2 id="第一次启动kali"><a href="#第一次启动kali" class="headerlink" title="第一次启动kali"></a>第一次启动kali</h2><ul>
+<li>在”Boot menu”界面，使用上下箭头，选择”Graphical install”（更友好的图形界面），如果对图形界面不高的小伙伴可以选择”install”，回车确定</li>
+</ul>
+<p><img src="/images/20191103123000/08.png" alt="08.png"></p>
+<h2 id="Select-a-language（选择一个语言）"><a href="#Select-a-language（选择一个语言）" class="headerlink" title="Select a language（选择一个语言）"></a>Select a language（选择一个语言）</h2><ul>
+<li>“Language” 选择 “Chinese(Simplified) - 中文（简体）”</li>
+</ul>
+<p><img src="/images/20191103123000/09.png" alt="09.png"></p>
+<h2 id="请选择您的区域"><a href="#请选择您的区域" class="headerlink" title="请选择您的区域"></a>请选择您的区域</h2><ul>
+<li>“国家、领地或地区” 选择 “中国”</li>
+</ul>
+<p><img src="/images/20191103123000/10.png" alt="10.png"></p>
+<h2 id="配置键盘"><a href="#配置键盘" class="headerlink" title="配置键盘"></a>配置键盘</h2><ul>
+<li>“请选择键盘映射” 选择 “汉语”</li>
+</ul>
+<p><img src="/images/20191103123000/11.png" alt="11.png"></p>
+<h2 id="从光盘加载安装程序组建"><a href="#从光盘加载安装程序组建" class="headerlink" title="从光盘加载安装程序组建"></a>从光盘加载安装程序组建</h2><ul>
+<li>耐心等待进度条</li>
+</ul>
+<p><img src="/images/20191103123000/12.png" alt="12.png"></p>
+<h2 id="配置网络"><a href="#配置网络" class="headerlink" title="配置网络"></a>配置网络</h2><ul>
+<li>“主机名” 填写 “kali”(可以自定义名称，但不推荐”root”，因为登录的时候可能会与管理员账户名混淆)</li>
+</ul>
+<p><img src="/images/20191103123000/13.png" alt="13.png"></p>
+<ul>
+<li>“域名” 填写 “localhost”（可以自定义名称，因为不需要作为网络服务器使用，仅仅是学习）</li>
+</ul>
+<p><img src="/images/20191103123000/14.png" alt="14.png"></p>
+<h2 id="设置用户和密码"><a href="#设置用户和密码" class="headerlink" title="设置用户和密码"></a>设置用户和密码</h2><ul>
+<li>“Root用户密码” 填写 “root”（可以自定义密码，但不推荐难度过大，因为这是一台虚拟机，通常只是用于学习，而设置为”root”的好处是和”管理员账户”的用户名相同，比较好记）</li>
+</ul>
+<p><img src="/images/20191103123000/15.png" alt="15.png"></p>
+<h2 id="磁盘分区"><a href="#磁盘分区" class="headerlink" title="磁盘分区"></a>磁盘分区</h2><ul>
+<li>“分区方法” 选择 “向导 - 使用整个磁盘”（除非熟练掌握linux操作系统的分区概念及方法，否则不推荐选择别的）</li>
+</ul>
+<p><img src="/images/20191103123000/16.png" alt="16.png"></p>
+<ul>
+<li>“请选择要分区的磁盘” 选择 “SCSI3……”（因为没有别的可以选择的😓）</li>
+</ul>
+<p><img src="/images/20191103123000/17.png" alt="17.png"></p>
+<ul>
+<li>“分区方案” 选择 “将所有文件放在同一分区中（推荐新手使用）”（除非熟练掌握linux操作系统的文件管理概念及方法，否则不推荐选择别的）</li>
+</ul>
+<p><img src="/images/20191103123000/18.png" alt="18.png"></p>
+<ul>
+<li>“最后确定修改” 选择 “结束分区设定并将修改写入磁盘”</li>
+</ul>
+<p><img src="/images/20191103123000/19.png" alt="19.png"></p>
+<ul>
+<li>“将改动写入磁盘” 选择 “是”</li>
+</ul>
+<p><img src="/images/20191103123000/20.png" alt="20.png"></p>
+<h2 id="安装系统"><a href="#安装系统" class="headerlink" title="安装系统"></a>安装系统</h2><ul>
+<li>耐心等待进度条</li>
+</ul>
+<p><img src="/images/20191103123000/21.png" alt="21.png"></p>
+<h2 id="配置软件包管理器"><a href="#配置软件包管理器" class="headerlink" title="配置软件包管理器"></a>配置软件包管理器</h2><ul>
+<li>“使用网络镜像吗？” 选择 “否”（如果可以科学上网，可以选择”是”，否则选择”否”，选择”否”之后进入系统可能需要配置来自中国的镜像站）</li>
+</ul>
+<p><img src="/images/20191103123000/22.png" alt="22.png"></p>
+<h2 id="将GRUB安装至硬盘"><a href="#将GRUB安装至硬盘" class="headerlink" title="将GRUB安装至硬盘"></a>将GRUB安装至硬盘</h2><ul>
+<li>“将GRUB启动引导器安装到主引导记录（MBR）上吗” 选择 “是”</li>
+</ul>
+<p><img src="/images/20191103123000/23.png" alt="23.png"></p>
+<h2 id="结束安装进程"><a href="#结束安装进程" class="headerlink" title="结束安装进程"></a>结束安装进程</h2><ul>
+<li>安装完成</li>
+</ul>
+<p><img src="/images/20191103123000/24.png" alt="24.png"></p>
+<ul>
+<li><p>至此，kali linux 操作系统安装完成，点击继续虚拟机重启，将自动进入kali系统桌面</p>
+<pre><code>参考文献：51CTO教学视频——杨文海（笔名：玄魂）</code></pre></li>
+</ul>
+]]></content>
+  </entry>
+  <entry>
     <title>【骚操作】Windows10家庭版中开启组策略编辑器</title>
     <url>/2019/11/02/Windows10%E5%AE%B6%E5%BA%AD%E7%89%88%E5%BC%80%E5%90%AF%E7%BB%84%E7%AD%96%E7%95%A5/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>经常有一些小伙伴，在使用Windows10家庭版的时候，需要打开组策略编辑器进行一些高端操作，然而不尽人意，Windows10家庭版默认没有开启此功能，通常会出现”Windows找不到’gpedit.msc’。请确定文件名是否正确后，再试一次。”的警告，今天我就教大家如何在Windows10家庭版中开启组策略编辑器</p>

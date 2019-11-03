@@ -1,6 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>【踩坑】kali阿里云更新源报错问题</title>
+    <url>/2019/11/03/kali%E9%98%BF%E9%87%8C%E4%BA%91%E6%9B%B4%E6%96%B0%E6%BA%90%E6%8A%A5%E9%94%99%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>kali更换了阿里云更新源执行更新命令后报错，错误分别是</p>
+<ul>
+<li><p>由于没有公钥，无法验证下列签名：……</p>
+</li>
+<li><p>仓库……没有数字签名，无法安全地用该源进行更新，所以默认禁用该源。</p>
+</li>
+</ul>
+<p><img src="/images/20191103194809/01.png" alt="01.png"></p>
+<h2 id="解决问题1"><a href="#解决问题1" class="headerlink" title="解决问题1"></a>解决问题1</h2><ul>
+<li>下载签名</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">wget archive.kali.org/archive-key.asc</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>安装签名</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">apt-key add archive-key.asc</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/20191103194809/02.png" alt="02.png"></p>
+<h2 id="解决问题2"><a href="#解决问题2" class="headerlink" title="解决问题2"></a>解决问题2</h2><ul>
+<li>导入签名</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 40976EAF437D05B5 3B4FE6ACC0B21F32</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/20191103194809/03.png" alt="03.png"></p>
+<h2 id="完成后更新"><a href="#完成后更新" class="headerlink" title="完成后更新"></a>完成后更新</h2><ul>
+<li>更新本地软件仓库</li>
+</ul>
+<p><img src="/images/20191103194809/04.png" alt="04.png"></p>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://blog.csdn.net/ayatou666/article/details/80092529" target="_blank" rel="noopener">CSDN——ayatou666</a></p>
+<p><a href="https://blog.csdn.net/tankweight/article/details/82948864" target="_blank" rel="noopener">CSDN——五虎将</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>【笔记】更换 kali linux 更新源</title>
+    <url>/2019/11/03/%E6%9B%B4%E6%8D%A2-kali-linux-%E6%9B%B4%E6%96%B0%E6%BA%90/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>安装完linux系统，首先要做的就是更新本地软件仓库，从远程软件仓库下载一些基本软件到本地软件仓库。然而如果不能科学上网，第一件事就要先更换更新源，至国内镜像站。</p>
+<h2 id="搜索国内镜像站地址"><a href="#搜索国内镜像站地址" class="headerlink" title="搜索国内镜像站地址"></a>搜索国内镜像站地址</h2><ul>
+<li>百度上可以搜到很多国内镜像站地址，在这里我从CSDN上找到了阿里云的国内镜像站地址，提供给大家</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">deb http://mirrors.aliyun.com/ubuntu/ trusty main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ trusty-security main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ trusty-updates main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ trusty-proposed main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ trusty-backports main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ trusty main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ trusty-security main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ trusty-updates main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ trusty-proposed main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ trusty-backports main restricted universe multiverse</span><br></pre></td></tr></table></figure>
+
+<h2 id="修改本地”sources-list”文件"><a href="#修改本地”sources-list”文件" class="headerlink" title="修改本地”sources.list”文件"></a>修改本地”sources.list”文件</h2><ul>
+<li>使用vim编辑器，将更新源地址复制到”sources.list”文件末尾</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vim /etc/apt/sources.list</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/20191103184839/01.png" alt="01.png"></p>
+<ul>
+<li>保存，退出，更新源更换成功</li>
+</ul>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://blog.csdn.net/qq_39263240/article/details/79342582" target="_blank" rel="noopener">CSDN——qq_39263240</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>【笔记】安装 kali linux 操作系统（VMware篇）</title>
     <url>/2019/11/03/%E5%AE%89%E8%A3%85-kali-linux-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>今天与小伙伴一起，在他的电脑上的虚拟机(VMware 15)上安装了 kali linux 操作系统，故将笔记分享给需要的小伙伴</p>
@@ -112,9 +169,9 @@
 </ul>
 <p><img src="/images/20191103123000/24.png" alt="24.png"></p>
 <ul>
-<li><p>至此，kali linux 操作系统安装完成，点击继续虚拟机重启，将自动进入kali系统桌面</p>
-<pre><code>参考文献：51CTO教学视频——杨文海（笔名：玄魂）</code></pre></li>
+<li>至此，kali linux 操作系统安装完成，点击继续虚拟机重启，将自动进入kali系统桌面</li>
 </ul>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p>51CTO教学视频——杨文海（笔名：玄魂）</p>
 ]]></content>
   </entry>
   <entry>
@@ -153,7 +210,8 @@
 <li>打开”本地组策略编辑器”</li>
 </ul>
 <p><img src="/images/20191102165614/09.png" alt="09.png"></p>
-<pre><code>参考文献：百度</code></pre>]]></content>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p>百度</p>
+]]></content>
   </entry>
   <entry>
     <title>【骚操作】垃圾清理</title>
@@ -178,7 +236,8 @@
 </ul>
 <p><img src="/images/20191101204156/04.png" alt="04.png"></p>
 <h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><p><img src="/images/20191101204156/05.png" alt="05.png"></p>
-<pre><code>参考文献：百度</code></pre>]]></content>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p>百度</p>
+]]></content>
   </entry>
   <entry>
     <title>【置底】我的第一篇博客文章</title>

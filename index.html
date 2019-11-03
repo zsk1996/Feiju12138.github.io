@@ -192,6 +192,211 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://feiju12138.github.io/2019/11/03/kali%E9%98%BF%E9%87%8C%E4%BA%91%E6%9B%B4%E6%96%B0%E6%BA%90%E6%8A%A5%E9%94%99%E9%97%AE%E9%A2%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="绯鞠">
+      <meta itemprop="description" content="捕捉一只爱折腾的绯鞠">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="绯鞠的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/11/03/kali%E9%98%BF%E9%87%8C%E4%BA%91%E6%9B%B4%E6%96%B0%E6%BA%90%E6%8A%A5%E9%94%99%E9%97%AE%E9%A2%98/" class="post-title-link" itemprop="url">【踩坑】kali阿里云更新源报错问题</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2019-11-03 19:48:09 / Modified: 20:08:56" itemprop="dateCreated datePublished" datetime="2019-11-03T19:48:09+08:00">2019-11-03</time>
+            </span>
+
+          
+            <span id="/2019/11/03/kali%E9%98%BF%E9%87%8C%E4%BA%91%E6%9B%B4%E6%96%B0%E6%BA%90%E6%8A%A5%E9%94%99%E9%97%AE%E9%A2%98/" class="post-meta-item leancloud_visitors" data-flag-title="【踩坑】kali阿里云更新源报错问题" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2019/11/03/kali%E9%98%BF%E9%87%8C%E4%BA%91%E6%9B%B4%E6%96%B0%E6%BA%90%E6%8A%A5%E9%94%99%E9%97%AE%E9%A2%98/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2019/11/03/kali%E9%98%BF%E9%87%8C%E4%BA%91%E6%9B%B4%E6%96%B0%E6%BA%90%E6%8A%A5%E9%94%99%E9%97%AE%E9%A2%98/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>kali更换了阿里云更新源执行更新命令后报错，错误分别是</p>
+<ul>
+<li><p>由于没有公钥，无法验证下列签名：……</p>
+</li>
+<li><p>仓库……没有数字签名，无法安全地用该源进行更新，所以默认禁用该源。</p>
+</li>
+</ul>
+<p><img src="/images/20191103194809/01.png" alt="01.png"></p>
+<h2 id="解决问题1"><a href="#解决问题1" class="headerlink" title="解决问题1"></a>解决问题1</h2><ul>
+<li>下载签名</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget archive.kali.org/archive-key.asc</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>安装签名</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-key add archive-key.asc</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/20191103194809/02.png" alt="02.png"></p>
+<h2 id="解决问题2"><a href="#解决问题2" class="headerlink" title="解决问题2"></a>解决问题2</h2><ul>
+<li>导入签名</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 40976EAF437D05B5 3B4FE6ACC0B21F32</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/20191103194809/03.png" alt="03.png"></p>
+<h2 id="完成后更新"><a href="#完成后更新" class="headerlink" title="完成后更新"></a>完成后更新</h2><ul>
+<li>更新本地软件仓库</li>
+</ul>
+<p><img src="/images/20191103194809/04.png" alt="04.png"></p>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://blog.csdn.net/ayatou666/article/details/80092529" target="_blank" rel="noopener">CSDN——ayatou666</a></p>
+<p><a href="https://blog.csdn.net/tankweight/article/details/82948864" target="_blank" rel="noopener">CSDN——五虎将</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="https://feiju12138.github.io/2019/11/03/%E6%9B%B4%E6%8D%A2-kali-linux-%E6%9B%B4%E6%96%B0%E6%BA%90/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="绯鞠">
+      <meta itemprop="description" content="捕捉一只爱折腾的绯鞠">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="绯鞠的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/11/03/%E6%9B%B4%E6%8D%A2-kali-linux-%E6%9B%B4%E6%96%B0%E6%BA%90/" class="post-title-link" itemprop="url">【笔记】更换 kali linux 更新源</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2019-11-03 18:48:39 / Modified: 20:03:48" itemprop="dateCreated datePublished" datetime="2019-11-03T18:48:39+08:00">2019-11-03</time>
+            </span>
+
+          
+            <span id="/2019/11/03/%E6%9B%B4%E6%8D%A2-kali-linux-%E6%9B%B4%E6%96%B0%E6%BA%90/" class="post-meta-item leancloud_visitors" data-flag-title="【笔记】更换 kali linux 更新源" title="Views">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2019/11/03/%E6%9B%B4%E6%8D%A2-kali-linux-%E6%9B%B4%E6%96%B0%E6%BA%90/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2019/11/03/%E6%9B%B4%E6%8D%A2-kali-linux-%E6%9B%B4%E6%96%B0%E6%BA%90/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>安装完linux系统，首先要做的就是更新本地软件仓库，从远程软件仓库下载一些基本软件到本地软件仓库。然而如果不能科学上网，第一件事就要先更换更新源，至国内镜像站。</p>
+<h2 id="搜索国内镜像站地址"><a href="#搜索国内镜像站地址" class="headerlink" title="搜索国内镜像站地址"></a>搜索国内镜像站地址</h2><ul>
+<li>百度上可以搜到很多国内镜像站地址，在这里我从CSDN上找到了阿里云的国内镜像站地址，提供给大家</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">deb http://mirrors.aliyun.com/ubuntu/ trusty main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ trusty-security main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ trusty-updates main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ trusty-proposed main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ trusty-backports main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ trusty main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ trusty-security main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ trusty-updates main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ trusty-proposed main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ trusty-backports main restricted universe multiverse</span><br></pre></td></tr></table></figure>
+
+<h2 id="修改本地”sources-list”文件"><a href="#修改本地”sources-list”文件" class="headerlink" title="修改本地”sources.list”文件"></a>修改本地”sources.list”文件</h2><ul>
+<li>使用vim编辑器，将更新源地址复制到”sources.list”文件末尾</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/apt/sources.list</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/20191103184839/01.png" alt="01.png"></p>
+<ul>
+<li>保存，退出，更新源更换成功</li>
+</ul>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://blog.csdn.net/qq_39263240/article/details/79342582" target="_blank" rel="noopener">CSDN——qq_39263240</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-Hans">
     <link itemprop="mainEntityOfPage" href="https://feiju12138.github.io/2019/11/03/%E5%AE%89%E8%A3%85-kali-linux-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -217,7 +422,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2019-11-03 12:30:00 / Modified: 14:33:35" itemprop="dateCreated datePublished" datetime="2019-11-03T12:30:00+08:00">2019-11-03</time>
+              <time title="Created: 2019-11-03 12:30:00 / Modified: 20:03:12" itemprop="dateCreated datePublished" datetime="2019-11-03T12:30:00+08:00">2019-11-03</time>
             </span>
 
           
@@ -361,9 +566,9 @@
 </ul>
 <p><img src="/images/20191103123000/24.png" alt="24.png"></p>
 <ul>
-<li><p>至此，kali linux 操作系统安装完成，点击继续虚拟机重启，将自动进入kali系统桌面</p>
-<pre><code>参考文献：51CTO教学视频——杨文海（笔名：玄魂）</code></pre></li>
+<li>至此，kali linux 操作系统安装完成，点击继续虚拟机重启，将自动进入kali系统桌面</li>
 </ul>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p>51CTO教学视频——杨文海（笔名：玄魂）</p>
 
       
     </div>
@@ -406,10 +611,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2019-11-02 16:56:14 / Modified: 17:48:01" itemprop="dateCreated datePublished" datetime="2019-11-02T16:56:14+08:00">2019-11-02</time>
+              <time title="Created: 2019-11-02 16:56:14" itemprop="dateCreated datePublished" datetime="2019-11-02T16:56:14+08:00">2019-11-02</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-11-03 20:04:39" itemprop="dateModified" datetime="2019-11-03T20:04:39+08:00">2019-11-03</time>
+              </span>
 
           
             <span id="/2019/11/02/Windows10%E5%AE%B6%E5%BA%AD%E7%89%88%E5%BC%80%E5%90%AF%E7%BB%84%E7%AD%96%E7%95%A5/" class="post-meta-item leancloud_visitors" data-flag-title="【骚操作】Windows10家庭版中开启组策略编辑器" title="Views">
@@ -476,7 +687,8 @@
 <li>打开”本地组策略编辑器”</li>
 </ul>
 <p><img src="/images/20191102165614/09.png" alt="09.png"></p>
-<pre><code>参考文献：百度</code></pre>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p>百度</p>
+
       
     </div>
 
@@ -526,7 +738,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-11-02 17:46:12" itemprop="dateModified" datetime="2019-11-02T17:46:12+08:00">2019-11-02</time>
+                <time title="Modified: 2019-11-03 20:05:07" itemprop="dateModified" datetime="2019-11-03T20:05:07+08:00">2019-11-03</time>
               </span>
 
           
@@ -581,7 +793,8 @@
 </ul>
 <p><img src="/images/20191101204156/04.png" alt="04.png"></p>
 <h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><p><img src="/images/20191101204156/05.png" alt="05.png"></p>
-<pre><code>参考文献：百度</code></pre>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p>百度</p>
+
       
     </div>
 
@@ -725,7 +938,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-count">6</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

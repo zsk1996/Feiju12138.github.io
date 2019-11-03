@@ -50,23 +50,22 @@
   };
 </script>
 
-  <meta name="description" content="前言经常有一些小伙伴，在使用Windows电脑时间久了，就会觉得电脑变卡，而通常情况下百度得到的答案大多是清理一下垃圾就变快了，可是下载清理软件，不但需要联网，而且市面上垃圾清理软件琳琅满目，有的使用的时候推销你下载他们公司的电脑管家，有的安装过后会经常弹小广告窗口，然而优秀的垃圾清理软件又比较难找，所以今天我带大家一起制作一个批处理文件，既能清理系统的垃圾，又不需要联网. 创建文件 在任意文件夹">
+  <meta name="description" content="前言kali更换了阿里云更新源执行更新命令后报错，错误分别是  由于没有公钥，无法验证下列签名：……  仓库……没有数字签名，无法安全地用该源进行更新，所以默认禁用该源。    解决问题1 下载签名  1wget archive.kali.org&#x2F;archive-key.asc   安装签名  1apt-key add archive-key.asc   解决问题2 导入签名  1sudo apt">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【骚操作】垃圾清理">
-<meta property="og:url" content="https:&#x2F;&#x2F;feiju12138.github.io&#x2F;2019&#x2F;11&#x2F;01&#x2F;%E5%9E%83%E5%9C%BE%E6%B8%85%E7%90%86&#x2F;index.html">
+<meta property="og:title" content="【踩坑】kali阿里云更新源报错问题">
+<meta property="og:url" content="https:&#x2F;&#x2F;feiju12138.github.io&#x2F;2019&#x2F;11&#x2F;03&#x2F;kali%E9%98%BF%E9%87%8C%E4%BA%91%E6%9B%B4%E6%96%B0%E6%BA%90%E6%8A%A5%E9%94%99%E9%97%AE%E9%A2%98&#x2F;index.html">
 <meta property="og:site_name" content="绯鞠的博客">
-<meta property="og:description" content="前言经常有一些小伙伴，在使用Windows电脑时间久了，就会觉得电脑变卡，而通常情况下百度得到的答案大多是清理一下垃圾就变快了，可是下载清理软件，不但需要联网，而且市面上垃圾清理软件琳琅满目，有的使用的时候推销你下载他们公司的电脑管家，有的安装过后会经常弹小广告窗口，然而优秀的垃圾清理软件又比较难找，所以今天我带大家一起制作一个批处理文件，既能清理系统的垃圾，又不需要联网. 创建文件 在任意文件夹">
+<meta property="og:description" content="前言kali更换了阿里云更新源执行更新命令后报错，错误分别是  由于没有公钥，无法验证下列签名：……  仓库……没有数字签名，无法安全地用该源进行更新，所以默认禁用该源。    解决问题1 下载签名  1wget archive.kali.org&#x2F;archive-key.asc   安装签名  1apt-key add archive-key.asc   解决问题2 导入签名  1sudo apt">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https:&#x2F;&#x2F;feiju12138.github.io&#x2F;images&#x2F;20191101204156&#x2F;01.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;feiju12138.github.io&#x2F;images&#x2F;20191101204156&#x2F;02.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;feiju12138.github.io&#x2F;images&#x2F;20191101204156&#x2F;03.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;feiju12138.github.io&#x2F;images&#x2F;20191101204156&#x2F;04.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;feiju12138.github.io&#x2F;images&#x2F;20191101204156&#x2F;05.png">
-<meta property="og:updated_time" content="2019-11-03T12:05:07.356Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;feiju12138.github.io&#x2F;images&#x2F;20191103194809&#x2F;01.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;feiju12138.github.io&#x2F;images&#x2F;20191103194809&#x2F;02.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;feiju12138.github.io&#x2F;images&#x2F;20191103194809&#x2F;03.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;feiju12138.github.io&#x2F;images&#x2F;20191103194809&#x2F;04.png">
+<meta property="og:updated_time" content="2019-11-03T12:08:56.478Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;feiju12138.github.io&#x2F;images&#x2F;20191101204156&#x2F;01.png">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;feiju12138.github.io&#x2F;images&#x2F;20191103194809&#x2F;01.png">
 
-<link rel="canonical" href="https://feiju12138.github.io/2019/11/01/%E5%9E%83%E5%9C%BE%E6%B8%85%E7%90%86/">
+<link rel="canonical" href="https://feiju12138.github.io/2019/11/03/kali%E9%98%BF%E9%87%8C%E4%BA%91%E6%9B%B4%E6%96%B0%E6%BA%90%E6%8A%A5%E9%94%99%E9%97%AE%E9%A2%98/">
 
 
 <script id="page-configurations">
@@ -80,7 +79,7 @@
   };
 </script>
 
-  <title>【骚操作】垃圾清理 | 绯鞠的博客</title>
+  <title>【踩坑】kali阿里云更新源报错问题 | 绯鞠的博客</title>
   
 
 
@@ -199,7 +198,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://feiju12138.github.io/2019/11/01/%E5%9E%83%E5%9C%BE%E6%B8%85%E7%90%86/">
+    <link itemprop="mainEntityOfPage" href="https://feiju12138.github.io/2019/11/03/kali%E9%98%BF%E9%87%8C%E4%BA%91%E6%9B%B4%E6%96%B0%E6%BA%90%E6%8A%A5%E9%94%99%E9%97%AE%E9%A2%98/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -212,7 +211,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          【骚操作】垃圾清理
+          【踩坑】kali阿里云更新源报错问题
         </h1>
 
         <div class="post-meta">
@@ -221,19 +220,13 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
+              
 
-              <time title="Created: 2019-11-01 20:41:56" itemprop="dateCreated datePublished" datetime="2019-11-01T20:41:56+08:00">2019-11-01</time>
+              <time title="Created: 2019-11-03 19:48:09 / Modified: 20:08:56" itemprop="dateCreated datePublished" datetime="2019-11-03T19:48:09+08:00">2019-11-03</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-11-03 20:05:07" itemprop="dateModified" datetime="2019-11-03T20:05:07+08:00">2019-11-03</time>
-              </span>
 
           
-            <span id="/2019/11/01/%E5%9E%83%E5%9C%BE%E6%B8%85%E7%90%86/" class="post-meta-item leancloud_visitors" data-flag-title="【骚操作】垃圾清理" title="Views">
+            <span id="/2019/11/03/kali%E9%98%BF%E9%87%8C%E4%BA%91%E6%9B%B4%E6%96%B0%E6%BA%90%E6%8A%A5%E9%94%99%E9%97%AE%E9%A2%98/" class="post-meta-item leancloud_visitors" data-flag-title="【踩坑】kali阿里云更新源报错问题" title="Views">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -248,8 +241,8 @@
       </span>
       <span class="post-meta-item-text">Valine: </span>
     
-    <a title="valine" href="/2019/11/01/%E5%9E%83%E5%9C%BE%E6%B8%85%E7%90%86/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2019/11/01/%E5%9E%83%E5%9C%BE%E6%B8%85%E7%90%86/" itemprop="commentCount"></span>
+    <a title="valine" href="/2019/11/03/kali%E9%98%BF%E9%87%8C%E4%BA%91%E6%9B%B4%E6%96%B0%E6%BA%90%E6%8A%A5%E9%94%99%E9%97%AE%E9%A2%98/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2019/11/03/kali%E9%98%BF%E9%87%8C%E4%BA%91%E6%9B%B4%E6%96%B0%E6%BA%90%E6%8A%A5%E9%94%99%E9%97%AE%E9%A2%98/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -264,27 +257,37 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>经常有一些小伙伴，在使用Windows电脑时间久了，就会觉得电脑变卡，而通常情况下百度得到的答案大多是清理一下垃圾就变快了，可是下载清理软件，不但需要联网，而且市面上垃圾清理软件琳琅满目，有的使用的时候推销你下载他们公司的电脑管家，有的安装过后会经常弹小广告窗口，然而优秀的垃圾清理软件又比较难找，所以今天我带大家一起制作一个批处理文件，既能清理系统的垃圾，又不需要联网.</p>
-<h2 id="创建文件"><a href="#创建文件" class="headerlink" title="创建文件"></a>创建文件</h2><ul>
-<li>在任意文件夹中空白处，右键-&gt;新建-&gt;文本文档</li>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>kali更换了阿里云更新源执行更新命令后报错，错误分别是</p>
+<ul>
+<li><p>由于没有公钥，无法验证下列签名：……</p>
+</li>
+<li><p>仓库……没有数字签名，无法安全地用该源进行更新，所以默认禁用该源。</p>
+</li>
 </ul>
-<p><img src="/images/20191101204156/01.png" alt="01.png"></p>
-<h2 id="修改文件扩展名"><a href="#修改文件扩展名" class="headerlink" title="修改文件扩展名"></a>修改文件扩展名</h2><ul>
-<li>右键-&gt;重命名-&gt;”垃圾清理.bat”-&gt;(是否更改扩展名)是</li>
+<p><img src="/images/20191103194809/01.png" alt="01.png"></p>
+<h2 id="解决问题1"><a href="#解决问题1" class="headerlink" title="解决问题1"></a>解决问题1</h2><ul>
+<li>下载签名</li>
 </ul>
-<p><img src="/images/20191101204156/02.png" alt="02.png"></p>
-<h2 id="写入代码"><a href="#写入代码" class="headerlink" title="写入代码"></a>写入代码</h2><ul>
-<li>右键-&gt;编辑-&gt;写入代码-&gt;保存-&gt;关闭</li>
-</ul>
-<p><img src="/images/20191101204156/03.png" alt="03.png"></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"><span class="built_in">echo</span> 正在清除系统垃圾文件，请稍等......</span><br><span class="line">del /f /s /q %systemdrive%\*.tmp</span><br><span class="line">del /f /s /q %systemdrive%\*._mp</span><br><span class="line">del /f /s /q %systemdrive%\*.<span class="built_in">log</span></span><br><span class="line">del /f /s /q %systemdrive%\*.gid</span><br><span class="line">del /f /s /q %systemdrive%\*.chk</span><br><span class="line">del /f /s /q %systemdrive%\*.old</span><br><span class="line">del /f /s /q %systemdrive%\recycled\*.*</span><br><span class="line">del /f /s /q %windir%\*.bak</span><br><span class="line">del /f /s /q %windir%\prefetch\*.*</span><br><span class="line">rd /s /q %windir%\temp &amp; md %windir%\temp</span><br><span class="line">del /f /q %userprofile%\cookies\*.*</span><br><span class="line">del /f /q %userprofile%\recent\*.*</span><br><span class="line">del /f /s /q <span class="string">"%userprofile%\Local Settings\Temporary Internet Files\*.*"</span></span><br><span class="line">del /f /s /q <span class="string">"%userprofile%\Local Settings\Temp\*.*"</span></span><br><span class="line">del /f /s /q <span class="string">"%userprofile%\recent\*.*"</span></span><br><span class="line"><span class="built_in">echo</span>  清除系统垃圾完成！！！</span><br><span class="line"><span class="built_in">echo</span>. &amp; pause</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget archive.kali.org/archive-key.asc</span><br></pre></td></tr></table></figure>
 
-<h2 id="运行程序"><a href="#运行程序" class="headerlink" title="运行程序"></a>运行程序</h2><ul>
-<li>右键-&gt;以管理员方式运行</li>
+<ul>
+<li>安装签名</li>
 </ul>
-<p><img src="/images/20191101204156/04.png" alt="04.png"></p>
-<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><p><img src="/images/20191101204156/05.png" alt="05.png"></p>
-<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p>百度</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-key add archive-key.asc</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/20191103194809/02.png" alt="02.png"></p>
+<h2 id="解决问题2"><a href="#解决问题2" class="headerlink" title="解决问题2"></a>解决问题2</h2><ul>
+<li>导入签名</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 40976EAF437D05B5 3B4FE6ACC0B21F32</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/20191103194809/03.png" alt="03.png"></p>
+<h2 id="完成后更新"><a href="#完成后更新" class="headerlink" title="完成后更新"></a>完成后更新</h2><ul>
+<li>更新本地软件仓库</li>
+</ul>
+<p><img src="/images/20191103194809/04.png" alt="04.png"></p>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://blog.csdn.net/ayatou666/article/details/80092529" target="_blank" rel="noopener">CSDN——ayatou666</a></p>
+<p><a href="https://blog.csdn.net/tankweight/article/details/82948864" target="_blank" rel="noopener">CSDN——五虎将</a></p>
 
     </div>
 
@@ -319,17 +322,14 @@
 
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
-                <a href="/2019/11/01/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" rel="next" title="【置底】我的第一篇博客文章">
-                  <i class="fa fa-chevron-left"></i> 【置底】我的第一篇博客文章
+                <a href="/2019/11/03/%E6%9B%B4%E6%8D%A2-kali-linux-%E6%9B%B4%E6%96%B0%E6%BA%90/" rel="next" title="【笔记】更换 kali linux 更新源">
+                  <i class="fa fa-chevron-left"></i> 【笔记】更换 kali linux 更新源
                 </a>
             </div>
 
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-                <a href="/2019/11/02/Windows10%E5%AE%B6%E5%BA%AD%E7%89%88%E5%BC%80%E5%90%AF%E7%BB%84%E7%AD%96%E7%95%A5/" rel="prev" title="【骚操作】Windows10家庭版中开启组策略编辑器">
-                  【骚操作】Windows10家庭版中开启组策略编辑器 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
       </footer>
@@ -369,7 +369,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建文件"><span class="nav-number">2.</span> <span class="nav-text">创建文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改文件扩展名"><span class="nav-number">3.</span> <span class="nav-text">修改文件扩展名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#写入代码"><span class="nav-number">4.</span> <span class="nav-text">写入代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运行程序"><span class="nav-number">5.</span> <span class="nav-text">运行程序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#完成"><span class="nav-number">6.</span> <span class="nav-text">完成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考文献"><span class="nav-number">7.</span> <span class="nav-text">参考文献</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决问题1"><span class="nav-number">2.</span> <span class="nav-text">解决问题1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决问题2"><span class="nav-number">3.</span> <span class="nav-text">解决问题2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#完成后更新"><span class="nav-number">4.</span> <span class="nav-text">完成后更新</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考文献"><span class="nav-number">5.</span> <span class="nav-text">参考文献</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

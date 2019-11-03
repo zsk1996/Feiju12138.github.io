@@ -4,6 +4,8 @@
     <title>【踩坑】在 VMware 安装 VMwareTools（kali篇）</title>
     <url>/2019/11/03/%E5%9C%A8-VMware-%E5%AE%89%E8%A3%85-VMwareTools/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在VMware虚拟机安装kali系统之后，无法从虚拟机系统外复制文字或文件到虚拟机系统内，这是因为还没有安装虚拟机自带的工具，需要手动安装。（其他虚拟机软件大同小异，请根据软件提示安装）</p>
+<a id="more"></a>
+
 <h2 id="在虚拟机系统内挂载虚拟光盘映像"><a href="#在虚拟机系统内挂载虚拟光盘映像" class="headerlink" title="在虚拟机系统内挂载虚拟光盘映像"></a>在虚拟机系统内挂载虚拟光盘映像</h2><ul>
 <li>VMware菜单-&gt; 虚拟机-&gt;安装 VMware Tools（因为我的已经安装成功，所以这里显示重新安装 VMware Tools）</li>
 </ul>
@@ -48,6 +50,8 @@
 </li>
 </ul>
 <p><img src="/images/20191103194809/01.png" alt="01.png"></p>
+<a id="more"></a>
+
 <h2 id="解决问题1"><a href="#解决问题1" class="headerlink" title="解决问题1"></a>解决问题1</h2><ul>
 <li>下载签名</li>
 </ul>
@@ -77,6 +81,8 @@
     <title>【笔记】更换 kali linux 更新源</title>
     <url>/2019/11/03/%E6%9B%B4%E6%8D%A2-kali-linux-%E6%9B%B4%E6%96%B0%E6%BA%90/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>安装完linux系统，首先要做的就是更新本地软件仓库，从远程软件仓库下载一些基本软件到本地软件仓库。然而如果不能科学上网，第一件事就要先更换更新源，至国内镜像站。</p>
+<a id="more"></a>
+
 <h2 id="搜索国内镜像站地址"><a href="#搜索国内镜像站地址" class="headerlink" title="搜索国内镜像站地址"></a>搜索国内镜像站地址</h2><ul>
 <li>百度上可以搜到很多国内镜像站地址，在这里我从CSDN上找到了阿里云的国内镜像站地址，提供给大家</li>
 </ul>
@@ -98,6 +104,8 @@
     <title>【笔记】安装 kali linux 操作系统（VMware篇）</title>
     <url>/2019/11/03/%E5%AE%89%E8%A3%85-kali-linux-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>今天与小伙伴一起，在他的电脑上的虚拟机(VMware 15)上安装了 kali linux 操作系统，故将笔记分享给需要的小伙伴</p>
+<a id="more"></a>
+
 <h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><h3 id="虚拟机"><a href="#虚拟机" class="headerlink" title="虚拟机"></a>虚拟机</h3><p>首先下载一个虚拟机，市面上有很多优秀的虚拟机软件，例如：<a href="https://www.vmware.com/cn.html" target="_blank" rel="noopener">VMware</a>（Windows &amp; MacOS）、<a href="https://www.virtualbox.org" target="_blank" rel="noopener">VirtualBox</a>（Windows &amp; MacOS）、<a href="https://www.parallels.com/cn/products/desktop/pro/" target="_blank" rel="noopener">Parallels Desktop</a>（MacOS）。由于小伙伴的电脑是Windows操作系统，所以安装了一款VMware 15</p>
 <h3 id="系统镜像"><a href="#系统镜像" class="headerlink" title="系统镜像"></a>系统镜像</h3><p>其次要准备一个 kali linux 的系统镜像，可以直接去<a href="https://www.kali.org" target="_blank" rel="noopener">kali官网</a>进行下载</p>
 <h2 id="新建虚拟机"><a href="#新建虚拟机" class="headerlink" title="新建虚拟机"></a>新建虚拟机</h2><ul>
@@ -216,6 +224,8 @@
     <url>/2019/11/02/Windows10%E5%AE%B6%E5%BA%AD%E7%89%88%E5%BC%80%E5%90%AF%E7%BB%84%E7%AD%96%E7%95%A5/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>经常有一些小伙伴，在使用Windows10家庭版的时候，需要打开组策略编辑器进行一些高端操作，然而不尽人意，Windows10家庭版默认没有开启此功能，通常会出现”Windows找不到’gpedit.msc’。请确定文件名是否正确后，再试一次。”的警告，今天我就教大家如何在Windows10家庭版中开启组策略编辑器</p>
 <p><img src="/images/20191102165614/01.png" alt="01.png"></p>
+<a id="more"></a>
+
 <h2 id="创建文件"><a href="#创建文件" class="headerlink" title="创建文件"></a>创建文件</h2><ul>
 <li>在任意文件夹中空白处，右键-&gt;新建-&gt;文本文档</li>
 </ul>
@@ -254,6 +264,8 @@
     <title>【骚操作】垃圾清理</title>
     <url>/2019/11/01/%E5%9E%83%E5%9C%BE%E6%B8%85%E7%90%86/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>经常有一些小伙伴，在使用Windows电脑时间久了，就会觉得电脑变卡，而通常情况下百度得到的答案大多是清理一下垃圾就变快了，可是下载清理软件，不但需要联网，而且市面上垃圾清理软件琳琅满目，有的使用的时候推销你下载他们公司的电脑管家，有的安装过后会经常弹小广告窗口，然而优秀的垃圾清理软件又比较难找，所以今天我带大家一起制作一个批处理文件，既能清理系统的垃圾，又不需要联网.</p>
+<a id="more"></a>
+
 <h2 id="创建文件"><a href="#创建文件" class="headerlink" title="创建文件"></a>创建文件</h2><ul>
 <li>在任意文件夹中空白处，右键-&gt;新建-&gt;文本文档</li>
 </ul>

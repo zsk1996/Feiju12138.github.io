@@ -50,17 +50,22 @@
   };
 </script>
 
-  <meta name="description" content="关于我Hi，你好，欢迎你来到我的博客，这里是一只爱折腾，喜欢黑科技，爱好分享技术，有一颗少女心的小可爱绯鞠 鄙人目前是一名大二学生狗，主专业Java开发，目标是成为一名全栈工程师，并为之努力奋斗着💪 今天是我创建博客的第一天，以后我会经常在这里分享我的踩坑经历及学习笔记，因为我也不是什么大牛，所以创建博客的主要目的是为了培养自己良好的总结习惯，并能在有所涉猎的技术上留下些许痕迹，同时给小伙伴分享">
+  <meta name="description" content="前言在VMware虚拟机安装kali系统之后，无法从虚拟机系统外复制文字或文件到虚拟机系统内，这是因为还没有安装虚拟机自带的工具，需要手动安装。（其他虚拟机软件大同小异，请根据软件提示安装） 在虚拟机系统内挂载虚拟光盘映像 VMware菜单-&amp;gt; 虚拟机-&amp;gt;安装 VMware Tools（因为我的已经安装成功，所以这里显示重新安装 VMware Tools）    挂载成功后，kali系">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【置底】我的第一篇博客文章">
-<meta property="og:url" content="https:&#x2F;&#x2F;feiju12138.github.io&#x2F;2019&#x2F;11&#x2F;01&#x2F;%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0&#x2F;index.html">
+<meta property="og:title" content="【踩坑】在 VMware 安装 VMwareTools（kali篇）">
+<meta property="og:url" content="https:&#x2F;&#x2F;feiju12138.github.io&#x2F;2019&#x2F;11&#x2F;03&#x2F;%E5%9C%A8-VMware-%E5%AE%89%E8%A3%85-VMwareTools&#x2F;index.html">
 <meta property="og:site_name" content="绯鞠的博客">
-<meta property="og:description" content="关于我Hi，你好，欢迎你来到我的博客，这里是一只爱折腾，喜欢黑科技，爱好分享技术，有一颗少女心的小可爱绯鞠 鄙人目前是一名大二学生狗，主专业Java开发，目标是成为一名全栈工程师，并为之努力奋斗着💪 今天是我创建博客的第一天，以后我会经常在这里分享我的踩坑经历及学习笔记，因为我也不是什么大牛，所以创建博客的主要目的是为了培养自己良好的总结习惯，并能在有所涉猎的技术上留下些许痕迹，同时给小伙伴分享">
+<meta property="og:description" content="前言在VMware虚拟机安装kali系统之后，无法从虚拟机系统外复制文字或文件到虚拟机系统内，这是因为还没有安装虚拟机自带的工具，需要手动安装。（其他虚拟机软件大同小异，请根据软件提示安装） 在虚拟机系统内挂载虚拟光盘映像 VMware菜单-&amp;gt; 虚拟机-&amp;gt;安装 VMware Tools（因为我的已经安装成功，所以这里显示重新安装 VMware Tools）    挂载成功后，kali系">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-11-01T12:38:18.764Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;feiju12138.github.io&#x2F;images&#x2F;20191103201219&#x2F;01.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;feiju12138.github.io&#x2F;images&#x2F;20191103201219&#x2F;02.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;feiju12138.github.io&#x2F;images&#x2F;20191103201219&#x2F;03.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;feiju12138.github.io&#x2F;images&#x2F;20191103201219&#x2F;04.png">
+<meta property="og:updated_time" content="2019-11-03T12:37:04.133Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;feiju12138.github.io&#x2F;images&#x2F;20191103201219&#x2F;01.png">
 
-<link rel="canonical" href="https://feiju12138.github.io/2019/11/01/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/">
+<link rel="canonical" href="https://feiju12138.github.io/2019/11/03/%E5%9C%A8-VMware-%E5%AE%89%E8%A3%85-VMwareTools/">
 
 
 <script id="page-configurations">
@@ -74,7 +79,7 @@
   };
 </script>
 
-  <title>【置底】我的第一篇博客文章 | 绯鞠的博客</title>
+  <title>【踩坑】在 VMware 安装 VMwareTools（kali篇） | 绯鞠的博客</title>
   
 
 
@@ -193,7 +198,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="https://feiju12138.github.io/2019/11/01/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/">
+    <link itemprop="mainEntityOfPage" href="https://feiju12138.github.io/2019/11/03/%E5%9C%A8-VMware-%E5%AE%89%E8%A3%85-VMwareTools/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -206,7 +211,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          【置底】我的第一篇博客文章
+          【踩坑】在 VMware 安装 VMwareTools（kali篇）
         </h1>
 
         <div class="post-meta">
@@ -217,11 +222,11 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2019-11-01 20:00:00 / Modified: 20:38:18" itemprop="dateCreated datePublished" datetime="2019-11-01T20:00:00+08:00">2019-11-01</time>
+              <time title="Created: 2019-11-03 20:12:19 / Modified: 20:37:04" itemprop="dateCreated datePublished" datetime="2019-11-03T20:12:19+08:00">2019-11-03</time>
             </span>
 
           
-            <span id="/2019/11/01/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" class="post-meta-item leancloud_visitors" data-flag-title="【置底】我的第一篇博客文章" title="Views">
+            <span id="/2019/11/03/%E5%9C%A8-VMware-%E5%AE%89%E8%A3%85-VMwareTools/" class="post-meta-item leancloud_visitors" data-flag-title="【踩坑】在 VMware 安装 VMwareTools（kali篇）" title="Views">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -236,8 +241,8 @@
       </span>
       <span class="post-meta-item-text">Valine: </span>
     
-    <a title="valine" href="/2019/11/01/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2019/11/01/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" itemprop="commentCount"></span>
+    <a title="valine" href="/2019/11/03/%E5%9C%A8-VMware-%E5%AE%89%E8%A3%85-VMwareTools/#comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2019/11/03/%E5%9C%A8-VMware-%E5%AE%89%E8%A3%85-VMwareTools/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -252,10 +257,38 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="关于我"><a href="#关于我" class="headerlink" title="关于我"></a>关于我</h2><p>Hi，你好，欢迎你来到我的博客，这里是一只爱折腾，喜欢黑科技，爱好分享技术，有一颗少女心的小可爱绯鞠</p>
-<p>鄙人目前是一名大二学生狗，主专业Java开发，目标是成为一名全栈工程师，并为之努力奋斗着💪</p>
-<p>今天是我创建博客的第一天，以后我会经常在这里分享我的踩坑经历及学习笔记，因为我也不是什么大牛，所以创建博客的主要目的是为了培养自己良好的总结习惯，并能在有所涉猎的技术上留下些许痕迹，同时给小伙伴分享我的经验及教训，如果博文中出现什么不正确的地方，欢迎大家的指点</p>
-<p>最后，让我们一起共同进步，生命不息，折腾不止，Fighting🎉</p>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在VMware虚拟机安装kali系统之后，无法从虚拟机系统外复制文字或文件到虚拟机系统内，这是因为还没有安装虚拟机自带的工具，需要手动安装。（其他虚拟机软件大同小异，请根据软件提示安装）</p>
+<h2 id="在虚拟机系统内挂载虚拟光盘映像"><a href="#在虚拟机系统内挂载虚拟光盘映像" class="headerlink" title="在虚拟机系统内挂载虚拟光盘映像"></a>在虚拟机系统内挂载虚拟光盘映像</h2><ul>
+<li>VMware菜单-&gt; 虚拟机-&gt;安装 VMware Tools（因为我的已经安装成功，所以这里显示重新安装 VMware Tools）</li>
+</ul>
+<p><img src="/images/20191103201219/01.png" alt="01.png"></p>
+<ul>
+<li>挂载成功后，kali系统会提示有光盘插入</li>
+</ul>
+<p><img src="/images/20191103201219/02.png" alt="02.png"></p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><ul>
+<li>复制虚拟光盘映像中的安装压缩包到本地Home目录</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp /media/cdrom/VMwareTools-10.3.10-13959562.tar.gz ~</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>解压压缩包</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -xf VMwareTools-10.3.10-13959562.tar.gz vmware-tools-distrib/</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>执行安装命令</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~</span><br><span class="line">vmware-tools-distrib/vmware-install.pl</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/20191103201219/03.png" alt="03.png"></p>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><ul>
+<li><p>执行安装命令后，会遇到停顿，脚本会自动向你询问安装的具体配置，你可以根据需要在”()”内选择一项输入，也可以像我一样按回车键（直接回车确定表示使用默认配置）</p>
+</li>
+<li><p>显示”Enjoy,”表示安装成功</p>
+</li>
+</ul>
+<p><img src="/images/20191103201219/04.png" alt="04.png"></p>
 
     </div>
 
@@ -290,14 +323,14 @@
 
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
+                <a href="/2019/11/03/kali%E9%98%BF%E9%87%8C%E4%BA%91%E6%9B%B4%E6%96%B0%E6%BA%90%E6%8A%A5%E9%94%99%E9%97%AE%E9%A2%98/" rel="next" title="【踩坑】kali阿里云更新源报错问题">
+                  <i class="fa fa-chevron-left"></i> 【踩坑】kali阿里云更新源报错问题
+                </a>
             </div>
 
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-                <a href="/2019/11/01/%E5%9E%83%E5%9C%BE%E6%B8%85%E7%90%86/" rel="prev" title="【骚操作】垃圾清理">
-                  【骚操作】垃圾清理 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
       </footer>
@@ -337,7 +370,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#关于我"><span class="nav-number">1.</span> <span class="nav-text">关于我</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在虚拟机系统内挂载虚拟光盘映像"><span class="nav-number">2.</span> <span class="nav-text">在虚拟机系统内挂载虚拟光盘映像</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">3.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置"><span class="nav-number">4.</span> <span class="nav-text">配置</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

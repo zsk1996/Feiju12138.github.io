@@ -1,6 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>【踩坑】CDR格式 转换 ISO格式</title>
+    <url>/2019/11/09/CDR%E6%A0%BC%E5%BC%8F-%E8%BD%AC%E6%8D%A2-ISO%E6%A0%BC%E5%BC%8F/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>有段时间学习安装黑苹果系统，在百度上找到很多黑苹果系统映像，其中有一款最适合小白使用，那就是文件名为”macOS Sierra 10.12.6 16G29 Installer.cdr”的懒人版黑苹果系统映像，虽然人们都说”.cdr”文件可以直接烧录到U盘，但为了能让烧录更简单，我决定将”.cdr”文件转换为常见的系统映像格式”.iso”。</p>
+<a id="more"></a>
+
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
+<li>一个”.cdr”文件的黑苹果系统映像</li>
+<li>一台MacOS系统的电脑</li>
+</ul>
+<h2 id="打开终端"><a href="#打开终端" class="headerlink" title="打开终端"></a>打开终端</h2><ul>
+<li>访达-&gt;应用程序-&gt;实用工具-&gt;终端</li>
+</ul>
+<p><img src="/images/20191109120705/01.png" alt="01.png"></p>
+<h2 id="使用终端，进入存放”-cdr”文件的目录"><a href="#使用终端，进入存放”-cdr”文件的目录" class="headerlink" title="使用终端，进入存放”.cdr”文件的目录"></a>使用终端，进入存放”.cdr”文件的目录</h2><ul>
+<li>由于我的”.cdr”文件放在”桌面”目录上，所以在终端执行以下命令</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/Desktop/</span><br></pre></td></tr></table></figure>
+
+<h2 id="修改文件名（可选）"><a href="#修改文件名（可选）" class="headerlink" title="修改文件名（可选）"></a>修改文件名（可选）</h2><h3 id="为了接下来的转换操作顺利进行，先将文件名修改成”Installer-cdr”（如果会根据自己的文件名修改下一步骤的命令，可以跳过此步骤）"><a href="#为了接下来的转换操作顺利进行，先将文件名修改成”Installer-cdr”（如果会根据自己的文件名修改下一步骤的命令，可以跳过此步骤）" class="headerlink" title="为了接下来的转换操作顺利进行，先将文件名修改成”Installer.cdr”（如果会根据自己的文件名修改下一步骤的命令，可以跳过此步骤）"></a>为了接下来的转换操作顺利进行，先将文件名修改成”Installer.cdr”（如果会根据自己的文件名修改下一步骤的命令，可以跳过此步骤）</h3><ul>
+<li>右键”macOS Sierra 10.12.6 16G29 Installer.cdr”文件-&gt;重新命名</li>
+</ul>
+<p><img src="/images/20191109120705/02.png" alt="02.png"></p>
+<ul>
+<li>将文件命名为”Installer.cdr”</li>
+</ul>
+<h2 id="格式转换"><a href="#格式转换" class="headerlink" title="格式转换"></a>格式转换</h2><ul>
+<li>在终端执行转换命令</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hdiutil makehybrid -iso -joliet -o Installer.iso Installer.cdr</span><br></pre></td></tr></table></figure>
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p>百度</p>
+]]></content>
+  </entry>
+  <entry>
     <title>【踩坑】重置Mac的所有网络设置</title>
     <url>/2019/11/06/%E9%87%8D%E7%BD%AEMac%E7%9A%84%E6%89%80%E6%9C%89%E7%BD%91%E7%BB%9C%E8%AE%BE%E7%BD%AE/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>对于经常使用梯子的小伙伴，有的时候使用的梯子会自动将DNS配置错误，导致无论是否开启梯子都无法上网，甚至重装系统也无济于事，今天我来教大家一个重置Mac的所有网络设置的方法，来解决这个问题。</p>

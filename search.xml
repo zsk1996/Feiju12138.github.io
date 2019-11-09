@@ -322,9 +322,9 @@
     <title>【骚操作】Windows10家庭版中开启组策略编辑器</title>
     <url>/2019/11/02/Windows10%E5%AE%B6%E5%BA%AD%E7%89%88%E5%BC%80%E5%90%AF%E7%BB%84%E7%AD%96%E7%95%A5/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>经常有一些小伙伴，在使用Windows10家庭版的时候，需要打开组策略编辑器进行一些高端操作，然而不尽人意，Windows10家庭版默认没有开启此功能，通常会出现”Windows找不到’gpedit.msc’。请确定文件名是否正确后，再试一次。”的警告，今天我就教大家如何在Windows10家庭版中开启组策略编辑器</p>
-<p><img src="/images/20191102165614/01.png" alt="01.png"></p>
 <a id="more"></a>
 
+<p><img src="/images/20191102165614/01.png" alt="01.png"></p>
 <h2 id="创建文件"><a href="#创建文件" class="headerlink" title="创建文件"></a>创建文件</h2><ul>
 <li>在任意文件夹中空白处，右键-&gt;新建-&gt;文本文档</li>
 </ul>

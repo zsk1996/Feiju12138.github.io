@@ -148,9 +148,9 @@
 <li><p>仓库……没有数字签名，无法安全地用该源进行更新，所以默认禁用该源。</p>
 </li>
 </ul>
-<p><img src="/images/20191103194809/01.png" alt="01.png"></p>
 <a id="more"></a>
 
+<p><img src="/images/20191103194809/01.png" alt="01.png"></p>
 <h2 id="解决问题1"><a href="#解决问题1" class="headerlink" title="解决问题1"></a>解决问题1</h2><ul>
 <li>下载签名</li>
 </ul>

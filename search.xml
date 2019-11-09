@@ -37,7 +37,7 @@
 </ul>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hdiutil convert skill.dmg -format UDTO -o skill.iso</span><br></pre></td></tr></table></figure>
 
-<h2 id="格式转换为”-img”"><a href="#格式转换为”-img”" class="headerlink" title="格式转换为”.img”"></a>格式转换为”.img”</h2><p>参见<a href="https://feiju12138.github.io/2019/11/09/CDR格式-转换-ISO格式/">CDR格式 转换 ISO格式</a></p>
+<h2 id="格式转换为”-img”"><a href="#格式转换为”-img”" class="headerlink" title="格式转换为”.img”"></a>格式转换为”.img”</h2><p>参见<a href="https://feiju12138.github.io/2019/11/09/CDR格式-转换-ISO格式/#格式转换">CDR格式 转换 ISO格式</a></p>
 <h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><p><a href="/images/20191109140505/07.png">07.png</a></p>
 ]]></content>
   </entry>

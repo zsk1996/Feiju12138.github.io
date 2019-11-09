@@ -1,6 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>【踩坑】DMG格式 转换 ISO格式</title>
+    <url>/2019/11/09/DMG%E6%A0%BC%E5%BC%8F-%E8%BD%AC%E6%8D%A2-ISO%E6%A0%BC%E5%BC%8F/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>MacOS系统自带了制作映像文件的工具，然而只能制作扩展名为”.dmg”的映像，只能在MacOS系统读取，而如果想在Windows电脑读取，则需要将”.dmg”文件转换为”.ios”文件</p>
+<a id="more"></a>
+
+<h2 id="制作”-dmg”映像文件"><a href="#制作”-dmg”映像文件" class="headerlink" title="制作”.dmg”映像文件"></a>制作”.dmg”映像文件</h2><h3 id="打开磁盘工具"><a href="#打开磁盘工具" class="headerlink" title="打开磁盘工具"></a>打开磁盘工具</h3><ul>
+<li>访达-&gt;应用程序-&gt;实用工具-&gt;磁盘工具</li>
+</ul>
+<p><img src="/images/20191109140505/01.png" alt="01.png"></p>
+<h3 id="创建映像"><a href="#创建映像" class="headerlink" title="创建映像"></a>创建映像</h3><ul>
+<li>文件-&gt;新建映像-&gt;来自文件夹的映像</li>
+</ul>
+<p><img src="/images/20191109140505/02.png" alt="02.png"></p>
+<ul>
+<li>选择要创建映像的文件夹，我将”skill”作为映像文件创建</li>
+</ul>
+<p><img src="/images/20191109140505/03.png" alt="03.png"></p>
+<ul>
+<li>选择要保存的位置，我将”skill.dmg”</li>
+</ul>
+<p><img src="/images/20191109140505/04.png" alt="04.png"></p>
+<h3 id="映像创建成功"><a href="#映像创建成功" class="headerlink" title="映像创建成功"></a>映像创建成功</h3><p><img src="/images/20191109140505/05.png" alt="05.png"></p>
+<h2 id="转换为”-iso”格式文件"><a href="#转换为”-iso”格式文件" class="headerlink" title="转换为”.iso”格式文件"></a>转换为”.iso”格式文件</h2><h3 id="打开终端"><a href="#打开终端" class="headerlink" title="打开终端"></a>打开终端</h3><ul>
+<li>访达-&gt;应用程序-&gt;实用工具-&gt;终端</li>
+</ul>
+<p><img src="/images/20191109140505/06.png" alt="06.png"></p>
+<h3 id="使用终端，进入存放”-dmg”文件的目录"><a href="#使用终端，进入存放”-dmg”文件的目录" class="headerlink" title="使用终端，进入存放”.dmg”文件的目录"></a>使用终端，进入存放”.dmg”文件的目录</h3><ul>
+<li>由于我的”.dmg”文件放在”桌面”目录上，所以在终端执行以下命令</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/Desktop/</span><br></pre></td></tr></table></figure>
+
+<h2 id="格式转换为”-cdr”"><a href="#格式转换为”-cdr”" class="headerlink" title="格式转换为”.cdr”"></a>格式转换为”.cdr”</h2><ul>
+<li>在终端执行转换命令</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hdiutil convert skill.dmg -format UDTO -o skill.iso</span><br></pre></td></tr></table></figure>
+
+<h2 id="格式转换为”-img”"><a href="#格式转换为”-img”" class="headerlink" title="格式转换为”.img”"></a>格式转换为”.img”</h2><p>参见<a href="https://feiju12138.github.io/2019/11/09/CDR格式-转换-ISO格式/">CDR格式 转换 ISO格式</a></p>
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><p><a href="/images/20191109140505/07.png">07.png</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>【踩坑】CDR格式 转换 ISO格式</title>
     <url>/2019/11/09/CDR%E6%A0%BC%E5%BC%8F-%E8%BD%AC%E6%8D%A2-ISO%E6%A0%BC%E5%BC%8F/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>有段时间学习安装黑苹果系统，在百度上找到很多黑苹果系统映像，其中有一款最适合小白使用，那就是文件名为”macOS Sierra 10.12.6 16G29 Installer.cdr”的懒人版黑苹果系统映像，虽然人们都说”.cdr”文件可以直接烧录到U盘，但为了能让烧录更简单，我决定将”.cdr”文件转换为常见的系统映像格式”.iso”。</p>

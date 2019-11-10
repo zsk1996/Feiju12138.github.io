@@ -1,6 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>【笔记】购买国外服务器后，如何搭建VPS</title>
+    <url>/2019/11/10/%E8%B4%AD%E4%B9%B0%E5%9B%BD%E5%A4%96%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%90%8E%EF%BC%8C%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAVPS/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近，在 Vultr 购买了国外的服务器，接下来我记录一下如何搭建VPS</p>
+<a id="more"></a>
+
+<h2 id="远程连接到服务器"><a href="#远程连接到服务器" class="headerlink" title="远程连接到服务器"></a>远程连接到服务器</h2><ul>
+<li><p>使用任意远程ssh连接工具连接，我这里直接使用的命令行工具”ssh”</p>
+</li>
+<li><p>将”IP Address”、”Username”作为参数分别复制到相应位置</p>
+</li>
+<li><p>出现输入密码提示时，将Password复制上去</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">ssh Username@Ip_Address</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装SSR"><a href="#安装SSR" class="headerlink" title="安装SSR"></a>安装SSR</h2><ul>
+<li>使用wget工具安装SSR</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/ssr.sh &amp;&amp; chmod +x ssr.sh &amp;&amp; bash ssr.sh</span><br></pre></td></tr></table></figure>
+
+<h2 id="配置SSR"><a href="#配置SSR" class="headerlink" title="配置SSR"></a>配置SSR</h2><ul>
+<li>安装过程中，可能需要根据提示进行配置，如果不清楚设置内容，回车默认就可以</li>
+</ul>
+<h2 id="安装成功"><a href="#安装成功" class="headerlink" title="安装成功"></a>安装成功</h2><p><img src="/images/20191110135002/01.png" alt="01.png"></p>
+<h2 id="安装谷歌BBR加速器（可选）"><a href="#安装谷歌BBR加速器（可选）" class="headerlink" title="安装谷歌BBR加速器（可选）"></a>安装谷歌BBR加速器（可选）</h2><ul>
+<li>使用wget工具安装BBR</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh</span><br><span class="line">chmod +x bbr.sh</span><br><span class="line">./bbr.sh</span><br></pre></td></tr></table></figure>
+
+<h2 id="配置BBR（可选）"><a href="#配置BBR（可选）" class="headerlink" title="配置BBR（可选）"></a>配置BBR（可选）</h2><ul>
+<li>回车默认即可</li>
+</ul>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://www.youtube.com/watch?v=aoUNRxFwpdA&t=462s" target="_blank" rel="noopener">YouTube——抖音网红精选TOP</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>【踩坑】DMG格式 转换 ISO格式</title>
     <url>/2019/11/09/DMG%E6%A0%BC%E5%BC%8F-%E8%BD%AC%E6%8D%A2-ISO%E6%A0%BC%E5%BC%8F/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>MacOS系统自带了制作映像文件的工具，然而只能制作扩展名为”.dmg”的映像，只能在MacOS系统读取，而如果想在Windows电脑读取，则需要将”.dmg”文件转换为”.ios”文件</p>

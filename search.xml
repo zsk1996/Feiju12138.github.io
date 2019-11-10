@@ -3,7 +3,7 @@
   <entry>
     <title>【笔记】购买国外服务器后，如何搭建VPS（Ubuntu篇）</title>
     <url>/2019/11/10/%E8%B4%AD%E4%B9%B0%E5%9B%BD%E5%A4%96%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%90%8E%EF%BC%8C%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAVPS/</url>
-    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近，在 Vultr 购买了国外的服务器，接下来我记录一下如何搭建VPS</p>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近，在<a href="https://www.vultr.com" target="_blank" rel="noopener">Vultr</a>购买了国外的服务器，接下来我记录一下如何搭建VPS</p>
 <a id="more"></a>
 
 <h2 id="远程连接到服务器"><a href="#远程连接到服务器" class="headerlink" title="远程连接到服务器"></a>远程连接到服务器</h2><ul>

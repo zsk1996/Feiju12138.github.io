@@ -1,6 +1,129 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>【笔记】Linux 基础命令（Ret Hat 篇）</title>
+    <url>/2019/11/11/Linux-%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Linux 操作系统最基本命令，其他高级命令将陆续更新在其他笔记中。（自定义参数均设为”xxx”）</p>
+<a id="more"></a>
+
+<h2 id="笔记"><a href="#笔记" class="headerlink" title="笔记"></a>笔记</h2><h3 id="显示日期"><a href="#显示日期" class="headerlink" title="显示日期"></a>显示日期</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ date</span><br></pre></td></tr></table></figure>
+
+<h3 id="输出语句"><a href="#输出语句" class="headerlink" title="输出语句"></a>输出语句</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">echo</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="静态查看进程"><a href="#静态查看进程" class="headerlink" title="静态查看进程"></a>静态查看进程</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ps aux</span><br></pre></td></tr></table></figure>
+
+<h3 id="动态查看进程"><a href="#动态查看进程" class="headerlink" title="动态查看进程"></a>动态查看进程</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ top</span><br></pre></td></tr></table></figure>
+
+<h3 id="查看进程编号"><a href="#查看进程编号" class="headerlink" title="查看进程编号"></a>查看进程编号</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ pidof xxx</span><br></pre></td></tr></table></figure>
+
+<h3 id="结束进程"><a href="#结束进程" class="headerlink" title="结束进程"></a>结束进程</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">kill</span> xxx</span><br></pre></td></tr></table></figure>
+
+<h3 id="结束所有进程"><a href="#结束所有进程" class="headerlink" title="结束所有进程"></a>结束所有进程</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ killall xx</span><br></pre></td></tr></table></figure>
+
+<h3 id="查询版本信息"><a href="#查询版本信息" class="headerlink" title="查询版本信息"></a>查询版本信息</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ uname -a</span><br></pre></td></tr></table></figure>
+
+<h3 id="top-命令第一行"><a href="#top-命令第一行" class="headerlink" title="top 命令第一行"></a>top 命令第一行</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ uptime</span><br></pre></td></tr></table></figure>
+
+<h3 id="查看系统内存信息"><a href="#查看系统内存信息" class="headerlink" title="查看系统内存信息"></a>查看系统内存信息</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ free</span><br></pre></td></tr></table></figure>
+
+<h4 id="自动单位"><a href="#自动单位" class="headerlink" title="自动单位"></a>自动单位</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ free -h</span><br></pre></td></tr></table></figure>
+
+<h4 id="以MB为单位"><a href="#以MB为单位" class="headerlink" title="以MB为单位"></a>以MB为单位</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ free -m</span><br></pre></td></tr></table></figure>
+
+<h4 id="以GB为单位"><a href="#以GB为单位" class="headerlink" title="以GB为单位"></a>以GB为单位</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ free -g</span><br></pre></td></tr></table></figure>
+
+<h3 id="查看当前用户的登录信息"><a href="#查看当前用户的登录信息" class="headerlink" title="查看当前用户的登录信息"></a>查看当前用户的登录信息</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ who</span><br></pre></td></tr></table></figure>
+
+<h3 id="查看当前系统的登录记录"><a href="#查看当前系统的登录记录" class="headerlink" title="查看当前系统的登录记录"></a>查看当前系统的登录记录</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ last</span><br></pre></td></tr></table></figure>
+
+<h3 id="命令行历史记录"><a href="#命令行历史记录" class="headerlink" title="命令行历史记录"></a>命令行历史记录</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">history</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="清空命令行历史"><a href="#清空命令行历史" class="headerlink" title="清空命令行历史"></a>清空命令行历史</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">history</span> -c</span><br></pre></td></tr></table></figure>
+
+<h4 id="重复历史记录中的命令"><a href="#重复历史记录中的命令" class="headerlink" title="重复历史记录中的命令"></a>重复历史记录中的命令</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ !xxx</span><br></pre></td></tr></table></figure>
+
+<h3 id="收集重要的相关信息（排错）"><a href="#收集重要的相关信息（排错）" class="headerlink" title="收集重要的相关信息（排错）"></a>收集重要的相关信息（排错）</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sosreport</span><br></pre></td></tr></table></figure>
+
+<h3 id="查看当前目录"><a href="#查看当前目录" class="headerlink" title="查看当前目录"></a>查看当前目录</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">pwd</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="切换目录"><a href="#切换目录" class="headerlink" title="切换目录"></a>切换目录</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> /xxx</span><br></pre></td></tr></table></figure>
+
+<h4 id="切换到主目录"><a href="#切换到主目录" class="headerlink" title="切换到主目录"></a>切换到主目录</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ~</span><br></pre></td></tr></table></figure>
+
+<h4 id="返回上一次目录"><a href="#返回上一次目录" class="headerlink" title="返回上一次目录"></a>返回上一次目录</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> -</span><br></pre></td></tr></table></figure>
+
+<h4 id="返回上一级目录"><a href="#返回上一级目录" class="headerlink" title="返回上一级目录"></a>返回上一级目录</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ..</span><br></pre></td></tr></table></figure>
+
+<h3 id="查看当前目录所有文件"><a href="#查看当前目录所有文件" class="headerlink" title="查看当前目录所有文件"></a>查看当前目录所有文件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ls</span><br></pre></td></tr></table></figure>
+
+<h4 id="显示详细信息"><a href="#显示详细信息" class="headerlink" title="显示详细信息"></a>显示详细信息</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ls -l</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line"><span class="comment">#### 显示隐藏文件</span></span><br><span class="line"></span><br><span class="line">``` bash</span><br><span class="line">$ ls -a</span><br></pre></td></tr></table></figure>
+
+<h3 id="查看文件内容"><a href="#查看文件内容" class="headerlink" title="查看文件内容"></a>查看文件内容</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ cat xxx</span><br></pre></td></tr></table></figure>
+
+<h3 id="查看长文件内容"><a href="#查看长文件内容" class="headerlink" title="查看长文件内容"></a>查看长文件内容</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ more xxx</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>备注</li>
+</ul>
+<p>回车换行，空格翻页</p>
+<h4 id="查看文件前十行内容"><a href="#查看文件前十行内容" class="headerlink" title="查看文件前十行内容"></a>查看文件前十行内容</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ head -n 10 xxx</span><br></pre></td></tr></table></figure>
+
+<h4 id="查看文件后十行内容"><a href="#查看文件后十行内容" class="headerlink" title="查看文件后十行内容"></a>查看文件后十行内容</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ tail -n 10 xxx</span><br></pre></td></tr></table></figure>
+
+<h4 id="查看实时更新的文件内容"><a href="#查看实时更新的文件内容" class="headerlink" title="查看实时更新的文件内容"></a>查看实时更新的文件内容</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ tail -f xxx</span><br></pre></td></tr></table></figure>
+
+<h4 id="显示文件行数"><a href="#显示文件行数" class="headerlink" title="显示文件行数"></a>显示文件行数</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ wc -l xxx</span><br></pre></td></tr></table></figure>
+
+<h4 id="显示文件字节数"><a href="#显示文件字节数" class="headerlink" title="显示文件字节数"></a>显示文件字节数</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ wc -c xxx</span><br></pre></td></tr></table></figure>
+
+<h4 id="显示文件单词数量"><a href="#显示文件单词数量" class="headerlink" title="显示文件单词数量"></a>显示文件单词数量</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ wc -w xxx</span><br></pre></td></tr></table></figure>
+
+<h3 id="查看文件的时间"><a href="#查看文件的时间" class="headerlink" title="查看文件的时间"></a>查看文件的时间</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">stat</span> xxx</span><br></pre></td></tr></table></figure>
+
+<h3 id="按列提取文件内容"><a href="#按列提取文件内容" class="headerlink" title="按列提取文件内容"></a>按列提取文件内容</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ cut -d : -f 1 xxx</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>备注</li>
+</ul>
+<p>以冒号为间隔提取1列的信息</p>
+<h3 id="判断两个文件是否相同"><a href="#判断两个文件是否相同" class="headerlink" title="判断两个文件是否相同"></a>判断两个文件是否相同</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ diff --brief xxx1 xxx2</span><br></pre></td></tr></table></figure>
+
+<h4 id="判断两个文件具体哪处不同"><a href="#判断两个文件具体哪处不同" class="headerlink" title="判断两个文件具体哪处不同"></a>判断两个文件具体哪处不同</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ diff -c xxx1 xxx2</span><br></pre></td></tr></table></figure>
+
+<h3 id="新建一个文本文件"><a href="#新建一个文本文件" class="headerlink" title="新建一个文本文件"></a>新建一个文本文件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ touch xxx</span><br></pre></td></tr></table></figure>
+
+<h4 id="修改文件的最后修改时间"><a href="#修改文件的最后修改时间" class="headerlink" title="修改文件的最后修改时间"></a>修改文件的最后修改时间</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ touch -d <span class="string">"13:14"</span> xxx</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>备注</li>
+</ul>
+<p>将时间修改为”13:14”</p>
+<h3 id="新建一个文件目录"><a href="#新建一个文件目录" class="headerlink" title="新建一个文件目录"></a>新建一个文件目录</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ mkdir xxx</span><br></pre></td></tr></table></figure>
+
+<h4 id="新建一个有层次关系的目录"><a href="#新建一个有层次关系的目录" class="headerlink" title="新建一个有层次关系的目录"></a>新建一个有层次关系的目录</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ mkdir -p xxx1/xxx2/xxx3</span><br></pre></td></tr></table></figure>
+
+<h3 id="复制文件"><a href="#复制文件" class="headerlink" title="复制文件"></a>复制文件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ cp /SomeWhere1/xxx /SomeWhere2/xxx</span><br></pre></td></tr></table></figure>
+
+<h4 id="复制目录"><a href="#复制目录" class="headerlink" title="复制目录"></a>复制目录</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ cp -r xxx1/ xxx2/</span><br></pre></td></tr></table></figure>
+
+<h3 id="剪切文件"><a href="#剪切文件" class="headerlink" title="剪切文件"></a>剪切文件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ mv /SomeWhere1/xxx /SomeWhere2/xxx2</span><br></pre></td></tr></table></figure>
+
+<h4 id="重命名文件"><a href="#重命名文件" class="headerlink" title="重命名文件"></a>重命名文件</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ mv xxx1 xxx2</span><br></pre></td></tr></table></figure>
+
+<h3 id="删除文件"><a href="#删除文件" class="headerlink" title="删除文件"></a>删除文件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ rm xxx</span><br></pre></td></tr></table></figure>
+
+<h4 id="强制删除文件"><a href="#强制删除文件" class="headerlink" title="强制删除文件"></a>强制删除文件</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ rm -f xxx</span><br></pre></td></tr></table></figure>
+
+<h4 id="删除目录"><a href="#删除目录" class="headerlink" title="删除目录"></a>删除目录</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ rm -r xxx/</span><br></pre></td></tr></table></figure>
+
+<h3 id="显示文件的类型"><a href="#显示文件的类型" class="headerlink" title="显示文件的类型"></a>显示文件的类型</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ file xxx</span><br></pre></td></tr></table></figure>
+
+<h3 id="查看命令的位置"><a href="#查看命令的位置" class="headerlink" title="查看命令的位置"></a>查看命令的位置</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ whereis xxx</span><br></pre></td></tr></table></figure>
+
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://www.linuxprobe.com" target="_blank" rel="noopener">Linux就该这么学——刘遄</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>【笔记】挖矿（Ubuntu篇）</title>
     <url>/2019/11/10/%E6%8C%96%E7%9F%BF/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><del>记录如何在Ubuntu下”挖矿”，赚取BTC</del></p>

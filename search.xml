@@ -196,8 +196,8 @@
 ]]></content>
   </entry>
   <entry>
-    <title>【笔记】购买国外服务器后，如何搭建VPS（Ubuntu篇）</title>
-    <url>/2019/11/10/%E8%B4%AD%E4%B9%B0%E5%9B%BD%E5%A4%96%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%90%8E%EF%BC%8C%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAVPS/</url>
+    <title>【笔记】购买国外服务器搭建VPS（Ubuntu篇）</title>
+    <url>/2019/11/10/%E8%B4%AD%E4%B9%B0%E5%9B%BD%E5%A4%96%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BAVPS_01/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近，在<a href="https://www.vultr.com" target="_blank" rel="noopener">Vultr</a>购买了国外的服务器，接下来我记录一下如何搭建VPS</p>
 <a id="more"></a>
 
@@ -331,8 +331,8 @@
 ]]></content>
   </entry>
   <entry>
-    <title>【踩坑】在 VMware 安装 VMwareTools（Kali篇）</title>
-    <url>/2019/11/03/%E5%9C%A8-VMware-%E5%AE%89%E8%A3%85-VMwareTools/</url>
+    <title>【笔记】在VMware安装VMwareTools（Kali篇）</title>
+    <url>/2019/11/03/%E5%9C%A8VMware%E5%AE%89%E8%A3%85VMwareTools_01/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在VMware虚拟机安装kali系统之后，无法从虚拟机系统外复制文字或文件到虚拟机系统内，这是因为还没有安装虚拟机自带的工具，需要手动安装。（其他虚拟机软件大同小异，请根据软件提示安装）</p>
 <a id="more"></a>
 
@@ -408,8 +408,8 @@
 ]]></content>
   </entry>
   <entry>
-    <title>【笔记】更换 kali linux 更新源</title>
-    <url>/2019/11/03/%E6%9B%B4%E6%8D%A2-kali-linux-%E6%9B%B4%E6%96%B0%E6%BA%90/</url>
+    <title>【笔记】更换Linux更新源（Kali篇）</title>
+    <url>/2019/11/03/%E6%9B%B4%E6%8D%A2Linux%E6%9B%B4%E6%96%B0%E6%BA%90_01/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>安装完linux系统，首先要做的就是更新本地软件仓库，从远程软件仓库下载一些基本软件到本地软件仓库。然而如果不能科学上网，第一件事就要先更换更新源，至国内镜像站。</p>
 <a id="more"></a>
 
@@ -431,8 +431,8 @@
 ]]></content>
   </entry>
   <entry>
-    <title>【笔记】安装 kali linux 操作系统（VMware篇）</title>
-    <url>/2019/11/03/%E5%AE%89%E8%A3%85-kali-linux-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</url>
+    <title>【笔记】安装Linux操作系统（Kali_VMware篇）</title>
+    <url>/2019/11/03/%E5%AE%89%E8%A3%85Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F_01/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>今天与小伙伴一起，在他的电脑上的虚拟机(VMware 15)上安装了 kali linux 操作系统，故将笔记分享给需要的小伙伴</p>
 <a id="more"></a>
 

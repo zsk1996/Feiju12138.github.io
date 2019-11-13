@@ -50,19 +50,22 @@
   };
 </script>
 
-  <meta name="description" content="前言安装完linux系统，首先要做的就是更新本地软件仓库，从远程软件仓库下载一些基本软件到本地软件仓库。然而如果不能科学上网，第一件事就要先更换更新源，至国内镜像站。">
+  <meta name="description" content="前言在VMware虚拟机安装kali系统之后，无法从虚拟机系统外复制文字或文件到虚拟机系统内，这是因为还没有安装虚拟机自带的工具，需要手动安装。（其他虚拟机软件大同小异，请根据软件提示安装）">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【笔记】更换 kali linux 更新源">
-<meta property="og:url" content="https:&#x2F;&#x2F;feiju12138.github.io&#x2F;2019&#x2F;11&#x2F;03&#x2F;%E6%9B%B4%E6%8D%A2-kali-linux-%E6%9B%B4%E6%96%B0%E6%BA%90&#x2F;index.html">
+<meta property="og:title" content="【笔记】在VMware安装VMwareTools（Kali篇）">
+<meta property="og:url" content="https:&#x2F;&#x2F;feiju12138.github.io&#x2F;2019&#x2F;11&#x2F;03&#x2F;%E5%9C%A8VMware%E5%AE%89%E8%A3%85VMwareTools_01&#x2F;index.html">
 <meta property="og:site_name" content="绯鞠的博客">
-<meta property="og:description" content="前言安装完linux系统，首先要做的就是更新本地软件仓库，从远程软件仓库下载一些基本软件到本地软件仓库。然而如果不能科学上网，第一件事就要先更换更新源，至国内镜像站。">
+<meta property="og:description" content="前言在VMware虚拟机安装kali系统之后，无法从虚拟机系统外复制文字或文件到虚拟机系统内，这是因为还没有安装虚拟机自带的工具，需要手动安装。（其他虚拟机软件大同小异，请根据软件提示安装）">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https:&#x2F;&#x2F;feiju12138.github.io&#x2F;images&#x2F;20191103184839&#x2F;01.png">
-<meta property="og:updated_time" content="2019-11-03T13:17:34.702Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;feiju12138.github.io&#x2F;images&#x2F;20191103201219&#x2F;01.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;feiju12138.github.io&#x2F;images&#x2F;20191103201219&#x2F;02.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;feiju12138.github.io&#x2F;images&#x2F;20191103201219&#x2F;03.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;feiju12138.github.io&#x2F;images&#x2F;20191103201219&#x2F;04.png">
+<meta property="og:updated_time" content="2019-11-13T10:48:33.022Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;feiju12138.github.io&#x2F;images&#x2F;20191103184839&#x2F;01.png">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;feiju12138.github.io&#x2F;images&#x2F;20191103201219&#x2F;01.png">
 
-<link rel="canonical" href="https://feiju12138.github.io/2019/11/03/%E6%9B%B4%E6%8D%A2-kali-linux-%E6%9B%B4%E6%96%B0%E6%BA%90/">
+<link rel="canonical" href="https://feiju12138.github.io/2019/11/03/%E5%9C%A8VMware%E5%AE%89%E8%A3%85VMwareTools_01/">
 
 
 <script id="page-configurations">
@@ -76,7 +79,7 @@
   };
 </script>
 
-  <title>【笔记】更换 kali linux 更新源 | 绯鞠的博客</title>
+  <title>【笔记】在VMware安装VMwareTools（Kali篇） | 绯鞠的博客</title>
   
 
 
@@ -195,7 +198,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://feiju12138.github.io/2019/11/03/%E6%9B%B4%E6%8D%A2-kali-linux-%E6%9B%B4%E6%96%B0%E6%BA%90/">
+    <link itemprop="mainEntityOfPage" href="https://feiju12138.github.io/2019/11/03/%E5%9C%A8VMware%E5%AE%89%E8%A3%85VMwareTools_01/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -208,7 +211,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          【笔记】更换 kali linux 更新源
+          【笔记】在VMware安装VMwareTools（Kali篇）
         </h1>
 
         <div class="post-meta">
@@ -217,10 +220,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2019-11-03 18:48:39 / 修改时间：21:17:34" itemprop="dateCreated datePublished" datetime="2019-11-03T18:48:39+08:00">2019-11-03</time>
+              <time title="创建时间：2019-11-03 20:12:19" itemprop="dateCreated datePublished" datetime="2019-11-03T20:12:19+08:00">2019-11-03</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-11-13 18:48:33" itemprop="dateModified" datetime="2019-11-13T18:48:33+08:00">2019-11-13</time>
+              </span>
 
           
 
@@ -233,24 +242,40 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>安装完linux系统，首先要做的就是更新本地软件仓库，从远程软件仓库下载一些基本软件到本地软件仓库。然而如果不能科学上网，第一件事就要先更换更新源，至国内镜像站。</p>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在VMware虚拟机安装kali系统之后，无法从虚拟机系统外复制文字或文件到虚拟机系统内，这是因为还没有安装虚拟机自带的工具，需要手动安装。（其他虚拟机软件大同小异，请根据软件提示安装）</p>
 <a id="more"></a>
 
-<h2 id="搜索国内镜像站地址"><a href="#搜索国内镜像站地址" class="headerlink" title="搜索国内镜像站地址"></a>搜索国内镜像站地址</h2><ul>
-<li>百度上可以搜到很多国内镜像站地址，在这里我从CSDN上找到了阿里云的国内镜像站地址，提供给大家</li>
+<h2 id="在虚拟机系统内挂载虚拟光盘映像"><a href="#在虚拟机系统内挂载虚拟光盘映像" class="headerlink" title="在虚拟机系统内挂载虚拟光盘映像"></a>在虚拟机系统内挂载虚拟光盘映像</h2><ul>
+<li>VMware菜单-&gt; 虚拟机-&gt;安装 VMware Tools（因为我的已经安装成功，所以这里显示重新安装 VMware Tools）</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">deb http://mirrors.aliyun.com/ubuntu/ trusty main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ trusty-security main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ trusty-updates main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ trusty-proposed main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ trusty-backports main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ trusty main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ trusty-security main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ trusty-updates main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ trusty-proposed main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ trusty-backports main restricted universe multiverse</span><br></pre></td></tr></table></figure>
-
-<h2 id="修改本地”sources-list”文件"><a href="#修改本地”sources-list”文件" class="headerlink" title="修改本地”sources.list”文件"></a>修改本地”sources.list”文件</h2><ul>
-<li>使用vim编辑器，将更新源地址复制到”sources.list”文件末尾</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/apt/sources.list</span><br></pre></td></tr></table></figure>
-
-<p><img src="/images/20191103184839/01.png" alt="01.png"></p>
+<p><img src="/images/20191103201219/01.png" alt="01.png"></p>
 <ul>
-<li>保存，退出，更新源更换成功</li>
+<li>挂载成功后，kali系统会提示有光盘插入</li>
 </ul>
-<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://blog.csdn.net/qq_39263240/article/details/79342582" target="_blank" rel="noopener">CSDN——qq_39263240</a></p>
+<p><img src="/images/20191103201219/02.png" alt="02.png"></p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><ul>
+<li>复制虚拟光盘映像中的安装压缩包到本地Home目录</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp /media/cdrom/VMwareTools-10.3.10-13959562.tar.gz ~</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>解压压缩包</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -xf VMwareTools-10.3.10-13959562.tar.gz vmware-tools-distrib/</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>执行安装命令</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~</span><br><span class="line">vmware-tools-distrib/vmware-install.pl</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/20191103201219/03.png" alt="03.png"></p>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><ul>
+<li><p>执行安装命令后，会遇到停顿，脚本会自动向你询问安装的具体配置，你可以根据需要在”()”内选择一项输入，也可以像我一样按回车键（直接回车确定表示使用默认配置）</p>
+</li>
+<li><p>显示”Enjoy,”表示安装成功</p>
+</li>
+</ul>
+<p><img src="/images/20191103201219/04.png" alt="04.png"></p>
 
     </div>
 
@@ -285,16 +310,16 @@
 
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
-                <a href="/2019/11/03/%E5%AE%89%E8%A3%85-kali-linux-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="next" title="【笔记】安装 kali linux 操作系统（VMware篇）">
-                  <i class="fa fa-chevron-left"></i> 【笔记】安装 kali linux 操作系统（VMware篇）
+                <a href="/2019/11/03/kali%E9%98%BF%E9%87%8C%E4%BA%91%E6%9B%B4%E6%96%B0%E6%BA%90%E6%8A%A5%E9%94%99%E9%97%AE%E9%A2%98/" rel="next" title="【踩坑】kali阿里云更新源报错问题">
+                  <i class="fa fa-chevron-left"></i> 【踩坑】kali阿里云更新源报错问题
                 </a>
             </div>
 
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-                <a href="/2019/11/03/kali%E9%98%BF%E9%87%8C%E4%BA%91%E6%9B%B4%E6%96%B0%E6%BA%90%E6%8A%A5%E9%94%99%E9%97%AE%E9%A2%98/" rel="prev" title="【踩坑】kali阿里云更新源报错问题">
-                  【踩坑】kali阿里云更新源报错问题 <i class="fa fa-chevron-right"></i>
+                <a href="/2019/11/06/%E9%87%8D%E7%BD%AEMac%E7%9A%84%E6%89%80%E6%9C%89%E7%BD%91%E7%BB%9C%E8%AE%BE%E7%BD%AE/" rel="prev" title="【踩坑】重置Mac的所有网络设置">
+                  【踩坑】重置Mac的所有网络设置 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
@@ -340,7 +365,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#搜索国内镜像站地址"><span class="nav-number">2.</span> <span class="nav-text">搜索国内镜像站地址</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改本地”sources-list”文件"><span class="nav-number">3.</span> <span class="nav-text">修改本地”sources.list”文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考文献"><span class="nav-number">4.</span> <span class="nav-text">参考文献</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在虚拟机系统内挂载虚拟光盘映像"><span class="nav-number">2.</span> <span class="nav-text">在虚拟机系统内挂载虚拟光盘映像</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">3.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置"><span class="nav-number">4.</span> <span class="nav-text">配置</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

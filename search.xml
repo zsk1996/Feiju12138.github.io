@@ -10,7 +10,7 @@
 <li>访达-&gt;应用程序-&gt;实用工具-&gt;终端</li>
 </ul>
 <p><img src="/images/20191113133100/01.png" alt="01.png"></p>
-<h2 id="使用”scp”工具进行文件传输"><a href="#使用”scp”工具进行文件传输" class="headerlink" title="使用”scp”工具进行文件传输"></a>使用”scp”工具进行文件传输</h2><h3 id="开始下载"><a href="#开始下载" class="headerlink" title="开始下载"></a>开始下载</h3><ul>
+<h2 id="使用”scp”工具进行文件下载"><a href="#使用”scp”工具进行文件下载" class="headerlink" title="使用”scp”工具进行文件下载"></a>使用”scp”工具进行文件下载</h2><h3 id="开始下载"><a href="#开始下载" class="headerlink" title="开始下载"></a>开始下载</h3><ul>
 <li>以”linux”用户身份，登录服务器”192.168.1.216”，将”图片”目录下的”01.png”，下载到本地的”下载”目录</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">scp linux@192.168.1.216:/home/linux/图片/01.png ~/Downloads/</span><br></pre></td></tr></table></figure>

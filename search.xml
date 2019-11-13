@@ -196,40 +196,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>【笔记】挖矿（Ubuntu篇）</title>
-    <url>/2019/11/10/%E6%8C%96%E7%9F%BF/</url>
-    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><del>记录如何在Ubuntu下”挖矿”，赚取BTC</del></p>
-<a id="more"></a>
-
-<h2 id="下载工具"><a href="#下载工具" class="headerlink" title="下载工具"></a>下载工具</h2><ul>
-<li>使用”apt-get”工具安装”qt5-default”软件</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get install qt5-default</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>使用”git”工具克隆”nheqminer”项目</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/ocminer/nheqminer.git</span><br></pre></td></tr></table></figure>
-
-<h2 id="编译工具"><a href="#编译工具" class="headerlink" title="编译工具"></a>编译工具</h2><ul>
-<li>创建并进入构建目录</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> nheqminer</span><br><span class="line">mkdir build</span><br><span class="line"><span class="built_in">cd</span> build</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>开始编译</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">qmake ../nheqminer/nheqminer.pro</span><br><span class="line">make</span><br></pre></td></tr></table></figure>
-
-<h2 id="雇佣”矿工”"><a href="#雇佣”矿工”" class="headerlink" title="雇佣”矿工”"></a>雇佣”矿工”</h2><ul>
-<li>复制自己的 Bitcoin Address 到相应位置， Worker Name 可以任意命名，”-t”参数后面为CPU占用核数</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">./nheqminer -l usa -u Bitcoin_Address.Worker_Name -t 1</span><br></pre></td></tr></table></figure>
-
-<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://www.youtube.com/watch?v=EldQk9R6sww" target="_blank" rel="noopener">YouTube——IMineBlocks</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>【笔记】购买国外服务器后，如何搭建VPS（Ubuntu篇）</title>
     <url>/2019/11/10/%E8%B4%AD%E4%B9%B0%E5%9B%BD%E5%A4%96%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%90%8E%EF%BC%8C%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BAVPS/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近，在<a href="https://www.vultr.com" target="_blank" rel="noopener">Vultr</a>购买了国外的服务器，接下来我记录一下如何搭建VPS</p>

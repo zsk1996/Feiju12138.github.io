@@ -370,8 +370,8 @@
 ]]></content>
   </entry>
   <entry>
-    <title>【踩坑】kali阿里云更新源报错问题</title>
-    <url>/2019/11/03/kali%E9%98%BF%E9%87%8C%E4%BA%91%E6%9B%B4%E6%96%B0%E6%BA%90%E6%8A%A5%E9%94%99%E9%97%AE%E9%A2%98/</url>
+    <title>【踩坑】Kali阿里云更新源报错问题</title>
+    <url>/2019/11/03/Kali%E9%98%BF%E9%87%8C%E4%BA%91%E6%9B%B4%E6%96%B0%E6%BA%90%E6%8A%A5%E9%94%99%E9%97%AE%E9%A2%98/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>kali更换了阿里云更新源执行更新命令后报错，错误分别是</p>
 <ul>
 <li><p>由于没有公钥，无法验证下列签名：……</p>

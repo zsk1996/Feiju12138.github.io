@@ -1,6 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>【骚操作】用命令行激活Windows系统</title>
+    <url>/2019/11/14/%E7%94%A8%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%BF%80%E6%B4%BBWindows%E7%B3%BB%E7%BB%9F/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>通常情况下，可以在Windows系统的”设置”中激活新的Windows系统，但是总有那么几款Windows在”设置”中找不到”激活”，或者找起来很麻烦，不管什么原因，介绍一种使用命令行激活Windows10的方法</p>
+<a id="more"></a>
+
+<h2 id="打开命令行"><a href="#打开命令行" class="headerlink" title="打开命令行"></a>打开命令行</h2><ul>
+<li>开始-&gt;Windows系统-&gt;命令提示符（右键）-&gt;更多-&gt;以管理员身份运行</li>
+</ul>
+<p><img src="/images/20191114231631/01.png" alt="01.png"></p>
+<h2 id="卸载产品密钥（可选）"><a href="#卸载产品密钥（可选）" class="headerlink" title="卸载产品密钥（可选）"></a>卸载产品密钥（可选）</h2><ul>
+<li>如果设备已激活，可以通过此命令取消激活</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">slmgr.vbs /upk</span><br></pre></td></tr></table></figure>
+
+<h2 id="激活Windows10"><a href="#激活Windows10" class="headerlink" title="激活Windows10"></a>激活Windows10</h2><ul>
+<li>输入激活命令</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">slmgr /ipk W269N-WFGWX-YVC9B-4J6C9-T83GX</span><br><span class="line">slmgr /skms zh.us.to</span><br><span class="line">slmgr /ato</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>查看产品过期时间</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">slmgr.vbs -xpr</span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><p><img src="/images/20191114231631/02.png" alt="02.png"></p>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://www.cnblogs.com/junjunjun123/p/8548703.html" target="_blank" rel="noopener">博客园——我有点帅哦</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>【笔记】使用Microsoft原版系统映像安装Windows10</title>
+    <url>/2019/11/14/%E4%BD%BF%E7%94%A8Microsoft%E5%8E%9F%E7%89%88%E7%B3%BB%E7%BB%9F%E6%98%A0%E5%83%8F%E5%AE%89%E8%A3%85Windows10/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>安装Microsoft官方原版Windows10（企业版）系统映像</p>
+<a id="more"></a>
+
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
+<li>有Microsoft官方原版Windows10系统映像的U盘</li>
+</ul>
+<h2 id="开始安装"><a href="#开始安装" class="headerlink" title="开始安装"></a>开始安装</h2><h3 id="开机手动选择引导磁盘"><a href="#开机手动选择引导磁盘" class="headerlink" title="开机手动选择引导磁盘"></a>开机手动选择引导磁盘</h3><p>插入U盘，启动电脑，按”F12”进入手动选择引导，选择U盘引导开机</p>
+<h3 id="Windows安装程序"><a href="#Windows安装程序" class="headerlink" title="Windows安装程序"></a>Windows安装程序</h3><ul>
+<li>语言选择</li>
+</ul>
+<p>如果在中文版官网下载的系统映像，直接默认下一步</p>
+<ul>
+<li>现在安装</li>
+</ul>
+<p>选择后，等待”安装程序正在启动”</p>
+<ul>
+<li>适用的声明和许可条款</li>
+</ul>
+<p>勾选”我接受许可条款”</p>
+<ul>
+<li>你想执行哪种类型的安装？</li>
+</ul>
+<p>选择”自定义：仅安装Windows（高级）”</p>
+<ul>
+<li>你想Windows安装在哪里？</li>
+</ul>
+<p>选择一个硬盘，将系统安装在该硬盘</p>
+<ul>
+<li>正在安装Windows</li>
+</ul>
+<p>等待安装完成</p>
+<h3 id="Windows初始化设置"><a href="#Windows初始化设置" class="headerlink" title="Windows初始化设置"></a>Windows初始化设置</h3><ul>
+<li>让我们先从区域设置开始</li>
+</ul>
+<p>选择”中国”</p>
+<ul>
+<li>这种键盘布局是否合适？</li>
+</ul>
+<p>选择”微软拼音”</p>
+<ul>
+<li>是否想要添加第二种键盘布局？</li>
+</ul>
+<p>选择”跳过”</p>
+<ul>
+<li>网络</li>
+</ul>
+<p>选择”跳过”</p>
+<ul>
+<li>用户名</li>
+</ul>
+<p>设置一个计算机名称</p>
+<ul>
+<li>密码</li>
+</ul>
+<p>设置一个密码，如果不需要密码，直接选择下一步</p>
+<ul>
+<li>在具有活动历史记录的设备中执行更多操作</li>
+</ul>
+<p>选择”否”</p>
+<ul>
+<li>为你的设备选择隐私设置</li>
+</ul>
+<p>全部选择否，选择”接受”</p>
+<h2 id="安装完成"><a href="#安装完成" class="headerlink" title="安装完成"></a>安装完成</h2><p>在安装期间可能会多次重启，属于正常现象</p>
+]]></content>
+  </entry>
+  <entry>
     <title>【笔记】在MacOS系统上制作Windows系统安装盘</title>
     <url>/2019/11/14/%E5%9C%A8MacOS%E7%B3%BB%E7%BB%9F%E4%B8%8A%E5%88%B6%E4%BD%9CWindows%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85%E7%9B%98/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>本篇介绍在MacOS系统上，利用命令行，制作Microsoft原版的Windows系统安装盘</p>

@@ -1,6 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>【踩坑】将四叶草引导植入硬盘</title>
+    <url>/2019/11/15/%E5%B0%86%E5%9B%9B%E5%8F%B6%E8%8D%89%E5%BC%95%E5%AF%BC%E6%A4%8D%E5%85%A5%E7%A1%AC%E7%9B%98/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>安装好黑苹果后的第一件事就是把四叶草引导植入到硬盘，这样即便是不插有四叶草引导的U盘，也可以使用硬盘里的四叶草引导黑苹果开机</p>
+<a id="more"></a>
+
+<h2 id="进入WindowsPE"><a href="#进入WindowsPE" class="headerlink" title="进入WindowsPE"></a>进入WindowsPE</h2><ul>
+<li><p>插上有WindowsPE的系统维护盘，开机进入PE</p>
+</li>
+<li><p>打开DiskGenius磁盘工具</p>
+</li>
+<li><p>插上有四叶草引导的U盘</p>
+</li>
+<li><p>将以下目录复制到硬盘</p>
+</li>
+</ul>
+<blockquote>
+<p>U盘中的ESP/EFI/BOOT/ -&gt; 硬盘中的ESP/EFI/BOOT<br>U盘中的ESP/EFI/CLOVER/ -&gt; 硬盘中的ESP/EFI/CLOVER</p>
+</blockquote>
+<h2 id="DELL的手动添加引导（可选）"><a href="#DELL的手动添加引导（可选）" class="headerlink" title="DELL的手动添加引导（可选）"></a>DELL的手动添加引导（可选）</h2><p>由于本次实验使用的DELL台式机，复制完四叶草目录后仍不会自动进入四叶草页面，所以我手动将”.efi”文件添加至开机引导</p>
+<ul>
+<li><p>开机按”F12”-&gt;BIOS Setup</p>
+</li>
+<li><p>General-&gt;Boot Sequence-&gt;Boot List Option-&gt;Add Boot Option</p>
+</li>
+</ul>
+<p>在”Boot Option Name”内任意命名这个引导，在”File Name”选择/EFI/BOOT/BOOTX64.efi</p>
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><p>这样，以后开机的时候就可以通过硬盘直接进入四叶草引导页面</p>
+]]></content>
+  </entry>
+  <entry>
     <title>【笔记】安装黑苹果系统（MacOS Catalina）</title>
     <url>/2019/11/15/%E5%AE%89%E8%A3%85%E9%BB%91%E8%8B%B9%E6%9E%9C%E7%B3%BB%E7%BB%9F/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在苹果电脑上安装的苹果系统，叫做白苹果系统，在非苹果电脑上安装的苹果系统，叫做黑苹果系统，本节讲一下安装黑苹果系统</p>
@@ -121,7 +151,7 @@
 <li><p>选中需要安装黑苹果的硬盘-&gt;抹掉</p>
 </li>
 </ul>
-<p>名称-&gt;Macintosh HD<br>格式-&gt;APFS</p>
+<p>名称可以任意命名，我将它命名为”Macintosh HD”（因为白苹果默认硬盘名是这个），格式选择”APFS”</p>
 <ul>
 <li><p>点击”抹掉”，等待完成后，点击”完成”</p>
 </li>

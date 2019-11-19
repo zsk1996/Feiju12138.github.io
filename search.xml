@@ -1,6 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>【踩坑】Android Studio 报错："Connection refused (Connection refused)"</title>
+    <url>/2019/11/19/Android-Studio-%E6%8A%A5%E9%94%99-Connection-refused-Connection-refused/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Android Studio 项目点击运行后，待构建完成，报错：”Connection refused (Connection refused)”</p>
+<p>解决办法：删除代理设置</p>
+<a id="more"></a>
+
+<h2 id="解决问题"><a href="#解决问题" class="headerlink" title="解决问题"></a>解决问题</h2><ul>
+<li>编辑”gradle.properties”文件</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vim /Users/(YourName)/.gradle/gradle.properties</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>删除代理设置</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">systemProp.http.proxyHost=127.0.0.1</span><br><span class="line">systemProp.http.proxyPort=52909</span><br><span class="line">systemProp.https.proxyHost=127.0.0.1</span><br><span class="line">systemProp.https.proxyPort=52909</span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://www.jianshu.com/p/dc12c965abbc" target="_blank" rel="noopener">简书——flovm</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>【笔记】骇客技术解决浏览器兼容性问题（JavaScript篇）</title>
     <url>/2019/11/18/%E9%AA%87%E5%AE%A2%E6%8A%80%E6%9C%AF%E8%A7%A3%E5%86%B3%E6%B5%8F%E8%A7%88%E5%99%A8%E5%85%BC%E5%AE%B9%E6%80%A7%E9%97%AE%E9%A2%98/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>通过注释的方法，解决代码在浏览器中的兼容性问题（主要针对IE浏览器）</p>

@@ -33,7 +33,7 @@
 </ul>
 <p><img src="/images/20191120203632/02.png" alt="02.png"></p>
 <h3 id="解锁BootLock"><a href="#解锁BootLock" class="headerlink" title="解锁BootLock"></a>解锁BootLock</h3><p>此处略过，因为三星S5默认没有开启BL锁</p>
-<h3 id="刷入第三方Recovery（TWRP）"><a href="#刷入第三方Recovery（TWRP）" class="headerlink" title="刷入第三方Recovery（TWRP）"></a>刷入第三方Recovery（TWRP）</h3><h4 id="手机进入挖煤模式"><a href="#手机进入挖煤模式" class="headerlink" title="手机进入挖煤模式"></a>手机进入挖煤模式</h4><ul>
+<h3 id="刷入第三方Recovery（TWRP）"><a href="#刷入第三方Recovery（TWRP）" class="headerlink" title="刷入第三方Recovery（TWRP）"></a>刷入第三方Recovery（TWRP）</h3><h4 id="手机进入Fastboot（挖煤模式）"><a href="#手机进入Fastboot（挖煤模式）" class="headerlink" title="手机进入Fastboot（挖煤模式）"></a>手机进入Fastboot（挖煤模式）</h4><ul>
 <li>按住”音量-“+”Home”+”关机”</li>
 </ul>
 <p><img src="/images/20191120203632/03.png" alt="03.png"></p>

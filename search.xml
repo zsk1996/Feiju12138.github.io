@@ -1,6 +1,137 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>【笔记】Android 刷机</title>
+    <url>/2019/11/20/Android-%E5%88%B7%E6%9C%BA/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>记一次安卓手机刷机过程。</p>
+<p>我用的手机为二手”Samsung Galaxy S5（中国移动定制版三星系统）”，数据线为”公牛安卓数据线”，电脑系统为Windows和MacOS，刷机后手机系统”Flyme 6.7.12.29R beta（魅族系统）”，初始和完成安卓版本”Android 6.0.1”</p>
+<a id="more"></a>
+
+<p><font color="red">警告：本文仅为成功案例分享，出现任何问题后果自负</font></p>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
+<li><p><a href="https://developer.samsung.com/galaxy/others/android-usb-driver-for-windows" target="_blank" rel="noopener">SAMSUNG_USB_Driver_for_Mobile_Phones.exe</a>（三星手机驱动Windows版）</p>
+</li>
+<li><p><a href="https://www.samsung.com/cn/apps/smart-switch/" target="_blank" rel="noopener">SmartSwitch4Mac_setup.dmg</a>（三星手机S换机助手Mac版）</p>
+</li>
+<li><p><a href="http://bbs.gfan.com/android-8265909-1-1.html" target="_blank" rel="noopener">samsung_scl23_scl23_mmb29m.scl23kdu1dqa4_recovery.tar.md5</a>（三星原版Recovery）</p>
+</li>
+<li><p><a href="https://dl.twrp.me/kltechn/" target="_blank" rel="noopener">twrp-3.0.2-1-kltechn.img.tar</a>（TWRP第三方Recovery）</p>
+</li>
+<li><p><a href="https://www.flyme.cn/firmwarelist-128.html" target="_blank" rel="noopener">flyme_SM-G9008W_ddfzl_6.7.12.29R-beta.zip</a>（Flyme三星S5版魅族系统映像）</p>
+</li>
+<li><p><a href="https://www.droidviews.com/download-latest-adb-and-fastboot-sdk-platform-tools-win-mac-linux/" target="_blank" rel="noopener">SDK Platform Tools</a>（adb工具包）</p>
+</li>
+<li><p>三星SD卡（如果卡刷）</p>
+</li>
+</ul>
+<h2 id="开始刷机"><a href="#开始刷机" class="headerlink" title="开始刷机"></a>开始刷机</h2><h3 id="分别在Windows系统和MacOS系统安装驱动"><a href="#分别在Windows系统和MacOS系统安装驱动" class="headerlink" title="分别在Windows系统和MacOS系统安装驱动"></a>分别在Windows系统和MacOS系统安装驱动</h3><ul>
+<li>Windows</li>
+</ul>
+<p><img src="/images/20191120203632/01.png" alt="01.png"></p>
+<ul>
+<li>MacOS</li>
+</ul>
+<p><img src="/images/20191120203632/02.png" alt="02.png"></p>
+<h3 id="解锁BootLock"><a href="#解锁BootLock" class="headerlink" title="解锁BootLock"></a>解锁BootLock</h3><p>此处略过，因为三星S5默认没有开启BL锁</p>
+<h3 id="刷入第三方Recovery（TWRP）"><a href="#刷入第三方Recovery（TWRP）" class="headerlink" title="刷入第三方Recovery（TWRP）"></a>刷入第三方Recovery（TWRP）</h3><h4 id="手机进入挖煤模式"><a href="#手机进入挖煤模式" class="headerlink" title="手机进入挖煤模式"></a>手机进入挖煤模式</h4><ul>
+<li>按住”音量-“+”Home”+”关机”</li>
+</ul>
+<p><img src="/images/20191120203632/03.png" alt="03.png"></p>
+<ul>
+<li>“音量+”确认</li>
+</ul>
+<p><img src="/images/20191120203632/04.png" alt="04.png"></p>
+<h4 id="刷入第三方TWRP"><a href="#刷入第三方TWRP" class="headerlink" title="刷入第三方TWRP"></a>刷入第三方TWRP</h4><ul>
+<li><p>Windows系统打开”Odin 3”软件</p>
+</li>
+<li><p>手机数据线连接电脑</p>
+</li>
+<li><p>Odin 第一列 第三行 颜色变化，表示连接成功</p>
+</li>
+<li><p>点击”AP”，选择”TWRP”第三方Recovery，选择”Start”</p>
+</li>
+</ul>
+<p>此过程可能会失败，如遇失败，请刷回三星原厂Recovery</p>
+<ul>
+<li><p>待手机进度条满，手机会自动重启</p>
+</li>
+<li><p>重启时按住”音量+”+”Home”+”开机键”进入Recovery模式</p>
+</li>
+</ul>
+<p><img src="/images/20191120203632/05.png" alt="05.png"></p>
+<p><img src="/images/20191120203632/06.png" alt="06.png"></p>
+<ul>
+<li>首次进入TWRP需要设置语言为”Chinese（Simplified）”</li>
+</ul>
+<h3 id="刷入系统"><a href="#刷入系统" class="headerlink" title="刷入系统"></a>刷入系统</h3><h4 id="“双清”"><a href="#“双清”" class="headerlink" title="“双清”"></a>“双清”</h4><ul>
+<li><p>选择”清除”</p>
+</li>
+<li><p>选择”高级清除菜单”</p>
+</li>
+</ul>
+<p><img src="/images/20191120203632/07.png" alt="07.png"></p>
+<ul>
+<li><p>选择除”SD卡”和”USB Storage”以外的所有文件夹</p>
+</li>
+<li><p>滑动确认删除</p>
+</li>
+</ul>
+<p><img src="/images/20191120203632/08.png" alt="08.png"></p>
+<ul>
+<li><p>左下角返回</p>
+</li>
+<li><p>选择”格式化 Data 分区”</p>
+</li>
+</ul>
+<p><img src="/images/20191120203632/09.png" alt="09.png"></p>
+<ul>
+<li>输入”yes”，确定</li>
+</ul>
+<p><img src="/images/20191120203632/10.png" alt="10.png"></p>
+<h4 id="“卡”刷（可选）"><a href="#“卡”刷（可选）" class="headerlink" title="“卡”刷（可选）"></a>“卡”刷（可选）</h4><ul>
+<li><p>将Flyme系统映像放在SD卡根目录</p>
+</li>
+<li><p>在TWRP首页选择”安装”</p>
+</li>
+</ul>
+<p><img src="/images/20191120203632/11.png" alt="11.png"></p>
+<ul>
+<li>选择”选择存储器”-&gt;”SD卡”</li>
+</ul>
+<p><img src="/images/20191120203632/12.png" alt="12.png"></p>
+<ul>
+<li>选择”.zip”Flyme系统映像-&gt;”滑动确认刷入”</li>
+</ul>
+<p><img src="/images/20191120203632/13.png" alt="13.png"></p>
+<h4 id="“线”刷"><a href="#“线”刷" class="headerlink" title="“线”刷"></a>“线”刷</h4><ul>
+<li>Mac使用HomeBrew下载”android-platform-tools”</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew cask install android-platform-tools</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>在TWRP首页选择”高级”</li>
+</ul>
+<p><img src="/images/20191120203632/14.png" alt="14.png"></p>
+<ul>
+<li>选择”ADB线刷”</li>
+</ul>
+<p><img src="/images/20191120203632/15.png" alt="15.png"></p>
+<ul>
+<li>使用终端命令线刷</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">/Users/hatsunemiku/Library/Android/sdk/platform-tools/adb sideload /Users/hatsunemiku/Downloads/flyme_SM-G9008W_ddfzl_6.7.12.29R-beta.zip</span><br></pre></td></tr></table></figure>
+
+<h2 id="成功"><a href="#成功" class="headerlink" title="成功"></a>成功</h2><ul>
+<li><p>刷机成功后，首次启动手机会非常慢。</p>
+</li>
+<li><p>展示一张刷机成功的照片，留作纪念。</p>
+</li>
+</ul>
+<p><img src="/images/20191120203632/16.png" alt="16.png"></p>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://blog.csdn.net/sinat_29315697/article/details/79665665" target="_blank" rel="noopener">CSDN——henauchin</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>【踩坑】Android Studio 报错："Connection refused (Connection refused)"</title>
     <url>/2019/11/19/Android-Studio-%E6%8A%A5%E9%94%99-Connection-refused-Connection-refused/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Android Studio 项目点击运行后，待构建完成，报错：”Connection refused (Connection refused)”</p>

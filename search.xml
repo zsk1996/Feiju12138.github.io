@@ -73,7 +73,14 @@
 <p><img src="/images/20191121184916/06.png" alt="06.png"></p>
 <h3 id="刷入Magisk获取ROOT权限（可选）"><a href="#刷入Magisk获取ROOT权限（可选）" class="headerlink" title="刷入Magisk获取ROOT权限（可选）"></a>刷入Magisk获取ROOT权限（可选）</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">adb sideload /Users/hatsunemiku/Downloads/Magisk-v20.1.zip</span><br></pre></td></tr></table></figure>
 
-<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://wiki.lineageos.org/devices/klte" target="_blank" rel="noopener">LineageWiki</a></p>
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><ul>
+<li><p>刷机成功后，首次启动手机会非常慢。</p>
+</li>
+<li><p>展示一张刷机成功的照片，留作纪念。</p>
+</li>
+</ul>
+<p><img src="/images/20191121184916/07.png" alt="07.png"></p>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://wiki.lineageos.org/devices/klte" target="_blank" rel="noopener">LineageWiki</a></p>
 <p><a href="https://www.youtube.com/watch?v=Q6F1AlWRIs0" target="_blank" rel="noopener">YouTuBe——Meteorite Theory</a></p>
 <p><a href="https://www.youtube.com/watch?v=h5Kp_jybnjQ" target="_blank" rel="noopener">YouTuBe——Mayank Shekhar</a></p>
 <p><a href="https://www.youtube.com/watch?v=E9rvOJemsAc" target="_blank" rel="noopener">YouTuBe——Daze One</a></p>

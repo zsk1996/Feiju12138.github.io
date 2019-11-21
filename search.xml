@@ -29,7 +29,7 @@
 </ul>
 <p><a href="https://feiju12138.github.io/2019/11/20/Android-刷机_1/#“双清”">传送门</a></p>
 <ul>
-<li>“线刷”</li>
+<li>“线”刷</li>
 </ul>
 <p><a href="https://feiju12138.github.io/2019/11/20/Android-刷机_1/#“线”刷">传送门</a></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">adb sideload /Users/hatsunemiku/Downloads/lineage-16.0-20191120-nightly-kltechn-signed.zip</span><br></pre></td></tr></table></figure>

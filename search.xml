@@ -1,6 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>【笔记】Android 刷机（LineageOS篇）</title>
+    <url>/2019/11/21/Android-%E5%88%B7%E6%9C%BA_2/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>续上次安卓手机刷机过程。</p>
+<p>我用的手机为二手”Samsung Galaxy S5（中国移动定制版三星系统）”，数据线为”公牛安卓数据线”，电脑系统为MacOS，刷机后手机系统”lineage 16.0 20191120（LineageOS系统）”，初始安卓版本”Android 6.0.1”，刷机后安卓版本”Android 9”</p>
+<a id="more"></a>
+
+<p><font color="red">警告：本文仅为成功案例分享，出现任何问题后果自负</font></p>
+<h2 id="准备工作（续）"><a href="#准备工作（续）" class="headerlink" title="准备工作（续）"></a>准备工作（续）</h2><ul>
+<li><p><a href="https://download.lineageos.org/kltechn" target="_blank" rel="noopener">lineage-16.0-20191120-nightly-kltechn-signed.zip</a>（LineageOS三星S5版系统映像）</p>
+</li>
+<li><p><a href="https://opengapps.org/?api=9.0&variant=nano" target="_blank" rel="noopener">open_gapps-arm-9.0-super-20191121.1.zip</a>（谷歌全家桶刷机包）</p>
+</li>
+<li><p><a href="https://github.com/topjohnwu/Magisk/releases" target="_blank" rel="noopener">Magisk-v20.1.zip</a>（Magisk刷机包）</p>
+</li>
+</ul>
+<h2 id="开始刷机"><a href="#开始刷机" class="headerlink" title="开始刷机"></a>开始刷机</h2><h3 id="后接上文"><a href="#后接上文" class="headerlink" title="后接上文"></a>后接上文</h3><ul>
+<li><a href="https://feiju12138.github.io/2019/11/20/Android-刷机_1/">传送门</a></li>
+</ul>
+<h3 id="刷入第三方Recover（TWRP——另一种方法）"><a href="#刷入第三方Recover（TWRP——另一种方法）" class="headerlink" title="刷入第三方Recover（TWRP——另一种方法）"></a>刷入第三方Recover（TWRP——另一种方法）</h3><ul>
+<li>使用”fastboot”工具在Fastboot模式刷入TWRP</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">fastboot flash recovery /Users/hatsunemiku/Downloads/twrp-3.0.2-1-kltechn.img.tar</span><br></pre></td></tr></table></figure>
+
+<h3 id="刷入系统"><a href="#刷入系统" class="headerlink" title="刷入系统"></a>刷入系统</h3><ul>
+<li>进入TWRP，”双清”</li>
+</ul>
+<p><a href="https://feiju12138.github.io/2019/11/20/Android-刷机_1/#“双清”">传送门</a></p>
+<ul>
+<li>“线刷”</li>
+</ul>
+<p><a href="https://feiju12138.github.io/2019/11/20/Android-刷机_1/#“线”刷">传送门</a></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">adb sideload /Users/hatsunemiku/Downloads/lineage-16.0-20191120-nightly-kltechn-signed.zip</span><br></pre></td></tr></table></figure>
+
+<h4 id="踩坑"><a href="#踩坑" class="headerlink" title="踩坑"></a>踩坑</h4><ul>
+<li><p>报错：unknown command log error 7</p>
+</li>
+<li><p>将”.zip”系统映像文件解压，修改”updater-script”</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vim /Users/hatsunemiku/Downloads/lineage-16.0-20191118-nightly-klte-signed/META-INF/com/google/android/updater-script</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>删除”ui_print”前的检查代码,保存并退出</li>
+</ul>
+<p><img src="/images/20191121184916/01.png" alt="01.png"></p>
+<ul>
+<li>重新打包”lineage-16.0-20191118-nightly-klte-signed”文件夹根目录下的所有文件</li>
+</ul>
+<p><img src="/images/20191121184916/02.png" alt="02.png"></p>
+<h3 id="刷入谷歌全家桶（可选）"><a href="#刷入谷歌全家桶（可选）" class="headerlink" title="刷入谷歌全家桶（可选）"></a>刷入谷歌全家桶（可选）</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">adb sideload /Users/hatsunemiku/Downloads/open_gapps-arm-9.0-super-20191121.1.zip</span><br></pre></td></tr></table></figure>
+
+<h4 id="踩坑-1"><a href="#踩坑-1" class="headerlink" title="踩坑"></a>踩坑</h4><ul>
+<li><p>报错：unknown command log error 70</p>
+</li>
+<li><p>在TWRP主目录选择”清除”</p>
+</li>
+</ul>
+<p><img src="/images/20191121184916/03.png" alt="03.png"></p>
+<ul>
+<li>选择”高级清除菜单”</li>
+</ul>
+<p><img src="/images/20191121184916/04.png" alt="04.png"></p>
+<ul>
+<li>选择”System”-&gt;”修复或转换文件系统”</li>
+</ul>
+<p><img src="/images/20191121184916/05.png" alt="05.png"></p>
+<ul>
+<li>选择”调整文件系统大小”</li>
+</ul>
+<p><img src="/images/20191121184916/06.png" alt="06.png"></p>
+<h3 id="刷入Magisk获取ROOT权限（可选）"><a href="#刷入Magisk获取ROOT权限（可选）" class="headerlink" title="刷入Magisk获取ROOT权限（可选）"></a>刷入Magisk获取ROOT权限（可选）</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">adb sideload /Users/hatsunemiku/Downloads/Magisk-v20.1.zip</span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://wiki.lineageos.org/devices/klte" target="_blank" rel="noopener">LineageWiki</a></p>
+<p><a href="https://www.youtube.com/watch?v=Q6F1AlWRIs0" target="_blank" rel="noopener">YouTuBe——Meteorite Theory</a></p>
+<p><a href="https://www.youtube.com/watch?v=h5Kp_jybnjQ" target="_blank" rel="noopener">YouTuBe——Mayank Shekhar</a></p>
+<p><a href="https://www.youtube.com/watch?v=E9rvOJemsAc" target="_blank" rel="noopener">YouTuBe——Daze One</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>【笔记】Android 刷机（Flyme篇）</title>
     <url>/2019/11/20/Android-%E5%88%B7%E6%9C%BA_1/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>记一次安卓手机刷机过程。</p>

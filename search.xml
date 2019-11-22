@@ -1,6 +1,285 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>【笔记】jQuery学习笔记</title>
+    <url>/2019/11/22/jQuery%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>jQuery学习笔记，摘自颜群老师的”jQuery视频教程”</p>
+<a id="more"></a>
+
+<p>##jQuery基础</p>
+<h3 id="下载的版本"><a href="#下载的版本" class="headerlink" title="下载的版本"></a>下载的版本</h3><ul>
+<li><p>jquery-3.3.1.min.js<br>压缩版（发布版）</p>
+</li>
+<li><p>jquery-3.3.1.js<br>常规版（开发版）</p>
+</li>
+</ul>
+<h3 id="开发工具"><a href="#开发工具" class="headerlink" title="开发工具"></a>开发工具</h3><ul>
+<li><a href="https://dcloud.io" target="_blank" rel="noopener">HBuilder</a>、<a href="https://www.jetbrains.com/webstorm/" target="_blank" rel="noopener">WebStrom</a>、<a href="https://www.adobe.com/cn/products/dreamweaver.html" target="_blank" rel="noopener">Dreamweaver</a>、<a href="https://www.jetbrains.com/idea/" target="_blank" rel="noopener">IDEA</a></li>
+</ul>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"js/jquery-3.4.1.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">    &lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"js/jquery-3.4.1.js"</span>&gt;</span><br><span class="line">        $(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            ...</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="comment">/*简写</span></span><br><span class="line"><span class="comment">        $(function()&#123;</span></span><br><span class="line"><span class="comment">            ...</span></span><br><span class="line"><span class="comment">        &#125;);*/</span></span><br><span class="line">    &lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>head&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Dom对象和jquery对象的转换"><a href="#Dom对象和jquery对象的转换" class="headerlink" title="Dom对象和jquery对象的转换"></a>Dom对象和jquery对象的转换</h3><ul>
+<li>Dom对象-&gt;jquery对象</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$(Dom对象)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>jquery对象-&gt;Dom对象</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">jquery对象[<span class="number">0</span>]</span><br><span class="line">jquery对象.get(<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="jQuery选择器"><a href="#jQuery选择器" class="headerlink" title="jQuery选择器*"></a>jQuery选择器*</h2><h3 id="基本选择器"><a href="#基本选择器" class="headerlink" title="基本选择器"></a>基本选择器</h3><ul>
+<li>标签选择器</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$(<span class="string">"标签名"</span>)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>类选择器（.）</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$(<span class="string">".class值"</span>)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>id选择器（#）</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$(<span class="string">"#id值"</span>)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>并集选择器（,）</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$(<span class="string">".class值, #id值"</span>)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>交集选择器（相连）</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$(<span class="string">".class值#id值"</span>)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>全局选择器（*）</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$(<span class="string">"*"</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="层次选择器"><a href="#层次选择器" class="headerlink" title="层次选择器"></a>层次选择器</h3><ul>
+<li>相邻选择器（+）</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$(<span class="string">"选择器1+选择器2"</span>)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>同辈选择器（~）</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$(<span class="string">"选择器1~选择器2"</span>)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>后代选择器（空格）</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$(<span class="string">"选择器1 选择器2"</span>)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>子代选择器（&gt;）</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$(<span class="string">"选择器1&gt;选择器2"</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="属性选择器（-…-）"><a href="#属性选择器（-…-）" class="headerlink" title="属性选择器（[…]）"></a>属性选择器（[…]）</h3><ul>
+<li>$(“[属性名]”)</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//选中全部元素中，有class属性的元素</span></span><br><span class="line">$(<span class="string">"[class]"</span>)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>$(“[属性名=属性值]”)</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$(<span class="string">"[class=xxx]"</span>)</span><br><span class="line">$(<span class="string">"[class="</span>xxx<span class="string">"]"</span>)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>$(“[属性名!=属性值]”)</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//有class但值不是a，或没有class</span></span><br><span class="line">$(<span class="string">"[class!=a]"</span>)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>$(“[属性名^=属性值]”)</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//class以a开头的元素</span></span><br><span class="line">$(<span class="string">"[class^=a]"</span>)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>$(“[属性名$=属性值]”)</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//class以a结尾的元素</span></span><br><span class="line">$(<span class="string">"[class$=a]"</span>)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>$(“[属性名*=属性值]”)</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//class有a的元素</span></span><br><span class="line">$(<span class="string">"[class*=a]"</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="过滤选择器（-）"><a href="#过滤选择器（-）" class="headerlink" title="过滤选择器（:）"></a>过滤选择器（:）</h3><ul>
+<li>最开头那一个</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">:first</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>最后那一个</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">:last</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>偶数</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">:even</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>奇数</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">:odd</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>第index个</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">:ep(index)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>大于index的全部元素</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">:gt(index)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>小于index的全部元素</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">:lt(index)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>除了…以外的</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">:not(选择器)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>选中所有的标题元素</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">:header</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>获取当前焦点的元素</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">:focus</span><br></pre></td></tr></table></figure>
+
+<h3 id="可见性选择器"><a href="#可见性选择器" class="headerlink" title="可见性选择器"></a>可见性选择器</h3><ul>
+<li>选中所有可见的元素</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">:visible</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>选中所有隐藏的元素</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">:hidden</span><br></pre></td></tr></table></figure>
+
+<h2 id="jQuery事件"><a href="#jQuery事件" class="headerlink" title="jQuery事件"></a>jQuery事件</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    $(选择器).事件类型(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        ...</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="windows事件"><a href="#windows事件" class="headerlink" title="windows事件"></a>windows事件</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">ready();</span><br></pre></td></tr></table></figure>
+
+<h4 id="鼠标事件"><a href="#鼠标事件" class="headerlink" title="鼠标事件"></a>鼠标事件</h4><ul>
+<li>单击事件</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">click();</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>鼠标悬浮</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">mouseover();</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>鼠标离开</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">mouseout();</span><br></pre></td></tr></table></figure>
+
+<h4 id="键盘事件"><a href="#键盘事件" class="headerlink" title="键盘事件"></a>键盘事件</h4><ul>
+<li>按键（从上往下的过程）</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">keydown();</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>按键（被压到最底部）</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">keypress();</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>松开按键</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">keyup();</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>通过<code>event.keyCode</code>指定具体的按键</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$(<span class="string">"body"</span>).keydown(<span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(event.keyCode == <span class="number">13</span>)&#123;</span><br><span class="line">        alert(<span class="string">"回车"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="表单事件"><a href="#表单事件" class="headerlink" title="表单事件"></a>表单事件</h3><ul>
+<li>获取焦点</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">focus();</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>失去焦点</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">blur();</span><br></pre></td></tr></table></figure>
+
+<h3 id="绑定事件与移除事件"><a href="#绑定事件与移除事件" class="headerlink" title="绑定事件与移除事件"></a>绑定事件与移除事件</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$(...).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>绑定事件</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$(...).bind(<span class="string">"事件名"</span>, [数据], 函数);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>批量绑定</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$(...).bind(&#123;</span><br><span class="line">    <span class="string">"事件名"</span>:函数,</span><br><span class="line">    ...</span><br><span class="line">    ,<span class="string">"事件名"</span>:函数</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>移除事件</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$(...).unbind(<span class="string">"事件名"</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="复合事件"><a href="#复合事件" class="headerlink" title="复合事件"></a>复合事件</h3><h4 id="切换使用mouseover-和mouseout"><a href="#切换使用mouseover-和mouseout" class="headerlink" title="切换使用mouseover()和mouseout()"></a>切换使用<code>mouseover()</code>和<code>mouseout()</code></h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">hover(function1, function2);</span><br></pre></td></tr></table></figure>
+
+<h4 id="多个click-事件"><a href="#多个click-事件" class="headerlink" title="多个click()事件"></a>多个<code>click()</code>事件</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">toggle(function1, function2, ...);</span><br></pre></td></tr></table></figure>
+
+<p><code>toggle()</code>还有其他含义（隐藏与显示）</p>
+<h4 id="隐藏与显示"><a href="#隐藏与显示" class="headerlink" title="隐藏与显示"></a>隐藏与显示</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">hide([速度], [回调函数]);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>隐藏</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">hide();</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>显示</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">show();</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>切换隐藏与显示</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">toggle();</span><br></pre></td></tr></table></figure>
+
+<h5 id="淡入淡出（透明度）"><a href="#淡入淡出（透明度）" class="headerlink" title="淡入淡出（透明度）"></a>淡入淡出（透明度）</h5><ul>
+<li>淡入（显示）</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">fadeIn();</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>淡出（隐藏）</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">fadeOut();</span><br></pre></td></tr></table></figure>
+
+<h5 id="控制高度"><a href="#控制高度" class="headerlink" title="控制高度"></a>控制高度</h5><ul>
+<li>下拉(显示)</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">slideDown();</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>上拉（隐藏）</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">slideUp();</span><br></pre></td></tr></table></figure>
+
+<h2 id="未完待更"><a href="#未完待更" class="headerlink" title="未完待更"></a>未完待更</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://www.bilibili.com/video/av53943392" target="_blank" rel="noopener">哔哩哔哩——DT课堂原名颜群</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>【笔记】Android 刷机（LineageOS篇）</title>
     <url>/2019/11/21/Android%E5%88%B7%E6%9C%BA_2/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>续上次安卓手机刷机过程。</p>

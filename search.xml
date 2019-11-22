@@ -1,6 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>【骚操作】将安卓手机作为一台服务器</title>
+    <url>/2019/11/22/%E5%B0%86%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E4%BD%9C%E4%B8%BA%E4%B8%80%E5%8F%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>想把安卓手机的文件分享给其他设备，但当时又没有数据线，所以迫于无奈，学习到一种将手机作为服务器的方法，将文件共享给其他设备</p>
+<a id="more"></a>
+
+<h2 id="安装”Termux”"><a href="#安装”Termux”" class="headerlink" title="安装”Termux”"></a>安装”Termux”</h2><ul>
+<li><p>在<code>Google Play Store</code>下载安装<code>Termux</code></p>
+</li>
+<li><p>打开<code>Termux</code></p>
+</li>
+</ul>
+<h2 id="安装”http-server”"><a href="#安装”http-server”" class="headerlink" title="安装”http-server”"></a>安装”http-server”</h2><ul>
+<li>更新软件仓库</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pkg update</span><br><span class="line">pkg upgrade</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>查看所有可下载项目</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pkg list-all</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>安装<code>npm</code></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pkg install nodejs</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>全局安装<code>http-server</code></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install http-server -g</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>开放手机存储权限</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">termux-setup-storage</span><br></pre></td></tr></table></figure>
+
+<h2 id="启动”http-server”"><a href="#启动”http-server”" class="headerlink" title="启动”http-server”"></a>启动”http-server”</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">http-server</span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><ul>
+<li>此时，所有设备只要和这台”服务器”在同一个网络下，就可以访问手机文件，下载至本机</li>
+</ul>
+<p><img src="/images/20191122224625/01.png" alt="01.png"></p>
+<p><img src="/images/20191122224625/02.png" alt="02.png"></p>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="http://www.ruanyifeng.com/blog/2019/07/termux-tutorial.html" target="_blank" rel="noopener">阮一峰的网络日志</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>【笔记】jQuery学习笔记</title>
     <url>/2019/11/22/jQuery%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>jQuery学习笔记，摘自颜群老师的”jQuery视频教程”</p>

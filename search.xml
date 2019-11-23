@@ -1,6 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>【踩坑】LineageOS 去除wifi叉号</title>
+    <url>/2019/11/23/LineageOS%E5%8E%BB%E9%99%A4wifi%E5%8F%89%E5%8F%B7/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>安装完 LineageOS 系统后，连接wifi显示红叉，事实上有网络，只不过互联网检测默认访问的是谷歌自家的验证服务器，然而谷歌被”墙”了，所以导致没办法评估网络，显示感叹号或叉号</p>
+<a id="more"></a>
+
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
+<li>adb工具</li>
+</ul>
+<h2 id="去除叉号"><a href="#去除叉号" class="headerlink" title="去除叉号"></a>去除叉号</h2><ul>
+<li><p>手机连接电脑</p>
+</li>
+<li><p>使用<code>adb工具</code>查看是否正常连接手机</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">adb devices</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>进入安卓的shell模式</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">adb shell</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>通过修改设置去除叉号</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">delete global captive_portal_http_url</span><br><span class="line">delete global captive_portal_https_url</span><br><span class="line">put global captive_portal_http_url http://developers.google.cn/generate_204</span><br><span class="line">put global captive_portal_https_url https://developers.google.cn/generate_204</span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://jq.qq.com/?_wv=1027&k=5lGp1Yv" target="_blank" rel="noopener">QQ群——世界隐性-资源及讨论</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>【骚操作】使用 Energized Protection 拦截广告保护隐私</title>
     <url>/2019/11/23/%E4%BD%BF%E7%94%A8EnergizedProtection%E6%8B%A6%E6%88%AA%E5%B9%BF%E5%91%8A%E4%BF%9D%E6%8A%A4%E9%9A%90%E7%A7%81/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Energized Protection 是一款黑名单整合，可以有效拦截钓鱼网站保护隐私。<a href="https://github.com/EnergizedProtection/block" target="_blank" rel="noopener">github</a></p>

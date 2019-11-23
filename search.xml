@@ -1,6 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>【骚操作】使用 Energized Protection 拦截广告保护隐私</title>
+    <url>/2019/11/23/%E4%BD%BF%E7%94%A8EnergizedProtection%E6%8B%A6%E6%88%AA%E5%B9%BF%E5%91%8A%E4%BF%9D%E6%8A%A4%E9%9A%90%E7%A7%81/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Energized Protection 是一款黑名单整合，可以有效拦截钓鱼网站保护隐私。<a href="https://github.com/EnergizedProtection/block" target="_blank" rel="noopener">github</a></p>
+<a id="more"></a>
+
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
+<li><p>Android手机</p>
+</li>
+<li><p>Magisk Manager（<a href="https://feiju12138.github.io/2019/11/21/Android刷机_2/#刷入Magisk获取ROOT权限（可选）">传送门</a>）</p>
+</li>
+<li><p>Termux（<a href="https://feiju12138.github.io/2019/11/22/将安卓手机作为一台服务器/#安装”Termux”">传送门</a>）</p>
+</li>
+</ul>
+<h2 id="安装-Energized-Protection"><a href="#安装-Energized-Protection" class="headerlink" title="安装 Energized Protection"></a>安装 Energized Protection</h2><ul>
+<li><p>打开<code>Magisk Manager</code>-&gt; 选择<code>左上角菜单</code>-&gt;选择<code>下载</code></p>
+</li>
+<li><p>搜索<code>Energized Protection</code>-&gt;安装</p>
+</li>
+</ul>
+<h2 id="启动-Energized-Protection"><a href="#启动-Energized-Protection" class="headerlink" title="启动 Energized Protection"></a>启动 Energized Protection</h2><ul>
+<li><p>打开<code>Termux</code></p>
+</li>
+<li><p>获取管理员权限-&gt;启动<code>Energized Protection</code></p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">su</span><br><span class="line">energized</span><br></pre></td></tr></table></figure>
+
+<h2 id="使用-Energized-Protection"><a href="#使用-Energized-Protection" class="headerlink" title="使用 Energized Protection"></a>使用 Energized Protection</h2><ul>
+<li>在菜单选择需要安装的包的编号-&gt;输入<code>Y</code>确认</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">6</span><br><span class="line">Y</span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><ul>
+<li>重启手机</li>
+</ul>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://www.freedomwolf.cc/2019/04/energized-protection/" target="_blank" rel="noopener">Freedom Wolf</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>【骚操作】将安卓手机作为一台服务器</title>
     <url>/2019/11/22/%E5%B0%86%E5%AE%89%E5%8D%93%E6%89%8B%E6%9C%BA%E4%BD%9C%E4%B8%BA%E4%B8%80%E5%8F%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>想把安卓手机的文件分享给其他设备，但当时又没有数据线，所以迫于无奈，学习到一种将手机作为服务器的方法，将文件共享给其他设备</p>

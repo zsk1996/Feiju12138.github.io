@@ -20,6 +20,9 @@
 <li><p>搜索<code>Energized Protection</code>-&gt;安装</p>
 </li>
 </ul>
+<h3 id="刷机安装-Energized-Protection（可选）"><a href="#刷机安装-Energized-Protection（可选）" class="headerlink" title="刷机安装 Energized Protection（可选）"></a>刷机安装 Energized Protection（可选）</h3><ul>
+<li>由于我的<code>Magisk Manager</code>无法安装<code>Energized Protection</code>，所以我采用刷机的方式安装</li>
+</ul>
 <h2 id="启动-Energized-Protection"><a href="#启动-Energized-Protection" class="headerlink" title="启动 Energized Protection"></a>启动 Energized Protection</h2><ul>
 <li><p>打开<code>Termux</code></p>
 </li>
@@ -28,7 +31,7 @@
 </ul>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">su</span><br><span class="line">energized</span><br></pre></td></tr></table></figure>
 
-<h2 id="开启Systemless-hosts权限"><a href="#开启Systemless-hosts权限" class="headerlink" title="开启Systemless hosts权限"></a>开启<code>Systemless hosts</code>权限</h2><ul>
+<h3 id="开启Systemless-hosts权限（踩坑）"><a href="#开启Systemless-hosts权限（踩坑）" class="headerlink" title="开启Systemless hosts权限（踩坑）"></a>开启<code>Systemless hosts</code>权限（踩坑）</h3><ul>
 <li>首次运行前，需前往<code>Magisk Manager</code>-&gt;<code>设置</code>-&gt;<code>Systemless hosts</code>，开启权限</li>
 </ul>
 <h2 id="使用-Energized-Protection"><a href="#使用-Energized-Protection" class="headerlink" title="使用 Energized Protection"></a>使用 Energized Protection</h2><ul>

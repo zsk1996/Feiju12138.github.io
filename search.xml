@@ -28,6 +28,9 @@
 </ul>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">su</span><br><span class="line">energized</span><br></pre></td></tr></table></figure>
 
+<h2 id="开启Systemless-hosts权限"><a href="#开启Systemless-hosts权限" class="headerlink" title="开启Systemless hosts权限"></a>开启<code>Systemless hosts</code>权限</h2><ul>
+<li>首次运行前，需前往<code>Magisk Manager</code>-&gt;<code>设置</code>-&gt;<code>Systemless hosts</code>，开启权限</li>
+</ul>
 <h2 id="使用-Energized-Protection"><a href="#使用-Energized-Protection" class="headerlink" title="使用 Energized Protection"></a>使用 Energized Protection</h2><ul>
 <li>在菜单选择需要安装的包的编号-&gt;输入<code>Y</code>确认</li>
 </ul>

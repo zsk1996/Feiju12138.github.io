@@ -1,6 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>【笔记】HomeBrew</title>
+    <url>/2019/11/26/HomeBrew/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Homebrew是一款自由及开放源代码的软件包管理系统，用以简化macOS系统上的软件安装过程，最初由马克斯·霍威尔写成。（<a href="https://zh.wikipedia.org/wiki/Homebrew" target="_blank" rel="noopener">维基百科</a>）</p>
+<a id="more"></a>
+
+<h2 id="安装-Xcode-命令行工具"><a href="#安装-Xcode-命令行工具" class="headerlink" title="安装 Xcode 命令行工具"></a>安装 Xcode 命令行工具</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">xcode-select --install</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装-HomeBrew"><a href="#安装-HomeBrew" class="headerlink" title="安装 HomeBrew"></a>安装 HomeBrew</h2><ul>
+<li>进入<a href="brew.sh">brew官网</a>查看最新更新代码</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">open -a <span class="string">"/Applications/Safari.app"</span> https://brew.sh</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>将最新的安装代码复制到终端</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">/usr/bin/ruby -e <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>"</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>是否确认，按回车</p>
+</li>
+<li><p>等待安装成功</p>
+</li>
+</ul>
+<h2 id="brew-基本命令"><a href="#brew-基本命令" class="headerlink" title="brew 基本命令"></a>brew 基本命令</h2><h3 id="更新-brew-自身"><a href="#更新-brew-自身" class="headerlink" title="更新 brew 自身"></a>更新 brew 自身</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew update</span><br></pre></td></tr></table></figure>
+
+<h3 id="更新-brew-本地仓库的所有软件包"><a href="#更新-brew-本地仓库的所有软件包" class="headerlink" title="更新 brew 本地仓库的所有软件包"></a>更新 brew 本地仓库的所有软件包</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew upgrade</span><br></pre></td></tr></table></figure>
+
+<h3 id="查找软件包"><a href="#查找软件包" class="headerlink" title="查找软件包"></a>查找软件包</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew search [软件包]</span><br></pre></td></tr></table></figure>
+
+<h3 id="查询可更新的软件包"><a href="#查询可更新的软件包" class="headerlink" title="查询可更新的软件包"></a>查询可更新的软件包</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew outdated</span><br></pre></td></tr></table></figure>
+
+<h3 id="安装软件包"><a href="#安装软件包" class="headerlink" title="安装软件包"></a>安装软件包</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew install [软件包]</span><br></pre></td></tr></table></figure>
+
+<h3 id="卸载软件包"><a href="#卸载软件包" class="headerlink" title="卸载软件包"></a>卸载软件包</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew uninstall [软件包]</span><br></pre></td></tr></table></figure>
+
+<h3 id="重装软件包"><a href="#重装软件包" class="headerlink" title="重装软件包"></a>重装软件包</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew reinstall [软件包]</span><br></pre></td></tr></table></figure>
+
+<h3 id="清理软件包"><a href="#清理软件包" class="headerlink" title="清理软件包"></a>清理软件包</h3><blockquote>
+<p>用于清理中断下载的软件包残留<br>用于清理软件包旧版本</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew cleanup</span><br></pre></td></tr></table></figure>
+
+<h3 id="查看已安装软件包"><a href="#查看已安装软件包" class="headerlink" title="查看已安装软件包"></a>查看已安装软件包</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew list</span><br></pre></td></tr></table></figure>
+
+<h3 id="查看包信息"><a href="#查看包信息" class="headerlink" title="查看包信息"></a>查看包信息</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">brew info [软件包]</span><br></pre></td></tr></table></figure>
+
+<h2 id="卸载-HomeBrew"><a href="#卸载-HomeBrew" class="headerlink" title="卸载 HomeBrew"></a>卸载 HomeBrew</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> `brew --prefix`</span><br><span class="line">rm -rf Cellar</span><br><span class="line">brew prune</span><br><span class="line">rm `git ls-files`</span><br><span class="line">rm -r Library/Homebrew Library/Aliases Library/Formula Library/Contributions</span><br><span class="line">rm -rf .git</span><br><span class="line">rm -rf ~/Library/Caches/Homebrew</span><br></pre></td></tr></table></figure>
+
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://juejin.im/post/5a561685f265da3e2b164fe7" target="_blank" rel="noopener">掘金——WenBo丨星空灬</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>【笔记】Tomcat 学习笔记</title>
     <url>/2019/11/26/Tomcat%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Tomcat是由Apache软件基金会属下Jakarta项目开发的Servlet容器，按照Sun Microsystems提供的技术规范，实现了对Servlet和JavaServer Page（JSP）的支持，并提供了作为Web服务器的一些特有功能，如Tomcat管理和控制平台、安全局管理和Tomcat阀等。（<a href="https://zh.wikipedia.org/wiki/Apache_Tomcat" target="_blank" rel="noopener">维基百科</a>）</p>

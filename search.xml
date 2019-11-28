@@ -1,6 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>【笔记】完全卸载 Android Studio</title>
+    <url>/2019/11/28/%E5%AE%8C%E5%85%A8%E5%8D%B8%E8%BD%BDAndroidStudio/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><code>Android Studio</code>在使用过后，由于会下载很多Android相关工具的资源包，所以直接移到废纸篓的方式无法卸载干净，通过命令行，可以完全卸载</p>
+<a id="more"></a>
+
+<h2 id="完全卸载"><a href="#完全卸载" class="headerlink" title="完全卸载"></a>完全卸载</h2><h3 id="卸载Android-Studio应用及相关配置"><a href="#卸载Android-Studio应用及相关配置" class="headerlink" title="卸载Android Studio应用及相关配置"></a>卸载Android Studio应用及相关配置</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">rm -Rf /Applications/Android\ Studio.app</span><br><span class="line">rm -Rf ~/Library/Preferences/AndroidStudio*</span><br><span class="line">rm ~/Library/Preferences/com.google.android.studio.plist</span><br><span class="line">rm -Rf ~/Library/Application\ Support/AndroidStudio*</span><br><span class="line">rm -Rf ~/Library/Logs/AndroidStudio*</span><br><span class="line">rm -Rf ~/Library/Caches/AndroidStudio*</span><br></pre></td></tr></table></figure>
+
+<h3 id="删除项目文件"><a href="#删除项目文件" class="headerlink" title="删除项目文件"></a>删除项目文件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">rm -Rf ~/AndroidStudioProjects</span><br></pre></td></tr></table></figure>
+
+<h3 id="删除依赖文件"><a href="#删除依赖文件" class="headerlink" title="删除依赖文件"></a>删除依赖文件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">rm -Rf ~/.gradle</span><br></pre></td></tr></table></figure>
+
+<h3 id="删除AVD缓存"><a href="#删除AVD缓存" class="headerlink" title="删除AVD缓存"></a>删除AVD缓存</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">rm -Rf ~/.android</span><br></pre></td></tr></table></figure>
+
+<h3 id="删除Android-SDK-Tools文件"><a href="#删除Android-SDK-Tools文件" class="headerlink" title="删除Android SDK Tools文件"></a>删除Android SDK Tools文件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">rm -Rf ~/Library/Android*</span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://blog.csdn.net/huagjie/article/details/79691078" target="_blank" rel="noopener">CSDN——huangjie_android</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>【笔记】HomeBrew</title>
     <url>/2019/11/26/HomeBrew/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Homebrew是一款自由及开放源代码的软件包管理系统，用以简化macOS系统上的软件安装过程，最初由马克斯·霍威尔写成。（<a href="https://zh.wikipedia.org/wiki/Homebrew" target="_blank" rel="noopener">维基百科</a>）</p>

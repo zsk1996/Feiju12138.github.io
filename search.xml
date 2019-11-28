@@ -1865,7 +1865,6 @@
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>首次安装”Android Studio”会报”Unable to access Android SDK add-on list”的问题，原因是首次打开 Android Studio 会自动联网检测 Android SDK 及更新，但是国内会被”墙”，所以可以通过修改”idea.properties”文件跳过联网检测</p>
 <a id="more"></a>
 
-<p><img src="/images/20191117210217/01.png" alt="01.png"></p>
 <h2 id="修改”idea-properties”文件"><a href="#修改”idea-properties”文件" class="headerlink" title="修改”idea.properties”文件"></a>修改”idea.properties”文件</h2><ul>
 <li>在Mac下打开”终端”</li>
 </ul>

@@ -1,6 +1,211 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>【骚操作】运行 上的快捷命令</title>
+    <url>/2019/11/28/%E8%BF%90%E8%A1%8C%E4%B8%8A%E7%9A%84%E5%BF%AB%E6%8D%B7%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>通过<code>运行</code>，快捷打开系统应用</p>
+<a id="more"></a>
+
+<h2 id="打开-运行"><a href="#打开-运行" class="headerlink" title="打开 运行"></a>打开 运行</h2><p><code>win + R</code></p>
+<h2 id="快捷命令"><a href="#快捷命令" class="headerlink" title="快捷命令"></a>快捷命令</h2><h3 id="命令提示符"><a href="#命令提示符" class="headerlink" title="命令提示符"></a>命令提示符</h3><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line">cmd</span><br><span class="line">command</span><br></pre></td></tr></table></figure>
+
+<h3 id="磁盘检查"><a href="#磁盘检查" class="headerlink" title="磁盘检查"></a>磁盘检查</h3><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line">chkdsk</span><br></pre></td></tr></table></figure>
+
+<h3 id="证书检查"><a href="#证书检查" class="headerlink" title="证书检查"></a>证书检查</h3><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line">certmgr.msc</span><br></pre></td></tr></table></figure>
+
+<h3 id="计算器"><a href="#计算器" class="headerlink" title="计算器"></a>计算器</h3><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line">calc</span><br></pre></td></tr></table></figure>
+
+<h3 id="字符映射表"><a href="#字符映射表" class="headerlink" title="字符映射表"></a>字符映射表</h3><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line">charmap</span><br></pre></td></tr></table></figure>
+
+<h3 id="SQLServer实用工具"><a href="#SQLServer实用工具" class="headerlink" title="SQLServer实用工具"></a>SQLServer实用工具</h3><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line">cliconfg</span><br></pre></td></tr></table></figure>
+
+<h3 id="控制面板"><a href="#控制面板" class="headerlink" title="控制面板"></a>控制面板</h3><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line">control</span><br></pre></td></tr></table></figure>
+
+<h3 id="计算机管理"><a href="#计算机管理" class="headerlink" title="计算机管理"></a>计算机管理</h3><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line">compmgmt.msc</span><br></pre></td></tr></table></figure>
+
+<h3 id="磁盘垃圾清理"><a href="#磁盘垃圾清理" class="headerlink" title="磁盘垃圾清理"></a>磁盘垃圾清理</h3><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line">cleanmgr</span><br></pre></td></tr></table></figure>
+
+<h3 id="系统组建服务"><a href="#系统组建服务" class="headerlink" title="系统组建服务"></a>系统组建服务</h3><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line">dcomcnfg</span><br></pre></td></tr></table></figure>
+
+<h3 id="检查DirectX信息"><a href="#检查DirectX信息" class="headerlink" title="检查DirectX信息"></a>检查DirectX信息</h3><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line">dxdiag</span><br></pre></td></tr></table></figure>
+
+<h3 id="设备管理器"><a href="#设备管理器" class="headerlink" title="设备管理器"></a>设备管理器</h3><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line">devmgmt.msc</span><br></pre></td></tr></table></figure>
+
+<h3 id="显示属性"><a href="#显示属性" class="headerlink" title="显示属性"></a>显示属性</h3><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line">desk.cpl</span><br></pre></td></tr></table></figure>
+
+<h3 id="磁盘管理实用工具"><a href="#磁盘管理实用工具" class="headerlink" title="磁盘管理实用工具"></a>磁盘管理实用工具</h3><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line">diskmgmt.msc</span><br></pre></td></tr></table></figure>
+
+<h3 id="DVD-Windows-Media-Player"><a href="#DVD-Windows-Media-Player" class="headerlink" title="DVD Windows Media Player"></a>DVD Windows Media Player</h3><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line">dvdplayer</span><br></pre></td></tr></table></figure>
+
+<h3 id="事件查看器"><a href="#事件查看器" class="headerlink" title="事件查看器"></a>事件查看器</h3><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line">eventvwr</span><br></pre></td></tr></table></figure>
+
+<h3 id="造字程序"><a href="#造字程序" class="headerlink" title="造字程序"></a>造字程序</h3><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line">eudcedit</span><br></pre></td></tr></table></figure>
+
+<h3 id="资源管理器"><a href="#资源管理器" class="headerlink" title="资源管理器"></a>资源管理器</h3><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line">explorer</span><br></pre></td></tr></table></figure>
+
+<h3 id="共享文件夹管理器"><a href="#共享文件夹管理器" class="headerlink" title="共享文件夹管理器"></a>共享文件夹管理器</h3><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line">fsmgmt.msc</span><br></pre></td></tr></table></figure>
+
+<h3 id="Windows防火墙"><a href="#Windows防火墙" class="headerlink" title="Windows防火墙"></a>Windows防火墙</h3><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line">firewall.cpl</span><br></pre></td></tr></table></figure>
+
+<h3 id="组策略"><a href="#组策略" class="headerlink" title="组策略"></a>组策略</h3><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line">gpedit.msc</span><br></pre></td></tr></table></figure>
+
+<h3 id="设备管理器-1"><a href="#设备管理器-1" class="headerlink" title="设备管理器"></a>设备管理器</h3><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line">hdwwiz.cpl</span><br></pre></td></tr></table></figure>
+
+<h3 id="木马捆绑工具"><a href="#木马捆绑工具" class="headerlink" title="木马捆绑工具"></a>木马捆绑工具</h3><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line">iexpress</span><br></pre></td></tr></table></figure>
+
+<h3 id="Internet选项"><a href="#Internet选项" class="headerlink" title="Internet选项"></a>Internet选项</h3><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line">inetcpl.cpl</span><br></pre></td></tr></table></figure>
+
+<h3 id="区域和语言选项"><a href="#区域和语言选项" class="headerlink" title="区域和语言选项"></a>区域和语言选项</h3><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line">intl.cpl</span><br></pre></td></tr></table></figure>
+
+<h3 id="无线连接"><a href="#无线连接" class="headerlink" title="无线连接"></a>无线连接</h3><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line">irprops.cpl</span><br></pre></td></tr></table></figure>
+
+<h3 id="游戏控制器"><a href="#游戏控制器" class="headerlink" title="游戏控制器"></a>游戏控制器</h3><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line">joy.cpl</span><br></pre></td></tr></table></figure>
+
+<h3 id="本机用户和组"><a href="#本机用户和组" class="headerlink" title="本机用户和组"></a>本机用户和组</h3><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line">lusrmgr.msc</span><br></pre></td></tr></table></figure>
+
+<h3 id="注销命令"><a href="#注销命令" class="headerlink" title="注销命令"></a>注销命令</h3><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line">logoff</span><br></pre></td></tr></table></figure>
+
+<h3 id="鼠标"><a href="#鼠标" class="headerlink" title="鼠标"></a>鼠标</h3><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line">main.cpl</span><br></pre></td></tr></table></figure>
+
+<h3 id="显示内存使用情况"><a href="#显示内存使用情况" class="headerlink" title="显示内存使用情况"></a>显示内存使用情况</h3><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line">mem.exe</span><br></pre></td></tr></table></figure>
+
+<h3 id="文件转移向导"><a href="#文件转移向导" class="headerlink" title="文件转移向导"></a>文件转移向导</h3><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line">migwiz</span><br></pre></td></tr></table></figure>
+
+<h3 id="系统信息"><a href="#系统信息" class="headerlink" title="系统信息"></a>系统信息</h3><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line">msinfo32</span><br></pre></td></tr></table></figure>
+
+<h3 id="简易-Windows-Media-Player"><a href="#简易-Windows-Media-Player" class="headerlink" title="简易 Windows Media Player"></a>简易 Windows Media Player</h3><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line">mplayer2</span><br></pre></td></tr></table></figure>
+
+<h3 id="画图板"><a href="#画图板" class="headerlink" title="画图板"></a>画图板</h3><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line">mspaint</span><br></pre></td></tr></table></figure>
+
+<h3 id="系统配置实用程序"><a href="#系统配置实用程序" class="headerlink" title="系统配置实用程序"></a>系统配置实用程序</h3><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line">msconfig.exe</span><br></pre></td></tr></table></figure>
+
+<h3 id="远程桌面连接"><a href="#远程桌面连接" class="headerlink" title="远程桌面连接"></a>远程桌面连接</h3><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line">mstsc</span><br></pre></td></tr></table></figure>
+
+<h3 id="放大镜实用程序"><a href="#放大镜实用程序" class="headerlink" title="放大镜实用程序"></a>放大镜实用程序</h3><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line">magnify</span><br></pre></td></tr></table></figure>
+
+<h3 id="打开控制台"><a href="#打开控制台" class="headerlink" title="打开控制台"></a>打开控制台</h3><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line">mmc</span><br></pre></td></tr></table></figure>
+
+<h3 id="声音和音频设备"><a href="#声音和音频设备" class="headerlink" title="声音和音频设备"></a>声音和音频设备</h3><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line">mmsys.cpl</span><br></pre></td></tr></table></figure>
+
+<h3 id="同步命令"><a href="#同步命令" class="headerlink" title="同步命令"></a>同步命令</h3><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line">mobsync</span><br></pre></td></tr></table></figure>
+
+<h3 id="网络连接"><a href="#网络连接" class="headerlink" title="网络连接"></a>网络连接</h3><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line">ncpa.cpl</span><br></pre></td></tr></table></figure>
+
+<h3 id="IP地址侦测器"><a href="#IP地址侦测器" class="headerlink" title="IP地址侦测器"></a>IP地址侦测器</h3><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line">nslookup</span><br></pre></td></tr></table></figure>
+
+<h3 id="命令检查接口"><a href="#命令检查接口" class="headerlink" title="命令检查接口"></a>命令检查接口</h3><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line">netstat -an</span><br></pre></td></tr></table></figure>
+
+<h3 id="记事本"><a href="#记事本" class="headerlink" title="记事本"></a>记事本</h3><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line">notepad</span><br></pre></td></tr></table></figure>
+
+<h3 id="屏幕讲述人"><a href="#屏幕讲述人" class="headerlink" title="屏幕讲述人"></a>屏幕讲述人</h3><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line">narrator</span><br></pre></td></tr></table></figure>
+
+<h3 id="屏幕键盘"><a href="#屏幕键盘" class="headerlink" title="屏幕键盘"></a>屏幕键盘</h3><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line">osk</span><br></pre></td></tr></table></figure>
+
+<h3 id="ODBC数据源管理器"><a href="#ODBC数据源管理器" class="headerlink" title="ODBC数据源管理器"></a>ODBC数据源管理器</h3><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line">odbced32</span><br><span class="line">odbced32.cpl</span><br></pre></td></tr></table></figure>
+
+<h3 id="检查XP是否激活"><a href="#检查XP是否激活" class="headerlink" title="检查XP是否激活"></a>检查XP是否激活</h3><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line">oobe/msoobe /a</span><br></pre></td></tr></table></figure>
+
+<h3 id="计算机性能监测程序"><a href="#计算机性能监测程序" class="headerlink" title="计算机性能监测程序"></a>计算机性能监测程序</h3><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line">perfmon.msc</span><br></pre></td></tr></table></figure>
+
+<h3 id="电源选项"><a href="#电源选项" class="headerlink" title="电源选项"></a>电源选项</h3><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line">powercfg.cpl</span><br></pre></td></tr></table></figure>
+
+<h3 id="注册表"><a href="#注册表" class="headerlink" title="注册表"></a>注册表</h3><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line">regedit</span><br></pre></td></tr></table></figure>
+
+<h3 id="组策略结果集"><a href="#组策略结果集" class="headerlink" title="组策略结果集"></a>组策略结果集</h3><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line">rsop.msc</span><br></pre></td></tr></table></figure>
+
+<h3 id="注册表编辑器"><a href="#注册表编辑器" class="headerlink" title="注册表编辑器"></a>注册表编辑器</h3><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line">regedit32</span><br></pre></td></tr></table></figure>
+
+<h3 id="调用、卸载DLL文件运行"><a href="#调用、卸载DLL文件运行" class="headerlink" title="调用、卸载DLL文件运行"></a>调用、卸载DLL文件运行</h3><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line">regsvr32</span><br></pre></td></tr></table></figure>
+
+<h3 id="本地服务设置"><a href="#本地服务设置" class="headerlink" title="本地服务设置"></a>本地服务设置</h3><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line">services.msc</span><br></pre></td></tr></table></figure>
+
+<h3 id="文件签名验证程序"><a href="#文件签名验证程序" class="headerlink" title="文件签名验证程序"></a>文件签名验证程序</h3><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line">sigverif</span><br></pre></td></tr></table></figure>
+
+<h3 id="共享文件夹设置工具"><a href="#共享文件夹设置工具" class="headerlink" title="共享文件夹设置工具"></a>共享文件夹设置工具</h3><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line">shrpubw</span><br></pre></td></tr></table></figure>
+
+<h3 id="本地安全策略"><a href="#本地安全策略" class="headerlink" title="本地安全策略"></a>本地安全策略</h3><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line">secpol.msc</span><br></pre></td></tr></table></figure>
+
+<h3 id="系统"><a href="#系统" class="headerlink" title="系统"></a>系统</h3><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line">sysdm.cpl</span><br></pre></td></tr></table></figure>
+
+<h3 id="系统文件检查器"><a href="#系统文件检查器" class="headerlink" title="系统文件检查器"></a>系统文件检查器</h3><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line">sfc.exe</span><br></pre></td></tr></table></figure>
+
+<h3 id="Windows文件保护"><a href="#Windows文件保护" class="headerlink" title="Windows文件保护"></a>Windows文件保护</h3><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line">sfc</span><br><span class="line">scannow</span><br></pre></td></tr></table></figure>
+
+<h3 id="关机命令"><a href="#关机命令" class="headerlink" title="关机命令"></a>关机命令</h3><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line">shutdown</span><br></pre></td></tr></table></figure>
+
+<h3 id="任务管理器"><a href="#任务管理器" class="headerlink" title="任务管理器"></a>任务管理器</h3><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line">taskmgr</span><br></pre></td></tr></table></figure>
+
+<h3 id="电话和调制解调器选项"><a href="#电话和调制解调器选项" class="headerlink" title="电话和调制解调器选项"></a>电话和调制解调器选项</h3><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line">telephon.cpl</span><br></pre></td></tr></table></figure>
+
+<h3 id="远程连接程序"><a href="#远程连接程序" class="headerlink" title="远程连接程序"></a>远程连接程序</h3><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line">telnet</span><br></pre></td></tr></table></figure>
+
+<h3 id="日期和时间"><a href="#日期和时间" class="headerlink" title="日期和时间"></a>日期和时间</h3><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line">timedate.cpl</span><br></pre></td></tr></table></figure>
+
+<h3 id="倒计时关机命令"><a href="#倒计时关机命令" class="headerlink" title="倒计时关机命令"></a>倒计时关机命令</h3><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line">tsshutdn</span><br></pre></td></tr></table></figure>
+
+<h3 id="辅助工具管理器"><a href="#辅助工具管理器" class="headerlink" title="辅助工具管理器"></a>辅助工具管理器</h3><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line">utilman</span><br></pre></td></tr></table></figure>
+
+<h3 id="检查Windows版本"><a href="#检查Windows版本" class="headerlink" title="检查Windows版本"></a>检查Windows版本</h3><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line">winver</span><br></pre></td></tr></table></figure>
+
+<h3 id="扫描仪和照相机向导"><a href="#扫描仪和照相机向导" class="headerlink" title="扫描仪和照相机向导"></a>扫描仪和照相机向导</h3><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line">wiaacmgr</span><br></pre></td></tr></table></figure>
+
+<h3 id="Windows管理体系结构"><a href="#Windows管理体系结构" class="headerlink" title="Windows管理体系结构"></a>Windows管理体系结构</h3><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line">wmimgmt.msc</span><br></pre></td></tr></table></figure>
+
+<h3 id="写字板"><a href="#写字板" class="headerlink" title="写字板"></a>写字板</h3><figure class="highlight vb"><table><tr><td class="code"><pre><span class="line">wordpad</span><br><span class="line">write</span><br></pre></td></tr></table></figure>
+
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://blog.csdn.net/u013672940/article/details/78674338" target="_blank" rel="noopener">CSDN——D-river</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>【骚操作】滑动关机</title>
+    <url>/2019/11/28/%E6%BB%91%E5%8A%A8%E5%85%B3%E6%9C%BA/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Windows滑动关机代码，运行后滑动关机</p>
+<a id="more"></a>
+
+<h2 id="滑动关机代码"><a href="#滑动关机代码" class="headerlink" title="滑动关机代码"></a>滑动关机代码</h2><ul>
+<li><p>创建文本文档<code>滑动关机.bat</code></p>
+</li>
+<li><p>编辑文本</p>
+</li>
+</ul>
+<figure class="highlight vb"><table><tr><td class="code"><pre><span class="line">slidetoshutdown</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>右键运行</li>
+</ul>
+]]></content>
+  </entry>
+  <entry>
+    <title>【骚操作】窗口轰炸</title>
+    <url>/2019/11/28/%E7%AA%97%E5%8F%A3%E8%BD%B0%E7%82%B8/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Windows窗口轰炸代码，运行后无限弹出<code>命令提示符</code>窗口</p>
+<a id="more"></a>
+
+<h2 id="轰炸代码"><a href="#轰炸代码" class="headerlink" title="轰炸代码"></a>轰炸代码</h2><ul>
+<li><p>创建文本文件<code>轰炸代码.bat</code></p>
+</li>
+<li><p>编辑内容</p>
+</li>
+</ul>
+<figure class="highlight vb"><table><tr><td class="code"><pre><span class="line">:start</span><br><span class="line">start cmd</span><br><span class="line"><span class="keyword">goto</span> start</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>右键运行</li>
+</ul>
+<h2 id="解除代码"><a href="#解除代码" class="headerlink" title="解除代码"></a>解除代码</h2><ul>
+<li><p>创建文本文件<code>解除代码.bat</code></p>
+</li>
+<li><p>编辑内容</p>
+</li>
+</ul>
+<figure class="highlight vb"><table><tr><td class="code"><pre><span class="line">taskkill /f /im cmd.exe</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>右键运行</li>
+</ul>
+]]></content>
+  </entry>
+  <entry>
     <title>【笔记】HTML 学习笔记</title>
     <url>/2019/11/28/HTML%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>超文本标记语言是一种用于创建网页的标准标记语言。HTML是一种基础技术，常与CSS、JavaScript一起被众多网站用于设计网页、网页应用程序以及移动应用程序的用户界面。网页浏览器可以读取HTML文件，并将其渲染成可视化网页。HTML描述了一个网站的结构语义随着线索的呈现，使之成为一种标记语言而非编程语言。<a href="https://zh.wikipedia.org/wiki/HTML" target="_blank" rel="noopener">维基百科</a></p>

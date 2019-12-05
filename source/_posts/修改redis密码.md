@@ -2,6 +2,8 @@
 title: 【踩坑】修改redis密码
 date: 2019-11-16 15:45:48
 tags:
+categories:
+- Redis
 ---
 
 ## 前言

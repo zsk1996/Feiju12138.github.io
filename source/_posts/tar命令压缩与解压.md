@@ -2,6 +2,8 @@
 title: 【笔记】tar命令压缩与解压
 date: 2019-11-13 23:57:08
 tags:
+categories:
+- Linux
 ---
 
 ## 前言

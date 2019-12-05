@@ -2,6 +2,8 @@
 title: 【笔记】完全卸载 Android Studio
 date: 2019-11-28 17:13:17
 tags:
+categories:
+- Android
 ---
 
 ## 前言

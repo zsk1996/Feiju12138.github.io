@@ -2,6 +2,8 @@
 title: 【笔记】jQuery 学习笔记
 date: 2019-11-22 13:55:21
 tags:
+categories:
+- jQuery
 ---
 
 ## 前言

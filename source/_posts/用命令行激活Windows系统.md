@@ -2,6 +2,8 @@
 title: 【骚操作】用命令行激活Windows系统
 date: 2019-11-14 23:16:31
 tags:
+categories:
+- Windows
 ---
 
 ## 前言

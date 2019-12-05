@@ -2,6 +2,8 @@
 title: 【笔记】Android 刷机（Flyme篇）
 date: 2019-11-20 20:36:32
 tags:
+categories:
+- 刷机
 ---
 
 ## 前言

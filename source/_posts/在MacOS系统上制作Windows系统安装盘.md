@@ -2,6 +2,8 @@
 title: 【笔记】在MacOS系统上制作Windows系统安装盘
 date: 2019-11-14 16:57:31
 tags:
+categories:
+- MacOS
 ---
 
 ## 前言

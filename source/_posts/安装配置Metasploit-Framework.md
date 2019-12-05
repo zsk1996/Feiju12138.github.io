@@ -2,6 +2,8 @@
 title: 【笔记】安装配置 Metasploit Framework
 date: 2019-11-16 16:30:21
 tags:
+categories:
+- 网络安全
 ---
 
 ## 前言

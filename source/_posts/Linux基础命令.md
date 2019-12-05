@@ -2,6 +2,8 @@
 title: 【笔记】Linux 基础命令（RetHat篇）
 date: 2019-11-11 22:30:29
 tags:
+categories:
+- Linux
 ---
 
 ## 前言
@@ -167,7 +169,7 @@ $ ls
 
 ``` bash
 $ ls -l
-``` 
+```
 
 #### 显示隐藏文件
 

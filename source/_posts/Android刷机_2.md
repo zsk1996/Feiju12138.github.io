@@ -2,6 +2,8 @@
 title: 【笔记】Android 刷机（LineageOS篇）
 date: 2019-11-21 18:49:16
 tags:
+categories:
+- 刷机
 ---
 
 ## 前言

@@ -2,6 +2,8 @@
 title: 【踩坑】CDR格式 转换 ISO格式
 date: 2019-11-09 12:07:05
 tags:
+categories:
+- MacOS
 ---
 
 ## 前言

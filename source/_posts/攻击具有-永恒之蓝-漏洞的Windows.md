@@ -2,6 +2,8 @@
 title: 【笔记】攻击具有 永恒之蓝 漏洞的Windows
 date: 2019-11-16 17:14:28
 tags:
+categories:
+- 网络安全
 ---
 
 ## 前言

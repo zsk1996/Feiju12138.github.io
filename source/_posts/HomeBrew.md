@@ -2,6 +2,8 @@
 title: 【笔记】HomeBrew
 date: 2019-11-26 19:58:17
 tags:
+categories:
+- MacOS
 ---
 
 ## 前言

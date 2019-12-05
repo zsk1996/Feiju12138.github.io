@@ -2,6 +2,8 @@
 title: 【踩坑】Kali阿里云更新源报错问题
 date: 2019-11-03 19:48:09
 tags:
+categories:
+- Linux
 ---
 
 ## 前言

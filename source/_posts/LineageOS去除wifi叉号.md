@@ -2,6 +2,8 @@
 title: 【踩坑】LineageOS 去除wifi叉号
 date: 2019-11-23 23:53:04
 tags:
+categories:
+- 刷机
 ---
 
 ## 前言

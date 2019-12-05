@@ -2,6 +2,8 @@
 title: 【笔记】更换Linux更新源（Kali篇）
 date: 2019-11-03 18:48:39
 tags:
+categories:
+- Linux
 ---
 
 ## 前言

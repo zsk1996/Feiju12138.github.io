@@ -2,6 +2,8 @@
 title: 【踩坑】Android Studio 第一次新建项目报4处错误
 date: 2019-11-18 18:04:25
 tags:
+categories:
+- Android
 ---
 
 ## 前言

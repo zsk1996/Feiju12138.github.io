@@ -2,6 +2,8 @@
 title: 【骚操作】Windows10家庭版中开启组策略编辑器
 date: 2019-11-02 16:56:14
 tags:
+categories:
+- Windows
 ---
 
 ## 前言

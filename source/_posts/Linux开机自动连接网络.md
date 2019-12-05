@@ -2,6 +2,8 @@
 title: 【踩坑】Linux 开机自动连接网络（CentOS篇）
 date: 2019-11-13 12:59:17
 tags:
+categories:
+- Linux
 ---
 
 ## 前言

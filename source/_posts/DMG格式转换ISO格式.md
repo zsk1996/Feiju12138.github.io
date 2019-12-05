@@ -2,6 +2,8 @@
 title: 【踩坑】DMG格式 转换 ISO格式
 date: 2019-11-09 14:05:05
 tags:
+categories:
+- MacOS
 ---
 
 ## 前言

@@ -2,6 +2,8 @@
 title: 【踩坑】重置Mac的所有网络设置
 date: 2019-11-06 13:14:39
 tags:
+categories:
+- MacOS
 ---
 
 ## 前言

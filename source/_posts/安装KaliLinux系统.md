@@ -2,6 +2,8 @@
 title: 【笔记】安装Kali Linux系统（VMware篇）
 date: 2019-11-03 12:30:00
 tags:
+categories:
+- 系统安装
 ---
 
 ## 前言

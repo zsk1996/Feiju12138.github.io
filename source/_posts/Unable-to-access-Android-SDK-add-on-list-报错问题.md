@@ -2,6 +2,8 @@
 title: 【踩坑】Unable to access Android SDK add-on list 报错问题
 date: 2019-11-17 21:02:17
 tags:
+categories:
+- Android
 ---
 
 ## 前言

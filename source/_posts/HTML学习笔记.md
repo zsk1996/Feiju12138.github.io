@@ -132,6 +132,37 @@ categories:
 <em></em>
 ```
 
+#### 字体下划线
+
+``` html
+<u></u>
+```
+
+#### 字体删除线
+
+``` html
+<s></s>
+<del></del>
+```
+
+#### 文字上标
+
+``` html
+<sub></sub>
+```
+
+#### 文字下标
+
+``` html
+<sup></sup>
+```
+
+#### 插入字
+
+``` html
+<ins></ins>
+```
+
 #### 字体标签
 
 ``` html
@@ -195,6 +226,108 @@ categories:
 <footer></footer>
 ```
 
+#### 导航栏标签
+
+``` html
+<nav></nav>
+```
+
+#### 独立内容区域
+
+``` html
+<article></article>
+```
+
+#### 页面侧边栏
+
+``` html
+<aside></aside>
+```
+
+#### 时间标签
+
+``` html
+<time></time>
+```
+
+#### 注释标签
+
+> `rt`：在上方的注释
+> `rp`：隐藏的注释
+
+``` html
+<ruby>
+    张<rt>Zhang</rt><rp>不显示</rp>
+</ruby>
+```
+
+#### 点击展开详情
+
+``` html
+<details>
+    <summary>更多</summary>
+    <p>详细内容<p>
+</details>
+```
+
+#### 给字段添加背景色
+
+``` html
+<mark></mark>
+```
+
+#### 进度条
+
+``` html
+<progress value="50" max="100"></progress>
+```
+
+#### 文章或文档的节
+
+``` html
+<section></section>
+```
+
+#### 视频
+
+``` html
+<video></video>
+```
+
+#### 音频
+
+``` html
+<audio></audio>
+```
+
+#### 模糊查询
+
+``` html
+<input type="text" list="test">
+<datalist id="test">
+    <option value="test1"></option>
+    <option value="test2"></option>
+</datalist>
+```
+
+#### 多媒体
+
+``` html
+<embed></embed>
+```
+
+#### 画布
+
+``` html
+<canvas></canvas>
+```
+
+#### 主要内容
+
+``` html
+<main></main>
+```
+
 ### 表格标签
 
 #### 定义表格
@@ -207,7 +340,7 @@ categories:
 
 ``` html
 <tr></tr>
-````
+```
 
 #### 定义列
 
@@ -255,31 +388,31 @@ categories:
 
 #### 表单项标签
 
-- 文本
+##### 文本
 
 ``` html
 <input type="text"/>
 ```
 
-- 密码输入框
+##### 密码输入框
 
 ``` html
 <input type="password"/>
 ```
 
-- 单选框
+##### 单选框
 
 ``` html
 <input type="radio"/>
 ```
 
-- 复选框
+##### 复选框
 
 ``` html
 <input type="checkbox"/>
 ```
 
-- 按钮
+##### 按钮
 
 ``` html
 <input type="button"/>
@@ -297,6 +430,85 @@ categories:
 <textarea></textarea>
 ```
 
+### "计算机输出"标签
+
+#### 定义计算机代码
+
+``` html
+<code></code>
+```
+
+#### 定义键盘码
+
+``` html
+<kbd></kbd>
+```
+
+#### 定义计算机代码样本
+
+``` html
+<samp></samp>
+```
+
+#### 定义变量
+
+``` html
+<var></var>
+```
+
+#### 定义预格式文本
+
+``` html
+<pre></pre>
+```
+
+### 引文、引用
+
+#### 定义缩写
+
+``` html
+<abbr></abbr>
+```
+
+#### 定义地址
+
+``` html
+<address></address>
+```
+
+#### 定义文字方向
+
+``` html
+<bdo></bdo>
+```
+
+#### 定义长的引用
+
+``` html
+<blockquote></blockquote>
+```
+
+#### 定义短的引用
+
+``` html
+<q><q>
+```
+
+#### 定义引用、引证
+
+``` html
+<cite></cite>
+```
+
+#### 定义项目
+
+``` html
+<dfn></dfn>
+```
+
 ## 参考文献
 
 [哔哩哔哩——张奇MAX](https://www.bilibili.com/video/av70420291)
+[简书——wade3po](https://www.jianshu.com/p/0abb613306c1)
+[菜鸟笔记](https://www.runoob.com/html/html-formatting.html)
+

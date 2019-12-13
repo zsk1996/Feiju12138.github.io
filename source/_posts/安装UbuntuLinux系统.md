@@ -1,5 +1,5 @@
 ---
-title: 【笔记】安装Ubuntu Linux系统
+title: 【笔记】安装 Ubuntu Linux 系统
 date: 2019-11-16 19:56:10
 tags:
 categories:
@@ -56,7 +56,7 @@ categories:
 
 - 全程自动安装，无需人工操作
 
-## 安装完成
+## 完成
 
 - 现在重启
 

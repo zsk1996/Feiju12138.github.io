@@ -33,7 +33,7 @@ categories:
 ## 代码
 
 ``` html
-<!doctype html>
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
@@ -44,6 +44,29 @@ categories:
     </body>
 </html>
 ```
+
+## 属性
+
+- 属性的声明必须位于开始标记里
+
+- 一个标签的属性可能不止一个，多个属性之间用空格隔开
+
+- 多个属性之间不分先后顺序
+
+- 每个属性都有值
+
+- 属性和属性值之间用`=`连接
+
+- 属性
+
+- 每个标签都有自己的特有属性
+
+- 大多数标签都支持的属性称为标准属性
+
+> id
+> title
+> class
+> style
 
 ## 标签
 
@@ -383,7 +406,7 @@ categories:
 #### 定义表单
 
 ``` html
-<form></form>
+<form method="post"></form>
 ```
 
 #### 表单项标签
@@ -421,7 +444,9 @@ categories:
 #### 下拉列表
 
 ``` html
-<select></select>
+<select>
+    <option></option>
+</select>
 ```
 
 #### 文本域
@@ -506,9 +531,12 @@ categories:
 <dfn></dfn>
 ```
 
+## 转义字符
+
+[传送门]()
+
 ## 参考文献
 
 [哔哩哔哩——张奇MAX](https://www.bilibili.com/video/av70420291)
 [简书——wade3po](https://www.jianshu.com/p/0abb613306c1)
 [菜鸟笔记](https://www.runoob.com/html/html-formatting.html)
-

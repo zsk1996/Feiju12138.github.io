@@ -1,5 +1,5 @@
 ---
-title: MySQL 学习笔记
+title: 【笔记】MySQL 学习笔记
 date: 2019-12-15 09:06:01
 tage:
 categories:

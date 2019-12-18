@@ -20,10 +20,6 @@ categories:
 
 - [lineage-16.0-20191120-nightly-kltechn-signed.zip](https://download.lineageos.org/kltechn)（LineageOS三星S5版系统映像）
 
-- [open_gapps-arm-9.0-super-20191121.1.zip](https://opengapps.org/?api=9.0&variant=nano)（谷歌全家桶刷机包）
-
-- [Magisk-v20.1.zip](https://github.com/topjohnwu/Magisk/releases)（Magisk刷机包）
-
 ## 开始刷机
 
 ### 后接上文
@@ -35,21 +31,21 @@ categories:
 - 使用"fastboot"工具在Fastboot模式刷入TWRP
 
 ``` bash
-fastboot flash recovery /Users/hatsunemiku/Downloads/twrp-3.0.2-1-kltechn.img.tar
+fastboot flash recovery twrp-3.0.2-1-kltechn.img.tar
 ```
 
 ### 刷入系统
 
 - 进入TWRP，"双清"
 
-[传送门](https://feiju12138.github.io/2019/11/20/Android-刷机_1/#“双清”)
+[传送门](https://feiju12138.github.io/2019/11/20/Android刷机_1/#“双清”)
 
 - "线"刷
 
-[传送门](https://feiju12138.github.io/2019/11/20/Android-刷机_1/#“线”刷)
+[传送门](https://feiju12138.github.io/2019/11/20/Android刷机_1/#“线”刷)
 
 ``` bash
-adb sideload /Users/hatsunemiku/Downloads/lineage-16.0-20191120-nightly-kltechn-signed.zip
+adb sideload lineage-16.0-20191120-nightly-kltechn-signed.zip
 ```
 
 #### 踩坑
@@ -59,7 +55,7 @@ adb sideload /Users/hatsunemiku/Downloads/lineage-16.0-20191120-nightly-kltechn-
 - 将".zip"系统映像文件解压，修改"updater-script"
 
 ``` bash
-vim /Users/hatsunemiku/Downloads/lineage-16.0-20191118-nightly-klte-signed/META-INF/com/google/android/updater-script
+vim lineage-16.0-20191118-nightly-klte-signed/META-INF/com/google/android/updater-script
 ```
 
 - 删除"ui_print"前的检查代码,保存并退出
@@ -70,45 +66,13 @@ vim /Users/hatsunemiku/Downloads/lineage-16.0-20191118-nightly-klte-signed/META-
 
 ![02.png](/images/20191121184916/02.png)
 
-### 刷入谷歌全家桶（可选）
-
-``` bash
-adb sideload /Users/hatsunemiku/Downloads/open_gapps-arm-9.0-super-20191121.1.zip
-```
-
-#### 踩坑
-
-- 报错：unknown command log error 70
-
-- 在TWRP主目录选择"清除"
-
-![03.png](/images/20191121184916/03.png)
-
-- 选择"高级清除菜单"
-
-![04.png](/images/20191121184916/04.png)
-
-- 选择"System"->"修复或转换文件系统"
-
-![05.png](/images/20191121184916/05.png)
-
-- 选择"调整文件系统大小"
-
-![06.png](/images/20191121184916/06.png)
-
-### 刷入Magisk获取ROOT权限（可选）
-
-``` bash
-adb sideload /Users/hatsunemiku/Downloads/Magisk-v20.1.zip
-```
-
 ## 完成
 
 - 刷机成功后，首次启动手机会非常慢。
 
 - 展示一张刷机成功的照片，留作纪念。
 
-![07.png](/images/20191121184916/07.png)
+![03.png](/images/20191121184916/03.png)
 
 ## 参考文献
 

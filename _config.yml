@@ -121,4 +121,10 @@ live2d:
 social:
   GitHub: github
   QQ: qq
+  E-Mail: envelope
 
+symbols_count_time:
+  symbols: false # 文章字数
+  time: false # 阅读时长
+  total_symbols: true # 所有文章总字数
+  total_time: true # 所有文章阅读中时长

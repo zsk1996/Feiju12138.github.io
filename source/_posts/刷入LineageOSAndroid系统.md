@@ -1,5 +1,5 @@
 ---
-title: 【笔记】Android 刷机（LineageOS篇）
+title: 【笔记】刷入 LineageOS Android 系统
 date: 2019-11-21 18:49:16
 tags:
 categories:
@@ -8,7 +8,7 @@ categories:
 
 ## 前言
 
-续上次安卓手机刷机过程。
+LineageOS是一个面向智能手机和平板电脑的自由、免费、开放源代码的Android系统分支。它是深受欢迎的定制ROM CyanogenMod的继任者。它在2016年12月Cyanogen公司突然宣布停止开发并关闭项目基础设施后复刻而生。（[维基百科](https://zh.wikipedia.org/wiki/LineageOS)）
 
 我用的手机为二手"Samsung Galaxy S5（中国移动定制版三星系统）"，数据线为"公牛安卓数据线"，电脑系统为MacOS，刷机后手机系统"lineage 16.0 20191120（LineageOS系统）"，初始安卓版本"Android 6.0.1"，刷机后安卓版本"Android 9"
 
@@ -18,7 +18,7 @@ categories:
 
 ## 准备工作（续）
 
-- [lineage-16.0-20191120-nightly-kltechn-signed.zip](https://download.lineageos.org/kltechn)（LineageOS三星S5版系统映像）
+- [lineage-16.0-20191120-nightly-kltechn-signed.zip](https://download.lineageos.org/kltechn)（LineageOS三星S5版系统ROM包）
 
 ## 开始刷机
 
@@ -70,7 +70,7 @@ vim lineage-16.0-20191118-nightly-klte-signed/META-INF/com/google/android/update
 
 - 刷机成功后，首次启动手机会非常慢。
 
-- 展示一张刷机成功的照片，留作纪念。
+- 展示一张刷机完成的照片，留作纪念。
 
 ![03.png](/images/20191121184916/03.png)
 

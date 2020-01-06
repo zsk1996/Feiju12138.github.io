@@ -47,32 +47,42 @@ categories:
 
 ## 属性
 
+### 属性来修饰元素
+
 - 属性的声明必须位于开始标记里
 
 - 一个标签的属性可能不止一个，多个属性之间用空格隔开
 
 - 多个属性之间不分先后顺序
 
-- 每个属性都有值
+### 每个属性都有值
 
 - 属性和属性值之间用`=`连接
 
-- 属性
+- 属性的值包含在引号中
+
+### 标准属性
 
 - 每个标签都有自己的特有属性
 
 - 大多数标签都支持的属性称为标准属性
 
-> id
-> title
-> class
-> style
+> `id=""`：编号
+> `title=""`：标题
+> `class=""`：类名
+> `style=""`：样式
 
 ## 标签
 
 ### 文档标签
 
-- 构成html最基本的标签
+#### 文档声明标签
+
+- html5中定义该文档是html文档
+
+``` html
+<!DOCTYPE html>
+```
 
 #### 文档的根标签
 
@@ -82,16 +92,34 @@ categories:
 
 #### 头标签
 
-- 用于指定html文档的一些属性，引入外部资源
-
 ``` html
 <head></head>
 ```
 
-#### 文档标题
+##### 文档标题
 
 ``` html
-<title></title>
+<head>
+    <title></title>
+</head>
+```
+
+##### 元数据标签
+
+- 元数据标签位于`head标签`内部，在`head标签`中承载的信息一般用户在浏览器中是访问不到的，但是对于搜索引擎，它们抓取网页的方式一般是集中关注网页`head标签`内容
+
+###### 
+
+> `charset="utf-8"`：网页字符集
+> `name="keywords" content=""`：网页关键词
+> `name="description" content=""`：网页描述
+> `name="author" content=""`：网页作者
+> `http-equiv="refresh" content="5; https://feiju12138.github.io"`：倒计时5秒自动跳转网页
+
+``` html
+<head>
+    <meta>
+</head>
 ```
 
 #### 体标签
@@ -100,17 +128,13 @@ categories:
 <body></body>
 ```
 
-#### \<!DOCTYPE html>
-
-- html5中定义该文档是html文档
-
-### 文本标签
-
-#### 注释
+### 注释标签
 
 ``` html
 <!-- 注释内容 -->
 ```
+
+### 文本标签
 
 #### 标题标签
 
@@ -132,13 +156,13 @@ categories:
 #### 换行标签
 
 ``` html
-<br/>
+<br>
 ```
 
 #### 水平线标签
 
 ``` html
-<hr/>
+<hr>
 ```
 
 #### 字体加粗
@@ -186,6 +210,12 @@ categories:
 <ins></ins>
 ```
 
+#### 文本高亮
+
+``` html
+<mark></mark>
+```
+
 #### 字体标签
 
 ``` html
@@ -198,23 +228,69 @@ categories:
 <center></center>
 ```
 
-### 图片标签
+### 链接标签
+
+> `href=""`：链接地址
+> `herf="#name/id"`：锚点链接
+> `herf="#"`：返回到本页
+> `target=""`：窗口名称
+> `title=""`：链接提示文字
 
 ``` html
-<img src="#"/>
+<a></a>
+```
+
+### 图片标签
+
+> 支持的格式：JPEG、PNG、GIF
+> `src=""`：路径及名称
+> `alt=""`：无效图片替代文本
+> `width=""`：宽
+> `height=""`：高
+
+``` html
+<img>
+```
+
+### 视频标签
+
+> 支持的格式：MP4、OGG、WEBM
+> `width=""`：宽
+> `height=""`：高
+> `controls`：显示控制
+
+> `src=""`：路径及名称
+> `type="video/mp4"`：类型
+
+``` html
+<video>
+    <source>
+</video>
+```
+
+### 音频标签
+
+> 支持的格式：MP3、OGG、WAV
+>
+> > `controls`：显示控制
+
+> `src=""`：路径及名称
+> `type="audio/mp3"`：类型
+
+``` html
+<audio>
+    <source>
+</audio>
 ```
 
 ### 列表标签
 
 #### 有序列表
 
-``` html
-<ul>
-    <li></li>
-</ul>
-```
-
-#### 无序列表
+> `type="a"`：使用小写字母排序
+> `type="A"`：使用大写字母排序
+> `type="1"`：使用数字排序
+> `start="2"`：从2开始排序
 
 ``` html
 <ol>
@@ -222,10 +298,79 @@ categories:
 </ol>
 ```
 
-### 链接标签
+#### 无序列表
+
+> `type="disc"`：实心圆
+> `type="circle"`：空心圆
+> `type="square"`：实心方块
 
 ``` html
-<a href="#"></a>
+<ul>
+    <li></li>
+</ul>
+```
+
+### 表格标签
+
+#### 定义表格
+
+> `width=""`：表格宽度
+> `height=""`：表格高度
+> `align=""`：表格位置
+> `border=""`：表格边框
+> `cellpadding=""`：单元格内边距
+> `cellspacing=""`：单元格外边距
+> `bgcolor=""`：表格背景颜色
+> `background=""`：表格背景图片
+> `bordercolor=""`：边框颜色
+
+``` html
+<table></table>
+```
+
+#### 定义行和列
+
+> `colspan="2"`横向合并单元格（将两列单元格合并为一个）
+> `rowspan="2"`纵向合并单元格（将两行单元格合并为一个）
+
+``` html
+<table>
+    <tr>
+        <td></td>
+    </tr>
+</table>
+```
+
+#### 定义表头
+
+``` html
+<table>
+    <th></th>
+</table>
+```
+
+#### 表格标题
+
+``` html
+<capital></capital>
+```
+
+#### 表格头标签
+
+``` html
+<thead></thead>
+```
+
+#### 表格体标签
+
+``` html
+<tbody></tbody>
+```
+
+#### 表格脚标签
+
+``` html
+<tfoot></tfoot>
 ```
 
 ### 块标签
@@ -233,6 +378,68 @@ categories:
 ``` html
 <div></div>
 <span></span>
+```
+
+### 表单标签
+
+#### 定义表单
+
+> `method="post"`：以post方式发送请求
+> `method="get"`：以get方式发送请求
+
+``` html
+<form></form>
+```
+
+#### 表单项标签
+
+> `type="text"`：文本框
+> `type="password"`：密码框
+>> `name=""`：名称
+>> `value=""`：默认显示值
+>> `maxlength=""`：限制输入的字符数
+>> `readonly=""`只读模式
+
+> `type="button"`：普通按钮
+> `type="submin"`：提交按钮
+> `type="reset"`：重置按钮
+>> `name=""`：名称
+>> `value=""`：默认显示值
+
+> `type="radio"`：单选框
+> `type="checkbox"`：复选框
+>> `name=""`：设置名称，并用于分组。
+>> `value=""`：默认显示值
+>> `checked=""`：设置默认被选中
+
+``` html
+<input>
+```
+
+#### 下拉列表
+
+> `name=""`：名称
+> `size=""`：默认值1，如果大于1，则为滚动列表
+> `multiple=""`：设置多选
+
+> `value=""`选项的值
+> `selected`：预选中
+
+``` html
+<select>
+    <option></option>
+</select>
+```
+
+#### 文本域
+
+> `name=""`：名称
+> `cols=""`：指定文本域的列数
+> `rows=""`：指定文本域的行数
+> `readonly=""`：只读模式
+
+``` html
+<textarea></textarea>
 ```
 
 ### 语义化标签
@@ -273,7 +480,7 @@ categories:
 <time></time>
 ```
 
-#### 注释标签
+#### 中文拼音注释
 
 > `rt`：在上方的注释
 > `rp`：隐藏的注释
@@ -293,12 +500,6 @@ categories:
 </details>
 ```
 
-#### 给字段添加背景色
-
-``` html
-<mark></mark>
-```
-
 #### 进度条
 
 ``` html
@@ -309,18 +510,6 @@ categories:
 
 ``` html
 <section></section>
-```
-
-#### 视频
-
-``` html
-<video></video>
-```
-
-#### 音频
-
-``` html
-<audio></audio>
 ```
 
 #### 模糊查询
@@ -351,108 +540,15 @@ categories:
 <main></main>
 ```
 
-### 表格标签
+### 浮动框架标签
 
-#### 定义表格
-
-``` html
-<table></table>
-```
-
-#### 定义行
+> `src=""`：指向的链接
+> `height=""`：高度
+> `width=""`：宽度
+> `frameborder=""`：边框
 
 ``` html
-<tr></tr>
-```
-
-#### 定义列
-
-``` html
-<td></td>
-```
-
-#### 定义表头
-
-``` html
-<th></th>
-```
-
-#### 表格标题
-
-``` html
-<capital></capital>
-```
-
-#### 表格头标签
-
-``` html
-<thead></thead>
-```
-
-#### 表格体标签
-
-``` html
-<tbody></tbody>
-```
-
-#### 表格脚标签
-
-``` html
-<tfoot></tfoot>
-```
-
-### 表单标签
-
-#### 定义表单
-
-``` html
-<form method="post"></form>
-```
-
-#### 表单项标签
-
-##### 文本
-
-``` html
-<input type="text"/>
-```
-
-##### 密码输入框
-
-``` html
-<input type="password"/>
-```
-
-##### 单选框
-
-``` html
-<input type="radio"/>
-```
-
-##### 复选框
-
-``` html
-<input type="checkbox"/>
-```
-
-##### 按钮
-
-``` html
-<input type="button"/>
-```
-
-#### 下拉列表
-
-``` html
-<select>
-    <option></option>
-</select>
-```
-
-#### 文本域
-
-``` html
-<textarea></textarea>
+<iframe></iframe>
 ```
 
 ### "计算机输出"标签
@@ -531,14 +627,12 @@ categories:
 <dfn></dfn>
 ```
 
-## 转义字符
-
-[传送门]()
-
 ## 参考文献
 
 [达内教育](http://www.tedu.cn)
+工单课堂
 [哔哩哔哩——张奇MAX](https://www.bilibili.com/video/av70420291)
 [简书——wade3po](https://www.jianshu.com/p/0abb613306c1)
+[简书——hx永恒之恋](https://www.jianshu.com/p/2977a9f14afc)
 [菜鸟笔记](https://www.runoob.com/html/html-formatting.html)
 

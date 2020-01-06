@@ -8,7 +8,9 @@ categories:
 
 ## 前言
 
-记一次 Ubuntu Linux 系统安装过程，系统版本 18
+Ubuntu是以桌面应用为主的Linux发行版，Ubuntu由Canonical公司发布，他们提供商业支持。它是基于自由软件，其名称来自非洲南部祖鲁语或科萨语的“ubuntu”一词，意思是“人性”、“我的存在是因为大家的存在”，是非洲传统的一种价值观。（[维基百科](https://zh.wikipedia.org/wiki/Ubuntu)）
+
+`Ubuntu Linux`系统安装过程，系统版本`18`
 
 <!-- more -->
 
@@ -62,3 +64,6 @@ categories:
 
 - 记得拔出U盘，系统才会自动重启
 
+- 展示一张安装完成的截图，留作纪念。
+
+![01.png](/images/20191116195610/01.png)

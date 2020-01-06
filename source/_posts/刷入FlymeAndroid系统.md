@@ -1,5 +1,5 @@
 ---
-title: 【笔记】Android 刷机（Flyme篇）
+title: 【笔记】刷入 Flyme Android 系统
 date: 2019-11-20 20:36:32
 tags:
 categories:
@@ -8,7 +8,7 @@ categories:
 
 ## 前言
 
-记一次安卓手机刷机过程。
+Flyme是由珠海魅族科技有限公司开发的基于Android的手机操作系统。（[维基百科](https://zh.wikipedia.org/wiki/Flyme)）
 
 我用的手机为二手"Samsung Galaxy S5（中国移动定制版三星系统）"，数据线为"公牛安卓数据线"，电脑系统为Windows和MacOS，刷机后手机系统"Flyme 6.7.12.29R beta（魅族系统）"，初始和完成安卓版本"Android 6.0.1"
 
@@ -26,7 +26,7 @@ categories:
 
 - [twrp-3.0.2-1-kltechn.img.tar](https://dl.twrp.me/kltechn/)（TWRP第三方Recovery）
 
-- [flyme_SM-G9008W_ddfzl_6.7.12.29R-beta.zip](https://www.flyme.cn/firmwarelist-128.html)（Flyme三星S5版魅族系统映像）
+- [flyme_SM-G9008W_ddfzl_6.7.12.29R-beta.zip](https://www.flyme.cn/firmwarelist-128.html)（Flyme三星S5版魅族系统ROM包）
 
 - [SDK Platform Tools](https://www.droidviews.com/download-latest-adb-and-fastboot-sdk-platform-tools-win-mac-linux/)（adb工具包）
 
@@ -146,11 +146,11 @@ brew cask install android-platform-tools
 /Users/hatsunemiku/Library/Android/sdk/platform-tools/adb sideload /Users/hatsunemiku/Downloads/flyme_SM-G9008W_ddfzl_6.7.12.29R-beta.zip
 ```
 
-## 成功
+## 完成
 
 - 刷机成功后，首次启动手机会非常慢。
 
-- 展示一张刷机成功的照片，留作纪念。
+- 展示一张刷机完成的照片，留作纪念。
 
 ![16.png](/images/20191120203632/16.png)
 

@@ -99,8 +99,3 @@
     sidebarPadding: 40
   };
 </script>
-
-<script data-ad-client="ca-pub-1761174444575521" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
-<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">

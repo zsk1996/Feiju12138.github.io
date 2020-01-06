@@ -28,17 +28,56 @@ jQuery学习笔记
 
 ### 使用
 
+- 写在`<script></script>`标签内，如果写在`<head></head>`标签内需要预加载函数
+
+#### 第一种写法
+
 ``` javascript
 <head>
     <script type="text/javascript" src="js/jquery-3.4.1.js"></script>
-    <script type="text/javascript" src="js/jquery-3.4.1.js">
+    <script>
+        jQuery(document).ready(function(){
+            ...
+        });
+    </script>
+</head>
+```
+
+#### 第二种写法
+
+``` javascript
+<head>
+    <script type="text/javascript" src="js/jquery-3.4.1.js"></script>
+    <script>
         $(document).ready(function(){
             ...
         });
-        /*简写
+    </script>
+</head>
+```
+
+#### 第三种写法
+
+``` javascript
+<head>
+    <script type="text/javascript" src="js/jquery-3.4.1.js"></script>
+    <script>
+        jQuery(function(){
+            ...
+        });
+    </script>
+</head>
+```
+
+#### 第四种写法
+
+``` javascript
+<head>
+    <script type="text/javascript" src="js/jquery-3.4.1.js"></script>
+    <script>
         $(function(){
             ...
-        });*/
+        });
     </script>
 </head>
 ```

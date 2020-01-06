@@ -35,13 +35,15 @@ adb shell
 - 通过修改设置去除叉号
 
 ``` bash
-delete global captive_portal_http_url
-delete global captive_portal_https_url
-put global captive_portal_http_url http://developers.google.cn/generate_204
-put global captive_portal_https_url https://developers.google.cn/generate_204
+settings delete global captive_portal_http_url
+settings delete global captive_portal_https_url
+settings put global captive_portal_http_url http://developers.google.cn/generate_204
+settings put global captive_portal_https_url https://developers.google.cn/generate_204
 ```
 
 ## 完成
+
+- 重启`wifi`
 
 ## 参考文献
 

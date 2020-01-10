@@ -56,7 +56,7 @@ categories:
 - 设置参数->`continue`
 
 > `Device`：klet（选择手机型号）
-> `Partition configuration`：Data slot（选择作为副系统）->miui（设置名称）
+> `Partition configuration`：Data slot（刷入Data分区）->miui（设置名称）
 
 - 选择打补丁后的ROM存储位置及名称
 

@@ -21,7 +21,7 @@ Fping类似于ping，但比ping强大。Fping与ping不同的地方在于，fpin
 ``` bash
 fping -g 192.168.1.0/255
 fping -g 192.168.1.0 192.168.1.255
-``` 
+```
 
 ### 显示可ping通的目标
 
@@ -37,7 +37,7 @@ fping -A
 
 ### ping 数据包的大小
 
-默认为56
+- 默认为56
 
 ``` bash
 fping -b <num>
@@ -51,7 +51,7 @@ fping -B <f>
 
 ### ping每个目标的次数
 
-默认为1
+- 默认为1
 
 ``` bash
 fping -c <num>
@@ -66,7 +66,7 @@ fping -e
 
 ### 从文件获取目标列表
 
-不能与`-g`同时使用
+- 不能与`-g`同时使用
 
 ``` bash
 fping -f <file>
@@ -74,7 +74,7 @@ fping -f <file>
 
 ### 设置ip的TTL值
 
-生存时间
+- 生存时间
 
 ``` bash
 fping -i
@@ -101,7 +101,7 @@ fping -d
 
 ### 对同一个目标的ping包间隔(毫秒) 
 
-在循环和统计模式中，默认为1000
+- 在循环和统计模式中，默认为1000
 
 ``` bash
 fping -p <num>
@@ -109,7 +109,7 @@ fping -p <num>
 
 ### 安静模式
 
-不显示每个目标或每个ping的结果
+- 不显示每个目标或每个ping的结果
 
 ``` bash
 fping -q
@@ -118,7 +118,7 @@ fping -Q
 
 ### 当ping失败时，最大重试次数
 
-默认为3次
+- 默认为3次
 
 ``` bash
 fping -r <num>
@@ -132,7 +132,7 @@ fping -s
 
 ### 单个目标的超时时间(毫秒)
 
-默认500
+- 默认500
 
 ``` bash
 fping -t <num>

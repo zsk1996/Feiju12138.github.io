@@ -19,7 +19,7 @@ Fping类似于ping，但比ping强大。Fping与ping不同的地方在于，fpin
 ### Ping 网段
 
 ``` bash
-fping -g 192.168.1.0/255
+fping -g 192.168.1.1/32
 fping -g 192.168.1.0 192.168.1.255
 ```
 

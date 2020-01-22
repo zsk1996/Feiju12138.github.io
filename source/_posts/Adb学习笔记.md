@@ -468,7 +468,7 @@ adb shell cat /system/build.prop
 
 ``` bash
 adb shell getprop <property>
-``
+```
 
 ## 修改设置
 

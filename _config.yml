@@ -128,3 +128,8 @@ symbols_count_time:
   time: false # 阅读时长
   total_symbols: true # 所有文章总字数
   total_time: true # 所有文章阅读中时长
+
+feed:
+  type: rss2
+  path: rss2.xml
+  limit: 5

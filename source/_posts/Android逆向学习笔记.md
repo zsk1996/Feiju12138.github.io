@@ -121,15 +121,54 @@ date: 2020-02-14 21:26:03
 
 ## APK 反编译与回bianyi
 
-### 反编译
-
 - 先查壳，再反编译看验证
 - `.dex`文件转化为`.smali`文件，反编译工具`apktool`
 - 去除广告和弹窗，撇开不存在于`smali`的这种情况，容易的就是可以`XML`中找到`Activity`，难得就是找不到，发生这种情况时，就要分析代码，程序逻辑，抓住关键信息、界面和函数
 
+## MacOS 下的反编译
 
+### 准备工作
 
-## 未完待更
+- Apktool
+
+``` sh
+brew install apktool
+```
+
+- dex2jar
+
+``` sh
+brew install dex2jar
+```
+
+- JD-GUI
+
+``` sh
+brew cask install jd-gui
+```
+
+### 反编译 apk 文件
+
+- 使用`apktool`命令反编译`.apk`文件
+
+> `<name>`：`.apk`文件
+
+``` sh
+apktool d <name>
+```
+
+### 反编译 dex 文件
+
+- 直接解压缩`.apk`文件
+
+- 使用`d2j-dex2jar`命令，反编译`.dex`文件
+
+``` sh
+d2j-dex2jar classes.dex
+d2j-dex2jar classes2.dex
+```
+
+- 使用`JD-GUI`软件打开`.jar`文件
 
 ## 参考文献
 

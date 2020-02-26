@@ -119,7 +119,7 @@ date: 2020-02-14 21:26:03
 
 - 删除安装过程中在上述三个目录下创建的文件及目录
 
-## APK 反编译与回bianyi
+## APK 反编译与回编译
 
 - 先查壳，再反编译看验证
 - `.dex`文件转化为`.smali`文件，反编译工具`apktool`
@@ -159,7 +159,13 @@ apktool d <name>
 
 ### 反编译 dex 文件
 
-- 直接解压缩`.apk`文件
+- 直接解压缩`.apk`文件，或者使用`apktool`命令回编译`刚刚反编译`的目录
+
+> `<directory>`：反编译的目录
+
+``` sh
+apktool b <directory>
+```
 
 - 使用`d2j-dex2jar`命令，反编译`.dex`文件
 
@@ -174,4 +180,5 @@ d2j-dex2jar classes2.dex
 
 [哔哩哔哩——b站最菜黑客](https://www.bilibili.com/video/av81328003)
 [简书——CrazyCodeBoy](https://www.jianshu.com/p/48a0f9e6e51a)
+[简书——haegyeong](https://www.jianshu.com/p/92a3adc1b152)
 

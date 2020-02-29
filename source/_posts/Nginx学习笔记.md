@@ -1,7 +1,7 @@
 ---
 title: 【笔记】Nginx 学习笔记
 categories:
-  - 服务器
+  - Server
 date: 2020-02-22 00:30:32
 ---
 
@@ -52,6 +52,12 @@ name=nginx repo
 baseurl=http://nginx.org/package/<OS>/<OSRELEASE>/$basearch/
 gpgcheck=0
 enabled=1
+```
+
+- 安装
+
+``` sh
+yum install nginx
 ```
 
 ## 目录结构
@@ -151,12 +157,6 @@ nginx -v
 |500|服务器内部错误|服务器遇到了一个未曾预料的状况，导致了它无法完成对请求的处理|
 |502|请求后端失败|
 |504|响应超时|请求成功，但是响应超时|
-
-
-
-
-
-## 未完待更
 
 ## 参考文献
 

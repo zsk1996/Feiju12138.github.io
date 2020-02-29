@@ -1,7 +1,7 @@
 ---
 title: 【笔记】MacOS下Nginx的路径
 categories:
-  - 服务器
+  - Server
 date: 2020-02-26 23:40:36
 ---
 

@@ -32,6 +32,7 @@
     "hexo-renderer-stylus": "^1.1.0",
     "hexo-server": "^1.0.0",
     "hexo-symbols-count-time": "^0.7.0",
+    "hexo-tag-aplayer": "^3.0.4",
     "live2d-widget-model-shizuku": "^1.0.5"
   }
 }

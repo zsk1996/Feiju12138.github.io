@@ -16,12 +16,6 @@
         {%- set display_toc = toc.length > 1 and display_toc %}
       {%- endif %}
 
-      {% if theme.background_music %}
-        <div>
-          <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=298 height=52 src="https://feiju12138.github.io/audios/background-music.mp3"></iframe>
-        </div>
-      {% endif %}
-
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
           {{ __('sidebar.toc') }}
@@ -52,8 +46,15 @@
         </div>
       {%- endif %}
 
+
+      {% if theme.background_music %}
+        <link rel="stylesheet" href="/dist/APlayer.min.css">
+        <div id="aplayer"></div>
+        <script type="text/javascript" src="/dist/APlayer.min.js"></script>
+        <script type="text/javascript" src="/dist/music.js"></script>
+      {% endif %}
+
     </div>
   </aside>
   <div id="sidebar-dimmer"></div>
 {% endmacro %}
-

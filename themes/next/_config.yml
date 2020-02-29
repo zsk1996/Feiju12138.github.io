@@ -51,7 +51,7 @@ favicon:
 # Set rss to false to disable feed link. Set rss to specific value if you have burned your feed already.
 rss: /rss2.xml
 
-background_music: https://feiju12138.github.io/audios/background-music.mp3
+background_music: true
 
 footer:
   # Specify the date when the site was setup. If not defined, current year will be used.
@@ -161,7 +161,7 @@ sidebar:
   #  - always  expand for all pages automatically.
   #  - hide    expand only when click on the sidebar toggle icon.
   #  - remove  totally remove sidebar including sidebar toggle.
-  display: hide
+  display: post
 
   # Sidebar offset from top menubar in pixels (only for Pisces | Gemini).
   offset: 12
@@ -173,12 +173,12 @@ avatar:
   # Replace the default image and set the url here.
   url: #/images/avatar.gif
   # If true, the avatar would be dispalyed in circle.
-  rounded: false
+  rounded: true
   # If true, the avatar would be rotated with the cursor.
-  rotated: false
+  rotated: true
 
 # Posts / Categories / Tags in sidebar.
-site_state: true
+site_state: false
 
 # Social Links
 # Usage: `Key: permalink || icon`

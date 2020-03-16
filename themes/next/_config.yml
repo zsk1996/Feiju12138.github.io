@@ -135,6 +135,8 @@ menu:
   #sitemap: /sitemap.xml || sitemap
   #commonweal: /404/ || heartbeat
 
+  links: /links || link
+
 # Enable / Disable menu icons / item badges.
 menu_settings:
   icons: true
@@ -215,6 +217,12 @@ links_settings:
 
 links:
   #Title: http://example.com
+
+mylinks:
+  - nickname: LeFlacon’s Blog # 网站名称
+    avatar: https://tva1.sinaimg.cn/large/00831rSTly1gcsjn9y09kj30sg0sgmxr.jpg # 头像地址
+    site: https://leflacon.github.io/ # 网站地址
+    info: 梦想做个靠谱的好人_(:з」∠)_ # 网站说明
 
 # Table of Contents in the Sidebar
 toc:
@@ -385,10 +393,10 @@ back2top:
 
 # Reading progress bar
 reading_progress:
-  enable: false
+  enable: true
   # Available values: top | bottom
   position: top
-  color: "#37c6c0"
+  color: "#FF3366"
   height: 3px
 
 # Bookmark Support
@@ -421,7 +429,7 @@ github_banner:
 # ---------------------------------------------------------------
 
 font:
-  enable: false
+  enable: true
 
   # Uri of fonts host, e.g. //fonts.googleapis.com (Default).
   host:
@@ -433,30 +441,30 @@ font:
 
   # Global font settings used for all elements inside <body>.
   global:
-    external: true
-    family: Lato
+    external: false
+    family:
     size:
 
   # Font settings for site title (.site-title).
   title:
     external: true
-    family:
-    size:
+    family: DroidSansChinese
+    size: 2
 
   # Font settings for headlines (<h1> to <h6>).
   headings:
-    external: true
+    external: false
     family:
     size:
 
   # Font settings for posts (.post-body).
   posts:
-    external: true
+    external: false
     family:
 
   # Font settings for <code> and code blocks.
   codes:
-    external: true
+    external: false
     family:
 
 
@@ -537,7 +545,7 @@ pjax: false
 
 # FancyBox is a tool that offers a nice and elegant way to add zooming functionality for images.
 # For more information: https://fancyapps.com/fancybox
-fancybox: false
+fancybox: true
 
 # A JavaScript library for zooming images like Medium.
 # Do not enable both `fancybox` and `mediumzoom`.

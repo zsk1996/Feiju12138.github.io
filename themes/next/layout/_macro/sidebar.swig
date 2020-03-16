@@ -8,6 +8,13 @@
   <aside class="sidebar">
     <div class="sidebar-inner">
 
+      {% if theme.background_music %}
+        <link rel="stylesheet" href="/dist/APlayer.min.css">
+        <div id="aplayer"></div>
+        <script type="text/javascript" src="/dist/APlayer.min.js"></script>
+        <script type="text/javascript" src="/dist/music.js"></script>
+      {% endif %}
+
       {%- set display_toc = theme.toc.enable and display_toc %}
       {%- if display_toc %}
         {%- set next_toc_number = page.toc_number or theme.toc.number %}
@@ -45,14 +52,6 @@
           <span>0%</span>
         </div>
       {%- endif %}
-
-
-      {% if theme.background_music %}
-        <link rel="stylesheet" href="/dist/APlayer.min.css">
-        <div id="aplayer"></div>
-        <script type="text/javascript" src="/dist/APlayer.min.js"></script>
-        <script type="text/javascript" src="/dist/music.js"></script>
-      {% endif %}
 
     </div>
   </aside>

@@ -1,7 +1,7 @@
 ---
 title: 【踩坑】关闭Mac开机自启Apache
 categories:
-  - MacOS
+  - Server
 date: 2020-02-28 19:43:35
 ---
 

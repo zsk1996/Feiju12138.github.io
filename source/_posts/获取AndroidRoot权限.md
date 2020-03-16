@@ -22,8 +22,6 @@ categories:
 
 ### 刷入 Lineage OS 官方提供的 Root 刷机包
 
-[传送门](https://feiju12138.github.io/2019/11/20/Android刷机_1/#“线”刷)
-
 ``` bash
 adb sideload addonsu-16.0-arm-signed.zip
 ```
@@ -59,8 +57,6 @@ adb sideload addonsu-16.0-arm-signed.zip
 ## 通过 Magisk
 
 ### 刷入 Magisk 来获取 Root 权限
-
-[传送门](https://feiju12138.github.io/2019/11/20/Android刷机_1/#“线”刷)
 
 ``` bash
 adb sideload Magisk-v20.1.zip

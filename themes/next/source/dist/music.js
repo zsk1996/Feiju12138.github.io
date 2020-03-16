@@ -1,8 +1,7 @@
 const ap = new APlayer({
     container: document.getElementById('aplayer'),
-    listFolded: false,
-    listMaxHeight: 90,
     lrcType: 3,
+    listFolded: true,
     audio: [{
         name: '出山',
         artist: '花粥&王胜男',
@@ -23,5 +22,12 @@ const ap = new APlayer({
         url: '/media/music_03.mp3',
         cover: '/media/img_03.jpg',
         lrc: '/media/lrc_03.lrc'
+    },
+    {
+        name: '卡布奇诺',
+        artist: '6诗人',
+        url: '/media/music_04.mp3',
+        cover: '/media/img_04.jpg',
+        lrc: '/media/lrc_04.lrc'
     }]
 });

@@ -29,5 +29,12 @@ const ap = new APlayer({
         url: '/media/music_04.mp3',
         cover: '/media/img_04.jpg',
         lrc: '/media/lrc_04.lrc'
+    },
+    {
+        name: '红昭愿',
+        artist: '音阙诗听',
+        url: '/media/music_05.mp3',
+        cover: '/media/img_05.jpg',
+        lrc: '/media/lrc_05.lrc'
     }]
 });

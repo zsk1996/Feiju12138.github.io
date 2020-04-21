@@ -1,7 +1,7 @@
 ---
 title: 【踩坑】JDBC 报错 The server time zone value '' ...
 categories:
-  - JDBC
+  - Java
 date: 2020-01-25 23:01:52
 ---
 

@@ -3,7 +3,7 @@ title: 【笔记】redis 启动关闭服务
 date: 2019-12-05 15:08:23
 tags:
 categories:
-- Redis
+- Database
 ---
 
 ## 前言

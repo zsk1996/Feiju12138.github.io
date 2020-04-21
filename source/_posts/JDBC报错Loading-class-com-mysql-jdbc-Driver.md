@@ -1,7 +1,7 @@
 ---
 title: 【踩坑】JDBC 报错 Loading class `com.mysql.jdbc.Driver' ...
 categories:
-  - JDBC
+  - Java
 date: 2020-01-25 22:40:23
 ---
 

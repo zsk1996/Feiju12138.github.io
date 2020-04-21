@@ -3,7 +3,7 @@ title: 【骚操作】修改 MySQL 提示符
 date: 2019-12-05 17:02:57
 tags:
 categories:
-- MySQL
+- Database
 ---
 
 ## 前言

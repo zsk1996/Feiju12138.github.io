@@ -1,9 +1,9 @@
 ---
-title: 【踩坑】mysql 修改简单密码报错
+title: 【踩坑】MySQL 修改简单密码报错
 date: 2019-11-16 16:04:04
 tags:
 categories:
-- MySQL
+- Database
 ---
 
 ## 前言

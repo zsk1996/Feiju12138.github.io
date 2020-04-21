@@ -1,7 +1,7 @@
 ---
 title: 【代码】JDBC 快速入门
 categories:
-  - JDBC
+  - Java
 date: 2020-01-25 23:12:25
 ---
 

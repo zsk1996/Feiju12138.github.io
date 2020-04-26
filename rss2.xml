@@ -9,8 +9,42 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>捕捉一只爱折腾的绯鞠</description>
-    <pubDate>Sun, 26 Apr 2020 13:18:14 GMT</pubDate>
+    <pubDate>Sun, 26 Apr 2020 13:48:47 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>【笔记】材质包安装</title>
+      <link>https://feiju12138.github.io/2020/04/26/%E6%9D%90%E8%B4%A8%E5%8C%85%E5%AE%89%E8%A3%85/</link>
+      <guid>https://feiju12138.github.io/2020/04/26/%E6%9D%90%E8%B4%A8%E5%8C%85%E5%AE%89%E8%A3%85/</guid>
+      <pubDate>Sun, 26 Apr 2020 13:46:01 GMT</pubDate>
+      <description>
+      
+        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;Minecraft材质包安装笔记&lt;/p&gt;
+      
+      </description>
+      
+      
+      <content:encoded><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Minecraft材质包安装笔记</p><a id="more"></a><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><ul><li><p>将材质包（通常为<code>.zip</code>包，不要解压缩）放到<code>~/Library/Application Support/minecraft/resourcepacks</code>目录下</p></li><li><p>如果找不到<code>resourcepacks</code>目录，可以先进入游戏-&gt;<code>选项</code>-&gt;<code>资源包</code>-&gt;<code>打开资源包文件夹</code>，再重启游戏</p></li></ul><h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content:encoded>
+      
+      <comments>https://feiju12138.github.io/2020/04/26/%E6%9D%90%E8%B4%A8%E5%8C%85%E5%AE%89%E8%A3%85/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>forge安装笔记</title>
+      <link>https://feiju12138.github.io/2020/04/26/forge%E5%AE%89%E8%A3%85%E7%AC%94%E8%AE%B0/</link>
+      <guid>https://feiju12138.github.io/2020/04/26/forge%E5%AE%89%E8%A3%85%E7%AC%94%E8%AE%B0/</guid>
+      <pubDate>Sun, 26 Apr 2020 13:41:20 GMT</pubDate>
+      <description>
+      
+        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;Minecraft需要使用Mod时，首先要安装forge&lt;/p&gt;
+      
+      </description>
+      
+      
+      <content:encoded><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Minecraft需要使用Mod时，首先要安装forge</p><a id="more"></a><h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul><li><p>对应版本<a href="http://files.minecraftforge.net" target="_blank" rel="noopener">forge</a></p></li><li><p>安装java</p></li></ul><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -jar ~/Downloads/forge-1.15.2-31.1.50-installer.jar</span><br></pre></td></tr></table></figure><ul><li>下一步下一步完成</li></ul><h2 id="安装Mod"><a href="#安装Mod" class="headerlink" title="安装Mod"></a>安装Mod</h2><ul><li><p>将mod包（通常为<code>.jar</code>包，不要解压缩）放到<code>~/Library/Application Support/minecraft/mods</code>目录下</p></li><li><p>如果没有<code>mods</code>目录，在<code>minecraft</code>根目录手动创建<code>mods</code>目录</p></li></ul><h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content:encoded>
+      
+      <comments>https://feiju12138.github.io/2020/04/26/forge%E5%AE%89%E8%A3%85%E7%AC%94%E8%AE%B0/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>【笔记】Java安装笔记</title>
@@ -61,40 +95,6 @@
       <content:encoded><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在执行<code>brew cleanup</code>命令时，报错：<code>most recent version not installed</code></p><a id="more"></a><p><img src="/images/20200425104601/01.png" alt="01.png"></p><h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><ul><li><code>httping</code>出现了问题</li></ul><h2 id="解决问题"><a href="#解决问题" class="headerlink" title="解决问题"></a>解决问题</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">brew uninstall -f httping</span><br><span class="line">brew cleanup</span><br><span class="line">brew install httping</span><br><span class="line">brew info httping</span><br></pre></td></tr></table></figure><h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://apple.stackexchange.com/questions/371175/brew-cleanup-warning-skipping-xxx-most-recent-version-x-not-installed" target="_blank" rel="noopener">StackExchange——Simba</a></p>]]></content:encoded>
       
       <comments>https://feiju12138.github.io/2020/04/25/brew%E6%8A%A5%E9%94%99%EF%BC%9Amost-recent-version-not-installed/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>【笔记】Ai首选项配置</title>
-      <link>https://feiju12138.github.io/2020/04/22/Ai%E9%A6%96%E9%80%89%E9%A1%B9%E9%85%8D%E7%BD%AE/</link>
-      <guid>https://feiju12138.github.io/2020/04/22/Ai%E9%A6%96%E9%80%89%E9%A1%B9%E9%85%8D%E7%BD%AE/</guid>
-      <pubDate>Wed, 22 Apr 2020 13:54:57 GMT</pubDate>
-      <description>
-      
-        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;&lt;code&gt;Illustrator 2020&lt;/code&gt;首选项配置&lt;/p&gt;
-      
-      </description>
-      
-      
-      <content:encoded><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><code>Illustrator 2020</code>首选项配置</p><a id="more"></a><h2 id="常规"><a href="#常规" class="headerlink" title="常规"></a>常规</h2><ul><li><p>键盘增量：0.3527pt</p></li><li><p>勾选<code>使用旧版“新建文件”界面</code></p></li><li><p>去掉<code>未打开任何文档时显示主屏幕</code></p></li></ul><h2 id="选择"><a href="#选择" class="headerlink" title="选择"></a>选择</h2><ul><li>为以下对象启用橡皮筋：去掉<code>钢笔工具</code></li></ul><h2 id="单位"><a href="#单位" class="headerlink" title="单位"></a>单位</h2><ul><li>常规：像素</li></ul><h2 id="用户界面"><a href="#用户界面" class="headerlink" title="用户界面"></a>用户界面</h2><ul><li><p>亮度：白色</p></li><li><p>画布颜色：勾选<code>白色</code></p></li></ul><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p>达内教育</p>]]></content:encoded>
-      
-      <comments>https://feiju12138.github.io/2020/04/22/Ai%E9%A6%96%E9%80%89%E9%A1%B9%E9%85%8D%E7%BD%AE/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>【笔记】Ps动作学习笔记</title>
-      <link>https://feiju12138.github.io/2020/04/21/Ps%E5%8A%A8%E4%BD%9C%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
-      <guid>https://feiju12138.github.io/2020/04/21/Ps%E5%8A%A8%E4%BD%9C%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
-      <pubDate>Tue, 21 Apr 2020 08:46:54 GMT</pubDate>
-      <description>
-      
-        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;Ps&lt;code&gt;动作&lt;/code&gt;及&lt;code&gt;批处理&lt;/code&gt;功能学习笔记&lt;/p&gt;
-      
-      </description>
-      
-      
-      <content:encoded><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Ps<code>动作</code>及<code>批处理</code>功能学习笔记</p><a id="more"></a><h2 id="动作"><a href="#动作" class="headerlink" title="动作"></a>动作</h2><h3 id="打开动作面板"><a href="#打开动作面板" class="headerlink" title="打开动作面板"></a>打开动作面板</h3><ul><li>窗口-&gt;动作（option+F9）</li></ul><h3 id="动作菜单"><a href="#动作菜单" class="headerlink" title="动作菜单"></a>动作菜单</h3><h4 id="复位动作"><a href="#复位动作" class="headerlink" title="复位动作"></a>复位动作</h4><ul><li>清除所有动作，并初始化预置动作</li></ul><h4 id="载入动作"><a href="#载入动作" class="headerlink" title="载入动作"></a>载入动作</h4><ul><li>导入<code>.atn</code>动作文件</li></ul><h4 id="存储动作"><a href="#存储动作" class="headerlink" title="存储动作"></a>存储动作</h4><ul><li><p>选择要导出的动作组</p></li><li><p>导出动作为<code>.atn</code>动作文件</p></li></ul><h3 id="使用流程"><a href="#使用流程" class="headerlink" title="使用流程"></a>使用流程</h3><ul><li><p><code>新建动作组</code></p></li><li><p><code>新建动作</code></p></li><li><p><code>开始记录</code>（红点为开始状态）</p></li></ul><p>在新建动作后会自动启动开始记录</p><ul><li><p>开始在图像上进行需要记录的修图操作</p></li><li><p><code>停止播放/记录</code></p></li><li><p>将焦点移至动作名</p></li><li><p><code>播放选定的动作</code></p></li></ul><h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><ul><li>可以中途停止录制，而后继续录制</li><li>录制后可以拖动<code>操作内容</code>来修改顺序</li><li>双击<code>操作内容</code>可以修改数值</li><li><code>操作内容</code>前的对勾表示执行，去掉为不执行</li><li>勾选对勾后面的小方框，可以在该<code>操作内容</code>时暂停，手动调整参数</li></ul><h2 id="批处理"><a href="#批处理" class="headerlink" title="批处理"></a>批处理</h2><ul><li><p><code>文件</code>-&gt;<code>自动</code>-&gt;<code>批处理</code></p></li><li><p>在<code>组</code>选择一个动作组，<code>动作</code>选择一个组内的动作</p></li><li><p><code>源</code>设置为<code>文件夹</code>-&gt;选择<code>选择</code>，选择源文件目录</p></li><li><p><code>目标</code>设置为<code>文件夹</code>-&gt;选择<code>选择</code>，选择处理后文件目录</p></li><li><p>勾选<code>覆盖动作中的“存储为”命令</code></p></li><li><p>在<code>文件命名</code>处设置文件名</p></li><li><p>点击<code>确定</code>开始执行</p></li></ul><h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p>达内教育</p>]]></content:encoded>
-      
-      <comments>https://feiju12138.github.io/2020/04/21/Ps%E5%8A%A8%E4%BD%9C%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/#disqus_thread</comments>
     </item>
     
   </channel>

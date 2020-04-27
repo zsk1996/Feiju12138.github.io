@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>【笔记】聚焦搜索</title>
+    <url>/2020/04/27/%E8%81%9A%E7%84%A6%E6%90%9C%E7%B4%A2/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>MacOS聚焦搜索（Spotlight）学习笔记</p>
+<a id="more"></a>
+
+<h2 id="关闭聚焦服务"><a href="#关闭聚焦服务" class="headerlink" title="关闭聚焦服务"></a>关闭聚焦服务</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.metadata.mds.plist</span><br></pre></td></tr></table></figure>
+
+<h2 id="启动聚焦服务"><a href="#启动聚焦服务" class="headerlink" title="启动聚焦服务"></a>启动聚焦服务</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.metadata.mds.plist</span><br></pre></td></tr></table></figure>
+
+<h2 id="重建聚焦索引"><a href="#重建聚焦索引" class="headerlink" title="重建聚焦索引"></a>重建聚焦索引</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo mdutil -a -i on</span><br></pre></td></tr></table></figure>
+
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://blog.csdn.net/zeal9s/article/details/97749128" target="_blank" rel="noopener">CSDN——请叫我小思</a></p>
+]]></content>
+      <categories>
+        <category>MacOS</category>
+      </categories>
+  </entry>
+  <entry>
     <title>【笔记】防火墙学习笔记</title>
     <url>/2020/04/27/%E9%98%B2%E7%81%AB%E5%A2%99%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>防火墙学习笔记</p>

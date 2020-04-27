@@ -6746,6 +6746,36 @@
 <blockquote>
 <p>ip地址：<code>172.24.0.1</code><br>端口号：<code>22</code><br>用户名：root<br>密码：toor</p>
 </blockquote>
+<h2 id="格式化一部分伪装U盘"><a href="#格式化一部分伪装U盘" class="headerlink" title="格式化一部分伪装U盘"></a>格式化一部分伪装U盘</h2><ul>
+<li><p>登录ssh</p>
+</li>
+<li><p>格式化500M，名称为<code>sneak</code></p>
+</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> /usr/<span class="built_in">local</span>/P4wnP1/helper/</span><br><span class="line">./genimg -i -s 500 -o 500mb -l sneak</span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/20200116225452/01.png" alt="01.png"></p>
+<ul>
+<li><p>登录网页</p>
+</li>
+<li><p>关闭<code>Mouse</code>，打开<code>Mass Storage</code></p>
+</li>
+</ul>
+<p><img src="/images/20200116225452/02.png" alt="02.png"></p>
+<ul>
+<li>编辑<code>Mass Storage</code>-&gt;<code>Image file to use</code>选择刚刚格式化的<code>500mb.bin</code></li>
+</ul>
+<p><img src="/images/20200116225452/03.png" alt="03.png"></p>
+<ul>
+<li>选择<code>DEPLOY</code>保存设置</li>
+</ul>
+<p><img src="/images/20200116225452/04.png" alt="04.png"></p>
+<h2 id="运行脚本"><a href="#运行脚本" class="headerlink" title="运行脚本"></a>运行脚本</h2><ul>
+<li>登录网页，菜单选择<code>HIDSCRIPT</code></li>
+</ul>
+<p><img src="/images/20200116225452/05.png" alt="05.png"></p>
+<h2 id="自制脚本demo"><a href="#自制脚本demo" class="headerlink" title="自制脚本demo"></a>自制脚本demo</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">press(<span class="string">"GUI r"</span>);</span><br><span class="line">delay(<span class="number">500</span>);</span><br><span class="line">type(<span class="string">"shutdown -s -t 60\n"</span>);</span><br></pre></td></tr></table></figure>
+
 <h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://www.youtube.com/watch?v=I_BjCdJlCo4" target="_blank" rel="noopener">YouTuBe——Seytonic</a></p>
 ]]></content>
       <categories>

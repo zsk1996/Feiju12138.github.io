@@ -155,7 +155,7 @@ body {
   height: 100%;
 }
 body {
-  background: #fff;
+  background: #fcf0ef;
   color: #555;
   font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
   font-size: 1em;
@@ -1182,7 +1182,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #63f085;
+  background: #91a3ff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;

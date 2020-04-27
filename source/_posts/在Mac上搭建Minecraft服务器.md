@@ -1,7 +1,7 @@
 ---
-title: 【笔记】搭建Minecraft服务器
+title: 【笔记】在Mac上搭建Minecraft服务器
 categories:
-  - Server
+  - Minecraft
 date: 2020-03-03 16:01:37
 ---
 

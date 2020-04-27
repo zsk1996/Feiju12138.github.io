@@ -1,7 +1,7 @@
 ---
 title: 【笔记】P4wnP1 aloa 学习笔记
 categories:
-  - 树莓派
+  - Raspberry Pi
 date: 2020-01-16 22:54:52
 ---
 
@@ -36,6 +36,47 @@ P4wnP1 A.L.O.A. by MaMe82 is a framework which turns a Rapsberry Pi Zero W into 
 > 端口号：`22`
 > 用户名：root
 > 密码：toor
+
+## 格式化一部分伪装U盘
+
+- 登录ssh
+
+- 格式化500M，名称为`sneak`
+
+``` sh
+cd /usr/local/P4wnP1/helper/
+./genimg -i -s 500 -o 500mb -l sneak
+```
+
+![01.png](/images/20200116225452/01.png)
+
+- 登录网页
+
+- 关闭`Mouse`，打开`Mass Storage`
+
+![02.png](/images/20200116225452/02.png)
+
+- 编辑`Mass Storage`->`Image file to use`选择刚刚格式化的`500mb.bin`
+
+![03.png](/images/20200116225452/03.png)
+
+- 选择`DEPLOY`保存设置
+
+![04.png](/images/20200116225452/04.png)
+
+## 运行脚本
+
+- 登录网页，菜单选择`HIDSCRIPT`
+
+![05.png](/images/20200116225452/05.png)
+
+## 自制脚本demo
+
+``` javascript
+press("GUI r");
+delay(500);
+type("shutdown -s -t 60\n");
+```
 
 ## 参考文献
 

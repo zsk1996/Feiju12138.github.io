@@ -43,6 +43,12 @@ scp -P 22 <local_file> <ip_address>:<remote_file>
 scp -P 22 <local_file> <user_name>@<ip_address>:<remote_file>
 ```
 
+### 远程文件发送到本地
+
+``` sh
+scp <ip_address>:<remote_file> <local_file>
+```
+
 ### 远程文件发送远程
 
 > `<ip_address_1>`：远程1的ip地址

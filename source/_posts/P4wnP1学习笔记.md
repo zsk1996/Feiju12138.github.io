@@ -1,7 +1,7 @@
 ---
 title: 【笔记】P4wnP1 学习笔记
 categories:
-  - 树莓派
+  - Raspberry Pi
 date: 2020-01-15 22:44:47
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: 【笔记】更换 Rasbian Linux 更新源
 categories:
-  - 树莓派
+  - Raspberry Pi
 date: 2020-01-14 21:21:22
 ---
 

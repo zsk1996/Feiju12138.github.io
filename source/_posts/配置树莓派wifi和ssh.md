@@ -1,7 +1,7 @@
 ---
 title: 【笔记】配置 树莓派 wifi 和 ssh
 categories:
-  - 树莓派
+  - Raspberry Pi
 date: 2020-01-13 11:01:39
 ---
 

@@ -1,6 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>【笔记】Ps导出动图</title>
+    <url>/2020/04/27/Ps%E5%AF%BC%E5%87%BA%E5%8A%A8%E5%9B%BE/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>将图片导出为<code>.gif</code>动图</p>
+<a id="more"></a>
+
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
+<li>一份做好的动图</li>
+</ul>
+<h2 id="导出"><a href="#导出" class="headerlink" title="导出"></a>导出</h2><ul>
+<li><code>文件</code>-&gt;<code>导出</code>-&gt;<code>存储为Web所用格式（旧版）</code></li>
+</ul>
+<p><img src="/images/20200427174226/01.png" alt="01.png"></p>
+<ul>
+<li>在<code>动画</code>的<code>循环选项</code>设置为<code>永远</code></li>
+</ul>
+<p><img src="/images/20200427174226/02.png" alt="02.ong"></p>
+<ul>
+<li>存储</li>
+</ul>
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://jingyan.baidu.com/article/ab0b5630c2dee7c15bfa7d50.html" target="_blank" rel="noopener">百度经验——key9928</a></p>
+]]></content>
+      <categories>
+        <category>Adobe</category>
+      </categories>
+  </entry>
+  <entry>
     <title>【笔记】聚焦搜索</title>
     <url>/2020/04/27/%E8%81%9A%E7%84%A6%E6%90%9C%E7%B4%A2/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>MacOS聚焦搜索（Spotlight）学习笔记</p>

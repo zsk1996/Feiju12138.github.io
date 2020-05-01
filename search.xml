@@ -4689,7 +4689,11 @@
 <li>常用字符表（双字节）</li>
 <li>生僻字符表（三字节或以上）</li>
 </ul>
-<h4 id="UTF-8（Unicode-Transfermation-Format）"><a href="#UTF-8（Unicode-Transfermation-Format）" class="headerlink" title="UTF-8（Unicode Transfermation Format）"></a>UTF-8（Unicode Transfermation Format）</h4><ul>
+<h4 id="Unicode中文字符"><a href="#Unicode中文字符" class="headerlink" title="Unicode中文字符"></a>Unicode中文字符</h4><ul>
+<li>范围：<code>\u4e00</code>～<code>\u9fa5</code></li>
+<li>个数：20902个</li>
+</ul>
+<h3 id="UTF-8（Unicode-Transfermation-Format）"><a href="#UTF-8（Unicode-Transfermation-Format）" class="headerlink" title="UTF-8（Unicode Transfermation Format）"></a>UTF-8（Unicode Transfermation Format）</h3><ul>
 <li>Unicode的传输格式</li>
 <li>英文（单字节）</li>
 <li>某些字符（双字节）</li>
@@ -4743,7 +4747,19 @@
 <h4 id="OutputStreamWriter"><a href="#OutputStreamWriter" class="headerlink" title="OutputStreamWriter"></a>OutputStreamWriter</h4><ul>
 <li>把Unicode转成其他编码输出</li>
 </ul>
-<h2 id="未完待更"><a href="#未完待更" class="headerlink" title="未完待更"></a>未完待更</h2><p>03-02-08</p>
+<blockquote>
+<p><code>&lt;path&gt;</code>：文件路径</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">new</span> OutputStreamWriter(<span class="keyword">new</span> FileOutputStream(<span class="string">"&lt;path&gt;"</span>)</span><br><span class="line"><span class="keyword">new</span> OutputStreamWriter(<span class="keyword">new</span> FileOutputStream(<span class="string">"&lt;path&gt;"</span>), <span class="string">"UTF-8"</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="BufferedReader"><a href="#BufferedReader" class="headerlink" title="BufferedReader"></a>BufferedReader</h2><ul>
+<li>可以一行一行的读取文本数据</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">readLine()</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>读取结束，再读取，返回null</li>
+</ul>
 <h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p>达内教育</p>
 ]]></content>
       <categories>

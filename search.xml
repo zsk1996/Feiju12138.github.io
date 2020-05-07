@@ -1,6 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>【笔记】用IDEA创建一个Javaweb项目</title>
+    <url>/2020/05/07/%E7%94%A8IDEA%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AAJavaweb%E9%A1%B9%E7%9B%AE/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>用IDEA创建一个Javaweb项目</p>
+<a id="more"></a>
+
+<h2 id="新建项目"><a href="#新建项目" class="headerlink" title="新建项目"></a>新建项目</h2><ul>
+<li><code>Java Enterprise</code>-&gt;选择SDK版本-&gt;勾选<code>Web Application</code></li>
+</ul>
+<p><img src="/images/20200507164556/01.png" alt="01.png"></p>
+<ul>
+<li>项目命名-&gt;<code>finish</code></li>
+</ul>
+<h2 id="创建classes目录和lib目录"><a href="#创建classes目录和lib目录" class="headerlink" title="创建classes目录和lib目录"></a>创建classes目录和lib目录</h2><ul>
+<li>在<code>web-&gt;WEB-INF</code>目录下分别创建<code>classes</code>目录和<code>lib</code>目录</li>
+</ul>
+<p><img src="/images/20200507164556/02.png" alt="02.png"></p>
+<h2 id="部署classes目录"><a href="#部署classes目录" class="headerlink" title="部署classes目录"></a>部署classes目录</h2><ul>
+<li><p><code>File</code>-&gt;<code>Project Structure...</code>-&gt;<code>Modules</code>-&gt;<code>Paths</code>-&gt;勾选<code>Use module compule output path</code></p>
+</li>
+<li><p>在<code>Output path</code>和<code>Test output path</code>都选择刚刚创建的<code>classes</code>目录</p>
+</li>
+</ul>
+<p><img src="/images/20200507164556/03.png" alt="03.png"></p>
+<h2 id="部署lib目录"><a href="#部署lib目录" class="headerlink" title="部署lib目录"></a>部署lib目录</h2><ul>
+<li><p><code>File</code>-&gt;<code>Project Structure...</code>-&gt;<code>Modules</code>-&gt;<code>Dependencies</code>-&gt;点击加号-&gt;<code>JARs or directories...</code></p>
+</li>
+<li><p>选择刚刚创建的<code>lib</code>目录</p>
+</li>
+</ul>
+<p><img src="/images/20200507164556/04.png" alt="04.png"></p>
+<ul>
+<li>选择<code>Jar Directory</code></li>
+</ul>
+<p><img src="/images/20200507164556/05.png" alt="05.png"></p>
+<h2 id="配置打包方式"><a href="#配置打包方式" class="headerlink" title="配置打包方式"></a>配置打包方式</h2><ul>
+<li><code>File</code>-&gt;<code>Project Structure...</code>-&gt;<code>Artifacts</code>-&gt;选择项目-&gt;勾选<code>Include in project build</code>-&gt;勾选<code>Show content of elements</code></li>
+</ul>
+<p><img src="/images/20200507164556/06.png" alt="06.png"></p>
+<h2 id="配置运行方式"><a href="#配置运行方式" class="headerlink" title="配置运行方式"></a>配置运行方式</h2><ul>
+<li><p><code>Run</code>-&gt;<code>Edit Configurations...</code>-&gt;点击加号-&gt;选择<code>Tomcat Server</code></p>
+</li>
+<li><p>点击<code>Configure...</code>选择配置好的相应版本Tomcat</p>
+</li>
+</ul>
+<p>如果没有任何配置好的Tomcat</p>
+<p>点击加号-&gt;选择<code>Tomcat Home</code>-&gt;<code>OK</code>-&gt;<code>OK</code></p>
+<p><img src="/images/20200507164556/07.png" alt="07.png"></p>
+<ul>
+<li><p>去掉勾选<code>After launch</code></p>
+</li>
+<li><p>选择浏览器</p>
+</li>
+<li><p>在<code>Tomcat Server Settings</code>配置Tomcat参数</p>
+</li>
+</ul>
+<p><img src="/images/20200507164556/08.png" alt="08.png"></p>
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://blog.csdn.net/weixin_38500325/article/details/82356175" target="_blank" rel="noopener">CSDN——遇见1995</a></p>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
     <title>【踩坑】用Eclipse创建的Javaweb项目servlet标签报错</title>
     <url>/2020/05/07/%E7%94%A8Eclipse%E5%88%9B%E5%BB%BA%E7%9A%84Javaweb%E9%A1%B9%E7%9B%AEservlet%E6%A0%87%E7%AD%BE%E6%8A%A5%E9%94%99/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>用Eclipse创建的Javaweb项目，在编辑web.xml文件时，<code>&lt;servlet&gt;&lt;/servlet&gt;</code>报错</p>

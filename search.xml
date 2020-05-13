@@ -1,6 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>【代码】文件上传</title>
+    <url>/2020/05/13/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Javaweb实现文件上传</p>
+<a id="more"></a>
+
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
+<li>导入jar包</li>
+</ul>
+<p>将<code>commons-io-2.4.jar</code>、<code>commons-fileupload-1.2.2.jar</code>放到项目的<code>/WebContent/WEB-INF/lib</code>目录下</p>
+<ul>
+<li>在项目的<code>/WebContent</code>目录下新建用于存放上传的文件的目录<code>file</code></li>
+</ul>
+<h2 id="前端页面代码"><a href="#前端页面代码" class="headerlink" title="前端页面代码"></a>前端页面代码</h2><ul>
+<li>在<code>/WebContent</code>目录下新建<code>index.html</code></li>
+</ul>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>Insert title here<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span> <span class="attr">align</span>=<span class="string">"center"</span>&gt;</span>文件上传<span class="tag">&lt;/<span class="name">h1</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"upload"</span> <span class="attr">method</span>=<span class="string">"post"</span> <span class="attr">enctype</span>=<span class="string">"multipart/form-data"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"file"</span> <span class="attr">name</span>=<span class="string">"myfile"</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"上传"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Servlet代码"><a href="#Servlet代码" class="headerlink" title="Servlet代码"></a>Servlet代码</h2><ul>
+<li>在包下新建<code>Upload.java</code></li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> io.github.feiju12138;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.FileOutputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.io.InputStream;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.servlet.ServletException;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServlet;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletRequest;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletResponse;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.apache.commons.fileupload.FileItemIterator;</span><br><span class="line"><span class="keyword">import</span> org.apache.commons.fileupload.FileItemStream;</span><br><span class="line"><span class="keyword">import</span> org.apache.commons.fileupload.FileUploadException;</span><br><span class="line"><span class="keyword">import</span> org.apache.commons.fileupload.servlet.ServletFileUpload;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Upload</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">long</span> serialVersionUID = <span class="number">1L</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.doPost(req, resp);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doPost</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 声明输入缓冲流</span></span><br><span class="line">        InputStream is = <span class="keyword">null</span>;</span><br><span class="line">        <span class="comment">// 声明文件输出流</span></span><br><span class="line">        FileOutputStream fos = <span class="keyword">null</span>;</span><br><span class="line">        <span class="comment">// 创建上传文件对象</span></span><br><span class="line">        ServletFileUpload upload = <span class="keyword">new</span> ServletFileUpload();</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            </span><br><span class="line">            <span class="comment">// 把上传的文件转换为迭代器</span></span><br><span class="line">            FileItemIterator iterator = upload.getItemIterator(req);</span><br><span class="line">            </span><br><span class="line">            <span class="comment">// 遍历文件流中的字节</span></span><br><span class="line">            <span class="keyword">while</span>(iterator.hasNext()) &#123;</span><br><span class="line">                </span><br><span class="line">                <span class="comment">// 取出一个文件</span></span><br><span class="line">                FileItemStream fis = iterator.next();</span><br><span class="line">                </span><br><span class="line">                <span class="comment">// 开启输入缓冲流</span></span><br><span class="line">                is = fis.openStream();</span><br><span class="line">                </span><br><span class="line">                <span class="comment">// 获取文件存放路径</span></span><br><span class="line">                String path = <span class="keyword">this</span>.getServletContext().getRealPath(<span class="string">"file"</span>);</span><br><span class="line">                path += <span class="string">"/"</span> + fis.getName();</span><br><span class="line">                </span><br><span class="line">                <span class="comment">// 创建文件输出流</span></span><br><span class="line">                fos = <span class="keyword">new</span> FileOutputStream(path);</span><br><span class="line">                </span><br><span class="line">                <span class="comment">// 将文件输出到指定目录</span></span><br><span class="line">                <span class="keyword">byte</span> buf[] = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">1024</span>];</span><br><span class="line">                <span class="keyword">int</span> len = <span class="number">0</span>;</span><br><span class="line">                <span class="keyword">while</span>((len = is.read(buf)) &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                    fos.write(buf, <span class="number">0</span>, len);</span><br><span class="line">                &#125;</span><br><span class="line">                </span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (FileUploadException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">            </span><br><span class="line">            <span class="comment">// 关闭文件输出流</span></span><br><span class="line">            <span class="keyword">if</span>(fos != <span class="keyword">null</span>) &#123;</span><br><span class="line">                fos.close();</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            <span class="comment">// 关闭文件缓冲流</span></span><br><span class="line">            <span class="keyword">if</span>(is != <span class="keyword">null</span>) &#123;</span><br><span class="line">                is.close();</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p>达内教育</p>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【笔记】Servlet初始化参数</title>
+    <url>/2020/05/13/Servlet%E5%88%9D%E5%A7%8B%E5%8C%96%E5%8F%82%E6%95%B0/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><code>ServletConfig对象</code>和<code>ServletContext对象</code>学习笔记</p>
+<a id="more"></a>
+
+<h2 id="添加配置"><a href="#添加配置" class="headerlink" title="添加配置"></a>添加配置</h2><ul>
+<li>在web.xml文件中，以键值对的形式添加配置参数，可以添加多组</li>
+</ul>
+<blockquote>
+<p><code>&lt;&lt;name&gt;&gt;</code>：参数名（键）<br><code>&lt;&lt;value&gt;</code>：参数值（值）</p>
+</blockquote>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">init-param</span>&gt;</span></span><br><span class="line">    &lt;param-name&gt;&lt;&lt;name&gt;&gt;&lt;/param-name&gt;</span><br><span class="line">    &lt;param-value&gt;&lt;&lt;value&gt;&gt;&lt;/param-value&gt;</span><br><span class="line"><span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="获取Servlet初始化参数对象"><a href="#获取Servlet初始化参数对象" class="headerlink" title="获取Servlet初始化参数对象"></a>获取Servlet初始化参数对象</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">ServletConfig config = <span class="keyword">this</span>.getServletConfig();</span><br></pre></td></tr></table></figure>
+
+<h2 id="读取参数"><a href="#读取参数" class="headerlink" title="读取参数"></a>读取参数</h2><h3 id="通过键读取值"><a href="#通过键读取值" class="headerlink" title="通过键读取值"></a>通过键读取值</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">config.getInitParameter(<span class="string">"&lt;&lt;name&gt;&gt;"</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="读取所有的键"><a href="#读取所有的键" class="headerlink" title="读取所有的键"></a>读取所有的键</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Enumeration&lt;String&gt; names = config.InitParameterNames();</span><br><span class="line"><span class="keyword">while</span>(names.hasMoreElements()) &#123;</span><br><span class="line">    String name = names.nextElement();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="设置字符集"><a href="#设置字符集" class="headerlink" title="设置字符集"></a>设置字符集</h2><ul>
+<li>解决中文乱码</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">req.setCharacterEncoding(<span class="string">"utf-8"</span>);</span><br></pre></td></tr></table></figure>
+
+<h2 id="获取ServletContext对象"><a href="#获取ServletContext对象" class="headerlink" title="获取ServletContext对象"></a>获取ServletContext对象</h2><ul>
+<li>项目上下文对象，代表整个项目</li>
+<li>三种方法</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">ServletContext context = <span class="keyword">this</span>.getServletContext();</span><br><span class="line">ServletContext context = req.getServletContext();</span><br><span class="line">ServletContext context = <span class="keyword">this</span>.getServletConfig().getServletContext();</span><br></pre></td></tr></table></figure>
+
+<h2 id="获取资源名"><a href="#获取资源名" class="headerlink" title="获取资源名"></a>获取资源名</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">getServletName()</span><br></pre></td></tr></table></figure>
+
+<h2 id="获取资源位置"><a href="#获取资源位置" class="headerlink" title="获取资源位置"></a>获取资源位置</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">context.getReadPath(getServletName());</span><br></pre></td></tr></table></figure>
+
+<h2 id="写入Context数据"><a href="#写入Context数据" class="headerlink" title="写入Context数据"></a>写入Context数据</h2><ul>
+<li>保存需要长久保存的数据（只要不关闭服务器就可以一直保存）</li>
+</ul>
+<blockquote>
+<p><code>&lt;key&gt;</code>：数据名（键）<br><code>&lt;value&gt;</code>：数据值（值）</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">context.setAttribute(<span class="string">"&lt;key&gt;"</span>, <span class="string">"&lt;value&gt;"</span>);</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">## 读取Context数据</span><br><span class="line"></span><br><span class="line">``` java</span><br><span class="line">context.getAttribute(<span class="string">"&lt;key&gt;"</span>, <span class="string">"&lt;value&gt;"</span>);</span><br></pre></td></tr></table></figure>
+
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p>达内教育</p>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
     <title>【笔记】Session学习笔记</title>
     <url>/2020/05/13/Session%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Session：在计算机中，尤其是在网络应用中，称为“会话控制”。Session对象存储特定用户会话所需的属性及配置信息。这样，当用户在应用程序的Web页之间跳转时，存储在Session对象中的变量将不会丢失，而是在整个用户会话中一直存在下去。当用户请求来自应用程序的 Web页时，如果该用户还没有会话，则Web服务器将自动创建一个 Session对象。当会话过期或被放弃后，服务器将终止该会话。Session 对象最常见的一个用法就是存储用户的首选项。例如，如果用户指明不喜欢查看图形，就可以将该信息存储在Session对象中。有关使用Session 对象的详细信息，请参阅“ASP应用程序”部分的“管理会话”。注意会话状态仅在支持cookie的浏览器中保留。（<a href="https://baike.baidu.com/item/Session/479100" target="_blank" rel="noopener">百度百科</a>）</p>
@@ -34,6 +112,8 @@
 <li>在web.xml配置Session有效期</li>
 </ul>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">session-config</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">session-timeout</span>&gt;</span><span class="tag">&lt;<span class="name">num</span>&gt;</span><span class="tag">&lt;/<span class="name">session-timeout</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">session-config</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="销毁Session"><a href="#销毁Session" class="headerlink" title="销毁Session"></a>销毁Session</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">session.invalidate();</span><br></pre></td></tr></table></figure>
 
 <h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p>达内教育</p>
 ]]></content>

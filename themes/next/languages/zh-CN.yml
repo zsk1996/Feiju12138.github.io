@@ -80,8 +80,8 @@ symbol:
   period: "。"
   colon: "："
 reward:
-  donate: 打赏
-  wechatpay: 微信支付
+  donate: 支持
+  wechatpay: 微信/QQ/支付宝
   alipay: 支付宝
   bitcoin: 比特币
 accessibility:

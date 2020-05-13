@@ -231,8 +231,8 @@ categories:
 ### 链接标签
 
 > `href=""`：链接地址
-> `herf="#name/id"`：锚点链接
-> `herf="#"`：返回到本页
+> `href="#name/id"`：锚点链接
+> `href="#"`：返回到本页
 > `target=""`：窗口名称
 > `title=""`：链接提示文字
 

@@ -23,6 +23,10 @@ sudo launchctl unload -w /System/Library/LaunchDaemons/org.apache.httpd.plist
 sudo launchctl load -w /System/Library/LaunchDaemons/org.apache.httpd.plist
 ```
 
+## 更多自启管理
+
+- [传送门](/2020/05/08/系统自启脚本管理器/)
+
 ## 参考文献
 
 [简书——haokeed](https://www.jianshu.com/p/b015b6375cf4)

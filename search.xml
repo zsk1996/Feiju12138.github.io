@@ -1,6 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>【笔记】过滤器</title>
+    <url>/2020/05/14/%E8%BF%87%E6%BB%A4%E5%99%A8/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Javaweb过滤器（拦截器）学习笔记</p>
+<a id="more"></a>
+
+<h2 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h2><h3 id="实现Filter接口"><a href="#实现Filter接口" class="headerlink" title="实现Filter接口"></a>实现Filter接口</h3><ul>
+<li>实现<code>javax.servlet.Filter</code>接口</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyFilter</span> <span class="keyword">implements</span> <span class="title">Filter</span> </span>&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="重写doFilter方法"><a href="#重写doFilter方法" class="headerlink" title="重写doFilter方法"></a>重写doFilter方法</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doFilter</span><span class="params">(ServletRequest request, ServletResponse response, FilterChain chain)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="处理结束放行"><a href="#处理结束放行" class="headerlink" title="处理结束放行"></a>处理结束放行</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">chain.doFilter(request, response);</span><br></pre></td></tr></table></figure>
+
+<h3 id="配置web-xml"><a href="#配置web-xml" class="headerlink" title="配置web.xml"></a>配置web.xml</h3><ul>
+<li><code>&lt;url-pattern&gt;&lt;/url-pattern&gt;</code>标签为拦截的范围</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">filter</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>HelloFilter<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">filter-class</span>&gt;</span>com.tedu.servlet.HelloFilter<span class="tag">&lt;/<span class="name">filter-class</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">filter</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">filter-mapping</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>HelloFilter<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/*<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">filter-mapping</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="过滤器初始化参数"><a href="#过滤器初始化参数" class="headerlink" title="过滤器初始化参数"></a>过滤器初始化参数</h2><h3 id="配置web-xml-1"><a href="#配置web-xml-1" class="headerlink" title="配置web.xml"></a>配置web.xml</h3><ul>
+<li>在<code>&lt;filter&gt;&lt;/filter&gt;</code>标签内配置</li>
+</ul>
+<blockquote>
+<p><code>&lt;&lt;key&gt;&gt;</code>：键<br><code>&lt;&lt;value&gt;&gt;</code>：值</p>
+</blockquote>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">init-param</span>&gt;</span></span><br><span class="line">    &lt;param-name&gt;&lt;&lt;key&gt;&gt;&lt;/param-name&gt;</span><br><span class="line">    &lt;param-value&gt;&lt;&lt;value&gt;&gt;&lt;/param-value&gt;</span><br><span class="line"><span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="获取初始化参数"><a href="#获取初始化参数" class="headerlink" title="获取初始化参数"></a>获取初始化参数</h3><h4 id="重写init-方法"><a href="#重写init-方法" class="headerlink" title="重写init()方法"></a>重写<code>init()</code>方法</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">(FilterConfig filterConfig)</span> <span class="keyword">throws</span> ServletException </span>&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="获取初始化参数-1"><a href="#获取初始化参数-1" class="headerlink" title="获取初始化参数"></a>获取初始化参数</h4><ul>
+<li>返回<code>&lt;&lt;value&gt;&gt;</code>的值</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">filterConfig.getInitParameter(<span class="string">"&lt;&lt;key&gt;&gt;"</span>);</span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p>达内教育</p>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
     <title>【代码】文件下载</title>
     <url>/2020/05/14/%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Javaweb实现文件下载</p>
@@ -11,7 +52,7 @@
 </ul>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>Insert title here<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span> <span class="attr">align</span>=<span class="string">"center"</span>&gt;</span>文件下载<span class="tag">&lt;/<span class="name">h1</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"download"</span>&gt;</span>下载<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<h2 id="servlet代码"><a href="#servlet代码" class="headerlink" title="servlet代码"></a>servlet代码</h2><ul>
+<h2 id="Servlet代码"><a href="#Servlet代码" class="headerlink" title="Servlet代码"></a>Servlet代码</h2><ul>
 <li><p>在<code>/WebContent</code>目录下新建一个<code>file</code>目录，在<code>/WebContent/file</code>目录下复制一个资源名为<code>1.jpg</code></p>
 </li>
 <li><p>在包下新建<code>DownloadServlet.java</code>，访问路径修改为<code>/download</code></p>

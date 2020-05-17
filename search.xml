@@ -1,6 +1,131 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>【笔记】Google语法</title>
+    <url>/2020/05/17/Google%E8%AF%AD%E6%B3%95/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Google搜索引擎高级语法</p>
+<a id="more"></a>
+
+<h2 id="高级语法"><a href="#高级语法" class="headerlink" title="高级语法"></a>高级语法</h2><h3 id="正文检索"><a href="#正文检索" class="headerlink" title="正文检索"></a>正文检索</h3><ul>
+<li><code>intext:</code></li>
+</ul>
+<h3 id="标题检索"><a href="#标题检索" class="headerlink" title="标题检索"></a>标题检索</h3><ul>
+<li><code>intitle:</code></li>
+</ul>
+<h3 id="检索缓存"><a href="#检索缓存" class="headerlink" title="检索缓存"></a>检索缓存</h3><ul>
+<li><code>cache:</code></li>
+</ul>
+<h3 id="URL检索"><a href="#URL检索" class="headerlink" title="URL检索"></a>URL检索</h3><ul>
+<li><code>inurl:</code></li>
+</ul>
+<h3 id="指定站点搜索"><a href="#指定站点搜索" class="headerlink" title="指定站点搜索"></a>指定站点搜索</h3><ul>
+<li><code>site:</code></li>
+</ul>
+<h2 id="其他用法"><a href="#其他用法" class="headerlink" title="其他用法"></a>其他用法</h2><ul>
+<li><p><code>&#39;&#39;</code>、<code>&quot;&quot;</code>：把关键字打上引号，将引号部分作为整体搜索</p>
+</li>
+<li><p><code>or</code>：同时搜索两个或更多关键字</p>
+</li>
+</ul>
+<h3 id="搜索某个网站的链接"><a href="#搜索某个网站的链接" class="headerlink" title="搜索某个网站的链接"></a>搜索某个网站的链接</h3><ul>
+<li><code>link:</code></li>
+</ul>
+<h3 id="查找指定站点的基本信息"><a href="#查找指定站点的基本信息" class="headerlink" title="查找指定站点的基本信息"></a>查找指定站点的基本信息</h3><ul>
+<li><code>info:</code></li>
+</ul>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p>掌控安全</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>【笔记】Jsp学习笔记</title>
+    <url>/2020/05/15/Jsp%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在HTML中嵌入Java代码</p>
+<a id="more"></a>
+
+<h2 id="Java代码块"><a href="#Java代码块" class="headerlink" title="Java代码块"></a>Java代码块</h2><figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;%</span><br><span class="line">    ...</span><br><span class="line">%&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><ul>
+<li>Jsp将HTML页面代码转换为Servlet后显示，所以必须在服务器上运行</li>
+</ul>
+<h2 id="9大内置对象"><a href="#9大内置对象" class="headerlink" title="9大内置对象"></a>9大内置对象</h2><ul>
+<li>在Jsp中可以直接使用的对象</li>
+</ul>
+<h3 id="在页面输出"><a href="#在页面输出" class="headerlink" title="在页面输出"></a>在页面输出</h3><ul>
+<li>对应Servlet中的<code>PrintWrite</code>对象</li>
+</ul>
+<blockquote>
+<p><code>&lt;string&gt;</code>：输出的内容</p>
+</blockquote>
+<figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">out.println(<span class="string">"&lt;string&gt;"</span>);</span><br></pre></td></tr></table></figure>
+
+<h4 id="简化"><a href="#简化" class="headerlink" title="简化"></a>简化</h4><figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;%= &lt;string&gt; %&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="请求对象"><a href="#请求对象" class="headerlink" title="请求对象"></a>请求对象</h3><ul>
+<li>对应Servlet中的<code>HttpServletRequest</code>对象</li>
+</ul>
+<blockquote>
+<p><code>&lt;method&gt;</code>：方法</p>
+</blockquote>
+<figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">request.&lt;method&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="响应对象"><a href="#响应对象" class="headerlink" title="响应对象"></a>响应对象</h3><ul>
+<li>对应Servlet中的<code>HttpServletResponse</code></li>
+</ul>
+<figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">response.&lt;method&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="会话对象"><a href="#会话对象" class="headerlink" title="会话对象"></a>会话对象</h3><ul>
+<li>对应Servlet中的<code>HttpSession</code>对象</li>
+</ul>
+<figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">session.&lt;method&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="项目上下文对象"><a href="#项目上下文对象" class="headerlink" title="项目上下文对象"></a>项目上下文对象</h3><ul>
+<li>对应Servlet中的<code>ServletContext</code>对象</li>
+</ul>
+<figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">application.&lt;method&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="初始化参数对象"><a href="#初始化参数对象" class="headerlink" title="初始化参数对象"></a>初始化参数对象</h3><ul>
+<li>对应Servlet中的<code>ServletConfig</code>对象</li>
+</ul>
+<figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">config.&lt;method&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="当前页面自身"><a href="#当前页面自身" class="headerlink" title="当前页面自身"></a>当前页面自身</h3><ul>
+<li>相当于类中的<code>this</code>关键字</li>
+</ul>
+<figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">page</span><br></pre></td></tr></table></figure>
+
+<h3 id="页面上下文对象"><a href="#页面上下文对象" class="headerlink" title="页面上下文对象"></a>页面上下文对象</h3><figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">pageContext</span><br></pre></td></tr></table></figure>
+
+<h3 id="异常对象"><a href="#异常对象" class="headerlink" title="异常对象"></a>异常对象</h3><ul>
+<li>对应Servlet中的<code>Throwable</code>对象</li>
+</ul>
+<figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">exception.&lt;method&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Jsp中可以传递数据的对象"><a href="#Jsp中可以传递数据的对象" class="headerlink" title="Jsp中可以传递数据的对象"></a>Jsp中可以传递数据的对象</h2><h3 id="pageContext（页面上下文域）"><a href="#pageContext（页面上下文域）" class="headerlink" title="pageContext（页面上下文域）"></a>pageContext（页面上下文域）</h3><ul>
+<li>传值范围是当前页面</li>
+</ul>
+<h3 id="request（请求域）"><a href="#request（请求域）" class="headerlink" title="request（请求域）"></a>request（请求域）</h3><ul>
+<li>传值范围是同一个请求中，适用于请求转发</li>
+</ul>
+<h3 id="session（会话域）"><a href="#session（会话域）" class="headerlink" title="session（会话域）"></a>session（会话域）</h3><ul>
+<li>传值范围是在同一个回话内</li>
+<li>只要浏览器不关闭</li>
+</ul>
+<h3 id="application"><a href="#application" class="headerlink" title="application"></a>application</h3><ul>
+<li>传值范围是在一个项目内</li>
+<li>只要服务器不关闭</li>
+</ul>
+<h2 id="Jsp请求转发"><a href="#Jsp请求转发" class="headerlink" title="Jsp请求转发"></a>Jsp请求转发</h2><blockquote>
+<p><code>&lt;&lt;page&gt;&gt;</code>：转发的页面</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">&lt;jsp:forward page="&lt;&lt;page&gt;&gt;"&gt;&lt;/jsp:forward&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="未完待更"><a href="#未完待更" class="headerlink" title="未完待更"></a>未完待更</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p>达内教育</p>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
     <title>【笔记】过滤器</title>
     <url>/2020/05/14/%E8%BF%87%E6%BB%A4%E5%99%A8/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Javaweb过滤器（拦截器）学习笔记</p>

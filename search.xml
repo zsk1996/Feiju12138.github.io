@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>【踩坑】DataGrip报错：Server returns invalid</title>
+    <url>/2020/05/19/DataGrip%E6%8A%A5%E9%94%99%EF%BC%9AServer-returns-invalid/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>DataGrip报错：<code>Server returns invalid timezone. Need to set&#39;servertimezone property</code></p>
+<a id="more"></a>
+
+<p><img src="/images/20200519090004/01.png" alt="01.png"></p>
+<h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><ul>
+<li>服务器返回无效时区</li>
+</ul>
+<h2 id="解决问题"><a href="#解决问题" class="headerlink" title="解决问题"></a>解决问题</h2><ul>
+<li>将时区设置为<code>+8:00</code></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">show variables like &#39;%time_zone%&#39;;</span><br><span class="line">set global time_zone&#x3D;&#39;+8:00&#39;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://blog.csdn.net/weixin_42941486/article/details/100660560" target="_blank" rel="noopener">CSDN——菜鸟的自我素养</a></p>
+]]></content>
+      <categories>
+        <category>Database</category>
+      </categories>
+  </entry>
+  <entry>
     <title>【笔记】Google语法</title>
     <url>/2020/05/17/Google%E8%AF%AD%E6%B3%95/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Google搜索引擎高级语法</p>

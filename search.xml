@@ -1,6 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>【笔记】Eclipse导入jar包</title>
+    <url>/2020/05/19/Eclipse%E5%AF%BC%E5%85%A5jar%E5%8C%85/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Eclipse导入jar包</p>
+<!-- mor -->
+
+<h2 id="导入方法"><a href="#导入方法" class="headerlink" title="导入方法"></a>导入方法</h2><ul>
+<li><p>在项目根目录新建<code>lib</code>目录</p>
+</li>
+<li><p>把<code>.jar</code>包复制到lib目录</p>
+</li>
+<li><p>右键<code>.jar</code>包-&gt;<code>Build Path</code>-&gt;<code>Add to Build Path</code></p>
+</li>
+</ul>
+<p><img src="/images/20200519101625/01.png" alt="01.png"></p>
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
     <title>【踩坑】DataGrip报错：Server returns invalid</title>
     <url>/2020/05/19/DataGrip%E6%8A%A5%E9%94%99%EF%BC%9AServer-returns-invalid/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>DataGrip报错：<code>Server returns invalid timezone. Need to set&#39;servertimezone property</code></p>
@@ -140,7 +160,7 @@
 </blockquote>
 <figure class="highlight"><table><tr><td class="code"><pre><span class="line">&lt;jsp:forward page="&lt;&lt;page&gt;&gt;"&gt;&lt;/jsp:forward&gt;</span><br></pre></td></tr></table></figure>
 
-<h2 id="未完待更"><a href="#未完待更" class="headerlink" title="未完待更"></a>未完待更</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p>达内教育</p>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p>达内教育</p>
 ]]></content>
       <categories>
         <category>Java</category>

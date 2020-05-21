@@ -1,6 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>【笔记】反射学习笔记</title>
+    <url>/2020/05/21/%E5%8F%8D%E5%B0%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>反射学习笔记</p>
+<a id="more"></a>
+
+<h2 id="创建运行时类对象"><a href="#创建运行时类对象" class="headerlink" title="创建运行时类对象"></a>创建运行时类对象</h2><h3 id="通过类的class属性"><a href="#通过类的class属性" class="headerlink" title="通过类的class属性"></a>通过类的class属性</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Class <span class="class"><span class="keyword">class</span> </span>= Persion<span class="class">.<span class="keyword">class</span></span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="通过类的getClass-方法"><a href="#通过类的getClass-方法" class="headerlink" title="通过类的getClass()方法"></a>通过类的getClass()方法</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Class <span class="class"><span class="keyword">class</span> </span>= persion.getClass();</span><br></pre></td></tr></table></figure>
+
+<h3 id="通过Class类的forName-方法"><a href="#通过Class类的forName-方法" class="headerlink" title="通过Class类的forName()方法"></a>通过Class类的forName()方法</h3><blockquote>
+<p><code>&lt;class_name&gt;</code>：类的全称</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Class <span class="class"><span class="keyword">class</span> </span>= Class.forName(<span class="string">"&lt;class_name&gt;"</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Persion persion = (Persion) <span class="class"><span class="keyword">class</span>.<span class="title">newInstance</span>()</span>;</span><br></pre></td></tr></table></figure>
+
+<h2 id="获取类名"><a href="#获取类名" class="headerlink" title="获取类名"></a>获取类名</h2><h3 id="获取类的全名"><a href="#获取类的全名" class="headerlink" title="获取类的全名"></a>获取类的全名</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span>.<span class="title">getName</span>()</span>;</span><br><span class="line"><span class="class"><span class="keyword">class</span>.<span class="title">getCanonicalName</span>()</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="获取类的简称"><a href="#获取类的简称" class="headerlink" title="获取类的简称"></a>获取类的简称</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span>.<span class="title">getSimpleName</span>()</span>;</span><br></pre></td></tr></table></figure>
+
+<h2 id="访问属性"><a href="#访问属性" class="headerlink" title="访问属性"></a>访问属性</h2><h3 id="获取公有属性"><a href="#获取公有属性" class="headerlink" title="获取公有属性"></a>获取公有属性</h3><blockquote>
+<p><code>&lt;attribute_name&gt;</code>：属性名</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">Field field = class.getField("&lt;attribute_name&gt;");</span><br></pre></td></tr></table></figure>
+
+<h3 id="获取类的私有属性"><a href="#获取类的私有属性" class="headerlink" title="获取类的私有属性"></a>获取类的私有属性</h3><figure class="highlight"><table><tr><td class="code"><pre><span class="line">Field field = class.getDeclaredField("&lt;attribute_name&gt;");</span><br></pre></td></tr></table></figure>
+
+<h3 id="修改属性值"><a href="#修改属性值" class="headerlink" title="修改属性值"></a>修改属性值</h3><blockquote>
+<p><code>&lt;value&gt;</code>：修改后的属性值</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">field.set(persion, &lt;value&gt;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="是否有访问权限"><a href="#是否有访问权限" class="headerlink" title="是否有访问权限"></a>是否有访问权限</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">field.isAccessible();</span><br></pre></td></tr></table></figure>
+
+<h3 id="修改访问权限"><a href="#修改访问权限" class="headerlink" title="修改访问权限"></a>修改访问权限</h3><ul>
+<li>私有属性授权后才可以修改属性值和调用方法</li>
+</ul>
+<blockquote>
+<p><code>&lt;boolean&gt;</code>：true为授权，false为不授权</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">field.setAccessible(&lt;<span class="keyword">boolean</span>&gt;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="获取所有属性"><a href="#获取所有属性" class="headerlink" title="获取所有属性"></a>获取所有属性</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Field[] field = <span class="class"><span class="keyword">class</span>.<span class="title">getDeclaredFields</span>()</span>;</span><br></pre></td></tr></table></figure>
+
+<h2 id="访问方法"><a href="#访问方法" class="headerlink" title="访问方法"></a>访问方法</h2><h3 id="获取公共方法"><a href="#获取公共方法" class="headerlink" title="获取公共方法"></a>获取公共方法</h3><blockquote>
+<p><code>&lt;method_name&gt;</code>：方法名<br><code>&lt;types&gt;</code>：参数类型，没有就不写，多个参数需要按照顺序写</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Method method = <span class="class"><span class="keyword">class</span>.<span class="title">getMethod</span>(&lt;<span class="title">method_name</span>&gt;)</span>;</span><br><span class="line">Method method = <span class="class"><span class="keyword">class</span>.<span class="title">getMethod</span>(&lt;<span class="title">method_name</span>&gt;, &lt;<span class="title">types</span>&gt;)</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="获取私有方法"><a href="#获取私有方法" class="headerlink" title="获取私有方法"></a>获取私有方法</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span>.<span class="title">getDeclaredMethod</span>()</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="获取方法名"><a href="#获取方法名" class="headerlink" title="获取方法名"></a>获取方法名</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">method.getName();</span><br></pre></td></tr></table></figure>
+
+<h3 id="调用方法"><a href="#调用方法" class="headerlink" title="调用方法"></a>调用方法</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">method.invoke(persion);</span><br><span class="line">method.invoke(persion, &lt;types&gt;);</span><br></pre></td></tr></table></figure>
+
+<h4 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h4><ul>
+<li>如果参数列表为两个int类型参数</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Method method = class.getMethod("&lt;method_name&gt;", int.class, int.calss);</span><br><span class="line">method.invoke(persion, <span class="number">8</span>, <span class="number">5</span>, <span class="number">7</span>);</span><br></pre></td></tr></table></figure>
+
+<h2 id="未完待更"><a href="#未完待更" class="headerlink" title="未完待更"></a>未完待更</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p>达内教育</p>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
     <title>【代码】JDBC实现增删改查</title>
     <url>/2020/05/20/JDBC%E5%AE%9E%E7%8E%B0%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>用JDBC实现增删改查操作</p>

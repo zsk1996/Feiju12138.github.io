@@ -88,6 +88,8 @@
     <title>【笔记】JDBC学习笔记</title>
     <url>/2020/05/19/JDBC%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>JDBC学习笔记</p>
+<a id="more"></a>
+
 <h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
 <li>项目中导入对应版本的<a href="https://dev.mysql.com/downloads/connector/j/" target="_blank" rel="noopener">mysql-connector-java-8.0.19.jar</a></li>
 </ul>
@@ -340,6 +342,16 @@
 <li><code>&lt;url-pattern&gt;&lt;/url-pattern&gt;</code>标签为拦截的范围</li>
 </ul>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">filter</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>HelloFilter<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">filter-class</span>&gt;</span>com.tedu.servlet.HelloFilter<span class="tag">&lt;/<span class="name">filter-class</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">filter</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">filter-mapping</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>HelloFilter<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/*<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">filter-mapping</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="请求转发也会被过滤"><a href="#请求转发也会被过滤" class="headerlink" title="请求转发也会被过滤"></a>请求转发也会被过滤</h4><ul>
+<li>向<code>&lt;filter-mapping&gt;&lt;/filter-mapping&gt;</code>内添加</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dispatcher</span>&gt;</span>FORWARD<span class="tag">&lt;/<span class="name">dispatcher</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="目标重定向也会被过滤"><a href="#目标重定向也会被过滤" class="headerlink" title="目标重定向也会被过滤"></a>目标重定向也会被过滤</h4><ul>
+<li>向<code>&lt;filter-mapping&gt;&lt;/filter-mapping&gt;</code>内添加</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dispatcher</span>&gt;</span>REQUEST<span class="tag">&lt;/<span class="name">dispatcher</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="过滤器初始化参数"><a href="#过滤器初始化参数" class="headerlink" title="过滤器初始化参数"></a>过滤器初始化参数</h2><h3 id="配置web-xml-1"><a href="#配置web-xml-1" class="headerlink" title="配置web.xml"></a>配置web.xml</h3><ul>
 <li>在<code>&lt;filter&gt;&lt;/filter&gt;</code>标签内配置</li>

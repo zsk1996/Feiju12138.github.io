@@ -89,7 +89,7 @@
 <h2 id="导入JSTL标签库"><a href="#导入JSTL标签库" class="headerlink" title="导入JSTL标签库"></a>导入JSTL标签库</h2><ul>
 <li>在jsp的HTML代码之上添加代码</li>
 </ul>
-<figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;%@ taglib prefix=<span class="string">"c"</span> uri=<span class="string">"http://java.sun.com/jsp/jstl/core"</span>&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;%@ taglib prefix=<span class="string">"c"</span> uri=<span class="string">"http://java.sun.com/jsp/jstl/core"</span> %&gt;</span><br></pre></td></tr></table></figure>
 
 <h2 id="判断语句"><a href="#判断语句" class="headerlink" title="判断语句"></a>判断语句</h2><h3 id="if语句"><a href="#if语句" class="headerlink" title="if语句"></a>if语句</h3><blockquote>
 <p><code>&lt;el&gt;</code>：EL表达式，做判断</p>

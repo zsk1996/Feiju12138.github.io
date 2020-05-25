@@ -1,6 +1,117 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>【笔记】EL表达式</title>
+    <url>/2020/05/25/EL%E8%A1%A8%E8%BE%BE%E5%BC%8F/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>表达式语言（Expression Language），或称EL表达式，简称EL，是Java中的一种特殊的通用编程语言，借鉴于JavaScript和XPath。主要作用是在Java Web应用程序嵌入到网页（如JSP）中，用以访问页面的上下文以及不同作用域中的对象 ，取得对象属性的值，或执行简单的运算或判断操作。EL在得到某个数据时，会自动进行数据类型的转换。（<a href="https://zh.wikipedia.org/wiki/表达式语言" target="_blank" rel="noopener">维基百科</a>）</p>
+<a id="more"></a>
+
+<h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><ul>
+<li>直接插入到jsp代码中，可以将值直接显示在html页面</li>
+<li>如果获取不到值，不显示任何内容（包括null）</li>
+</ul>
+<h3 id="获取会话"><a href="#获取会话" class="headerlink" title="获取会话"></a>获取会话</h3><blockquote>
+<p><code>&lt;key&gt;</code>：servlet中<code>request请求传入的会话数据</code>的键</p>
+</blockquote>
+<figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">$&#123;&lt;key&gt;&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="获取对象"><a href="#获取对象" class="headerlink" title="获取对象"></a>获取对象</h4><ul>
+<li>如果会话中存储的是对象，可以直接取对象中的属性</li>
+</ul>
+<blockquote>
+<p><code>&lt;attributes&gt;</code>：对象的属性</p>
+</blockquote>
+<figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">$&#123;&lt;key&gt;.&lt;attributes&gt;&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><h3 id="关系运算符"><a href="#关系运算符" class="headerlink" title="关系运算符"></a>关系运算符</h3><table>
+<thead>
+<tr>
+<th>代码</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>gt</td>
+<td>大于</td>
+</tr>
+<tr>
+<td>lt</td>
+<td>小于</td>
+</tr>
+<tr>
+<td>eq</td>
+<td>等于</td>
+</tr>
+<tr>
+<td>ne</td>
+<td>不等于</td>
+</tr>
+<tr>
+<td>ge</td>
+<td>大于等于</td>
+</tr>
+<tr>
+<td>le</td>
+<td>小于等于</td>
+</tr>
+</tbody></table>
+<h3 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h3><table>
+<thead>
+<tr>
+<th>代码</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>and</td>
+<td>与</td>
+</tr>
+<tr>
+<td>or</td>
+<td>或</td>
+</tr>
+</tbody></table>
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【笔记】JSTL学习笔记</title>
+    <url>/2020/05/25/JSTL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>JSP标准标签库（JSP Standard Tag Library）是Java EE网络应用程序开发平台的组成部分。它在JSP规范的基础上，扩充了一个JSP的标签库来完成一些通用任务，比如XML数据处理、条件执行、数据库访问、循环和国际化。<br>JSTL是在JCP下，作为JSR 52被开发出来的。（<a href="https://zh.wikipedia.org/wiki/JSTL" target="_blank" rel="noopener">维基百科</a>）</p>
+<a id="more"></a>
+
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
+<li>在项目中导入以下jar包</li>
+</ul>
+<p><code>jsf-api.jar</code>、<code>jsf-impl.jar</code>、<code>jstl-1.2.jar</code></p>
+<h2 id="导入JSTL标签库"><a href="#导入JSTL标签库" class="headerlink" title="导入JSTL标签库"></a>导入JSTL标签库</h2><ul>
+<li>在jsp的HTML代码之上添加代码</li>
+</ul>
+<figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;%@ taglib prefix=<span class="string">"c"</span> uri=<span class="string">"http://java.sun.com/jsp/jstl/core"</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="判断语句"><a href="#判断语句" class="headerlink" title="判断语句"></a>判断语句</h2><h3 id="if语句"><a href="#if语句" class="headerlink" title="if语句"></a>if语句</h3><blockquote>
+<p><code>&lt;el&gt;</code>：EL表达式，做判断</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">&lt;c:<span class="keyword">if</span> test=<span class="string">"&lt;el&gt;"</span>&gt;</span><br><span class="line">    ...</span><br><span class="line">&lt;/c:if&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="choose语句"><a href="#choose语句" class="headerlink" title="choose语句"></a>choose语句</h3><ul>
+<li>利用<code>&lt;c:otherwise&gt;&lt;/c:otherwise&gt;</code>语句取反</li>
+</ul>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">&lt;c:choose&gt;</span><br><span class="line">    &lt;c:when test=<span class="string">"&lt;el&gt;"</span>&gt;</span><br><span class="line">        ...</span><br><span class="line">    &lt;/c:when&gt;</span><br><span class="line">    &lt;c:otherwise&gt;</span><br><span class="line">        ...</span><br><span class="line">    &lt;/c:otherwise&gt;</span><br><span class="line">&lt;/c:choose&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h2><blockquote>
+<p><code>&lt;el&gt;</code>：EL表达式，表示java中<code>for each</code>循环<code>:</code>后面表示的内容</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">&lt;c:forEach items=<span class="string">"&lt;el&gt;"</span>&gt;</span><br><span class="line">    ...</span><br><span class="line">&lt;/c:forEach&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
     <title>【代码】初始化你的专家</title>
     <url>/2020/05/24/%E5%88%9D%E5%A7%8B%E5%8C%96%E4%BD%A0%E7%9A%84%E4%B8%93%E5%AE%B6/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>关卡攻略</p>

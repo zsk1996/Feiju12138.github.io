@@ -3,7 +3,7 @@ title: 【笔记】HTML 转义字符
 date: 2019-12-14 16:31:16
 tags:
 categories:
-- H5/CSS/JS
+- HTML/CSS/JS
 ---
 
 ## 前言

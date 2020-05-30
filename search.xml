@@ -1,6 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>【笔记】线程学习笔记</title>
+    <url>/2020/05/30/%E7%BA%BF%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>线程学习笔记</p>
+<a id="more"></a>
+
+<h2 id="创建线程"><a href="#创建线程" class="headerlink" title="创建线程"></a>创建线程</h2><h3 id="继承Thread"><a href="#继承Thread" class="headerlink" title="继承Thread"></a>继承Thread</h3><ul>
+<li>定义Thread的子类</li>
+<li>重写run()方法</li>
+<li>在run()方法中的代码，是与其他代码并行执行的代码</li>
+<li>线程启动后，自动执行run()方法</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> io.github.feiju12138;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        </span><br><span class="line">        TestThread thread = <span class="keyword">new</span> TestThread();</span><br><span class="line">        thread.start();</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">TestThread</span> <span class="keyword">extends</span> <span class="title">Thread</span> </span>&#123;</span><br><span class="line">        </span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">             ...</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="实现Runnable"><a href="#实现Runnable" class="headerlink" title="实现Runnable"></a>实现Runnable</h3><ul>
+<li>定义Runnable子类</li>
+<li>实现run()方法</li>
+<li>把Runnable对象放入Thread线程对象启动</li>
+<li>线程启动后，执行Runnable对象的run()方法</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> io.github.feiju12138;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        </span><br><span class="line">        TestRunnable runnable = <span class="keyword">new</span> TestRunnable();</span><br><span class="line">        Thread thread = <span class="keyword">new</span> Thread(runnable);</span><br><span class="line">        thread.start();</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">TestRunnable</span> <span class="keyword">implements</span> <span class="title">Runnable</span> </span>&#123;</span><br><span class="line">        </span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            ...</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="线程的方法"><a href="#线程的方法" class="headerlink" title="线程的方法"></a>线程的方法</h2><h2 id="获得线程对象"><a href="#获得线程对象" class="headerlink" title="获得线程对象"></a>获得线程对象</h2><ul>
+<li>获得正在执行这行代码的线程对象</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Thread.currentThread();</span><br></pre></td></tr></table></figure>
+
+<h2 id="获得线程名"><a href="#获得线程名" class="headerlink" title="获得线程名"></a>获得线程名</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">getName();</span><br></pre></td></tr></table></figure>
+
+<h2 id="设置线程名"><a href="#设置线程名" class="headerlink" title="设置线程名"></a>设置线程名</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">setName();</span><br></pre></td></tr></table></figure>
+
+<h2 id="暂停线程"><a href="#暂停线程" class="headerlink" title="暂停线程"></a>暂停线程</h2><blockquote>
+<p><code>&lt;sun&gt;</code>：当前线程暂停指定的毫秒值</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Thread.sleep(&lt;num&gt;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="打断一个线程的暂停状态"><a href="#打断一个线程的暂停状态" class="headerlink" title="打断一个线程的暂停状态"></a>打断一个线程的暂停状态</h2><ul>
+<li>被打断的线程出现InterruptedException异常</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">iterrupt();</span><br></pre></td></tr></table></figure>
+
+<h2 id="未完待更"><a href="#未完待更" class="headerlink" title="未完待更"></a>未完待更</h2><p>03-03-06</p>
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
     <title>【代码】MD5加密</title>
     <url>/2020/05/27/MD5%E5%8A%A0%E5%AF%86/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Java实现MD5加密字符串</p>

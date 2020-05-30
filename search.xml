@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>【踩坑】Forge报错：These libraries failed</title>
+    <url>/2020/05/30/Forge%E6%8A%A5%E9%94%99%EF%BC%9AThese-libraries-failed/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>安装Forge时报错：<code>These libraries failed to download. Try again</code></p>
+<a id="more"></a>
+
+<h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><ul>
+<li>网络太慢</li>
+</ul>
+<h2 id="解决问题"><a href="#解决问题" class="headerlink" title="解决问题"></a>解决问题</h2><ul>
+<li>手动下载下载失败的<code>.jar</code>资源</li>
+</ul>
+<p>示例资源URL地址：<code>https://files.minecraftforge.net/maven/org/scala-lang/scala-compiler/2.11.1/scala-compiler-2.11.1.jar</code></p>
+<ul>
+<li>（将示例资源文件<code>scala-compiler-2.11.1.jar</code>）放到以下目录</li>
+</ul>
+<p>Windows目录示例<code>C:/Users/Administrator/AppData/Roaming/.minecraft/org/scala-lang/scala-compiler/2.11.1/</code></p>
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://zhidao.baidu.com/question/1436669307035945499.html" target="_blank" rel="noopener">百度知道——UTM_2</a></p>
+]]></content>
+      <categories>
+        <category>Minecraft</category>
+      </categories>
+  </entry>
+  <entry>
     <title>【笔记】线程学习笔记</title>
     <url>/2020/05/30/%E7%BA%BF%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>线程学习笔记</p>

@@ -1,5 +1,5 @@
 ---
-title: 【笔记】在Linux上搭建Minecraft服务器.md
+title: 【笔记】在Linux上搭建Minecraft服务器
 categories:
   - Minecraft
 date: 2020-04-26 21:13:28

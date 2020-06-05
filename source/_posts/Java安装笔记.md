@@ -7,7 +7,7 @@ date: 2020-04-26 21:14:16
 
 ## 前言
 
-在CentOS上安装JDK1.8
+在CentOS上安装`Open JDK 1.8`
 
 <!-- more -->
 

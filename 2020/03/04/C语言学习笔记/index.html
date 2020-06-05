@@ -62,7 +62,7 @@
 <meta property="og:description" content="前言C是一种通用的编程语言，广泛用于系统软件与应用软件的开发。于1969年至1973年间，为了移植与开发UNIX操作系统，由丹尼斯·里奇与肯·汤普逊，以B语言为基础，在贝尔实验室设计、开发出来。 C语言具有高效、灵活、功能丰富、表达力强和较高的可移植性等特点，在程序设计中备受青睐，成为最近25年使用最为广泛的编程语言。（维基百科）">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-03-04T08:14:46.000Z">
-<meta property="article:modified_time" content="2020-04-25T02:20:25.000Z">
+<meta property="article:modified_time" content="2020-06-05T17:10:45.750Z">
 <meta property="article:author" content="绯鞠">
 <meta name="twitter:card" content="summary">
 
@@ -251,7 +251,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-04-25 10:20:25" itemprop="dateModified" datetime="2020-04-25T10:20:25+08:00">2020-04-25</time>
+                <time title="修改时间：2020-06-06 01:10:45" itemprop="dateModified" datetime="2020-06-06T01:10:45+08:00">2020-06-06</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -316,7 +316,222 @@
 </ul>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="输出语句"><a href="#输出语句" class="headerlink" title="输出语句"></a>输出语句</h2><h2 id="未完待更"><a href="#未完待更" class="headerlink" title="未完待更"></a>未完待更</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://www.bilibili.com/video/av29473098" target="_blank" rel="noopener">哔哩哔哩——C3程序猿</a></p>
+<h2 id="变量和常量"><a href="#变量和常量" class="headerlink" title="变量和常量"></a>变量和常量</h2><h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><blockquote>
+<p><code>&lt;type&gt;</code>：数据类型<br><code>&lt;name&gt;</code>：数据名<br><code>&lt;value&gt;</code>：数据值</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;type&gt; &lt;name&gt; = &lt;value&gt;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h3><ul>
+<li>常量名全部大写，多个单词用<code>_</code>隔开</li>
+</ul>
+<h4 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> <span class="meta-string">&lt;name&gt; &lt;value&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<h4 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &lt;type&gt; &lt;name&gt; &lt;value&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><h3 id="无符号数据类型"><a href="#无符号数据类型" class="headerlink" title="无符号数据类型"></a>无符号数据类型</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">unsigned</span> &lt;type&gt; &lt;name&gt; = &lt;value&gt;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="整型"><a href="#整型" class="headerlink" title="整型"></a>整型</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> &lt;name&gt; = &lt;value&gt;;</span><br></pre></td></tr></table></figure>
+
+<h4 id="其他进制数据"><a href="#其他进制数据" class="headerlink" title="其他进制数据"></a>其他进制数据</h4><h5 id="2进制数据"><a href="#2进制数据" class="headerlink" title="2进制数据"></a>2进制数据</h5><ul>
+<li>以<code>0b</code>开头</li>
+</ul>
+<h5 id="8进制数据"><a href="#8进制数据" class="headerlink" title="8进制数据"></a>8进制数据</h5><ul>
+<li>以<code>0</code>开头</li>
+</ul>
+<h5 id="16进制数据"><a href="#16进制数据" class="headerlink" title="16进制数据"></a>16进制数据</h5><ul>
+<li>以<code>0x</code>开头</li>
+</ul>
+<h4 id="不同系统下的相同数据"><a href="#不同系统下的相同数据" class="headerlink" title="不同系统下的相同数据"></a>不同系统下的相同数据</h4><ul>
+<li>以<code>&lt;num&gt;_t</code>结尾为特定位平台数据</li>
+<li>以<code>u_</code>开头为无符号数据</li>
+</ul>
+<h5 id="8位系统"><a href="#8位系统" class="headerlink" title="8位系统"></a>8位系统</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int8_t</span> &lt;name&gt; = &lt;value&gt;;</span><br><span class="line"><span class="keyword">u_int8_t</span> &lt;name&gt; = &lt;value&gt;;</span><br></pre></td></tr></table></figure>
+
+<h5 id="16位系统"><a href="#16位系统" class="headerlink" title="16位系统"></a>16位系统</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int16_t</span> &lt;name&gt; = &lt;value&gt;;</span><br><span class="line"><span class="keyword">u_int16_t</span> &lt;name&gt; = &lt;value&gt;;</span><br></pre></td></tr></table></figure>
+
+<h5 id="32位系统"><a href="#32位系统" class="headerlink" title="32位系统"></a>32位系统</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int32_t</span> &lt;name&gt; = &lt;value&gt;;</span><br><span class="line"><span class="keyword">u_int32_t</span> &lt;name&gt; = &lt;value&gt;;</span><br></pre></td></tr></table></figure>
+
+<h5 id="64位系统"><a href="#64位系统" class="headerlink" title="64位系统"></a>64位系统</h5><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int64_t</span> &lt;name&gt; = &lt;value&gt;;</span><br><span class="line"><span class="keyword">u_int64_t</span> &lt;name&gt; = &lt;value&gt;;</span><br></pre></td></tr></table></figure>
+
+<h4 id="长整型"><a href="#长整型" class="headerlink" title="长整型"></a>长整型</h4><ul>
+<li>32位系统，占4字节</li>
+<li>64位系统，占8字节</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">long</span> &lt;name&gt; = &lt;value&gt;;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>无论32位系统还是64位系统，都占8字节</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> &lt;name&gt; = &lt;value&gt;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="实数类型"><a href="#实数类型" class="headerlink" title="实数类型"></a>实数类型</h3><h4 id="单精度"><a href="#单精度" class="headerlink" title="单精度"></a>单精度</h4><ul>
+<li>4字节，32位</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">float</span> &lt;name&gt; = &lt;value&gt;;</span><br></pre></td></tr></table></figure>
+
+<h4 id="双精度"><a href="#双精度" class="headerlink" title="双精度"></a>双精度</h4><ul>
+<li>8字节，64位</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">double</span> &lt;name&gt; = &lt;value&gt;;</span><br></pre></td></tr></table></figure>
+
+<h4 id="长双精度"><a href="#长双精度" class="headerlink" title="长双精度"></a>长双精度</h4><ul>
+<li>16字节，128位</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">long</span> <span class="keyword">double</span> &lt;name&gt; = &lt;value&gt;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="字符型"><a href="#字符型" class="headerlink" title="字符型"></a>字符型</h3><h4 id="字符常量"><a href="#字符常量" class="headerlink" title="字符常量"></a>字符常量</h4><h5 id="换行符"><a href="#换行符" class="headerlink" title="换行符"></a>换行符</h5><ul>
+<li><code>\n</code></li>
+</ul>
+<h5 id="回车符"><a href="#回车符" class="headerlink" title="回车符"></a>回车符</h5><ul>
+<li><code>\r</code></li>
+</ul>
+<h5 id="退格符"><a href="#退格符" class="headerlink" title="退格符"></a>退格符</h5><ul>
+<li><code>\b</code>，相当于<code>back space</code></li>
+</ul>
+<h5 id="制表符"><a href="#制表符" class="headerlink" title="制表符"></a>制表符</h5><ul>
+<li><code>\t</code></li>
+</ul>
+<h5 id="换页符"><a href="#换页符" class="headerlink" title="换页符"></a>换页符</h5><ul>
+<li><code>\f</code></li>
+</ul>
+<h5 id="其他转义字符"><a href="#其他转义字符" class="headerlink" title="其他转义字符"></a>其他转义字符</h5><table>
+<thead>
+<tr>
+<th>转义前</th>
+<th>转义后</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>|\</td>
+<td></td>
+</tr>
+<tr>
+<td>“</td>
+<td>&quot;</td>
+</tr>
+<tr>
+<td>‘</td>
+<td>&#39;</td>
+</tr>
+</tbody></table>
+<h4 id="字符变量"><a href="#字符变量" class="headerlink" title="字符变量"></a>字符变量</h4><h5 id="字符"><a href="#字符" class="headerlink" title="字符"></a>字符</h5><ul>
+<li>用单引号引起来</li>
+</ul>
+<h3 id="自定义类型"><a href="#自定义类型" class="headerlink" title="自定义类型"></a>自定义类型</h3><h4 id="为数据类型起别名"><a href="#为数据类型起别名" class="headerlink" title="为数据类型起别名"></a>为数据类型起别名</h4><blockquote>
+<p><code>&lt;type_old&gt;</code>：起名前<br><code>&lt;type_new&gt;</code>：起名后</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> &lt;type_old&gt; &lt;type_new&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="if语句"><a href="#if语句" class="headerlink" title="if语句"></a>if语句</h2><blockquote>
+<p><code>&lt;boolean&gt;</code>：布尔值</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (&lt;<span class="keyword">boolean</span>&gt;) &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (&lt;<span class="keyword">boolean</span>&gt;) &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (&lt;<span class="keyword">boolean</span>&gt;) &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (&lt;<span class="keyword">boolean</span>&gt;) &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="switch语句"><a href="#switch语句" class="headerlink" title="switch语句"></a>switch语句</h2><blockquote>
+<p><code>&lt;name&gt;</code>：变量名<br><code>&lt;value_1&gt;</code>：第一种值<br><code>&lt;value_2&gt;</code>：第二种值</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span> (&lt;name&gt;) &#123;</span><br><span class="line">    <span class="keyword">case</span> &lt;value_1&gt;:</span><br><span class="line">        ...</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> &lt;value_2&gt;:</span><br><span class="line">        ...</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">        ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="goto语句"><a href="#goto语句" class="headerlink" title="goto语句"></a>goto语句</h2><ul>
+<li>到达goto语句时，执行跳转到指定的标签</li>
+</ul>
+<blockquote>
+<p><code>&lt;label&gt;</code>：标签</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;label&gt;:</span><br><span class="line">...</span><br><span class="line"></span><br><span class="line"><span class="keyword">goto</span> &lt;label&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="for循环"><a href="#for循环" class="headerlink" title="for循环"></a>for循环</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i ++) &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="break语句"><a href="#break语句" class="headerlink" title="break语句"></a>break语句</h3><ul>
+<li>跳出循环</li>
+</ul>
+<h3 id="continue语句"><a href="#continue语句" class="headerlink" title="continue语句"></a>continue语句</h3><ul>
+<li>终止本次循环</li>
+</ul>
+<h3 id="嵌套循环"><a href="#嵌套循环" class="headerlink" title="嵌套循环"></a>嵌套循环</h3><ul>
+<li>九九乘法表小案例</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">9</span>; i ++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= i; j ++) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d * %d = %d \t"</span>, i, j, i*j);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="while循环"><a href="#while循环" class="headerlink" title="while循环"></a>while循环</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> (&lt;<span class="keyword">boolean</span>&gt;) &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125; <span class="keyword">while</span> (&lt;<span class="keyword">boolean</span>&gt;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="输出字符和字符串"><a href="#输出字符和字符串" class="headerlink" title="输出字符和字符串"></a>输出字符和字符串</h2><h3 id="输出字符"><a href="#输出字符" class="headerlink" title="输出字符"></a>输出字符</h3><blockquote>
+<p><code>&lt;num&gt;</code>：0~255的int数，或一个字符</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">putchar</span>(&lt;num&gt;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="输出字符串"><a href="#输出字符串" class="headerlink" title="输出字符串"></a>输出字符串</h3><blockquote>
+<p><code>&lt;string&gt;</code>：字符串，或一个字符数组</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">puts</span>(&lt;<span class="built_in">string</span>&gt;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="格式化输出"><a href="#格式化输出" class="headerlink" title="格式化输出"></a>格式化输出</h2><table>
+<thead>
+<tr>
+<th>输出前</th>
+<th>输出后</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>%d</td>
+<td>整形</td>
+</tr>
+<tr>
+<td>%03d</td>
+<td>在<code>%</code>后加<code>&lt;num_1&gt;&lt;num_2&gt;</code>，表示在改值不足<code>&lt;num_2&gt;</code>位数前补<code>&lt;num_1&gt;</code>，如果<code>&lt;num_1&gt;</code>为空，则在数前补空格</td>
+</tr>
+<tr>
+<td>%u</td>
+<td>无符号整数</td>
+</tr>
+<tr>
+<td>&amp;o</td>
+<td>8进制数</td>
+</tr>
+<tr>
+<td>%x</td>
+<td>16进制数（英文小写）</td>
+</tr>
+<tr>
+<td>%X</td>
+<td>16进制数（英文大写）</td>
+</tr>
+<tr>
+<td>%f</td>
+<td>浮点数（双精度）</td>
+</tr>
+<tr>
+<td>%.2f</td>
+<td>在<code>%</code>后加<code>.&lt;num&gt;</code>，表示保留小数点后<code>&lt;num&gt;</code>个有效数字</td>
+</tr>
+<tr>
+<td>%c</td>
+<td>字符</td>
+</tr>
+<tr>
+<td>%s</td>
+<td>字符串</td>
+</tr>
+<tr>
+<td>%ld</td>
+<td>长整型</td>
+</tr>
+<tr>
+<td>%Lf</td>
+<td>长浮点数（双精度）</td>
+</tr>
+<tr>
+<td>%p</td>
+<td>指针</td>
+</tr>
+</tbody></table>
+<h2 id="未完待更"><a href="#未完待更" class="headerlink" title="未完待更"></a>未完待更</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://www.bilibili.com/video/av29473098" target="_blank" rel="noopener">哔哩哔哩——C3程序猿</a><br><a href="https://www.bilibili.com/video/BV1ds411T7bj" target="_blank" rel="noopener">哔哩哔哩——HACK学习</a></p>
 
     </div>
 
@@ -407,7 +622,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注释"><span class="nav-number">2.</span> <span class="nav-text">注释</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#单行注释"><span class="nav-number">2.1.</span> <span class="nav-text">单行注释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多行注释"><span class="nav-number">2.2.</span> <span class="nav-text">多行注释</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#头文件"><span class="nav-number">3.</span> <span class="nav-text">头文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#主函数"><span class="nav-number">4.</span> <span class="nav-text">主函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#常见的五种主函数"><span class="nav-number">4.1.</span> <span class="nav-text">常见的五种主函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#C语言标准主函数形式"><span class="nav-number">4.1.1.</span> <span class="nav-text">C语言标准主函数形式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#C-C-标准主函数形式，使用命令行参数"><span class="nav-number">4.1.2.</span> <span class="nav-text">C&#x2F;C++标准主函数形式，使用命令行参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#C-标准主函数形式"><span class="nav-number">4.1.3.</span> <span class="nav-text">C++标准主函数形式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#老版本"><span class="nav-number">4.1.4.</span> <span class="nav-text">老版本</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#不提倡"><span class="nav-number">4.1.5.</span> <span class="nav-text">不提倡</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输出语句"><span class="nav-number">5.</span> <span class="nav-text">输出语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#未完待更"><span class="nav-number">6.</span> <span class="nav-text">未完待更</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考文献"><span class="nav-number">7.</span> <span class="nav-text">参考文献</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注释"><span class="nav-number">2.</span> <span class="nav-text">注释</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#单行注释"><span class="nav-number">2.1.</span> <span class="nav-text">单行注释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多行注释"><span class="nav-number">2.2.</span> <span class="nav-text">多行注释</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#头文件"><span class="nav-number">3.</span> <span class="nav-text">头文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#主函数"><span class="nav-number">4.</span> <span class="nav-text">主函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#常见的五种主函数"><span class="nav-number">4.1.</span> <span class="nav-text">常见的五种主函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#C语言标准主函数形式"><span class="nav-number">4.1.1.</span> <span class="nav-text">C语言标准主函数形式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#C-C-标准主函数形式，使用命令行参数"><span class="nav-number">4.1.2.</span> <span class="nav-text">C&#x2F;C++标准主函数形式，使用命令行参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#C-标准主函数形式"><span class="nav-number">4.1.3.</span> <span class="nav-text">C++标准主函数形式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#老版本"><span class="nav-number">4.1.4.</span> <span class="nav-text">老版本</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#不提倡"><span class="nav-number">4.1.5.</span> <span class="nav-text">不提倡</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量和常量"><span class="nav-number">5.</span> <span class="nav-text">变量和常量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#变量"><span class="nav-number">5.1.</span> <span class="nav-text">变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常量"><span class="nav-number">5.2.</span> <span class="nav-text">常量</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#方法一"><span class="nav-number">5.2.1.</span> <span class="nav-text">方法一</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法二"><span class="nav-number">5.2.2.</span> <span class="nav-text">方法二</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据类型"><span class="nav-number">6.</span> <span class="nav-text">数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#无符号数据类型"><span class="nav-number">6.1.</span> <span class="nav-text">无符号数据类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#整型"><span class="nav-number">6.2.</span> <span class="nav-text">整型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#其他进制数据"><span class="nav-number">6.2.1.</span> <span class="nav-text">其他进制数据</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#2进制数据"><span class="nav-number">6.2.1.1.</span> <span class="nav-text">2进制数据</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#8进制数据"><span class="nav-number">6.2.1.2.</span> <span class="nav-text">8进制数据</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#16进制数据"><span class="nav-number">6.2.1.3.</span> <span class="nav-text">16进制数据</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#不同系统下的相同数据"><span class="nav-number">6.2.2.</span> <span class="nav-text">不同系统下的相同数据</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#8位系统"><span class="nav-number">6.2.2.1.</span> <span class="nav-text">8位系统</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#16位系统"><span class="nav-number">6.2.2.2.</span> <span class="nav-text">16位系统</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#32位系统"><span class="nav-number">6.2.2.3.</span> <span class="nav-text">32位系统</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#64位系统"><span class="nav-number">6.2.2.4.</span> <span class="nav-text">64位系统</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#长整型"><span class="nav-number">6.2.3.</span> <span class="nav-text">长整型</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实数类型"><span class="nav-number">6.3.</span> <span class="nav-text">实数类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#单精度"><span class="nav-number">6.3.1.</span> <span class="nav-text">单精度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#双精度"><span class="nav-number">6.3.2.</span> <span class="nav-text">双精度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#长双精度"><span class="nav-number">6.3.3.</span> <span class="nav-text">长双精度</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符型"><span class="nav-number">6.4.</span> <span class="nav-text">字符型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#字符常量"><span class="nav-number">6.4.1.</span> <span class="nav-text">字符常量</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#换行符"><span class="nav-number">6.4.1.1.</span> <span class="nav-text">换行符</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#回车符"><span class="nav-number">6.4.1.2.</span> <span class="nav-text">回车符</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#退格符"><span class="nav-number">6.4.1.3.</span> <span class="nav-text">退格符</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#制表符"><span class="nav-number">6.4.1.4.</span> <span class="nav-text">制表符</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#换页符"><span class="nav-number">6.4.1.5.</span> <span class="nav-text">换页符</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#其他转义字符"><span class="nav-number">6.4.1.6.</span> <span class="nav-text">其他转义字符</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字符变量"><span class="nav-number">6.4.2.</span> <span class="nav-text">字符变量</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#字符"><span class="nav-number">6.4.2.1.</span> <span class="nav-text">字符</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义类型"><span class="nav-number">6.5.</span> <span class="nav-text">自定义类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#为数据类型起别名"><span class="nav-number">6.5.1.</span> <span class="nav-text">为数据类型起别名</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#if语句"><span class="nav-number">7.</span> <span class="nav-text">if语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#switch语句"><span class="nav-number">8.</span> <span class="nav-text">switch语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#goto语句"><span class="nav-number">9.</span> <span class="nav-text">goto语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#for循环"><span class="nav-number">10.</span> <span class="nav-text">for循环</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#break语句"><span class="nav-number">10.1.</span> <span class="nav-text">break语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#continue语句"><span class="nav-number">10.2.</span> <span class="nav-text">continue语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#嵌套循环"><span class="nav-number">10.3.</span> <span class="nav-text">嵌套循环</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#while循环"><span class="nav-number">11.</span> <span class="nav-text">while循环</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输出字符和字符串"><span class="nav-number">12.</span> <span class="nav-text">输出字符和字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#输出字符"><span class="nav-number">12.1.</span> <span class="nav-text">输出字符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出字符串"><span class="nav-number">12.2.</span> <span class="nav-text">输出字符串</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#格式化输出"><span class="nav-number">13.</span> <span class="nav-text">格式化输出</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#未完待更"><span class="nav-number">14.</span> <span class="nav-text">未完待更</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考文献"><span class="nav-number">15.</span> <span class="nav-text">参考文献</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -472,13 +687,13 @@
       <i class="fa fa-area-chart"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">231k</span>
+    <span title="站点总字数">235k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">6:25</span>
+    <span title="站点阅读时长">6:31</span>
 </div>
 
         

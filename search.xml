@@ -1,6 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>【笔记】破解Linux开机密码</title>
+    <url>/2020/06/09/%E7%A0%B4%E8%A7%A3Linux%E5%BC%80%E6%9C%BA%E5%AF%86%E7%A0%81/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>破解RedHat系列Linux开机密码</p>
+<a id="more"></a>
+
+<h2 id="修改启动参数"><a href="#修改启动参数" class="headerlink" title="修改启动参数"></a>修改启动参数</h2><ul>
+<li><p>开机后，在进入登录界面前的命令行界面时，按<code>e</code>键进入启动参数编辑界面</p>
+</li>
+<li><p>将光标移到<code>linux16 /vmlinuz ...</code>行，在末尾追加<code>rd.break console=tty0</code></p>
+</li>
+<li><p><code>ctrl</code>+<code>x</code>保存并退出</p>
+</li>
+</ul>
+<h2 id="修改新密码"><a href="#修改新密码" class="headerlink" title="修改新密码"></a>修改新密码</h2><blockquote>
+<p><code>&lt;password&gt;</code>：新密码</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">mount -o remount,rw /sysroot</span><br><span class="line">chroot /sysroot/</span><br><span class="line"><span class="built_in">echo</span> &lt;password&gt; | passwd --stdin root</span><br><span class="line">touch /.autorelabel</span><br><span class="line"><span class="built_in">exit</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><ul>
+<li>重启系统</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">reboot</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+  </entry>
+  <entry>
     <title>【笔记】查看系统ip地址</title>
     <url>/2020/06/06/%E6%9F%A5%E7%9C%8B%E7%B3%BB%E7%BB%9Fip%E5%9C%B0%E5%9D%80/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>查看Ubuntu系列Linux系统ip地址</p>
@@ -4208,6 +4237,48 @@
 <p><code>&lt;num&gt;</code>：指明需要连接的长度</p>
 </blockquote>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="built_in">strncat</span>(str, str1, &lt;num&gt;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="格式化字符串"><a href="#格式化字符串" class="headerlink" title="格式化字符串"></a>格式化字符串</h2><ul>
+<li>将多个其他类型的数据转化为字符串</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">char</span> * str = <span class="string">"s"</span>;</span><br><span class="line"><span class="keyword">int</span> num = <span class="number">100</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 定义一个字符串作为缓冲区</span></span><br><span class="line"><span class="keyword">char</span> dist[<span class="number">10</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">// 初始化字符串</span></span><br><span class="line"><span class="built_in">memset</span>(dist, <span class="number">0</span>, <span class="number">10</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 合并为一个字符串</span></span><br><span class="line"><span class="built_in">sprintf</span>(dist, <span class="string">"%s%d"</span>, str, num);</span><br></pre></td></tr></table></figure>
+
+<h3 id="反向格式化"><a href="#反向格式化" class="headerlink" title="反向格式化"></a>反向格式化</h3><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">char</span> * str = <span class="string">"m100"</span>;</span><br><span class="line"><span class="keyword">char</span> buf[<span class="number">10</span>];</span><br><span class="line"><span class="keyword">int</span> num;</span><br><span class="line"></span><br><span class="line"><span class="built_in">memset</span>(buf, <span class="number">0</span>, <span class="number">10</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">sscanf</span>(str, <span class="string">"%1s%d"</span>, buf, &amp;num);</span><br></pre></td></tr></table></figure>
+
+<h2 id="字符串转换为其他类型"><a href="#字符串转换为其他类型" class="headerlink" title="字符串转换为其他类型"></a>字符串转换为其他类型</h2><blockquote>
+<p><code>&lt;str&gt;</code>：需要转换的字符串</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>转化之前的类型</th>
+<th>使用到的函数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>转化为浮点类型</td>
+<td><code>atof(&lt;str&gt;);</code></td>
+</tr>
+<tr>
+<td>转化为int类型</td>
+<td><code>atoi(&lt;str&gt;);</code></td>
+</tr>
+<tr>
+<td>转化为long int类型</td>
+<td><code>atol(&lt;str&gt;);</code></td>
+</tr>
+<tr>
+<td>转化为long long int类型</td>
+<td><code>atoll(&lt;str&gt;);</code></td>
+</tr>
+</tbody></table>
+<h2 id="字符串比较"><a href="#字符串比较" class="headerlink" title="字符串比较"></a>字符串比较</h2><ul>
+<li>如果直接用<code>==</code>做比较，实际上是比较存储字符串的内存地址</li>
+<li><code>strcmp</code>函数会返回两个字符串的“计算结果”，结果为0则相等，结果不为0则不相等</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> result = <span class="built_in">strcmp</span>(&lt;str_1&gt;, &lt;str_2&gt;);</span><br></pre></td></tr></table></figure>
+
+
 
 
 
@@ -17303,6 +17374,16 @@
 <h3 id="显示文件的类型"><a href="#显示文件的类型" class="headerlink" title="显示文件的类型"></a>显示文件的类型</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ file xxx</span><br></pre></td></tr></table></figure>
 
 <h3 id="查看命令的位置"><a href="#查看命令的位置" class="headerlink" title="查看命令的位置"></a>查看命令的位置</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ whereis xxx</span><br></pre></td></tr></table></figure>
+
+<h3 id="查看主机名"><a href="#查看主机名" class="headerlink" title="查看主机名"></a>查看主机名</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ hostname</span><br></pre></td></tr></table></figure>
+
+<h4 id="修改主机名"><a href="#修改主机名" class="headerlink" title="修改主机名"></a>修改主机名</h4><ul>
+<li>在终端临时修改</li>
+</ul>
+<blockquote>
+<p><code>&lt;name&gt;</code>：修改后的主机名</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ hostname &lt;name&gt;</span><br></pre></td></tr></table></figure>
 
 <h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://www.linuxprobe.com" target="_blank" rel="noopener">Linux就该这么学——刘遄</a></p>
 ]]></content>

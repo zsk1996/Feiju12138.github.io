@@ -11,14 +11,17 @@
 </li>
 <li><p>将光标移到<code>linux16 /vmlinuz ...</code>行，在末尾追加<code>rd.break console=tty0</code></p>
 </li>
-<li><p><code>ctrl</code>+<code>x</code>保存并退出</p>
-</li>
+</ul>
+<p><img src="/images/20200609163317/01.png" alt="01.png"></p>
+<ul>
+<li><code>ctrl</code>+<code>x</code>保存并退出</li>
 </ul>
 <h2 id="修改新密码"><a href="#修改新密码" class="headerlink" title="修改新密码"></a>修改新密码</h2><blockquote>
 <p><code>&lt;password&gt;</code>：新密码</p>
 </blockquote>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">mount -o remount,rw /sysroot</span><br><span class="line">chroot /sysroot/</span><br><span class="line"><span class="built_in">echo</span> &lt;password&gt; | passwd --stdin root</span><br><span class="line">touch /.autorelabel</span><br><span class="line"><span class="built_in">exit</span></span><br></pre></td></tr></table></figure>
 
+<p><img src="/images/20200609163317/02.png" alt="02.png"></p>
 <h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><ul>
 <li>重启系统</li>
 </ul>
@@ -4278,7 +4281,147 @@
 </ul>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> result = <span class="built_in">strcmp</span>(&lt;str_1&gt;, &lt;str_2&gt;);</span><br></pre></td></tr></table></figure>
 
+<h2 id="字符串截取"><a href="#字符串截取" class="headerlink" title="字符串截取"></a>字符串截取</h2><ul>
+<li>区分大小写</li>
+<li>如果搜索不到，就返回<code>(null)</code></li>
+</ul>
+<h3 id="通过比较截取"><a href="#通过比较截取" class="headerlink" title="通过比较截取"></a>通过比较截取</h3><h4 id="从前往后搜索"><a href="#从前往后搜索" class="headerlink" title="从前往后搜索"></a>从前往后搜索</h4><ul>
+<li>从第一次出现指定字符的位置截取字符串到结尾</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">char</span> * strNew = <span class="built_in">strchr</span>(<span class="string">"Hello World"</span>, <span class="string">'o'</span>);</span><br></pre></td></tr></table></figure>
 
+<h4 id="从后往前搜索"><a href="#从后往前搜索" class="headerlink" title="从后往前搜索"></a>从后往前搜索</h4><ul>
+<li>从最后一次出现指定字符的位置截取字符串到结尾</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">char</span> * str = <span class="built_in">strrchr</span>(<span class="string">"Hello World"</span>, <span class="string">'o'</span>);</span><br></pre></td></tr></table></figure>
+
+<h4 id="搜索字符串"><a href="#搜索字符串" class="headerlink" title="搜索字符串"></a>搜索字符串</h4><ul>
+<li>从第一次出现指定字符串的位置截取字符串到结尾</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">char</span> * str = <span class="built_in">strstr</span>(<span class="string">"Hello World"</span>, <span class="string">"Wo"</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="通过位置截取"><a href="#通过位置截取" class="headerlink" title="通过位置截取"></a>通过位置截取</h3><h4 id="指定结束位置"><a href="#指定结束位置" class="headerlink" title="指定结束位置"></a>指定结束位置</h4><ul>
+<li>从开始位置截取到指定位置</li>
+</ul>
+<blockquote>
+<p><code>&lt;num&gt;</code>：截取截止位置，字符串下标从1开始</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">char</span> str[<span class="number">10</span>];</span><br><span class="line"><span class="built_in">strncpy</span>(str, <span class="string">"Hello World"</span>, &lt;num&gt;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="通过指针截取"><a href="#通过指针截取" class="headerlink" title="通过指针截取"></a>通过指针截取</h3><ul>
+<li>将指针向后增加，直接截取指针位置到结尾的字符串</li>
+</ul>
+<blockquote>
+<p><code>&lt;num&gt;</code>：截取起始位置</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">char</span> * str = <span class="string">"Hello World"</span></span><br><span class="line"><span class="keyword">char</span> * strNew = str + &lt;num&gt;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="通过指针和位置共同截取"><a href="#通过指针和位置共同截取" class="headerlink" title="通过指针和位置共同截取"></a>通过指针和位置共同截取</h3><ul>
+<li>为了从指定位置截取到指定位置，可以先使用<code>通过指针截取</code>指定截取起始位置，再用<code>通过位置截取</code>指定截取截止位置</li>
+</ul>
+<blockquote>
+<p><code>&lt;num_1&gt;</code>：截取起始位置<br><code>&lt;num_2&gt;</code>：截取截止位置</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">char</span> * str = <span class="string">"Hello World"</span>;</span><br><span class="line"><span class="keyword">char</span> * str1 = str + &lt;num_1&gt;;</span><br><span class="line"><span class="keyword">char</span> str2[<span class="number">10</span>];</span><br><span class="line"><span class="built_in">strncpy</span>(str2, str1, &lt;num_2&gt;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><h3 id="定义函数"><a href="#定义函数" class="headerlink" title="定义函数"></a>定义函数</h3><blockquote>
+<p><code>&lt;fun_name&gt;</code>：函数名</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">void</span> &lt;fun_name&gt;() &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="调用函数"><a href="#调用函数" class="headerlink" title="调用函数"></a>调用函数</h4><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</span><br><span class="line">    &lt;fun_name&gt;();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="定义有参数传入的函数"><a href="#定义有参数传入的函数" class="headerlink" title="定义有参数传入的函数"></a>定义有参数传入的函数</h3><blockquote>
+<p><code>&lt;para_type&gt;</code>：参数类型<br><code>&lt;para_name&gt;</code>：参数名</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">void</span> &lt;fun_name&gt;(&lt;para_type&gt; &lt;para_name&gt;) &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="调用函数-1"><a href="#调用函数-1" class="headerlink" title="调用函数"></a>调用函数</h4><blockquote>
+<p><code>&lt;para_value&gt;</code>：对应类型的值</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</span><br><span class="line">    &lt;fun_name&gt;(&lt;para_value&gt;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="传入多个参数"><a href="#传入多个参数" class="headerlink" title="传入多个参数"></a>传入多个参数</h4><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">void</span> &lt;fun_name&gt;(&lt;para_type_1&gt; &lt;para_name_1&gt;, &lt;para_type_2&gt; &lt;para_name_2&gt;) &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="定义有返回值的函数"><a href="#定义有返回值的函数" class="headerlink" title="定义有返回值的函数"></a>定义有返回值的函数</h3><blockquote>
+<p><code>&lt;type&gt;</code>：返回值类型</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">&lt;type&gt; &lt;fun_name&gt;() &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="调用函数-2"><a href="#调用函数-2" class="headerlink" title="调用函数"></a>调用函数</h4><blockquote>
+<p><code>&lt;name&gt;</code>：变量名</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</span><br><span class="line">    &lt;type&gt; &lt;name&gt; = &lt;fun_name&gt;();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="关于main函数"><a href="#关于main函数" class="headerlink" title="关于main函数"></a>关于main函数</h3><h4 id="main函数的参数"><a href="#main函数的参数" class="headerlink" title="main函数的参数"></a>main函数的参数</h4><ul>
+<li>在命令行执行程序时，main函数传入了两个参数，这两个函数分别是<code>执行程序传入的参数数量</code>和<code>执行程序传入的参数值</code></li>
+</ul>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> ** argv)</span> </span>&#123;</span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">return</span> EXIT_SUCCESS</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>执行C语言程序</li>
+</ul>
+<blockquote>
+<p><code>&lt;name&gt;</code>：文件名</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">./&lt;name&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>事实上，执行这个程序时，默认会传入<code>1</code>和<code>./&lt;name&gt;</code>参数</li>
+</ul>
+<h4 id="main函数的返回值"><a href="#main函数的返回值" class="headerlink" title="main函数的返回值"></a>main函数的返回值</h4><ul>
+<li>main函数返回值类型为int类型</li>
+<li>当返回为<code>0</code>时，表示程序正常退出</li>
+<li>当返回其他值，表示程序异常退出</li>
+</ul>
+<h3 id="定义有可变参数传入的函数"><a href="#定义有可变参数传入的函数" class="headerlink" title="定义有可变参数传入的函数"></a>定义有可变参数传入的函数</h3><h4 id="头文件-1"><a href="#头文件-1" class="headerlink" title="头文件"></a>头文件</h4><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdarg.h&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<h4 id="定义函数-1"><a href="#定义函数-1" class="headerlink" title="定义函数"></a>定义函数</h4><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">sum</span><span class="params">(<span class="keyword">int</span> n, ...)</span> </span>&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="开始可变参数的获取"><a href="#开始可变参数的获取" class="headerlink" title="开始可变参数的获取"></a>开始可变参数的获取</h4><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">va_list args;</span><br><span class="line">va_start(args, n);</span><br></pre></td></tr></table></figure>
+
+<h4 id="遍历每个值"><a href="#遍历每个值" class="headerlink" title="遍历每个值"></a>遍历每个值</h4><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">    <span class="keyword">int</span> arg = va_arg(args, <span class="keyword">int</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="结束可变参数的获取"><a href="#结束可变参数的获取" class="headerlink" title="结束可变参数的获取"></a>结束可变参数的获取</h4><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">va_end(args);</span><br></pre></td></tr></table></figure>
+
+<h3 id="定义私有的函数"><a href="#定义私有的函数" class="headerlink" title="定义私有的函数"></a>定义私有的函数</h3><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="预设常量"><a href="#预设常量" class="headerlink" title="预设常量"></a>预设常量</h2><ul>
+<li>通过编译器传常量</li>
+</ul>
+<blockquote>
+<p><code>&lt;name&gt;</code>：文件名<br><code>&lt;value&gt;</code>：常量名和常量值</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">gcc &lt;name&gt;.c -D&lt;value&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="平台判断"><a href="#平台判断" class="headerlink" title="平台判断"></a>平台判断</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> WIN 1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> LINUX 2</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAC 3</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">if</span> PLATFORM==WIN</span></span><br><span class="line">    ...</span><br><span class="line"><span class="meta">#<span class="meta-keyword">elif</span> PLATFORM==LINUX</span></span><br><span class="line">    ...</span><br><span class="line"><span class="meta">#<span class="meta-keyword">elif</span> PLATFORM==MAC</span></span><br><span class="line">    ...</span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span></span></span><br><span class="line">    ...</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="防止头文件重复引用"><a href="#防止头文件重复引用" class="headerlink" title="防止头文件重复引用"></a>防止头文件重复引用</h2><blockquote>
+<p><code>&lt;name&gt;</code>：此<code>.h</code>文件名</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> <span class="meta-string">&lt;name&gt;_H_</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> <span class="meta-string">&lt;name&gt;_H_</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br></pre></td></tr></table></figure>
+
+<h3 id="新型方式"><a href="#新型方式" class="headerlink" title="新型方式"></a>新型方式</h3><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> once</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="宏函数"><a href="#宏函数" class="headerlink" title="宏函数"></a>宏函数</h2><ul>
+<li>宏函数内不用写类型</li>
+<li>结尾不用写”;”</li>
+<li>换行需要在本行行末写”&quot;</li>
+</ul>
+<h3 id="定义一个宏函数"><a href="#定义一个宏函数" class="headerlink" title="定义一个宏函数"></a>定义一个宏函数</h3><ul>
+<li>定义一个判断大小的宏函数</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAX(A, B) A&gt;B?A:B</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="多行宏函数"><a href="#多行宏函数" class="headerlink" title="多行宏函数"></a>多行宏函数</h3><ul>
+<li>定义一个循环执行代码的函数</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> LOOP(FROM, TO, CONTENT)\</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = FORM; i &lt; TO; i++) &#123;\</span><br><span class="line">        CONTENT\</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="执行宏函数"><a href="#执行宏函数" class="headerlink" title="执行宏函数"></a>执行宏函数</h4><ul>
+<li>循环10次执行输出下标代码</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">LOOP(<span class="number">0</span>, <span class="number">10</span>, <span class="built_in">printf</span>(<span class="string">"Index is %d\n"</span>, i););</span><br></pre></td></tr></table></figure>
 
 
 

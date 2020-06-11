@@ -22,7 +22,7 @@
 <li>添加静态IP配置</li>
 </ul>
 <blockquote>
-<p><code>&lt;ip&gt;</code>：刚刚分配的IP地址</p>
+<p><code>&lt;ip&gt;</code>：IP地址</p>
 </blockquote>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">IPADDR=&lt;ip&gt;</span><br></pre></td></tr></table></figure>
 
@@ -32,10 +32,10 @@
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">NETMASK=255.255.255.255</span><br></pre></td></tr></table></figure>
 
 <ul>
-<li>添加网管配置</li>
+<li>添加网关配置</li>
 </ul>
 <blockquote>
-<p><code>&lt;ip&gt;</code>：在获取的IP地址将网段修改为1（192.168.1.1）</p>
+<p><code>&lt;ip&gt;</code>：网段为1的IP地址（192.168.1.1）</p>
 </blockquote>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">GATEWAY=&lt;ip&gt;</span><br></pre></td></tr></table></figure>
 
@@ -72,46 +72,7 @@
 
 <h4 id="查看IP地址"><a href="#查看IP地址" class="headerlink" title="查看IP地址"></a>查看IP地址</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">ifconfig</span><br></pre></td></tr></table></figure>
 
-<h4 id="将分配到的IP地址配置为静态IP"><a href="#将分配到的IP地址配置为静态IP" class="headerlink" title="将分配到的IP地址配置为静态IP"></a>将分配到的IP地址配置为静态IP</h4><h5 id="编辑网卡配置"><a href="#编辑网卡配置" class="headerlink" title="编辑网卡配置"></a>编辑网卡配置</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vim /etc/sysconfig/network-script/ifcfg-ens33</span><br></pre></td></tr></table></figure>
-
-<h5 id="修改网卡配置"><a href="#修改网卡配置" class="headerlink" title="修改网卡配置"></a>修改网卡配置</h5><ul>
-<li>修改<code>BOOTPROTO=dhcp</code></li>
-</ul>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">BOOTPROTO=static</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>修改<code>ONBOOT=no</code></li>
-</ul>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">ONBOOT=yes</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>添加静态IP配置</li>
-</ul>
-<blockquote>
-<p><code>&lt;ip&gt;</code>：刚刚分配的IP地址</p>
-</blockquote>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">IPADDR=&lt;ip&gt;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>添加子网掩码配置</li>
-</ul>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">NETMASK=255.255.255.255</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>添加网管配置</li>
-</ul>
-<blockquote>
-<p><code>&lt;ip&gt;</code>：在获取的IP地址将网段修改为1（192.168.1.1）</p>
-</blockquote>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">GATEWAY=&lt;ip&gt;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>添加DNS配置</li>
-</ul>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">DNS1=114.114.114.114</span><br></pre></td></tr></table></figure>
-
-<h5 id="重启网卡"><a href="#重启网卡" class="headerlink" title="重启网卡"></a>重启网卡</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">systemctl restart network.service</span><br></pre></td></tr></table></figure>
-
+<h4 id="将分配到的IP地址配置为静态IP"><a href="#将分配到的IP地址配置为静态IP" class="headerlink" title="将分配到的IP地址配置为静态IP"></a>将分配到的IP地址配置为静态IP</h4><p><a href="/2020/06/11/配置静态IP地址/">传送门</a></p>
 <h4 id="查看结果"><a href="#查看结果" class="headerlink" title="查看结果"></a>查看结果</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">ifconfig</span><br></pre></td></tr></table></figure>
 
 

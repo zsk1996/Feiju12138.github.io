@@ -10,7 +10,8 @@
 
 <h2 id="关闭提示音"><a href="#关闭提示音" class="headerlink" title="关闭提示音"></a>关闭提示音</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo nvram StartupMute=%01</span><br></pre></td></tr></table></figure>
 
-<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://sspai.com/post/59550" target="_blank" rel="noopener">少数派</a></p>
+]]></content>
       <categories>
         <category>MacOS</category>
       </categories>

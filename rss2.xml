@@ -9,7 +9,7 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>捕捉一只爱折腾的绯鞠</description>
-    <pubDate>Fri, 12 Jun 2020 11:38:45 GMT</pubDate>
+    <pubDate>Fri, 12 Jun 2020 11:39:42 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
@@ -24,7 +24,7 @@
       </description>
       
       
-      <content:encoded><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>修改Mac开机提示音</p><a id="more"></a><h2 id="开启提示音"><a href="#开启提示音" class="headerlink" title="开启提示音"></a>开启提示音</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nvram StartupMute=%00</span><br></pre></td></tr></table></figure><h2 id="关闭提示音"><a href="#关闭提示音" class="headerlink" title="关闭提示音"></a>关闭提示音</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nvram StartupMute=%01</span><br></pre></td></tr></table></figure><h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content:encoded>
+      <content:encoded><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>修改Mac开机提示音</p><a id="more"></a><h2 id="开启提示音"><a href="#开启提示音" class="headerlink" title="开启提示音"></a>开启提示音</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nvram StartupMute=%00</span><br></pre></td></tr></table></figure><h2 id="关闭提示音"><a href="#关闭提示音" class="headerlink" title="关闭提示音"></a>关闭提示音</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nvram StartupMute=%01</span><br></pre></td></tr></table></figure><h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://sspai.com/post/59550" target="_blank" rel="noopener">少数派</a></p>]]></content:encoded>
       
       <comments>https://feiju12138.github.io/2020/06/12/Mac%E5%BC%80%E6%9C%BA%E6%8F%90%E7%A4%BA%E9%9F%B3/#disqus_thread</comments>
     </item>

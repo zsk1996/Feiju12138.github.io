@@ -403,6 +403,499 @@ puts(<string>);
 |%Lf|长浮点数（双精度）|
 |%p|指针|
 
+## 输入字符
+
+``` c
+char inputChar = getchar();
+```
+
+## 格式化输入
+
+- `&`用于取数据的内存地址
+
+``` c
+char dist;
+scanf("%c", &dist);
+```
+
+### 输入字符串
+
+- 输入字符串不需要`&`，因为字符数组本身就为内存地址
+
+``` c
+char buf[10];
+scanf("%c", buf);
+```
+
+## 数组
+
+- 数组下标从0开始
+- C语言的数组创建的时候，其实是直接使用的其他被遗弃的内存空间，所以默认会有数值且不确定，使用之前可以进行清零操作
+
+### 创建时仅初始化
+
+> `<num>`：数组长度
+
+``` c
+<type> <name>[<num>];
+```
+
+### 创建时添加数据
+
+> `<value_1>`：值
+
+``` c
+<type> <name>[] = {<value_1>, <value_2>, ...};
+```
+
+## 二维数组
+
+### 创建时仅初始化
+
+``` c
+<type> <name>[<num>][<num>];
+```
+
+### 创建时添加数据
+
+``` c
+<type> <name>[<num>][<<num>>] = {{<value_1>, <value_2>}, {<value_3>, <value_4>}}
+```
+
+## 字符数组
+
+### 引入头文件
+
+``` c
+#include <string.h>
+```
+
+### 字符串长度
+
+``` c
+char str[<num>];
+strlen(str);
+```
+
+### 字符串初始化
+
+> `<string>`：字符串
+> `<char_1>`、`<char_2>`：字符
+
+> `'\0'`：字符串结尾字符
+
+``` c
+char str[<num>] = "<string>";
+char * str = "<string>";
+char str[<num>] = {'<char_1>', '<char_2>', '\0'}
+```
+
+### 清零字符串
+
+> `<num>`：格式化后的数字，值为`0`时为清零操作
+> `<len>`：格式化的长度，通常为字符串长度
+
+``` c
+memset(<string>, <num>, <len>);
+```
+
+## 连接字符串
+
+### 引入头文件
+
+``` c
+#include <string.h>
+```
+
+### 完整连接
+
+``` c
+// 定义一个字符串作为缓冲区
+char str[10];
+
+// 清零字符串
+memset(str, 0, 10);
+
+// 定义两个需要连接的字符串
+char * str1 = "Hello";
+char * str2 = "World";
+
+// 连接字符串
+strcat(str, str1);
+strcat(str, str2);
+```
+
+### 片段连接
+
+> `<num>`：指明需要连接的长度
+
+``` c
+strncat(str, str1, <num>);
+```
+
+## 格式化字符串
+
+- 将多个其他类型的数据转化为字符串
+
+``` c
+char * str = "s";
+int num = 100;
+
+// 定义一个字符串作为缓冲区
+char dist[10];
+
+// 初始化字符串
+memset(dist, 0, 10);
+
+// 合并为一个字符串
+sprintf(dist, "%s%d", str, num);
+```
+
+### 反向格式化
+
+``` c
+char * str = "m100";
+char buf[10];
+int num;
+
+memset(buf, 0, 10);
+
+sscanf(str, "%1s%d", buf, &num);
+```
+
+## 字符串转换为其他类型
+
+> `<str>`：需要转换的字符串
+
+|转化之前的类型|使用到的函数|
+|---|---|
+|转化为浮点类型|`atof(<str>);`|
+|转化为int类型|`atoi(<str>);`|
+|转化为long int类型|`atol(<str>);`|
+|转化为long long int类型|`atoll(<str>);`|
+
+## 字符串比较
+
+- 如果直接用`==`做比较，实际上是比较存储字符串的内存地址
+- `strcmp`函数会返回两个字符串的“计算结果”，结果为0则相等，结果不为0则不相等
+
+``` c
+int result = strcmp(<str_1>, <str_2>);
+```
+
+## 字符串截取
+
+- 区分大小写
+- 如果搜索不到，就返回`(null)`
+
+### 通过比较截取
+
+#### 从前往后搜索
+
+- 从第一次出现指定字符的位置截取字符串到结尾
+
+``` c
+char * strNew = strchr("Hello World", 'o');
+```
+
+#### 从后往前搜索
+
+-  从最后一次出现指定字符的位置截取字符串到结尾
+
+``` c
+char * str = strrchr("Hello World", 'o');
+```
+
+#### 搜索字符串
+
+- 从第一次出现指定字符串的位置截取字符串到结尾
+
+``` c
+char * str = strstr("Hello World", "Wo");
+```
+
+### 通过位置截取
+
+#### 指定结束位置
+
+- 从开始位置截取到指定位置
+
+> `<num>`：截取截止位置，字符串下标从1开始
+
+``` c
+char str[10];
+strncpy(str, "Hello World", <num>);
+```
+
+### 通过指针截取
+
+- 将指针向后增加，直接截取指针位置到结尾的字符串
+
+> `<num>`：截取起始位置
+
+``` c
+char * str = "Hello World"
+char * strNew = str + <num>;
+```
+
+### 通过指针和位置共同截取
+
+- 为了从指定位置截取到指定位置，可以先使用`通过指针截取`指定截取起始位置，再用`通过位置截取`指定截取截止位置
+
+> `<num_1>`：截取起始位置
+> `<num_2>`：截取截止位置
+
+``` c
+char * str = "Hello World";
+char * str1 = str + <num_1>;
+char str2[10];
+strncpy(str2, str1, <num_2>);
+```
+
+## 函数
+
+### 定义函数
+
+> `<fun_name>`：函数名
+
+``` c
+void <fun_name>() {
+    ...
+}
+```
+
+#### 调用函数
+
+``` c
+void main(void) {
+    <fun_name>();
+}
+```
+
+### 定义有参数传入的函数
+
+> `<para_type>`：参数类型
+> `<para_name>`：参数名
+
+``` c
+void <fun_name>(<para_type> <para_name>) {
+    ...
+}
+```
+
+#### 调用函数
+
+> `<para_value>`：对应类型的值
+
+``` c
+void main(void) {
+    <fun_name>(<para_value>);
+}
+```
+
+#### 传入多个参数
+
+``` c
+void <fun_name>(<para_type_1> <para_name_1>, <para_type_2> <para_name_2>) {
+    ...
+}
+```
+
+### 定义有返回值的函数
+
+> `<type>`：返回值类型
+
+``` c
+<type> <fun_name>() {
+    ...
+}
+```
+
+#### 调用函数
+
+> `<name>`：变量名
+
+``` c
+void main(void) {
+    <type> <name> = <fun_name>();
+}
+```
+
+### 关于main函数
+
+#### main函数的参数
+
+- 在命令行执行程序时，main函数传入了两个参数，这两个函数分别是`执行程序传入的参数数量`和`执行程序传入的参数值`
+
+``` c
+int main(int argc, char ** argv) {
+    ...
+    return EXIT_SUCCESS
+}
+```
+
+- 执行C语言程序
+
+> `<name>`：文件名
+
+``` sh
+./<name>
+```
+
+- 事实上，执行这个程序时，默认会传入`1`和`./<name>`参数
+
+#### main函数的返回值
+
+- main函数返回值类型为int类型
+- 当返回为`0`时，表示程序正常退出
+- 当返回其他值，表示程序异常退出
+
+### 定义有可变参数传入的函数
+
+#### 头文件
+
+``` c
+#include <stdarg.h>
+```
+
+#### 定义函数
+
+``` c
+int sum(int n, ...) {
+    ...
+}
+```
+
+#### 开始可变参数的获取
+
+``` c
+va_list args;
+va_start(args, n);
+```
+
+#### 遍历每个值
+
+``` c
+for(int i = 0; i < n; i++) {
+    int arg = va_arg(args, int);
+}
+```
+
+#### 结束可变参数的获取
+
+``` c
+va_end(args);
+```
+
+### 定义私有的函数 
+
+``` c
+static void main() {
+    ...
+}
+```
+
+## 预设常量
+
+- 通过编译器传常量
+
+> `<name>`：文件名
+> `<value>`：常量名和常量值
+
+``` sh
+gcc <name>.c -D<value>
+```
+
+## 平台判断
+
+``` c
+#define WIN 1
+#define LINUX 2
+#define MAC 3
+
+void main() {
+
+#if PLATFORM==WIN
+    ...
+#elif PLATFORM==LINUX
+    ...
+#elif PLATFORM==MAC
+    ...
+#else
+    ...
+#endif
+
+}
+```
+
+## 防止头文件重复引用
+
+> `<name>`：此`.h`文件名
+
+``` c
+#ifndef <name>_H_
+#define <name>_H_
+
+#endif
+```
+
+### 新型方式
+
+``` c
+#pragma once
+```
+
+## 宏函数
+
+- 宏函数内不用写类型
+- 结尾不用写";"
+- 换行需要在本行行末写"\"
+
+### 定义一个宏函数
+
+- 定义一个判断大小的宏函数
+
+``` c
+#define MAX(A, B) A>B?A:B
+```
+
+### 多行宏函数
+
+- 定义一个循环执行代码的函数
+
+``` c
+#define LOOP(FROM, TO, CONTENT)\
+    for(int i = FORM; i < TO; i++) {\
+        CONTENT\
+    }
+```
+
+#### 执行宏函数
+
+- 循环10次执行输出下标代码
+
+``` c
+LOOP(0, 10, printf("Index is %d\n", i););
+```
+
+### 宏函数参数连接
+
+``` c
+void jikexueyuanSayHello() {
+    ...
+}
+
+#define calljkxy(NAME) jikexueyuan##NAME()
+
+int main(void) {
+    
+    calljkxy(SayHello);
+    
+    return EXIT_SUCCESS;
+
+}
+```
+
 
 
 ## 未完待更

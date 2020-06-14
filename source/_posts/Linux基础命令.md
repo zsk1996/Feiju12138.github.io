@@ -339,6 +339,22 @@ $ file xxx
 $ whereis xxx
 ```
 
+### 查看主机名
+
+``` sh
+$ hostname
+```
+
+#### 修改主机名
+
+- 在终端临时修改
+
+> `<name>`：修改后的主机名
+
+``` sh
+$ hostname <name>
+```
+
 ## 参考文献
 
 [Linux就该这么学——刘遄](https://www.linuxprobe.com)

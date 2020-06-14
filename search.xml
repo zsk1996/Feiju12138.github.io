@@ -4504,6 +4504,8 @@
 </ul>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line">LOOP(<span class="number">0</span>, <span class="number">10</span>, <span class="built_in">printf</span>(<span class="string">"Index is %d\n"</span>, i););</span><br></pre></td></tr></table></figure>
 
+<h3 id="宏函数参数连接"><a href="#宏函数参数连接" class="headerlink" title="宏函数参数连接"></a>宏函数参数连接</h3><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">jikexueyuanSayHello</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> calljkxy(NAME) jikexueyuan##NAME()</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    calljkxy(SayHello);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> EXIT_SUCCESS;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
 
 <h2 id="未完待更"><a href="#未完待更" class="headerlink" title="未完待更"></a>未完待更</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://www.bilibili.com/video/av29473098" target="_blank" rel="noopener">哔哩哔哩——C3程序猿</a><br><a href="https://www.bilibili.com/video/BV1ds411T7bj" target="_blank" rel="noopener">哔哩哔哩——HACK学习</a></p>

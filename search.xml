@@ -222,7 +222,7 @@
 
 <h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
       <categories>
-        <category>Linux</category>
+        <category>云计算</category>
       </categories>
   </entry>
   <entry>
@@ -289,7 +289,16 @@
 </ul>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">iterrupt();</span><br></pre></td></tr></table></figure>
 
-<h2 id="未完待更"><a href="#未完待更" class="headerlink" title="未完待更"></a>未完待更</h2><p>03-03-06</p>
+<h2 id="当前线程，等待被调用的线程结束"><a href="#当前线程，等待被调用的线程结束" class="headerlink" title="当前线程，等待被调用的线程结束"></a>当前线程，等待被调用的线程结束</h2><ul>
+<li>一个线程调用另一个线程，等待另一个线程执行结束，再继续执行</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">join();</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="未完待更"><a href="#未完待更" class="headerlink" title="未完待更"></a>未完待更</h2><p>03-03-08</p>
 <h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
       <categories>
         <category>Java</category>
@@ -7002,22 +7011,60 @@
       </categories>
   </entry>
   <entry>
-    <title>【笔记】阅读帮助文档</title>
-    <url>/2020/02/07/%E9%98%85%E8%AF%BB%E5%B8%AE%E5%8A%A9%E6%96%87%E6%A1%A3/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在<code>Linux Terminal</code>下通过<code>man</code>或<code>help</code>命令阅读文档时的基本操作</p>
+    <title>【笔记】文档操作</title>
+    <url>/2020/02/07/%E6%96%87%E6%A1%A3%E6%93%8D%E4%BD%9C/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Linux下对文档的基本操作</p>
 <a id="more"></a>
 
-<h2 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h2><h3 id="按行翻页"><a href="#按行翻页" class="headerlink" title="按行翻页"></a>按行翻页</h3><ul>
+<h2 id="cat命令"><a href="#cat命令" class="headerlink" title="cat命令"></a>cat命令</h2><ul>
+<li>展示小文档的内容</li>
+</ul>
+<blockquote>
+<p><code>&lt;option&gt;</code>：选项<br><code>&lt;file&gt;</code>：文件路径及名称</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">cat &lt;file&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="less命令"><a href="#less命令" class="headerlink" title="less命令"></a>less命令</h2><ul>
+<li>分屏展示大文档内容</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">less &lt;option&gt; &lt;file&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="less基本操作"><a href="#less基本操作" class="headerlink" title="less基本操作"></a>less基本操作</h2><h3 id="按行向下翻页"><a href="#按行向下翻页" class="headerlink" title="按行向下翻页"></a>按行向下翻页</h3><ul>
 <li><code>return</code>回车键</li>
+<li><code>↓</code>键</li>
+<li><code>j</code>键</li>
+<li><code>control</code>+<code>j</code>键</li>
+<li><code>control</code>+<code>n</code>键</li>
 </ul>
-<h3 id="按屏翻页"><a href="#按屏翻页" class="headerlink" title="按屏翻页"></a>按屏翻页</h3><ul>
+<h3 id="按行向上翻页"><a href="#按行向上翻页" class="headerlink" title="按行向上翻页"></a>按行向上翻页</h3><ul>
+<li><code>↑</code>键</li>
+<li><code>k</code>键</li>
+<li><code>control</code>+<code>k</code>键</li>
+</ul>
+<h3 id="按屏向下翻页"><a href="#按屏向下翻页" class="headerlink" title="按屏向下翻页"></a>按屏向下翻页</h3><ul>
 <li><code>space</code>空格键</li>
+<li><code>f</code>键</li>
+<li><code>control</code>+<code>f</code>键</li>
 </ul>
-<h3 id="回到开头"><a href="#回到开头" class="headerlink" title="回到开头"></a>回到开头</h3><ul>
+<h4 id="向下半屏"><a href="#向下半屏" class="headerlink" title="向下半屏"></a>向下半屏</h4><ul>
+<li><code>d</code>键</li>
+<li><code>control</code>+<code>d</code>键</li>
+</ul>
+<h3 id="按屏向上翻页"><a href="#按屏向上翻页" class="headerlink" title="按屏向上翻页"></a>按屏向上翻页</h3><ul>
+<li><code>b</code>键</li>
+<li><code>control</code>+<code>b</code>键</li>
+</ul>
+<h4 id="向上半屏"><a href="#向上半屏" class="headerlink" title="向上半屏"></a>向上半屏</h4><ul>
+<li><code>u</code>键</li>
+<li><code>control</code>+<code>u</code>键</li>
+</ul>
+<h3 id="回到文档开头"><a href="#回到文档开头" class="headerlink" title="回到文档开头"></a>回到文档开头</h3><ul>
 <li><code>g</code>键</li>
+<li><code>control</code>+<code>g</code>键</li>
 </ul>
-<h3 id="回到结尾"><a href="#回到结尾" class="headerlink" title="回到结尾"></a>回到结尾</h3><ul>
+<h3 id="回到文档结尾"><a href="#回到文档结尾" class="headerlink" title="回到文档结尾"></a>回到文档结尾</h3><ul>
 <li><code>G</code>键</li>
+<li><code>control</code>+<code>G</code>键</li>
 </ul>
 <h3 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h3><blockquote>
 <p><code>&lt;value&gt;</code>：关键字</p>
@@ -7031,10 +7078,57 @@
 <h4 id="上一个"><a href="#上一个" class="headerlink" title="上一个"></a>上一个</h4><ul>
 <li><code>N</code>键</li>
 </ul>
+<h3 id="编辑文档"><a href="#编辑文档" class="headerlink" title="编辑文档"></a>编辑文档</h3><ul>
+<li><p>使用默认编辑器打开当前文档</p>
+</li>
+<li><p><code>v</code>键</p>
+</li>
+<li><p><code>control</code>+<code>v</code>键</p>
+</li>
+</ul>
+<h3 id="显示less帮助文档"><a href="#显示less帮助文档" class="headerlink" title="显示less帮助文档"></a>显示less帮助文档</h3><ul>
+<li><code>h</code>键</li>
+<li><code>control</code>+<code>h</code>键</li>
+</ul>
+<h3 id="仅显示指定字符串的行"><a href="#仅显示指定字符串的行" class="headerlink" title="仅显示指定字符串的行"></a>仅显示指定字符串的行</h3><blockquote>
+<p><code>&lt;str&gt;</code>：指定字符串</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">&amp;&lt;str&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="标记导航"><a href="#标记导航" class="headerlink" title="标记导航"></a>标记导航</h3><h4 id="创建标记"><a href="#创建标记" class="headerlink" title="创建标记"></a>创建标记</h4><blockquote>
+<p><code>&lt;char&gt;</code>：标记的字母</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">m&lt;char&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="光标移动到标记"><a href="#光标移动到标记" class="headerlink" title="光标移动到标记"></a>光标移动到标记</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="string">'&lt;char&gt;</span></span><br></pre></td></tr></table></figure>
+
 <h3 id="退出"><a href="#退出" class="headerlink" title="退出"></a>退出</h3><ul>
 <li><code>q</code>键</li>
+<li><code>ZZ</code>键</li>
 </ul>
-<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p>达内教育</p>
+<h2 id="head命令"><a href="#head命令" class="headerlink" title="head命令"></a>head命令</h2><ul>
+<li>展示文档开头10行内容</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">head &lt;file&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="自定义显示行数"><a href="#自定义显示行数" class="headerlink" title="自定义显示行数"></a>自定义显示行数</h3><blockquote>
+<p><code>&lt;num&gt;</code>：行数</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">head -n &lt;num&gt; &lt;file&gt;</span><br><span class="line">head -&lt;num&gt; &lt;file&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="tail命令"><a href="#tail命令" class="headerlink" title="tail命令"></a>tail命令</h2><ul>
+<li>展示文档末尾10行内容</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">tail &lt;file&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="自定义行数"><a href="#自定义行数" class="headerlink" title="自定义行数"></a>自定义行数</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">tail -n &lt;num&gt; &lt;file&gt;</span><br><span class="line">tail -&lt;num&gt; &lt;file&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="grep命令"><a href="#grep命令" class="headerlink" title="grep命令"></a>grep命令</h2><ul>
+<li>输出包含指定字符串的行</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">grep &lt;str&gt; &lt;file&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://www.runoob.com/linux/linux-comm-less.html" target="_blank" rel="noopener">菜鸟笔记</a></p>
 ]]></content>
       <categories>
         <category>Linux</category>

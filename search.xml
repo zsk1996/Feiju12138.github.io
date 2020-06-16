@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>【笔记】Poweroff学习笔记</title>
+    <url>/2020/06/16/Poweroff%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Poweroff学习笔记</p>
+<a id="more"></a>
+
+<h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><blockquote>
+<p><code>&lt;option&gt;</code>选项</p>
+</blockquote>
+<blockquote>
+<p><code>-n</code>：关闭操作系统时不执行sync操作；<br><code>-w</code>：不真正关闭操作系统，仅在日志文件“/var/log/wtmp”中；<br><code>-d</code>：关闭操作系统时，不将操作写入日志文件“/var/log/wtmp”中添加相应的记录；<br><code>-f</code>：强制关闭操作系统；<br><code>-i</code>：关闭操作系统之前关闭所有的网络接口；<br><code>-h</code>：关闭操作系统之前将系统中所有的硬件设置为备用模式。</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">poweroff &lt;option&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="立即关闭系统"><a href="#立即关闭系统" class="headerlink" title="立即关闭系统"></a>立即关闭系统</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">poweroff</span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://man.linuxde.net/poweroff" target="_blank" rel="noopener">Linux命令大全</a></p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+  </entry>
+  <entry>
     <title>【代码】整数反转</title>
     <url>/2020/06/14/%E6%95%B4%E6%95%B0%E5%8F%8D%E8%BD%AC/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>LeetCode答案，语言Java</p>

@@ -41,6 +41,9 @@
 </ul>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">mysql&gt; SELECT * FROM tr_model INTO OUTFILE <span class="string">'/Users/hatsunemiku/Downloads/test.xls'</span>;</span><br></pre></td></tr></table></figure>
 
+<h2 id="导出后乱码（可选）"><a href="#导出后乱码（可选）" class="headerlink" title="导出后乱码（可选）"></a>导出后乱码（可选）</h2><ul>
+<li>Excl默认编码为<code>gb2312</code>，而Linux默认编码为UTF-8，所以可以通过记事本打开<code>.xls</code>文件，然后另存为<code>gb2312</code>编码的文件，即可解决乱码</li>
+</ul>
 <h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://blog.csdn.net/ljguo212/article/details/17147877" target="_blank" rel="noopener">CSDN——小迷童</a><br><a href="https://www.cnblogs.com/Braveliu/p/10728162.html" target="_blank" rel="noopener">博客园——kaizen</a></p>
 ]]></content>
       <categories>

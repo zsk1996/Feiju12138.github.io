@@ -9,8 +9,26 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>捕捉一只爱折腾的绯鞠</description>
-    <pubDate>Wed, 17 Jun 2020 10:00:03 GMT</pubDate>
+    <pubDate>Thu, 18 Jun 2020 08:37:23 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>【笔记】挂载学习笔记</title>
+      <link>https://feiju12138.github.io/2020/06/18/%E6%8C%82%E8%BD%BD%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+      <guid>https://feiju12138.github.io/2020/06/18/%E6%8C%82%E8%BD%BD%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+      <pubDate>Thu, 18 Jun 2020 07:35:28 GMT</pubDate>
+      <description>
+      
+        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;Linux挂载学习笔记&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;mount&lt;/code&gt;挂载操作，可以让目录成为设备的访问点&lt;/p&gt;
+      
+      </description>
+      
+      
+      <content:encoded><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Linux挂载学习笔记</p><p><code>mount</code>挂载操作，可以让目录成为设备的访问点</p><a id="more"></a><h2 id="查看插入的设备"><a href="#查看插入的设备" class="headerlink" title="查看插入的设备"></a>查看插入的设备</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls -l /dev/cdrom</span><br></pre></td></tr></table></figure><h2 id="新建一个挂载点"><a href="#新建一个挂载点" class="headerlink" title="新建一个挂载点"></a>新建一个挂载点</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir /dvd</span><br></pre></td></tr></table></figure><h2 id="设置挂载点"><a href="#设置挂载点" class="headerlink" title="设置挂载点"></a>设置挂载点</h2><blockquote><p><code>&lt;dvd_src&gt;</code>：设备路径<br><code>&lt;dir_src&gt;</code>：挂载点目录</p></blockquote><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mount &lt;dvd_src&gt; &lt;dir_src&gt;</span><br></pre></td></tr></table></figure><ul><li>mount: /dev/sr0 写保护，将以只读方式挂载</li></ul><h2 id="卸载"><a href="#卸载" class="headerlink" title="卸载"></a>卸载</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">umount &lt;dir_src&gt;</span><br></pre></td></tr></table></figure><h3 id="强制卸载"><a href="#强制卸载" class="headerlink" title="强制卸载"></a>强制卸载</h3><ul><li>报错：<code>umount: /dvd：目标忙。</code></li></ul><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">umount -f &lt;dir_src&gt;</span><br><span class="line">umount -l &lt;dir_src&gt;</span><br></pre></td></tr></table></figure><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://blog.csdn.net/w779050550/article/details/102579716" target="_blank" rel="noopener">CSDN——舒殊windy</a></p>]]></content:encoded>
+      
+      <comments>https://feiju12138.github.io/2020/06/18/%E6%8C%82%E8%BD%BD%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>【笔记】Mysql导出Excl表格</title>
@@ -78,23 +96,6 @@
       <content:encoded><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在<code>CentOS 7</code>安装Redis</p><a id="more"></a><h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul><li><code>yum install gcc-c++</code></li></ul><h2 id="查看最新版本"><a href="#查看最新版本" class="headerlink" title="查看最新版本"></a>查看最新版本</h2><ul><li><a href="http://download.redis.io/releases/" target="_blank" rel="noopener">http://download.redis.io/releases/</a></li></ul><h2 id="下载并解压源码包"><a href="#下载并解压源码包" class="headerlink" title="下载并解压源码包"></a>下载并解压源码包</h2><ul><li><code>stable</code>是最新版</li></ul><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wget http://download.redis.io/releases/redis-stable.tar.gz</span><br><span class="line">tar -zxvf redis-stable.tar.gz</span><br></pre></td></tr></table></figure><h2 id="编译安装"><a href="#编译安装" class="headerlink" title="编译安装"></a>编译安装</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> redis-stable</span><br><span class="line">make</span><br></pre></td></tr></table></figure><h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><h3 id="编辑配置文件"><a href="#编辑配置文件" class="headerlink" title="编辑配置文件"></a>编辑配置文件</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim redis.conf</span><br></pre></td></tr></table></figure><h3 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h3><ul><li>修改为后台启动，<code>daemonize</code>改为<code>yes</code></li></ul><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">daemonize yes</span><br></pre></td></tr></table></figure><ul><li>允许远端登录，给<code>bind 127.0.0.1</code>添加注释</li></ul><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># bind 127.0.0.1</span></span><br></pre></td></tr></table></figure><ul><li><code>protected-mode</code>改为<code>no</code></li></ul><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">protected-mode no</span><br></pre></td></tr></table></figure><h2 id="启动Redis"><a href="#启动Redis" class="headerlink" title="启动Redis"></a>启动Redis</h2><p><a href="/2019/12/05/redis启动关闭服务/">传送门</a></p><h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://www.cnblogs.com/mracale/p/11328327.html" target="_blank" rel="noopener">博客园——zhuzhipeng</a><br><a href="https://www.jianshu.com/p/79737bc39396" target="_blank" rel="noopener">简书——DevOps海洋的渔夫</a><br><a href="https://blog.csdn.net/qq_33417321/article/details/88924934" target="_blank" rel="noopener">CSDN——东风麦芽糖</a></p>]]></content:encoded>
       
       <comments>https://feiju12138.github.io/2020/06/17/Redis%E5%AE%89%E8%A3%85%E7%AC%94%E8%AE%B0/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>【笔记】Mysql数据库名不允许有横线</title>
-      <link>https://feiju12138.github.io/2020/06/17/Mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E5%90%8D%E4%B8%8D%E5%85%81%E8%AE%B8%E6%9C%89%E6%A8%AA%E7%BA%BF/</link>
-      <guid>https://feiju12138.github.io/2020/06/17/Mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E5%90%8D%E4%B8%8D%E5%85%81%E8%AE%B8%E6%9C%89%E6%A8%AA%E7%BA%BF/</guid>
-      <pubDate>Wed, 17 Jun 2020 02:42:24 GMT</pubDate>
-      <description>
-      
-        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;Mysql数据库名有横线报错：&lt;code&gt;You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near &amp;#39;-vue&amp;#39; at line 1&lt;/code&gt;&lt;/p&gt;
-      
-      </description>
-      
-      
-      <content:encoded><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Mysql数据库名有横线报错：<code>You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near &#39;-vue&#39; at line 1</code></p><a id="more"></a><h2 id="解决问题"><a href="#解决问题" class="headerlink" title="解决问题"></a>解决问题</h2><ul><li>在创建数据库时将数据库名用``括起来</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE DATABASE &#96;ry-vue&#96;</span><br></pre></td></tr></table></figure><h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://bbs.csdn.net/topics/390609696" target="_blank" rel="noopener">CSDN——码之魂</a></p>]]></content:encoded>
-      
-      <comments>https://feiju12138.github.io/2020/06/17/Mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E5%90%8D%E4%B8%8D%E5%85%81%E8%AE%B8%E6%9C%89%E6%A8%AA%E7%BA%BF/#disqus_thread</comments>
     </item>
     
   </channel>

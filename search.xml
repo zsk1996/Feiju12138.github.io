@@ -1,6 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>【笔记】挂载学习笔记</title>
+    <url>/2020/06/18/%E6%8C%82%E8%BD%BD%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Linux挂载学习笔记</p>
+<p><code>mount</code>挂载操作，可以让目录成为设备的访问点</p>
+<a id="more"></a>
+
+<h2 id="查看插入的设备"><a href="#查看插入的设备" class="headerlink" title="查看插入的设备"></a>查看插入的设备</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">ls -l /dev/cdrom</span><br></pre></td></tr></table></figure>
+
+<h2 id="新建一个挂载点"><a href="#新建一个挂载点" class="headerlink" title="新建一个挂载点"></a>新建一个挂载点</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">mkdir /dvd</span><br></pre></td></tr></table></figure>
+
+<h2 id="设置挂载点"><a href="#设置挂载点" class="headerlink" title="设置挂载点"></a>设置挂载点</h2><blockquote>
+<p><code>&lt;dvd_src&gt;</code>：设备路径<br><code>&lt;dir_src&gt;</code>：挂载点目录</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">mount &lt;dvd_src&gt; &lt;dir_src&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>mount: /dev/sr0 写保护，将以只读方式挂载</li>
+</ul>
+<h2 id="卸载"><a href="#卸载" class="headerlink" title="卸载"></a>卸载</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">umount &lt;dir_src&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="强制卸载"><a href="#强制卸载" class="headerlink" title="强制卸载"></a>强制卸载</h3><ul>
+<li>报错：<code>umount: /dvd：目标忙。</code></li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">umount -f &lt;dir_src&gt;</span><br><span class="line">umount -l &lt;dir_src&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://blog.csdn.net/w779050550/article/details/102579716" target="_blank" rel="noopener">CSDN——舒殊windy</a></p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+  </entry>
+  <entry>
     <title>【笔记】Mysql导出Excl表格</title>
     <url>/2020/06/17/Mysql%E5%AF%BC%E5%87%BAExcl%E8%A1%A8%E6%A0%BC/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>将Mysql数据表导出为Excl表格</p>
@@ -18052,7 +18084,7 @@
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hdiutil convert skill.dmg -format UDTO -o skill.iso</span><br></pre></td></tr></table></figure>
 
 <h2 id="格式转换为”-img”"><a href="#格式转换为”-img”" class="headerlink" title="格式转换为”.img”"></a>格式转换为”.img”</h2><ul>
-<li>参见<a href="https://feiju12138.github.io/2019/11/09/CDR格式-转换-ISO格式/#格式转换">CDR格式 转换 ISO格式</a></li>
+<li>参见<a href="/2019/11/09/CDR格式转换ISO格式/">CDR格式 转换 ISO格式</a></li>
 </ul>
 <h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><p><img src="/images/20191109140505/07.png" alt="07.png"></p>
 <h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p>百度</p>

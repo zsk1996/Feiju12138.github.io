@@ -1,6 +1,248 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>【笔记】命令行新建目录</title>
+    <url>/2020/06/20/%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%96%B0%E5%BB%BA%E7%9B%AE%E5%BD%95/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>命令行新建目录</p>
+<a id="more"></a>
+
+<h2 id="在当前目录下新建目录"><a href="#在当前目录下新建目录" class="headerlink" title="在当前目录下新建目录"></a>在当前目录下新建目录</h2><blockquote>
+<p><code>&lt;name&gt;</code>：新建的目录名</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">mkdir &lt;name&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="在指定目录下新建目录"><a href="#在指定目录下新建目录" class="headerlink" title="在指定目录下新建目录"></a>在指定目录下新建目录</h2><blockquote>
+<p><code>&lt;dir&gt;</code>：指定的目录路径</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">mkdir &lt;dir&gt;/&lt;name&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="新建多级目录"><a href="#新建多级目录" class="headerlink" title="新建多级目录"></a>新建多级目录</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">mkdir -p &lt;name_1&gt;/&lt;name_2&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【笔记】命令行文件删除</title>
+    <url>/2020/06/20/%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%96%87%E4%BB%B6%E5%88%A0%E9%99%A4/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>命令行文件删除</p>
+<a id="more"></a>
+
+<h2 id="删除文件"><a href="#删除文件" class="headerlink" title="删除文件"></a>删除文件</h2><blockquote>
+<p><code>&lt;file&gt;</code>：文件路径</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">rm &lt;file&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="删除目录"><a href="#删除目录" class="headerlink" title="删除目录"></a>删除目录</h2><blockquote>
+<p><code>&lt;dir&gt;</code>：目录路径</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">rm -r &lt;dir&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="显示提示信息"><a href="#显示提示信息" class="headerlink" title="显示提示信息"></a>显示提示信息</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">rm -i &lt;file&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="强制删除"><a href="#强制删除" class="headerlink" title="强制删除"></a>强制删除</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">rm -f &lt;file&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【笔记】命令行复制移动重命名文件</title>
+    <url>/2020/06/20/%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%A4%8D%E5%88%B6%E7%A7%BB%E5%8A%A8%E9%87%8D%E5%91%BD%E5%90%8D%E6%96%87%E4%BB%B6/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>命令行复制、移动、重命名文件</p>
+<a id="more"></a>
+
+<h2 id="复制"><a href="#复制" class="headerlink" title="复制"></a>复制</h2><blockquote>
+<p><code>&lt;file_old&gt;</code>：旧文件路径<br><code>&lt;file_new&gt;</code>：新文件路径<br><code>&lt;dir_old&gt;</code>：旧目录路径<br><code>&lt;dir_new&gt;</code>：新目录路径</p>
+</blockquote>
+<h3 id="复制文件"><a href="#复制文件" class="headerlink" title="复制文件"></a>复制文件</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">cp &lt;file_old&gt; &lt;file_new&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="复制目录"><a href="#复制目录" class="headerlink" title="复制目录"></a>复制目录</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">cp -r &lt;dir_old&gt; &lt;dir_new&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="显示覆盖提示"><a href="#显示覆盖提示" class="headerlink" title="显示覆盖提示"></a>显示覆盖提示</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">cp -i &lt;file_old&gt; &lt;file_new&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="复制多个文件"><a href="#复制多个文件" class="headerlink" title="复制多个文件"></a>复制多个文件</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">cp &lt;file_old_1&gt; &lt;file_old_2&gt; &lt;file_new&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="移动文件或目录"><a href="#移动文件或目录" class="headerlink" title="移动文件或目录"></a>移动文件或目录</h2><blockquote>
+<p><code>&lt;file_old&gt;</code>：旧文件或目录的路径<br><code>&lt;file_new&gt;</code>：新文件或目录的路径</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">mv &lt;file_old&gt; &lt;file_new&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="重命名文件或目录"><a href="#重命名文件或目录" class="headerlink" title="重命名文件或目录"></a>重命名文件或目录</h2><blockquote>
+<p><code>&lt;name_old&gt;</code>：旧文件名或目录名（含路径）<br><code>&lt;name_new&gt;</code>：新文件名或目录名（含路径）</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">mv &lt;name_old&gt; &lt;name_new&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【笔记】命令行查看文件信息</title>
+    <url>/2020/06/20/%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%9F%A5%E7%9C%8B%E6%96%87%E4%BB%B6%E4%BF%A1%E6%81%AF/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>命令行查看文件信息</p>
+<a id="more"></a>
+
+<h2 id="查看当前目录下的所有文件"><a href="#查看当前目录下的所有文件" class="headerlink" title="查看当前目录下的所有文件"></a>查看当前目录下的所有文件</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">ls</span><br></pre></td></tr></table></figure>
+
+<h2 id="查看指定目录下的所有文件"><a href="#查看指定目录下的所有文件" class="headerlink" title="查看指定目录下的所有文件"></a>查看指定目录下的所有文件</h2><blockquote>
+<p><code>&lt;dir&gt;</code>：指定目录的路径（绝对路径或相对路径）</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">ls &lt;dir&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="查看指定目录或文件的详细信息"><a href="#查看指定目录或文件的详细信息" class="headerlink" title="查看指定目录或文件的详细信息"></a>查看指定目录或文件的详细信息</h2><blockquote>
+<p><code>&lt;file&gt;</code>：指定的文件或目录的路径（绝对路径或相对路径）</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">ls -l &lt;file&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="查看当前目录本身的详细信息"><a href="#查看当前目录本身的详细信息" class="headerlink" title="查看当前目录本身的详细信息"></a>查看当前目录本身的详细信息</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">ls -dl</span><br></pre></td></tr></table></figure>
+
+<h2 id="查看包括容量单位"><a href="#查看包括容量单位" class="headerlink" title="查看包括容量单位"></a>查看包括容量单位</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">ls -h</span><br><span class="line">ls -h &lt;file&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="查看详细信息包括容量单位"><a href="#查看详细信息包括容量单位" class="headerlink" title="查看详细信息包括容量单位"></a>查看详细信息包括容量单位</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">ls -hl</span><br><span class="line">ls -hl &lt;file&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="查看包括隐藏的文件或目录"><a href="#查看包括隐藏的文件或目录" class="headerlink" title="查看包括隐藏的文件或目录"></a>查看包括隐藏的文件或目录</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">ls -a</span><br><span class="line">ls -a &lt;dir&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="递归展示"><a href="#递归展示" class="headerlink" title="递归展示"></a>递归展示</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">ls -R</span><br><span class="line">ls -R &lt;dir&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【笔记】命令行切换目录</title>
+    <url>/2020/06/20/%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%88%87%E6%8D%A2%E7%9B%AE%E5%BD%95/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>命令行切换目录</p>
+<a id="more"></a>
+
+<h2 id="切换目录"><a href="#切换目录" class="headerlink" title="切换目录"></a>切换目录</h2><blockquote>
+<p><code>&lt;dir&gt;</code>：目录路径（绝对路径或相对路径）</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> &lt;dir&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="切换到当前用户的家目录"><a href="#切换到当前用户的家目录" class="headerlink" title="切换到当前用户的家目录"></a>切换到当前用户的家目录</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~</span><br></pre></td></tr></table></figure>
+
+<h2 id="切换到上一次目录"><a href="#切换到上一次目录" class="headerlink" title="切换到上一次目录"></a>切换到上一次目录</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> -</span><br></pre></td></tr></table></figure>
+
+<h2 id="切换到上一级目录"><a href="#切换到上一级目录" class="headerlink" title="切换到上一级目录"></a>切换到上一级目录</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> ..</span><br></pre></td></tr></table></figure>
+
+<h2 id="切换到当前目录"><a href="#切换到当前目录" class="headerlink" title="切换到当前目录"></a>切换到当前目录</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> .</span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【笔记】命令行历史记录</title>
+    <url>/2020/06/20/%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%8E%86%E5%8F%B2%E8%AE%B0%E5%BD%95/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>命令行历史记录</p>
+<a id="more"></a>
+
+<h2 id="文件存放位置"><a href="#文件存放位置" class="headerlink" title="文件存放位置"></a>文件存放位置</h2><h3 id="bash"><a href="#bash" class="headerlink" title="bash"></a>bash</h3><ul>
+<li><code>~/.bash_history</code></li>
+</ul>
+<h3 id="zsh"><a href="#zsh" class="headerlink" title="zsh"></a>zsh</h3><ul>
+<li><code>~/.zsh_history</code></li>
+</ul>
+<h2 id="查看历史记录"><a href="#查看历史记录" class="headerlink" title="查看历史记录"></a>查看历史记录</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">history</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="清空历史记录"><a href="#清空历史记录" class="headerlink" title="清空历史记录"></a>清空历史记录</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">history</span> -c</span><br></pre></td></tr></table></figure>
+
+<h2 id="重复执行历史记录中的命令"><a href="#重复执行历史记录中的命令" class="headerlink" title="重复执行历史记录中的命令"></a>重复执行历史记录中的命令</h2><blockquote>
+<p><code>&lt;num&gt;</code>：历史记录编号</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">!&lt;num&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【笔记】查看系统信息</title>
+    <url>/2020/06/20/%E6%9F%A5%E7%9C%8B%E7%B3%BB%E7%BB%9F%E4%BF%A1%E6%81%AF/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>查看系统信息</p>
+<a id="more"></a>
+
+<h2 id="通用查看系统名"><a href="#通用查看系统名" class="headerlink" title="通用查看系统名"></a>通用查看系统名</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">uname</span><br></pre></td></tr></table></figure>
+
+<h3 id="通用查看系统详细信息"><a href="#通用查看系统详细信息" class="headerlink" title="通用查看系统详细信息"></a>通用查看系统详细信息</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">uname -a</span><br></pre></td></tr></table></figure>
+
+<h2 id="RedHat系列查看系统信息"><a href="#RedHat系列查看系统信息" class="headerlink" title="RedHat系列查看系统信息"></a>RedHat系列查看系统信息</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">cat /etc/os-release</span><br><span class="line">cat /etc/redhat-release</span><br><span class="line">cat /etc/system-release</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【笔记】定义命令别名</title>
+    <url>/2020/06/19/%E5%AE%9A%E4%B9%89%E5%91%BD%E4%BB%A4%E5%88%AB%E5%90%8D/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>使用<code>alias</code>定义命令别名</p>
+<a id="more"></a>
+
+<h2 id="定义新别名"><a href="#定义新别名" class="headerlink" title="定义新别名"></a>定义新别名</h2><ul>
+<li>为了防止命令被覆盖，不要定义已存在的命令名为别名</li>
+</ul>
+<blockquote>
+<p><code>&lt;name&gt;</code>：新的别名<br><code>&lt;command&gt;</code>：需要简化的命令</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">alias</span> &lt;name&gt;=<span class="string">"&lt;command&gt;"</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="查看已定义的别名"><a href="#查看已定义的别名" class="headerlink" title="查看已定义的别名"></a>查看已定义的别名</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">alias</span> &lt;name&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="解除绑定的别名"><a href="#解除绑定的别名" class="headerlink" title="解除绑定的别名"></a>解除绑定的别名</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">unalias</span> &lt;name&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="临时取消别名"><a href="#临时取消别名" class="headerlink" title="临时取消别名"></a>临时取消别名</h2><blockquote>
+<p><code>&lt;name&gt;</code>：使用别名执行的命令</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">\&lt;name&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【笔记】Vim学习笔记</title>
+    <url>/2020/06/18/Vim%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Vim学习笔记</p>
+<a id="more"></a>
+
+<h2 id="三种模式"><a href="#三种模式" class="headerlink" title="三种模式"></a>三种模式</h2><ul>
+<li>命令模式、末行模式、插入模式</li>
+</ul>
+<h2 id="命令模式"><a href="#命令模式" class="headerlink" title="命令模式"></a>命令模式</h2><ul>
+<li>其他模式跳转到命令模式：<code>esc</code></li>
+<li>进入末行模式：<code>:</code></li>
+<li>进入插入模式：<code>i</code>（在当前光标前编辑）、<code>o</code>（在光标下新建一行编辑）</li>
+</ul>
+<h2 id="末行模式"><a href="#末行模式" class="headerlink" title="末行模式"></a>末行模式</h2><ul>
+<li>保存：<code>:w</code></li>
+<li>仅退出：<code>:q</code></li>
+<li>保存并退出：<code>:wq</code></li>
+<li>强制退出（不保存并退出）：<code>:q!</code></li>
+</ul>
+<h2 id="编辑模式"><a href="#编辑模式" class="headerlink" title="编辑模式"></a>编辑模式</h2><ul>
+<li>编辑文本</li>
+</ul>
+<h2 id="删除整行文本"><a href="#删除整行文本" class="headerlink" title="删除整行文本"></a>删除整行文本</h2><ul>
+<li><code>dd</code></li>
+</ul>
+<h3 id="删除指定行文本"><a href="#删除指定行文本" class="headerlink" title="删除指定行文本"></a>删除指定行文本</h3><ul>
+<li>数字+<code>dd</code></li>
+</ul>
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+  </entry>
+  <entry>
     <title>【笔记】挂载学习笔记</title>
     <url>/2020/06/18/%E6%8C%82%E8%BD%BD%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Linux挂载学习笔记</p>
@@ -19,6 +261,11 @@
 <ul>
 <li>mount: /dev/sr0 写保护，将以只读方式挂载</li>
 </ul>
+<h3 id="添加参数"><a href="#添加参数" class="headerlink" title="添加参数"></a>添加参数</h3><blockquote>
+<p><code>&lt;option&gt;</code>：添加的参数</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">mount -o &lt;option_1&gt;,&lt;option_2&gt; &lt;dvd_src&gt; &lt;dir_src&gt;</span><br></pre></td></tr></table></figure>
+
 <h2 id="卸载"><a href="#卸载" class="headerlink" title="卸载"></a>卸载</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">umount &lt;dir_src&gt;</span><br></pre></td></tr></table></figure>
 
 <h3 id="强制卸载"><a href="#强制卸载" class="headerlink" title="强制卸载"></a>强制卸载</h3><ul>
@@ -4036,7 +4283,7 @@
 <h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><ul>
 <li>找到需要下载的文件-&gt;右键-&gt;<code>下载</code>（若下载不成功则尝试<code>下载 saldl</code>）</li>
 </ul>
-<h2 id="作者联系方式"><a href="#作者联系方式" class="headerlink" title="作者联系方式"></a>作者联系方式</h2><p><a href="mailto:&#122;&#x34;&#x30;&#48;&#x30;&#48;&#50;&#64;&#103;&#109;&#97;&#x69;&#108;&#46;&#x63;&#x6f;&#x6d;">&#122;&#x34;&#x30;&#48;&#x30;&#48;&#50;&#64;&#103;&#109;&#97;&#x69;&#108;&#46;&#x63;&#x6f;&#x6d;</a></p>
+<h2 id="作者联系方式"><a href="#作者联系方式" class="headerlink" title="作者联系方式"></a>作者联系方式</h2><p><a href="mailto:&#122;&#x34;&#x30;&#x30;&#48;&#48;&#x32;&#64;&#103;&#x6d;&#97;&#105;&#x6c;&#x2e;&#99;&#111;&#109;">&#122;&#x34;&#x30;&#x30;&#48;&#48;&#x32;&#64;&#103;&#x6d;&#97;&#105;&#x6c;&#x2e;&#99;&#111;&#109;</a></p>
 ]]></content>
       <categories>
         <category>Windows</category>
@@ -4258,7 +4505,7 @@
 <li><p>默认仅自动回复私聊，若要自动回复群聊（即便是不@，也会自动回复），需在菜单-&gt;配置群-&gt;添加QQ群信息</p>
 </li>
 </ul>
-<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="作者联系方式"><a href="#作者联系方式" class="headerlink" title="作者联系方式"></a>作者联系方式</h2><p><a href="mailto:&#113;&#115;&#115;&#x71;&#x35;&#x32;&#49;&#x40;&#103;&#109;&#97;&#x69;&#108;&#46;&#99;&#x6f;&#x6d;">&#113;&#115;&#115;&#x71;&#x35;&#x32;&#49;&#x40;&#103;&#109;&#97;&#x69;&#108;&#46;&#99;&#x6f;&#x6d;</a></p>
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="作者联系方式"><a href="#作者联系方式" class="headerlink" title="作者联系方式"></a>作者联系方式</h2><p><a href="mailto:&#113;&#x73;&#x73;&#x71;&#53;&#50;&#x31;&#x40;&#103;&#x6d;&#97;&#105;&#x6c;&#46;&#x63;&#x6f;&#109;">&#113;&#x73;&#x73;&#x71;&#53;&#50;&#x31;&#x40;&#103;&#x6d;&#97;&#105;&#x6c;&#46;&#x63;&#x6f;&#109;</a></p>
 ]]></content>
       <categories>
         <category>刷机</category>
@@ -7390,10 +7637,23 @@
 
 <h3 id="自定义行数"><a href="#自定义行数" class="headerlink" title="自定义行数"></a>自定义行数</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">tail -n &lt;num&gt; &lt;file&gt;</span><br><span class="line">tail -&lt;num&gt; &lt;file&gt;</span><br></pre></td></tr></table></figure>
 
+<h3 id="动态查看文档末尾"><a href="#动态查看文档末尾" class="headerlink" title="动态查看文档末尾"></a>动态查看文档末尾</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">tail -f &lt;file&gt;</span><br></pre></td></tr></table></figure>
+
 <h2 id="grep命令"><a href="#grep命令" class="headerlink" title="grep命令"></a>grep命令</h2><ul>
 <li>输出包含指定字符串的行</li>
 </ul>
+<blockquote>
+<p><code>&lt;str&gt;</code>：查找条件</p>
+</blockquote>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">grep &lt;str&gt; &lt;file&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="条件取反"><a href="#条件取反" class="headerlink" title="条件取反"></a>条件取反</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">grep -v &lt;str&gt; &lt;file&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="条件忽略大小写"><a href="#条件忽略大小写" class="headerlink" title="条件忽略大小写"></a>条件忽略大小写</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">grep -i &lt;str&gt; &lt;file&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="以条件开头"><a href="#以条件开头" class="headerlink" title="以条件开头"></a>以条件开头</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">grep ^&lt;str&gt; &lt;file&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="以条件结尾"><a href="#以条件结尾" class="headerlink" title="以条件结尾"></a>以条件结尾</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">grep &lt;str&gt;$ &lt;file&gt;</span><br></pre></td></tr></table></figure>
 
 <h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://www.runoob.com/linux/linux-comm-less.html" target="_blank" rel="noopener">菜鸟笔记</a></p>
 ]]></content>
@@ -17892,8 +18152,9 @@
 
 <h3 id="结束所有进程"><a href="#结束所有进程" class="headerlink" title="结束所有进程"></a>结束所有进程</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ killall xx</span><br></pre></td></tr></table></figure>
 
-<h3 id="查询版本信息"><a href="#查询版本信息" class="headerlink" title="查询版本信息"></a>查询版本信息</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ uname -a</span><br></pre></td></tr></table></figure>
-
+<h3 id="查看系统信息"><a href="#查看系统信息" class="headerlink" title="查看系统信息"></a>查看系统信息</h3><ul>
+<li><a href="/2020/06/20/查看系统信息/">传送门</a></li>
+</ul>
 <h3 id="top-命令第一行"><a href="#top-命令第一行" class="headerlink" title="top 命令第一行"></a>top 命令第一行</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ uptime</span><br></pre></td></tr></table></figure>
 
 <h3 id="查看系统内存信息"><a href="#查看系统内存信息" class="headerlink" title="查看系统内存信息"></a>查看系统内存信息</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ free</span><br></pre></td></tr></table></figure>
@@ -17908,44 +18169,22 @@
 
 <h3 id="查看当前系统的登录记录"><a href="#查看当前系统的登录记录" class="headerlink" title="查看当前系统的登录记录"></a>查看当前系统的登录记录</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ last</span><br></pre></td></tr></table></figure>
 
-<h3 id="命令行历史记录"><a href="#命令行历史记录" class="headerlink" title="命令行历史记录"></a>命令行历史记录</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">history</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="清空命令行历史"><a href="#清空命令行历史" class="headerlink" title="清空命令行历史"></a>清空命令行历史</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">history</span> -c</span><br></pre></td></tr></table></figure>
-
-<h4 id="重复历史记录中的命令"><a href="#重复历史记录中的命令" class="headerlink" title="重复历史记录中的命令"></a>重复历史记录中的命令</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ !xxx</span><br></pre></td></tr></table></figure>
-
+<h3 id="命令行历史记录"><a href="#命令行历史记录" class="headerlink" title="命令行历史记录"></a>命令行历史记录</h3><ul>
+<li><a href="/2020/06/20/命令行历史记录/">传送门</a></li>
+</ul>
 <h3 id="收集重要的相关信息（排错）"><a href="#收集重要的相关信息（排错）" class="headerlink" title="收集重要的相关信息（排错）"></a>收集重要的相关信息（排错）</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sosreport</span><br></pre></td></tr></table></figure>
 
 <h3 id="查看当前目录"><a href="#查看当前目录" class="headerlink" title="查看当前目录"></a>查看当前目录</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">pwd</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="切换目录"><a href="#切换目录" class="headerlink" title="切换目录"></a>切换目录</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> /xxx</span><br></pre></td></tr></table></figure>
-
-<h4 id="切换到主目录"><a href="#切换到主目录" class="headerlink" title="切换到主目录"></a>切换到主目录</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ~</span><br></pre></td></tr></table></figure>
-
-<h4 id="返回上一次目录"><a href="#返回上一次目录" class="headerlink" title="返回上一次目录"></a>返回上一次目录</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> -</span><br></pre></td></tr></table></figure>
-
-<h4 id="返回上一级目录"><a href="#返回上一级目录" class="headerlink" title="返回上一级目录"></a>返回上一级目录</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ..</span><br></pre></td></tr></table></figure>
-
-<h3 id="查看当前目录所有文件"><a href="#查看当前目录所有文件" class="headerlink" title="查看当前目录所有文件"></a>查看当前目录所有文件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ls</span><br></pre></td></tr></table></figure>
-
-<h4 id="显示详细信息"><a href="#显示详细信息" class="headerlink" title="显示详细信息"></a>显示详细信息</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ls -l</span><br></pre></td></tr></table></figure>
-
-<h4 id="显示隐藏文件"><a href="#显示隐藏文件" class="headerlink" title="显示隐藏文件"></a>显示隐藏文件</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ls -a</span><br></pre></td></tr></table></figure>
-
-<h3 id="查看文件内容"><a href="#查看文件内容" class="headerlink" title="查看文件内容"></a>查看文件内容</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ cat xxx</span><br></pre></td></tr></table></figure>
-
-<h3 id="查看长文件内容"><a href="#查看长文件内容" class="headerlink" title="查看长文件内容"></a>查看长文件内容</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ more xxx</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>备注</li>
+<h3 id="切换目录"><a href="#切换目录" class="headerlink" title="切换目录"></a>切换目录</h3><ul>
+<li><a href="/2020/06/20/命令行切换目录/">传送门</a></li>
 </ul>
-<p>回车换行，空格翻页</p>
-<h4 id="查看文件前十行内容"><a href="#查看文件前十行内容" class="headerlink" title="查看文件前十行内容"></a>查看文件前十行内容</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ head -n 10 xxx</span><br></pre></td></tr></table></figure>
-
-<h4 id="查看文件后十行内容"><a href="#查看文件后十行内容" class="headerlink" title="查看文件后十行内容"></a>查看文件后十行内容</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ tail -n 10 xxx</span><br></pre></td></tr></table></figure>
-
-<h4 id="查看实时更新的文件内容"><a href="#查看实时更新的文件内容" class="headerlink" title="查看实时更新的文件内容"></a>查看实时更新的文件内容</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ tail -f xxx</span><br></pre></td></tr></table></figure>
-
+<h3 id="查看文件信息"><a href="#查看文件信息" class="headerlink" title="查看文件信息"></a>查看文件信息</h3><ul>
+<li><a href="/2020/06/20/命令行查看文件信息/">传送门</a></li>
+</ul>
+<h3 id="文档操作"><a href="#文档操作" class="headerlink" title="文档操作"></a>文档操作</h3><ul>
+<li><a href="/2020/02/07/文档操作/">传送门</a></li>
+</ul>
 <h4 id="显示文件行数"><a href="#显示文件行数" class="headerlink" title="显示文件行数"></a>显示文件行数</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ wc -l xxx</span><br></pre></td></tr></table></figure>
 
 <h4 id="显示文件字节数"><a href="#显示文件字节数" class="headerlink" title="显示文件字节数"></a>显示文件字节数</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ wc -c xxx</span><br></pre></td></tr></table></figure>
@@ -17966,43 +18205,39 @@
 
 <h3 id="新建一个文本文件"><a href="#新建一个文本文件" class="headerlink" title="新建一个文本文件"></a>新建一个文本文件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ touch xxx</span><br></pre></td></tr></table></figure>
 
-<h4 id="修改文件的最后修改时间"><a href="#修改文件的最后修改时间" class="headerlink" title="修改文件的最后修改时间"></a>修改文件的最后修改时间</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ touch -d <span class="string">"13:14"</span> xxx</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>备注</li>
+<h4 id="修改文件的最后修改时间"><a href="#修改文件的最后修改时间" class="headerlink" title="修改文件的最后修改时间"></a>修改文件的最后修改时间</h4><ul>
+<li>将文件修改时间改为”13:14”</li>
 </ul>
-<p>将时间修改为”13:14”</p>
-<h3 id="新建一个文件目录"><a href="#新建一个文件目录" class="headerlink" title="新建一个文件目录"></a>新建一个文件目录</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ mkdir xxx</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ touch -d <span class="string">"13:14"</span> xxx</span><br></pre></td></tr></table></figure>
 
-<h4 id="新建一个有层次关系的目录"><a href="#新建一个有层次关系的目录" class="headerlink" title="新建一个有层次关系的目录"></a>新建一个有层次关系的目录</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ mkdir -p xxx1/xxx2/xxx3</span><br></pre></td></tr></table></figure>
-
-<h3 id="复制文件"><a href="#复制文件" class="headerlink" title="复制文件"></a>复制文件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ cp /SomeWhere1/xxx /SomeWhere2/xxx</span><br></pre></td></tr></table></figure>
-
-<h4 id="复制目录"><a href="#复制目录" class="headerlink" title="复制目录"></a>复制目录</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ cp -r xxx1/ xxx2/</span><br></pre></td></tr></table></figure>
-
-<h3 id="剪切文件"><a href="#剪切文件" class="headerlink" title="剪切文件"></a>剪切文件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ mv /SomeWhere1/xxx /SomeWhere2/xxx2</span><br></pre></td></tr></table></figure>
-
-<h4 id="重命名文件"><a href="#重命名文件" class="headerlink" title="重命名文件"></a>重命名文件</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ mv xxx1 xxx2</span><br></pre></td></tr></table></figure>
-
-<h3 id="删除文件"><a href="#删除文件" class="headerlink" title="删除文件"></a>删除文件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ rm xxx</span><br></pre></td></tr></table></figure>
-
-<h4 id="强制删除文件"><a href="#强制删除文件" class="headerlink" title="强制删除文件"></a>强制删除文件</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ rm -f xxx</span><br></pre></td></tr></table></figure>
-
-<h4 id="删除目录"><a href="#删除目录" class="headerlink" title="删除目录"></a>删除目录</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ rm -r xxx/</span><br></pre></td></tr></table></figure>
-
+<h3 id="新建目录"><a href="#新建目录" class="headerlink" title="新建目录"></a>新建目录</h3><ul>
+<li><a href="/2020/06/20/命令行新建目录/">传送门</a></li>
+</ul>
+<h3 id="文件复制、移动、重命名"><a href="#文件复制、移动、重命名" class="headerlink" title="文件复制、移动、重命名"></a>文件复制、移动、重命名</h3><ul>
+<li><a href="/2020/06/20/命令行复制移动重命名文件/">传送门</a></li>
+</ul>
+<h3 id="文件删除"><a href="#文件删除" class="headerlink" title="文件删除"></a>文件删除</h3><ul>
+<li><a href="/2020/06/20/命令行文件删除/">传送门</a></li>
+</ul>
 <h3 id="显示文件的类型"><a href="#显示文件的类型" class="headerlink" title="显示文件的类型"></a>显示文件的类型</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ file xxx</span><br></pre></td></tr></table></figure>
 
 <h3 id="查看命令的位置"><a href="#查看命令的位置" class="headerlink" title="查看命令的位置"></a>查看命令的位置</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ whereis xxx</span><br></pre></td></tr></table></figure>
 
 <h3 id="查看主机名"><a href="#查看主机名" class="headerlink" title="查看主机名"></a>查看主机名</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ hostname</span><br></pre></td></tr></table></figure>
 
-<h4 id="修改主机名"><a href="#修改主机名" class="headerlink" title="修改主机名"></a>修改主机名</h4><ul>
-<li>在终端临时修改</li>
-</ul>
-<blockquote>
+<h4 id="修改主机名"><a href="#修改主机名" class="headerlink" title="修改主机名"></a>修改主机名</h4><h5 id="临时修改"><a href="#临时修改" class="headerlink" title="临时修改"></a>临时修改</h5><blockquote>
 <p><code>&lt;name&gt;</code>：修改后的主机名</p>
 </blockquote>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ hostname &lt;name&gt;</span><br></pre></td></tr></table></figure>
+
+<h5 id="永久修改"><a href="#永久修改" class="headerlink" title="永久修改"></a>永久修改</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ nmtui</span><br></pre></td></tr></table></figure>
+
+<h3 id="查看cpu"><a href="#查看cpu" class="headerlink" title="查看cpu"></a>查看cpu</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ lscpu</span><br></pre></td></tr></table></figure>
+
+<h3 id="查看文档"><a href="#查看文档" class="headerlink" title="查看文档"></a>查看文档</h3><p><a href="/2020/02/07/文档操作/">传送门</a></p>
+<h3 id="关闭系统"><a href="#关闭系统" class="headerlink" title="关闭系统"></a>关闭系统</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ poweroff</span><br></pre></td></tr></table></figure>
+
+<h3 id="重启系统"><a href="#重启系统" class="headerlink" title="重启系统"></a>重启系统</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ reboot</span><br></pre></td></tr></table></figure>
 
 <h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://www.linuxprobe.com" target="_blank" rel="noopener">Linux就该这么学——刘遄</a></p>
 ]]></content>

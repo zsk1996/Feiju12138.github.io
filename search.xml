@@ -8,7 +8,9 @@
 
 <h2 id="MacOS"><a href="#MacOS" class="headerlink" title="MacOS"></a>MacOS</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">brew install neofetch</span><br></pre></td></tr></table></figure>
 
-<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">neofetch</span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
       <categories>
         <category>MacOS</category>
       </categories>

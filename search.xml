@@ -1,6 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>【笔记】三星手机免费下载付费主题</title>
+    <url>/2020/06/23/%E4%B8%89%E6%98%9F%E6%89%8B%E6%9C%BA%E5%85%8D%E8%B4%B9%E4%B8%8B%E8%BD%BD%E4%BB%98%E8%B4%B9%E4%B8%BB%E9%A2%98/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>三星手机免费下载付费主题</p>
+<a id="more"></a>
+
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
+<li><a href="https://www.packagedisabler.com" target="_blank" rel="noopener">PD MDM.apk</a>（软件名：<code>Package Disabler Pro</code>）</li>
+</ul>
+<h2 id="操作过程"><a href="#操作过程" class="headerlink" title="操作过程"></a>操作过程</h2><ul>
+<li><p><code>设置</code>-&gt;<code>壁纸和主题</code>-&gt;找到想换的主题</p>
+</li>
+<li><p><code>下载试用</code>-&gt;<code>确定</code>-&gt;<code>试用</code>-&gt;<code>应用</code></p>
+</li>
+<li><p>等待主题启动成功，打开<code>PD MDM</code></p>
+</li>
+<li><p>搜索<code>theme</code>关键字</p>
+</li>
+<li><p><code>主题</code>-&gt;<code>Clear Data</code>-&gt;<code>Close</code></p>
+</li>
+<li><p><code>主题商店</code>-&gt;<code>Clear Data</code>-&gt;<code>Close</code></p>
+</li>
+</ul>
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><ul>
+<li>这样就能理论永久免费使用付费主题</li>
+</ul>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://jingyan.baidu.com/article/03b2f78c3b6ff05ea237aed6.html" target="_blank" rel="noopener">百度经验——大狱司</a></p>
+]]></content>
+      <categories>
+        <category>刷机</category>
+      </categories>
+  </entry>
+  <entry>
     <title>【笔记】用户和组</title>
     <url>/2020/06/22/%E7%94%A8%E6%88%B7%E5%92%8C%E7%BB%84/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>用户和组</p>
@@ -31,7 +63,13 @@
 
 <h2 id="修改用户信息"><a href="#修改用户信息" class="headerlink" title="修改用户信息"></a>修改用户信息</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">usermod &lt;option&gt; &lt;user&gt;</span><br></pre></td></tr></table></figure>
 
-<h2 id="用户密码"><a href="#用户密码" class="headerlink" title="用户密码"></a>用户密码</h2><ul>
+<h2 id="密码信息文件"><a href="#密码信息文件" class="headerlink" title="密码信息文件"></a>密码信息文件</h2><h3 id="路径-1"><a href="#路径-1" class="headerlink" title="路径"></a>路径</h3><ul>
+<li><code>/etc/shadow</code></li>
+</ul>
+<h3 id="每一行表达含义-1"><a href="#每一行表达含义-1" class="headerlink" title="每一行表达含义"></a>每一行表达含义</h3><ul>
+<li><code>用户名:密码加密后的字符串:上一次修改密码的时间（从1970年1月1日开始算的天数）:密码最早能更改密码的时间（默认为0，表示任何时候都可以更改）:有效天数:距离有效时间x天时进行提醒（默认为7）:::</code></li>
+</ul>
+<h2 id="修改密码"><a href="#修改密码" class="headerlink" title="修改密码"></a>修改密码</h2><ul>
 <li>root用户修改任何用户密码，可以不限制密码复杂度，但是会出现提示，无视即可</li>
 </ul>
 <blockquote>

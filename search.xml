@@ -1,6 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>【笔记】在Minecraft服务器上部署Forge</title>
+    <url>/2020/06/24/%E5%9C%A8Minecraft%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E9%83%A8%E7%BD%B2Forge/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在Minecraft服务器上部署Forge，使服务器也可以安装Mod</p>
+<a id="more"></a>
+
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
+<li>对应版本的<a href="http://files.minecraftforge.net" target="_blank" rel="noopener">Forge</a></li>
+</ul>
+<h2 id="客户端安装Forge"><a href="#客户端安装Forge" class="headerlink" title="客户端安装Forge"></a>客户端安装Forge</h2><ul>
+<li><p>在<code>Minecraft Launcher</code>-&gt;<code>配置</code>-&gt;添加对应版本的游戏</p>
+</li>
+<li><p>运行Forge安装程序（默认选择<code>Install client</code>）</p>
+</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">java -jar forge-1.15.2-31.2.22.jar</span><br></pre></td></tr></table></figure>
+
+<h2 id="下载服务器Forge"><a href="#下载服务器Forge" class="headerlink" title="下载服务器Forge"></a>下载服务器Forge</h2><ul>
+<li>在新建一个目录</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">mkdir mincraft-server</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>运行Forge安装程序，选择<code>Install server</code>，位置选择刚刚新建的目录</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">java -jar forge-1.15.2-31.2.22.jar</span><br></pre></td></tr></table></figure>
+
+<h2 id="打包并发送到云端"><a href="#打包并发送到云端" class="headerlink" title="打包并发送到云端"></a>打包并发送到云端</h2><ul>
+<li>打包下载好的包含Froge的服务器软件</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">tar -cvf minecraft-server.tar minecraft-server/</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>发送到云端</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">scp minecraft-server.tar root@39.104.62.91:/root</span><br></pre></td></tr></table></figure>
+
+<h2 id="云端解压并安装"><a href="#云端解压并安装" class="headerlink" title="云端解压并安装"></a>云端解压并安装</h2><ul>
+<li>解压</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">tar -xvf minecraft-server.tar</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>第一次启动</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> minecraft-server</span><br><span class="line">java -Xmx1024M -Xms1024M -jar forge-1.15.2-31.2.22.jar nogui</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>同意授权</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vim eula.txt</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>修改<code>false</code>为<code>true</code></p>
+</li>
+<li><p>第二次启动</p>
+</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">java -Xmx1024M -Xms1024M -jar forge-1.15.2-31.2.22.jar nogui</span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><ul>
+<li>注意，客户端和服务器端要保持相同版本的游戏及Forge，要同时安装相同的Mod</li>
+</ul>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://www.youtube.com/watch?v=AEU4efZuPeI" target="_blank" rel="noopener">YouToBe——thebluecrusader</a></p>
+]]></content>
+      <categories>
+        <category>Minecraft</category>
+      </categories>
+  </entry>
+  <entry>
     <title>【笔记】三星手机免费下载付费主题</title>
     <url>/2020/06/23/%E4%B8%89%E6%98%9F%E6%89%8B%E6%9C%BA%E5%85%8D%E8%B4%B9%E4%B8%8B%E8%BD%BD%E4%BB%98%E8%B4%B9%E4%B8%BB%E9%A2%98/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>三星手机免费下载付费主题</p>
@@ -38,18 +107,18 @@
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>用户和组</p>
 <a id="more"></a>
 
-<h2 id="用户信息文件"><a href="#用户信息文件" class="headerlink" title="用户信息文件"></a>用户信息文件</h2><h3 id="路径"><a href="#路径" class="headerlink" title="路径"></a>路径</h3><ul>
+<h2 id="用户"><a href="#用户" class="headerlink" title="用户"></a>用户</h2><h3 id="用户信息文件"><a href="#用户信息文件" class="headerlink" title="用户信息文件"></a>用户信息文件</h3><h4 id="路径"><a href="#路径" class="headerlink" title="路径"></a>路径</h4><ul>
 <li><code>/etc/passwd</code></li>
 </ul>
-<h3 id="每一行表达含义"><a href="#每一行表达含义" class="headerlink" title="每一行表达含义"></a>每一行表达含义</h3><ul>
+<h4 id="每一行表达含义"><a href="#每一行表达含义" class="headerlink" title="每一行表达含义"></a>每一行表达含义</h4><ul>
 <li><code>用户名:密码占位符:UID:基本组GID:用户描述信息:家目录:解释器</code></li>
 </ul>
-<h2 id="新建用户"><a href="#新建用户" class="headerlink" title="新建用户"></a>新建用户</h2><blockquote>
+<h3 id="新建用户"><a href="#新建用户" class="headerlink" title="新建用户"></a>新建用户</h3><blockquote>
 <p><code>&lt;user&gt;</code>：用户名</p>
 </blockquote>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">useradd &lt;user&gt;</span><br></pre></td></tr></table></figure>
 
-<h3 id="指定参数"><a href="#指定参数" class="headerlink" title="指定参数"></a>指定参数</h3><blockquote>
+<h4 id="指定参数"><a href="#指定参数" class="headerlink" title="指定参数"></a>指定参数</h4><blockquote>
 <p><code>&lt;option&gt;</code>：选项，可有可无</p>
 <blockquote>
 <p><code>-u &lt;uid&gt;</code>：指定UID<br><code>-g &lt;group&gt;</code>：指定基本组<br><code>-G &lt;group&gt;</code>：指定附加组<br><code>-d &lt;home&gt;</code>：指定家目录位置<br><code>-s &lt;shell&gt;</code>：指定默认解释器</p>
@@ -57,19 +126,21 @@
 </blockquote>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">useradd &lt;option&gt; &lt;user&gt;</span><br></pre></td></tr></table></figure>
 
-<h2 id="删除用户"><a href="#删除用户" class="headerlink" title="删除用户"></a>删除用户</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">userdel &lt;user&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="查看用户信息"><a href="#查看用户信息" class="headerlink" title="查看用户信息"></a>查看用户信息</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">id &lt;user&gt;</span><br></pre></td></tr></table></figure>
 
-<h3 id="主目录一同删除"><a href="#主目录一同删除" class="headerlink" title="主目录一同删除"></a>主目录一同删除</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">userdel -r &lt;user&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="删除用户"><a href="#删除用户" class="headerlink" title="删除用户"></a>删除用户</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">userdel &lt;user&gt;</span><br></pre></td></tr></table></figure>
 
-<h2 id="修改用户信息"><a href="#修改用户信息" class="headerlink" title="修改用户信息"></a>修改用户信息</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">usermod &lt;option&gt; &lt;user&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="主目录一同删除"><a href="#主目录一同删除" class="headerlink" title="主目录一同删除"></a>主目录一同删除</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">userdel -r &lt;user&gt;</span><br></pre></td></tr></table></figure>
 
-<h2 id="密码信息文件"><a href="#密码信息文件" class="headerlink" title="密码信息文件"></a>密码信息文件</h2><h3 id="路径-1"><a href="#路径-1" class="headerlink" title="路径"></a>路径</h3><ul>
+<h3 id="修改用户信息"><a href="#修改用户信息" class="headerlink" title="修改用户信息"></a>修改用户信息</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">usermod &lt;option&gt; &lt;user&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="用户密码"><a href="#用户密码" class="headerlink" title="用户密码"></a>用户密码</h2><h3 id="密码信息文件"><a href="#密码信息文件" class="headerlink" title="密码信息文件"></a>密码信息文件</h3><h4 id="路径-1"><a href="#路径-1" class="headerlink" title="路径"></a>路径</h4><ul>
 <li><code>/etc/shadow</code></li>
 </ul>
-<h3 id="每一行表达含义-1"><a href="#每一行表达含义-1" class="headerlink" title="每一行表达含义"></a>每一行表达含义</h3><ul>
+<h4 id="每一行表达含义-1"><a href="#每一行表达含义-1" class="headerlink" title="每一行表达含义"></a>每一行表达含义</h4><ul>
 <li><code>用户名:密码加密后的字符串:上一次修改密码的时间（从1970年1月1日开始算的天数）:密码最早能更改密码的时间（默认为0，表示任何时候都可以更改）:有效天数:距离有效时间x天时进行提醒（默认为7）:::</code></li>
 </ul>
-<h2 id="修改密码"><a href="#修改密码" class="headerlink" title="修改密码"></a>修改密码</h2><ul>
+<h3 id="修改密码"><a href="#修改密码" class="headerlink" title="修改密码"></a>修改密码</h3><ul>
 <li>root用户修改任何用户密码，可以不限制密码复杂度，但是会出现提示，无视即可</li>
 </ul>
 <blockquote>
@@ -80,19 +151,23 @@
 </blockquote>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">passwd &lt;option&gt; &lt;user&gt;</span><br></pre></td></tr></table></figure>
 
-<h3 id="修改自己密码"><a href="#修改自己密码" class="headerlink" title="修改自己密码"></a>修改自己密码</h3><ul>
+<h4 id="修改自己密码"><a href="#修改自己密码" class="headerlink" title="修改自己密码"></a>修改自己密码</h4><ul>
 <li>其他用户修改自己密码时，需要限制密码复杂度</li>
 </ul>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">passwd</span><br></pre></td></tr></table></figure>
 
-<h3 id="取消交互式"><a href="#取消交互式" class="headerlink" title="取消交互式"></a>取消交互式</h3><blockquote>
+<h4 id="取消交互式"><a href="#取消交互式" class="headerlink" title="取消交互式"></a>取消交互式</h4><blockquote>
 <p><code>&lt;pwd&gt;</code>：密码</p>
 </blockquote>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">echo</span> &lt;<span class="built_in">pwd</span>&gt; | passwd --stdin &lt;user&gt;</span><br></pre></td></tr></table></figure>
 
-<h2 id="查看用户信息"><a href="#查看用户信息" class="headerlink" title="查看用户信息"></a>查看用户信息</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">id &lt;user&gt;</span><br></pre></td></tr></table></figure>
-
-<h2 id="新建组"><a href="#新建组" class="headerlink" title="新建组"></a>新建组</h2><blockquote>
+<h2 id="组"><a href="#组" class="headerlink" title="组"></a>组</h2><h3 id="组信息文件"><a href="#组信息文件" class="headerlink" title="组信息文件"></a>组信息文件</h3><h4 id="路径-2"><a href="#路径-2" class="headerlink" title="路径"></a>路径</h4><ul>
+<li><code>/etc/group</code></li>
+</ul>
+<h4 id="每一行表达含义-2"><a href="#每一行表达含义-2" class="headerlink" title="每一行表达含义"></a>每一行表达含义</h4><ul>
+<li><code>组名:组密码占位符:GID:组成员列表</code></li>
+</ul>
+<h3 id="新建组"><a href="#新建组" class="headerlink" title="新建组"></a>新建组</h3><blockquote>
 <p><code>&lt;group&gt;</code>：组名<br><code>&lt;option&gt;</code>：选项，可有可无</p>
 <blockquote>
 <p><code>-g &lt;gid&gt;</code>：指定GID<br><code>-o</code>：与<code>-g</code>同时使用，表示新用户组的GID可以与系统已有用户组的GID相同</p>
@@ -100,19 +175,26 @@
 </blockquote>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">groupadd &lt;option&gt; &lt;group&gt;</span><br></pre></td></tr></table></figure>
 
-<h2 id="删除组"><a href="#删除组" class="headerlink" title="删除组"></a>删除组</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">groupdel &lt;group&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="删除组"><a href="#删除组" class="headerlink" title="删除组"></a>删除组</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">groupdel &lt;group&gt;</span><br></pre></td></tr></table></figure>
 
-<h2 id="修改组信息"><a href="#修改组信息" class="headerlink" title="修改组信息"></a>修改组信息</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">groupmod &lt;option&gt; &lt;group&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="修改组信息"><a href="#修改组信息" class="headerlink" title="修改组信息"></a>修改组信息</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">groupmod &lt;option&gt; &lt;group&gt;</span><br></pre></td></tr></table></figure>
 
-<h3 id="修改组名"><a href="#修改组名" class="headerlink" title="修改组名"></a>修改组名</h3><blockquote>
+<h4 id="修改组名"><a href="#修改组名" class="headerlink" title="修改组名"></a>修改组名</h4><blockquote>
 <p><code>&lt;name_new&gt;</code>：新组名<br><code>&lt;name_old&gt;</code>：旧组名</p>
 </blockquote>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">groupmod -n &lt;name_new&gt; &lt;name_old&gt;</span><br></pre></td></tr></table></figure>
 
-<h2 id="切换组"><a href="#切换组" class="headerlink" title="切换组"></a>切换组</h2><ul>
+<h3 id="切换组"><a href="#切换组" class="headerlink" title="切换组"></a>切换组</h3><ul>
 <li>如果一个用户同时属于多个用户组，那么用户可以在用户组之间切换，以便具有其他用户组的权限</li>
 </ul>
-<h3 id="切换当前用户所在的组"><a href="#切换当前用户所在的组" class="headerlink" title="切换当前用户所在的组"></a>切换当前用户所在的组</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">newgrp &lt;group&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="切换当前用户所在的组"><a href="#切换当前用户所在的组" class="headerlink" title="切换当前用户所在的组"></a>切换当前用户所在的组</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">newgrp &lt;group&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="组成员信息文件"><a href="#组成员信息文件" class="headerlink" title="组成员信息文件"></a>组成员信息文件</h3><h4 id="路径-3"><a href="#路径-3" class="headerlink" title="路径"></a>路径</h4><ul>
+<li><code>/etc/gshadow</code></li>
+</ul>
+<h3 id="管理组内成员"><a href="#管理组内成员" class="headerlink" title="管理组内成员"></a>管理组内成员</h3><h4 id="添加组成员"><a href="#添加组成员" class="headerlink" title="添加组成员"></a>添加组成员</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">gpasswd -a &lt;user&gt; &lt;group&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="删除组成员"><a href="#删除组成员" class="headerlink" title="删除组成员"></a>删除组成员</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">gpasswd -d &lt;user&gt; &lt;group&gt;</span><br></pre></td></tr></table></figure>
 
 <h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://www.runoob.com/linux/linux-user-manage.html" target="_blank" rel="noopener">菜鸟笔记</a></p>
 ]]></content>

@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>【笔记】后台运行Minecraft服务器</title>
+    <url>/2020/06/24/%E5%90%8E%E5%8F%B0%E8%BF%90%E8%A1%8CMinecraft%E6%9C%8D%E5%8A%A1%E5%99%A8/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>后台运行Minecraft服务器</p>
+<a id="more"></a>
+
+<h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2><blockquote>
+<p><code>&lt;server&gt;</code>：启动服务器脚本</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">nohup java -Xms3072M -Xmx3072M -jar &lt;server&gt;.jar -nogui &amp;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>此时即使关闭ssh远程连接，也可以后台运行Minecraft服务器</li>
+</ul>
+<h3 id="查看状态"><a href="#查看状态" class="headerlink" title="查看状态"></a>查看状态</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">tail -f nohub.out</span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://www.misterma.com/archives/864/" target="_blank" rel="noopener">Mr.Ma’s的博客</a></p>
+]]></content>
+      <categories>
+        <category>Minecraft</category>
+      </categories>
+  </entry>
+  <entry>
     <title>【笔记】在Minecraft服务器上部署Forge</title>
     <url>/2020/06/24/%E5%9C%A8Minecraft%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E9%83%A8%E7%BD%B2Forge/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在Minecraft服务器上部署Forge，使服务器也可以安装Mod</p>

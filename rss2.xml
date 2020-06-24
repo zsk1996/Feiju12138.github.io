@@ -9,8 +9,25 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>捕捉一只爱折腾的绯鞠</description>
-    <pubDate>Wed, 24 Jun 2020 01:44:04 GMT</pubDate>
+    <pubDate>Wed, 24 Jun 2020 04:39:04 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>【笔记】后台运行Minecraft服务器</title>
+      <link>https://feiju12138.github.io/2020/06/24/%E5%90%8E%E5%8F%B0%E8%BF%90%E8%A1%8CMinecraft%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
+      <guid>https://feiju12138.github.io/2020/06/24/%E5%90%8E%E5%8F%B0%E8%BF%90%E8%A1%8CMinecraft%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
+      <pubDate>Wed, 24 Jun 2020 04:34:56 GMT</pubDate>
+      <description>
+      
+        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;后台运行Minecraft服务器&lt;/p&gt;
+      
+      </description>
+      
+      
+      <content:encoded><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>后台运行Minecraft服务器</p><a id="more"></a><h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2><blockquote><p><code>&lt;server&gt;</code>：启动服务器脚本</p></blockquote><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohup java -Xms3072M -Xmx3072M -jar &lt;server&gt;.jar -nogui &amp;</span><br></pre></td></tr></table></figure><ul><li>此时即使关闭ssh远程连接，也可以后台运行Minecraft服务器</li></ul><h3 id="查看状态"><a href="#查看状态" class="headerlink" title="查看状态"></a>查看状态</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tail -f nohub.out</span><br></pre></td></tr></table></figure><h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://www.misterma.com/archives/864/" target="_blank" rel="noopener">Mr.Ma’s的博客</a></p>]]></content:encoded>
+      
+      <comments>https://feiju12138.github.io/2020/06/24/%E5%90%8E%E5%8F%B0%E8%BF%90%E8%A1%8CMinecraft%E6%9C%8D%E5%8A%A1%E5%99%A8/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>【笔记】在Minecraft服务器上部署Forge</title>
@@ -78,23 +95,6 @@
       <content:encoded><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>跨平台查看系统信息</p><a id="more"></a><h2 id="MacOS"><a href="#MacOS" class="headerlink" title="MacOS"></a>MacOS</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install neofetch</span><br></pre></td></tr></table></figure><h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">neofetch</span><br></pre></td></tr></table></figure><h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content:encoded>
       
       <comments>https://feiju12138.github.io/2020/06/21/%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%9F%A5%E7%9C%8B%E7%B3%BB%E7%BB%9F%E4%BF%A1%E6%81%AF/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>【笔记】命令行新建目录</title>
-      <link>https://feiju12138.github.io/2020/06/20/%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%96%B0%E5%BB%BA%E7%9B%AE%E5%BD%95/</link>
-      <guid>https://feiju12138.github.io/2020/06/20/%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%96%B0%E5%BB%BA%E7%9B%AE%E5%BD%95/</guid>
-      <pubDate>Sat, 20 Jun 2020 03:17:27 GMT</pubDate>
-      <description>
-      
-        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;命令行新建目录&lt;/p&gt;
-      
-      </description>
-      
-      
-      <content:encoded><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>命令行新建目录</p><a id="more"></a><h2 id="在当前目录下新建目录"><a href="#在当前目录下新建目录" class="headerlink" title="在当前目录下新建目录"></a>在当前目录下新建目录</h2><blockquote><p><code>&lt;name&gt;</code>：新建的目录名</p></blockquote><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir &lt;name&gt;</span><br></pre></td></tr></table></figure><h2 id="在指定目录下新建目录"><a href="#在指定目录下新建目录" class="headerlink" title="在指定目录下新建目录"></a>在指定目录下新建目录</h2><blockquote><p><code>&lt;dir&gt;</code>：指定的目录路径</p></blockquote><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir &lt;dir&gt;/&lt;name&gt;</span><br></pre></td></tr></table></figure><h2 id="新建多级目录"><a href="#新建多级目录" class="headerlink" title="新建多级目录"></a>新建多级目录</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p &lt;name_1&gt;/&lt;name_2&gt;</span><br></pre></td></tr></table></figure><h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content:encoded>
-      
-      <comments>https://feiju12138.github.io/2020/06/20/%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%96%B0%E5%BB%BA%E7%9B%AE%E5%BD%95/#disqus_thread</comments>
     </item>
     
   </channel>

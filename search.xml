@@ -1,6 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>【笔记】Fastboot学习笔记</title>
+    <url>/2020/06/28/Fastboot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>快速启动（英语：Fastboot）是一个诊断协议，主要用于由一台计算机通过USB连接Android智能手机，修改其闪存文件系统。它是Android Debug Bridge库的一部分。（<a href="https://zh.wikipedia.org/wiki/快速启动" target="_blank" rel="noopener">维基百科</a>）</p>
+<a id="more"></a>
+
+<h2 id="查看已连接设备列表"><a href="#查看已连接设备列表" class="headerlink" title="查看已连接设备列表"></a>查看已连接设备列表</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">fastboot devices</span><br></pre></td></tr></table></figure>
+
+<h2 id="获取厂商OEM锁相关信息"><a href="#获取厂商OEM锁相关信息" class="headerlink" title="获取厂商OEM锁相关信息"></a>获取厂商OEM锁相关信息</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">fastboot oem get_identifier_token</span><br></pre></td></tr></table></figure>
+
+<h2 id="刷入分区"><a href="#刷入分区" class="headerlink" title="刷入分区"></a>刷入分区</h2><blockquote>
+<p><code>&lt;file&gt;</code>：刷机包文件位置</p>
+</blockquote>
+<h3 id="刷入boot分区"><a href="#刷入boot分区" class="headerlink" title="刷入boot分区"></a>刷入boot分区</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">fastboot flash boot &lt;file&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="刷入recovery分区"><a href="#刷入recovery分区" class="headerlink" title="刷入recovery分区"></a>刷入recovery分区</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">fastboot flash recovery &lt;file&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="刷入bootloader"><a href="#刷入bootloader" class="headerlink" title="刷入bootloader"></a>刷入bootloader</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">fastboot flash bootloader u-boot.bin</span><br></pre></td></tr></table></figure>
+
+<h3 id="刷入kernel"><a href="#刷入kernel" class="headerlink" title="刷入kernel"></a>刷入kernel</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">fastboot flash kernel uImage</span><br></pre></td></tr></table></figure>
+
+<h3 id="刷入system"><a href="#刷入system" class="headerlink" title="刷入system"></a>刷入system</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">fastboot flash system &lt;file&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="刷入userdata"><a href="#刷入userdata" class="headerlink" title="刷入userdata"></a>刷入userdata</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">fastboot flash userdata &lt;file&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="刷入ramdisk"><a href="#刷入ramdisk" class="headerlink" title="刷入ramdisk"></a>刷入ramdisk</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">fastboot flash ramdisk &lt;file&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="一次性刷入分区"><a href="#一次性刷入分区" class="headerlink" title="一次性刷入分区"></a>一次性刷入分区</h3><blockquote>
+<p><code>&lt;zip&gt;</code>：新建的包含boot.img、system.img、recovery.img的<code>.zip</code>压缩包</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">fastboot update &lt;zip&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="刷入开机画面"><a href="#刷入开机画面" class="headerlink" title="刷入开机画面"></a>刷入开机画面</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">fastboot flash splash1 &lt;file&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="擦除分区"><a href="#擦除分区" class="headerlink" title="擦除分区"></a>擦除分区</h2><ul>
+<li>擦除boot分区、system分区、userdata分区、cache分区</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">fastboot erase system -w</span><br></pre></td></tr></table></figure>
+
+<h3 id="擦除boot"><a href="#擦除boot" class="headerlink" title="擦除boot"></a>擦除boot</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">fastboot erase boot</span><br></pre></td></tr></table></figure>
+
+<h3 id="擦除system"><a href="#擦除system" class="headerlink" title="擦除system"></a>擦除system</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">fastboot erase system</span><br></pre></td></tr></table></figure>
+
+<h3 id="擦除cache"><a href="#擦除cache" class="headerlink" title="擦除cache"></a>擦除cache</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">fastboot erase cache</span><br></pre></td></tr></table></figure>
+
+<h3 id="擦除userdata"><a href="#擦除userdata" class="headerlink" title="擦除userdata"></a>擦除userdata</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">fastboot erase userdata</span><br></pre></td></tr></table></figure>
+
+<h3 id="擦除nv数据"><a href="#擦除nv数据" class="headerlink" title="擦除nv数据"></a>擦除nv数据</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">fastboot erase fsg</span><br><span class="line">fastboot erase fsc</span><br><span class="line">fastboot erase modemst1</span><br><span class="line">fastboot erase modemst2</span><br></pre></td></tr></table></figure>
+
+<h2 id="重启系统"><a href="#重启系统" class="headerlink" title="重启系统"></a>重启系统</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">fastboot reboot</span><br></pre></td></tr></table></figure>
+
+<h2 id="不烧写的情况下调试"><a href="#不烧写的情况下调试" class="headerlink" title="不烧写的情况下调试"></a>不烧写的情况下调试</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">fastboot boot uImage</span><br><span class="line">fastboot boot u-boot.bin</span><br></pre></td></tr></table></figure>
+
+<h2 id="查看版本号"><a href="#查看版本号" class="headerlink" title="查看版本号"></a>查看版本号</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">fastboot getver:version</span><br></pre></td></tr></table></figure>
+
+<h2 id="复位到bootloader"><a href="#复位到bootloader" class="headerlink" title="复位到bootloader"></a>复位到bootloader</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">fastboot reboot-bootloader</span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://blog.csdn.net/nei504293736/article/details/53148575" target="_blank" rel="noopener">CSDN——蚁人日记</a></p>
+]]></content>
+      <categories>
+        <category>Android Play Machine</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【笔记】Android 进入刷机模式</title>
+    <url>/2020/06/28/Android%E8%BF%9B%E5%85%A5%E5%88%B7%E6%9C%BA%E6%A8%A1%E5%BC%8F/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><code>Android</code>进入刷机模式，测试机型<code>Samsung</code></p>
+<a id="more"></a>
+
+<h2 id="进入Bootloader模式"><a href="#进入Bootloader模式" class="headerlink" title="进入Bootloader模式"></a>进入Bootloader模式</h2><ul>
+<li>长按<code>锁屏键</code>+<code>Home键</code>+<code>音量-</code></li>
+</ul>
+<h3 id="对应控制程序"><a href="#对应控制程序" class="headerlink" title="对应控制程序"></a>对应控制程序</h3><ul>
+<li><a href="/2020/06/28/Fastboot学习笔记/">fastboot</a></li>
+</ul>
+<h2 id="进入Recovery模式"><a href="#进入Recovery模式" class="headerlink" title="进入Recovery模式"></a>进入Recovery模式</h2><ul>
+<li>长按<code>锁屏键</code>+<code>Home键</code>+<code>音量+</code></li>
+</ul>
+<h3 id="对应控制程序-1"><a href="#对应控制程序-1" class="headerlink" title="对应控制程序"></a>对应控制程序</h3><ul>
+<li><a href="/2019/12/22/Adb学习笔记/">adb</a></li>
+</ul>
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
+      <categories>
+        <category>Android Play Machine</category>
+      </categories>
+  </entry>
+  <entry>
     <title>【笔记】后台运行Minecraft服务器</title>
     <url>/2020/06/24/%E5%90%8E%E5%8F%B0%E8%BF%90%E8%A1%8CMinecraft%E6%9C%8D%E5%8A%A1%E5%99%A8/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>后台运行Minecraft服务器</p>
@@ -120,7 +206,7 @@
 <h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://jingyan.baidu.com/article/03b2f78c3b6ff05ea237aed6.html" target="_blank" rel="noopener">百度经验——大狱司</a></p>
 ]]></content>
       <categories>
-        <category>刷机</category>
+        <category>Android Play Machine</category>
       </categories>
   </entry>
   <entry>
@@ -144,6 +230,9 @@
 <p><code>&lt;option&gt;</code>：选项，可有可无</p>
 <blockquote>
 <p><code>-u &lt;uid&gt;</code>：指定UID<br><code>-g &lt;group&gt;</code>：指定基本组<br><code>-G &lt;group&gt;</code>：指定附加组<br><code>-d &lt;home&gt;</code>：指定家目录位置<br><code>-s &lt;shell&gt;</code>：指定默认解释器</p>
+<blockquote>
+<p><code>-s /sbin/nologin</code>：指定解释器为空</p>
+</blockquote>
 </blockquote>
 </blockquote>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">useradd &lt;option&gt; &lt;user&gt;</span><br></pre></td></tr></table></figure>
@@ -197,7 +286,10 @@
 </blockquote>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">groupadd &lt;option&gt; &lt;group&gt;</span><br></pre></td></tr></table></figure>
 
-<h3 id="删除组"><a href="#删除组" class="headerlink" title="删除组"></a>删除组</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">groupdel &lt;group&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="删除组"><a href="#删除组" class="headerlink" title="删除组"></a>删除组</h3><ul>
+<li>不能删除用户的基本组</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">groupdel &lt;group&gt;</span><br></pre></td></tr></table></figure>
 
 <h3 id="修改组信息"><a href="#修改组信息" class="headerlink" title="修改组信息"></a>修改组信息</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">groupmod &lt;option&gt; &lt;group&gt;</span><br></pre></td></tr></table></figure>
 
@@ -4775,10 +4867,10 @@
 <li><p>默认仅自动回复私聊，若要自动回复群聊（即便是不@，也会自动回复），需在菜单-&gt;配置群-&gt;添加QQ群信息</p>
 </li>
 </ul>
-<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="作者联系方式"><a href="#作者联系方式" class="headerlink" title="作者联系方式"></a>作者联系方式</h2><p><a href="mailto:&#113;&#115;&#115;&#x71;&#x35;&#x32;&#49;&#x40;&#103;&#109;&#97;&#x69;&#108;&#46;&#99;&#x6f;&#x6d;">&#113;&#115;&#115;&#x71;&#x35;&#x32;&#49;&#x40;&#103;&#109;&#97;&#x69;&#108;&#46;&#99;&#x6f;&#x6d;</a></p>
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="作者联系方式"><a href="#作者联系方式" class="headerlink" title="作者联系方式"></a>作者联系方式</h2><p><a href="mailto:&#x71;&#115;&#115;&#113;&#53;&#50;&#49;&#x40;&#x67;&#x6d;&#97;&#105;&#108;&#x2e;&#x63;&#x6f;&#x6d;">&#x71;&#115;&#115;&#113;&#53;&#50;&#49;&#x40;&#x67;&#x6d;&#97;&#105;&#108;&#x2e;&#x63;&#x6f;&#x6d;</a></p>
 ]]></content>
       <categories>
-        <category>刷机</category>
+        <category>Android Play Machine</category>
       </categories>
   </entry>
   <entry>
@@ -4830,7 +4922,7 @@
 <h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://www.xzymoe.com/android-9-flash-xposed/" target="_blank" rel="noopener">XZYMOE的博客</a></p>
 ]]></content>
       <categories>
-        <category>刷机</category>
+        <category>Android Play Machine</category>
       </categories>
   </entry>
   <entry>
@@ -7637,7 +7729,7 @@
 <h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://github.com/termux/termux-app/issues/397" target="_blank" rel="noopener">GitHub——SDRausty</a></p>
 ]]></content>
       <categories>
-        <category>刷机</category>
+        <category>Android Play Machine</category>
       </categories>
   </entry>
   <entry>
@@ -7698,7 +7790,7 @@
 <h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://github.com/termux/termux-app/issues/397" target="_blank" rel="noopener">GitHub——SDRausty</a></p>
 ]]></content>
       <categories>
-        <category>刷机</category>
+        <category>Android Play Machine</category>
       </categories>
   </entry>
   <entry>
@@ -12409,7 +12501,7 @@
 <h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://blog.csdn.net/qq_26287435/article/details/81513649" target="_blank" rel="noopener">CSDN——tinyvampirepudge</a></p>
 ]]></content>
       <categories>
-        <category>Android</category>
+        <category>Android Play Machine</category>
       </categories>
   </entry>
   <entry>
@@ -12627,10 +12719,27 @@
 </blockquote>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">adb shell getprop &lt;property&gt;</span><br></pre></td></tr></table></figure>
 
-<h2 id="修改设置"><a href="#修改设置" class="headerlink" title="修改设置"></a>修改设置</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://juejin.im/post/5b5683bcf265da0f9b4dea96" target="_blank" rel="noopener">掘金——往事惘逝</a></p>
+<h2 id="刷机命令"><a href="#刷机命令" class="headerlink" title="刷机命令"></a>刷机命令</h2><h3 id="进入Recovery模式"><a href="#进入Recovery模式" class="headerlink" title="进入Recovery模式"></a>进入Recovery模式</h3><ul>
+<li>手机重启到卡刷模式</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">adb reboot recovery</span><br></pre></td></tr></table></figure>
+
+<h3 id="进入Bootloader模式"><a href="#进入Bootloader模式" class="headerlink" title="进入Bootloader模式"></a>进入Bootloader模式</h3><ul>
+<li>手机重启到线刷模式</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">adb reboot bootloader</span><br></pre></td></tr></table></figure>
+
+<h3 id="进入9008刷机模式"><a href="#进入9008刷机模式" class="headerlink" title="进入9008刷机模式"></a>进入9008刷机模式</h3><ul>
+<li>手机重启到9008刷机模式，仅限高通部分机型，慎用</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">adb reboot edl</span><br></pre></td></tr></table></figure>
+
+<h3 id="等待设备"><a href="#等待设备" class="headerlink" title="等待设备"></a>等待设备</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">adb <span class="built_in">wait</span>-for-device</span><br></pre></td></tr></table></figure>
+
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://juejin.im/post/5b5683bcf265da0f9b4dea96" target="_blank" rel="noopener">掘金——往事惘逝</a></p>
 ]]></content>
       <categories>
-        <category>Android</category>
+        <category>Android Play Machine</category>
       </categories>
   </entry>
   <entry>
@@ -12707,7 +12816,7 @@
 <h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://www.bilibili.com/video/av9551905/" target="_blank" rel="noopener">哔哩哔哩——FantWu</a></p>
 ]]></content>
       <categories>
-        <category>刷机</category>
+        <category>Android Play Machine</category>
       </categories>
   </entry>
   <entry>
@@ -12740,7 +12849,7 @@
 <p><img src="/images/20191222194525/01.png" alt="01.png"></p>
 ]]></content>
       <categories>
-        <category>刷机</category>
+        <category>Android Play Machine</category>
       </categories>
   </entry>
   <entry>
@@ -12770,7 +12879,7 @@
 <p><img src="/images/20191222193024/01.png" alt="01.png"></p>
 ]]></content>
       <categories>
-        <category>刷机</category>
+        <category>Android Play Machine</category>
       </categories>
   </entry>
   <entry>
@@ -12977,7 +13086,7 @@
 <p><img src="/images/20191218213532/08.png" alt="08.png"></p>
 <h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
       <categories>
-        <category>刷机</category>
+        <category>Android Play Machine</category>
       </categories>
   </entry>
   <entry>
@@ -13012,7 +13121,7 @@
 <p><img src="/images/20191218211306/04.png" alt="04.png"></p>
 <h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
       <categories>
-        <category>刷机</category>
+        <category>Android Play Machine</category>
       </categories>
   </entry>
   <entry>
@@ -13065,7 +13174,7 @@
 <p><img src="/images/20191218204607/08.png" alt="08.png"></p>
 ]]></content>
       <categories>
-        <category>刷机</category>
+        <category>Android Play Machine</category>
       </categories>
   </entry>
   <entry>
@@ -16635,7 +16744,7 @@
 <h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://jq.qq.com/?_wv=1027&k=5lGp1Yv" target="_blank" rel="noopener">QQ群——世界隐性-资源及讨论</a></p>
 ]]></content>
       <categories>
-        <category>刷机</category>
+        <category>Android Play Machine</category>
       </categories>
   </entry>
   <entry>
@@ -16682,6 +16791,9 @@
 </ul>
 <h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://www.freedomwolf.cc/2019/04/energized-protection/" target="_blank" rel="noopener">Freedom Wolf</a></p>
 ]]></content>
+      <categories>
+        <category>Android Play Machine</category>
+      </categories>
   </entry>
   <entry>
     <title>【骚操作】将安卓手机作为一台服务器</title>
@@ -16730,7 +16842,7 @@
 <h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="http://www.ruanyifeng.com/blog/2019/07/termux-tutorial.html" target="_blank" rel="noopener">阮一峰的网络日志</a></p>
 ]]></content>
       <categories>
-        <category>刷机</category>
+        <category>Android Play Machine</category>
       </categories>
   </entry>
   <entry>
@@ -17280,7 +17392,7 @@
 <p><a href="https://www.youtube.com/watch?v=E9rvOJemsAc" target="_blank" rel="noopener">YouTuBe——Daze One</a></p>
 ]]></content>
       <categories>
-        <category>刷机</category>
+        <category>Android Play Machine</category>
       </categories>
   </entry>
   <entry>
@@ -17414,7 +17526,7 @@
 <h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://blog.csdn.net/sinat_29315697/article/details/79665665" target="_blank" rel="noopener">CSDN——henauchin</a></p>
 ]]></content>
       <categories>
-        <category>刷机</category>
+        <category>Android Play Machine</category>
       </categories>
   </entry>
   <entry>
@@ -18162,6 +18274,18 @@
 </ul>
 <blockquote>
 <p><code>-f</code><br><code>--file</code></p>
+</blockquote>
+<ul>
+<li>显示归档中的文件清单</li>
+</ul>
+<blockquote>
+<p><code>-t</code></p>
+</blockquote>
+<ul>
+<li>指定解压路径</li>
+</ul>
+<blockquote>
+<p><code>-C</code></p>
 </blockquote>
 <ul>
 <li>通过<code>gzip</code>指令压缩/解压缩文件，文件名最好为<code>*.tar.gz</code></li>

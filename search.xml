@@ -1,6 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>【笔记】Chmod 学习笔记</title>
+    <url>/2020/07/01/Chmod%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>chmod用于对文件的权限管理</p>
+<a id="more"></a>
+
+<h2 id="管理文件权限"><a href="#管理文件权限" class="headerlink" title="管理文件权限"></a>管理文件权限</h2><blockquote>
+<p><code>&lt;file&gt;</code>：文件路径</p>
+</blockquote>
+<blockquote>
+<p><code>&lt;attribution&gt;</code>：归属关系</p>
+<blockquote>
+<p><code>u</code>：属主<br><code>g</code>：属组<br><code>o</code>：其他</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p><code>&lt;authority_type&gt;</code> ：权限符号</p>
+<blockquote>
+<p><code>+</code>：提权<br><code>-</code>：降权<br><code>=</code>：权限赋值</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p><code>&lt;authority_value&gt;</code>：权限值</p>
+<blockquote>
+<p><code>r</code>：读权限（值为<code>4</code>）<br><code>w</code>：写权限（值为<code>2</code>）<br><code>x</code>：执行权限（值为<code>1</code>）</p>
+</blockquote>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">chmod &lt;attribution&gt;&lt;authority_type&gt;&lt;authority_value&gt; &lt;file&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="用数字表示权限值"><a href="#用数字表示权限值" class="headerlink" title="用数字表示权限值"></a>用数字表示权限值</h3><blockquote>
+<p><code>&lt;authority_value&gt;</code>：权限值</p>
+<blockquote>
+<p><code>7</code>：可读（4）可写（2）可执行（1）<br><code>6</code>：可读（4）可写（2）不可执行（0）<br><code>5</code>：可读（4）不可写（0）可执行（1）<br><code>4</code>：可读（4）不可写（0）不可执行（0）<br><code>3</code>：不可读（0）可写（2）可执行（1）<br><code>2</code>：不可读（0）可写（2）不可执行（0）<br><code>1</code>：不可读（0）不可写（0）可执行（1）<br><code>0</code>：不可读（0）不可写（0）不可执行（0）</p>
+</blockquote>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">chmod &lt;authority_value&gt; &lt;file&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="管理目录权限"><a href="#管理目录权限" class="headerlink" title="管理目录权限"></a>管理目录权限</h3><blockquote>
+<p><code>-r</code>：递归操作</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">chmod -r &lt;authority_value&gt; &lt;file&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+  </entry>
+  <entry>
     <title>【笔记】SSH远程登录</title>
     <url>/2020/07/01/SSH%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>ssh远程连接到其他主机的终端</p>

@@ -1,6 +1,150 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>【笔记】SSH远程登录</title>
+    <url>/2020/07/01/SSH%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>ssh远程连接到其他主机的终端</p>
+<a id="more"></a>
+
+<h2 id="远程连接"><a href="#远程连接" class="headerlink" title="远程连接"></a>远程连接</h2><blockquote>
+<p><code>&lt;host_name&gt;</code>：主机名或主机IP地址</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">ssh &lt;host_name&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="指定身份远程连接"><a href="#指定身份远程连接" class="headerlink" title="指定身份远程连接"></a>指定身份远程连接</h3><blockquote>
+<p><code>&lt;user_name&gt;</code>：用户名</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">ssh &lt;user_name&gt;@&lt;host_name&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="x11转发"><a href="#x11转发" class="headerlink" title="x11转发"></a>x11转发</h3><ul>
+<li>将远程连接的主机的包含界面的程序显示在本机</li>
+</ul>
+<h4 id="允许x11转发"><a href="#允许x11转发" class="headerlink" title="允许x11转发"></a>允许x11转发</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">ssh -X &lt;host_name&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="禁止x11转发"><a href="#禁止x11转发" class="headerlink" title="禁止x11转发"></a>禁止x11转发</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">ssh -x &lt;host_name&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://blog.csdn.net/qq78442761/article/details/83898442" target="_blank" rel="noopener">CSDN——IT1995</a></p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【笔记】Virtual Machine 学习笔记</title>
+    <url>/2020/06/30/VirtualMachine%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>rht-vmctl主要是用于管理红帽培训中使用到的KVM虚拟机,该工具是红帽公司出的。（<a href="https://www.linuxcool.com/rht-vmctl" target="_blank" rel="noopener">Linux命令大全</a>）</p>
+<a id="more"></a>
+
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><ul>
+<li>在Redhat系列Linux下使用yum命令安装</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">yum install virt*</span><br></pre></td></tr></table></figure>
+
+<h2 id="在内虚拟机安装系统"><a href="#在内虚拟机安装系统" class="headerlink" title="在内虚拟机安装系统"></a>在内虚拟机安装系统</h2><h3 id="启动管理器"><a href="#启动管理器" class="headerlink" title="启动管理器"></a>启动管理器</h3><ul>
+<li><code>应用程序（Applications）</code>-&gt;<code>系统工具（System Tools）</code>-&gt;<code>虚拟系统管理器（Virtual Machine Manager）</code></li>
+</ul>
+<p><img src="/images/20200630213855/01.png" alt="01.png"></p>
+<h3 id="安装新系统"><a href="#安装新系统" class="headerlink" title="安装新系统"></a>安装新系统</h3><ul>
+<li>左上角图标<code>新建</code></li>
+</ul>
+<p><img src="/images/20200630213855/02.png" alt="02.png"></p>
+<ul>
+<li><code>前进</code></li>
+</ul>
+<p><img src="/images/20200630213855/03.png" alt="03.png"></p>
+<ul>
+<li><code>浏览</code>-&gt;<code>本地浏览</code>-&gt;选择<code>.iso</code>映像文件-&gt;<code>打开</code>-&gt;<code>前进</code>-&gt;<code>是</code></li>
+</ul>
+<p><img src="/images/20200630213855/04.png" alt="04.png"></p>
+<ul>
+<li>设置内存-&gt;设置CPU-&gt;前进</li>
+</ul>
+<p><img src="/images/20200630213855/05.png" alt="05.png"></p>
+<ul>
+<li>设置<code>为虚拟机创建磁盘镜像</code></li>
+</ul>
+<p><img src="/images/20200630213855/06.png" alt="06.png"></p>
+<ul>
+<li>修改名称-&gt;<code>完成</code></li>
+</ul>
+<p><img src="/images/20200630213855/07.png" alt="07.png"></p>
+<ul>
+<li>进入到Linux安装过程</li>
+</ul>
+<p><a href="/2019/12/10/安装CentOSLinux系统/">传送门</a></p>
+<h2 id="管理"><a href="#管理" class="headerlink" title="管理"></a>管理</h2><h3 id="打开虚拟机"><a href="#打开虚拟机" class="headerlink" title="打开虚拟机"></a>打开虚拟机</h3><blockquote>
+<p><code>&lt;name&gt;</code>：虚拟机主机名</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">rht-vmctl start &lt;name&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="显示虚拟机"><a href="#显示虚拟机" class="headerlink" title="显示虚拟机"></a>显示虚拟机</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">rht-vmctl view &lt;name&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="关闭虚拟机"><a href="#关闭虚拟机" class="headerlink" title="关闭虚拟机"></a>关闭虚拟机</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">rht-vmctl poweroff &lt;name&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="重置虚拟机"><a href="#重置虚拟机" class="headerlink" title="重置虚拟机"></a>重置虚拟机</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">rht-vmctl reset &lt;name&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://www.youtube.com/watch?v=iAfsW2ychkM" target="_blank" rel="noopener">YouToBe——Android and Tech Solutions</a><br><a href="https://www.linuxcool.com/rht-vmctl" target="_blank" rel="noopener">Linux命令大全（手册）</a></p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【踩坑】Terminal报错：/var/run/yum.pid已被锁定</title>
+    <url>/2020/06/30/Terminal%E6%8A%A5%E9%94%99%EF%BC%9A-var-run-yum-pid%E5%B7%B2%E8%A2%AB%E9%94%81%E5%AE%9A/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Terminal报错：<code>/var/run/yum.pid 已被锁定，PID 为 11485 的另一个程序正在运行。</code></p>
+<a id="more"></a>
+
+<h2 id="解决问题"><a href="#解决问题" class="headerlink" title="解决问题"></a>解决问题</h2><h3 id="强制结束yum进程"><a href="#强制结束yum进程" class="headerlink" title="强制结束yum进程"></a>强制结束yum进程</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">rm -f /var/run/yum.pid</span><br></pre></td></tr></table></figure>
+
+<h3 id="等待一段时间后报错可能会自行消失"><a href="#等待一段时间后报错可能会自行消失" class="headerlink" title="等待一段时间后报错可能会自行消失"></a>等待一段时间后报错可能会自行消失</h3><h3 id="重启系统"><a href="#重启系统" class="headerlink" title="重启系统"></a>重启系统</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">reboot</span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://zhaokaifeng.com/?p=1654" target="_blank" rel="noopener">荒原之梦的博客</a></p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【笔记】计划任务学习笔记</title>
+    <url>/2020/06/30/%E8%AE%A1%E5%88%92%E4%BB%BB%E5%8A%A1%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Linux计划任务学习笔记</p>
+<a id="more"></a>
+
+<h2 id="日志文件位置"><a href="#日志文件位置" class="headerlink" title="日志文件位置"></a>日志文件位置</h2><ul>
+<li><code>/var/log/crond</code></li>
+</ul>
+<h2 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h2><h3 id="编辑"><a href="#编辑" class="headerlink" title="编辑"></a>编辑</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">crontab -e</span><br></pre></td></tr></table></figure>
+
+<h4 id="编写任务"><a href="#编写任务" class="headerlink" title="编写任务"></a>编写任务</h4><ul>
+<li>连续的多个日期，用<code>-</code>连接</li>
+<li>不连续的多个日期，用<code>,</code>隔开</li>
+<li>当前日期的全部值，用<code>*</code>表示</li>
+<li>日期频率（每<code>&lt;minute&gt;</code>分钟执行一次），用<code>*/&lt;num&gt;</code>表示</li>
+</ul>
+<blockquote>
+<p><code>&lt;minute&gt;</code>：分钟数。0~59的整数<br><code>&lt;hour&gt;</code>：小时（24小时制）。0~23的整数<br><code>&lt;day&gt;</code>：天。1~31的整数<br><code>&lt;month&gt;</code>：月。1~12的整数<br><code>&lt;week&gt;</code>：星期。0~7的整数（<code>0</code>和<code>7</code>都表示星期日）<br><code>&lt;script&gt;</code>：需要执行的脚本路径</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">&lt;minute&gt; &lt;hour&gt; &lt;day&gt; &lt;month&gt; &lt;week&gt; &lt;script&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="查看"><a href="#查看" class="headerlink" title="查看"></a>查看</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">crontab -l</span><br></pre></td></tr></table></figure>
+
+<h3 id="清除"><a href="#清除" class="headerlink" title="清除"></a>清除</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">crontab -r</span><br></pre></td></tr></table></figure>
+
+<h3 id="指定用户"><a href="#指定用户" class="headerlink" title="指定用户"></a>指定用户</h3><ul>
+<li>如果不指定用户，默认为当前用户</li>
+</ul>
+<blockquote>
+<p><code>&lt;user&gt;</code>：用户名</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">crontab -u &lt;user&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+  </entry>
+  <entry>
     <title>【笔记】Fastboot学习笔记</title>
     <url>/2020/06/28/Fastboot%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>快速启动（英语：Fastboot）是一个诊断协议，主要用于由一台计算机通过USB连接Android智能手机，修改其闪存文件系统。它是Android Debug Bridge库的一部分。（<a href="https://zh.wikipedia.org/wiki/快速启动" target="_blank" rel="noopener">维基百科</a>）</p>
@@ -429,6 +573,44 @@
 </blockquote>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">ls -l &lt;file&gt;</span><br></pre></td></tr></table></figure>
 
+<table>
+<thead>
+<tr>
+<th></th>
+<th>类型</th>
+<th>属主（所有者）</th>
+<th>属组（所属组）</th>
+<th>其他用户</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>目录</td>
+<td>d</td>
+<td>rwx</td>
+<td>rwx</td>
+<td>rwx</td>
+</tr>
+<tr>
+<td>文件</td>
+<td>-</td>
+<td>rwx</td>
+<td>rwx</td>
+<td>rwx</td>
+</tr>
+<tr>
+<td>软链接</td>
+<td>l</td>
+<td>rwx</td>
+<td>rwx</td>
+<td>rwx</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>权限大小</p>
+<blockquote>
+<p><code>r</code>：读权限，值为<code>4</code><br><code>w</code>：写权限，值为<code>2</code><br><code>x</code>：执行权限，值为<code>1</code><br><code>-</code>：无权限</p>
+</blockquote>
+</blockquote>
 <h3 id="查看当前目录本身的详细信息"><a href="#查看当前目录本身的详细信息" class="headerlink" title="查看当前目录本身的详细信息"></a>查看当前目录本身的详细信息</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">ls -dl</span><br></pre></td></tr></table></figure>
 
 <h2 id="查看包括容量单位"><a href="#查看包括容量单位" class="headerlink" title="查看包括容量单位"></a>查看包括容量单位</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">ls -h</span><br><span class="line">ls -h &lt;file&gt;</span><br></pre></td></tr></table></figure>
@@ -18271,9 +18453,10 @@
 </blockquote>
 <ul>
 <li>指定备份文件</li>
+<li>必须放在所有选项之后，因为这个选项后面要加参数</li>
 </ul>
 <blockquote>
-<p><code>-f</code><br><code>--file</code></p>
+<p><code>-f &lt;file&gt;</code><br><code>--file &lt;file&gt;</code></p>
 </blockquote>
 <ul>
 <li>显示归档中的文件清单</li>
@@ -18285,7 +18468,7 @@
 <li>指定解压路径</li>
 </ul>
 <blockquote>
-<p><code>-C</code></p>
+<p><code>-C &lt;file&gt;</code></p>
 </blockquote>
 <ul>
 <li>通过<code>gzip</code>指令压缩/解压缩文件，文件名最好为<code>*.tar.gz</code></li>
@@ -18359,7 +18542,12 @@
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tar -xZvf &lt;file_name&gt;.tar.Z</span><br></pre></td></tr></table></figure>
 
 <h4 id="tar-xz"><a href="#tar-xz" class="headerlink" title=".tar.xz"></a>.tar.xz</h4><ul>
-<li>压缩文件为<code>.tar.xz</code></li>
+<li>压缩文件为<code>.tar.xz</code>（一步压缩）</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tar -cJvf &lt;new_file_name&gt;.tar.xz &lt;file_name&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>压缩文件为<code>.tar.xz</code>（两步压缩）</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tar -cvf &lt;new_file_name&gt;.tar &lt;file_name&gt;</span><br><span class="line">xz -z &lt;new_file_name&gt;.tar</span><br></pre></td></tr></table></figure>
 

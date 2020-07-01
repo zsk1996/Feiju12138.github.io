@@ -3,7 +3,7 @@ title: 【笔记】Adb 环境变量（MacOS篇）
 date: 2019-12-23 17:00:05
 tags:
 categories:
-- Android
+- Android Play Machine
 ---
 
 ## 前言

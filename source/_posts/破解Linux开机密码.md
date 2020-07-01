@@ -1,5 +1,5 @@
 ---
-title: 【笔记】破解Linux开机密码
+title: 【骚操作】破解Linux开机密码
 categories:
   - Linux
 date: 2020-06-09 16:33:17

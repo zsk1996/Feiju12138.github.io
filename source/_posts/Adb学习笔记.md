@@ -3,7 +3,7 @@ title: 【笔记】Adb 学习笔记
 date: 2019-12-22 21:02:57
 tags:
 categories:
-- Android
+- Android Play Machine
 ---
 
 ## 前言
@@ -470,7 +470,37 @@ adb shell cat /system/build.prop
 adb shell getprop <property>
 ```
 
-## 修改设置
+## 刷机命令
+
+### 进入Recovery模式
+
+- 手机重启到卡刷模式
+
+``` sh
+adb reboot recovery
+```
+
+### 进入Bootloader模式
+
+- 手机重启到线刷模式
+
+``` sh
+adb reboot bootloader
+```
+
+### 进入9008刷机模式
+
+- 手机重启到9008刷机模式，仅限高通部分机型，慎用
+
+``` sh
+adb reboot edl
+```
+
+### 等待设备
+
+``` sh
+adb wait-for-device
+```
 
 ## 参考文献
 

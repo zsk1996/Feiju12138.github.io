@@ -16,229 +16,148 @@ Linux 操作系统最基本命令，其他高级命令将陆续更新在其他�
 
 ### 显示日期
 
-``` bash
-$ date
+``` sh
+date
 ```
 
 ### 输出语句
 
-``` bash
-$ echo
+``` sh
+echo
 ```
 
 ### 静态查看进程
 
-``` bash
-$ ps aux
+``` sh
+ps aux
 ```
 
 ### 动态查看进程
 
-``` bash
-$ top
+``` sh
+top
 ```
 
 ### 查看进程编号
 
-``` bash
-$ pidof xxx
+``` sh
+pidof xxx
 ```
 
 ### 结束进程
 
-``` bash
-$ kill xxx
+``` sh
+kill xxx
 ```
 
 ### 结束所有进程
 
-``` bash
-$ killall xx
+``` sh
+killall xx
 ```
 
-### 查询版本信息
+### 查看系统信息
 
-``` bash
-$ uname -a
-```
+- [传送门](/2020/06/20/查看系统信息/)
 
 ### top 命令第一行
 
-``` bash
-$ uptime
+``` sh
+uptime
 ```
 
 ### 查看系统内存信息
 
-``` bash
-$ free
+``` sh
+free
 ```
 
 #### 自动单位
 
-``` bash
-$ free -h
+``` sh
+free -h
 ```
 
 #### 以MB为单位
 
-``` bash
-$ free -m
+``` sh
+free -m
 ```
 
 #### 以GB为单位
 
-```
-$ free -g
+``` sh
+free -g
 ```
 
 ### 查看当前用户的登录信息
 
-``` bash
-$ who
+``` sh
+who
 ```
 
 ### 查看当前系统的登录记录
 
-``` bash
-$ last
+``` sh
+last
 ```
 
 ### 命令行历史记录
 
-``` bash
-$ history
+- [history相关命令](/2020/06/20/命令行历史记录/)
 
-```
+### 收集重要的相关信息（排错）
 
-#### 清空命令行历史
-
-``` bash
-$ history -c
-```
-
-#### 重复历史记录中的命令
-
-``` bash
-$ !xxx
-```
-
-### 收集重要的相关信息（排错） 
-
-``` bash
-$ sosreport
+``` sh
+sosreport
 ```
 
 ### 查看当前目录
 
-``` bash
-$ pwd
+``` sh
+pwd
 ```
 
 ### 切换目录
 
-``` bash
-$ cd /xxx
-```
+- [cd相关命令](/2020/06/20/命令行切换目录/)
 
-#### 切换到主目录
+### 查看文件信息
 
-``` bash
-$ cd ~
-```
+- [ls相关命令](/2020/06/20/命令行查看文件信息/)
 
-#### 返回上一次目录
+### 文档操作
 
-``` bash
-$ cd -
-```
+- [cat相关命令](/2020/02/07/文档操作/)
 
-#### 返回上一级目录
+#### 显示文件行数
 
-``` bash
-$ cd ..
-```
-
-### 查看当前目录所有文件
-
-``` bash
-$ ls
-```
-
-#### 显示详细信息
-
-``` bash
-$ ls -l
-```
-
-#### 显示隐藏文件
-
-``` bash
-$ ls -a
-```
-
-### 查看文件内容
-
-``` bash
-$ cat xxx
-```
-
-### 查看长文件内容
-
-``` bash
-$ more xxx
-```
-
-- 备注
-
-回车换行，空格翻页
-
-#### 查看文件前十行内容
-
-``` bash
-$ head -n 10 xxx
-```
-
-#### 查看文件后十行内容
-
-``` bash
-$ tail -n 10 xxx
-```
-
-#### 查看实时更新的文件内容
-
-``` bash
-$ tail -f xxx
-```
-
-#### 显示文件行数 
-
-``` bash
-$ wc -l xxx
+``` sh
+wc -l xxx
 ```
 
 #### 显示文件字节数
 
-``` bash
-$ wc -c xxx
+``` sh
+wc -c xxx
 ```
 
 #### 显示文件单词数量
 
-``` bash
-$ wc -w xxx
+``` sh
+wc -w xxx
 ```
 
 ### 查看文件的时间
 
-``` bash
-$ stat xxx
+``` sh
+stat xxx
 ```
 
 ### 按列提取文件内容
 
-``` bash
-$ cut -d : -f 1 xxx
+``` sh
+cut -d : -f 1 xxx
 ```
 
 - 备注
@@ -247,112 +166,90 @@ $ cut -d : -f 1 xxx
 
 ### 判断两个文件是否相同
 
-``` bash
-$ diff --brief xxx1 xxx2
+``` sh
+diff --brief xxx1 xxx2
 ```
 
 #### 判断两个文件具体哪处不同
 
-``` bash
-$ diff -c xxx1 xxx2
+``` sh
+diff -c xxx1 xxx2
 ```
 
 ### 新建一个文本文件
 
-``` bash
-$ touch xxx
+``` sh
+touch xxx
 ```
 
 #### 修改文件的最后修改时间
 
-``` bash
-$ touch -d "13:14" xxx
+- 将文件修改时间改为"13:14"
+
+``` sh
+touch -d "13:14" xxx
 ```
 
-- 备注
+### 新建目录
 
-将时间修改为"13:14"
+- [mkdir相关命令](/2020/06/20/命令行新建目录/)
 
-### 新建一个文件目录
+### 文件复制、移动、重命名
 
-``` bash
-$ mkdir xxx
-```
+- [cp、mv相关命令](/2020/06/20/命令行复制移动重命名文件/)
 
-#### 新建一个有层次关系的目录
+### 文件删除
 
-``` bash
-$ mkdir -p xxx1/xxx2/xxx3
-```
-
-### 复制文件
-
-``` bash
-$ cp /SomeWhere1/xxx /SomeWhere2/xxx
-```
-
-#### 复制目录
-
-``` bash
-$ cp -r xxx1/ xxx2/
-```
-
-### 剪切文件
-
-``` bash
-$ mv /SomeWhere1/xxx /SomeWhere2/xxx2
-```
-
-#### 重命名文件
-
-``` bash
-$ mv xxx1 xxx2
-```
-
-### 删除文件
-
-``` bash
-$ rm xxx
-```
-
-#### 强制删除文件
-
-``` bash
-$ rm -f xxx
-```
-
-#### 删除目录
-
-``` bash
-$ rm -r xxx/
-```
+- [rm相关命令](/2020/06/20/命令行文件删除/)
 
 ### 显示文件的类型
 
-``` bash
-$ file xxx
+``` sh
+file xxx
 ```
 
 ### 查看命令的位置
 
-``` bash
-$ whereis xxx
+``` sh
+whereis xxx
 ```
 
 ### 查看主机名
 
 ``` sh
-$ hostname
+hostname
 ```
 
 #### 修改主机名
 
-- 在终端临时修改
+##### 临时修改
 
 > `<name>`：修改后的主机名
 
 ``` sh
-$ hostname <name>
+hostname <name>
+```
+
+##### 永久修改
+
+``` sh
+nmtui
+```
+
+### 查看cpu
+
+``` sh
+lscpu
+```
+
+### 关闭系统
+
+- [传送门](/2020/06/16/Poweroff学习笔记/)
+
+### 重启系统
+
+``` sh
+reboot
 ```
 
 ## 参考文献

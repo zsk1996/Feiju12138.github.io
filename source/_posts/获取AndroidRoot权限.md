@@ -3,7 +3,7 @@ title: 【笔记】获取 Android Root 权限
 date: 2019-12-18 20:46:07
 tags:
 categories:
-- 刷机
+- Android Play Machine
 ---
 
 ## 前言

@@ -1,7 +1,7 @@
 ---
 title: 【笔记】刷入 EdXposed
 categories:
-  - 刷机
+  - Android Play Machine
 date: 2020-03-12 15:58:16
 ---
 

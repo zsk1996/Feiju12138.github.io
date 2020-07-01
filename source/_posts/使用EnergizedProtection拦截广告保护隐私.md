@@ -1,5 +1,7 @@
 ---
 title: 【骚操作】使用 Energized Protection 拦截广告保护隐私
+categories:
+  - Android Play Machine
 date: 2019-11-23 20:11:25
 tags:
 ---

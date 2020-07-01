@@ -7,7 +7,7 @@ date: 2020-01-31 00:53:29
 
 ## 前言
 
-更换`CentOS Linux`更新源，系统版本`8`
+更换`CentOS Linux`更新源，系统版本`7`
 
 <!-- more -->
 
@@ -19,15 +19,17 @@ date: 2020-01-31 00:53:29
 mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup
 ```
 
-- 下载`ailiyun`的yum源配置文件
+- 下载`网易`的yum源配置文件
 
 ``` sh
-wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-8.repo
+cd /etc/yum.repos.d/
+wget http://mirrors.163.com/.help/CentOS7-Base-163.repo
 ```
 
 - 生成缓存
 
 ``` sh
+yum clean all
 yum makecache
 ```
 

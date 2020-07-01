@@ -3,7 +3,7 @@ title: 【笔记】刷入 LineageOS Android 系统
 date: 2019-11-21 18:49:16
 tags:
 categories:
-- 刷机
+- Android Play Machine
 ---
 
 ## 前言

@@ -3,7 +3,7 @@ title: 【笔记】刷入 MIUI Android 系统
 date: 2019-12-22 19:30:24
 tags:
 categories:
-- 刷机
+- Android Play Machine
 ---
 
 ## 前言

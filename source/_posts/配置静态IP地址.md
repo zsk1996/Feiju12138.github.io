@@ -1,7 +1,7 @@
 ---
 title: 【笔记】配置静态IP地址
 categories:
-  - Linux
+  - 云计算
 date: 2020-06-11 16:45:20
 ---
 
@@ -14,7 +14,7 @@ date: 2020-06-11 16:45:20
 ## 编辑网卡配置
 
 ``` sh
-vim /etc/sysconfig/network-script/ifcfg-ens33
+vim /etc/sysconfig/network-scripts/ifcfg-ens33
 ```
 
 ## 修改网卡配置

@@ -3,7 +3,7 @@ title: 【笔记】刷入 Flyme Android 系统
 date: 2019-11-20 20:36:32
 tags:
 categories:
-- 刷机
+- Android Play Machine
 ---
 
 ## 前言

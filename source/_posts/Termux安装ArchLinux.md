@@ -1,7 +1,7 @@
 ---
 title: 【笔记】Termux 安装 Arch Linux
 categories:
-  - 刷机
+  - Android Play Machine
 date: 2020-02-11 00:10:37
 ---
 

@@ -3,7 +3,7 @@ title: 【笔记】多重引导刷入 Android 双系统
 date: 2019-12-22 19:55:17
 tags:
 categories:
-- 刷机
+- Android Play Machine
 ---
 
 ## 前言

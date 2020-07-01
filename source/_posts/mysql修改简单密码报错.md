@@ -56,6 +56,7 @@ mysql> SHOW VARIABLES LIKE 'validate_password%';
 
 ``` bash
 mysql> SET PASSWORD FOR 'root'@'localhost' = PASSWORD('123456');
+mysql> ALTER USER 'root'@'localhost' IDENTIFIED BY '123456';
 ```
 
 ## 完成

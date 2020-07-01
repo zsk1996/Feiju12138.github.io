@@ -64,7 +64,7 @@ hdiutil convert skill.dmg -format UDTO -o skill.iso
 
 ## 格式转换为".img"
 
-- 参见[CDR格式 转换 ISO格式](https://feiju12138.github.io/2019/11/09/CDR格式-转换-ISO格式/#格式转换)
+- 参见[CDR格式 转换 ISO格式](/2019/11/09/CDR格式转换ISO格式/)
 
 ## 完成
 

@@ -1,7 +1,7 @@
 ---
 title: 【笔记】Java安装笔记
 categories:
-  - Linux
+  - 云计算
 date: 2020-04-26 21:14:16
 ---
 

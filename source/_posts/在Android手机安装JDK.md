@@ -1,7 +1,7 @@
 ---
 title: 【笔记】在 Android 手机安装 JDK
 categories:
-  - 刷机
+  - Android Play Machine
 date: 2020-02-10 00:51:25
 ---
 

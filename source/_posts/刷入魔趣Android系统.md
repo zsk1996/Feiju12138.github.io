@@ -3,7 +3,7 @@ title: 【笔记】刷入 魔趣 Android 系统
 date: 2019-12-22 19:45:25
 tags:
 categories:
-- 刷机
+- Android Play Machine
 ---
 
 ## 前言

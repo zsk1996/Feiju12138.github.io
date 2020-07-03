@@ -19676,4 +19676,74 @@
         <category>HTML/CSS/JS</category>
       </categories>
   </entry>
+  <entry>
+    <title>【骚操作】Windows10家庭版开启Hyper-V</title>
+    <url>/2020/07/02/Windows10%E5%AE%B6%E5%BA%AD%E7%89%88%E5%BC%80%E5%90%AFHyper-V/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Microsoft Hyper-V, codenamed Viridian,[1] formerly known as Windows Server Virtualization, is a native hypervisor; it can create virtual machines on x86-64 systems running Windows.[2] Starting with Windows 8, Hyper-V superseded Windows Virtual PC as the hardware virtualization component of the client editions of Windows NT. A server computer running Hyper-V can be configured to expose individual virtual machines to one or more networks. Hyper-V was first released with Windows Server 2008, and has been available without additional charge since Windows Server 2012 and Windows 8. A standalone Windows Hyper-V Server is free, but with command line interface only.（<a href="https://en.wikipedia.org/wiki/Hyper-V" target="_blank" rel="noopener">维基百科</a>）</p>
+<a id="more"></a>
+
+<h2 id="制作脚本"><a href="#制作脚本" class="headerlink" title="制作脚本"></a>制作脚本</h2><ul>
+<li><p>新建<code>.cmd</code>为扩展名的文件</p>
+</li>
+<li><p>编辑内容</p>
+</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">pushd</span> <span class="string">"%~dp0"</span></span><br><span class="line"></span><br><span class="line">dir /b %SystemRoot%\servicing\Packages\*Hyper-V*.mum &gt;hyper-v.txt</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> /f %%i <span class="keyword">in</span> (<span class="string">'findstr /i . hyper-v.txt 2^&gt;nul'</span>) <span class="keyword">do</span> dism /online /norestart /add-package:<span class="string">"%SystemRoot%\servicing\Packages\%%i"</span></span><br><span class="line"></span><br><span class="line">del hyper-v.txt</span><br><span class="line"></span><br><span class="line">Dism /online /<span class="built_in">enable</span>-feature /featurename:Microsoft-Hyper-V-All /LimitAccess /ALL</span><br></pre></td></tr></table></figure>
+
+<h2 id="执行脚本"><a href="#执行脚本" class="headerlink" title="执行脚本"></a>执行脚本</h2><ul>
+<li>双击运行</li>
+</ul>
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
+      <categories>
+        <category>Windows</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【笔记】小数运算时的特殊值</title>
+    <url>/2020/07/03/%E5%B0%8F%E6%95%B0%E8%BF%90%E7%AE%97%E6%97%B6%E7%9A%84%E7%89%B9%E6%AE%8A%E5%80%BC/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>小数运算时的特殊值</p>
+<a id="more"></a>
+
+<h2 id="最大值"><a href="#最大值" class="headerlink" title="最大值"></a>最大值</h2><ul>
+<li>当<code>一个小数/0</code>时，得到<code>Infinity</code></li>
+</ul>
+<h2 id="不是一个数"><a href="#不是一个数" class="headerlink" title="不是一个数"></a>不是一个数</h2><ul>
+<li>当<code>0/0.0</code>时，得到<code>NaN</code></li>
+</ul>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ul>
+<li>其他数学问题，会直接报错</li>
+</ul>
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【笔记】运算规则</title>
+    <url>/2020/07/03/%E8%BF%90%E7%AE%97%E8%A7%84%E5%88%99/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Java运算规则的特殊要点</p>
+<a id="more"></a>
+
+<h2 id="要点一"><a href="#要点一" class="headerlink" title="要点一"></a>要点一</h2><ul>
+<li>计算结果的数据类型，与最大类型一致</li>
+</ul>
+<h2 id="要点二"><a href="#要点二" class="headerlink" title="要点二"></a>要点二</h2><ul>
+<li>byte,short,char三种比int小的整数，运算时会先自动转换成int</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">byte</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">byte</span> b = <span class="number">2</span>;</span><br><span class="line"><span class="keyword">byte</span> c = (<span class="keyword">byte</span>) (a + b);</span><br></pre></td></tr></table></figure>
+
+<h2 id="要点三"><a href="#要点三" class="headerlink" title="要点三"></a>要点三</h2><ul>
+<li>超出范围的运算,会出现溢出现象</li>
+</ul>
+<h2 id="要点四"><a href="#要点四" class="headerlink" title="要点四"></a>要点四</h2><ul>
+<li>java 对于小数运算时会产生不精确的现象</li>
+</ul>
+<h2 id="要点五"><a href="#要点五" class="headerlink" title="要点五"></a>要点五</h2><ul>
+<li><a href="/2020/07/03/小数运算时的特殊值/">小数运算时的特殊值</a></li>
+</ul>
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+  </entry>
 </search>

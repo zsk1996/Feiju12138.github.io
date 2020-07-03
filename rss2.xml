@@ -9,8 +9,59 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>捕捉一只爱折腾的绯鞠</description>
-    <pubDate>Thu, 02 Jul 2020 00:46:16 GMT</pubDate>
+    <pubDate>Fri, 03 Jul 2020 04:13:07 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>【笔记】运算规则</title>
+      <link>https://feiju12138.github.io/2020/07/03/%E8%BF%90%E7%AE%97%E8%A7%84%E5%88%99/</link>
+      <guid>https://feiju12138.github.io/2020/07/03/%E8%BF%90%E7%AE%97%E8%A7%84%E5%88%99/</guid>
+      <pubDate>Fri, 03 Jul 2020 04:07:54 GMT</pubDate>
+      <description>
+      
+        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;Java运算规则的特殊要点&lt;/p&gt;
+      
+      </description>
+      
+      
+      <content:encoded><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Java运算规则的特殊要点</p><a id="more"></a><h2 id="要点一"><a href="#要点一" class="headerlink" title="要点一"></a>要点一</h2><ul><li>计算结果的数据类型，与最大类型一致</li></ul><h2 id="要点二"><a href="#要点二" class="headerlink" title="要点二"></a>要点二</h2><ul><li>byte,short,char三种比int小的整数，运算时会先自动转换成int</li></ul><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">byte</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">byte</span> b = <span class="number">2</span>;</span><br><span class="line"><span class="keyword">byte</span> c = (<span class="keyword">byte</span>) (a + b);</span><br></pre></td></tr></table></figure><h2 id="要点三"><a href="#要点三" class="headerlink" title="要点三"></a>要点三</h2><ul><li>超出范围的运算,会出现溢出现象</li></ul><h2 id="要点四"><a href="#要点四" class="headerlink" title="要点四"></a>要点四</h2><ul><li>java 对于小数运算时会产生不精确的现象</li></ul><h2 id="要点五"><a href="#要点五" class="headerlink" title="要点五"></a>要点五</h2><ul><li><a href="/2020/07/03/小数运算时的特殊值/">小数运算时的特殊值</a></li></ul><h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content:encoded>
+      
+      <comments>https://feiju12138.github.io/2020/07/03/%E8%BF%90%E7%AE%97%E8%A7%84%E5%88%99/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>【笔记】小数运算时的特殊值</title>
+      <link>https://feiju12138.github.io/2020/07/03/%E5%B0%8F%E6%95%B0%E8%BF%90%E7%AE%97%E6%97%B6%E7%9A%84%E7%89%B9%E6%AE%8A%E5%80%BC/</link>
+      <guid>https://feiju12138.github.io/2020/07/03/%E5%B0%8F%E6%95%B0%E8%BF%90%E7%AE%97%E6%97%B6%E7%9A%84%E7%89%B9%E6%AE%8A%E5%80%BC/</guid>
+      <pubDate>Fri, 03 Jul 2020 03:48:13 GMT</pubDate>
+      <description>
+      
+        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;小数运算时的特殊值&lt;/p&gt;
+      
+      </description>
+      
+      
+      <content:encoded><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>小数运算时的特殊值</p><a id="more"></a><h2 id="最大值"><a href="#最大值" class="headerlink" title="最大值"></a>最大值</h2><ul><li>当<code>一个小数/0</code>时，得到<code>Infinity</code></li></ul><h2 id="不是一个数"><a href="#不是一个数" class="headerlink" title="不是一个数"></a>不是一个数</h2><ul><li>当<code>0/0.0</code>时，得到<code>NaN</code></li></ul><h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ul><li>其他数学问题，会直接报错</li></ul><h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content:encoded>
+      
+      <comments>https://feiju12138.github.io/2020/07/03/%E5%B0%8F%E6%95%B0%E8%BF%90%E7%AE%97%E6%97%B6%E7%9A%84%E7%89%B9%E6%AE%8A%E5%80%BC/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>【骚操作】Windows10家庭版开启Hyper-V</title>
+      <link>https://feiju12138.github.io/2020/07/02/Windows10%E5%AE%B6%E5%BA%AD%E7%89%88%E5%BC%80%E5%90%AFHyper-V/</link>
+      <guid>https://feiju12138.github.io/2020/07/02/Windows10%E5%AE%B6%E5%BA%AD%E7%89%88%E5%BC%80%E5%90%AFHyper-V/</guid>
+      <pubDate>Thu, 02 Jul 2020 01:04:30 GMT</pubDate>
+      <description>
+      
+        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;Microsoft Hyper-V, codenamed Viridian,[1] formerly known as Windows Server Virtualization, is a native hypervisor; it can create virtual machines on x86-64 systems running Windows.[2] Starting with Windows 8, Hyper-V superseded Windows Virtual PC as the hardware virtualization component of the client editions of Windows NT. A server computer running Hyper-V can be configured to expose individual virtual machines to one or more networks. Hyper-V was first released with Windows Server 2008, and has been available without additional charge since Windows Server 2012 and Windows 8. A standalone Windows Hyper-V Server is free, but with command line interface only.（&lt;a href=&quot;https://en.wikipedia.org/wiki/Hyper-V&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;维基百科&lt;/a&gt;）&lt;/p&gt;
+      
+      </description>
+      
+      
+      <content:encoded><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Microsoft Hyper-V, codenamed Viridian,[1] formerly known as Windows Server Virtualization, is a native hypervisor; it can create virtual machines on x86-64 systems running Windows.[2] Starting with Windows 8, Hyper-V superseded Windows Virtual PC as the hardware virtualization component of the client editions of Windows NT. A server computer running Hyper-V can be configured to expose individual virtual machines to one or more networks. Hyper-V was first released with Windows Server 2008, and has been available without additional charge since Windows Server 2012 and Windows 8. A standalone Windows Hyper-V Server is free, but with command line interface only.（<a href="https://en.wikipedia.org/wiki/Hyper-V" target="_blank" rel="noopener">维基百科</a>）</p><a id="more"></a><h2 id="制作脚本"><a href="#制作脚本" class="headerlink" title="制作脚本"></a>制作脚本</h2><ul><li><p>新建<code>.cmd</code>为扩展名的文件</p></li><li><p>编辑内容</p></li></ul><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">pushd</span> <span class="string">"%~dp0"</span></span><br><span class="line"></span><br><span class="line">dir /b %SystemRoot%\servicing\Packages\*Hyper-V*.mum &gt;hyper-v.txt</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> /f %%i <span class="keyword">in</span> (<span class="string">'findstr /i . hyper-v.txt 2^&gt;nul'</span>) <span class="keyword">do</span> dism /online /norestart /add-package:<span class="string">"%SystemRoot%\servicing\Packages\%%i"</span></span><br><span class="line"></span><br><span class="line">del hyper-v.txt</span><br><span class="line"></span><br><span class="line">Dism /online /<span class="built_in">enable</span>-feature /featurename:Microsoft-Hyper-V-All /LimitAccess /ALL</span><br></pre></td></tr></table></figure><h2 id="执行脚本"><a href="#执行脚本" class="headerlink" title="执行脚本"></a>执行脚本</h2><ul><li>双击运行</li></ul><h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content:encoded>
+      
+      <comments>https://feiju12138.github.io/2020/07/02/Windows10%E5%AE%B6%E5%BA%AD%E7%89%88%E5%BC%80%E5%90%AFHyper-V/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>【笔记】云计算知识点</title>
@@ -44,57 +95,6 @@
       <content:encoded><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>chmod用于对文件的权限管理</p><a id="more"></a><h2 id="管理文件权限"><a href="#管理文件权限" class="headerlink" title="管理文件权限"></a>管理文件权限</h2><blockquote><p><code>&lt;file&gt;</code>：文件路径</p></blockquote><blockquote><p><code>&lt;attribution&gt;</code>：归属关系</p><blockquote><p><code>u</code>：属主<br><code>g</code>：属组<br><code>o</code>：其他</p></blockquote></blockquote><blockquote><p><code>&lt;authority_type&gt;</code> ：权限符号</p><blockquote><p><code>+</code>：提权<br><code>-</code>：降权<br><code>=</code>：权限赋值</p></blockquote></blockquote><blockquote><p><code>&lt;authority_value&gt;</code>：权限值</p><blockquote><p><code>r</code>：读权限（值为<code>4</code>）<br><code>w</code>：写权限（值为<code>2</code>）<br><code>x</code>：执行权限（值为<code>1</code>）</p></blockquote></blockquote><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod &lt;attribution&gt;&lt;authority_type&gt;&lt;authority_value&gt; &lt;file&gt;</span><br></pre></td></tr></table></figure><h3 id="用数字表示权限值"><a href="#用数字表示权限值" class="headerlink" title="用数字表示权限值"></a>用数字表示权限值</h3><blockquote><p><code>&lt;authority_value&gt;</code>：权限值</p><blockquote><p><code>7</code>：可读（4）可写（2）可执行（1）<br><code>6</code>：可读（4）可写（2）不可执行（0）<br><code>5</code>：可读（4）不可写（0）可执行（1）<br><code>4</code>：可读（4）不可写（0）不可执行（0）<br><code>3</code>：不可读（0）可写（2）可执行（1）<br><code>2</code>：不可读（0）可写（2）不可执行（0）<br><code>1</code>：不可读（0）不可写（0）可执行（1）<br><code>0</code>：不可读（0）不可写（0）不可执行（0）</p></blockquote></blockquote><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod &lt;authority_value&gt; &lt;file&gt;</span><br></pre></td></tr></table></figure><h3 id="管理目录权限"><a href="#管理目录权限" class="headerlink" title="管理目录权限"></a>管理目录权限</h3><blockquote><p><code>-r</code>：递归操作</p></blockquote><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod -r &lt;authority_value&gt; &lt;file&gt;</span><br></pre></td></tr></table></figure><h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content:encoded>
       
       <comments>https://feiju12138.github.io/2020/07/01/Chmod%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>【笔记】SSH远程登录</title>
-      <link>https://feiju12138.github.io/2020/07/01/SSH%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95/</link>
-      <guid>https://feiju12138.github.io/2020/07/01/SSH%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95/</guid>
-      <pubDate>Wed, 01 Jul 2020 09:32:47 GMT</pubDate>
-      <description>
-      
-        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;ssh远程连接到其他主机的终端&lt;/p&gt;
-      
-      </description>
-      
-      
-      <content:encoded><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>ssh远程连接到其他主机的终端</p><a id="more"></a><h2 id="远程连接"><a href="#远程连接" class="headerlink" title="远程连接"></a>远程连接</h2><blockquote><p><code>&lt;host_name&gt;</code>：主机名或主机IP地址</p></blockquote><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh &lt;host_name&gt;</span><br></pre></td></tr></table></figure><h3 id="指定身份远程连接"><a href="#指定身份远程连接" class="headerlink" title="指定身份远程连接"></a>指定身份远程连接</h3><blockquote><p><code>&lt;user_name&gt;</code>：用户名</p></blockquote><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh &lt;user_name&gt;@&lt;host_name&gt;</span><br></pre></td></tr></table></figure><h3 id="x11转发"><a href="#x11转发" class="headerlink" title="x11转发"></a>x11转发</h3><ul><li>将远程连接的主机的包含界面的程序显示在本机</li></ul><h4 id="允许x11转发"><a href="#允许x11转发" class="headerlink" title="允许x11转发"></a>允许x11转发</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -X &lt;host_name&gt;</span><br></pre></td></tr></table></figure><h4 id="禁止x11转发"><a href="#禁止x11转发" class="headerlink" title="禁止x11转发"></a>禁止x11转发</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -x &lt;host_name&gt;</span><br></pre></td></tr></table></figure><h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://blog.csdn.net/qq78442761/article/details/83898442" target="_blank" rel="noopener">CSDN——IT1995</a></p>]]></content:encoded>
-      
-      <comments>https://feiju12138.github.io/2020/07/01/SSH%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>【笔记】Virtual Machine 学习笔记</title>
-      <link>https://feiju12138.github.io/2020/06/30/VirtualMachine%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
-      <guid>https://feiju12138.github.io/2020/06/30/VirtualMachine%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
-      <pubDate>Tue, 30 Jun 2020 13:38:55 GMT</pubDate>
-      <description>
-      
-        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;rht-vmctl主要是用于管理红帽培训中使用到的KVM虚拟机,该工具是红帽公司出的。（&lt;a href=&quot;https://www.linuxcool.com/rht-vmctl&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Linux命令大全&lt;/a&gt;）&lt;/p&gt;
-      
-      </description>
-      
-      
-      <content:encoded><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>rht-vmctl主要是用于管理红帽培训中使用到的KVM虚拟机,该工具是红帽公司出的。（<a href="https://www.linuxcool.com/rht-vmctl" target="_blank" rel="noopener">Linux命令大全</a>）</p><a id="more"></a><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><ul><li>在Redhat系列Linux下使用yum命令安装</li></ul><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install virt*</span><br></pre></td></tr></table></figure><h2 id="在内虚拟机安装系统"><a href="#在内虚拟机安装系统" class="headerlink" title="在内虚拟机安装系统"></a>在内虚拟机安装系统</h2><h3 id="启动管理器"><a href="#启动管理器" class="headerlink" title="启动管理器"></a>启动管理器</h3><ul><li><code>应用程序（Applications）</code>-&gt;<code>系统工具（System Tools）</code>-&gt;<code>虚拟系统管理器（Virtual Machine Manager）</code></li></ul><p><img src="/images/20200630213855/01.png" alt="01.png"></p><h3 id="安装新系统"><a href="#安装新系统" class="headerlink" title="安装新系统"></a>安装新系统</h3><ul><li>左上角图标<code>新建</code></li></ul><p><img src="/images/20200630213855/02.png" alt="02.png"></p><ul><li><code>前进</code></li></ul><p><img src="/images/20200630213855/03.png" alt="03.png"></p><ul><li><code>浏览</code>-&gt;<code>本地浏览</code>-&gt;选择<code>.iso</code>映像文件-&gt;<code>打开</code>-&gt;<code>前进</code>-&gt;<code>是</code></li></ul><p><img src="/images/20200630213855/04.png" alt="04.png"></p><ul><li>设置内存-&gt;设置CPU-&gt;前进</li></ul><p><img src="/images/20200630213855/05.png" alt="05.png"></p><ul><li>设置<code>为虚拟机创建磁盘镜像</code></li></ul><p><img src="/images/20200630213855/06.png" alt="06.png"></p><ul><li>修改名称-&gt;<code>完成</code></li></ul><p><img src="/images/20200630213855/07.png" alt="07.png"></p><ul><li>进入到Linux安装过程</li></ul><p><a href="/2019/12/10/安装CentOSLinux系统/">传送门</a></p><h2 id="管理"><a href="#管理" class="headerlink" title="管理"></a>管理</h2><h3 id="打开虚拟机"><a href="#打开虚拟机" class="headerlink" title="打开虚拟机"></a>打开虚拟机</h3><blockquote><p><code>&lt;name&gt;</code>：虚拟机主机名</p></blockquote><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rht-vmctl start &lt;name&gt;</span><br></pre></td></tr></table></figure><h3 id="显示虚拟机"><a href="#显示虚拟机" class="headerlink" title="显示虚拟机"></a>显示虚拟机</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rht-vmctl view &lt;name&gt;</span><br></pre></td></tr></table></figure><h3 id="关闭虚拟机"><a href="#关闭虚拟机" class="headerlink" title="关闭虚拟机"></a>关闭虚拟机</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rht-vmctl poweroff &lt;name&gt;</span><br></pre></td></tr></table></figure><h3 id="重置虚拟机"><a href="#重置虚拟机" class="headerlink" title="重置虚拟机"></a>重置虚拟机</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rht-vmctl reset &lt;name&gt;</span><br></pre></td></tr></table></figure><h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://www.youtube.com/watch?v=iAfsW2ychkM" target="_blank" rel="noopener">YouToBe——Android and Tech Solutions</a><br><a href="https://www.linuxcool.com/rht-vmctl" target="_blank" rel="noopener">Linux命令大全（手册）</a></p>]]></content:encoded>
-      
-      <comments>https://feiju12138.github.io/2020/06/30/VirtualMachine%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>【踩坑】Terminal报错：/var/run/yum.pid已被锁定</title>
-      <link>https://feiju12138.github.io/2020/06/30/Terminal%E6%8A%A5%E9%94%99%EF%BC%9A-var-run-yum-pid%E5%B7%B2%E8%A2%AB%E9%94%81%E5%AE%9A/</link>
-      <guid>https://feiju12138.github.io/2020/06/30/Terminal%E6%8A%A5%E9%94%99%EF%BC%9A-var-run-yum-pid%E5%B7%B2%E8%A2%AB%E9%94%81%E5%AE%9A/</guid>
-      <pubDate>Tue, 30 Jun 2020 13:31:49 GMT</pubDate>
-      <description>
-      
-        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;Terminal报错：&lt;code&gt;/var/run/yum.pid 已被锁定，PID 为 11485 的另一个程序正在运行。&lt;/code&gt;&lt;/p&gt;
-      
-      </description>
-      
-      
-      <content:encoded><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Terminal报错：<code>/var/run/yum.pid 已被锁定，PID 为 11485 的另一个程序正在运行。</code></p><a id="more"></a><h2 id="解决问题"><a href="#解决问题" class="headerlink" title="解决问题"></a>解决问题</h2><h3 id="强制结束yum进程"><a href="#强制结束yum进程" class="headerlink" title="强制结束yum进程"></a>强制结束yum进程</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm -f /var/run/yum.pid</span><br></pre></td></tr></table></figure><h3 id="等待一段时间后报错可能会自行消失"><a href="#等待一段时间后报错可能会自行消失" class="headerlink" title="等待一段时间后报错可能会自行消失"></a>等待一段时间后报错可能会自行消失</h3><h3 id="重启系统"><a href="#重启系统" class="headerlink" title="重启系统"></a>重启系统</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reboot</span><br></pre></td></tr></table></figure><h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://zhaokaifeng.com/?p=1654" target="_blank" rel="noopener">荒原之梦的博客</a></p>]]></content:encoded>
-      
-      <comments>https://feiju12138.github.io/2020/06/30/Terminal%E6%8A%A5%E9%94%99%EF%BC%9A-var-run-yum-pid%E5%B7%B2%E8%A2%AB%E9%94%81%E5%AE%9A/#disqus_thread</comments>
     </item>
     
   </channel>

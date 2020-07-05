@@ -19823,4 +19823,122 @@
         <category>LeetCode</category>
       </categories>
   </entry>
+  <entry>
+    <title>【代码】验证回文串</title>
+    <url>/2020/07/04/%E9%AA%8C%E8%AF%81%E5%9B%9E%E6%96%87%E4%B8%B2/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>LeetCode答案，语言Java</p>
+<a id="more"></a>
+
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><ul>
+<li><a href="https://leetcode-cn.com/problems/valid-palindrome/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/valid-palindrome/</a></li>
+</ul>
+<h2 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isPalindrome</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 将字符全部转换为小写</span></span><br><span class="line">        s = s.toLowerCase();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 清除非小写字母和非数字</span></span><br><span class="line">        String str = <span class="keyword">new</span> String();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.length(); i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (s.charAt(i)&gt;=<span class="number">97</span> &amp;&amp; s.charAt(i)&lt;=<span class="number">122</span>) &#123;</span><br><span class="line">                str += s.charAt(i)+<span class="string">""</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (s.charAt(i)&gt;=<span class="number">48</span> &amp;&amp; s.charAt(i)&lt;=<span class="number">57</span>) &#123;</span><br><span class="line">                str += s.charAt(i)+<span class="string">""</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">            算法：判断是否为回文串</span></span><br><span class="line"><span class="comment">            做一个开关，开关默认打开，也就是默认是回文串</span></span><br><span class="line"><span class="comment">            只要循环中有一次判定为非回文，开关关闭</span></span><br><span class="line"><span class="comment">            当循环结束，仍然没有判定为非回文，则开关当前状态是开启（默认）</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        <span class="keyword">boolean</span> flag = <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; str.length()/<span class="number">2</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (!(str.charAt(i)+<span class="string">""</span>).equals(str.charAt(str.length()-(<span class="number">1</span>+i))+<span class="string">""</span>)) &#123;</span><br><span class="line">                flag = <span class="keyword">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> flag;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【笔记】Apple TV 降级</title>
+    <url>/2020/07/04/AppleTV%E9%99%8D%E7%BA%A7/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><code>Apple TV (3rd Generation)</code>降级系统</p>
+<a id="more"></a>
+
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
+<li><p><a href="http://updates-http.cdn-apple.com/2019/tvos/061-00124-44C62A96-A04F-4F25-8BC9-B3FF5293D347/AppleTV3,1_8.4.3_12H876_Restore.ipsw" target="_blank" rel="noopener">AppleTV3,1_8.4.3_12H876_Restore.ipsw</a></p>
+</li>
+<li><p><a href="http://updates-http.cdn-apple.com/2019/tvos/061-00127-20190924-FC366B34-EB36-4943-8A0E-0A24E7815D7C/AppleTV3,2_8.4.3_12H876_Restore.ipsw" target="_blank" rel="noopener">AppleTV3,2_8.4.3_12H876_Restore.ipsw</a></p>
+</li>
+</ul>
+<h2 id="降级"><a href="#降级" class="headerlink" title="降级"></a>降级</h2><ul>
+<li><p><code>Apple TV</code>连接电源，并用数据线与Mac电脑连接</p>
+</li>
+<li><p>在<code>Apple TV</code>管理页面，按住<code>option</code>键点击<code>恢复Apple TV</code>按钮</p>
+</li>
+<li><p>选择低版本固件文件</p>
+</li>
+</ul>
+<p><img src="/images/20200704213713/01.png" alt="01.png"></p>
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><p><img src="/images/20200704213713/02.png" alt="02.png"></p>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://kubadownload.com/news/downgrade-apple-tv-3/" target="_blank" rel="noopener">KubaDownload</a></p>
+]]></content>
+      <categories>
+        <category>Apple</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【笔记】SQLite学习笔记</title>
+    <url>/2020/07/05/SQLite%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>SQLite是遵守ACID的关系数据库管理系统，它包含在一个相对小的C程序库中。与许多其它数据库管理系统不同，SQLite不是一个客户端/服务器结构的数据库引擎，而是被集成在用户程序中。（<a href="https://zh.wikipedia.org/wiki/SQLite" target="_blank" rel="noopener">维基百科</a>）</p>
+<a id="more"></a>
+
+<h2 id="安装sqlite"><a href="#安装sqlite" class="headerlink" title="安装sqlite"></a>安装sqlite</h2><ul>
+<li>MacOS新版本预装sqlite，如果没有可以使用brew安装</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">brew install sqlite</span><br></pre></td></tr></table></figure>
+
+<h2 id="启动sqlite"><a href="#启动sqlite" class="headerlink" title="启动sqlite"></a>启动sqlite</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sqlite3</span><br></pre></td></tr></table></figure>
+
+<h2 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h2><h3 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h3><ul>
+<li>创建成功后会在命令行当前目录下生成<code>.db</code>文件</li>
+</ul>
+<blockquote>
+<p><code>&lt;database_name&gt;</code>：数据库名（不可以包含中文）</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sqlite3 &lt;database_name&gt;.db</span><br></pre></td></tr></table></figure>
+
+<h3 id="查看数据库"><a href="#查看数据库" class="headerlink" title="查看数据库"></a>查看数据库</h3><ul>
+<li>查看数据库存放位置</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.databases</span><br></pre></td></tr></table></figure>
+
+<h3 id="创建数据表"><a href="#创建数据表" class="headerlink" title="创建数据表"></a>创建数据表</h3><blockquote>
+<p><code>&lt;table_name&gt;</code>：数据表名<br><code>&lt;field_name&gt;</code>：字段名<br><code>&lt;type_of_data&gt;</code>：数据类型<br><code>&lt;length&gt;</code>：长度<br><code>&lt;constraint&gt;</code>：约束</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">CREATE TABLE &lt;table_name&gt;(&lt;field_name_1&gt; &lt;type_of_data&gt; &lt;constraint&gt;, &lt;field_name_2&gt; &lt;type_of_data&gt; &lt;constraint&gt;);</span><br></pre></td></tr></table></figure>
+
+<h4 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h4><blockquote>
+<p><code>NULL</code>：表示该值为NULL值。<br><code>INTEGER</code>：无符号整型值。<br><code>REAL</code>：浮点值。<br><code>TEXT</code>：文本字符串，存储使用的编码方式为UTF-8、UTF-16BE、UTF-16LE。<br><code>BLOB</code>：存储Blob数据，该类型数据和输入数据完全相同。</p>
+</blockquote>
+<blockquote>
+<p>布尔数据类型：</p>
+<blockquote>
+<p>SQLite并没有提供专门的布尔存储类型，取而代之的是存储整型1表示true，0表示false。</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>日期和时间数据类型：</p>
+<blockquote>
+<p>和布尔类型一样，SQLite也同样没有提供专门的日期时间存储类型，而是以TEXT、REAL和INTEGER类型分别不同的格式表示该类型</p>
+</blockquote>
+</blockquote>
+<h3 id="查看数据表"><a href="#查看数据表" class="headerlink" title="查看数据表"></a>查看数据表</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.tables</span><br></pre></td></tr></table></figure>
+
+<h3 id="删除数据表"><a href="#删除数据表" class="headerlink" title="删除数据表"></a>删除数据表</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">DROP TABLE &lt;table_name&gt;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="插入数据"><a href="#插入数据" class="headerlink" title="插入数据"></a>插入数据</h3><blockquote>
+<p><code>&lt;value&gt;</code>：数据值</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">INSERT INTO &lt;table_name&gt; VALUES (&lt;value_1&gt;, value_2);</span><br><span class="line">INSERT INTO (&lt;field_name_1&gt;, &lt;field_name_2&gt;) VALUES (&lt;value_1&gt;, &lt;value_2&gt;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="查看数据"><a href="#查看数据" class="headerlink" title="查看数据"></a>查看数据</h3><h4 id="查看所有字段的所有数据"><a href="#查看所有字段的所有数据" class="headerlink" title="查看所有字段的所有数据"></a>查看所有字段的所有数据</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">SELECT * FROM &lt;table_name&gt;;</span><br></pre></td></tr></table></figure>
+
+<h4 id="查看指定字段的所有数据"><a href="#查看指定字段的所有数据" class="headerlink" title="查看指定字段的所有数据"></a>查看指定字段的所有数据</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">SELECT &lt;field_name&gt; FROM &lt;table_name&gt;;</span><br></pre></td></tr></table></figure>
+
+<h4 id="查看指定的多个字段的所有数据"><a href="#查看指定的多个字段的所有数据" class="headerlink" title="查看指定的多个字段的所有数据"></a>查看指定的多个字段的所有数据</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">SELECT &lt;field_name_1&gt;,&lt;field_name_2&gt; FROM &lt;table_name&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="查看所有字段的指定数据"><a href="#查看所有字段的指定数据" class="headerlink" title="查看所有字段的指定数据"></a>查看所有字段的指定数据</h4><blockquote>
+<p><code>&lt;operator&gt;</code>：运算符</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">SELECT * FROM &lt;table_name&gt; WHERE &lt;field_name&gt;&lt;operator&gt;&lt;value&gt;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="删除数据"><a href="#删除数据" class="headerlink" title="删除数据"></a>删除数据</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">DELETE FROM &lt;table_name&gt; WHERE &lt;field_name&gt;&lt;operator&gt;&lt;value&gt;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><p>程序媛<br><a href="https://www.cnblogs.com/orangeform/archive/2012/02/22/2325258.html" target="_blank" rel="noopener">博客园——OrangeAdmin</a></p>
+]]></content>
+      <categories>
+        <category>Database</category>
+      </categories>
+  </entry>
 </search>

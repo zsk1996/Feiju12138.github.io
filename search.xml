@@ -20072,4 +20072,219 @@
         <category>Database</category>
       </categories>
   </entry>
+  <entry>
+    <title>【代码】二进制求和</title>
+    <url>/2020/07/06/%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%B1%82%E5%92%8C/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>LeetCode答案，语言Java</p>
+<a id="more"></a>
+
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><ul>
+<li><a href="https://leetcode-cn.com/problems/add-binary/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/add-binary/</a></li>
+</ul>
+<h2 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.math.BigInteger;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">addBinary</span><span class="params">(String a, String b)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 二进制转十进制</span></span><br><span class="line">        BigInteger bigInteger_a = <span class="keyword">new</span> BigInteger(<span class="keyword">new</span> BigInteger(a, <span class="number">2</span>).toString(<span class="number">10</span>));</span><br><span class="line">        BigInteger bigInteger_b = <span class="keyword">new</span> BigInteger(<span class="keyword">new</span> BigInteger(b, <span class="number">2</span>).toString(<span class="number">10</span>));</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 十进制计算求和</span></span><br><span class="line">        BigInteger bigInteger_sum = bigInteger_a.add(bigInteger_b);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 十进制转二进制</span></span><br><span class="line">        String str = bigInteger_sum.toString();</span><br><span class="line">        String sum = <span class="keyword">new</span> BigInteger(str, <span class="number">10</span>).toString(<span class="number">2</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> sum;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【笔记】BigInteger学习笔记</title>
+    <url>/2020/07/06/BigInteger%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>BigInteger学习笔记</p>
+<a id="more"></a>
+
+<h2 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h2><blockquote>
+<p><code>&lt;num&gt;</code>：任何类型的数字，如：<code>String</code>、<code>byte</code>、<code>short</code>、<code>int</code>、<code>long</code></p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">BigInteger bigInteger = <span class="keyword">new</span> BigInteger(&lt;num&gt;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="创建的同时进行进位转换"><a href="#创建的同时进行进位转换" class="headerlink" title="创建的同时进行进位转换"></a>创建的同时进行进位转换</h3><blockquote>
+<p><code>&lt;num&gt;</code>：String类型的数字<br><code>&lt;carry_old&gt;</code>：原数的进位数<br><code>&lt;carry_new&gt;</code>：改变后的进位数</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">String bigInteger = <span class="keyword">new</span> BigInteger(&lt;num&gt;, &lt;carry_old&gt;).toString(&lt;carry_new&gt;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="转换为其他基本类型的数字"><a href="#转换为其他基本类型的数字" class="headerlink" title="转换为其他基本类型的数字"></a>转换为其他基本类型的数字</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">bigInteger.byteValue()</span><br><span class="line">bigInteger.shortValue()</span><br><span class="line">bigInteger.intValue()</span><br><span class="line">bigInteger.longValue()</span><br><span class="line">bigInteger.floatValue()</span><br><span class="line">bigInteger.doubleValue()</span><br></pre></td></tr></table></figure>
+
+<h2 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h2><h3 id="返回当前大整数的绝对值"><a href="#返回当前大整数的绝对值" class="headerlink" title="返回当前大整数的绝对值"></a>返回当前大整数的绝对值</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">bigInteger.abs()</span><br></pre></td></tr></table></figure>
+
+<h3 id="返回当前大整数的相反数"><a href="#返回当前大整数的相反数" class="headerlink" title="返回当前大整数的相反数"></a>返回当前大整数的相反数</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">bigInteger.negate()</span><br></pre></td></tr></table></figure>
+
+<h3 id="返回两个大整数的和"><a href="#返回两个大整数的和" class="headerlink" title="返回两个大整数的和"></a>返回两个大整数的和</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">BigInteger bigInteger_1 = <span class="keyword">new</span> BigInteger(&lt;num&gt;);</span><br><span class="line">BigInteger bigInteger_2 = <span class="keyword">new</span> BigInteger(&lt;num&gt;);</span><br><span class="line">bigInteger_1.add(bigInteger_2);</span><br></pre></td></tr></table></figure>
+
+<h3 id="返回两个大整数的差"><a href="#返回两个大整数的差" class="headerlink" title="返回两个大整数的差"></a>返回两个大整数的差</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">BigInteger bigInteger_1 = <span class="keyword">new</span> BigInteger(&lt;num&gt;);</span><br><span class="line">BigInteger bigInteger_2 = <span class="keyword">new</span> BigInteger(&lt;num&gt;);</span><br><span class="line">bigInteger_1.subtract(bigInteger_2);</span><br></pre></td></tr></table></figure>
+
+<h3 id="返回两个大整数的积"><a href="#返回两个大整数的积" class="headerlink" title="返回两个大整数的积"></a>返回两个大整数的积</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">BigInteger bigInteger_1 = <span class="keyword">new</span> BigInteger(&lt;num&gt;);</span><br><span class="line">BigInteger bigInteger_2 = <span class="keyword">new</span> BigInteger(&lt;num&gt;);</span><br><span class="line">bigInteger_1.multiply(bigInteger_2);</span><br></pre></td></tr></table></figure>
+
+<h3 id="返回两个大整数的商"><a href="#返回两个大整数的商" class="headerlink" title="返回两个大整数的商"></a>返回两个大整数的商</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">BigInteger bigInteger_1 = <span class="keyword">new</span> BigInteger(&lt;num&gt;);</span><br><span class="line">BigInteger bigInteger_2 = <span class="keyword">new</span> BigInteger(&lt;num&gt;);</span><br><span class="line">bigInteger_1.divide(bigInteger_2);</span><br></pre></td></tr></table></figure>
+
+<h3 id="返回当前大整数的乘方"><a href="#返回当前大整数的乘方" class="headerlink" title="返回当前大整数的乘方"></a>返回当前大整数的乘方</h3><blockquote>
+<p><code>&lt;num&gt;</code>：指数</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">bigInteger.power(&lt;num&gt;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="返回当前大整数的模"><a href="#返回当前大整数的模" class="headerlink" title="返回当前大整数的模"></a>返回当前大整数的模</h3><blockquote>
+<p><code>&lt;num&gt;</code>：除数</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">bigInteger.remainder(&lt;num&gt;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="返回大整数的最大公约数"><a href="#返回大整数的最大公约数" class="headerlink" title="返回大整数的最大公约数"></a>返回大整数的最大公约数</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">BigInteger bigInteger_1 = <span class="keyword">new</span> BigInteger(&lt;num&gt;);</span><br><span class="line">BigInteger bigInteger_2 = <span class="keyword">new</span> BigInteger(&lt;num&gt;);</span><br><span class="line">bigInteger_1.gcd(bigInteger_2);</span><br></pre></td></tr></table></figure>
+
+<h3 id="返回两个大整数的最大者"><a href="#返回两个大整数的最大者" class="headerlink" title="返回两个大整数的最大者"></a>返回两个大整数的最大者</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">BigInteger bigInteger_1 = <span class="keyword">new</span> BigInteger(&lt;num&gt;);</span><br><span class="line">BigInteger bigInteger_2 = <span class="keyword">new</span> BigInteger(&lt;num&gt;);</span><br><span class="line">bigInteger_1.max(bigInteger_2);</span><br></pre></td></tr></table></figure>
+
+<h3 id="返回两个大整数的最小者"><a href="#返回两个大整数的最小者" class="headerlink" title="返回两个大整数的最小者"></a>返回两个大整数的最小者</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">BigInteger bigInteger_1 = <span class="keyword">new</span> BigInteger(&lt;num&gt;);</span><br><span class="line">BigInteger bigInteger_2 = <span class="keyword">new</span> BigInteger(&lt;num&gt;);</span><br><span class="line">bigInteger_1.min(bigInteger_2);</span><br></pre></td></tr></table></figure>
+
+<h3 id="将当前大整数转换成十进制的字符串形式"><a href="#将当前大整数转换成十进制的字符串形式" class="headerlink" title="将当前大整数转换成十进制的字符串形式"></a>将当前大整数转换成十进制的字符串形式</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">bigInteger.toString();</span><br></pre></td></tr></table></figure>
+
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://www.cnblogs.com/numen-fan/p/6500914.html" target="_blank" rel="noopener">博客园——小小范同学</a><br><a href="https://blog.csdn.net/jiangguangchao/article/details/101520017" target="_blank" rel="noopener">CSDN——大前端码农的自我修养</a></p>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【笔记】进制转换</title>
+    <url>/2020/07/06/%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>java各进制之间的转换</p>
+<a id="more"></a>
+
+<h2 id="10进制转换为特定进制"><a href="#10进制转换为特定进制" class="headerlink" title="10进制转换为特定进制"></a>10进制转换为特定进制</h2><blockquote>
+<p><code>&lt;num_old&gt;</code>：转换前的数字<br><code>&lt;num_new&gt;</code>：转换后的进制</p>
+</blockquote>
+<h3 id="10进制转换为2进制"><a href="#10进制转换为2进制" class="headerlink" title="10进制转换为2进制"></a>10进制转换为2进制</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">String &lt;num_new&gt; = Integer.toBinaryString(&lt;num_old&gt;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="10进制转换为8进制"><a href="#10进制转换为8进制" class="headerlink" title="10进制转换为8进制"></a>10进制转换为8进制</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">String &lt;num_new&gt; = Integer.toOctalString(&lt;num_old&gt;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="10进制转换为16进制"><a href="#10进制转换为16进制" class="headerlink" title="10进制转换为16进制"></a>10进制转换为16进制</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">String &lt;num_new&gt; = Integer.HexString(&lt;num_old&gt;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="10进制转换为任意进制"><a href="#10进制转换为任意进制" class="headerlink" title="10进制转换为任意进制"></a>10进制转换为任意进制</h2><blockquote>
+<p><code>&lt;hex&gt;</code>：进制数</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">String &lt;num_new&gt; = Integer.toString(&lt;num_old&gt;, &lt;hex&gt;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="任意进制转换为10进制"><a href="#任意进制转换为10进制" class="headerlink" title="任意进制转换为10进制"></a>任意进制转换为10进制</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Integer &lt;num_new&gt; = Integer.valueOf(<span class="string">"&lt;num_old&gt;"</span>, &lt;hex&gt;);</span><br><span class="line"><span class="keyword">int</span> &lt;num_new&gt; = Integer.parseInt(<span class="string">"&lt;num_old&gt;"</span>, &lt;hex&gt;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="大数的进制转换"><a href="#大数的进制转换" class="headerlink" title="大数的进制转换"></a>大数的进制转换</h2><ul>
+<li><a href="/2020/07/06/BigInteger学习笔记/#创建的同时进行进位转换">传送门</a></li>
+</ul>
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://www.cnblogs.com/clgmxxh/p/12203815.html" target="_blank" rel="noopener">博客园——黎明的星海</a></p>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【笔记】单元测试方法</title>
+    <url>/2020/07/06/%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>单元测试方法，用于测试某个功能的bug</p>
+<a id="more"></a>
+
+<h2 id="导包"><a href="#导包" class="headerlink" title="导包"></a>导包</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> org.junit.Test;</span><br></pre></td></tr></table></figure>
+
+<h2 id="单元测试方法"><a href="#单元测试方法" class="headerlink" title="单元测试方法"></a>单元测试方法</h2><blockquote>
+<p><code>&lt;method&gt;</code>：方法名</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> &lt;method&gt;() &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><ul>
+<li>选中方法名-&gt;右键-&gt;<code>Run As</code>-&gt;<code>JUnit Test</code></li>
+</ul>
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【踩坑】Android Studio 报错：platform &#39;android-29&#39; not found.</title>
+    <url>/2020/07/07/AndroidStudio%E6%8A%A5%E9%94%99%EF%BC%9Aplatform-android-29-not-found/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Android Studio 报错：<code>Module &#39;app&#39;: platform &#39;android-29&#39; not found.</code></p>
+<a id="more"></a>
+
+<h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><ul>
+<li>SDK版本选择有误</li>
+</ul>
+<h2 id="解决问题"><a href="#解决问题" class="headerlink" title="解决问题"></a>解决问题</h2><ul>
+<li><code>File</code>-&gt;<code>Project Structure</code>-&gt;<code>Modules</code>-&gt;<code>app</code>-&gt;修改<code>Compile Sdk Version</code>的值为已有的值</li>
+</ul>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://www.jianshu.com/p/2d70ebd6bf9c" target="_blank" rel="noopener">简书——Crazy贵子</a></p>
+]]></content>
+      <categories>
+        <category>Android</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【踩坑】Android Studio 报错 Unable to resolve ...</title>
+    <url>/2020/07/07/AndroidStudio%E6%8A%A5%E9%94%99Unable-to-resolve/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Android Studio 报错：<code>Unable to resolve dependency for &#39;:app@debugUnitTest/compileClasspath&#39;: Could not resolve androidx.constraintlayout:constraintlayout:1.1.3.</code></p>
+<a id="more"></a>
+
+<h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><ul>
+<li><code>Android Studio</code>版本太高，而<code>Gradle</code>为低版本</li>
+</ul>
+<h2 id="解决问题"><a href="#解决问题" class="headerlink" title="解决问题"></a>解决问题</h2><ul>
+<li>升级<code>Gradle</code></li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">brew upgrade gradle</span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://blog.csdn.net/LVXIANGAN/article/details/84860691" target="_blank" rel="noopener">CSDN——LVXIANGAN</a></p>
+]]></content>
+      <categories>
+        <category>Android</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【踩坑】Android Studio 报错 AAPT: error: style ...</title>
+    <url>/2020/07/07/AndroidStudio%E6%8A%A5%E9%94%99AAPT-error-style/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Android Studio 报错：<code>AAPT: error: style attribute &#39;android:attr/keyboardNavigationCluster&#39; not found.</code></p>
+<a id="more"></a>
+
+<h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><ul>
+<li>新版本<code>Gradle</code>和旧版本<code>SDK</code>不兼容导致的各种资源找不到</li>
+</ul>
+<h2 id="解决问题"><a href="#解决问题" class="headerlink" title="解决问题"></a>解决问题</h2><ul>
+<li>更换新版本SDK（或降低旧版本<code>Gradle</code>）</li>
+</ul>
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://blog.csdn.net/wangyongyao1989/article/details/81737286" target="_blank" rel="noopener">CSDN——Everbrilliant89</a></p>
+]]></content>
+      <categories>
+        <category>Android</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【笔记】Arrays学习笔记</title>
+    <url>/2020/07/07/Arrays%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Arrays工具类学习笔记</p>
+<a id="more"></a>
+
+<h2 id="复制数组"><a href="#复制数组" class="headerlink" title="复制数组"></a>复制数组</h2><blockquote>
+<p><code>&lt;array_old&gt;</code>：原数组<br><code>&lt;length&gt;</code>：新数组长度（等于原数组长度）</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Arrays.copyOf(&lt;array_old&gt;, &lt;length&gt;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="数组扩容"><a href="#数组扩容" class="headerlink" title="数组扩容"></a>数组扩容</h3><blockquote>
+<p><code>&lt;length+&gt;</code>：新数组长度（大于原数组的长度）</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Arrays.copyOf(&lt;array_old&gt;, &lt;length+&gt;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="数组缩容"><a href="#数组缩容" class="headerlink" title="数组缩容"></a>数组缩容</h3><blockquote>
+<p><code>&lt;length-&gt;</code>：新数组长度（小于原数组的长度）</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Arrays.copyOf(&lt;array_old&gt;, &lt;length-&gt;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="数组转化为字符串"><a href="#数组转化为字符串" class="headerlink" title="数组转化为字符串"></a>数组转化为字符串</h2><blockquote>
+<p><code>&lt;array&gt;</code>：数组</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Arrays.toString(&lt;array&gt;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="数组排序"><a href="#数组排序" class="headerlink" title="数组排序"></a>数组排序</h2><ul>
+<li>默认从小到大排序</li>
+<li>排序后会将原数组修改成排序后的数组（而不是产生新的排序后数组，所以直接调用原数组即可）</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Arrays.sort(&lt;array&gt;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+  </entry>
 </search>

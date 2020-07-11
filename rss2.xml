@@ -9,92 +9,92 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>捕捉一只爱折腾的绯鞠</description>
-    <pubDate>Fri, 10 Jul 2020 04:02:32 GMT</pubDate>
+    <pubDate>Sat, 11 Jul 2020 03:55:50 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
-      <title>【笔记】封装</title>
-      <link>https://feiju12138.github.io/2020/07/10/%E5%B0%81%E8%A3%85/</link>
-      <guid>https://feiju12138.github.io/2020/07/10/%E5%B0%81%E8%A3%85/</guid>
-      <pubDate>Fri, 10 Jul 2020 03:58:58 GMT</pubDate>
+      <title>【笔记】Final 关键字</title>
+      <link>https://feiju12138.github.io/2020/07/11/Final%E5%85%B3%E9%94%AE%E5%AD%97/</link>
+      <guid>https://feiju12138.github.io/2020/07/11/Final%E5%85%B3%E9%94%AE%E5%AD%97/</guid>
+      <pubDate>Sat, 11 Jul 2020 03:37:46 GMT</pubDate>
       <description>
       
-        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;Java OOP 封装 学习笔记&lt;/p&gt;
+        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;Java OOP final 关键字学习笔记&lt;/p&gt;
       
       </description>
       
       
-      <content:encoded><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Java OOP 封装 学习笔记</p><a id="more"></a><h2 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h2><ul><li>将类封装，就是将类中的成员变量不对外公开，使用<code>private</code>修饰，同时对外提供对成员变量操作的方法（get、set方法）</li></ul><blockquote><p><code>&lt;class&gt;</code>：类名</p></blockquote><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public class &lt;class&gt; &#123;</span><br><span class="line">    </span><br><span class="line">    private String name;</span><br><span class="line"></span><br><span class="line">    public String <span class="function"><span class="title">getName</span></span>() &#123;</span><br><span class="line">        <span class="built_in">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setName(String name) &#123;</span><br><span class="line">        this.name = name;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content:encoded>
+      <content:encoded><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Java OOP final 关键字学习笔记</p><a id="more"></a><h2 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h2><ul><li>final修饰的类不能被继承</li><li>final修饰的方法不能被重写</li><li>final修饰的变量是常量，值不能被修改</li></ul><h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content:encoded>
       
-      <comments>https://feiju12138.github.io/2020/07/10/%E5%B0%81%E8%A3%85/#disqus_thread</comments>
+      <comments>https://feiju12138.github.io/2020/07/11/Final%E5%85%B3%E9%94%AE%E5%AD%97/#disqus_thread</comments>
     </item>
     
     <item>
-      <title>【笔记】This 关键字</title>
-      <link>https://feiju12138.github.io/2020/07/10/This%E5%85%B3%E9%94%AE%E5%AD%97/</link>
-      <guid>https://feiju12138.github.io/2020/07/10/This%E5%85%B3%E9%94%AE%E5%AD%97/</guid>
-      <pubDate>Fri, 10 Jul 2020 03:08:57 GMT</pubDate>
+      <title>【笔记】Static 关键字</title>
+      <link>https://feiju12138.github.io/2020/07/11/Static%E5%85%B3%E9%94%AE%E5%AD%97/</link>
+      <guid>https://feiju12138.github.io/2020/07/11/Static%E5%85%B3%E9%94%AE%E5%AD%97/</guid>
+      <pubDate>Sat, 11 Jul 2020 02:18:56 GMT</pubDate>
       <description>
       
-        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;Java this 关键字学习笔记&lt;/p&gt;
+        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;Java OOP static 关键字学习笔记&lt;/p&gt;
       
       </description>
       
       
-      <content:encoded><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Java this 关键字学习笔记</p><a id="more"></a><h2 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h2><ul><li>this代表本类对象的引用，底层会创建本类对象</li></ul><ol><li>当成员变量和局部变量同名时，通过this关键字来实现调用成员变量</li></ol><blockquote><p><code>&lt;class&gt;</code>：类名</p></blockquote><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> &lt;<span class="title">class</span>&gt; </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> &lt;<span class="class"><span class="keyword">class</span>&gt;() </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.a;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><ol start="2"><li>在构造方法中互相调用，且位置必须是第一条语句</li></ol><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> &lt;<span class="title">class</span>&gt; </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> &lt;<span class="class"><span class="keyword">class</span>&gt;(<span class="title">int</span> <span class="title">a</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> &lt;<span class="class"><span class="keyword">class</span>&gt;() </span>&#123;</span><br><span class="line">        ...</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content:encoded>
+      <content:encoded><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Java OOP static 关键字学习笔记</p><a id="more"></a><h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><ul><li>可以修饰成员变量，成员方法</li><li>随着类的家在而加载，优先于对象加载</li><li>只加载一次，就会一直存在，不再开辟新空间</li><li>全局唯一，全局共享</li><li>可以直接被类名调用</li><li>静态只能调静态，非静态可以随意调用</li><li>static不能和this或者super公用，因为有static时可能还没有对象</li></ul><h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content:encoded>
       
-      <comments>https://feiju12138.github.io/2020/07/10/This%E5%85%B3%E9%94%AE%E5%AD%97/#disqus_thread</comments>
+      <comments>https://feiju12138.github.io/2020/07/11/Static%E5%85%B3%E9%94%AE%E5%AD%97/#disqus_thread</comments>
     </item>
     
     <item>
-      <title>【笔记】代码块</title>
-      <link>https://feiju12138.github.io/2020/07/10/%E4%BB%A3%E7%A0%81%E5%9D%97/</link>
-      <guid>https://feiju12138.github.io/2020/07/10/%E4%BB%A3%E7%A0%81%E5%9D%97/</guid>
-      <pubDate>Fri, 10 Jul 2020 02:06:19 GMT</pubDate>
+      <title>【笔记】方法重写</title>
+      <link>https://feiju12138.github.io/2020/07/10/%E6%96%B9%E6%B3%95%E9%87%8D%E5%86%99/</link>
+      <guid>https://feiju12138.github.io/2020/07/10/%E6%96%B9%E6%B3%95%E9%87%8D%E5%86%99/</guid>
+      <pubDate>Fri, 10 Jul 2020 07:36:35 GMT</pubDate>
       <description>
       
-        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;Java代码块学习笔记&lt;/p&gt;
+        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;Java OOP 方法重写学习笔记&lt;/p&gt;
       
       </description>
       
       
-      <content:encoded><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Java代码块学习笔记</p><a id="more"></a><h2 id="代码块格式"><a href="#代码块格式" class="headerlink" title="代码块格式"></a>代码块格式</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="构造代码块"><a href="#构造代码块" class="headerlink" title="构造代码块"></a>构造代码块</h2><ul><li>位置：类之内，方法之外，和成员变量同级</li><li>用途：抽取构造方法的共性</li><li>特点：在创建对象时，先触发构造代码块，再出发构造方法</li></ul><h2 id="内部代码块"><a href="#内部代码块" class="headerlink" title="内部代码块"></a>内部代码块</h2><ul><li>位置：方法内</li><li>用途：为了控制变量的作用范围</li></ul><h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content:encoded>
+      <content:encoded><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Java OOP 方法重写学习笔记</p><a id="more"></a><h2 id="方法重写"><a href="#方法重写" class="headerlink" title="方法重写"></a>方法重写</h2><ul><li>发生在父子类间的，子类修改父类原有方法，叫做方法的重写</li><li>要求：发生了继承关系，子类中方法的声明（签名）必须一样</li><li>子类访问权限应大于等于父类权限</li></ul><p>方法的声明包括：方法返回值类型，方法名，参数列表</p><h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content:encoded>
       
-      <comments>https://feiju12138.github.io/2020/07/10/%E4%BB%A3%E7%A0%81%E5%9D%97/#disqus_thread</comments>
+      <comments>https://feiju12138.github.io/2020/07/10/%E6%96%B9%E6%B3%95%E9%87%8D%E5%86%99/#disqus_thread</comments>
     </item>
     
     <item>
-      <title>【笔记】熄灭屏幕快捷键</title>
-      <link>https://feiju12138.github.io/2020/07/09/%E7%86%84%E7%81%AD%E5%B1%8F%E5%B9%95%E5%BF%AB%E6%8D%B7%E9%94%AE/</link>
-      <guid>https://feiju12138.github.io/2020/07/09/%E7%86%84%E7%81%AD%E5%B1%8F%E5%B9%95%E5%BF%AB%E6%8D%B7%E9%94%AE/</guid>
-      <pubDate>Thu, 09 Jul 2020 12:00:01 GMT</pubDate>
+      <title>【笔记】Super 关键字</title>
+      <link>https://feiju12138.github.io/2020/07/10/Super%E5%85%B3%E9%94%AE%E5%AD%97/</link>
+      <guid>https://feiju12138.github.io/2020/07/10/Super%E5%85%B3%E9%94%AE%E5%AD%97/</guid>
+      <pubDate>Fri, 10 Jul 2020 07:32:51 GMT</pubDate>
       <description>
       
-        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;MacOS系统下熄灭屏幕快捷键&lt;/p&gt;
+        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;Java OOP super关键字学习笔记&lt;/p&gt;
       
       </description>
       
       
-      <content:encoded><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>MacOS系统下熄灭屏幕快捷键</p><a id="more"></a><h2 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h2><ul><li><code>control</code>+<code>shift</code>+<code>关机键</code>（部分Mac电脑为光盘弹出键）</li></ul><h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://jingyan.baidu.com/article/0320e2c1ca43091b87507baa.html" target="_blank" rel="noopener">百度经验——搞机名堂</a></p>]]></content:encoded>
+      <content:encoded><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Java OOP super关键字学习笔记</p><a id="more"></a><h2 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h2><ul><li>super用在子类中使用父类的功能</li><li>super代表父类对象的一个引用</li></ul><h2 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h2><ul><li>子类执行先执行父类构造方法（默认执行父类无参构造方法），再执行子类的构造方法</li><li>子类构造方法，默认第一行执行<code>super();</code>，不管加不加这个语句</li><li>如果用在构造方法中，super必须是第一条语句</li></ul><h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content:encoded>
       
-      <comments>https://feiju12138.github.io/2020/07/09/%E7%86%84%E7%81%AD%E5%B1%8F%E5%B9%95%E5%BF%AB%E6%8D%B7%E9%94%AE/#disqus_thread</comments>
+      <comments>https://feiju12138.github.io/2020/07/10/Super%E5%85%B3%E9%94%AE%E5%AD%97/#disqus_thread</comments>
     </item>
     
     <item>
-      <title>【笔记】关闭 Windows 10 弹窗提醒</title>
-      <link>https://feiju12138.github.io/2020/07/09/%E5%85%B3%E9%97%ADWindows10%E5%BC%B9%E7%AA%97%E6%8F%90%E9%86%92/</link>
-      <guid>https://feiju12138.github.io/2020/07/09/%E5%85%B3%E9%97%ADWindows10%E5%BC%B9%E7%AA%97%E6%8F%90%E9%86%92/</guid>
-      <pubDate>Thu, 09 Jul 2020 11:54:26 GMT</pubDate>
+      <title>【笔记】继承</title>
+      <link>https://feiju12138.github.io/2020/07/10/%E7%BB%A7%E6%89%BF/</link>
+      <guid>https://feiju12138.github.io/2020/07/10/%E7%BB%A7%E6%89%BF/</guid>
+      <pubDate>Fri, 10 Jul 2020 06:26:01 GMT</pubDate>
       <description>
       
-        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;当Windows 10以普通用户执行管理员权限时，会弹窗提醒警告，关闭弹窗提醒&lt;/p&gt;
+        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;Java OOP 继承学习笔记&lt;/p&gt;
       
       </description>
       
       
-      <content:encoded><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>当Windows 10以普通用户执行管理员权限时，会弹窗提醒警告，关闭弹窗提醒</p><a id="more"></a><h2 id="关闭弹窗提醒"><a href="#关闭弹窗提醒" class="headerlink" title="关闭弹窗提醒"></a>关闭弹窗提醒</h2><ul><li>搜索<code>控制面板</code>-&gt;打开<code>控制面板</code></li></ul><p><img src="/images/20200709195426/01.png" alt="01.png"></p><ul><li>进入<code>系统和安全</code>选项卡</li></ul><p><img src="/images/20200709195426/02.png" alt="02.png"></p><ul><li>选择<code>安全和维护</code>选项卡下的<code>更改用户账户控制设置</code>选项</li></ul><p><img src="/images/20200709195426/03.png" alt="03.png"></p><ul><li>将安全度调到最低（拖拽滑块到最底端）-&gt;<code>完成</code></li></ul><p><img src="/images/20200709195426/04.png" alt="04.png"></p><h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://jingyan.baidu.com/article/c843ea0b54295a36921e4a07.html" target="_blank" rel="noopener">百度经验——Vstar99</a></p>]]></content:encoded>
+      <content:encoded><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Java OOP 继承学习笔记</p><a id="more"></a><h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><ul><li>提高代码的复用性</li><li>将类中共性的代码，提取作为父类，子类继承父类</li></ul><ol><li>使用extends关键字表示继承关系</li><li>java只允许单继承</li><li>子类可以使用父类的所有功能，也可以添加功能，但不能只继承部分功能</li><li>继承可以传递</li><li>不可以继承父类的私有成员</li><li>继承多用于功能的修改，子类拥有父类功能的同时，可以进行功能的拓展</li></ol><blockquote><p><code>&lt;father&gt;</code>：父类名<br><code>&lt;son&gt;</code>：子类名<br><code>&lt;method&gt;</code>：共性方法</p></blockquote><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> &lt;<span class="title">father</span>&gt; </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> &lt;method&gt;() &#123;</span><br><span class="line">        ...</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> &lt;<span class="title">son</span>&gt; <span class="keyword">extends</span> &lt;<span class="title">father</span>&gt; </span>&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content:encoded>
       
-      <comments>https://feiju12138.github.io/2020/07/09/%E5%85%B3%E9%97%ADWindows10%E5%BC%B9%E7%AA%97%E6%8F%90%E9%86%92/#disqus_thread</comments>
+      <comments>https://feiju12138.github.io/2020/07/10/%E7%BB%A7%E6%89%BF/#disqus_thread</comments>
     </item>
     
   </channel>

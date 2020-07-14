@@ -8929,7 +8929,7 @@
       </categories>
   </entry>
   <entry>
-    <title>【笔记】Tor学习笔记</title>
+    <title>【笔记】Tor 学习笔记</title>
     <url>/2020/03/30/Tor%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Tor是实现匿名通信的自由软件。其名源于“The Onion Router”（洋葱路由器）的英语缩写。用户可透过Tor接达由全球志愿者免费提供，包含7000+个中继的覆盖网络，从而达至隐藏用户真实地址、避免网络监控及流量分析的目的。Tor用户的互联网活动（包括浏览在线网站、帖子以及即时消息等通信形式）相对较难追踪。Tor的设计原意在于保障用户的个人隐私，以及不受监控地进行秘密通信的自由和能力。（<a href="https://zh.wikipedia.org/wiki/Tor" target="_blank" rel="noopener">维基百科</a>）</p>
 <a id="more"></a>
@@ -8951,7 +8951,7 @@
 </ul>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">Socks5Proxy 127.0.0.1:1086</span><br></pre></td></tr></table></figure>
 
-<h2 id="配置黑名单节点"><a href="#配置黑名单节点" class="headerlink" title="配置黑名单节点"></a>配置黑名单节点</h2><ul>
+<h2 id="配置黑名单节点（可选）"><a href="#配置黑名单节点（可选）" class="headerlink" title="配置黑名单节点（可选）"></a>配置黑名单节点（可选）</h2><ul>
 <li>由于部分国家以合作的方式进行网络审查，所以需要将部分国家节点列入黑名单</li>
 </ul>
 <h3 id="编辑配置文件-1"><a href="#编辑配置文件-1" class="headerlink" title="编辑配置文件"></a>编辑配置文件</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vim /usr/<span class="built_in">local</span>/etc/tor/torrc</span><br></pre></td></tr></table></figure>
@@ -8961,28 +8961,43 @@
 </ul>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">ExcludeNodes  &#123;cn&#125;,&#123;hk&#125;,&#123;mo&#125;,&#123;kp&#125;,&#123;ir&#125;,&#123;sy&#125;,&#123;pk&#125;,&#123;cu&#125;,&#123;vn&#125;</span><br><span class="line">StrictNodes  1</span><br></pre></td></tr></table></figure>
 
-<h2 id="启动tor"><a href="#启动tor" class="headerlink" title="启动tor"></a>启动tor</h2><ul>
+<h2 id="配置入口节点（可选）"><a href="#配置入口节点（可选）" class="headerlink" title="配置入口节点（可选）"></a>配置入口节点（可选）</h2><ul>
+<li>限定只使用某些国家的节点作为入口节点</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">EntryNodes &lt;country&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="配置出口节点（可选）"><a href="#配置出口节点（可选）" class="headerlink" title="配置出口节点（可选）"></a>配置出口节点（可选）</h2><p>限定只使用某些国家的节点作为出口节点</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">ExitNodes &lt;country&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="跨机器共享Tor通道（可选）"><a href="#跨机器共享Tor通道（可选）" class="headerlink" title="跨机器共享Tor通道（可选）"></a>跨机器共享Tor通道（可选）</h2><ul>
+<li>编辑配置文件</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">SocksListenAddress 0.0.0.0:9050</span><br></pre></td></tr></table></figure>
+
+<h2 id="启动和关闭tor"><a href="#启动和关闭tor" class="headerlink" title="启动和关闭tor"></a>启动和关闭tor</h2><h3 id="直接启动"><a href="#直接启动" class="headerlink" title="直接启动"></a>直接启动</h3><ul>
 <li>以默认配置文件启动tor</li>
 </ul>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">tor</span><br></pre></td></tr></table></figure>
 
-<h3 id="指定配置文件启动"><a href="#指定配置文件启动" class="headerlink" title="指定配置文件启动"></a>指定配置文件启动</h3><blockquote>
+<h4 id="指定配置文件启动"><a href="#指定配置文件启动" class="headerlink" title="指定配置文件启动"></a>指定配置文件启动</h4><blockquote>
 <p><code>&lt;src&gt;</code>：配置文件路径</p>
 </blockquote>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">tor -f &lt;src&gt;</span><br></pre></td></tr></table></figure>
 
-<h2 id="查看tor运行状态"><a href="#查看tor运行状态" class="headerlink" title="查看tor运行状态"></a>查看tor运行状态</h2><ul>
+<h3 id="查看tor运行状态"><a href="#查看tor运行状态" class="headerlink" title="查看tor运行状态"></a>查看tor运行状态</h3><ul>
 <li>tor默认端口号为9050，所以可以通过查看端口占用情况来查看tor运行状态</li>
 </ul>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">lsof -i:9050</span><br></pre></td></tr></table></figure>
 
-<h2 id="关闭tor"><a href="#关闭tor" class="headerlink" title="关闭tor"></a>关闭tor</h2><ul>
+<h3 id="关闭tor"><a href="#关闭tor" class="headerlink" title="关闭tor"></a>关闭tor</h3><ul>
 <li>通过查看tor进程的pid号，来直接关闭tor进程</li>
 </ul>
 <blockquote>
 <p><code>&lt;num&gt;</code>：tor进程的pid号</p>
 </blockquote>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">kill</span> &lt;num&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="通过brew的服务管理器启动和关闭tor服务"><a href="#通过brew的服务管理器启动和关闭tor服务" class="headerlink" title="通过brew的服务管理器启动和关闭tor服务"></a>通过brew的服务管理器启动和关闭tor服务</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">brew services start tor</span><br><span class="line">brew services stop tor</span><br></pre></td></tr></table></figure>
 
 <h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><p><img src="/images/20200330205026/01.png" alt="01.png"></p>
 <h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://www.php5000.com/index/content/index/id/218" target="_blank" rel="noopener">php5000</a></p>
@@ -20577,6 +20592,80 @@
 <li>静态只能调静态，非静态可以随意调用</li>
 <li>static不能和this或者super公用，因为有static时可能还没有对象</li>
 </ul>
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【笔记】多态</title>
+    <url>/2020/07/11/%E5%A4%9A%E6%80%81/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Java OOP 多态学习笔记</p>
+<a id="more"></a>
+
+<h2 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h2><ul>
+<li>发生继承关系</li>
+<li>发生方法重写</li>
+</ul>
+<h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><ul>
+<li>父类引用指向子类对象</li>
+<li>编译看左边，运行看右边</li>
+</ul>
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【笔记】抽象类</title>
+    <url>/2020/07/13/%E6%8A%BD%E8%B1%A1%E7%B1%BB/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Java OOP 抽象类学习笔记</p>
+<a id="more"></a>
+
+<h2 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h2><ul>
+<li>通过abstract关键字</li>
+<li>可以修饰类或方法</li>
+<li>抽象类中可以没有抽象方法</li>
+<li>如果有抽象方法，那么该类必定为一个抽象类</li>
+<li>子类继承了抽象类以后，要么还是一个抽象类，要么把所有的抽象方法都重写</li>
+<li>多用于多态中</li>
+<li>抽象类不可以被实例化</li>
+</ul>
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【笔记】接口</title>
+    <url>/2020/07/14/%E6%8E%A5%E5%8F%A3/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Java OOP 接口学习笔记</p>
+<a id="more"></a>
+
+<h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><ul>
+<li>接口中都是抽象方法</li>
+<li>通过interface关键字创建接口</li>
+<li>通过implements让子类来实现</li>
+<li>可以理解成，接口是一个特殊的抽象类</li>
+<li>接口突破了java单继承的局限性</li>
+<li>接口和类之间可以多实现，接口和接口之间可以多继承</li>
+<li>接口是对外暴露的规则，是一套开发规范</li>
+<li>接口图报了程序的功能扩展，降低了耦合性</li>
+</ul>
+<h2 id="jdk1-8新特性"><a href="#jdk1-8新特性" class="headerlink" title="jdk1.8新特性"></a>jdk1.8新特性</h2><ul>
+<li>在jdk1.8里允许接口中出现普通方法，要求被static或default修饰</li>
+</ul>
+<h2 id="简写"><a href="#简写" class="headerlink" title="简写"></a>简写</h2><ul>
+<li>接口为方法的编写提供了简写方式，会自动拼接abstract和public</li>
+<li>接口中的变量，会自动拼接public static final，把变量变成常</li>
+</ul>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><h3 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h3><blockquote>
+<p><code>&lt;name&gt;</code>：接口名<br><code>&lt;return&gt;</code>：方法返回值类型<br><code>&lt;method&gt;</code>：方法名</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> &lt;<span class="title">name</span>&gt; </span>&#123;</span><br><span class="line">    <span class="keyword">abstract</span> <span class="keyword">public</span> &lt;<span class="keyword">return</span>&gt; &lt;method&gt;();</span><br><span class="line">    <span class="keyword">public</span> &lt;<span class="keyword">return</span>&gt; &lt;method&gt;();</span><br><span class="line">    <span class="keyword">abstract</span> &lt;<span class="keyword">return</span>&gt; &lt;method&gt;();</span><br><span class="line">    &lt;<span class="keyword">return</span>&gt; &lt;method&gt;();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="实现类"><a href="#实现类" class="headerlink" title="实现类"></a>实现类</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> &lt;<span class="title">name</span>&gt;<span class="title">Impl</span> <span class="keyword">implements</span> &lt;<span class="title">name</span>&gt; </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> &lt;<span class="keyword">return</span>&gt; &lt;method&gt;() &#123;</span><br><span class="line">        ....</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
       <categories>
         <category>Java</category>

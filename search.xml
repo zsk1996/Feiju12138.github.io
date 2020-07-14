@@ -8942,9 +8942,14 @@
 <h3 id="编辑配置文件"><a href="#编辑配置文件" class="headerlink" title="编辑配置文件"></a>编辑配置文件</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vim /usr/<span class="built_in">local</span>/etc/tor/torrc</span><br></pre></td></tr></table></figure>
 
 <h3 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h3><ul>
-<li>Lantern添加如下语句</li>
+<li><del>Lantern添加如下语句</del></li>
 </ul>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">HTTPProxy 127.0.0.1:52909</span><br><span class="line">HTTPSProxy 127.0.0.1:52909</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Lantern添加如下语句</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">Socks5Proxy 127.0.0.1:52911</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>Shadowsocks-R添加如下语句</li>
@@ -8966,7 +8971,9 @@
 </ul>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">EntryNodes &lt;country&gt;</span><br></pre></td></tr></table></figure>
 
-<h2 id="配置出口节点（可选）"><a href="#配置出口节点（可选）" class="headerlink" title="配置出口节点（可选）"></a>配置出口节点（可选）</h2><p>限定只使用某些国家的节点作为出口节点</p>
+<h2 id="配置出口节点（可选）"><a href="#配置出口节点（可选）" class="headerlink" title="配置出口节点（可选）"></a>配置出口节点（可选）</h2><ul>
+<li>限定只使用某些国家的节点作为出口节点</li>
+</ul>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">ExitNodes &lt;country&gt;</span><br></pre></td></tr></table></figure>
 
 <h2 id="跨机器共享Tor通道（可选）"><a href="#跨机器共享Tor通道（可选）" class="headerlink" title="跨机器共享Tor通道（可选）"></a>跨机器共享Tor通道（可选）</h2><ul>
@@ -8997,10 +9004,20 @@
 </blockquote>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">kill</span> &lt;num&gt;</span><br></pre></td></tr></table></figure>
 
+<ul>
+<li>直接杀掉所有tor进程</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">killall tor</span><br></pre></td></tr></table></figure>
+
 <h3 id="通过brew的服务管理器启动和关闭tor服务"><a href="#通过brew的服务管理器启动和关闭tor服务" class="headerlink" title="通过brew的服务管理器启动和关闭tor服务"></a>通过brew的服务管理器启动和关闭tor服务</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">brew services start tor</span><br><span class="line">brew services stop tor</span><br></pre></td></tr></table></figure>
 
-<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><p><img src="/images/20200330205026/01.png" alt="01.png"></p>
-<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://www.php5000.com/index/content/index/id/218" target="_blank" rel="noopener">php5000</a></p>
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h3 id="查看Tor是否已使用"><a href="#查看Tor是否已使用" class="headerlink" title="查看Tor是否已使用"></a>查看Tor是否已使用</h3><ul>
+<li><a href="https://check.torproject.org" target="_blank" rel="noopener">https://check.torproject.org</a></li>
+</ul>
+<p><img src="/images/20200330205026/01.png" alt="01.png"></p>
+<h3 id="查看当前IP"><a href="#查看当前IP" class="headerlink" title="查看当前IP"></a>查看当前IP</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">curl --socks5 127.0.0.1:9050 http://checkip.amazonaws.com/</span><br></pre></td></tr></table></figure>
+
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://www.php5000.com/index/content/index/id/218" target="_blank" rel="noopener">php5000</a><br><a href="https://program-think.blogspot.com/2013/11/tor-faq.html" target="_blank" rel="noopener">编程随想的博客</a></p>
 ]]></content>
       <categories>
         <category>MacOS</category>
@@ -20424,7 +20441,7 @@
   <entry>
     <title>【笔记】This 关键字</title>
     <url>/2020/07/10/This%E5%85%B3%E9%94%AE%E5%AD%97/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Java this 关键字学习笔记</p>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Java OOP this 关键字学习笔记</p>
 <a id="more"></a>
 
 <h2 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h2><ul>
@@ -20669,6 +20686,55 @@
 <h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
       <categories>
         <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【笔记】Terminal 查看当前ip地址</title>
+    <url>/2020/07/14/Terminal%E6%9F%A5%E7%9C%8B%E5%BD%93%E5%89%8Dip%E5%9C%B0%E5%9D%80/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Terminal 查看当前ip地址</p>
+<a id="more"></a>
+
+<h2 id="查看ip地址"><a href="#查看ip地址" class="headerlink" title="查看ip地址"></a>查看ip地址</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">curl http://checkip.amazonaws.com/</span><br></pre></td></tr></table></figure>
+
+<h3 id="指定代理"><a href="#指定代理" class="headerlink" title="指定代理"></a>指定代理</h3><blockquote>
+<p><code>&lt;ip&gt;</code>：代理地址<br><code>&lt;port&gt;</code>：代理端口</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">curl --socks5 &lt;ip&gt;:&lt;port&gt; http://checkip.amazonaws.com/</span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://qastack.cn/ubuntu/499995/how-to-change-the-ip-address-which-is-given-by-tor-using-the-terminal" target="_blank" rel="noopener">QAStack——</a></p>
+]]></content>
+      <categories>
+        <category>MacOS</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【笔记】Terminal 配置网络代理</title>
+    <url>/2020/07/14/Terminal%E9%85%8D%E7%BD%AE%E7%BD%91%E7%BB%9C%E4%BB%A3%E7%90%86/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在终端配置网络代理。<br>临时性的，关闭终端后失效。<br>如果想要永久性的，可以将配置信息添加到终端配置文件。</p>
+<a id="more"></a>
+
+<h2 id="HTTP代理"><a href="#HTTP代理" class="headerlink" title="HTTP代理"></a>HTTP代理</h2><ul>
+<li>配置HTTP及HTTPS代理</li>
+</ul>
+<blockquote>
+<p><code>&lt;ip&gt;</code>：代理地址<br><code>&lt;port&gt;</code>：代理端口号</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">export</span> http_proxy=http://&lt;ip&gt;:&lt;port&gt;;</span><br><span class="line"><span class="built_in">export</span> https_proxy=http://&lt;ip&gt;:&lt;port&gt;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="SOCKS代理"><a href="#SOCKS代理" class="headerlink" title="SOCKS代理"></a>SOCKS代理</h2><ul>
+<li>配置SOCKS5代理</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">export</span> http_proxy=socks5://&lt;ip&gt;:&lt;port&gt;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="需要登录的代理"><a href="#需要登录的代理" class="headerlink" title="需要登录的代理"></a>需要登录的代理</h2><blockquote>
+<p><code>&lt;username&gt;</code>：用户名<br><code>&lt;password&gt;</code>：密码</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">http_proxy=http://&lt;username&gt;:&lt;password&gt;@&lt;ip&gt;:&lt;port&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://blog.fazero.me/2015/09/15/让终端走代理的几种方法/" target="_blank" rel="noopener">fazero的博客</a></p>
+]]></content>
+      <categories>
+        <category>MacOS</category>
       </categories>
   </entry>
 </search>

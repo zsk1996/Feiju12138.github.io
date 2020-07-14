@@ -9,8 +9,42 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>捕捉一只爱折腾的绯鞠</description>
-    <pubDate>Tue, 14 Jul 2020 06:25:36 GMT</pubDate>
+    <pubDate>Tue, 14 Jul 2020 09:20:54 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>【笔记】Terminal 查看当前ip地址</title>
+      <link>https://feiju12138.github.io/2020/07/14/Terminal%E6%9F%A5%E7%9C%8B%E5%BD%93%E5%89%8Dip%E5%9C%B0%E5%9D%80/</link>
+      <guid>https://feiju12138.github.io/2020/07/14/Terminal%E6%9F%A5%E7%9C%8B%E5%BD%93%E5%89%8Dip%E5%9C%B0%E5%9D%80/</guid>
+      <pubDate>Tue, 14 Jul 2020 09:17:22 GMT</pubDate>
+      <description>
+      
+        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;Terminal 查看当前ip地址&lt;/p&gt;
+      
+      </description>
+      
+      
+      <content:encoded><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Terminal 查看当前ip地址</p><a id="more"></a><h2 id="查看ip地址"><a href="#查看ip地址" class="headerlink" title="查看ip地址"></a>查看ip地址</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl http://checkip.amazonaws.com/</span><br></pre></td></tr></table></figure><h3 id="指定代理"><a href="#指定代理" class="headerlink" title="指定代理"></a>指定代理</h3><blockquote><p><code>&lt;ip&gt;</code>：代理地址<br><code>&lt;port&gt;</code>：代理端口</p></blockquote><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl --socks5 &lt;ip&gt;:&lt;port&gt; http://checkip.amazonaws.com/</span><br></pre></td></tr></table></figure><h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://qastack.cn/ubuntu/499995/how-to-change-the-ip-address-which-is-given-by-tor-using-the-terminal" target="_blank" rel="noopener">QAStack——</a></p>]]></content:encoded>
+      
+      <comments>https://feiju12138.github.io/2020/07/14/Terminal%E6%9F%A5%E7%9C%8B%E5%BD%93%E5%89%8Dip%E5%9C%B0%E5%9D%80/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>【笔记】Terminal 配置网络代理</title>
+      <link>https://feiju12138.github.io/2020/07/14/Terminal%E9%85%8D%E7%BD%AE%E7%BD%91%E7%BB%9C%E4%BB%A3%E7%90%86/</link>
+      <guid>https://feiju12138.github.io/2020/07/14/Terminal%E9%85%8D%E7%BD%AE%E7%BD%91%E7%BB%9C%E4%BB%A3%E7%90%86/</guid>
+      <pubDate>Tue, 14 Jul 2020 08:59:16 GMT</pubDate>
+      <description>
+      
+        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;在终端配置网络代理。&lt;br&gt;临时性的，关闭终端后失效。&lt;br&gt;如果想要永久性的，可以将配置信息添加到终端配置文件。&lt;/p&gt;
+      
+      </description>
+      
+      
+      <content:encoded><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在终端配置网络代理。<br>临时性的，关闭终端后失效。<br>如果想要永久性的，可以将配置信息添加到终端配置文件。</p><a id="more"></a><h2 id="HTTP代理"><a href="#HTTP代理" class="headerlink" title="HTTP代理"></a>HTTP代理</h2><ul><li>配置HTTP及HTTPS代理</li></ul><blockquote><p><code>&lt;ip&gt;</code>：代理地址<br><code>&lt;port&gt;</code>：代理端口号</p></blockquote><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> http_proxy=http://&lt;ip&gt;:&lt;port&gt;;</span><br><span class="line"><span class="built_in">export</span> https_proxy=http://&lt;ip&gt;:&lt;port&gt;;</span><br></pre></td></tr></table></figure><h2 id="SOCKS代理"><a href="#SOCKS代理" class="headerlink" title="SOCKS代理"></a>SOCKS代理</h2><ul><li>配置SOCKS5代理</li></ul><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> http_proxy=socks5://&lt;ip&gt;:&lt;port&gt;;</span><br></pre></td></tr></table></figure><h2 id="需要登录的代理"><a href="#需要登录的代理" class="headerlink" title="需要登录的代理"></a>需要登录的代理</h2><blockquote><p><code>&lt;username&gt;</code>：用户名<br><code>&lt;password&gt;</code>：密码</p></blockquote><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http_proxy=http://&lt;username&gt;:&lt;password&gt;@&lt;ip&gt;:&lt;port&gt;</span><br></pre></td></tr></table></figure><h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://blog.fazero.me/2015/09/15/让终端走代理的几种方法/" target="_blank" rel="noopener">fazero的博客</a></p>]]></content:encoded>
+      
+      <comments>https://feiju12138.github.io/2020/07/14/Terminal%E9%85%8D%E7%BD%AE%E7%BD%91%E7%BB%9C%E4%BB%A3%E7%90%86/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>【笔记】接口</title>
@@ -61,40 +95,6 @@
       <content:encoded><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Java OOP 多态学习笔记</p><a id="more"></a><h2 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h2><ul><li>发生继承关系</li><li>发生方法重写</li></ul><h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><ul><li>父类引用指向子类对象</li><li>编译看左边，运行看右边</li></ul><h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content:encoded>
       
       <comments>https://feiju12138.github.io/2020/07/11/%E5%A4%9A%E6%80%81/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>【笔记】Final 关键字</title>
-      <link>https://feiju12138.github.io/2020/07/11/Final%E5%85%B3%E9%94%AE%E5%AD%97/</link>
-      <guid>https://feiju12138.github.io/2020/07/11/Final%E5%85%B3%E9%94%AE%E5%AD%97/</guid>
-      <pubDate>Sat, 11 Jul 2020 03:37:46 GMT</pubDate>
-      <description>
-      
-        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;Java OOP final 关键字学习笔记&lt;/p&gt;
-      
-      </description>
-      
-      
-      <content:encoded><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Java OOP final 关键字学习笔记</p><a id="more"></a><h2 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h2><ul><li>final修饰的类不能被继承</li><li>final修饰的方法不能被重写</li><li>final修饰的变量是常量，值不能被修改</li></ul><h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content:encoded>
-      
-      <comments>https://feiju12138.github.io/2020/07/11/Final%E5%85%B3%E9%94%AE%E5%AD%97/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>【笔记】Static 关键字</title>
-      <link>https://feiju12138.github.io/2020/07/11/Static%E5%85%B3%E9%94%AE%E5%AD%97/</link>
-      <guid>https://feiju12138.github.io/2020/07/11/Static%E5%85%B3%E9%94%AE%E5%AD%97/</guid>
-      <pubDate>Sat, 11 Jul 2020 02:18:56 GMT</pubDate>
-      <description>
-      
-        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;Java OOP static 关键字学习笔记&lt;/p&gt;
-      
-      </description>
-      
-      
-      <content:encoded><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Java OOP static 关键字学习笔记</p><a id="more"></a><h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><ul><li>可以修饰成员变量，成员方法</li><li>随着类的家在而加载，优先于对象加载</li><li>只加载一次，就会一直存在，不再开辟新空间</li><li>全局唯一，全局共享</li><li>可以直接被类名调用</li><li>静态只能调静态，非静态可以随意调用</li><li>static不能和this或者super公用，因为有static时可能还没有对象</li></ul><h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content:encoded>
-      
-      <comments>https://feiju12138.github.io/2020/07/11/Static%E5%85%B3%E9%94%AE%E5%AD%97/#disqus_thread</comments>
     </item>
     
   </channel>

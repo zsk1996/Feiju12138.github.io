@@ -7,6 +7,7 @@ date: 2020-02-13 15:40:44
 
 ## 前言
 
+StringBuilder/StringBuffer 学习笔记
 StringBuiler提供了用于修改字符串内容的相关方法。
 其内部维护的是一个可变的字符数组，所以修改都是在当前对象内部完成的。
 当频繁修改字符串内容时应当使用`StringBuilder`类来完成
@@ -14,6 +15,9 @@ StringBuiler提供了用于修改字符串内容的相关方法。
 <!-- more -->
 
 ## 创建 StringBuilder 对象
+
+- 默认容量为16个字符
+- 下一次扩容，为上一次容量数乘2再加2
 
 > `<builder>`：StringBuilder类型的值
 

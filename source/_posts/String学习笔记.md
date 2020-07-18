@@ -114,6 +114,39 @@ Java对字符串的操作
 String.valueOf(<other>);
 ```
 
+## 指定字符串拼接到当前字符串末尾
+
+``` java
+<string>.concat(<str>);
+```
+
+## 替换字符
+
+- 替换所有出现的旧字符为新字符
+
+> `<char_old>`：替换前的字符
+> `<char_new>`：替换后的字符
+
+``` java
+<string>.replace(<char_old>, <char_new>);
+```
+
+## 转换为byte数组
+
+- 返回char对应的byte值的数组
+
+``` java
+<string>.getBytes();
+```
+
+## 转换为char数组
+
+- 返回char数组
+
+``` java
+<string>.toCharArray();
+```
+
 ## 正则表达式的应用
 
 > `<regular>`：正则表达式为内容的字符串

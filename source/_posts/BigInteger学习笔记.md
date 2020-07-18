@@ -1,5 +1,5 @@
 ---
-title: 【笔记】BigInteger学习笔记
+title: 【笔记】BigInteger 学习笔记
 categories:
   -  Java
 date: 2020-07-06 10:41:55
@@ -7,13 +7,13 @@ date: 2020-07-06 10:41:55
 
 ## 前言
 
-BigInteger学习笔记
+BigInteger/BigDecimal 学习笔记
 
 <!-- more -->
 
 ## 创建对象
 
-> `<num>`：任何类型的数字，如：`String`、`byte`、`short`、`int`、`long`
+> `<num>`：任何类型的数字，如：`String`、`byte`、`short`、`int`、`long`，提倡使用String类型的构造方法
 
 ``` java
 BigInteger bigInteger = new BigInteger(<num>);
@@ -130,6 +130,16 @@ bigInteger_1.min(bigInteger_2);
 
 ``` java
 bigInteger.toString();
+```
+
+## BigDecimal除不尽时四舍五入
+
+> `bigDecimal_1`：被除数
+> `bigDecimal_2`：除数
+> `<num>`：保留小数点后的位数
+
+``` java
+bigDecimal_1.divide(bigDecimal_1, <num>, BigDecimal.ROUND_HALF_UP);
 ```
 
 ## 参考文献

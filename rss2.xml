@@ -9,8 +9,25 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>捕捉一只爱折腾的绯鞠</description>
-    <pubDate>Tue, 14 Jul 2020 09:20:54 GMT</pubDate>
+    <pubDate>Fri, 17 Jul 2020 01:42:36 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>【笔记】计时器</title>
+      <link>https://feiju12138.github.io/2020/07/15/%E8%AE%A1%E6%97%B6%E5%99%A8/</link>
+      <guid>https://feiju12138.github.io/2020/07/15/%E8%AE%A1%E6%97%B6%E5%99%A8/</guid>
+      <pubDate>Wed, 15 Jul 2020 08:51:43 GMT</pubDate>
+      <description>
+      
+        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;Java 计时器 两次获取系统当前毫秒值做差&lt;/p&gt;
+      
+      </description>
+      
+      
+      <content:encoded><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Java 计时器 两次获取系统当前毫秒值做差</p><a id="more"></a><h2 id="开始计时"><a href="#开始计时" class="headerlink" title="开始计时"></a>开始计时</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">long</span> start = System.currentTimeMillis();</span><br></pre></td></tr></table></figure><h2 id="结束计时"><a href="#结束计时" class="headerlink" title="结束计时"></a>结束计时</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">long</span> stop = System.currentTimeMillis();</span><br></pre></td></tr></table></figure><h2 id="求差"><a href="#求差" class="headerlink" title="求差"></a>求差</h2><ul><li>返回这段代码运行的毫秒值</li></ul><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">long</span> sum = end - start;</span><br></pre></td></tr></table></figure><h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content:encoded>
+      
+      <comments>https://feiju12138.github.io/2020/07/15/%E8%AE%A1%E6%97%B6%E5%99%A8/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>【笔记】Terminal 查看当前ip地址</title>
@@ -78,23 +95,6 @@
       <content:encoded><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Java OOP 抽象类学习笔记</p><a id="more"></a><h2 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h2><ul><li>通过abstract关键字</li><li>可以修饰类或方法</li><li>抽象类中可以没有抽象方法</li><li>如果有抽象方法，那么该类必定为一个抽象类</li><li>子类继承了抽象类以后，要么还是一个抽象类，要么把所有的抽象方法都重写</li><li>多用于多态中</li><li>抽象类不可以被实例化</li></ul><h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content:encoded>
       
       <comments>https://feiju12138.github.io/2020/07/13/%E6%8A%BD%E8%B1%A1%E7%B1%BB/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>【笔记】多态</title>
-      <link>https://feiju12138.github.io/2020/07/11/%E5%A4%9A%E6%80%81/</link>
-      <guid>https://feiju12138.github.io/2020/07/11/%E5%A4%9A%E6%80%81/</guid>
-      <pubDate>Sat, 11 Jul 2020 06:49:28 GMT</pubDate>
-      <description>
-      
-        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;Java OOP 多态学习笔记&lt;/p&gt;
-      
-      </description>
-      
-      
-      <content:encoded><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Java OOP 多态学习笔记</p><a id="more"></a><h2 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h2><ul><li>发生继承关系</li><li>发生方法重写</li></ul><h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><ul><li>父类引用指向子类对象</li><li>编译看左边，运行看右边</li></ul><h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content:encoded>
-      
-      <comments>https://feiju12138.github.io/2020/07/11/%E5%A4%9A%E6%80%81/#disqus_thread</comments>
     </item>
     
   </channel>

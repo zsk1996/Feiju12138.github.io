@@ -9284,7 +9284,7 @@
   <entry>
     <title>【笔记】Terminal 查看当前ip地址</title>
     <url>/2020/07/14/Terminal%E6%9F%A5%E7%9C%8B%E5%BD%93%E5%89%8Dip%E5%9C%B0%E5%9D%80/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Terminal 查看当前ip地址</p>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Terminal 查看当前公网ip地址</p>
 <a id="more"></a>
 
 <h2 id="查看ip地址"><a href="#查看ip地址" class="headerlink" title="查看ip地址"></a>查看ip地址</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">curl http://checkip.amazonaws.com/</span><br></pre></td></tr></table></figure>
@@ -20231,21 +20231,36 @@
 <p>元素是否重复是依靠元素自身equals方法比较的结果而定的。</p>
 <a id="more"></a>
 
-<h2 id="集合的种类"><a href="#集合的种类" class="headerlink" title="集合的种类"></a>集合的种类</h2><h3 id="List"><a href="#List" class="headerlink" title="List"></a>List</h3><ul>
+<h2 id="集合的继承结构"><a href="#集合的继承结构" class="headerlink" title="集合的继承结构"></a>集合的继承结构</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">graph TD</span><br><span class="line">A[Collection接口] --&gt; B[List接口]</span><br><span class="line">    A --&gt; C[Set接口]</span><br><span class="line">    A --&gt; D[Map接口]</span><br><span class="line">    B --&gt; E[ArrayList子类]</span><br><span class="line">    B --&gt; F[LinkedList子类]</span><br><span class="line">    C --&gt; G[HashSet子类]</span><br><span class="line">    D --&gt; H[HashMap子类]</span><br></pre></td></tr></table></figure>
+
+<h3 id="List"><a href="#List" class="headerlink" title="List"></a>List</h3><ul>
 <li><p>可重复集，并且有序。特点是可以根据下标操作元素。</p>
 </li>
 <li><p>常用实现类：</p>
 </li>
 </ul>
-<p>ArrayList：使用数组实现，查询更快<br>LinkedLise：使用链表实现，增删更快（首位增删效果明显）</p>
+<p>ArrayList：底层使用数组实现，查询更快<br>LinkedLise：底层使用链表实现，增删更快（首位增删效果明显）</p>
 <h3 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h3><ul>
 <li>不可重复集</li>
+</ul>
+<h3 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h3><ul>
+<li>也叫哈希表、散列表</li>
+<li>常用于存 键值对 结构的数据</li>
+<li>其中的键不能重复，值可以重复</li>
 </ul>
 <h2 id="基本方法"><a href="#基本方法" class="headerlink" title="基本方法"></a>基本方法</h2><h3 id="创建-ArrayList-对象"><a href="#创建-ArrayList-对象" class="headerlink" title="创建 ArrayList 对象"></a>创建 ArrayList 对象</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Collection c = <span class="keyword">new</span> ArrayList();</span><br></pre></td></tr></table></figure>
 
 <h4 id="使用泛型创建"><a href="#使用泛型创建" class="headerlink" title="使用泛型创建"></a>使用泛型创建</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Collection&lt;String&gt; c = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br></pre></td></tr></table></figure>
 
 <h4 id="简写"><a href="#简写" class="headerlink" title="简写"></a>简写</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Collection&lt;String&gt; c = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br></pre></td></tr></table></figure>
+
+<h5 id="直接给定数组长度"><a href="#直接给定数组长度" class="headerlink" title="直接给定数组长度"></a>直接给定数组长度</h5><ul>
+<li>因为ArrayList底层维护的是一个数组，所以可以在创建对象时直接给定数组长度</li>
+</ul>
+<blockquote>
+<p><code>&lt;len&gt;</code>：定义数组长度</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Collection&lt;String&gt; c = <span class="keyword">new</span> ArrayList&lt;&gt;(&lt;len&gt;);</span><br></pre></td></tr></table></figure>
 
 <h3 id="向集合中添加元素"><a href="#向集合中添加元素" class="headerlink" title="向集合中添加元素"></a>向集合中添加元素</h3><ul>
 <li><p>线性集合默认追加到末尾</p>
@@ -20295,7 +20310,7 @@
 </ul>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">c1.removeAll(c2);</span><br></pre></td></tr></table></figure>
 
-<h2 id="迭代器便利"><a href="#迭代器便利" class="headerlink" title="迭代器便利"></a>迭代器便利</h2><h3 id="获取用于当前集合的迭代器"><a href="#获取用于当前集合的迭代器" class="headerlink" title="获取用于当前集合的迭代器"></a>获取用于当前集合的迭代器</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Iterator it = c.iterator();</span><br></pre></td></tr></table></figure>
+<h2 id="迭代器遍历"><a href="#迭代器遍历" class="headerlink" title="迭代器遍历"></a>迭代器遍历</h2><h3 id="获取用于当前集合的迭代器"><a href="#获取用于当前集合的迭代器" class="headerlink" title="获取用于当前集合的迭代器"></a>获取用于当前集合的迭代器</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Iterator it = c.iterator();</span><br></pre></td></tr></table></figure>
 
 <h3 id="遍历每一个元素"><a href="#遍历每一个元素" class="headerlink" title="遍历每一个元素"></a>遍历每一个元素</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">while</span>(it.hasNext()) &#123;</span><br><span class="line">    Object obj = it.next();</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -20384,8 +20399,7 @@
 </ul>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Comparator&lt;String&gt; comparator = <span class="keyword">new</span> Comparator&lt;String&gt;() &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">Collections.sort(list, comparator);</span><br></pre></td></tr></table></figure>
 
-<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p>达内教育</p>
-]]></content>
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
       <categories>
         <category>Java</category>
       </categories>
@@ -20900,6 +20914,92 @@
 ]]></content>
       <categories>
         <category>Swift Playgrounds</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【笔记】IDM百度网盘下载加速</title>
+    <url>/2020/07/18/IDM%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98%E4%B8%8B%E8%BD%BD%E5%8A%A0%E9%80%9F/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>利用大佬制作的<code>度云简易分享地址提取</code>网页配合IDM（Internet Download Manager）软件实现百度网盘下载加速</p>
+<a id="more"></a>
+
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
+<li><p>推荐一款Mac下的IDM软件<a href="http://www.neatdownloadmanager.com/index.php/en/" target="_blank" rel="noopener">NeatDownloadManager</a></p>
+</li>
+<li><p>配套Chrome插件<a href="https://chrome.google.com/webstore/detail/neatdownloadmanager-exten/cpcifbdmkopohnnofedkjghjiclmhdah" target="_blank" rel="noopener">NeatDownloadManager Extension</a></p>
+</li>
+</ul>
+<h2 id="下载加速"><a href="#下载加速" class="headerlink" title="下载加速"></a>下载加速</h2><ul>
+<li><p>将需要下载的文件分享，复制分享后的链接及密码</p>
+</li>
+<li><p>打开浏览器，在网址位置，加前缀后，直接粘贴在网址参数部分（问号之后）</p>
+</li>
+</ul>
+<blockquote>
+<p><code>前缀</code>：<a href="http://pan.naifei.cc/" target="_blank" rel="noopener">http://pan.naifei.cc/</a>?</p>
+</blockquote>
+<ul>
+<li><p>解析成功后，会出现文件名，文件大小，及下载链接</p>
+</li>
+<li><p>点击<code>点我下载</code>后，IDM会自动开始下载</p>
+</li>
+</ul>
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzA3MzMwNTY2OA==&scene=124#wechat_redirect" target="_blank" rel="noopener">微信公众号——科技心</a><br><a href="https://www.jianshu.com/p/05c7f7d38b4a" target="_blank" rel="noopener">简书——cherri二哈</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>【笔记】Valet 学习笔记</title>
+    <url>/2020/07/18/Valet%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Valet 是一个超级快的 Laravel 开发环境。Valet 并不是提到 Vagrant 或者 Homestead，而是提供了一个灵活的、速度极快的替代品，尤其是当你的电脑内存比较小的时候，它将是一个完美的选择。<br>Valet 只支持 Mac，而且需要你在本地安装 PHP 和 数据库服务，而这些通过 Homebrew 命令可以很容易的实现。Valet 使用极少的资源消耗提供了一个极速的本地开发环境。所以，它非常适合那些只需要 PHP/MySQL 而不需要一个完整的虚拟化开发环境的人。</p>
+<a id="more"></a>
+
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
+<li><p>确保80端口没有被占用</p>
+</li>
+<li><p>安装php</p>
+</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">brew install php</span><br></pre></td></tr></table></figure>
+
+<h2 id="开始安装"><a href="#开始安装" class="headerlink" title="开始安装"></a>开始安装</h2><h3 id="安装composer"><a href="#安装composer" class="headerlink" title="安装composer"></a>安装composer</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">brew install composer</span><br></pre></td></tr></table></figure>
+
+<h3 id="用composer安装valet"><a href="#用composer安装valet" class="headerlink" title="用composer安装valet"></a>用composer安装valet</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">composer global require laravel/valet</span><br></pre></td></tr></table></figure>
+
+<h3 id="踩坑"><a href="#踩坑" class="headerlink" title="踩坑"></a>踩坑</h3><ul>
+<li>报错：<code>[dnsmasq] is not installed, installing it now via Brew...</code></li>
+</ul>
+<h4 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h4><ul>
+<li>没有安装<code>dnsmasq</code></li>
+</ul>
+<h4 id="解决问题"><a href="#解决问题" class="headerlink" title="解决问题"></a>解决问题</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">brew install dnsmasq</span><br></pre></td></tr></table></figure>
+
+<h3 id="安装valet"><a href="#安装valet" class="headerlink" title="安装valet"></a>安装valet</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">valet install</span><br></pre></td></tr></table></figure>
+
+<h2 id="valet命令"><a href="#valet命令" class="headerlink" title="valet命令"></a>valet命令</h2><h3 id="启动、重启、停止valet"><a href="#启动、重启、停止valet" class="headerlink" title="启动、重启、停止valet"></a>启动、重启、停止valet</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">valet start</span><br><span class="line">valet restart</span><br><span class="line">valet stop</span><br></pre></td></tr></table></figure>
+
+<h3 id="安装、卸载valet"><a href="#安装、卸载valet" class="headerlink" title="安装、卸载valet"></a>安装、卸载valet</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">valet install</span><br><span class="line">valet uninstall</span><br></pre></td></tr></table></figure>
+
+<h3 id="启动Laravel站点"><a href="#启动Laravel站点" class="headerlink" title="启动Laravel站点"></a>启动Laravel站点</h3><h4 id="park"><a href="#park" class="headerlink" title="park"></a>park</h4><ul>
+<li>把当前工作目录作为 Valet 寻找站点的路径</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">mkdir ~/Sites</span><br><span class="line"><span class="built_in">cd</span> ~/Sites</span><br><span class="line">valet park</span><br></pre></td></tr></table></figure>
+
+<h4 id="link"><a href="#link" class="headerlink" title="link"></a>link</h4><p>把这个目录下所有文件夹都当做独立的不同站点，而当你只需要启动一个站点的时候，可以使用 link 命令</p>
+<blockquote>
+<p><code>&lt;name&gt;</code>：Laravel项目名称</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">valet link &lt;name&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="分享站点"><a href="#分享站点" class="headerlink" title="分享站点"></a>分享站点</h3><ul>
+<li>公网访问</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">valet share</span><br></pre></td></tr></table></figure>
+
+<h3 id="查看日志"><a href="#查看日志" class="headerlink" title="查看日志"></a>查看日志</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">valet <span class="built_in">log</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://9iphp.com/web/laravel/laravel-valet-local-dev-environment.html" target="_blank" rel="noopener">Specs的博客</a><br><a href="https://viencoding.com/article/55" target="_blank" rel="noopener">Vien的博客</a></p>
+]]></content>
+      <categories>
+        <category>MacOS</category>
       </categories>
   </entry>
 </search>

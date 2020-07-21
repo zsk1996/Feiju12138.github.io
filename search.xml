@@ -16281,6 +16281,19 @@
 
 <h6 id="写出-3"><a href="#写出-3" class="headerlink" title="写出"></a>写出</h6><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">bw.writer(&lt;<span class="keyword">char</span>&gt;);</span><br></pre></td></tr></table></figure>
 
+<h3 id="释放资源"><a href="#释放资源" class="headerlink" title="释放资源"></a>释放资源</h3><blockquote>
+<p><code>&lt;io&gt;</code>：输入或输出流对象</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        &lt;io&gt;.close();</span><br><span class="line">    &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">        ...</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="释放资源工具类"><a href="#释放资源工具类" class="headerlink" title="释放资源工具类"></a>释放资源工具类</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">close</span><span class="params">(Closeable c)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        ...</span><br><span class="line">    &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">        ...</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="try-with-resource"><a href="#try-with-resource" class="headerlink" title="try with resource"></a>try with resource</h4><ul>
+<li>jdk1.7对于IO自动资源管理的优化</li>
+<li>将创建流的代码作为try的参数传入，实现自动释放资源</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">try</span> (</span><br><span class="line">    <span class="comment">//0,创建读取流和写出流--字节流/高级流/普通流/字符流</span></span><br><span class="line">    InputStream in = <span class="keyword">new</span> BufferedInputStream( <span class="keyword">new</span> FileInputStream(from) );</span><br><span class="line">    OutputStream out = <span class="keyword">new</span> BufferedOutputStream( <span class="keyword">new</span> FileOutputStream(to) );</span><br><span class="line">) &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h3 id="文件复制"><a href="#文件复制" class="headerlink" title="文件复制"></a>文件复制</h3><h5 id="单字节读写"><a href="#单字节读写" class="headerlink" title="单字节读写"></a>单字节读写</h5><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">copy</span><span class="params">(File from, File to)</span> </span>&#123;</span><br><span class="line">    FileInputStream in = <span class="keyword">new</span> FileInputStream(from);</span><br><span class="line">    FileOutputStream out = <span class="keyword">new</span> FileOutputStream(to);</span><br><span class="line">    <span class="keyword">int</span> b;</span><br><span class="line">    <span class="keyword">while</span>((b = in.read()) != -<span class="number">1</span>) &#123;</span><br><span class="line">        out.write(b);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h5 id="批量数据读写"><a href="#批量数据读写" class="headerlink" title="批量数据读写"></a>批量数据读写</h5><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">copy</span><span class="params">(File from, File to)</span> </span>&#123;</span><br><span class="line">    FileInputStream in = <span class="keyword">new</span> FileInputStream(from);</span><br><span class="line">    FileOutputStream out = <span class="keyword">new</span> FileOutputStream(to);</span><br><span class="line">    <span class="keyword">byte</span>[] buff = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">8192</span>];  <span class="comment">// 8k长度的数组</span></span><br><span class="line">    <span class="keyword">int</span> n;  <span class="comment">// 用来保存一批的数量</span></span><br><span class="line">    <span class="keyword">while</span>((n = in.read(buff)) != -<span class="number">1</span>) &#123;</span><br><span class="line">        write(buff, <span class="number">0</span>, n);</span><br><span class="line">    &#125;    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -20399,6 +20412,39 @@
 </ul>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Comparator&lt;String&gt; comparator = <span class="keyword">new</span> Comparator&lt;String&gt;() &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">Collections.sort(list, comparator);</span><br></pre></td></tr></table></figure>
 
+<h2 id="LinkedList的额外方法"><a href="#LinkedList的额外方法" class="headerlink" title="LinkedList的额外方法"></a>LinkedList的额外方法</h2><h3 id="添加首尾元素"><a href="#添加首尾元素" class="headerlink" title="添加首尾元素"></a>添加首尾元素</h3><blockquote>
+<p><code>&lt;value&gt;</code>：对应数据类型的元素</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">addFirst(&lt;value&gt;);</span><br><span class="line">addLast(&lt;value&gt;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="获取首尾元素"><a href="#获取首尾元素" class="headerlink" title="获取首尾元素"></a>获取首尾元素</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">list.getFirst();</span><br><span class="line">list.getLast();</span><br></pre></td></tr></table></figure>
+
+<h3 id="修改指定下标的元素"><a href="#修改指定下标的元素" class="headerlink" title="修改指定下标的元素"></a>修改指定下标的元素</h3><blockquote>
+<p><code>&lt;index&gt;</code>：下标值</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">list.setFirst(&lt;index&gt;, &lt;value&gt;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="删除首尾元素"><a href="#删除首尾元素" class="headerlink" title="删除首尾元素"></a>删除首尾元素</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">list.removeFirst();</span><br><span class="line">list.removeLast();</span><br></pre></td></tr></table></figure>
+
+<h2 id="Map集合"><a href="#Map集合" class="headerlink" title="Map集合"></a>Map集合</h2><h3 id="添加键值对"><a href="#添加键值对" class="headerlink" title="添加键值对"></a>添加键值对</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">list.put(&lt;key&gt;, &lt;value&gt;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="是否有指定key"><a href="#是否有指定key" class="headerlink" title="是否有指定key"></a>是否有指定key</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">list.containsKey(&lt;key&gt;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="是否有指定value"><a href="#是否有指定value" class="headerlink" title="是否有指定value"></a>是否有指定value</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">list.containsValue(&lt;value&gt;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="根据key获取value"><a href="#根据key获取value" class="headerlink" title="根据key获取value"></a>根据key获取value</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">list.get(&lt;key&gt;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="根据key删除键值对"><a href="#根据key删除键值对" class="headerlink" title="根据key删除键值对"></a>根据key删除键值对</h3><ul>
+<li>返回value</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">list.remove(&lt;key&gt;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="把map里的所有value放入Collection"><a href="#把map里的所有value放入Collection" class="headerlink" title="把map里的所有value放入Collection"></a>把map里的所有value放入Collection</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Collection c = map.values();</span><br></pre></td></tr></table></figure>
+
+<h3 id="把map里的所有key放入Set"><a href="#把map里的所有key放入Set" class="headerlink" title="把map里的所有key放入Set"></a>把map里的所有key放入Set</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Set set = map.keySet();</span><br></pre></td></tr></table></figure>
+
+<h3 id="把map里的键值对封装为Entry对象放入Set"><a href="#把map里的键值对封装为Entry对象放入Set" class="headerlink" title="把map里的键值对封装为Entry对象放入Set"></a>把map里的键值对封装为Entry对象放入Set</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Set set = map.entrySet();</span><br></pre></td></tr></table></figure>
+
 <h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
       <categories>
         <category>Java</category>
@@ -20997,6 +21043,37 @@
 <h3 id="查看日志"><a href="#查看日志" class="headerlink" title="查看日志"></a>查看日志</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">valet <span class="built_in">log</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://9iphp.com/web/laravel/laravel-valet-local-dev-environment.html" target="_blank" rel="noopener">Specs的博客</a><br><a href="https://viencoding.com/article/55" target="_blank" rel="noopener">Vien的博客</a></p>
+]]></content>
+      <categories>
+        <category>MacOS</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【笔记】将iOS备份移到外置磁盘</title>
+    <url>/2020/07/21/%E5%B0%86iOS%E5%A4%87%E4%BB%BD%E7%A7%BB%E5%88%B0%E5%A4%96%E7%BD%AE%E7%A3%81%E7%9B%98/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>将iOS备份移到外置磁盘，节省Mac硬盘的占用</p>
+<a id="more"></a>
+
+<h2 id="保留旧备份（可选）"><a href="#保留旧备份（可选）" class="headerlink" title="保留旧备份（可选）"></a>保留旧备份（可选）</h2><ul>
+<li>进入到iOS备份的目录</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">open ~/Library/Application Support/MobileSync/</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>将<code>Backup</code>更名为<code>Backup.default</code></li>
+</ul>
+<h2 id="开始转移"><a href="#开始转移" class="headerlink" title="开始转移"></a>开始转移</h2><ul>
+<li><p>复制<code>~/Library/Application Support/MobileSync/</code>下的<code>Backup</code>目录到外置磁盘根目录</p>
+</li>
+<li><p>建立软连接</p>
+</li>
+</ul>
+<blockquote>
+<p><code>&lt;name&gt;</code>：外置磁盘的目录名</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">ln -s /Volumes/&lt;name&gt;/Backup ~/Library/Application\ Support/MobileSync/Backup</span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://sspai.com/post/33524" target="_blank" rel="noopener">少数派</a></p>
 ]]></content>
       <categories>
         <category>MacOS</category>

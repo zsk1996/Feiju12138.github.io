@@ -12757,67 +12757,75 @@
   </entry>
   <entry>
     <title>【笔记】反射学习笔记</title>
-    <url>/2020/05/21/%E5%8F%8D%E5%B0%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>反射学习笔记</p>
-<a id="more"></a>
-
-<h2 id="创建运行时类对象"><a href="#创建运行时类对象" class="headerlink" title="创建运行时类对象"></a>创建运行时类对象</h2><h3 id="通过类的class属性"><a href="#通过类的class属性" class="headerlink" title="通过类的class属性"></a>通过类的class属性</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Class <span class="class"><span class="keyword">class</span> </span>= Persion<span class="class">.<span class="keyword">class</span></span>;</span><br></pre></td></tr></table></figure>
-
-<h3 id="通过类的getClass-方法"><a href="#通过类的getClass-方法" class="headerlink" title="通过类的getClass()方法"></a>通过类的getClass()方法</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Class <span class="class"><span class="keyword">class</span> </span>= persion.getClass();</span><br></pre></td></tr></table></figure>
-
-<h3 id="通过Class类的forName-方法"><a href="#通过Class类的forName-方法" class="headerlink" title="通过Class类的forName()方法"></a>通过Class类的forName()方法</h3><blockquote>
-<p><code>&lt;class_name&gt;</code>：类的全称</p>
+    <url>/2020/07/23/%E5%8F%8D%E5%B0%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>反射学习笔记<br>拿到class文件，分析里面的所有数据，操作数据</p>
+<h2 id="获取类对象"><a href="#获取类对象" class="headerlink" title="获取类对象"></a>获取类对象</h2><h3 id="用类名获取"><a href="#用类名获取" class="headerlink" title="用类名获取"></a>用类名获取</h3><blockquote>
+<p><code>&lt;Class&gt;</code>：类名</p>
 </blockquote>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Class <span class="class"><span class="keyword">class</span> </span>= Class.forName(<span class="string">"&lt;class_name&gt;"</span>);</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">&lt;Class&gt;<span class="class">.<span class="keyword">class</span></span></span><br></pre></td></tr></table></figure>
 
-<h3 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Persion persion = (Persion) <span class="class"><span class="keyword">class</span>.<span class="title">newInstance</span>()</span>;</span><br></pre></td></tr></table></figure>
-
-<h2 id="获取类名"><a href="#获取类名" class="headerlink" title="获取类名"></a>获取类名</h2><h3 id="获取类的全名"><a href="#获取类的全名" class="headerlink" title="获取类的全名"></a>获取类的全名</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span>.<span class="title">getName</span>()</span>;</span><br><span class="line"><span class="class"><span class="keyword">class</span>.<span class="title">getCanonicalName</span>()</span>;</span><br></pre></td></tr></table></figure>
-
-<h3 id="获取类的简称"><a href="#获取类的简称" class="headerlink" title="获取类的简称"></a>获取类的简称</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span>.<span class="title">getSimpleName</span>()</span>;</span><br></pre></td></tr></table></figure>
-
-<h2 id="访问属性"><a href="#访问属性" class="headerlink" title="访问属性"></a>访问属性</h2><h3 id="获取公有属性"><a href="#获取公有属性" class="headerlink" title="获取公有属性"></a>获取公有属性</h3><blockquote>
-<p><code>&lt;attribute_name&gt;</code>：属性名</p>
+<h3 id="用对象名获取"><a href="#用对象名获取" class="headerlink" title="用对象名获取"></a>用对象名获取</h3><blockquote>
+<p><code>&lt;class&gt;</code>：引用类型变量名</p>
 </blockquote>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">Field field = class.getField("&lt;attribute_name&gt;");</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">&lt;<span class="class"><span class="keyword">class</span>&gt;.<span class="title">getClass</span>()</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="获取类的私有属性"><a href="#获取类的私有属性" class="headerlink" title="获取类的私有属性"></a>获取类的私有属性</h3><figure class="highlight"><table><tr><td class="code"><pre><span class="line">Field field = class.getDeclaredField("&lt;attribute_name&gt;");</span><br></pre></td></tr></table></figure>
-
-<h3 id="修改属性值"><a href="#修改属性值" class="headerlink" title="修改属性值"></a>修改属性值</h3><blockquote>
-<p><code>&lt;value&gt;</code>：修改后的属性值</p>
+<h3 id="用类的全名获取"><a href="#用类的全名获取" class="headerlink" title="用类的全名获取"></a>用类的全名获取</h3><blockquote>
+<p><code>&lt;package.class&gt;</code>：类全名</p>
 </blockquote>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">field.set(persion, &lt;value&gt;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Class&lt;?&gt; c = Class.forName(<span class="string">"&lt;package.class&gt;"</span>);</span><br></pre></td></tr></table></figure>
 
-<h3 id="是否有访问权限"><a href="#是否有访问权限" class="headerlink" title="是否有访问权限"></a>是否有访问权限</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">field.isAccessible();</span><br></pre></td></tr></table></figure>
+<h2 id="获得包名类名"><a href="#获得包名类名" class="headerlink" title="获得包名类名"></a>获得包名类名</h2><h3 id="获得包名类名-1"><a href="#获得包名类名-1" class="headerlink" title="获得包名类名"></a>获得包名类名</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">c.getPackage().getName()</span><br></pre></td></tr></table></figure>
 
-<h3 id="修改访问权限"><a href="#修改访问权限" class="headerlink" title="修改访问权限"></a>修改访问权限</h3><ul>
-<li>私有属性授权后才可以修改属性值和调用方法</li>
+<h3 id="获得类名"><a href="#获得类名" class="headerlink" title="获得类名"></a>获得类名</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">c.getName()</span><br></pre></td></tr></table></figure>
+
+<h3 id="获得类简称"><a href="#获得类简称" class="headerlink" title="获得类简称"></a>获得类简称</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">c.getSimpleName()</span><br></pre></td></tr></table></figure>
+
+<h2 id="获得成员变量的定义信息"><a href="#获得成员变量的定义信息" class="headerlink" title="获得成员变量的定义信息"></a>获得成员变量的定义信息</h2><h3 id="得到可见的所有成员变量"><a href="#得到可见的所有成员变量" class="headerlink" title="得到可见的所有成员变量"></a>得到可见的所有成员变量</h3><ul>
+<li>包括继承的变量</li>
 </ul>
-<blockquote>
-<p><code>&lt;boolean&gt;</code>：true为授权，false为不授权</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">field.setAccessible(&lt;<span class="keyword">boolean</span>&gt;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">getFields()</span><br></pre></td></tr></table></figure>
 
-<h3 id="获取所有属性"><a href="#获取所有属性" class="headerlink" title="获取所有属性"></a>获取所有属性</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Field[] field = <span class="class"><span class="keyword">class</span>.<span class="title">getDeclaredFields</span>()</span>;</span><br></pre></td></tr></table></figure>
-
-<h2 id="访问方法"><a href="#访问方法" class="headerlink" title="访问方法"></a>访问方法</h2><h3 id="获取公共方法"><a href="#获取公共方法" class="headerlink" title="获取公共方法"></a>获取公共方法</h3><blockquote>
-<p><code>&lt;method_name&gt;</code>：方法名<br><code>&lt;types&gt;</code>：参数类型，没有就不写，多个参数需要按照顺序写</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Method method = <span class="class"><span class="keyword">class</span>.<span class="title">getMethod</span>(&lt;<span class="title">method_name</span>&gt;)</span>;</span><br><span class="line">Method method = <span class="class"><span class="keyword">class</span>.<span class="title">getMethod</span>(&lt;<span class="title">method_name</span>&gt;, &lt;<span class="title">types</span>&gt;)</span>;</span><br></pre></td></tr></table></figure>
-
-<h3 id="获取私有方法"><a href="#获取私有方法" class="headerlink" title="获取私有方法"></a>获取私有方法</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span>.<span class="title">getDeclaredMethod</span>()</span>;</span><br></pre></td></tr></table></figure>
-
-<h3 id="获取方法名"><a href="#获取方法名" class="headerlink" title="获取方法名"></a>获取方法名</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">method.getName();</span><br></pre></td></tr></table></figure>
-
-<h3 id="调用方法"><a href="#调用方法" class="headerlink" title="调用方法"></a>调用方法</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">method.invoke(persion);</span><br><span class="line">method.invoke(persion, &lt;types&gt;);</span><br></pre></td></tr></table></figure>
-
-<h4 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h4><ul>
-<li>如果参数列表为两个int类型参数</li>
+<h3 id="获得包括不可见的所有变量"><a href="#获得包括不可见的所有变量" class="headerlink" title="获得包括不可见的所有变量"></a>获得包括不可见的所有变量</h3><ul>
+<li>包括私有变量，不包括继承的变量</li>
 </ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Method method = class.getMethod("&lt;method_name&gt;", int.class, int.calss);</span><br><span class="line">method.invoke(persion, <span class="number">8</span>, <span class="number">5</span>, <span class="number">7</span>);</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">getDeclaredFields()</span><br></pre></td></tr></table></figure>
 
-<h2 id="未完待更"><a href="#未完待更" class="headerlink" title="未完待更"></a>未完待更</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p>达内教育</p>
-]]></content>
+<h3 id="获得可见的一个变量"><a href="#获得可见的一个变量" class="headerlink" title="获得可见的一个变量"></a>获得可见的一个变量</h3><blockquote>
+<p><code>&lt;name&gt;</code>：变量名</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">getField(&lt;name&gt;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="获得包括不可见的一个变量"><a href="#获得包括不可见的一个变量" class="headerlink" title="获得包括不可见的一个变量"></a>获得包括不可见的一个变量</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">getDeclaredField(&lt;name&gt;)</span><br></pre></td></tr></table></figure>
+
+<h2 id="获得构造方法的定义信息"><a href="#获得构造方法的定义信息" class="headerlink" title="获得构造方法的定义信息"></a>获得构造方法的定义信息</h2><h3 id="获得可见的构造方法"><a href="#获得可见的构造方法" class="headerlink" title="获得可见的构造方法"></a>获得可见的构造方法</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">getConstructors()</span><br></pre></td></tr></table></figure>
+
+<h3 id="获得包括不可见的构造方法"><a href="#获得包括不可见的构造方法" class="headerlink" title="获得包括不可见的构造方法"></a>获得包括不可见的构造方法</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">getDeclaredConstructors()</span><br></pre></td></tr></table></figure>
+
+<h3 id="获得可见的一个构造方法"><a href="#获得可见的一个构造方法" class="headerlink" title="获得可见的一个构造方法"></a>获得可见的一个构造方法</h3><blockquote>
+<p><code>&lt;int&gt;.class</code>：基本类型的类对象</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">getConstructor(&lt;<span class="keyword">int</span>&gt;<span class="class">.<span class="keyword">class</span>)</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="获得包括不可见的一个构造方法"><a href="#获得包括不可见的一个构造方法" class="headerlink" title="获得包括不可见的一个构造方法"></a>获得包括不可见的一个构造方法</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">getDeclaredConstructor(&lt;<span class="keyword">int</span>&gt;<span class="class">.<span class="keyword">class</span>)</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="获得方法的定义信息"><a href="#获得方法的定义信息" class="headerlink" title="获得方法的定义信息"></a>获得方法的定义信息</h2><h3 id="获得可见的方法"><a href="#获得可见的方法" class="headerlink" title="获得可见的方法"></a>获得可见的方法</h3><ul>
+<li>包括继承的方法</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">getMethods()</span><br></pre></td></tr></table></figure>
+
+<h3 id="获得本类定义的方法"><a href="#获得本类定义的方法" class="headerlink" title="获得本类定义的方法"></a>获得本类定义的方法</h3><ul>
+<li>包括私有方法，不包括继承的方法</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">getDeclearedMethods()</span><br></pre></td></tr></table></figure>
+
+<h3 id="获得可见的一个方法"><a href="#获得可见的一个方法" class="headerlink" title="获得可见的一个方法"></a>获得可见的一个方法</h3><blockquote>
+<p><code>&lt;method&gt;</code>：方法名</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">getMethod(&lt;method&gt;, &lt;<span class="keyword">int</span>&gt;<span class="class">.<span class="keyword">class</span>)</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="获得本类定义的一个方法"><a href="#获得本类定义的一个方法" class="headerlink" title="获得本类定义的一个方法"></a>获得本类定义的一个方法</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">getDeclearedMethod(&lt;method&gt;, &lt;<span class="keyword">int</span>&gt;<span class="class">.<span class="keyword">class</span>)</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
       <categories>
         <category>Java</category>
       </categories>
@@ -18502,17 +18510,24 @@
 </ul>
 </li>
 </ul>
+<h3 id="同步代码块"><a href="#同步代码块" class="headerlink" title="同步代码块"></a>同步代码块</h3><ul>
+<li>抢指定对象的锁</li>
+</ul>
 <blockquote>
-<p><code>&lt;obj&gt;</code>：抢指定对象的锁</p>
+<p><code>&lt;obj&gt;</code>：指定对象</p>
 </blockquote>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">synchronized</span>(&lt;obj&gt;) &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-
-
+<h3 id="在方法上加锁"><a href="#在方法上加锁" class="headerlink" title="在方法上加锁"></a>在方法上加锁</h3><ul>
+<li>抢当前对象的锁</li>
+</ul>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">func</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<h3 id="静态同步代码块"><a href="#静态同步代码块" class="headerlink" title="静态同步代码块"></a>静态同步代码块</h3><ul>
+<li>抢类的锁</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">func</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="未完待更"><a href="#未完待更" class="headerlink" title="未完待更"></a>未完待更</h2><p>03-03-13</p>
 <h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
       <categories>
         <category>Java</category>
@@ -19042,6 +19057,9 @@
 </ul>
 <h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://www.youtube.com/watch?v=aoUNRxFwpdA&t=462s" target="_blank" rel="noopener">YouTube——抖音网红精选TOP</a></p>
 ]]></content>
+      <categories>
+        <category>云计算</category>
+      </categories>
   </entry>
   <entry>
     <title>【笔记】跨平台查看系统信息</title>
@@ -20445,6 +20463,30 @@
 
 <h3 id="把map里的键值对封装为Entry对象放入Set"><a href="#把map里的键值对封装为Entry对象放入Set" class="headerlink" title="把map里的键值对封装为Entry对象放入Set"></a>把map里的键值对封装为Entry对象放入Set</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Set set = map.entrySet();</span><br></pre></td></tr></table></figure>
 
+<h2 id="工具类"><a href="#工具类" class="headerlink" title="工具类"></a>工具类</h2><h3 id="批量加入数据"><a href="#批量加入数据" class="headerlink" title="批量加入数据"></a>批量加入数据</h3><blockquote>
+<p><code>&lt;elements&gt;</code>：任意数量的数据，多个数据间用逗号隔开</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Collections.addAll(list, &lt;elements&gt;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="获取集合中的最大值"><a href="#获取集合中的最大值" class="headerlink" title="获取集合中的最大值"></a>获取集合中的最大值</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Collections.max(list);</span><br></pre></td></tr></table></figure>
+
+<h3 id="获取集合中的最小值"><a href="#获取集合中的最小值" class="headerlink" title="获取集合中的最小值"></a>获取集合中的最小值</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Collections.min(list);</span><br></pre></td></tr></table></figure>
+
+<h3 id="位置反转"><a href="#位置反转" class="headerlink" title="位置反转"></a>位置反转</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Collections.revers(list);</span><br></pre></td></tr></table></figure>
+
+<h3 id="排序-1"><a href="#排序-1" class="headerlink" title="排序"></a>排序</h3><ul>
+<li>默认从小到大排序</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Collections.sort(list);</span><br></pre></td></tr></table></figure>
+
+<h3 id="交换"><a href="#交换" class="headerlink" title="交换"></a>交换</h3><ul>
+<li>把指定元素按照下标位置交换</li>
+</ul>
+<blockquote>
+<p><code>&lt;index_1&gt;</code>、<code>&lt;index_2&gt;</code>：两个元素的下标</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Collections.swap(list, &lt;index_1&gt;, &lt;index_2&gt;);</span><br></pre></td></tr></table></figure>
+
 <h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
       <categories>
         <category>Java</category>
@@ -21077,6 +21119,31 @@
 ]]></content>
       <categories>
         <category>MacOS</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【笔记】Java设计模式</title>
+    <url>/2020/07/24/Java%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Java 设计模式</p>
+<a id="more"></a>
+
+<h2 id="单例设计模式"><a href="#单例设计模式" class="headerlink" title="单例设计模式"></a>单例设计模式</h2><ul>
+<li>每个类只创建一个对象，节省内存</li>
+</ul>
+<ol>
+<li>构造方法私有</li>
+<li>外界设法获取内部创建好的对象</li>
+<li>对外提供全局访问点</li>
+</ol>
+<h3 id="饿汉式"><a href="#饿汉式" class="headerlink" title="饿汉式"></a>饿汉式</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        MySingleton mySingleton = MySingleton.getMySingleton();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MySingleton</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> MySingleton mySingleton = <span class="keyword">new</span> MySingleton();</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">MySingleton</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> MySingleton <span class="title">getMySingleton</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> mySingleton;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="懒汉式"><a href="#懒汉式" class="headerlink" title="懒汉式"></a>懒汉式</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        MySingleton mySingleton = MySingleton.getMySingleton();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MySingleton</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> MySingleton mySingleton;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">MySingleton</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> MySingleton <span class="title">getMySingleton</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (mySingleton==<span class="keyword">null</span>) &#123;</span><br><span class="line">            mySingleton = <span class="keyword">new</span> MySingleton();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> mySingleton;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="解决线程安全"><a href="#解决线程安全" class="headerlink" title="解决线程安全"></a>解决线程安全</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        MySingleton mySingleton = MySingleton.getMySingleton();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MySingleton</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> MySingleton mySingleton;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">MySingleton</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> MySingleton <span class="title">getMySingleton</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">synchronized</span> (MySingleton<span class="class">.<span class="keyword">class</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (mySingleton==<span class="keyword">null</span>) &#123;</span><br><span class="line">                mySingleton = <span class="keyword">new</span> MySingleton();</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> mySingleton;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
+      <categories>
+        <category>Java</category>
       </categories>
   </entry>
 </search>

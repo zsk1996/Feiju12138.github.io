@@ -327,7 +327,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-07-25 10:33:05" itemprop="dateModified" datetime="2020-07-25T10:33:05+08:00">2020-07-25</time>
+                <time title="修改时间：2020-07-25 10:36:17" itemprop="dateModified" datetime="2020-07-25T10:36:17+08:00">2020-07-25</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -353,73 +353,14 @@
 
       
           <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>反射学习笔记<br>拿到class文件，分析里面的所有数据，操作数据</p>
-<h2 id="获取类对象"><a href="#获取类对象" class="headerlink" title="获取类对象"></a>获取类对象</h2><h3 id="用类名获取"><a href="#用类名获取" class="headerlink" title="用类名获取"></a>用类名获取</h3><blockquote>
-<p><code>&lt;Class&gt;</code>：类名</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;Class&gt;<span class="class">.<span class="keyword">class</span></span></span><br></pre></td></tr></table></figure>
-
-<h3 id="用对象名获取"><a href="#用对象名获取" class="headerlink" title="用对象名获取"></a>用对象名获取</h3><blockquote>
-<p><code>&lt;class&gt;</code>：引用类型变量名</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="class"><span class="keyword">class</span>&gt;.<span class="title">getClass</span>()</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="用类的全名获取"><a href="#用类的全名获取" class="headerlink" title="用类的全名获取"></a>用类的全名获取</h3><blockquote>
-<p><code>&lt;package.class&gt;</code>：类全名</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Class&lt;?&gt; c = Class.forName(<span class="string">"&lt;package.class&gt;"</span>);</span><br></pre></td></tr></table></figure>
-
-<h2 id="获得包名类名"><a href="#获得包名类名" class="headerlink" title="获得包名类名"></a>获得包名类名</h2><h3 id="获得包名类名-1"><a href="#获得包名类名-1" class="headerlink" title="获得包名类名"></a>获得包名类名</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">c.getPackage().getName()</span><br></pre></td></tr></table></figure>
-
-<h3 id="获得类名"><a href="#获得类名" class="headerlink" title="获得类名"></a>获得类名</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">c.getName()</span><br></pre></td></tr></table></figure>
-
-<h3 id="获得类简称"><a href="#获得类简称" class="headerlink" title="获得类简称"></a>获得类简称</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">c.getSimpleName()</span><br></pre></td></tr></table></figure>
-
-<h2 id="获得成员变量的定义信息"><a href="#获得成员变量的定义信息" class="headerlink" title="获得成员变量的定义信息"></a>获得成员变量的定义信息</h2><h3 id="得到可见的所有成员变量"><a href="#得到可见的所有成员变量" class="headerlink" title="得到可见的所有成员变量"></a>得到可见的所有成员变量</h3><ul>
-<li>包括继承的变量</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">getFields()</span><br></pre></td></tr></table></figure>
-
-<h3 id="获得包括不可见的所有变量"><a href="#获得包括不可见的所有变量" class="headerlink" title="获得包括不可见的所有变量"></a>获得包括不可见的所有变量</h3><ul>
-<li>包括私有变量，不包括继承的变量</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">getDeclaredFields()</span><br></pre></td></tr></table></figure>
-
-<h3 id="获得可见的一个变量"><a href="#获得可见的一个变量" class="headerlink" title="获得可见的一个变量"></a>获得可见的一个变量</h3><blockquote>
-<p><code>&lt;name&gt;</code>：变量名</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">getField(&lt;name&gt;)</span><br></pre></td></tr></table></figure>
-
-<h3 id="获得包括不可见的一个变量"><a href="#获得包括不可见的一个变量" class="headerlink" title="获得包括不可见的一个变量"></a>获得包括不可见的一个变量</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">getDeclaredField(&lt;name&gt;)</span><br></pre></td></tr></table></figure>
-
-<h2 id="获得构造方法的定义信息"><a href="#获得构造方法的定义信息" class="headerlink" title="获得构造方法的定义信息"></a>获得构造方法的定义信息</h2><h3 id="获得可见的构造方法"><a href="#获得可见的构造方法" class="headerlink" title="获得可见的构造方法"></a>获得可见的构造方法</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">getConstructors()</span><br></pre></td></tr></table></figure>
-
-<h3 id="获得包括不可见的构造方法"><a href="#获得包括不可见的构造方法" class="headerlink" title="获得包括不可见的构造方法"></a>获得包括不可见的构造方法</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">getDeclaredConstructors()</span><br></pre></td></tr></table></figure>
-
-<h3 id="获得可见的一个构造方法"><a href="#获得可见的一个构造方法" class="headerlink" title="获得可见的一个构造方法"></a>获得可见的一个构造方法</h3><blockquote>
-<p><code>&lt;int&gt;.class</code>：基本类型的类对象</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">getConstructor(&lt;<span class="keyword">int</span>&gt;<span class="class">.<span class="keyword">class</span>)</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="获得包括不可见的一个构造方法"><a href="#获得包括不可见的一个构造方法" class="headerlink" title="获得包括不可见的一个构造方法"></a>获得包括不可见的一个构造方法</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">getDeclaredConstructor(&lt;<span class="keyword">int</span>&gt;<span class="class">.<span class="keyword">class</span>)</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="获得方法的定义信息"><a href="#获得方法的定义信息" class="headerlink" title="获得方法的定义信息"></a>获得方法的定义信息</h2><h3 id="获得可见的方法"><a href="#获得可见的方法" class="headerlink" title="获得可见的方法"></a>获得可见的方法</h3><ul>
-<li>包括继承的方法</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">getMethods()</span><br></pre></td></tr></table></figure>
-
-<h3 id="获得本类定义的方法"><a href="#获得本类定义的方法" class="headerlink" title="获得本类定义的方法"></a>获得本类定义的方法</h3><ul>
-<li>包括私有方法，不包括继承的方法</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">getDeclearedMethods()</span><br></pre></td></tr></table></figure>
-
-<h3 id="获得可见的一个方法"><a href="#获得可见的一个方法" class="headerlink" title="获得可见的一个方法"></a>获得可见的一个方法</h3><blockquote>
-<p><code>&lt;method&gt;</code>：方法名</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">getMethod(&lt;method&gt;, &lt;<span class="keyword">int</span>&gt;<span class="class">.<span class="keyword">class</span>)</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="获得本类定义的一个方法"><a href="#获得本类定义的一个方法" class="headerlink" title="获得本类定义的一个方法"></a>获得本类定义的一个方法</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">getDeclearedMethod(&lt;method&gt;, &lt;<span class="keyword">int</span>&gt;<span class="class">.<span class="keyword">class</span>)</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/07/23/%E5%8F%8D%E5%B0%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 

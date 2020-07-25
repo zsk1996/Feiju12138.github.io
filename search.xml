@@ -12759,6 +12759,8 @@
     <title>【笔记】反射学习笔记</title>
     <url>/2020/07/23/%E5%8F%8D%E5%B0%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>反射学习笔记<br>拿到class文件，分析里面的所有数据，操作数据</p>
+<a id="more"></a>
+
 <h2 id="获取类对象"><a href="#获取类对象" class="headerlink" title="获取类对象"></a>获取类对象</h2><h3 id="用类名获取"><a href="#用类名获取" class="headerlink" title="用类名获取"></a>用类名获取</h3><blockquote>
 <p><code>&lt;Class&gt;</code>：类名</p>
 </blockquote>

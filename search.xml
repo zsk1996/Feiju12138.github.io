@@ -12776,11 +12776,11 @@
 </blockquote>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Class&lt;?&gt; c = Class.forName(<span class="string">"&lt;package.class&gt;"</span>);</span><br></pre></td></tr></table></figure>
 
-<h2 id="获得包名类名"><a href="#获得包名类名" class="headerlink" title="获得包名类名"></a>获得包名类名</h2><h3 id="获得包名类名-1"><a href="#获得包名类名-1" class="headerlink" title="获得包名类名"></a>获得包名类名</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">c.getPackage().getName()</span><br></pre></td></tr></table></figure>
+<h2 id="获得包名类名"><a href="#获得包名类名" class="headerlink" title="获得包名类名"></a>获得包名类名</h2><h3 id="获得包名"><a href="#获得包名" class="headerlink" title="获得包名"></a>获得包名</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">c.getPackage().getName()</span><br></pre></td></tr></table></figure>
 
-<h3 id="获得类名"><a href="#获得类名" class="headerlink" title="获得类名"></a>获得类名</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">c.getName()</span><br></pre></td></tr></table></figure>
+<h3 id="获得完整类名"><a href="#获得完整类名" class="headerlink" title="获得完整类名"></a>获得完整类名</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">c.getName()</span><br></pre></td></tr></table></figure>
 
-<h3 id="获得类简称"><a href="#获得类简称" class="headerlink" title="获得类简称"></a>获得类简称</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">c.getSimpleName()</span><br></pre></td></tr></table></figure>
+<h3 id="获得类名"><a href="#获得类名" class="headerlink" title="获得类名"></a>获得类名</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">c.getSimpleName()</span><br></pre></td></tr></table></figure>
 
 <h2 id="获得成员变量的定义信息"><a href="#获得成员变量的定义信息" class="headerlink" title="获得成员变量的定义信息"></a>获得成员变量的定义信息</h2><h3 id="得到可见的所有成员变量"><a href="#得到可见的所有成员变量" class="headerlink" title="得到可见的所有成员变量"></a>得到可见的所有成员变量</h3><ul>
 <li>包括继承的变量</li>
@@ -12826,6 +12826,23 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">getMethod(&lt;method&gt;, &lt;<span class="keyword">int</span>&gt;<span class="class">.<span class="keyword">class</span>)</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="获得本类定义的一个方法"><a href="#获得本类定义的一个方法" class="headerlink" title="获得本类定义的一个方法"></a>获得本类定义的一个方法</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">getDeclearedMethod(&lt;method&gt;, &lt;<span class="keyword">int</span>&gt;<span class="class">.<span class="keyword">class</span>)</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h2><h3 id="利用无参构造创建"><a href="#利用无参构造创建" class="headerlink" title="利用无参构造创建"></a>利用无参构造创建</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">newInstance()</span><br></pre></td></tr></table></figure>
+
+<h3 id="利用有参构造创建"><a href="#利用有参构造创建" class="headerlink" title="利用有参构造创建"></a>利用有参构造创建</h3><blockquote>
+<p><code>&lt;str&gt;</code>：以字符串为例利用有参构造创建对象</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">c.getConstaructor(String<span class="class">.<span class="keyword">class</span>)</span>;</span><br><span class="line">c.newInstance(<span class="string">"&lt;str&gt;"</span>);</span><br></pre></td></tr></table></figure>
+
+<h2 id="执行方法"><a href="#执行方法" class="headerlink" title="执行方法"></a>执行方法</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">invoke()</span><br></pre></td></tr></table></figure>
+
+<h2 id="暴力反射"><a href="#暴力反射" class="headerlink" title="暴力反射"></a>暴力反射</h2><h3 id="暴力反射关键字"><a href="#暴力反射关键字" class="headerlink" title="暴力反射关键字"></a>暴力反射关键字</h3><ul>
+<li><code>Decleared</code></li>
+</ul>
+<h3 id="设置权限"><a href="#设置权限" class="headerlink" title="设置权限"></a>设置权限</h3><ul>
+<li>访问私有属性时，需要先设置访问权限，才可以访问</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">c.setAccessible(<span class="keyword">true</span>);</span><br></pre></td></tr></table></figure>
 
 <h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
       <categories>
@@ -21142,6 +21159,31 @@
 <h3 id="懒汉式"><a href="#懒汉式" class="headerlink" title="懒汉式"></a>懒汉式</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        MySingleton mySingleton = MySingleton.getMySingleton();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MySingleton</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> MySingleton mySingleton;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">MySingleton</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> MySingleton <span class="title">getMySingleton</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (mySingleton==<span class="keyword">null</span>) &#123;</span><br><span class="line">            mySingleton = <span class="keyword">new</span> MySingleton();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> mySingleton;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h4 id="解决线程安全"><a href="#解决线程安全" class="headerlink" title="解决线程安全"></a>解决线程安全</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        MySingleton mySingleton = MySingleton.getMySingleton();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MySingleton</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> MySingleton mySingleton;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">MySingleton</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> MySingleton <span class="title">getMySingleton</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">synchronized</span> (MySingleton<span class="class">.<span class="keyword">class</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (mySingleton==<span class="keyword">null</span>) &#123;</span><br><span class="line">                mySingleton = <span class="keyword">new</span> MySingleton();</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> mySingleton;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【笔记】内部类</title>
+    <url>/2020/07/27/%E5%86%85%E9%83%A8%E7%B1%BB/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Java 内部类 学习笔记</p>
+<a id="more"></a>
+
+<h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><ul>
+<li>内部类可以直接访问外部类中的成员，包括私有成员</li>
+<li>外部类要访问内部类的成员，必须要建立内部类的对象</li>
+<li>在成员位置的内部类是成员内部类</li>
+<li>在局部位置的内部类是局部内部类</li>
+</ul>
+<h2 id="创建内部类对象"><a href="#创建内部类对象" class="headerlink" title="创建内部类对象"></a>创建内部类对象</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Outer</span> </span>&#123;</span><br><span class="line">    ...</span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Inner</span> </span>&#123;</span><br><span class="line">        ...</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Outer.Inner inner = <span class="keyword">new</span> Outer().<span class="keyword">new</span> Inner();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="匿名内部类"><a href="#匿名内部类" class="headerlink" title="匿名内部类"></a>匿名内部类</h3><ul>
+<li>匿名内部类是特殊的成员内部类</li>
+<li>匿名对象一次只能执行一个任务</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Inner</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">new</span> Inner() &#123;</span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">()</span> </span>&#123;</span><br><span class="line">                ...</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;.method();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
       <categories>

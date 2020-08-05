@@ -21830,6 +21830,8 @@
     <title>【笔记】为Javaweb项目打war包</title>
     <url>/2020/08/05/%E4%B8%BAJavaweb%E9%A1%B9%E7%9B%AE%E6%89%93war%E5%8C%85/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>为Javaweb项目打war包</p>
+<a id="more"></a>
+
 <h2 id="打war包的优点"><a href="#打war包的优点" class="headerlink" title="打war包的优点"></a>打war包的优点</h2><ul>
 <li>可以压缩为单个文件，节省空间，提升传输效率</li>
 <li>当<code>.war</code>包存放到tomcat服务器的<code>webapps</code>目录下，此时启动tomcat服务器会自动解压部署</li>
@@ -21848,6 +21850,45 @@
 ]]></content>
       <categories>
         <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【笔记】Mysql数据库导入导出</title>
+    <url>/2020/08/05/Mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AF%BC%E5%85%A5%E5%AF%BC%E5%87%BA/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Mysql数据库备份和恢复</p>
+<a id="more"></a>
+
+<h2 id="导出（备份）"><a href="#导出（备份）" class="headerlink" title="导出（备份）"></a>导出（备份）</h2><h3 id="导出某数据库的某数据表"><a href="#导出某数据库的某数据表" class="headerlink" title="导出某数据库的某数据表"></a>导出某数据库的某数据表</h3><blockquote>
+<p><code>&lt;root&gt;</code>：登陆Mysql的用户名<br><code>&lt;pwd&gt;</code>：登陆Mysql的密码<br><code>&lt;database&gt;</code>：数据库名<br><code>&lt;table&gt;</code>：数据表名</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">mysqldump -u&lt;root&gt; -p&lt;<span class="built_in">pwd</span>&gt; &lt;database&gt; &lt;table&gt; &gt; Backup.sql</span><br></pre></td></tr></table></figure>
+
+<h3 id="导出某数据库的所有数据"><a href="#导出某数据库的所有数据" class="headerlink" title="导出某数据库的所有数据"></a>导出某数据库的所有数据</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">mysqldump -u&lt;root&gt; -p&lt;<span class="built_in">pwd</span>&gt; &lt;database&gt; &gt; Backup.sql</span><br></pre></td></tr></table></figure>
+
+<h3 id="导出所有数据的所有数据"><a href="#导出所有数据的所有数据" class="headerlink" title="导出所有数据的所有数据"></a>导出所有数据的所有数据</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">mysqldump -u&lt;root&gt; -p&lt;<span class="built_in">pwd</span>&gt; --all-databases &gt; Backup.sql</span><br></pre></td></tr></table></figure>
+
+<h2 id="导入（恢复）"><a href="#导入（恢复）" class="headerlink" title="导入（恢复）"></a>导入（恢复）</h2><h3 id="直接导入"><a href="#直接导入" class="headerlink" title="直接导入"></a>直接导入</h3><blockquote>
+<p><code>&lt;database&gt;</code>：导入到指定的数据库</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">mysql -u&lt;root&gt; -p&lt;<span class="built_in">pwd</span>&gt; &lt;database&gt; &lt; Backup.sql</span><br></pre></td></tr></table></figure>
+
+<h3 id="执行备份文件的源码"><a href="#执行备份文件的源码" class="headerlink" title="执行备份文件的源码"></a>执行备份文件的源码</h3><ul>
+<li>首先进入到Mysql</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">mysql -u&lt;root&gt; -p&lt;<span class="built_in">pwd</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>然后创建并进入 需要导出的数据 所 要求存放 的数据表</li>
+</ul>
+<blockquote>
+<p><code>&lt;Backup.sql&gt;</code>：<code>.sql</code>存放的目录</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">source &lt;Backup.sql&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://www.runoob.com/mysql/mysql-database-export.html" target="_blank" rel="noopener">菜鸟笔记</a></p>
+]]></content>
+      <categories>
+        <category>Database</category>
       </categories>
   </entry>
 </search>

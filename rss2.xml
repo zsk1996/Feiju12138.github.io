@@ -9,7 +9,7 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>捕捉一只爱折腾的绯鞠</description>
-    <pubDate>Wed, 05 Aug 2020 09:37:43 GMT</pubDate>
+    <pubDate>Wed, 05 Aug 2020 09:49:55 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
@@ -24,7 +24,7 @@
       </description>
       
       
-      <content:encoded><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Eclipse配置tomcat环境</p><a id="more"></a><h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul><li>Eclipse JavaEE版本</li></ul><h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><ul><li><code>Eclipse</code>-&gt;<code>Preferences</code></li></ul><p><img src="/images/20200805173218/01.png" alt="01.png"></p><ul><li><code>Server</code>-&gt;<code>Runtime Environments</code></li></ul><p><img src="/images/20200805173218/02.png" alt="02.png"></p><ul><li>选择tomcat版本</li></ul><p><img src="/images/20200805173218/03.png" alt="03.png"></p><ul><li>自定义服务器名，选择tomcat安装位置，选择JRE配置</li></ul><p><img src="/imzges/20200805173218/04.png" alt="04.png"></p><h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content:encoded>
+      <content:encoded><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Eclipse配置tomcat环境</p><a id="more"></a><h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul><li>Eclipse JavaEE版本</li></ul><h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><ul><li><code>Eclipse</code>-&gt;<code>Preferences</code></li></ul><p><img src="/images/20200805173218/01.png" alt="01.png"></p><ul><li><code>Server</code>-&gt;<code>Runtime Environments</code></li></ul><p><img src="/images/20200805173218/02.png" alt="02.png"></p><ul><li>选择tomcat版本</li></ul><p><img src="/images/20200805173218/03.png" alt="03.png"></p><ul><li>自定义服务器名，选择tomcat安装位置，选择JRE配置</li></ul><p><img src="/images/20200805173218/04.png" alt="04.png"></p><h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content:encoded>
       
       <comments>https://feiju12138.github.io/2020/08/05/Eclipse%E9%85%8D%E7%BD%AEtomcat%E7%8E%AF%E5%A2%83/#disqus_thread</comments>
     </item>

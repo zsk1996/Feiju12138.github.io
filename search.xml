@@ -21826,4 +21826,28 @@
         <category>Java</category>
       </categories>
   </entry>
+  <entry>
+    <title>【笔记】为Javaweb项目打war包</title>
+    <url>/2020/08/05/%E4%B8%BAJavaweb%E9%A1%B9%E7%9B%AE%E6%89%93war%E5%8C%85/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>为Javaweb项目打war包</p>
+<h2 id="打war包的优点"><a href="#打war包的优点" class="headerlink" title="打war包的优点"></a>打war包的优点</h2><ul>
+<li>可以压缩为单个文件，节省空间，提升传输效率</li>
+<li>当<code>.war</code>包存放到tomcat服务器的<code>webapps</code>目录下，此时启动tomcat服务器会自动解压部署</li>
+</ul>
+<h2 id="操作方法"><a href="#操作方法" class="headerlink" title="操作方法"></a>操作方法</h2><ul>
+<li>全选项目根目录的所有子文件和子目录</li>
+<li>对选中的所有文件压缩为<code>.zip</code>格式压缩包</li>
+<li>将扩展名修改为<code>.war</code></li>
+</ul>
+<h2 id="war包自动部署失败原因"><a href="#war包自动部署失败原因" class="headerlink" title="war包自动部署失败原因"></a>war包自动部署失败原因</h2><ul>
+<li>在将web项目压缩时，没有采用<code>.zip</code>的格式，而是其他格式例如<code>.rar</code></li>
+<li>打成war包的名字和服务器中已发布的web应用重名</li>
+<li>war包中包含中文文件名或中文目录名</li>
+</ul>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://www.bilibili.com/video/BV1Hg4y1B7dr?p=2" target="_blank" rel="noopener">哔哩哔哩——江小黑888</a></p>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+  </entry>
 </search>

@@ -9027,12 +9027,8 @@
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Servlet学习笔记</p>
 <a id="more"></a>
 
-<h2 id="编写Servlet类"><a href="#编写Servlet类" class="headerlink" title="编写Servlet类"></a>编写Servlet类</h2><ul>
-<li>实现<code>Servlet</code>接口</li>
-<li>继承<code>GenericServlet</code>类</li>
-<li>继承<code>HttpServlet</code>类</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Servlet</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</span><br><span class="line">    ...	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="编写Servlet类"><a href="#编写Servlet类" class="headerlink" title="编写Servlet类"></a>编写Servlet类</h2><h3 id="Servlet继承关系"><a href="#Servlet继承关系" class="headerlink" title="Servlet继承关系"></a>Servlet继承关系</h3><p><img src="/images/20200510103051/01.png" alt="01.png"></p>
+<h3 id="继承HttpServlet类"><a href="#继承HttpServlet类" class="headerlink" title="继承HttpServlet类"></a>继承<code>HttpServlet</code>类</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Servlet</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</span><br><span class="line">    ...	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h2 id="请求-request"><a href="#请求-request" class="headerlink" title="请求 request"></a>请求 request</h2><h3 id="处理请求"><a href="#处理请求" class="headerlink" title="处理请求"></a>处理请求</h3><h4 id="处理GET请求"><a href="#处理GET请求" class="headerlink" title="处理GET请求"></a>处理GET请求</h4><ul>
 <li>默认处理GET请求</li>
@@ -9106,6 +9102,7 @@
 </ul>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">load-on-startup</span>&gt;</span>1<span class="tag">&lt;/<span class="name">load-on-startup</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
+<h2 id="Servlet调用过程"><a href="#Servlet调用过程" class="headerlink" title="Servlet调用过程"></a>Servlet调用过程</h2><p><img src="/images/20200510103051/02.png" alt="02.png"></p>
 <h2 id="请求转发（服务器端跳转）"><a href="#请求转发（服务器端跳转）" class="headerlink" title="请求转发（服务器端跳转）"></a>请求转发（服务器端跳转）</h2><ul>
 <li>余下代码后执行，先跳转</li>
 <li>转发是一次请求，一次响应</li>

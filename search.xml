@@ -9028,63 +9028,67 @@
 <a id="more"></a>
 
 <h2 id="编写Servlet类"><a href="#编写Servlet类" class="headerlink" title="编写Servlet类"></a>编写Servlet类</h2><ul>
+<li>实现<code>Servlet</code>接口</li>
+<li>继承<code>GenericServlet</code>类</li>
 <li>继承<code>HttpServlet</code>类</li>
 </ul>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Servlet</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</span><br><span class="line">    ...	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="处理请求"><a href="#处理请求" class="headerlink" title="处理请求"></a>处理请求</h2><h3 id="处理GET请求"><a href="#处理GET请求" class="headerlink" title="处理GET请求"></a>处理GET请求</h3><ul>
+<h2 id="请求-request"><a href="#请求-request" class="headerlink" title="请求 request"></a>请求 request</h2><h3 id="处理请求"><a href="#处理请求" class="headerlink" title="处理请求"></a>处理请求</h3><h4 id="处理GET请求"><a href="#处理GET请求" class="headerlink" title="处理GET请求"></a>处理GET请求</h4><ul>
 <li>默认处理GET请求</li>
 <li>重写<code>doGet</code>方法</li>
 </ul>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h3 id="处理POST请求"><a href="#处理POST请求" class="headerlink" title="处理POST请求"></a>处理POST请求</h3><ul>
+<h4 id="处理POST请求"><a href="#处理POST请求" class="headerlink" title="处理POST请求"></a>处理POST请求</h4><ul>
 <li>重写<code>doPost</code>方法</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException &#123;</span><br><span class="line">    ...	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doPost</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">    ...	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="设置响应类型"><a href="#设置响应类型" class="headerlink" title="设置响应类型"></a>设置响应类型</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">resp.setContentType(<span class="string">"text/html"</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="设置请求编码"><a href="#设置请求编码" class="headerlink" title="设置请求编码"></a>设置请求编码</h3><ul>
+<li>针对POST提交的中文乱码</li>
+<li>对于GET提交tomcat高版本已不出现乱码</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">req.setCharacterEncoding(<span class="string">"utf-8"</span>);</span><br></pre></td></tr></table></figure>
 
-<h3 id="设置字符集"><a href="#设置字符集" class="headerlink" title="设置字符集"></a>设置字符集</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">resp.setContentType(<span class="string">"text/html; charset=utf-8"</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="获取请求头的信息"><a href="#获取请求头的信息" class="headerlink" title="获取请求头的信息"></a>获取请求头的信息</h3><h4 id="获取URL"><a href="#获取URL" class="headerlink" title="获取URL"></a>获取URL</h4><ul>
+<li>返回StringBuffer类型</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">req.getRequestURL();</span><br></pre></td></tr></table></figure>
 
-<h2 id="创建输出流对象"><a href="#创建输出流对象" class="headerlink" title="创建输出流对象"></a>创建输出流对象</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">PrintWriter out = resp.getWriter();</span><br></pre></td></tr></table></figure>
+<h4 id="获取URI"><a href="#获取URI" class="headerlink" title="获取URI"></a>获取URI</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">req.getRequestURI();</span><br></pre></td></tr></table></figure>
+
+<h4 id="获取所有的请求参数"><a href="#获取所有的请求参数" class="headerlink" title="获取所有的请求参数"></a>获取所有的请求参数</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">req.getQueryString();</span><br></pre></td></tr></table></figure>
+
+<h4 id="获取ip地址"><a href="#获取ip地址" class="headerlink" title="获取ip地址"></a>获取ip地址</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">req.getRemoteAddr();</span><br></pre></td></tr></table></figure>
+
+<h4 id="获取客户端主机名"><a href="#获取客户端主机名" class="headerlink" title="获取客户端主机名"></a>获取客户端主机名</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">req.getRemoteHost();</span><br></pre></td></tr></table></figure>
+
+<h4 id="获取全部请求头"><a href="#获取全部请求头" class="headerlink" title="获取全部请求头"></a>获取全部请求头</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Enumeration&lt;string&gt; reqHeaderNames = req.getHeaderNames();</span><br><span class="line"><span class="keyword">while</span>(reqHeaderNames.hasMoreElements()) &#123;</span><br><span class="line">    String headerNames = req.HeaderNames.nextElement();</span><br><span class="line">    String headerValue = req.getHeader(headerNames);</span><br><span class="line">    System.out.println(headerNames + <span class="string">":"</span> + headerValue);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="获取请求参数"><a href="#获取请求参数" class="headerlink" title="获取请求参数"></a>获取请求参数</h3><ul>
+<li>浏览器发给服务器的参数叫请求参数</li>
+<li>通过请求参数名，获取请求参数值</li>
+<li>请求为空时，返回null</li>
+<li>如果获取多个参数的请求时使用获取单个值的方法，则只返回第一个值</li>
+</ul>
+<blockquote>
+<p><code>&lt;string&gt;</code>：参数名（键）</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">String &lt;string&gt; = req.getParameter(<span class="string">"&lt;string&gt;"</span>);</span><br><span class="line">String[] &lt;string&gt; = req.getParameterValues(<span class="string">"&lt;string&gt;"</span>);</span><br></pre></td></tr></table></figure>
+
+<h4 id="处理表单请求"><a href="#处理表单请求" class="headerlink" title="处理表单请求"></a>处理表单请求</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">req.getParameter(<span class="string">"text"</span>);</span><br><span class="line">req.getParameter(<span class="string">"radio"</span>);</span><br><span class="line">req.getParameter(<span class="string">"select"</span>);</span><br><span class="line">req.getParameter(<span class="string">"textarea"</span>);</span><br><span class="line">req.getParameter(<span class="string">"hidden"</span>);</span><br><span class="line">req.getParameterValues(<span class="string">"checkbox"</span>);</span><br></pre></td></tr></table></figure>
+
+<h2 id="响应-response"><a href="#响应-response" class="headerlink" title="响应 response"></a>响应 response</h2><h3 id="设置响应类型"><a href="#设置响应类型" class="headerlink" title="设置响应类型"></a>设置响应类型</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">resp.setContentType(<span class="string">"text/html"</span>);</span><br></pre></td></tr></table></figure>
+
+<h4 id="设置字符集"><a href="#设置字符集" class="headerlink" title="设置字符集"></a>设置字符集</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">resp.setContentType(<span class="string">"text/html; charset=utf-8"</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="创建输出流对象"><a href="#创建输出流对象" class="headerlink" title="创建输出流对象"></a>创建输出流对象</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">PrintWriter out = resp.getWriter();</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>输出到网页</li>
 </ul>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">out.println(<span class="string">"&lt;html&gt;"</span>);</span><br><span class="line">out.println(<span class="string">"&lt;head&gt;"</span>);</span><br><span class="line">out.println(<span class="string">"&lt;title&gt;&lt;/title&gt;"</span>);</span><br><span class="line">out.println(<span class="string">"&lt;/head&gt;"</span>);</span><br><span class="line">out.println(<span class="string">"&lt;body&gt;"</span>);</span><br><span class="line">out.println(<span class="string">"&lt;/body&gt;"</span>);</span><br><span class="line">out.println(<span class="string">"&lt;/html&gt;"</span>);</span><br></pre></td></tr></table></figure>
-
-<h2 id="req的常用方法"><a href="#req的常用方法" class="headerlink" title="req的常用方法"></a>req的常用方法</h2><h3 id="设置请求编码"><a href="#设置请求编码" class="headerlink" title="设置请求编码"></a>设置请求编码</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">req.setCharacterEncoding(<span class="string">"utf-8"</span>);</span><br></pre></td></tr></table></figure>
-
-<h3 id="获取请求参数"><a href="#获取请求参数" class="headerlink" title="获取请求参数"></a>获取请求参数</h3><ul>
-<li>请求参数为键值对，获取请求参数就是通过键获取值的过程</li>
-</ul>
-<blockquote>
-<p><code>&lt;string&gt;</code>：参数名（键）</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">req.getParameter(<span class="string">"&lt;string&gt;"</span>);</span><br></pre></td></tr></table></figure>
-
-<h3 id="获取URL"><a href="#获取URL" class="headerlink" title="获取URL"></a>获取URL</h3><ul>
-<li>返回StringBuffer类型</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">req.getRequestURL();</span><br></pre></td></tr></table></figure>
-
-<h3 id="获取URI"><a href="#获取URI" class="headerlink" title="获取URI"></a>获取URI</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">req.getRequestURI();</span><br></pre></td></tr></table></figure>
-
-<h3 id="获取所有的请求参数"><a href="#获取所有的请求参数" class="headerlink" title="获取所有的请求参数"></a>获取所有的请求参数</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">req.getQueryString();</span><br></pre></td></tr></table></figure>
-
-<h3 id="获取ip地址"><a href="#获取ip地址" class="headerlink" title="获取ip地址"></a>获取ip地址</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">req.getRemoteAddr();</span><br></pre></td></tr></table></figure>
-
-<h3 id="获取客户端主机名"><a href="#获取客户端主机名" class="headerlink" title="获取客户端主机名"></a>获取客户端主机名</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">req.getRemoteHost();</span><br></pre></td></tr></table></figure>
-
-<h3 id="获取客户端请求头"><a href="#获取客户端请求头" class="headerlink" title="获取客户端请求头"></a>获取客户端请求头</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Enumeration&lt;string&gt; reqHeaderNames = req.getHeaderNames();</span><br><span class="line"><span class="keyword">while</span>(reqHeaderNames.hasMoreElements()) &#123;</span><br><span class="line">    String headerNames = req.HeaderNames.nextElement();</span><br><span class="line">    String headerValue = req.getHeader(headerNames);</span><br><span class="line">    System.out.println(headerNames + <span class="string">":"</span> + headerValue);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="处理表单请求"><a href="#处理表单请求" class="headerlink" title="处理表单请求"></a>处理表单请求</h3><h4 id="获取文本框"><a href="#获取文本框" class="headerlink" title="获取文本框"></a>获取文本框</h4><h4 id="获取单选框"><a href="#获取单选框" class="headerlink" title="获取单选框"></a>获取单选框</h4><h4 id="获取下拉列表"><a href="#获取下拉列表" class="headerlink" title="获取下拉列表"></a>获取下拉列表</h4><h4 id="获取文本域"><a href="#获取文本域" class="headerlink" title="获取文本域"></a>获取文本域</h4><h4 id="获取隐藏域"><a href="#获取隐藏域" class="headerlink" title="获取隐藏域"></a>获取隐藏域</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">req.getParameter(<span class="string">"text"</span>);</span><br><span class="line">req.getParameter(<span class="string">"radio"</span>);</span><br><span class="line">req.getParameter(<span class="string">"select"</span>);</span><br><span class="line">req.getParameter(<span class="string">"textarea"</span>);</span><br><span class="line">req.getParameter(<span class="string">"hidden"</span>);</span><br></pre></td></tr></table></figure>
-
-<h4 id="获取复选框"><a href="#获取复选框" class="headerlink" title="获取复选框"></a>获取复选框</h4><ul>
-<li>返回String[]类型</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">req.getParameterValues(<span class="string">"checkbox"</span>);</span><br></pre></td></tr></table></figure>
 
 <h2 id="Servlet生命周期"><a href="#Servlet生命周期" class="headerlink" title="Servlet生命周期"></a>Servlet生命周期</h2><ul>
 <li><p>当一个Servlet资源第一次被访问的时候，由服务器创建Servlet资源对象，通过调用Servlet的init()方法，完成对象的初始操作，该方法只会调用一次</p>
@@ -9104,6 +9108,10 @@
 
 <h2 id="请求转发（服务器端跳转）"><a href="#请求转发（服务器端跳转）" class="headerlink" title="请求转发（服务器端跳转）"></a>请求转发（服务器端跳转）</h2><ul>
 <li>余下代码后执行，先跳转</li>
+<li>转发是一次请求，一次响应</li>
+<li>请求转发前后，浏览器的地址栏地址不会发生变化</li>
+<li>请求转发前后的request对象是同一个，可以传递参数</li>
+<li>请求转发前后的两个资源必须属于同一个Web应用，否则将无法进行转发</li>
 </ul>
 <blockquote>
 <p><code>&lt;name&gt;</code>：另一个资源的路径名</p>
@@ -9112,11 +9120,14 @@
 
 <h2 id="目标重定向（客户端跳转）"><a href="#目标重定向（客户端跳转）" class="headerlink" title="目标重定向（客户端跳转）"></a>目标重定向（客户端跳转）</h2><ul>
 <li>余下代码先执行，后跳转</li>
+<li>重定向是两次请求，两次响应</li>
+<li>重定向前后，浏览器的地址栏地址会发生变化</li>
+<li>重定向前后的request对象不是同一个</li>
+<li>重定向前后的两个资源可以是来自不同的web应用，甚至可以是来自不同的服务器</li>
 </ul>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">resp.sendRedirect(<span class="string">"&lt;name&gt;"</span>);</span><br></pre></td></tr></table></figure>
 
-<h2 id="未完待更"><a href="#未完待更" class="headerlink" title="未完待更"></a>未完待更</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p>达内教育</p>
-]]></content>
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
       <categories>
         <category>Java</category>
       </categories>

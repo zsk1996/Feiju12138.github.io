@@ -22049,7 +22049,7 @@
 <h3 id="用codesign对Navicat-Premium-app重签名"><a href="#用codesign对Navicat-Premium-app重签名" class="headerlink" title="用codesign对Navicat Premium.app重签名"></a>用codesign对Navicat Premium.app重签名</h3><ul>
 <li>如果<code>Navicat Premium</code>版本号高于<code>15</code>，必须先签名<code>libcc-premium.dylib</code>，再签名<code>Navicat Premium.app</code></li>
 </ul>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">codesign -f -s Navicat /Applications/Navicat\ Premium.app/Contents/Frameworks/libcc-premium.dylib</span><br><span class="line">codesign -f -s <span class="string">"Navicat"</span> /Applications/Navicat\ Premium.app</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">codesign -f -s Navicat /Applications/Navicat\ Premium.app/Contents/Frameworks/libcc-premium.dylib</span><br><span class="line">codesign -f -s Navicat /Applications/Navicat\ Premium.app</span><br></pre></td></tr></table></figure>
 
 <h3 id="使用navicat-keygen来生成-序列号-和-激活码"><a href="#使用navicat-keygen来生成-序列号-和-激活码" class="headerlink" title="使用navicat-keygen来生成 序列号 和 激活码"></a>使用navicat-keygen来生成 序列号 和 激活码</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">./navicat-keygen ./RegPrivateKey.pem</span><br></pre></td></tr></table></figure>
 

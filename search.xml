@@ -22022,7 +22022,7 @@
 <h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
 <li><a href="http://download.navicat.com.cn/download/navicat150_premium_cs.dmg" target="_blank" rel="noopener">Navicat 15.0.8</a></li>
 </ul>
-<h2 id="破解"><a href="#破解" class="headerlink" title="破解"></a>破解</h2><h3 id="使用navicat-patcher替换掉公钥"><a href="#使用navicat-patcher替换掉公钥" class="headerlink" title="使用navicat-patcher替换掉公钥"></a>使用navicat-patcher替换掉公钥</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">./navicat-patcher /Applications/Navicat\ Premium.app</span><br></pre></td></tr></table></figure>
+<h2 id="破解"><a href="#破解" class="headerlink" title="破解"></a>破解</h2><h3 id="使用navicat-patcher替换掉公钥"><a href="#使用navicat-patcher替换掉公钥" class="headerlink" title="使用navicat-patcher替换掉公钥"></a>使用navicat-patcher替换掉公钥</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> bin</span><br><span class="line">./navicat-patcher /Applications/Navicat\ Premium.app</span><br></pre></td></tr></table></figure>
 
 <p><img src="/images/20200810181852/01.png" alt="01.png"></p>
 <ul>

@@ -165,6 +165,40 @@ $("选择器1 选择器2")
 $("选择器1>选择器2")
 ```
 
+#### 兄弟选择器
+
+> `example`
+
+- 选中id为example的元素`后面紧邻`的span兄弟元素
+
+``` javascript
+$("#example").next("span")
+```
+
+- 选中id为example的元素`前面紧邻`的span兄弟元素
+
+``` javascript
+$("#example").prev("span")
+```
+
+- 选中id为example的元素`后面所有`的span兄弟元素
+
+``` javascript
+$("#example").nextAll("span")
+```
+
+- 选中id为example的元素`前面所有`的span兄弟元素
+
+``` javascript
+$("#example").prevAll("span")
+```
+
+- 选中id为example的元素`前后所有`的span兄弟元素
+
+``` javascript
+$("#example").siblings("span")
+```
+
 ### 属性选择器（[...]）
 
 - $("[属性名]")
@@ -238,7 +272,7 @@ $("[class*=a]")
 - 第index个
 
 ``` javascript
-:ep(index)
+:eq(index)
 ```
 
 - 大于index的全部元素
@@ -433,6 +467,7 @@ show();
 
 ``` javascript
 toggle();
+slideToggle();
 ```
 
 ##### 淡入淡出（透明度）
@@ -527,11 +562,7 @@ val(xxx);
 ##### 创建节点
 
 ``` javascript
-//获取节点
-$(选择器);
-//转换Dom
-$(Dom对象);
-$(html字符串)
+$div = $(<div></div>);
 ```
 
 ##### 插入节点
@@ -635,6 +666,32 @@ attr({
 ``` javascript
 removeAttr("属性名");
 ```
+
+##### jquery1.6新特性
+
+- 获取属性值
+
+``` javascript
+prop("属性名");
+```
+
+- 修改属性值
+
+- 设置属性值
+
+``` javascript
+prop("属性名", "属性值");
+prop({
+    "属性名":"属性值",
+    "属性名":"属性值",
+    ...
+})
+```
+
+##### attr()和prop()的区别
+
+- `attr()`函数在jquery1.6之前就有，对自定义属性的操作，使用`attr()`函数
+- `prop()`函数在query1.6之后新引进，对固有属性的操作，使用`prop()`函数
 
 ### 获取集合与遍历集合
 

@@ -437,6 +437,7 @@ categories:
 > `cols=""`：指定文本域的列数
 > `rows=""`：指定文本域的行数
 > `readonly=""`：只读模式
+> `placeholder=""`：文本域为空时显示提示信息
 
 ``` html
 <textarea></textarea>

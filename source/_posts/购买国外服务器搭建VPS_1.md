@@ -1,7 +1,8 @@
 ---
 title: 【笔记】购买国外服务器搭建VPS（Ubuntu篇）
+categories:
+  - 云计算
 date: 2019-11-10 13:50:02
-tags:
 ---
 
 ## 前言

@@ -7,7 +7,7 @@ date: 2020-07-14 17:17:22
 
 ## 前言
 
-Terminal 查看当前ip地址
+Terminal 查看当前公网ip地址
 
 <!-- more -->
 

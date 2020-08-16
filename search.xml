@@ -3353,20 +3353,32 @@
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>表达式语言（Expression Language），或称EL表达式，简称EL，是Java中的一种特殊的通用编程语言，借鉴于JavaScript和XPath。主要作用是在Java Web应用程序嵌入到网页（如JSP）中，用以访问页面的上下文以及不同作用域中的对象 ，取得对象属性的值，或执行简单的运算或判断操作。EL在得到某个数据时，会自动进行数据类型的转换。（<a href="https://zh.wikipedia.org/wiki/表达式语言" target="_blank" rel="noopener">维基百科</a>）</p>
 <a id="more"></a>
 
-<h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><ul>
-<li>直接插入到jsp代码中，可以将值直接显示在html页面</li>
-<li>如果获取不到值，不显示任何内容（包括null）</li>
+<h2 id="获取数据"><a href="#获取数据" class="headerlink" title="获取数据"></a>获取数据</h2><h3 id="获取会话中的数据"><a href="#获取会话中的数据" class="headerlink" title="获取会话中的数据"></a>获取会话中的数据</h3><ul>
+<li>EL表达式中书写变量，并不会直接获取这个变量的值，而是根据变量的名字，到四大作用域中寻找该鸣唱对应的属性值，并且寻找的顺序是按域的范围大小，从小到大去寻找。如果找到了就直接输出该属性对应的值（即使后面还有，也不会再找了），如果找不到就什么也不输出<br>域的范围从小到大依次是：<code>pageContext</code>、<code>request</code>、<code>session</code>、<code>application</code></li>
 </ul>
-<h3 id="获取会话"><a href="#获取会话" class="headerlink" title="获取会话"></a>获取会话</h3><blockquote>
-<p><code>&lt;key&gt;</code>：servlet中<code>request请求传入的会话数据</code>的键</p>
+<blockquote>
+<p><code>&lt;key&gt;</code>：域中的键值对的键</p>
 </blockquote>
 <figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">$&#123;&lt;key&gt;&#125;</span><br></pre></td></tr></table></figure>
 
-<h4 id="获取对象"><a href="#获取对象" class="headerlink" title="获取对象"></a>获取对象</h4><ul>
-<li>如果会话中存储的是对象，可以直接取对象中的属性</li>
+<h4 id="从指定域中取出数据"><a href="#从指定域中取出数据" class="headerlink" title="从指定域中取出数据"></a>从指定域中取出数据</h4><figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">$&#123;pageScope.&lt;key&gt;&#125;</span><br><span class="line">$&#123;requestScope.&lt;key&gt;&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="获取数组中的数据"><a href="#获取数组中的数据" class="headerlink" title="获取数组中的数据"></a>获取数组中的数据</h3><blockquote>
+<p><code>&lt;arr&gt;</code>：数组名</p>
+</blockquote>
+<figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">$&#123;&lt;arr&gt;[<span class="number">0</span>]&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="获取map集合中的数据"><a href="#获取map集合中的数据" class="headerlink" title="获取map集合中的数据"></a>获取map集合中的数据</h3><blockquote>
+<p><code>&lt;map&gt;</code>：map集合名<br><code>&lt;key&gt;</code>：存入map集合中数据的键，键值最好不要为纯数字，因为EL无法<code>.</code>出来数字</p>
+</blockquote>
+<figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">$&#123;&lt;map&gt;.&lt;key&gt;&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="获取对象中的数据"><a href="#获取对象中的数据" class="headerlink" title="获取对象中的数据"></a>获取对象中的数据</h3><ul>
+<li>如果会话中存储的是POJO对象，可以直接取对象中的属性</li>
+<li>该操作并不是直接<code>.</code>出来的属性值，而是调用了<code>get</code>方法取出的值</li>
 </ul>
 <blockquote>
-<p><code>&lt;attributes&gt;</code>：对象的属性</p>
+<p><code>&lt;attributes&gt;</code>：对象中get方法名的后缀（如<code>getName</code>，则<code>&lt;attributes&gt;</code>就为<code>name</code>）</p>
 </blockquote>
 <figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">$&#123;&lt;key&gt;.&lt;attributes&gt;&#125;</span><br></pre></td></tr></table></figure>
 
@@ -4965,12 +4977,26 @@
 </ul>
 <figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;%@ taglib prefix=<span class="string">"c"</span> uri=<span class="string">"http://java.sun.com/jsp/jstl/core"</span> %&gt;</span><br></pre></td></tr></table></figure>
 
+<h2 id="域中数据的操作"><a href="#域中数据的操作" class="headerlink" title="域中数据的操作"></a>域中数据的操作</h2><ul>
+<li>用于往域中添加数据或修改已有数据</li>
+<li>默认存入pageContext域中</li>
+</ul>
+<blockquote>
+<p><code>&lt;key&gt;</code>：域中数据的键<br><code>&lt;value&gt;</code>：域中数据键对应的值</p>
+</blockquote>
+<figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;c:set <span class="keyword">var</span>=<span class="string">"&lt;key&gt;"</span> value=<span class="string">"&lt;value&gt;"</span> /&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="向其他域存入或修改数据"><a href="#向其他域存入或修改数据" class="headerlink" title="向其他域存入或修改数据"></a>向其他域存入或修改数据</h3><blockquote>
+<p><code>&lt;name&gt;</code>：其他域的名称</p>
+</blockquote>
+<figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;c:set <span class="keyword">var</span>=<span class="string">"&lt;key&gt;"</span> value=<span class="string">"&lt;value&gt;"</span> scope=<span class="string">"&lt;name&gt;"</span> /&gt;</span><br></pre></td></tr></table></figure>
+
 <h2 id="判断语句"><a href="#判断语句" class="headerlink" title="判断语句"></a>判断语句</h2><h3 id="if语句"><a href="#if语句" class="headerlink" title="if语句"></a>if语句</h3><blockquote>
-<p><code>&lt;el&gt;</code>：EL表达式，做判断</p>
+<p><code>&lt;el&gt;</code>：利用EL表达式，做判断。如果值为<code>true</code>，则输出标签中的内容</p>
 </blockquote>
 <figure class="highlight"><table><tr><td class="code"><pre><span class="line">&lt;c:<span class="keyword">if</span> test=<span class="string">"&lt;el&gt;"</span>&gt;</span><br><span class="line">    ...</span><br><span class="line">&lt;/c:if&gt;</span><br></pre></td></tr></table></figure>
 
-<h3 id="choose语句"><a href="#choose语句" class="headerlink" title="choose语句"></a>choose语句</h3><ul>
+<h3 id="choose语句（相当于if-else）"><a href="#choose语句（相当于if-else）" class="headerlink" title="choose语句（相当于if else）"></a>choose语句（相当于if else）</h3><ul>
 <li>利用<code>&lt;c:otherwise&gt;&lt;/c:otherwise&gt;</code>语句取反</li>
 </ul>
 <figure class="highlight"><table><tr><td class="code"><pre><span class="line">&lt;c:choose&gt;</span><br><span class="line">    &lt;c:when test=<span class="string">"&lt;el&gt;"</span>&gt;</span><br><span class="line">        ...</span><br><span class="line">    &lt;/c:when&gt;</span><br><span class="line">    &lt;c:otherwise&gt;</span><br><span class="line">        ...</span><br><span class="line">    &lt;/c:otherwise&gt;</span><br><span class="line">&lt;/c:choose&gt;</span><br></pre></td></tr></table></figure>
@@ -5147,15 +5173,41 @@
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在HTML中嵌入Java代码</p>
 <a id="more"></a>
 
+<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><ul>
+<li>Jsp将HTML页面代码转换为Servlet后显示，所以必须在服务器上运行</li>
+</ul>
 <h2 id="Java代码块"><a href="#Java代码块" class="headerlink" title="Java代码块"></a>Java代码块</h2><figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;%</span><br><span class="line">    ...</span><br><span class="line">%&gt;</span><br></pre></td></tr></table></figure>
 
 <h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;%--  --%&gt;</span><br></pre></td></tr></table></figure>
 
-<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><ul>
-<li>Jsp将HTML页面代码转换为Servlet后显示，所以必须在服务器上运行</li>
+<h2 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h2><ul>
+<li>用于声明JSP的基本属性信息</li>
 </ul>
+<h3 id="指定当前JSP使用的开发语言"><a href="#指定当前JSP使用的开发语言" class="headerlink" title="指定当前JSP使用的开发语言"></a>指定当前JSP使用的开发语言</h3><ul>
+<li>默认为<code>java</code></li>
+</ul>
+<figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;%@ page language=<span class="string">"java"</span>%&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="导包"><a href="#导包" class="headerlink" title="导包"></a>导包</h3><figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;%@ page <span class="keyword">import</span>=<span class="string">""</span>%&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="指定当前JSP使用的编码"><a href="#指定当前JSP使用的编码" class="headerlink" title="指定当前JSP使用的编码"></a>指定当前JSP使用的编码</h3><ul>
+<li>这个编码指定后，即使不指定<code>content=&quot;text/html;charset=UTF-8&quot;</code>或<code>&lt;meta charset=&quot;UTF-8&quot;&gt;</code>中文也不会显示为乱码</li>
+</ul>
+<figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;%@ page pageEncoding=<span class="string">"UTF-8"</span>%&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="是否禁用EL"><a href="#是否禁用EL" class="headerlink" title="是否禁用EL"></a>是否禁用EL</h3><ul>
+<li><code>true</code>为禁用，<code>false</code>为启用</li>
+</ul>
+<figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;%@ page isELIgnored=<span class="string">""</span>%&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="引入标签库"><a href="#引入标签库" class="headerlink" title="引入标签库"></a>引入标签库</h3><h4 id="引入JSTL标签库"><a href="#引入JSTL标签库" class="headerlink" title="引入JSTL标签库"></a>引入JSTL标签库</h4><ul>
+<li><a href="/2020/05/25/JSTL学习笔记/">传送门</a></li>
+</ul>
+<figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;%@ taglib prefix=<span class="string">"c"</span> uri=<span class="string">"http://java.sun.com/jsp/jstl/core"</span> %&gt;</span><br></pre></td></tr></table></figure>
+
 <h2 id="9大内置对象"><a href="#9大内置对象" class="headerlink" title="9大内置对象"></a>9大内置对象</h2><ul>
 <li>在Jsp中可以直接使用的对象</li>
+<li><code>page</code>、<code>resquest</code>、<code>response</code>、<code>config</code>、<code>application</code>、<code>exception</code>、<code>pageContext</code>、<code>out</code>、<code>session</code></li>
 </ul>
 <h3 id="在页面输出"><a href="#在页面输出" class="headerlink" title="在页面输出"></a>在页面输出</h3><ul>
 <li>对应Servlet中的<code>PrintWrite</code>对象</li>

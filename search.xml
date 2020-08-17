@@ -3353,6 +3353,8 @@
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>表达式语言（Expression Language），或称EL表达式，简称EL，是Java中的一种特殊的通用编程语言，借鉴于JavaScript和XPath。主要作用是在Java Web应用程序嵌入到网页（如JSP）中，用以访问页面的上下文以及不同作用域中的对象 ，取得对象属性的值，或执行简单的运算或判断操作。EL在得到某个数据时，会自动进行数据类型的转换。（<a href="https://zh.wikipedia.org/wiki/表达式语言" target="_blank" rel="noopener">维基百科</a>）</p>
 <a id="more"></a>
 
+<h2 id="启用EL表达式"><a href="#启用EL表达式" class="headerlink" title="启用EL表达式"></a>启用EL表达式</h2><figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;%@ page isELIgnored=<span class="string">"false"</span>%&gt;</span><br></pre></td></tr></table></figure>
+
 <h2 id="获取数据"><a href="#获取数据" class="headerlink" title="获取数据"></a>获取数据</h2><h3 id="获取会话中的数据"><a href="#获取会话中的数据" class="headerlink" title="获取会话中的数据"></a>获取会话中的数据</h3><ul>
 <li>EL表达式中书写变量，并不会直接获取这个变量的值，而是根据变量的名字，到四大作用域中寻找该鸣唱对应的属性值，并且寻找的顺序是按域的范围大小，从小到大去寻找。如果找到了就直接输出该属性对应的值（即使后面还有，也不会再找了），如果找不到就什么也不输出<br>域的范围从小到大依次是：<code>pageContext</code>、<code>request</code>、<code>session</code>、<code>application</code></li>
 </ul>
@@ -4969,9 +4971,8 @@
 <a id="more"></a>
 
 <h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
-<li>在项目中导入以下jar包</li>
+<li>在项目中导入<code>jstl-1.2.jar</code>jar包</li>
 </ul>
-<p><code>jsf-api.jar</code>、<code>jsf-impl.jar</code>、<code>jstl-1.2.jar</code></p>
 <h2 id="导入JSTL标签库"><a href="#导入JSTL标签库" class="headerlink" title="导入JSTL标签库"></a>导入JSTL标签库</h2><ul>
 <li>在jsp的HTML代码之上添加代码</li>
 </ul>
@@ -4988,6 +4989,9 @@
 
 <h3 id="向其他域存入或修改数据"><a href="#向其他域存入或修改数据" class="headerlink" title="向其他域存入或修改数据"></a>向其他域存入或修改数据</h3><blockquote>
 <p><code>&lt;name&gt;</code>：其他域的名称</p>
+<blockquote>
+<p><code>page</code>：pageContext域<br><code>resquest</code>：request域<br><code>session</code>：session域<br><code>application</code>：application域</p>
+</blockquote>
 </blockquote>
 <figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;c:set <span class="keyword">var</span>=<span class="string">"&lt;key&gt;"</span> value=<span class="string">"&lt;value&gt;"</span> scope=<span class="string">"&lt;name&gt;"</span> /&gt;</span><br></pre></td></tr></table></figure>
 
@@ -5002,9 +5006,22 @@
 <figure class="highlight"><table><tr><td class="code"><pre><span class="line">&lt;c:choose&gt;</span><br><span class="line">    &lt;c:when test=<span class="string">"&lt;el&gt;"</span>&gt;</span><br><span class="line">        ...</span><br><span class="line">    &lt;/c:when&gt;</span><br><span class="line">    &lt;c:otherwise&gt;</span><br><span class="line">        ...</span><br><span class="line">    &lt;/c:otherwise&gt;</span><br><span class="line">&lt;/c:choose&gt;</span><br></pre></td></tr></table></figure>
 
 <h2 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h2><blockquote>
-<p><code>&lt;el&gt;</code>：EL表达式，表示java中<code>for each</code>循环<code>:</code>后面表示的内容</p>
+<p><code>begin</code>：开始下标<br><code>end</code>：结尾下标<br><code>var</code>：指定的变量<br><code>step</code>：步进数，默认为1</p>
 </blockquote>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">&lt;c:forEach items=<span class="string">"&lt;el&gt;"</span>&gt;</span><br><span class="line">    ...</span><br><span class="line">&lt;/c:forEach&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">&lt;c:forEach begin=<span class="string">""</span> end=<span class="string">""</span> <span class="keyword">var</span>=<span class="string">""</span> step=<span class="string">""</span>&gt;</span><br><span class="line">    ...</span><br><span class="line">&lt;/c:forEach&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="迭代的方式"><a href="#迭代的方式" class="headerlink" title="迭代的方式"></a>迭代的方式</h3><blockquote>
+<p><code>items</code>：通过EL表达式，指定需要遍历的数组或集合<br><code>var</code>：指定的变量</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">&lt;c:forEach items=<span class="string">""</span> <span class="keyword">var</span>=<span class="string">""</span>&gt;</span><br><span class="line">    ...</span><br><span class="line">&lt;/c:forEach&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="当前遍历状态"><a href="#当前遍历状态" class="headerlink" title="当前遍历状态"></a>当前遍历状态</h4><blockquote>
+<p><code>varStatus</code>：当前遍历状态</p>
+<blockquote>
+<p><code>count</code>：返回当前是第几次遍历，从1开始<br><code>first</code>：只有第一次遍历返回true<br><code>last</code>：只有最后一次遍历返回true</p>
+</blockquote>
+</blockquote>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">&lt;c:forEach items=<span class="string">""</span> <span class="keyword">var</span>=<span class="string">""</span> varStatus=<span class="string">"vs"</span>&gt;</span><br><span class="line">    $&#123;vs.count&#125;</span><br><span class="line">    $&#123;vs.first&#125;</span><br><span class="line">    $&#123;vs.last&#125;</span><br><span class="line">    ...</span><br><span class="line">&lt;/c:forEach&gt;</span><br></pre></td></tr></table></figure>
 
 <h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
       <categories>
@@ -6069,7 +6086,7 @@
 <h2 id="配置代理"><a href="#配置代理" class="headerlink" title="配置代理"></a>配置代理</h2><ul>
 <li>编辑<code>Maven</code>配置文件</li>
 </ul>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vim ~/.m2/settings.xml</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vim /usr/<span class="built_in">local</span>/Cellar/maven/3.6.3_1/libexec/conf/settings.xml</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>修改<code>&lt;proxies&gt;&lt;/proxies&gt;</code>中的配置</li>
@@ -6082,7 +6099,7 @@
 <h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://www.cnblogs.com/memory4young/p/maven-http-proxy-setting.html" target="_blank" rel="noopener">博客园——Memory4Young</a></p>
 ]]></content>
       <categories>
-        <category>Maven</category>
+        <category>Java</category>
       </categories>
   </entry>
   <entry>
@@ -22235,6 +22252,79 @@
 <h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
       <categories>
         <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【笔记】Maven配置远程仓库</title>
+    <url>/2020/08/17/Maven%E9%85%8D%E7%BD%AE%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>将Maven配置远程仓库为阿里云仓库</p>
+<a id="more"></a>
+
+<h2 id="配置代理"><a href="#配置代理" class="headerlink" title="配置代理"></a>配置代理</h2><ul>
+<li>编辑<code>Maven</code>配置文件</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vim /usr/<span class="built_in">local</span>/Cellar/maven/3.6.3_1/libexec/conf/settings.xml</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>修改<code>&lt;mirrors&gt;&lt;/mirrors&gt;</code>中的配置</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">mirrors</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">mirror</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">id</span>&gt;</span>nexus-aliyun<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">name</span>&gt;</span>Nexus aliyun<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">mirrorOf</span>&gt;</span>central<span class="tag">&lt;/<span class="name">mirrorOf</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">url</span>&gt;</span>http://maven.aliyun.com/nexus/content/groups/public/<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">mirror</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mirrors</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【笔记】Maven配置JDK版本</title>
+    <url>/2020/08/17/Maven%E9%85%8D%E7%BD%AEJDK%E7%89%88%E6%9C%AC/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>把Maven所需要的JDK版本配置为固定1.8</p>
+<a id="more"></a>
+
+<h2 id="配置代理"><a href="#配置代理" class="headerlink" title="配置代理"></a>配置代理</h2><ul>
+<li>编辑<code>Maven</code>配置文件</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vim /usr/<span class="built_in">local</span>/Cellar/maven/3.6.3_1/libexec/conf/settings.xml</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>修改<code>&lt;profiles&gt;&lt;/profiles&gt;</code>中的配置</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">profiles</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">profile</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">id</span>&gt;</span>development<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">activation</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">jdk</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">jdk</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">activeByDefault</span>&gt;</span>true<span class="tag">&lt;/<span class="name">activeByDefault</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">activation</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">properties</span>&gt;</span></span><br><span class="line">      	<span class="tag">&lt;<span class="name">maven.compiler.source</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">maven.compiler.source</span>&gt;</span></span><br><span class="line">      	<span class="tag">&lt;<span class="name">maven.compiler.target</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">maven.compiler.target</span>&gt;</span></span><br><span class="line">    		<span class="tag">&lt;<span class="name">maven.compiler.compilerVersion</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">maven.compiler.compilerVersion</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">profile</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">profiles</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【踩坑】Mysql报错Invalid default value</title>
+    <url>/2020/08/17/Mysql%E6%8A%A5%E9%94%99Invalid-default-value/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Mysql在创建表时，指定某个timestamp类型的默认值为<code>0000-00-00 00:00:00</code>时报错：<code>ERROR 1067 (42000): Invalid default value for &#39;order_time&#39;</code></p>
+<a id="more"></a>
+
+<h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><ul>
+<li>Mysql5.6以后<code>sql_mode</code>中多了一条<code>NO_ZERO_DATE</code>（不允许时间值全部为0）</li>
+</ul>
+<h2 id="解决问题"><a href="#解决问题" class="headerlink" title="解决问题"></a>解决问题</h2><ul>
+<li>重新配置<code>sql_mode</code>让它支持全部为0的时间值</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mysql&gt; set sql_mode&#x3D;&quot;ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION&quot;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="报错"><a href="#报错" class="headerlink" title="报错"></a>报错</h2><ul>
+<li>再次报错：<code>ERROR 1231 (42000): Variable &#39;sql_mode&#39; can&#39;t be set to the value of &#39;NO_AUTO_CREATE_USER&#39;</code></li>
+</ul>
+<h2 id="原因-1"><a href="#原因-1" class="headerlink" title="原因"></a>原因</h2><ul>
+<li>Mysql8.0以上已经取消了<code>NO_AUTO_CREATE_USER</code>这个关键字</li>
+</ul>
+<h2 id="解决问题-1"><a href="#解决问题-1" class="headerlink" title="解决问题"></a>解决问题</h2><ul>
+<li>重新配置<code>sql_mode</code>并删掉<code>NO_AUTO_CREATE_USER</code>关键字</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mysql&gt; set sql_mode&#x3D;&quot;ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION&quot;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://blog.csdn.net/linmengmeng_1314/article/details/81269576" target="_blank" rel="noopener">CSDN——linmengmeng_1314</a><br><a href="https://www.jianshu.com/p/8f4b930295fb" target="_blank" rel="noopener">简书——神经电泳实现师</a><br><a href="https://blog.csdn.net/Dreamboy_w/article/details/99888907" target="_blank" rel="noopener">CSDN——Dreamboy_w</a><br><a href="https://www.jianshu.com/p/62c769e8d0f0" target="_blank" rel="noopener">简书——丶Rainbow丨</a></p>
+]]></content>
+      <categories>
+        <category>Database</category>
       </categories>
   </entry>
 </search>

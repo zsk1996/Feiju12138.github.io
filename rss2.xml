@@ -9,8 +9,59 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>捕捉一只爱折腾的绯鞠</description>
-    <pubDate>Fri, 14 Aug 2020 09:19:50 GMT</pubDate>
+    <pubDate>Mon, 17 Aug 2020 08:53:21 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>【踩坑】Mysql报错Invalid default value</title>
+      <link>https://feiju12138.github.io/2020/08/17/Mysql%E6%8A%A5%E9%94%99Invalid-default-value/</link>
+      <guid>https://feiju12138.github.io/2020/08/17/Mysql%E6%8A%A5%E9%94%99Invalid-default-value/</guid>
+      <pubDate>Mon, 17 Aug 2020 08:44:39 GMT</pubDate>
+      <description>
+      
+        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;Mysql在创建表时，指定某个timestamp类型的默认值为&lt;code&gt;0000-00-00 00:00:00&lt;/code&gt;时报错：&lt;code&gt;ERROR 1067 (42000): Invalid default value for &amp;#39;order_time&amp;#39;&lt;/code&gt;&lt;/p&gt;
+      
+      </description>
+      
+      
+      <content:encoded><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Mysql在创建表时，指定某个timestamp类型的默认值为<code>0000-00-00 00:00:00</code>时报错：<code>ERROR 1067 (42000): Invalid default value for &#39;order_time&#39;</code></p><a id="more"></a><h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><ul><li>Mysql5.6以后<code>sql_mode</code>中多了一条<code>NO_ZERO_DATE</code>（不允许时间值全部为0）</li></ul><h2 id="解决问题"><a href="#解决问题" class="headerlink" title="解决问题"></a>解决问题</h2><ul><li>重新配置<code>sql_mode</code>让它支持全部为0的时间值</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; set sql_mode&#x3D;&quot;ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION&quot;;</span><br></pre></td></tr></table></figure><h2 id="报错"><a href="#报错" class="headerlink" title="报错"></a>报错</h2><ul><li>再次报错：<code>ERROR 1231 (42000): Variable &#39;sql_mode&#39; can&#39;t be set to the value of &#39;NO_AUTO_CREATE_USER&#39;</code></li></ul><h2 id="原因-1"><a href="#原因-1" class="headerlink" title="原因"></a>原因</h2><ul><li>Mysql8.0以上已经取消了<code>NO_AUTO_CREATE_USER</code>这个关键字</li></ul><h2 id="解决问题-1"><a href="#解决问题-1" class="headerlink" title="解决问题"></a>解决问题</h2><ul><li>重新配置<code>sql_mode</code>并删掉<code>NO_AUTO_CREATE_USER</code>关键字</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; set sql_mode&#x3D;&quot;ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION&quot;;</span><br></pre></td></tr></table></figure><h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://blog.csdn.net/linmengmeng_1314/article/details/81269576" target="_blank" rel="noopener">CSDN——linmengmeng_1314</a><br><a href="https://www.jianshu.com/p/8f4b930295fb" target="_blank" rel="noopener">简书——神经电泳实现师</a><br><a href="https://blog.csdn.net/Dreamboy_w/article/details/99888907" target="_blank" rel="noopener">CSDN——Dreamboy_w</a><br><a href="https://www.jianshu.com/p/62c769e8d0f0" target="_blank" rel="noopener">简书——丶Rainbow丨</a></p>]]></content:encoded>
+      
+      <comments>https://feiju12138.github.io/2020/08/17/Mysql%E6%8A%A5%E9%94%99Invalid-default-value/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>【笔记】Maven配置JDK版本</title>
+      <link>https://feiju12138.github.io/2020/08/17/Maven%E9%85%8D%E7%BD%AEJDK%E7%89%88%E6%9C%AC/</link>
+      <guid>https://feiju12138.github.io/2020/08/17/Maven%E9%85%8D%E7%BD%AEJDK%E7%89%88%E6%9C%AC/</guid>
+      <pubDate>Mon, 17 Aug 2020 06:45:13 GMT</pubDate>
+      <description>
+      
+        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;把Maven所需要的JDK版本配置为固定1.8&lt;/p&gt;
+      
+      </description>
+      
+      
+      <content:encoded><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>把Maven所需要的JDK版本配置为固定1.8</p><a id="more"></a><h2 id="配置代理"><a href="#配置代理" class="headerlink" title="配置代理"></a>配置代理</h2><ul><li>编辑<code>Maven</code>配置文件</li></ul><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /usr/<span class="built_in">local</span>/Cellar/maven/3.6.3_1/libexec/conf/settings.xml</span><br></pre></td></tr></table></figure><ul><li>修改<code>&lt;profiles&gt;&lt;/profiles&gt;</code>中的配置</li></ul><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">profiles</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">profile</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">id</span>&gt;</span>development<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">activation</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">jdk</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">jdk</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">activeByDefault</span>&gt;</span>true<span class="tag">&lt;/<span class="name">activeByDefault</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">activation</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">properties</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">maven.compiler.source</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">maven.compiler.source</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">maven.compiler.target</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">maven.compiler.target</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">maven.compiler.compilerVersion</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">maven.compiler.compilerVersion</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">profile</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">profiles</span>&gt;</span></span><br></pre></td></tr></table></figure><h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content:encoded>
+      
+      <comments>https://feiju12138.github.io/2020/08/17/Maven%E9%85%8D%E7%BD%AEJDK%E7%89%88%E6%9C%AC/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>【笔记】Maven配置远程仓库</title>
+      <link>https://feiju12138.github.io/2020/08/17/Maven%E9%85%8D%E7%BD%AE%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93/</link>
+      <guid>https://feiju12138.github.io/2020/08/17/Maven%E9%85%8D%E7%BD%AE%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93/</guid>
+      <pubDate>Mon, 17 Aug 2020 06:41:33 GMT</pubDate>
+      <description>
+      
+        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;将Maven配置远程仓库为阿里云仓库&lt;/p&gt;
+      
+      </description>
+      
+      
+      <content:encoded><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>将Maven配置远程仓库为阿里云仓库</p><a id="more"></a><h2 id="配置代理"><a href="#配置代理" class="headerlink" title="配置代理"></a>配置代理</h2><ul><li>编辑<code>Maven</code>配置文件</li></ul><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /usr/<span class="built_in">local</span>/Cellar/maven/3.6.3_1/libexec/conf/settings.xml</span><br></pre></td></tr></table></figure><ul><li>修改<code>&lt;mirrors&gt;&lt;/mirrors&gt;</code>中的配置</li></ul><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">mirrors</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">mirror</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">id</span>&gt;</span>nexus-aliyun<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">name</span>&gt;</span>Nexus aliyun<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">mirrorOf</span>&gt;</span>central<span class="tag">&lt;/<span class="name">mirrorOf</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">url</span>&gt;</span>http://maven.aliyun.com/nexus/content/groups/public/<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">mirror</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">mirrors</span>&gt;</span></span><br></pre></td></tr></table></figure><h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content:encoded>
+      
+      <comments>https://feiju12138.github.io/2020/08/17/Maven%E9%85%8D%E7%BD%AE%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>【笔记】数据库连接池</title>
@@ -44,57 +95,6 @@
       <content:encoded><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>使用<code>navicat-keygen</code>破解Mac版Navigate 15</p><a id="more"></a><h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul><li><a href="http://download.navicat.com.cn/download/navicat150_premium_cs.dmg" target="_blank" rel="noopener">Navicat 15.0.8</a></li></ul><h2 id="破解"><a href="#破解" class="headerlink" title="破解"></a>破解</h2><h3 id="使用navicat-patcher替换掉公钥"><a href="#使用navicat-patcher替换掉公钥" class="headerlink" title="使用navicat-patcher替换掉公钥"></a>使用navicat-patcher替换掉公钥</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> bin</span><br><span class="line">./navicat-patcher /Applications/Navicat\ Premium.app</span><br></pre></td></tr></table></figure><p><img src="/images/20200810181852/01.png" alt="01.png"></p><ul><li>代码执行结束后会在当前目录下生成<code>RegPrivateKey.pem</code>文件</li></ul><h3 id="生成一份自签名的代码证书，并总是信任该证书"><a href="#生成一份自签名的代码证书，并总是信任该证书" class="headerlink" title="生成一份自签名的代码证书，并总是信任该证书"></a>生成一份自签名的代码证书，并总是信任该证书</h3><ul><li><p>打开钥匙串访问</p></li><li><p><code>钥匙串访问</code>-&gt;<code>证书助理</code>-&gt;<code>创建证书</code></p></li></ul><p><img src="/images/20200810181852/02.png" alt="02.png"></p><blockquote><p><code>名称</code>：Navicat<br><code>身份类型</code>：自签名根证书<br><code>证书类型</code>：代码签名</p></blockquote><p><img src="/images/20200810181852/03.png" alt="03.png"></p><ul><li><p>右键新建好的证书-&gt;<code>显示简介</code></p></li><li><p>信任设置全部改为<code>始终信任</code>（将第一个选项改为始终信任其他会默认被修改）</p></li></ul><p><img src="/images/20200810181852/04.png" alt="04.png"></p><h3 id="用codesign对Navicat-Premium-app重签名"><a href="#用codesign对Navicat-Premium-app重签名" class="headerlink" title="用codesign对Navicat Premium.app重签名"></a>用codesign对Navicat Premium.app重签名</h3><ul><li>如果<code>Navicat Premium</code>版本号高于<code>15</code>，必须先签名<code>libcc-premium.dylib</code>，再签名<code>Navicat Premium.app</code></li></ul><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">codesign -f -s Navicat /Applications/Navicat\ Premium.app/Contents/Frameworks/libcc-premium.dylib</span><br><span class="line">codesign -f -s Navicat /Applications/Navicat\ Premium.app</span><br></pre></td></tr></table></figure><h3 id="使用navicat-keygen来生成-序列号-和-激活码"><a href="#使用navicat-keygen来生成-序列号-和-激活码" class="headerlink" title="使用navicat-keygen来生成 序列号 和 激活码"></a>使用navicat-keygen来生成 序列号 和 激活码</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./navicat-keygen ./RegPrivateKey.pem</span><br></pre></td></tr></table></figure><p><img src="/images/20200810181852/05.png" alt="05.png"></p><ul><li>第一个问题回复1（也就是选择Navicat的语言版本）</li><li>第二个问题直接回车（也就是默认破解15版本）</li><li>此时程序提供了一个激活码，保留备用</li><li>第三个问题设置一个用户名（可以自定义）</li><li>第四个问题设置一个企业名（可以自定义）</li><li>第五个问题输入公钥（切记此时不要继续回车操作，现在进入下一步操作，不要关闭终端）</li></ul><h3 id="断网激活"><a href="#断网激活" class="headerlink" title="断网激活"></a>断网激活</h3><ul><li>断开网络，打开Navicat</li><li>在左侧激活区域输入刚刚得到的激活码</li><li>此时一定是激活失败，选择离线激活</li><li>复制公钥，粘贴到刚刚暂停的终端上，按两次回车确认</li><li>此时程序会返回一个私钥，将私钥复制并粘贴到Navicat</li></ul><p><img src="/images/20200810181852/06.png" alt="06.png"></p><h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><ul><li>截图纪念</li></ul><p><img src="/images/20200810181852/07.png" alt="07.png"></p><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://github.com/HeQuanX/navicat-keygen-tools" target="_blank" rel="noopener">Github——HeQuanX</a><br><a href="https://www.7i5.com/1226.html" target="_blank" rel="noopener">奇爱屋</a></p>]]></content:encoded>
       
       <comments>https://feiju12138.github.io/2020/08/10/Navicat%E7%A0%B4%E8%A7%A3/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>【笔记】Mysql数据库导入导出</title>
-      <link>https://feiju12138.github.io/2020/08/05/Mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AF%BC%E5%85%A5%E5%AF%BC%E5%87%BA/</link>
-      <guid>https://feiju12138.github.io/2020/08/05/Mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AF%BC%E5%85%A5%E5%AF%BC%E5%87%BA/</guid>
-      <pubDate>Wed, 05 Aug 2020 10:38:10 GMT</pubDate>
-      <description>
-      
-        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;Mysql数据库备份和恢复&lt;/p&gt;
-      
-      </description>
-      
-      
-      <content:encoded><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Mysql数据库备份和恢复</p><a id="more"></a><h2 id="导出（备份）"><a href="#导出（备份）" class="headerlink" title="导出（备份）"></a>导出（备份）</h2><h3 id="导出某数据库的某数据表"><a href="#导出某数据库的某数据表" class="headerlink" title="导出某数据库的某数据表"></a>导出某数据库的某数据表</h3><blockquote><p><code>&lt;root&gt;</code>：登陆Mysql的用户名<br><code>&lt;pwd&gt;</code>：登陆Mysql的密码<br><code>&lt;database&gt;</code>：数据库名<br><code>&lt;table&gt;</code>：数据表名</p></blockquote><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqldump -u&lt;root&gt; -p&lt;<span class="built_in">pwd</span>&gt; &lt;database&gt; &lt;table&gt; &gt; Backup.sql</span><br></pre></td></tr></table></figure><h3 id="导出某数据库的所有数据"><a href="#导出某数据库的所有数据" class="headerlink" title="导出某数据库的所有数据"></a>导出某数据库的所有数据</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqldump -u&lt;root&gt; -p&lt;<span class="built_in">pwd</span>&gt; &lt;database&gt; &gt; Backup.sql</span><br></pre></td></tr></table></figure><h3 id="导出所有库的所有数据"><a href="#导出所有库的所有数据" class="headerlink" title="导出所有库的所有数据"></a>导出所有库的所有数据</h3><ul><li>不适用所有版本</li></ul><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqldump -u&lt;root&gt; -p&lt;<span class="built_in">pwd</span>&gt; --all-databases &gt; Backup.sql</span><br></pre></td></tr></table></figure><h2 id="导入（恢复）"><a href="#导入（恢复）" class="headerlink" title="导入（恢复）"></a>导入（恢复）</h2><h3 id="直接导入"><a href="#直接导入" class="headerlink" title="直接导入"></a>直接导入</h3><blockquote><p><code>&lt;database&gt;</code>：导入到指定的数据库</p></blockquote><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -u&lt;root&gt; -p&lt;<span class="built_in">pwd</span>&gt; &lt;database&gt; &lt; Backup.sql</span><br></pre></td></tr></table></figure><h3 id="执行备份文件的源码"><a href="#执行备份文件的源码" class="headerlink" title="执行备份文件的源码"></a>执行备份文件的源码</h3><ul><li>首先进入到Mysql</li></ul><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -u&lt;root&gt; -p&lt;<span class="built_in">pwd</span>&gt;</span><br></pre></td></tr></table></figure><ul><li>然后创建并进入 需要导出的数据 所 要求存放 的数据表</li></ul><blockquote><p><code>&lt;Backup.sql&gt;</code>：<code>.sql</code>存放的目录</p></blockquote><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source &lt;Backup.sql&gt;</span><br></pre></td></tr></table></figure><h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://www.runoob.com/mysql/mysql-database-export.html" target="_blank" rel="noopener">菜鸟笔记</a></p>]]></content:encoded>
-      
-      <comments>https://feiju12138.github.io/2020/08/05/Mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AF%BC%E5%85%A5%E5%AF%BC%E5%87%BA/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>【笔记】为Javaweb项目打war包</title>
-      <link>https://feiju12138.github.io/2020/08/05/%E4%B8%BAJavaweb%E9%A1%B9%E7%9B%AE%E6%89%93war%E5%8C%85/</link>
-      <guid>https://feiju12138.github.io/2020/08/05/%E4%B8%BAJavaweb%E9%A1%B9%E7%9B%AE%E6%89%93war%E5%8C%85/</guid>
-      <pubDate>Wed, 05 Aug 2020 10:17:09 GMT</pubDate>
-      <description>
-      
-        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;为Javaweb项目打war包&lt;/p&gt;
-      
-      </description>
-      
-      
-      <content:encoded><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>为Javaweb项目打war包</p><a id="more"></a><h2 id="打war包的优点"><a href="#打war包的优点" class="headerlink" title="打war包的优点"></a>打war包的优点</h2><ul><li>可以压缩为单个文件，节省空间，提升传输效率</li><li>当<code>.war</code>包存放到tomcat服务器的<code>webapps</code>目录下，此时启动tomcat服务器会自动解压部署</li></ul><h2 id="操作方法"><a href="#操作方法" class="headerlink" title="操作方法"></a>操作方法</h2><ul><li>全选项目根目录的所有子文件和子目录</li><li>对选中的所有文件压缩为<code>.zip</code>格式压缩包</li><li>将扩展名修改为<code>.war</code></li></ul><h2 id="war包自动部署失败原因"><a href="#war包自动部署失败原因" class="headerlink" title="war包自动部署失败原因"></a>war包自动部署失败原因</h2><ul><li>在将web项目压缩时，没有采用<code>.zip</code>的格式，而是其他格式例如<code>.rar</code></li><li>打成war包的名字和服务器中已发布的web应用重名</li><li>war包中包含中文文件名或中文目录名</li></ul><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://www.bilibili.com/video/BV1Hg4y1B7dr?p=2" target="_blank" rel="noopener">哔哩哔哩——江小黑888</a></p>]]></content:encoded>
-      
-      <comments>https://feiju12138.github.io/2020/08/05/%E4%B8%BAJavaweb%E9%A1%B9%E7%9B%AE%E6%89%93war%E5%8C%85/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>【笔记】Eclipse配置tomcat环境</title>
-      <link>https://feiju12138.github.io/2020/08/05/Eclipse%E9%85%8D%E7%BD%AEtomcat%E7%8E%AF%E5%A2%83/</link>
-      <guid>https://feiju12138.github.io/2020/08/05/Eclipse%E9%85%8D%E7%BD%AEtomcat%E7%8E%AF%E5%A2%83/</guid>
-      <pubDate>Wed, 05 Aug 2020 09:32:18 GMT</pubDate>
-      <description>
-      
-        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;Eclipse配置tomcat环境&lt;/p&gt;
-      
-      </description>
-      
-      
-      <content:encoded><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Eclipse配置tomcat环境</p><a id="more"></a><h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul><li>Eclipse JavaEE版本</li></ul><h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><ul><li><code>Eclipse</code>-&gt;<code>Preferences</code></li></ul><p><img src="/images/20200805173218/01.png" alt="01.png"></p><ul><li><code>Server</code>-&gt;<code>Runtime Environments</code></li></ul><p><img src="/images/20200805173218/02.png" alt="02.png"></p><ul><li>选择tomcat版本</li></ul><p><img src="/images/20200805173218/03.png" alt="03.png"></p><ul><li>自定义服务器名，选择tomcat安装位置，选择JRE配置</li></ul><p><img src="/images/20200805173218/04.png" alt="04.png"></p><h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content:encoded>
-      
-      <comments>https://feiju12138.github.io/2020/08/05/Eclipse%E9%85%8D%E7%BD%AEtomcat%E7%8E%AF%E5%A2%83/#disqus_thread</comments>
     </item>
     
   </channel>

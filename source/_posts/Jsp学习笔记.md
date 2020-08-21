@@ -11,6 +11,10 @@ date: 2020-05-15 08:35:34
 
 <!-- more -->
 
+## 原理
+
+- Jsp将HTML页面代码转换为Servlet后显示，所以必须在服务器上运行
+
 ## Java代码块
 
 ``` jsp
@@ -25,13 +29,54 @@ date: 2020-05-15 08:35:34
 <%--  --%>
 ```
 
-## 原理
+## 指令
 
-- Jsp将HTML页面代码转换为Servlet后显示，所以必须在服务器上运行
+- 用于声明JSP的基本属性信息
+
+### 指定当前JSP使用的开发语言
+
+- 默认为`java`
+
+``` jsp
+<%@ page language="java"%>
+```
+
+### 导包
+
+``` jsp
+<%@ page import=""%>
+```
+
+### 指定当前JSP使用的编码
+
+- 这个编码指定后，即使不指定`content="text/html;charset=UTF-8"`或`<meta charset="UTF-8">`中文也不会显示为乱码
+
+``` jsp
+<%@ page pageEncoding="UTF-8"%>
+```
+
+### 是否禁用EL
+
+- `true`为禁用，`false`为启用
+
+``` jsp
+<%@ page isELIgnored=""%>
+```
+
+### 引入标签库
+
+#### 引入JSTL标签库
+
+- [传送门](/2020/05/25/JSTL学习笔记/)
+
+``` jsp
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+```
 
 ## 9大内置对象
 
 - 在Jsp中可以直接使用的对象
+- `page`、`resquest`、`response`、`config`、`application`、`exception`、`pageContext`、`out`、`session`
 
 ### 在页面输出
 

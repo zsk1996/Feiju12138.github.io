@@ -1,7 +1,7 @@
 ---
 title: 【笔记】Tor 学习笔记
 categories:
-  - MacOS
+  - 网络安全
 date: 2020-03-30 20:50:26
 ---
 

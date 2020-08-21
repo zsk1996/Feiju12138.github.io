@@ -207,15 +207,19 @@ INSERT INTO <table_name>(<field_name_1>, <field_name_2>) VALUES(value_1_1, value
 INSERT INTO <table_name> VALUES(<value_1>, <value_2>);
 ```
 
-### 更新数据
-
-``` mysql
-UPDATE <table_name> SET <field_name_1>=<value_1>, <field_name_2>=<value_2>
-```
-
 ### 修改数据
 
 ``` mysql
+UPDATE <table_name> SET <field_name_1>=<value_1>, <field_name_2>=<value_2> WHERE <field_name><operator><value>
+```
+
+### 覆盖插入
+
+- 删除原有数据创建新数据
+
+``` mysql
+REPLACE INTO <table_name> (<field_name_1>,<field_name_2>) VALUES(<value_1>,<value_2>);
+
 REPLACE INTO <table_name> SET <field_name_1>=<value_1>, <field_name_2>=<value_2>;
 ```
 
@@ -729,3 +733,7 @@ CREATE TABLE <table_name>(
 
 ## 完成
 
+## 参考文献
+
+[博客园——Bigben](https://www.cnblogs.com/bigben0123/p/10997962.html)
+[博客园——下页、再停留](https://www.cnblogs.com/zxf100/p/10882138.html)

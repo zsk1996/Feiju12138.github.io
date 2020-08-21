@@ -30,7 +30,9 @@ mysqldump -u<root> -p<pwd> <database> <table> > Backup.sql
 mysqldump -u<root> -p<pwd> <database> > Backup.sql
 ```
 
-### 导出所有数据的所有数据
+### 导出所有库的所有数据
+
+- 不适用所有版本
 
 ``` sh
 mysqldump -u<root> -p<pwd> --all-databases > Backup.sql

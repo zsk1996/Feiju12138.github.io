@@ -17,8 +17,8 @@ Cookie（复数形态Cookies），又称为“小甜饼”。类型为“小型�
 
 - Cookie都是由键值对构成的
 
-> `<key>`：键
-> `<value>`：值
+> `<key>`：键，Cookie的名字，Cookie名字一旦指定无法修改
+> `<value>`：值，Cookie要保存的值
 
 ``` java
 Cookie cookie = new Cookie("<key>", "<value>");
@@ -46,17 +46,21 @@ Cookie cookies[] = req.getCookies();
 cookie.getName();
 ```
 
-### 获取Cookie的值
+### 获取/修改Cookie的值
 
 - 返回String类型
 
 ``` java
 cookie.getValue();
+cookie.setValue();
 ```
 
 ## 设置Cookie有效期
 
 > `<num>`：单位：秒
+>> `正数`：设置Cookie有效期（存储在硬盘上）
+>> `负数`：默认值，Cookie只在关闭浏览器之前有效（存储在浏览器缓存）
+>> `0`：立即删除同名Cookie
 
 ``` java
 cookie.setMaxAge(<num>);

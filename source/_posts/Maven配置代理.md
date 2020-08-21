@@ -1,7 +1,7 @@
 ---
 title: 【笔记】Maven 配置代理
 categories:
-  - Maven
+  - Java
 date: 2019-12-29 11:36:41
 ---
 
@@ -16,7 +16,7 @@ date: 2019-12-29 11:36:41
 - 编辑`Maven`配置文件
 
 ``` sh
-vim ~/.m2/settings.xml
+vim /usr/local/Cellar/maven/3.6.3_1/libexec/conf/settings.xml
 ```
 
 - 修改`<proxies></proxies>`中的配置

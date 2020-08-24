@@ -22946,4 +22946,92 @@
         <category>Java</category>
       </categories>
   </entry>
+  <entry>
+    <title>【笔记】Spring MVC 响应数据</title>
+    <url>/2020/08/24/SpringMVC%E5%93%8D%E5%BA%94%E6%95%B0%E6%8D%AE/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Spring MVC 响应数据</p>
+<a id="more"></a>
+
+<h2 id="数据传输"><a href="#数据传输" class="headerlink" title="数据传输"></a>数据传输</h2><ul>
+<li>通过Model传输数据</li>
+</ul>
+<blockquote>
+<p><code>&lt;key&gt;</code>：键，仅可以字符串类型<br><code>&lt;value&gt;</code>：值，可以任意类型</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@RequestMapping</span>(<span class="string">"/testModel"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">testModel</span><span class="params">(Model model)</span> </span>&#123;</span><br><span class="line">    model.addAttribute(&lt;key&gt;, &lt;value&gt;);</span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">return</span> <span class="string">""</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="请求转发"><a href="#请求转发" class="headerlink" title="请求转发"></a>请求转发</h2><h3 id="转发到jsp"><a href="#转发到jsp" class="headerlink" title="转发到jsp"></a>转发到jsp</h3><ul>
+<li>直接在return以字符串的形式返回jsp文件的名</li>
+</ul>
+<blockquote>
+<p><code>index</code>：返回到index.jsp</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@RequestMapping</span>(<span class="string">"/testForward"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">testForward</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"index"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="转发到其他位置"><a href="#转发到其他位置" class="headerlink" title="转发到其他位置"></a>转发到其他位置</h3><ul>
+<li>在return加前缀<code>forward:</code></li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@RequestMapping</span>(<span class="string">"/testForward"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">testForward</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"forward:/testParam"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="目标重定向"><a href="#目标重定向" class="headerlink" title="目标重定向"></a>目标重定向</h2><h3 id="重定向到站内"><a href="#重定向到站内" class="headerlink" title="重定向到站内"></a>重定向到站内</h3><ul>
+<li>在SpringMVC中目标重定向也可以通过Model传递参数</li>
+<li>在return加前缀<code>redirect:</code></li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@RequestMapping</span>(<span class="string">"/testRedirect"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">testRedirect</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"redirect:/testParam"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="重定向到站外"><a href="#重定向到站外" class="headerlink" title="重定向到站外"></a>重定向到站外</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@RequestMapping</span>(<span class="string">"/testRedirect"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">testRedirect</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"redirect:/http://localhost:8080/"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【笔记】Spring MVC 参数绑定</title>
+    <url>/2020/08/24/SpringMVC%E5%8F%82%E6%95%B0%E7%BB%91%E5%AE%9A/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>SpringMVC参数绑定</p>
+<a id="more"></a>
+
+<h2 id="基本类型参数绑定"><a href="#基本类型参数绑定" class="headerlink" title="基本类型参数绑定"></a>基本类型参数绑定</h2><ul>
+<li>参数名必须相同，顺序可以不同</li>
+<li>如果传过来参数的值包含多个，既可以由String接收（会得到用逗号分隔的拼接而成的字符串），也可以由String[]接收（会得到字符串数组）</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@RequestMapping</span>(<span class="string">"/testParam"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">testParam</span><span class="params">(String name, Integer age)</span> </span>&#123;</span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">return</span> <span class="string">""</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="包装类型参数绑定"><a href="#包装类型参数绑定" class="headerlink" title="包装类型参数绑定"></a>包装类型参数绑定</h2><ul>
+<li>首先定义一个包含传过来参数名相同的属性的POJO类，并定义相关get、set、toString方法</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@RequestMapping</span>(<span class="string">"/testParam"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">testParam</span><span class="params">(User user)</span> </span>&#123;</span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">return</span> <span class="string">""</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="日期类型参数绑定"><a href="#日期类型参数绑定" class="headerlink" title="日期类型参数绑定"></a>日期类型参数绑定</h2><ul>
+<li>默认SpringMVC日期类型参数需要使用<code>/</code>做间隔</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@RequestMapping</span>(<span class="string">"/testParam"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">testParam</span><span class="params">(Date date)</span> </span>&#123;</span><br><span class="line">    System.out.println(date.toLocaleString());</span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">return</span> <span class="string">""</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="修改默认格式化方式"><a href="#修改默认格式化方式" class="headerlink" title="修改默认格式化方式"></a>修改默认格式化方式</h3><ul>
+<li><p>默认SpringMVC日期类型格式化的数据需要由<code>/</code>做间隔</p>
+</li>
+<li><p>添加SpringMVC自定义日期格式转换器，将SpringMVC默认以<code>/</code>分隔改为以<code>-</code>分隔</p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@InitBinder</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">InitBinder</span> <span class="params">(ServletRequestDataBinder binder)</span></span>&#123;</span><br><span class="line">    binder.registerCustomEditor(java.util.Date<span class="class">.<span class="keyword">class</span>, </span></span><br><span class="line">        new CustomDateEditor(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"), true)</span><br><span class="line">    );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【踩坑】解决 Spring MVC 的POST请求乱码问题</title>
+    <url>/2020/08/24/%E8%A7%A3%E5%86%B3SpringMVC%E7%9A%84POST%E8%AF%B7%E6%B1%82%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>解决<code>Spring MVC</code>的POST请求乱码问题</p>
+<a id="more"></a>
+
+<h2 id="配置过滤器"><a href="#配置过滤器" class="headerlink" title="配置过滤器"></a>配置过滤器</h2><ul>
+<li>在web.xml配置过滤器，将项目中所有POST请求的字符编码改为<code>UTF-8</code></li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">&lt;!-- 配置过滤器,解决POST提交的中文参数乱码问题 --&gt;</span><br><span class="line">&lt;filter&gt;</span><br><span class="line">	&lt;filter-name&gt;encodingFilter&lt;/filter-name&gt;</span><br><span class="line">	&lt;filter-<span class="class"><span class="keyword">class</span>&gt;<span class="title">org</span>.<span class="title">springframework</span>.<span class="title">web</span>.<span class="title">filter</span>.<span class="title">CharacterEncodingFilter</span>&lt;/<span class="title">filter</span>-<span class="title">class</span>&gt;</span></span><br><span class="line"><span class="class">	&lt;<span class="title">init</span>-<span class="title">param</span>&gt;</span></span><br><span class="line"><span class="class">		&lt;<span class="title">param</span>-<span class="title">name</span>&gt;<span class="title">encoding</span>&lt;/<span class="title">param</span>-<span class="title">name</span>&gt;</span></span><br><span class="line"><span class="class">		&lt;<span class="title">param</span>-<span class="title">value</span>&gt;<span class="title">UTF8</span>&lt;/<span class="title">param</span>-<span class="title">value</span>&gt;</span></span><br><span class="line"><span class="class">	&lt;/<span class="title">init</span>-<span class="title">param</span>&gt;</span></span><br><span class="line"><span class="class">&lt;/<span class="title">filter</span>&gt;</span></span><br><span class="line"><span class="class">&lt;<span class="title">filter</span>-<span class="title">mapping</span>&gt;</span></span><br><span class="line"><span class="class">	&lt;<span class="title">filter</span>-<span class="title">name</span>&gt;<span class="title">encodingFilter</span>&lt;/<span class="title">filter</span>-<span class="title">name</span>&gt;</span></span><br><span class="line"><span class="class">	&lt;<span class="title">url</span>-<span class="title">pattern</span>&gt;/*&lt;/<span class="title">url</span>-<span class="title">pattern</span>&gt;</span></span><br><span class="line"><span class="class">&lt;/<span class="title">filter</span>-<span class="title">mapping</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
+  </entry>
 </search>

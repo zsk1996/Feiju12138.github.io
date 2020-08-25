@@ -22975,4 +22975,118 @@
 
 <h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
   </entry>
+  <entry>
+    <title>【笔记】STS创建SpringBoot项目</title>
+    <url>/2020/08/25/STS%E5%88%9B%E5%BB%BASpringBoot%E9%A1%B9%E7%9B%AE/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>基于SpringToolSuite4创建SpringBoot项目</p>
+<a id="more"></a>
+
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
+<li>Java 1.8</li>
+<li>Maven 3.6.3</li>
+</ul>
+<h3 id="STS中Maven的配置"><a href="#STS中Maven的配置" class="headerlink" title="STS中Maven的配置"></a>STS中Maven的配置</h3><ul>
+<li><code>Spring Tool Suite 4</code>-&gt;<code>Preferences</code>-&gt;<code>Maven</code>-&gt;<code>Installations</code>-&gt;<code>Add</code></li>
+</ul>
+<p><img src="/images/20200825170603/01.png" alt="01.png"></p>
+<ul>
+<li>配置Maven安装目录</li>
+</ul>
+<p><img src="/images/20200825170603/02.png" alt="02.png"></p>
+<ul>
+<li>选中新的配置-&gt;应用</li>
+</ul>
+<p><img src="/images/20200825170603/03.png" alt="03.png"></p>
+<ul>
+<li><code>Maven</code>-&gt;<code>User Settings</code>-&gt;修改配置-&gt;应用</li>
+</ul>
+<p><img src="/images/20200825170603/04.png" alt="04.png"></p>
+<h2 id="通过官方的Starter创建项目"><a href="#通过官方的Starter创建项目" class="headerlink" title="通过官方的Starter创建项目"></a>通过官方的Starter创建项目</h2><ul>
+<li><code>File</code>-&gt;<code>New</code>-&gt;<code>Spring Starter Project</code></li>
+</ul>
+<p><img src="/images/20200825170603/05.png" alt="05.png"></p>
+<ul>
+<li>配置项目参数-&gt;<code>Next</code></li>
+</ul>
+<p><img src="/images/20200825170603/06.png" alt="06.png"></p>
+<ul>
+<li>选择SpringBoot版本-&gt;<code>Finish</code></li>
+</ul>
+<p><img src="/images/20200825170603/07.png" alt="07.png"></p>
+<h2 id="通过阿里云的Starter创建项目"><a href="#通过阿里云的Starter创建项目" class="headerlink" title="通过阿里云的Starter创建项目"></a>通过阿里云的Starter创建项目</h2><ul>
+<li><code>File</code>-&gt;<code>New</code>-&gt;<code>Spring Starter Project</code></li>
+</ul>
+<p><img src="/images/20200825170603/05.png" alt="05.png"></p>
+<ul>
+<li>配置项目参数，将<code>Server URL</code>改为阿里云的Starter-&gt;<code>Next</code></li>
+</ul>
+<p><img src="/images/20200825170603/08.png" alt="08.png"></p>
+<ul>
+<li>如果版本显示错误，可以手动调整版本，在配置版本处不管版本号，选择<code>Next</code></li>
+</ul>
+<p><img src="/images/20200825170603/09.png" alt="09.png"></p>
+<ul>
+<li>手动调整版本号-&gt;<code>Finish</code></li>
+</ul>
+<p><img src="/images/20200825170603/10.png" alt="10.png"></p>
+<h2 id="通过官网打包导入项目"><a href="#通过官网打包导入项目" class="headerlink" title="通过官网打包导入项目"></a>通过官网打包导入项目</h2><ul>
+<li>在官网配置项目参数，下载打包的新项目<a href="https://start.spring.io" target="_blank" rel="noopener">https://start.spring.io</a></li>
+</ul>
+<p><img src="/images/20200825170603/11.png" alt="11.png"></p>
+<ul>
+<li><p>解压，导入项目到STS</p>
+</li>
+<li><p><code>File</code>-&gt;<code>Inport</code>-&gt;<code>Maven</code>-&gt;<code>Existing Maven Projects</code>-&gt;<code>Next</code></p>
+</li>
+</ul>
+<p><img src="/images/20200825170603/12.png" alt="12.png"></p>
+<ul>
+<li>选择项目根目录-&gt;<code>Finish</code></li>
+</ul>
+<p><img src="/images/20200825170603/13.png" alt="13.png"></p>
+<h2 id="通过普通Maven项目创建项目"><a href="#通过普通Maven项目创建项目" class="headerlink" title="通过普通Maven项目创建项目"></a>通过普通Maven项目创建项目</h2><ul>
+<li><p>创建一个简单的Maven项目</p>
+</li>
+<li><p><code>File</code>-&gt;<code>New</code>-&gt;<code>Other</code>-&gt;<code>Maven</code>-&gt;<code>Maven Project</code>-&gt;选择简单Maven项目-&gt;<code>Next</code></p>
+</li>
+</ul>
+<p><img src="/images/20200825170603/14.png" alt="14.png"></p>
+<ul>
+<li>配置项目参数 -&gt;<code>Finish</code></li>
+</ul>
+<p><img src="/images/20200825170603/15.png" alt="15.png"></p>
+<ul>
+<li>替换pom.xml文件内容</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">project</span> <span class="attr">xmlns</span>=<span class="string">"http://maven.apache.org/POM/4.0.0"</span> <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span></span><br><span class="line"><span class="tag">	<span class="attr">xsi:schemaLocation</span>=<span class="string">"http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">modelVersion</span>&gt;</span>4.0.0<span class="tag">&lt;/<span class="name">modelVersion</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">parent</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-parent<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">version</span>&gt;</span>2.3.3.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">relativePath</span>/&gt;</span> <span class="comment">&lt;!-- lookup parent from repository --&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">parent</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.company<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>CGB-SPRINGBOOT-04<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">version</span>&gt;</span>0.0.1-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">name</span>&gt;</span>CGB-SPRINGBOOT-01<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">description</span>&gt;</span>Demo project for Spring Boot<span class="tag">&lt;/<span class="name">description</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="tag">&lt;<span class="name">properties</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">java.version</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">java.version</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line">		<span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-test<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">scope</span>&gt;</span>test<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">exclusions</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">exclusion</span>&gt;</span></span><br><span class="line">					<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.junit.vintage<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">					<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>junit-vintage-engine<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;/<span class="name">exclusion</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;/<span class="name">exclusions</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br><span class="line"></span><br><span class="line">	<span class="tag">&lt;<span class="name">build</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">plugins</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-maven-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">plugins</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">build</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">project</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>右键项目-&gt;<code>Maven</code>-&gt;<code>Update Project</code></li>
+</ul>
+<p><img src="/images/20200825170603/16.png" alt="16.png"></p>
+<ul>
+<li>选中<code>Force Update of Snapshots/Releases</code>强制更新-&gt;<code>OK</code></li>
+</ul>
+<p><img src="/images/20200825170603/17.png" alt="17.png"></p>
+<ul>
+<li><p>手动创建入口程序</p>
+</li>
+<li><p>新建Java文件，全局限定名为<code>com.company.CgbSpringboot04Application</code></p>
+</li>
+<li><p>在类上定义注解<code>@SpringBootApplication</code>，并定义main方法</p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CgbSpringboot04Application</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        SpringApplication.run(CgbSpringboot04Application<span class="class">.<span class="keyword">class</span>, <span class="title">args</span>)</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="通过在其他机器的新项目复制"><a href="#通过在其他机器的新项目复制" class="headerlink" title="通过在其他机器的新项目复制"></a>通过在其他机器的新项目复制</h2><ul>
+<li><p>通过以上任何方式构建完整新项目后，压缩项目拷贝到其他机器</p>
+</li>
+<li><p>在pom.xml文件内调整参数</p>
+</li>
+</ul>
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+  </entry>
 </search>

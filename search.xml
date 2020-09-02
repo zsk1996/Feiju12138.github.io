@@ -23580,4 +23580,46 @@
         <category>Java</category>
       </categories>
   </entry>
+  <entry>
+    <title>【笔记】SpringBoot项目健康检查</title>
+    <url>/2020/09/02/SpringBoot%E9%A1%B9%E7%9B%AE%E5%81%A5%E5%BA%B7%E6%A3%80%E6%9F%A5/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>SpringBoot项目健康检查</p>
+<a id="more"></a>
+
+<h2 id="添加依赖"><a href="#添加依赖" class="headerlink" title="添加依赖"></a>添加依赖</h2><ul>
+<li>编辑pom.xml配置文件</li>
+</ul>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-boot-starter-actuator&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="管理页面"><a href="#管理页面" class="headerlink" title="管理页面"></a>管理页面</h2><ul>
+<li>启动项目，在浏览器进入管理页面</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">http://localhost/actuator</span><br></pre></td></tr></table></figure>
+
+<h2 id="管理更多选项"><a href="#管理更多选项" class="headerlink" title="管理更多选项"></a>管理更多选项</h2><ul>
+<li>编辑application.properties配置文件</li>
+</ul>
+<figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="meta">management.endpoints.web.exposure.include</span>=<span class="string">*</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【笔记】SpringBoot热部署配置及实现类</title>
+    <url>/2020/09/02/SpringBoot%E7%83%AD%E9%83%A8%E7%BD%B2%E9%85%8D%E7%BD%AE%E5%8F%8A%E5%AE%9E%E7%8E%B0%E7%B1%BB/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>SpringBoot热部署配置及实现类</p>
+<a id="more"></a>
+
+<h2 id="添加依赖"><a href="#添加依赖" class="headerlink" title="添加依赖"></a>添加依赖</h2><ul>
+<li>编辑pom.xml配置文件</li>
+</ul>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-boot-devtools&lt;/artifactId&gt;</span><br><span class="line">    &lt;scope&gt;runtime&lt;/scope&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+  </entry>
 </search>

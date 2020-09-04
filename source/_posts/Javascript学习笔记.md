@@ -11,16 +11,14 @@ JavaScript（通常缩写为JS）是一种高级的、解释型的编程语言�
 
 <!-- more -->
 
-## 位置
+## 书写位置
 
 ### script标签内
 
 ``` javascript
-<head>
-    <script>
-        ...
-    <script>
-</head>
+<script>
+    ...
+</script>
 ```
 
 ### 引入.js文件
@@ -33,13 +31,11 @@ JavaScript（通常缩写为JS）是一种高级的、解释型的编程语言�
 </head>
 ```
 
-### 当触发onclick时执行
-
-- 在body中任意标签内的onclick属性添加js代码，但是只有在点击时才会执行
+### 当触发事件时执行指定函数
 
 ``` java
 <body>
-    <input type="button" onclick="...">
+    <input type="button" onclick="">
 </body>
 ```
 
@@ -49,6 +45,7 @@ JavaScript（通常缩写为JS）是一种高级的、解释型的编程语言�
 
 ``` javascript
 // 单行注释
+
 /* 多行注释 */
 ```
 
@@ -68,6 +65,12 @@ alert(<<variable>>);
 console.log(<<variable>>);
 ```
 
+#### 在控制台打印对象结构
+
+``` javascript
+console.dir(<<variable>>);
+```
+
 ### 直接打印到网页上
 
 ``` javascript
@@ -84,11 +87,16 @@ document.write(<<variable>>);
 var <<name>> = <<variable>>;
 ```
 
-### 新版语法
+### 变量（新版语法）
 
 ``` javascript
 let <<name>> = <<variable>>;
-const var <<name>> = <<variable>>;
+```
+
+### 常量（新版语法）
+
+``` javascript
+const <<name>> = <<variable>>;
 ```
 
 ### var和let、const 的区别
@@ -237,10 +245,13 @@ Number.MAX_VALUE
 ### 声明数组
 
 ``` javascript
-var arr1 = [];
-var arr2 = ["Hello", 111, false, new Object() ];
-var arr3 = new Array();
-var arr4 = new Array("Hello", 111, false, new Object());
+var arr = [];
+
+var arr = ["Hello", 111, false, new Object()];
+
+var arr = new Array();
+
+var arr = new Array("Hello", 111, false, new Object());
 ```
 
 ## 对象
@@ -263,32 +274,56 @@ var arr4 = new Array("Hello", 111, false, new Object());
 
 ### 创建对象
 
-- 使用new关键字调用的函数，是构造函数constructor
-- 构造函数是专门用来创建对象的函数
-- 使用typeof检查一个对象时，会返回object
+#### 创建对象时定义属性
 
-### 在对象中保存的值称为属性
+``` javascript
+var obj = {"name":"zhangsan", "sex":"male"};
 
-- 向对象添加属性
+var obj = {name:"zhangsan", sex:"male"};
+```
+
+#### 创建对象后定义属性
+
+``` javascript
+var obj = new object();
+obj.name = "zhangsan";
+obj.sex = "male";
+```
+
+#### 通过构造函数创建对象
+
+``` javascript
+function fun(name, sex) {
+    this.name = name;
+    this.sex = sex;
+}
+var obj = fun("zhangsan", "male")
+```
+
+### 属性
+
+- 在对象中保存的值称为属性
+
+#### 向对象添加属性
 
 ``` javascript
 对象.属性名 = 属性值;
 ```
 
-### 读取对象中的属性
+#### 读取对象中的属性
 
 ``` javascript
 对象.属性名
 ```
 - 如果读取对象中没有的属性值，不会报错而是会返回undefined
 
-### 修改对象的属性值
+#### 修改对象的属性值
 
 ``` javascript
 对象.属性名 = 属性值;
 ```
 
-### 删除对象的属性
+#### 删除对象的属性
 
 ``` javascript
 delete 对象.属性名
@@ -320,6 +355,32 @@ delete 对象.属性名
 "属性名" in 对象
 ```
 
+### 继承关系
+
+- 在构造函数的对象通过prototype关键字添加公有属性，通过构造函数创建的对象也能访问到这个属性
+
+``` javascript
+function point(x, y) {
+    this.x = x;
+    this.y = y;
+}
+
+var a = new point(10, 20);
+
+// 通过prototype关键字在构造函数添加公有属性z
+point.prototype.z = 30;
+
+// 虽然对象a中并没有属性z
+console.dir(a);
+
+// 但此时对象a也能访问构造函数的公有属性
+console.log(a.z);
+```
+
+``` javascript
+a.__proto__==point.prototype;
+```
+
 ### 其他
 
 - JS中的变量都是保存到栈内存中的，
@@ -343,7 +404,7 @@ delete 对象.属性名
 - 属性名和属性值时一组一组的名值对结构，
 - 名和值之间使用`:`连接，多个名值对之间使用`,`隔开，如果一个属性之后没有其他属性了，就不要写`,`
 
-## 函数function
+## 函数
 
 - 函数也是一个对象
 - 函数中可以封装一些功能（代码），在需要时可以执行这些功能（代码）
@@ -353,31 +414,61 @@ delete 对象.属性名
 - 我们在实际开发中很少使用构造函数来创建一个函数对象
 - 创建一个函数，可以将要封装的代码以字符串的形式传递给构造函数
 
-- 封装到函数中的代码不会立即执行
-- 函数中的代码会在函数调用的时候执行
-- 调用函数语法
-
-``` javascript
-函数对象()
-```
-
-- 当调用函数时，函数中封装的代码会按照顺序执行
+- 封装到函数中的代码不会立即执行，函数中的代码会在函数调用的时候执行
 
 ### 创建函数
 
 #### 使用函数声明来创建一个函数
 
 ``` javascript
-function 函数名([形参1, 形参2……形参N]){
-    语句……
+function 函数名(参数列表){
+    ...
 }
 ```
 
 #### 使用函数表达式来创建一个函数
 
 ``` javascript
-var 函数名 = function ([形参1, 形参2……形参N]){
-    语句……
+var 函数名 = function (参数列表){
+    ...
+}
+```
+
+#### 箭头函数
+
+``` javascript
+var 函数名 = (参数列表)=>{
+    ...
+}
+```
+
+### 匿名函数及自调用
+
+``` javascript
+(function(参数列表){
+    ...
+})(参数列表);
+
+(function(参数列表){
+    ...
+}(参数列表));
+```
+
+### 调用函数
+
+``` javascript
+函数名()
+```
+
+- 当调用函数时，函数中封装的代码会按照顺序执行
+
+### 预加载函数
+
+- function函数会在浏览器加载完整网页后立即执行
+
+``` javascript
+window.onload = function(){
+    ...
 }
 ```
 
@@ -402,7 +493,9 @@ return 值;
 - return后的值将会作为函数的执行结果返回，可以定义一个变量来接收该结果
 - 在函数中return后的语句都不会执行
 
-## if判断语句
+## 判断语句
+
+### if判断语句
 
 - 和java语法完全相同
 
@@ -414,7 +507,7 @@ if (<<boolean>>) {
 }
 ```
 
-## seitch判断语句
+### seitch判断语句
 
 - 和java语法完全相同
 
@@ -431,7 +524,9 @@ switch (<<variable>>) {
 }
 ```
 
-## while循环语句
+## 循环语句
+
+### while循环语句
 
 - 和java语法完全相同
 
@@ -441,9 +536,9 @@ while (<<boolean>>) {
 }
 ```
 
-## for循环语句
+### for循环语句
 
-- 和java语法完全相同
+- 和java中的for语句相同
 
 ``` javascript
 for (var i = 0; i < <<num>>; i++) {
@@ -451,7 +546,77 @@ for (var i = 0; i < <<num>>; i++) {
 }
 ```
 
-## DOM
+### for in循环语句
+
+- 遍历指定数组或对象中的属性
+- 和java中的for each语句类似
+
+``` javascript
+for (var o in obj) {
+    ...
+}
+```
+
+## 浏览器对象模型（Bower Object Model）
+
+### 定时器
+
+- 时间单位为毫秒
+
+- 示例：在1秒后执行匿名函数
+
+``` javascript
+let timer = setTimeout(function(){}, 1000);
+```
+
+#### 清除定时器
+
+``` javascript
+clearTimeout(timer);
+```
+
+### 计时器
+
+- 时间单位为毫秒
+
+- 示例：每隔1秒执行一次匿名函数
+
+``` javascript
+let timer = setInterval(function(){}, 1000);
+```
+
+#### 取消计时器
+
+``` javascript
+clearInterval(timer);
+```
+
+### 页面
+
+#### 弹出页面
+
+> `URL`：链接
+> `name`：窗口名
+> `features`：窗口参数
+> `features`：true为替换当前页面，false为新窗口打开。默认为false
+
+``` javascript
+let w = window.open(URL,name,features,features);
+```
+
+#### 关闭页面
+
+``` javascript
+w.window.close();
+```
+
+####向页面写入数据
+
+``` javascript
+w.window.write(数据);
+```
+
+## 文档对象模型（Document Object Model）
 
 - DOM: Document Object Model，文档对象模型，其实就是JS专门为访问html元素提供的一套API。
 
@@ -480,28 +645,45 @@ element.innerHTML
 #### 通过id获取元素
 
 ``` javascript
-<body>
-    <div id="div1">xxxx</div>
-</body>
-<script>
-    //获取id为div1的元素
-    var oDiv1 = document.getElementById("div1");
-</script>
+var n = document.getElementById("n");
 ```
 
 #### 通过class获取元素
 
 ``` javascript
-<body>
-    <div class="c1">xxxx</div>
-</body>
-<script>
-    //获取第一个class为c1的元素（因为返回值为数组）
-    var oC1 = document.getElementByClass("c1")[0];
-</script>
+var n = document.getElementByClass("a")[0];
 ```
 
-### 增删改元素
+### 设置标签的内容
+
+``` javascript
+var d = document.createElement("div");
+d.innerHTML = "文字内容";
+```
+
+### 获取父元素
+
+``` javascript
+var d = document.getElementById("d");
+var parent = d.parentNode;
+```
+
+### 获取表示当前时间的字符串
+
+``` javascript
+var d = new Date().toLocaleString();
+```
+
+### 修改CSS样式
+
+``` javascript
+var link = document.getElementById("link");
+link.href = "css/*.css";
+```
+
+### 节点操作
+
+- 增删改元素
 
 #### 增
 
@@ -549,51 +731,78 @@ var str = prompt();
 var str = prompt(<<text>>);
 ```
 
-## 知识点
+## 事件
 
-### 获取body标签
+### 鼠标点击时间
 
-``` javascript
-document.body;
+#### html
+
+``` html
+<input type="text" onClick="">
 ```
 
-### 设置标签的内容
+#### javascript
 
 ``` javascript
-var d = document.createElement("div");
-d.innerHTML = "文字内容";
+document.getElementById().onClick = function() {};
 ```
 
-### 获取父元素
+### 鼠标获取焦点事件
+
+#### html
+
+``` html
+<input type="text" onFocus="">
+```
+
+#### javascript
 
 ``` javascript
-var d = document.getElementById("d");
-var parent = d.parentNode;
+document.getElementById().onFocus = function() {};
 ```
 
-### 获取表示当前时间的字符串
+### 鼠标移出焦点事件
+
+#### html
+
+``` html
+<input type="text" onBlur="">
+```
+
+#### javascript
 
 ``` javascript
-var d = new Date().toLocaleString();
+document.getElementById().onBlur = function() {};
 ```
 
-### 修改CSS样式
+### 键盘按下事件
+
+- 获取按下的按键对应的数值
 
 ``` javascript
-var link = document.getElementById("link");
-link.href = "css/*.css";
+document.getElementById().onkeydown = function(event) {
+    console.log(event.keyCode);
+};
 ```
 
-## 预加载函数
-
-- function函数会在浏览器加载完整网页后立即执行
+### 鼠标移入事件
 
 ``` javascript
-window.onload = function(){
-    ...
-}
+document.getElementById().onmouseover = function() {};
 ```
+
+### 鼠标移出事件
+
+``` javascript
+document.getElementById().onmouseout = function() {};
+```
+
+## 更多
+
+[W3school](https://www.w3school.com.cn/jsref/index.asp)
 
 ## 参考文献
 
 [知乎——知乎用户](https://www.zhihu.com/question/52662013)
+[MDN web docs](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/for...in)
+[S3school](https://www.w3school.com.cn/jsref/met_win_open.asp)

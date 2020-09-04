@@ -1,5 +1,5 @@
 ---
-title: 【笔记】STS创建SpringBoot项目
+title: 【笔记】通过STS创建SpringBoot项目
 categories:
   - Java
 date: 2020-08-25 17:06:03

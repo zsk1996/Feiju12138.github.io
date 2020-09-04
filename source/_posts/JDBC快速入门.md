@@ -37,7 +37,7 @@ public class JdbcDemo1 {
         Class.forName("com.mysql.cj.jdbc.Driver");
 
         // 3. 获取数据库的连接对象
-        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/xscj?serverTimezone=UTC", "root", "123456");
+        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/xscj?serverTimezone=UTC", "root", "123456"); // 如果连接本机且端口号为默认，可以省略不写`localhost:3306`
 
         // 4. 定义sql语句
         String sql = "UPDATE XS SET 性别=0 WHERE 学号=081241";

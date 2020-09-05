@@ -11074,7 +11074,7 @@
 <h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://www.bilibili.com/video/av53943392" target="_blank" rel="noopener">哔哩哔哩——DT课堂原名颜群</a></p>
 ]]></content>
       <categories>
-        <category>jQuery</category>
+        <category>HTML/CSS/JS</category>
       </categories>
   </entry>
   <entry>
@@ -19117,7 +19117,7 @@
 <h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://www.bilibili.com/video/av22807707?p=5" target="_blank" rel="noopener">哔哩哔哩——李南江老师</a></p>
 ]]></content>
       <categories>
-        <category>jQuery</category>
+        <category>HTML/CSS/JS</category>
       </categories>
   </entry>
   <entry>
@@ -23713,6 +23713,28 @@
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createXmlHttpRequest</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 针对谷歌、火狐等主流浏览器</span></span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">window</span>.XMLHttpRequest) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 针对IE5、IE6浏览器</span></span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(<span class="built_in">window</span>.ActiveXObject) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> ActiveXObject(<span class="string">"Microsoft.XMLHTTP"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 其他不支持Ajax的浏览器</span></span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        alert(<span class="string">"您的浏览器不支持Ajax，请更换浏览器"</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h3 id="通过createXmlHttpRequest函数创建XMLHttpRequest对象"><a href="#通过createXmlHttpRequest函数创建XMLHttpRequest对象" class="headerlink" title="通过createXmlHttpRequest函数创建XMLHttpRequest对象"></a>通过createXmlHttpRequest函数创建XMLHttpRequest对象</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> xhr = createXmlHttpRequest();</span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
+      <categories>
+        <category>HTML/CSS/JS</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【代码】jQuery实现AJAX</title>
+    <url>/2020/09/05/jQuery%E5%AE%9E%E7%8E%B0AJAX/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>jQuery实现AJAX，将响应结果返回到前端页面</p>
+<a id="more"></a>
+
+<h2 id="get函数"><a href="#get函数" class="headerlink" title="get函数"></a>get函数</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//1.请求url</span></span><br><span class="line"><span class="keyword">var</span> url = <span class="string">"/jquery/doAjaxGet"</span>;</span><br><span class="line"><span class="comment">//2.请求参数</span></span><br><span class="line"><span class="keyword">var</span> params = <span class="string">"name=zhangsan"</span>;</span><br><span class="line"><span class="comment">//3.发送异步请求</span></span><br><span class="line">$.<span class="keyword">get</span>(url, params, (result) =&gt; &#123;</span><br><span class="line">    $(<span class="string">"#resultId"</span>).html(result);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="post函数"><a href="#post函数" class="headerlink" title="post函数"></a>post函数</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//1.请求url</span></span><br><span class="line"><span class="keyword">var</span> url = <span class="string">"/jquery/doAjaxPost"</span>;</span><br><span class="line"><span class="comment">//2.请求参数</span></span><br><span class="line"><span class="keyword">var</span> params = <span class="string">"name=zhangsan"</span>;</span><br><span class="line"><span class="comment">//3.发送异步请求</span></span><br><span class="line">$.post(url, params, (result) =&gt; &#123;</span><br><span class="line">    $(<span class="string">"#resultId"</span>).html(result);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="ajax函数"><a href="#ajax函数" class="headerlink" title="ajax函数"></a>ajax函数</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//1.请求url</span></span><br><span class="line"><span class="keyword">let</span> url = <span class="string">"/jquery/doAjaxPost"</span>;</span><br><span class="line"><span class="comment">//2.请求参数</span></span><br><span class="line"><span class="keyword">let</span> params = <span class="string">"name=zhangsan"</span>;</span><br><span class="line"><span class="comment">//3.发送异步请求</span></span><br><span class="line">$.ajax(&#123;</span><br><span class="line">    <span class="comment">// 可以省略（默认为GET请求）</span></span><br><span class="line">    type: <span class="string">"POST"</span>,</span><br><span class="line">    url: url,</span><br><span class="line">    <span class="comment">// 可以省略（如果无需向服务端传递参数）</span></span><br><span class="line">    data: params,</span><br><span class="line">    <span class="comment">// 可以省略（由ajax函数内部基于返回值进行匹配处理）</span></span><br><span class="line">    dataType: <span class="string">"text"</span>,</span><br><span class="line">    <span class="comment">// 可以省略（默认为true，表示异步）</span></span><br><span class="line">    <span class="keyword">async</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="comment">// 处理服务端返回的正常信息</span></span><br><span class="line">    success: <span class="function"><span class="keyword">function</span> (<span class="params">result</span>) </span>&#123;</span><br><span class="line">        $(<span class="string">"#resultId"</span>).html(result);</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// 处理服务端返回的异常信息</span></span><br><span class="line">    error: <span class="function"><span class="keyword">function</span> (<span class="params">result</span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(xhr.statusText);</span><br><span class="line">        $(<span class="string">"#resultId"</span>).html(xhr.statusText);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="load函数"><a href="#load函数" class="headerlink" title="load函数"></a>load函数</h2><ul>
+<li>load会将响应直接返回到指定位置</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//1.请求url</span></span><br><span class="line"><span class="keyword">var</span> url = <span class="string">"/jquery/doAjaxGet"</span>;</span><br><span class="line"><span class="comment">//2.请求参数</span></span><br><span class="line"><span class="keyword">var</span> params = <span class="string">"msg=hello jquery ajax get method"</span>;</span><br><span class="line"><span class="comment">//3.发送异步请求，直接返回响应</span></span><br><span class="line">$(<span class="string">"#resultId"</span>).load(url, params);</span><br></pre></td></tr></table></figure>
 
 <h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
       <categories>

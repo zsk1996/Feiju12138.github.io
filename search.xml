@@ -17129,7 +17129,12 @@
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup</span><br></pre></td></tr></table></figure>
 
 <ul>
-<li>下载<code>网易</code>的yum源配置文件</li>
+<li>下载<code>阿里</code>的yum源配置文件</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>下载<code>网易</code>的yum源配置文件（可选）</li>
 </ul>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> /etc/yum.repos.d/</span><br><span class="line">wget http://mirrors.163.com/.<span class="built_in">help</span>/CentOS7-Base-163.repo</span><br></pre></td></tr></table></figure>
 
@@ -17143,7 +17148,7 @@
 </ul>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">yum -y update</span><br></pre></td></tr></table></figure>
 
-<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://blog.csdn.net/inslow/article/details/54177191" target="_blank" rel="noopener">CSDN——inslow</a></p>
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://blog.csdn.net/inslow/article/details/54177191" target="_blank" rel="noopener">CSDN——inslow</a><br><a href="https://www.jianshu.com/p/84a8798a8d4b" target="_blank" rel="noopener">间书——Happy_Hung</a></p>
 ]]></content>
       <categories>
         <category>Linux</category>
@@ -21680,9 +21685,9 @@
 </blockquote>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> &lt;&lt;name&gt;&gt; = &lt;&lt;variable&gt;&gt;;</span><br></pre></td></tr></table></figure>
 
-<h3 id="变量（新版语法）"><a href="#变量（新版语法）" class="headerlink" title="变量（新版语法）"></a>变量（新版语法）</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> &lt;&lt;name&gt;&gt; = &lt;&lt;variable&gt;&gt;;</span><br></pre></td></tr></table></figure>
+<h3 id="变量（ES6新特性）"><a href="#变量（ES6新特性）" class="headerlink" title="变量（ES6新特性）"></a>变量（ES6新特性）</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> &lt;&lt;name&gt;&gt; = &lt;&lt;variable&gt;&gt;;</span><br></pre></td></tr></table></figure>
 
-<h3 id="常量（新版语法）"><a href="#常量（新版语法）" class="headerlink" title="常量（新版语法）"></a>常量（新版语法）</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> &lt;&lt;name&gt;&gt; = &lt;&lt;variable&gt;&gt;;</span><br></pre></td></tr></table></figure>
+<h3 id="常量（ES6新特性）"><a href="#常量（ES6新特性）" class="headerlink" title="常量（ES6新特性）"></a>常量（ES6新特性）</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> &lt;&lt;name&gt;&gt; = &lt;&lt;variable&gt;&gt;;</span><br></pre></td></tr></table></figure>
 
 <h3 id="var和let、const-的区别"><a href="#var和let、const-的区别" class="headerlink" title="var和let、const 的区别"></a>var和let、const 的区别</h3><ul>
 <li>let和const都是es5，es6新版本的js语言规范出来的定义，在这以前定义一个变量只能用var。let和const都是为了弥补var的一些缺陷而新设计出来的。</li>
@@ -21966,8 +21971,22 @@
 <h3 id="for-in循环语句"><a href="#for-in循环语句" class="headerlink" title="for in循环语句"></a>for in循环语句</h3><ul>
 <li>遍历指定数组或对象中的属性</li>
 <li>和java中的for each语句类似</li>
+<li>遍历数组时会跳过为定义的值，所以不适合遍历数组，主要用于遍历对象</li>
 </ul>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> o <span class="keyword">in</span> obj) &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="for-of循环语句"><a href="#for-of循环语句" class="headerlink" title="for of循环语句"></a>for of循环语句</h3><ul>
+<li>遍历指定数组或对象中的属性</li>
+<li>和java中的for each语句类似</li>
+<li>ES6新特性</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> o <span class="keyword">of</span> obj) &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="for-each循环语句"><a href="#for-each循环语句" class="headerlink" title="for each循环语句"></a>for each循环语句</h3><ul>
+<li>遍历指定数组或对象中的属性</li>
+<li>和java中的for each语句类似</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">obj.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">o</span>)</span>&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
 <h2 id="浏览器对象模型（Bower-Object-Model）"><a href="#浏览器对象模型（Bower-Object-Model）" class="headerlink" title="浏览器对象模型（Bower Object Model）"></a>浏览器对象模型（Bower Object Model）</h2><h3 id="定时器"><a href="#定时器" class="headerlink" title="定时器"></a>定时器</h3><ul>
 <li><p>时间单位为毫秒</p>
@@ -23739,6 +23758,619 @@
 <h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
       <categories>
         <category>HTML/CSS/JS</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【笔记】搭建Linux的Java项目部署环境</title>
+    <url>/2020/09/06/%E6%90%AD%E5%BB%BALinux%E7%9A%84Java%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2%E7%8E%AF%E5%A2%83/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在<code>CentOS Linux 7</code>虚拟机上搭建Java项目部署环境</p>
+<a id="more"></a>
+
+<h2 id="安装CentOS-Linux系统"><a href="#安装CentOS-Linux系统" class="headerlink" title="安装CentOS Linux系统"></a>安装CentOS Linux系统</h2><ul>
+<li><a href="/2019/12/10/安装CentOSLinux系统/">传送门</a></li>
+</ul>
+<h2 id="配置更新源"><a href="#配置更新源" class="headerlink" title="配置更新源"></a>配置更新源</h2><ul>
+<li><a href="/2020/01/31/更换CentOSLinux更新源/">传送门</a></li>
+</ul>
+<h2 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">yum install git -y</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>查看版本号检测安装成功</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git --version</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装jdk"><a href="#安装jdk" class="headerlink" title="安装jdk"></a>安装jdk</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><ul>
+<li><p><a href="https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html" target="_blank" rel="noopener">官网</a>下载<code>Linux x64 Compressed Archive</code></p>
+</li>
+<li><p>检查并删除所有<code>open jdk</code>相关软件包</p>
+</li>
+</ul>
+<blockquote>
+<p><code>&lt;name&gt;</code>：软件包名</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">rpm -qa | grep java</span><br><span class="line">yum remove &lt;name&gt; -y</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>创建java存放目录</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> /usr/<span class="built_in">local</span>/</span><br><span class="line">mkdir java</span><br><span class="line"><span class="built_in">cd</span> java</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>将<code>.tar.gz</code>压缩包通过ftp工具上传到服务器并解压</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">tar -zxvf jdk-8u261-linux-x64.tar.gz</span><br><span class="line">rm -f jdk-8u261-linux-x64.tar.gz</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>复制路径保留备用</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> jdk1.8.0_261/</span><br><span class="line"><span class="built_in">pwd</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h3><ul>
+<li>编辑<code>profile</code>文件</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vim /etc/profile</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>修改<code>profile</code>文件</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">export</span> JAVA_HOME=/usr/<span class="built_in">local</span>/java/jdk1.8.0_261</span><br><span class="line"><span class="built_in">export</span> CLASSPATH=<span class="variable">$JAVA_HOME</span>/lib/</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:<span class="variable">$JAVA_HOME</span>/bin/</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>更新配置文件</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">source</span> /etc/profile</span><br></pre></td></tr></table></figure>
+
+<h3 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h3><ul>
+<li>查看版本号检测安装成功</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">java -version</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装nodejs"><a href="#安装nodejs" class="headerlink" title="安装nodejs"></a>安装nodejs</h2><h3 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h3><ul>
+<li><p><a href="https://nodejs.org/zh-cn/download/" target="_blank" rel="noopener">官网</a>下载<code>Linux 二进制文件 (x64)</code></p>
+</li>
+<li><p>创建node存放目录</p>
+</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> /usr/<span class="built_in">local</span>/</span><br><span class="line">mkdir node</span><br><span class="line"><span class="built_in">cd</span> node/</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>将<code>.tar.xz</code>压缩包通过ftp工具上传到服务器并解压</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">tar -xJvf node-v12.18.3-linux-x64.tar.xz</span><br><span class="line">rm -f node-v12.18.3-linux-x64.tar.xz</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>复制路径保留备用</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> node-v12.18.3-linux-x64/</span><br><span class="line"><span class="built_in">pwd</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="配置环境变量-1"><a href="#配置环境变量-1" class="headerlink" title="配置环境变量"></a>配置环境变量</h3><ul>
+<li>编辑<code>profile</code>文件</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vim /etc/profile</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>修改<code>profile</code>文件</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:/usr/<span class="built_in">local</span>/node/node-v12.18.3-linux-x64/bin</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>更新配置文件</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">source</span> /etc/profile</span><br></pre></td></tr></table></figure>
+
+<h3 id="完成-1"><a href="#完成-1" class="headerlink" title="完成"></a>完成</h3><ul>
+<li>查看版本号检测安装成功</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">node --version</span><br><span class="line">npm --version</span><br><span class="line">npx --version</span><br><span class="line">npm version</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装python3"><a href="#安装python3" class="headerlink" title="安装python3"></a>安装python3</h2><ul>
+<li>系统自带python2，需要再安装python3</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">python --version</span><br></pre></td></tr></table></figure>
+
+<h3 id="安装-2"><a href="#安装-2" class="headerlink" title="安装"></a>安装</h3><ul>
+<li><p><a href="https://www.python.org/downloads/source/" target="_blank" rel="noopener">官网</a>下载<code>Latest Python 3 Release - Python 3.8.5</code></p>
+</li>
+<li><p>创建python3存放目录</p>
+</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> /usr/<span class="built_in">local</span>/</span><br><span class="line">mkdir python3</span><br><span class="line"><span class="built_in">cd</span> python3/</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>安装编译环境</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">yum install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gcc make -y</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>将<code>.tgz</code>压缩包通过ftp工具上传到服务器并解压</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">tar -zxvf Python-3.8.5.tgz</span><br><span class="line">rm -f Python-3.8.5.tgz</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>编译并安装</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> Python-3.8.5/</span><br><span class="line">./configure prefix=/usr/<span class="built_in">local</span>/python3</span><br><span class="line">make &amp;&amp; make install</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>添加软链接</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">ln -s /usr/<span class="built_in">local</span>/python3/bin/python3 /usr/bin/python3</span><br><span class="line">ln -s /usr/<span class="built_in">local</span>/python3/bin/pip3 /usr/bin/pip3</span><br></pre></td></tr></table></figure>
+
+<h3 id="完成-2"><a href="#完成-2" class="headerlink" title="完成"></a>完成</h3><ul>
+<li>查看版本号检测安装成功</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">python3 --version</span><br><span class="line">python --version</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装maven"><a href="#安装maven" class="headerlink" title="安装maven"></a>安装maven</h2><h3 id="安装-3"><a href="#安装-3" class="headerlink" title="安装"></a>安装</h3><ul>
+<li><p><a href="https://maven.apache.org/download.cgi" target="_blank" rel="noopener">官网</a>下载<code>apache-maven-3.6.3-bin.tar.gz</code></p>
+</li>
+<li><p>创建maven存放目录</p>
+</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> /opt/</span><br><span class="line">mkdir maven</span><br><span class="line"><span class="built_in">cd</span> maven/</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>将<code>.tar.gz</code>压缩包通过ftp工具上传到服务器并解压</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">tar -zxvf apache-maven-3.6.3-bin.tar.gz</span><br><span class="line">rm -f apache-maven-3.6.3-bin.tar.gz</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>复制路径保留备用</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> apache-maven-3.6.3/</span><br><span class="line"><span class="built_in">pwd</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="配置maven"><a href="#配置maven" class="headerlink" title="配置maven"></a>配置maven</h3><ul>
+<li>编辑<code>setting.xml</code>文件</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vim /opt/maven/apache-maven-3.6.3/conf/settings.xml</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>修改<code>setting.xml</code>文件</li>
+</ul>
+<p><a href="/2020/08/17/Maven配置远程仓库/">传送门</a></p>
+<h3 id="配置环境变量-2"><a href="#配置环境变量-2" class="headerlink" title="配置环境变量"></a>配置环境变量</h3><ul>
+<li>编辑<code>profile</code>文件</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vim /etc/profile</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>修改<code>profile</code>文件</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">export</span> MAVEN_HOME=/opt/maven/apache-maven-3.6.3</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:<span class="variable">$MAVEN_HOME</span>/bin</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>更新配置文件</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">source</span> /etc/profile</span><br></pre></td></tr></table></figure>
+
+<h3 id="完成-3"><a href="#完成-3" class="headerlink" title="完成"></a>完成</h3><ul>
+<li>查看版本号检测安装成功</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">mvn --version</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装mysql"><a href="#安装mysql" class="headerlink" title="安装mysql"></a>安装mysql</h2><h3 id="安装准备"><a href="#安装准备" class="headerlink" title="安装准备"></a>安装准备</h3><ul>
+<li><p><a href="https://downloads.mysql.com/archives/community/" target="_blank" rel="noopener">官网</a>下载<code>5.7.30</code>、<code>Linux - Generic</code>、<code>Linux - Generic(glibc 2.12)(x86,64-bit)</code>、<code>TAR</code></p>
+</li>
+<li><p>检查并删除所有<code>mariadb</code>相关软件包</p>
+</li>
+</ul>
+<blockquote>
+<p><code>&lt;name&gt;</code>：软件包名</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">rpm -qa | grep mariadb</span><br><span class="line">yum remove &lt;name&gt; -y</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>创建mysql存放目录</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> /usr/<span class="built_in">local</span>/</span><br><span class="line">mkdir mysql</span><br><span class="line"><span class="built_in">cd</span> mysql/</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>将<code>.tar</code>压缩包通过ftp工具上传到服务器并解压</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">tar -xvf mysql-5.7.30-linux-glibc2.12-x86_64.tar</span><br><span class="line">tar -zxvf mysql-5.7.30-linux-glibc2.12-x86_64.tar.gz</span><br><span class="line">rm -f mysql-5.7.30-linux-glibc2.12-x86_64.tar</span><br><span class="line">rm -f mysql-5.7.30-linux-glibc2.12-x86_64.tar.gz</span><br><span class="line">rm -f mysql-test-5.7.30-linux-glibc2.12-x86_64.tar.gz</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>将所有mysql文件挪到<code>/usr/local/mysql</code>目录中</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">mv mysql-5.7.30-linux-glibc2.12-x86_64/* .</span><br><span class="line">rm -rf mysql-5.7.30-linux-glibc2.12-x86_64/</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>创建用户和用户组</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">groupadd mysql</span><br><span class="line">useradd -g mysql mysql</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>修改mysql目录的归属用户</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">chown -R mysql:mysql ./</span><br></pre></td></tr></table></figure>
+
+<h3 id="配置mysql"><a href="#配置mysql" class="headerlink" title="配置mysql"></a>配置mysql</h3><ul>
+<li>新建并编辑<code>my.cnf</code>文件</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vim /etc/my.cnf</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>修改<code>my.cnf</code>文件</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">[client]</span><br><span class="line"><span class="comment"># 设置mysql客户端默认字符集</span></span><br><span class="line">default-character-set = utf8</span><br><span class="line">socket = /var/lib/mysql/mysql.sock</span><br><span class="line"></span><br><span class="line">[mysqld]</span><br><span class="line">skip-name-resolve</span><br><span class="line"><span class="comment"># 设置3306端口</span></span><br><span class="line">port = 3306</span><br><span class="line">socket = /var/lib/mysql/mysql.sock</span><br><span class="line"><span class="comment"># 设置mysql的安装目录</span></span><br><span class="line">basedir = /usr/<span class="built_in">local</span>/mysql</span><br><span class="line"><span class="comment"># 设置mysql数据库的数据的存放目录</span></span><br><span class="line">datadir = /usr/<span class="built_in">local</span>/mysql/data</span><br><span class="line"><span class="comment"># 允许最大连接数</span></span><br><span class="line">max_connections = 200</span><br><span class="line"><span class="comment"># 服务端使用的字符集（默认为8比特编码的latin1字符集）</span></span><br><span class="line">character-set-server = utf8</span><br><span class="line"><span class="comment"># 创建新表时使用的默认存储引擎</span></span><br><span class="line">default-storage-engine = INNODB</span><br><span class="line">lower_case_table_names = 1</span><br><span class="line">max_allowed_packet = 16M</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>创建相关目录并修改权限</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">mkdir /var/lib/mysql</span><br><span class="line">chmod 777 /var/lib/mysql</span><br></pre></td></tr></table></figure>
+
+<h3 id="正式安装mysql"><a href="#正式安装mysql" class="headerlink" title="正式安装mysql"></a>正式安装mysql</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">./bin/mysqld --initialize --user=mysql --basedir=/usr/<span class="built_in">local</span>/mysql --datadir=/usr/<span class="built_in">local</span>/mysql/data</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>完成后会生成临时密码：<code>root@localhost: y8stx3ad&gt;1Yy</code></p>
+</li>
+<li><p>复制启动脚本到资源目录</p>
+</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">cp ./support-files/mysql.server /etc/init.d/mysqld</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>编辑配置</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vim /etc/init.d/mysqld</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>修改配置，为<code>basedir</code>和<code>datadir</code>指定实际对应目录</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">basedir=/usr/<span class="built_in">local</span>/mysql</span><br><span class="line">datadir=/usr/<span class="built_in">local</span>/mysql/data</span><br></pre></td></tr></table></figure>
+
+<h3 id="设置mysql为系统服务并开机自启"><a href="#设置mysql为系统服务并开机自启" class="headerlink" title="设置mysql为系统服务并开机自启"></a>设置mysql为系统服务并开机自启</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">chmod +x /etc/init.d/mysqld</span><br><span class="line">chkconfig --add mysqld</span><br><span class="line">chkconfig --list mysqld</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>2，3，4，5均为开即可</li>
+</ul>
+<h3 id="启动mysql"><a href="#启动mysql" class="headerlink" title="启动mysql"></a>启动mysql</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">service mysqld start</span><br></pre></td></tr></table></figure>
+
+<h3 id="配置环境变量-3"><a href="#配置环境变量-3" class="headerlink" title="配置环境变量"></a>配置环境变量</h3><ul>
+<li>编辑<code>profile</code>文件</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vim ~/.bash_profile</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>修改<code>profile</code>文件</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">export</span> path=<span class="variable">$PATH</span>:/usr/<span class="built_in">local</span>/mysql/bin</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>更新配置文件</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/.bash_profile</span><br></pre></td></tr></table></figure>
+
+<h3 id="完成-4"><a href="#完成-4" class="headerlink" title="完成"></a>完成</h3><ul>
+<li>查看版本号检测安装成功</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">mysql --version</span><br></pre></td></tr></table></figure>
+
+<h3 id="使用临时密码登陆"><a href="#使用临时密码登陆" class="headerlink" title="使用临时密码登陆"></a>使用临时密码登陆</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">mysql -u root -p</span><br></pre></td></tr></table></figure>
+
+<h3 id="修改密码"><a href="#修改密码" class="headerlink" title="修改密码"></a>修改密码</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mysql&gt; alter user user() identified by &quot;123456&quot;;</span><br><span class="line">mysql&gt; flush privileges;</span><br></pre></td></tr></table></figure>
+
+<h3 id="配置远程登陆主机"><a href="#配置远程登陆主机" class="headerlink" title="配置远程登陆主机"></a>配置远程登陆主机</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mysql&gt; use mysql;</span><br><span class="line">mysql&gt; update user set user.Host&#x3D;&#39;%&#39; where user.User&#x3D;&#39;root&#39;;</span><br><span class="line">mysql&gt; flush privileges;</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装redis"><a href="#安装redis" class="headerlink" title="安装redis"></a>安装redis</h2><h3 id="安装-4"><a href="#安装-4" class="headerlink" title="安装"></a>安装</h3><ul>
+<li>安装软件源</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">yum install epel-release -y</span><br><span class="line">yum update</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>通过软件源安装</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">yum install redis -y</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>启动redis</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">systemctl start redis</span><br></pre></td></tr></table></figure>
+
+<h3 id="配置redis"><a href="#配置redis" class="headerlink" title="配置redis"></a>配置redis</h3><ul>
+<li>编辑<code>redis.conf</code>文件</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vim /etc/redis.conf</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>修改<code>redis.cnf</code>文件，为<code>bind 127.0.0.1</code>这一行加上注释</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment">#bind 127.0.0.1</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>解除<code>requirepass</code>这一行注释，并修改默认密码</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">requirepass 123456</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>重启redis</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">systemctl restart redis</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>配置开机启动redis</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">systemctl <span class="built_in">enable</span> redis.service</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装tomcat"><a href="#安装tomcat" class="headerlink" title="安装tomcat"></a>安装tomcat</h2><h3 id="安装-5"><a href="#安装-5" class="headerlink" title="安装"></a>安装</h3><ul>
+<li><p><a href="https://tomcat.apache.org/download-90.cgi" target="_blank" rel="noopener">官网</a>下载<code>9.0.37</code>-&gt;<code>Core</code>-&gt;<code>.tar.gz</code></p>
+</li>
+<li><p>创建tomcat存放目录</p>
+</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> /usr/<span class="built_in">local</span>/</span><br><span class="line">mkdir tomcat</span><br><span class="line"><span class="built_in">cd</span> tomcat/</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>将<code>.tar.gz</code>压缩包通过ftp工具上传到服务器并解压</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">tar -zxvf apache-tomcat-9.0.37.tar.gz</span><br><span class="line">rm -f apache-tomcat-9.0.37.tar.gz</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>启动tomcat</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> apache-tomcat-9.0.37/</span><br><span class="line">./bin/startup.sh</span><br></pre></td></tr></table></figure>
+
+<h3 id="配置快捷操作和开机自启"><a href="#配置快捷操作和开机自启" class="headerlink" title="配置快捷操作和开机自启"></a>配置快捷操作和开机自启</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> /etc/rc.d/init.d/</span><br><span class="line">touch tomcat</span><br><span class="line">chmod +x tomcat</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>编辑脚本</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vim tomcat</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>修改脚本</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="comment">#chkconfig:- 20 90</span></span><br><span class="line"><span class="comment">#description:tomcat</span></span><br><span class="line"><span class="comment">#processname:tomcat</span></span><br><span class="line">TOMCAT_HOME=/usr/<span class="built_in">local</span>/tomcat/apache-tomcat-9.0.37</span><br><span class="line"><span class="keyword">case</span> <span class="variable">$1</span> <span class="keyword">in</span></span><br><span class="line">    start) su root <span class="variable">$TOMCAT_HOME</span>/bin/startup.sh;;</span><br><span class="line">    stop) su root <span class="variable">$TOMCAT_HOME</span>/bin/shutdown.sh;;</span><br><span class="line">    *) <span class="built_in">echo</span> <span class="string">"require start|stop"</span>;;</span><br><span class="line"><span class="keyword">esac</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>使用脚本</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">service tomcat start</span><br><span class="line">service tomcat stop</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>加入开机自启</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">chkconfig --add tomcat</span><br><span class="line">chkconfig tomcat on</span><br></pre></td></tr></table></figure>
+
+<h3 id="配置环境变量使用自带脚本（可选）"><a href="#配置环境变量使用自带脚本（可选）" class="headerlink" title="配置环境变量使用自带脚本（可选）"></a>配置环境变量使用自带脚本（可选）</h3><ul>
+<li>编辑<code>profile</code>文件</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vim /etc/profile</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>修改<code>profile</code>文件</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:/usr/<span class="built_in">local</span>/tomcat/apache-tomcat-9.0.37/bin</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>更新配置文件</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">source</span> /etc/profile</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>自带脚本操作</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">catalina.sh start</span><br><span class="line">catalina.sh stop</span><br><span class="line">catalina.sh restart</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>查看版本</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">catalina.sh version</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装nginx"><a href="#安装nginx" class="headerlink" title="安装nginx"></a>安装nginx</h2><h3 id="安装-6"><a href="#安装-6" class="headerlink" title="安装"></a>安装</h3><ul>
+<li><p><a href="https://nginx.org/en/download.html" target="_blank" rel="noopener">官网</a>下载<code>nginx-1.18.0</code></p>
+</li>
+<li><p>创建tomcat存放目录</p>
+</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> /usr/<span class="built_in">local</span>/</span><br><span class="line">mkdir nginx</span><br><span class="line"><span class="built_in">cd</span> nginx/</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>将<code>.tar.gz</code>压缩包通过ftp工具上传到服务器并解压</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">tar -zxvf nginx-1.18.0.tar.gz</span><br><span class="line">rm -f nginx-1.18.0.tar.gz</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>安装编译环境</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">yum install pcrl-devel openssl openssl-devel -y</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>编译安装</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> nginx-1.18.0/</span><br><span class="line">./configure</span><br><span class="line">make &amp;&amp; make install</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>启动nginx</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">/usr/<span class="built_in">local</span>/nginx/sbin/nginx</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>关闭nginx</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">/usr/<span class="built_in">local</span>/nginx/sbin/nginx -s stop</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>重载nginx配置</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">/usr/<span class="built_in">local</span>/nginx/sbin/nginx -s reload</span><br></pre></td></tr></table></figure>
+
+<h2 id="关闭防火墙"><a href="#关闭防火墙" class="headerlink" title="关闭防火墙"></a>关闭防火墙</h2><ul>
+<li>关闭防火墙并关闭开机自启防火墙</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">systemctl stop firewalld.service</span><br><span class="line">systemctl <span class="built_in">disable</span> firewalld.service</span><br></pre></td></tr></table></figure>
+
+<h2 id="完成-5"><a href="#完成-5" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p>程序羊公众号——CodeSheep<br><a href="https://stackoverflow.com/questions/61694459/installing-redis-use-install-server-sh" target="_blank" rel="noopener">stackoverflow——Ocean Chou</a><br><a href="https://zhuanlan.zhihu.com/p/34527270" target="_blank" rel="noopener">知乎——王小鱼</a></p>
+]]></content>
+      <categories>
+        <category>云计算</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【笔记】不使用submit提交表单的方法</title>
+    <url>/2020/09/07/%E4%B8%8D%E4%BD%BF%E7%94%A8submit%E6%8F%90%E4%BA%A4%E8%A1%A8%E5%8D%95%E7%9A%84%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>不使用<code>&lt;button type=&quot;submit&quot;&gt;&lt;/button&gt;</code>标签，也不使用<code>&lt;input type=&quot;submit&quot;&gt;</code>标签，提交表单的方法</p>
+<a id="more"></a>
+
+<h2 id="提交表单"><a href="#提交表单" class="headerlink" title="提交表单"></a>提交表单</h2><ul>
+<li>html代码</li>
+<li>必须定义name属性，因为会根据name属性向后端发送请求</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">id</span>=<span class="string">"formId"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"form-group"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span>&gt;</span>标题：<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"title"</span> <span class="attr">id</span>=<span class="string">"titleId"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">onclick</span>=<span class="string">"doSave()"</span>&gt;</span>确定<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>javascript代码</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">doSave</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 定义传递参数的后端地址</span></span><br><span class="line">    <span class="keyword">let</span> url=<span class="string">""</span>;</span><br><span class="line">    <span class="comment">// 定义参数（通过jQuery的serialize()函数直接获取指定表单需要发送请求的数据）</span></span><br><span class="line">    <span class="keyword">let</span> params = $(<span class="string">"#formId"</span>).serialize();</span><br><span class="line">    <span class="comment">// 发送请求（通过jQuery的ajax()函数发送异步请求）</span></span><br><span class="line">    $.ajax(&#123;</span><br><span class="line">        type:<span class="string">"post"</span>,</span><br><span class="line">        url:url,</span><br><span class="line">        data:params,</span><br><span class="line">        success:<span class="function"><span class="keyword">function</span>(<span class="params">result</span>)</span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(result);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
+      <categories>
+        <category>HTML/CSS/JS</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【笔记】格式化时间格式</title>
+    <url>/2020/09/07/%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%97%B6%E9%97%B4%E6%A0%BC%E5%BC%8F/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>SpringBoot项目中格式化<code>从客户端接收</code>或<code>从服务端发送</code>的时间格式</p>
+<a id="more"></a>
+
+<h2 id="格式化时间格式"><a href="#格式化时间格式" class="headerlink" title="格式化时间格式"></a>格式化时间格式</h2><ul>
+<li>在POJO类中，对返回值为<code>Date</code>的属性添加注解</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 作用于对应属性的set方法，用于格式化从服务端发送的时间格式</span></span><br><span class="line"><span class="meta">@DateTimeFormat</span>(pattern = <span class="string">"yyyy/MM/dd HH:mm:ss"</span>)</span><br><span class="line"><span class="comment">// 作用于对应属性的get方法，用户格式化从客户端接收的时间格式</span></span><br><span class="line"><span class="meta">@JsonFormat</span>(pattern = <span class="string">"yyyy/MM/dd HH:mm:ss"</span>,timezone = <span class="string">"GMT+8"</span>)</span><br><span class="line"><span class="keyword">private</span> Date startTime;</span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【踩坑】Microsoft Remote Desktop 远程登陆 Windows7 报错：Your session ended</title>
+    <url>/2020/09/08/MicrosoftRemoteDesktop%E8%BF%9C%E7%A8%8B%E7%99%BB%E9%99%86Windows7%E6%8A%A5%E9%94%99%EF%BC%9AYour-session-ended/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><code>Microsoft Remote Desktop</code>远程登陆<code>Windows7</code>报错：<code>Your session ended because of an error. If this keeps happening, contact your network administrator for assistance.</code></p>
+<a id="more"></a>
+
+<h2 id="报错原因"><a href="#报错原因" class="headerlink" title="报错原因"></a>报错原因</h2><ul>
+<li>Windows客户端计算机上的最大未完成连接限制有问题</li>
+</ul>
+<h2 id="解决问题"><a href="#解决问题" class="headerlink" title="解决问题"></a>解决问题</h2><ul>
+<li>通过<code>运行</code>打开注册表编辑器</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">regedit</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p><code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server</code></p>
+</li>
+<li><p>修改<code>MaxOutstandingConnections</code>的值为16进制的<code>10000</code></p>
+</li>
+<li><p>如果没有则创建名为<code>MaxOutstandingConnections</code>的<code>DWORD键</code>值为16进制的<code>10000</code></p>
+</li>
+</ul>
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://remotedesktop.uservoice.com/forums/287834-remote-desktop-client-for-mac/suggestions/39105910-your-session-has-ended-because-of-an-error-err" target="_blank" rel="noopener">Microsoft Remote Desktop 论坛</a></p>
+]]></content>
+      <categories>
+        <category>MacOS</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【踩坑】Microsoft Remote Desktop 远程登陆 Windows7 报错：登录失败</title>
+    <url>/2020/09/08/MicrosoftRemoteDesktop%E8%BF%9C%E7%A8%8B%E7%99%BB%E9%99%86Windows7%E6%8A%A5%E9%94%99%EF%BC%9A%E7%99%BB%E5%BD%95%E5%A4%B1%E8%B4%A5/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><code>Microsoft Remote Desktop</code>远程登陆<code>Windows7</code>报错：<code>登录失败：用户账户限制。可能的原因包括不允许空密码，登陆时间限制，或强制的策略限制。</code></p>
+<a id="more"></a>
+
+<h2 id="报错原因"><a href="#报错原因" class="headerlink" title="报错原因"></a>报错原因</h2><ul>
+<li>无密码远程登陆Windows7</li>
+</ul>
+<h2 id="解决问题"><a href="#解决问题" class="headerlink" title="解决问题"></a>解决问题</h2><ul>
+<li>为账户设置密码或修改权限</li>
+</ul>
+<h3 id="修改权限"><a href="#修改权限" class="headerlink" title="修改权限"></a>修改权限</h3><ul>
+<li>通过<code>运行</code>打开组策略编辑器</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">gpedit.msc</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p><code>计算机配置</code>-&gt;<code>Windows设置</code>-&gt;<code>安全设置</code>-&gt;<code>本地策略</code>-&gt;<code>安全选项</code></p>
+</li>
+<li><p>将<code>账户：使用空密码的本地账户只允许进行控制台登陆</code>改为<code>已禁用</code></p>
+</li>
+</ul>
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://blog.csdn.net/xuhui_liu/article/details/73832743" target="_blank" rel="noopener">SCDN——柳旭辉</a></p>
+]]></content>
+      <categories>
+        <category>MacOS</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【笔记】Microsoft Remote Desktop 远程登陆 Windows7</title>
+    <url>/2020/09/08/MicrosoftRemoteDesktop%E8%BF%9C%E7%A8%8B%E7%99%BB%E9%99%86Windows7/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><code>Microsoft Remote Desktop</code>远程登陆<code>Windows7</code></p>
+<a id="more"></a>
+
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
+<li>非家庭版Windows7系统</li>
+</ul>
+<h2 id="远程登陆"><a href="#远程登陆" class="headerlink" title="远程登陆"></a>远程登陆</h2><ul>
+<li><p><code>控制面板</code>-&gt;<code>系统和安全</code>-&gt;<code>允许远程访问</code>-&gt;选择<code>允许远程连接到此计算机</code></p>
+</li>
+<li><p>通过<code>选择应用</code>可以设置或查看能登陆的用户</p>
+</li>
+<li><p><code>控制面板</code>-&gt;<code>系统和安全</code>-&gt;<code>允许应用通过Windows防火墙</code>-&gt;勾选<code>远程协助</code>和<code>远程桌面</code></p>
+</li>
+<li><p>通过<code>命令提示符</code>查看本机ip，通过ip地址远程登陆</p>
+</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">ipconfig</span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://jingyan.baidu.com/article/219f4bf7fe65e9de442d38b6.html" target="_blank" rel="noopener">百度经验——七星ladybug</a></p>
+]]></content>
+      <categories>
+        <category>MacOS</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【笔记】任务调度</title>
+    <url>/2020/09/08/%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Java通过Timer实现任务调度</p>
+<a id="more"></a>
+
+<h2 id="延时执行"><a href="#延时执行" class="headerlink" title="延时执行"></a>延时执行</h2><ul>
+<li>到指定时间开始执行任务</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Timer timer=<span class="keyword">new</span> Timer();</span><br><span class="line">timer.schedule(task, time);</span><br></pre></td></tr></table></figure>
+
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><blockquote>
+<p><code>&lt;time&gt;</code>：定义开始执行的时间</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Timer timer=<span class="keyword">new</span> Timer();</span><br><span class="line">timer.schedule(<span class="keyword">new</span> TimerTask() &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        ...</span><br><span class="line">        timer.cancel(); <span class="comment">// 退出任务调度</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;, &lt;time&gt;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="周期执行"><a href="#周期执行" class="headerlink" title="周期执行"></a>周期执行</h2><ul>
+<li>从指定时间开始，隔段时间，执行一次任务</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Timer timer=<span class="keyword">new</span> Timer();</span><br><span class="line">timer.scheduleAtFixedRate(task, firstTime, period);</span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【代码】找树问题</title>
+    <url>/2020/09/08/%E6%89%BE%E6%A0%91%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>小伙伴给我发来消息叫我帮他做一道编程题，于是我用最擅长的java解决了问题。<br>由于时间原因，只做了控制台打印的简单程序，没有做带UI界面的程序</p>
+<a id="more"></a>
+
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p><img src="/images/20200908143313/01.png" alt="01.png"></p>
+<h2 id="程序使用讲解"><a href="#程序使用讲解" class="headerlink" title="程序使用讲解"></a>程序使用讲解</h2><ul>
+<li>通过输入坐标点判定是否最终能找到树，如果程序执行了999次也没找到树，就直接返回没找到</li>
+<li>可以将列表比作数学中的平面直角坐标系，原点在左下位置，左下角坐标点为<code>(1,1)</code>，右上角坐标点为<code>(5,5)</code></li>
+</ul>
+<p><img src="/images/20200908143313/02.png" alt="02.png"></p>
+<h2 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.HashMap;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Application</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 定义一个map用于存放所有坐标及其对应的内容</span></span><br><span class="line">    <span class="keyword">static</span> Map&lt;String,String&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 定义初始化方法，将坐标赋值为map的key，将它表示的内容赋值为map的value，并把value打印到控制台</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">view</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 为第一列赋值</span></span><br><span class="line">        map.put(<span class="string">"(1,1)"</span>, <span class="string">"4U"</span>);map.put(<span class="string">"(1,2)"</span>, <span class="string">"2R"</span>);map.put(<span class="string">"(1,3)"</span>, <span class="string">"2R"</span>);map.put(<span class="string">"(1,4)"</span>, <span class="string">"2D"</span>);map.put(<span class="string">"(1,5)"</span>, <span class="string">"2D"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 为第二列赋值</span></span><br><span class="line">        map.put(<span class="string">"(2,1)"</span>, <span class="string">"3U"</span>);map.put(<span class="string">"(2,2)"</span>, <span class="string">"1U"</span>);map.put(<span class="string">"(2,3)"</span>, <span class="string">"2U"</span>);map.put(<span class="string">"(2,4)"</span>, <span class="string">"1R"</span>);map.put(<span class="string">"(2,5)"</span>, <span class="string">"2R"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 为第三列赋值</span></span><br><span class="line">        map.put(<span class="string">"(3,1)"</span>, <span class="string">"2L"</span>);map.put(<span class="string">"(3,2)"</span>, <span class="string">"2R"</span>);map.put(<span class="string">"(3,3)"</span>, <span class="string">"0"</span>);map.put(<span class="string">"(3,4)"</span>, <span class="string">"2R"</span>);map.put(<span class="string">"(3,5)"</span>, <span class="string">"4D"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 为第四列赋值</span></span><br><span class="line">        map.put(<span class="string">"(4,1)"</span>, <span class="string">"2L"</span>);map.put(<span class="string">"(4,2)"</span>, <span class="string">"2L"</span>);map.put(<span class="string">"(4,3)"</span>, <span class="string">"2D"</span>);map.put(<span class="string">"(4,4)"</span>, <span class="string">"3L"</span>);map.put(<span class="string">"(4,5)"</span>, <span class="string">"1D"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 为第五列赋值</span></span><br><span class="line">        map.put(<span class="string">"(5,1)"</span>, <span class="string">"4U"</span>);map.put(<span class="string">"(5,2)"</span>, <span class="string">"1U"</span>);map.put(<span class="string">"(5,3)"</span>, <span class="string">"1L"</span>);map.put(<span class="string">"(5,4)"</span>, <span class="string">"3D"</span>);map.put(<span class="string">"(5,5)"</span>, <span class="string">"2L"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 将五行数据打印到控制台</span></span><br><span class="line">        System.out.println(map.get(<span class="string">"(1,5)"</span>)+<span class="string">"\t"</span>+map.get(<span class="string">"(2,5)"</span>)+<span class="string">"\t"</span>+map.get(<span class="string">"(3,5)"</span>)+<span class="string">"\t"</span>+map.get(<span class="string">"(4,5)"</span>)+<span class="string">"\t"</span>+map.get(<span class="string">"(5,5)"</span>));</span><br><span class="line">        System.out.println(map.get(<span class="string">"(1,4)"</span>)+<span class="string">"\t"</span>+map.get(<span class="string">"(2,4)"</span>)+<span class="string">"\t"</span>+map.get(<span class="string">"(3,4)"</span>)+<span class="string">"\t"</span>+map.get(<span class="string">"(4,4)"</span>)+<span class="string">"\t"</span>+map.get(<span class="string">"(5,4)"</span>));</span><br><span class="line">        System.out.println(map.get(<span class="string">"(1,3)"</span>)+<span class="string">"\t"</span>+map.get(<span class="string">"(2,3)"</span>)+<span class="string">"\t"</span>+map.get(<span class="string">"(3,3)"</span>)+<span class="string">"\t"</span>+map.get(<span class="string">"(4,3)"</span>)+<span class="string">"\t"</span>+map.get(<span class="string">"(5,3)"</span>));</span><br><span class="line">        System.out.println(map.get(<span class="string">"(1,2)"</span>)+<span class="string">"\t"</span>+map.get(<span class="string">"(2,2)"</span>)+<span class="string">"\t"</span>+map.get(<span class="string">"(3,2)"</span>)+<span class="string">"\t"</span>+map.get(<span class="string">"(4,2)"</span>)+<span class="string">"\t"</span>+map.get(<span class="string">"(5,2)"</span>));</span><br><span class="line">        System.out.println(map.get(<span class="string">"(1,1)"</span>)+<span class="string">"\t"</span>+map.get(<span class="string">"(2,1)"</span>)+<span class="string">"\t"</span>+map.get(<span class="string">"(3,1)"</span>)+<span class="string">"\t"</span>+map.get(<span class="string">"(4,1)"</span>)+<span class="string">"\t"</span>+map.get(<span class="string">"(5,1)"</span>));</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 程序无限循环</span></span><br><span class="line">        <span class="keyword">while</span>(<span class="keyword">true</span>) &#123;</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 初始化</span></span><br><span class="line">            view();</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 提示</span></span><br><span class="line">            System.out.println(<span class="string">"请指定起始坐标"</span>);</span><br><span class="line">            System.out.println(<span class="string">"示例：(1,2)"</span>);</span><br><span class="line">            System.out.print(<span class="string">"&gt; "</span>);</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 向控制台输入一个坐标</span></span><br><span class="line">            Scanner sc = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">            String point = sc.next();</span><br><span class="line">            String begin = point;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">            <span class="comment">// 设置一个开关，当找到树，则改变开关为true</span></span><br><span class="line">            <span class="keyword">boolean</span> key = <span class="keyword">false</span>;</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 执行999次，如果还是找不到就跳出循环</span></span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">999</span>; i++) &#123;</span><br><span class="line"></span><br><span class="line">                <span class="comment">// 打印经过的坐标点（方便调试）</span></span><br><span class="line">                System.out.println(<span class="string">"调试："</span>+point);</span><br><span class="line"></span><br><span class="line">                <span class="comment">// 判断当前坐标点是不是树</span></span><br><span class="line">                <span class="comment">// 如果是，改变开关状态并强制退出循环</span></span><br><span class="line">                <span class="keyword">if</span>(map.get(point).equals(<span class="string">"0"</span>)) &#123;</span><br><span class="line">                    key = <span class="keyword">true</span>;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                <span class="comment">// 获取当前坐标点的value，并拆分，分别表示下一次前进的次数和前进的方向</span></span><br><span class="line">                <span class="keyword">int</span> before = Integer.parseInt(map.get(point).charAt(<span class="number">0</span>)+<span class="string">""</span>);</span><br><span class="line">                String after = map.get(point).charAt(<span class="number">1</span>)+<span class="string">""</span>;</span><br><span class="line"></span><br><span class="line">                <span class="comment">// 根据次数和方向向前前进，前进后进行下一次循环</span></span><br><span class="line">                <span class="keyword">if</span> (after.equals(<span class="string">"U"</span>)) &#123;</span><br><span class="line">                        point = goUp(point,before);</span><br><span class="line">                &#125; <span class="keyword">else</span> <span class="keyword">if</span> (after.equals(<span class="string">"D"</span>)) &#123;</span><br><span class="line">                        point = goDown(point,before);</span><br><span class="line">                &#125; <span class="keyword">else</span> <span class="keyword">if</span> (after.equals(<span class="string">"L"</span>)) &#123;</span><br><span class="line">                        point = goLeft(point,before);</span><br><span class="line">                &#125; <span class="keyword">else</span> <span class="keyword">if</span> (after.equals(<span class="string">"R"</span>)) &#123;</span><br><span class="line">                        point = goRight(point,before);</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 根据开关状态，将结果打印</span></span><br><span class="line">            System.out.println(<span class="string">"======"</span>);</span><br><span class="line">            <span class="keyword">if</span>(key) &#123;</span><br><span class="line">                System.out.println(<span class="string">"找树成功"</span>);</span><br><span class="line">                System.out.println(<span class="string">"当前起始值为："</span>+begin);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                System.out.println(<span class="string">"找树失败"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println(<span class="string">"======"</span>);</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 为了能看清结果再进行下一次程序执行，在此处做一个暂停的操作</span></span><br><span class="line">            System.out.println(<span class="string">"输入任意值继续..."</span>);</span><br><span class="line">            String p = sc.next();</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"> <span class="comment">// 设定四种方法，功能分别是向上、向下、向左、向右移动</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">goUp</span><span class="params">(String c, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 拆分字符串，分别提取横坐标和纵坐标</span></span><br><span class="line">        <span class="keyword">int</span> row = Integer.parseInt(c.charAt(<span class="number">1</span>)+<span class="string">""</span>);</span><br><span class="line">        <span class="keyword">int</span> col = Integer.parseInt(c.charAt(<span class="number">3</span>)+<span class="string">""</span>);</span><br><span class="line">        <span class="comment">// 根据传过来的原坐标和前进的此处，重新定义新坐标并替换为原坐标</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            col++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 将横纵坐标重新定义为坐标格式返回给方法调用者</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">"("</span>+row+<span class="string">","</span>+col+<span class="string">")"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">goDown</span><span class="params">(String c, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> row = Integer.parseInt(c.charAt(<span class="number">1</span>)+<span class="string">""</span>);</span><br><span class="line">        <span class="keyword">int</span> col = Integer.parseInt(c.charAt(<span class="number">3</span>)+<span class="string">""</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            col--;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"("</span>+row+<span class="string">","</span>+col+<span class="string">")"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">goLeft</span><span class="params">(String c, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> row = Integer.parseInt(c.charAt(<span class="number">1</span>)+<span class="string">""</span>);</span><br><span class="line">        <span class="keyword">int</span> col = Integer.parseInt(c.charAt(<span class="number">3</span>)+<span class="string">""</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            row--;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"("</span>+row+<span class="string">","</span>+col+<span class="string">")"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">goRight</span><span class="params">(String c, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> row = Integer.parseInt(c.charAt(<span class="number">1</span>)+<span class="string">""</span>);</span><br><span class="line">        <span class="keyword">int</span> col = Integer.parseInt(c.charAt(<span class="number">3</span>)+<span class="string">""</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            row++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"("</span>+row+<span class="string">","</span>+col+<span class="string">")"</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
+      <categories>
+        <category>Java</category>
       </categories>
   </entry>
 </search>

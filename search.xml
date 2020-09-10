@@ -6194,6 +6194,15 @@
 
 <h3 id="多行注释"><a href="#多行注释" class="headerlink" title="多行注释"></a>多行注释</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;* 注释内容 *&#x2F;</span><br></pre></td></tr></table></figure>
 
+<h2 id="帮助"><a href="#帮助" class="headerlink" title="帮助"></a>帮助</h2><h3 id="查看所有帮助"><a href="#查看所有帮助" class="headerlink" title="查看所有帮助"></a>查看所有帮助</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mysql&gt; help contents;</span><br><span class="line"></span><br><span class="line">mysql&gt; ? contents;</span><br></pre></td></tr></table></figure>
+
+<h3 id="查看所有函数帮助"><a href="#查看所有函数帮助" class="headerlink" title="查看所有函数帮助"></a>查看所有函数帮助</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mysql&gt; help functions;</span><br></pre></td></tr></table></figure>
+
+<h3 id="查看指定内容的帮助"><a href="#查看指定内容的帮助" class="headerlink" title="查看指定内容的帮助"></a>查看指定内容的帮助</h3><blockquote>
+<p><code>&lt;msg&gt;</code>：指定内容</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mysql&gt; help &lt;msg&gt;;</span><br></pre></td></tr></table></figure>
+
 <h2 id="对数据库的操作"><a href="#对数据库的操作" class="headerlink" title="对数据库的操作"></a>对数据库的操作</h2><h3 id="查询所有数据库"><a href="#查询所有数据库" class="headerlink" title="查询所有数据库"></a>查询所有数据库</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">SHOW DATABASES;</span><br></pre></td></tr></table></figure>
 
 <h3 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">CREATE DATABASE &lt;database_name&gt;;</span><br></pre></td></tr></table></figure>
@@ -10558,7 +10567,7 @@
 <h3 id="开发工具"><a href="#开发工具" class="headerlink" title="开发工具"></a>开发工具</h3><ul>
 <li><a href="https://dcloud.io" target="_blank" rel="noopener">HBuilder</a>、<a href="https://www.jetbrains.com/webstorm/" target="_blank" rel="noopener">WebStrom</a>、<a href="https://www.adobe.com/cn/products/dreamweaver.html" target="_blank" rel="noopener">Dreamweaver</a>、<a href="https://www.jetbrains.com/idea/" target="_blank" rel="noopener">IDEA</a></li>
 </ul>
-<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><ul>
+<h3 id="预加载函数"><a href="#预加载函数" class="headerlink" title="预加载函数"></a>预加载函数</h3><ul>
 <li>写在<code>&lt;script&gt;&lt;/script&gt;</code>标签内，如果写在<code>&lt;head&gt;&lt;/head&gt;</code>标签内需要预加载函数</li>
 </ul>
 <h4 id="第一种写法"><a href="#第一种写法" class="headerlink" title="第一种写法"></a>第一种写法</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"js/jquery-3.4.1.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        jQuery(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            ...</span><br><span class="line">        &#125;);</span><br><span class="line">    &lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>head&gt;</span><br></pre></td></tr></table></figure>
@@ -22757,6 +22766,11 @@
 </ul>
 <h3 id="使用CDATA区存放特殊符号"><a href="#使用CDATA区存放特殊符号" class="headerlink" title="使用CDATA区存放特殊符号"></a>使用CDATA区存放特殊符号</h3><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">&lt;![CDATA[&gt;]]&gt;</span><br><span class="line">&lt;![CDATA[&lt;]]&gt;</span><br></pre></td></tr></table></figure>
 
+<h2 id="Mybatis的xml实现sql代码的复用"><a href="#Mybatis的xml实现sql代码的复用" class="headerlink" title="Mybatis的xml实现sql代码的复用"></a>Mybatis的xml实现sql代码的复用</h2><ul>
+<li>将重复语句写在<code>&lt;sql&gt;&lt;/sql&gt;</code>标签内，在其他语句通过id属性引用</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">sql</span> <span class="attr">id</span>=<span class="string">"id1"</span>&gt;</span></span><br><span class="line">    ...</span><br><span class="line"><span class="tag">&lt;/<span class="name">sql</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">"id2"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">include</span> <span class="attr">refid</span>=<span class="string">"id1"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <h2 id="jdbc注册信息写入properties文件"><a href="#jdbc注册信息写入properties文件" class="headerlink" title="jdbc注册信息写入properties文件"></a>jdbc注册信息写入properties文件</h2><ul>
 <li>在<code>src/main/resources</code>目录下新建<code>jdbc.properties</code>配置文件</li>
 </ul>
@@ -23186,9 +23200,21 @@
 <li>@Component</li>
 <li>可以在业务类中通过@Autowired注解从Bean池中获取并注入对象</li>
 </ul>
+<h2 id="Mapper"><a href="#Mapper" class="headerlink" title="Mapper"></a>Mapper</h2><ul>
+<li>@Mapper</li>
+<li>标注Dao层，是一种特殊的@Component</li>
+</ul>
 <h2 id="Service"><a href="#Service" class="headerlink" title="Service"></a>Service</h2><ul>
 <li>@Service</li>
 <li>标注业务层，是一种特殊的@Component</li>
+</ul>
+<h2 id="Controller"><a href="#Controller" class="headerlink" title="Controller"></a>Controller</h2><ul>
+<li>@Controller</li>
+<li>标注控制层，是一种特殊的@Component</li>
+</ul>
+<h2 id="指定参数"><a href="#指定参数" class="headerlink" title="指定参数"></a>指定参数</h2><ul>
+<li>@Param(“”)</li>
+<li>描述参数，可以指定参数</li>
 </ul>
 <h2 id="注入对象"><a href="#注入对象" class="headerlink" title="注入对象"></a>注入对象</h2><ul>
 <li>@Autowired</li>
@@ -23240,6 +23266,19 @@
 <li>描述的方法会在单例对象销毁之前执行</li>
 <li>只有在单例上时会生效</li>
 <li>Spring容器会在销毁之前会先将容器（Bean）中的对象移除，在移除之前，假如对象中定义了生命周期销毁方法，此时还会调用对象的生命周期销毁方法（在方法中做一些资源释放操作）</li>
+</ul>
+<h2 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h2><ul>
+<li>@ControllerAdvice</li>
+<li>描述的类为全局异常处理类</li>
+<li>在此类中可以定义异常处理方法，基于这些异常处理方法，对异常进行处理</li>
+</ul>
+<h3 id="全局异常处理方法"><a href="#全局异常处理方法" class="headerlink" title="全局异常处理方法"></a>全局异常处理方法</h3><ul>
+<li>@ExceptionHandler(RuntimeException.class)</li>
+<li>全局异常处理类的异常处理方法</li>
+</ul>
+<h2 id="返回字符串给AJAX"><a href="#返回字符串给AJAX" class="headerlink" title="返回字符串给AJAX"></a>返回字符串给AJAX</h2><ul>
+<li>@ResponseBody</li>
+<li>将字符串返回给AJAX</li>
 </ul>
 <h2 id="未完待更"><a href="#未完待更" class="headerlink" title="未完待更"></a>未完待更</h2>]]></content>
       <categories>
@@ -24371,6 +24410,147 @@
 <h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
       <categories>
         <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【笔记】Docker学习笔记</title>
+    <url>/2020/09/10/Docker%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Docker 是一个开放源代码软件，是一个开放平台，用于开发应用、交付（shipping）应用、运行应用。 Docker允许用户将基础设施（Infrastructure）中的应用单独分割出来，形成更小的颗粒（容器），从而提高交付软件的速度。（<a href="https://zh.wikipedia.org/wiki/Docker" target="_blank" rel="noopener">维基百科</a>）</p>
+<a id="more"></a>
+
+<h2 id="安装Docker"><a href="#安装Docker" class="headerlink" title="安装Docker"></a>安装Docker</h2><h3 id="MacOS"><a href="#MacOS" class="headerlink" title="MacOS"></a>MacOS</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">brew cask install docker</span><br></pre></td></tr></table></figure>
+
+<h3 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h3><ul>
+<li>在CentOS安装Docker</li>
+</ul>
+<h4 id="下载依赖"><a href="#下载依赖" class="headerlink" title="下载依赖"></a>下载依赖</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">yum -y install yum-utils device-mapper-persistent-data lvm2</span><br></pre></td></tr></table></figure>
+
+<h4 id="设置下载Docker的镜像源（可选）"><a href="#设置下载Docker的镜像源（可选）" class="headerlink" title="设置下载Docker的镜像源（可选）"></a>设置下载Docker的镜像源（可选）</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo</span><br></pre></td></tr></table></figure>
+
+<h4 id="安装Docker-1"><a href="#安装Docker-1" class="headerlink" title="安装Docker"></a>安装Docker</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">yum makecache fast</span><br><span class="line">yum -y install docker-ce</span><br></pre></td></tr></table></figure>
+
+<h2 id="启动Docker"><a href="#启动Docker" class="headerlink" title="启动Docker"></a>启动Docker</h2><h3 id="MacOS-1"><a href="#MacOS-1" class="headerlink" title="MacOS"></a>MacOS</h3><ul>
+<li>直接在启动台打开Docker.app</li>
+</ul>
+<h3 id="Linux-1"><a href="#Linux-1" class="headerlink" title="Linux"></a>Linux</h3><h4 id="启动服务"><a href="#启动服务" class="headerlink" title="启动服务"></a>启动服务</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">systemctl start docker</span><br></pre></td></tr></table></figure>
+
+<h4 id="设置开机自启"><a href="#设置开机自启" class="headerlink" title="设置开机自启"></a>设置开机自启</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">systemctl <span class="built_in">enable</span> docker</span><br></pre></td></tr></table></figure>
+
+<h3 id="测试是否安装成功"><a href="#测试是否安装成功" class="headerlink" title="测试是否安装成功"></a>测试是否安装成功</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker run hello-world</span><br></pre></td></tr></table></figure>
+
+<h2 id="中央仓库"><a href="#中央仓库" class="headerlink" title="中央仓库"></a>中央仓库</h2><ul>
+<li>官方的中央仓库在国外（<a href="https://hub.docker.com" target="_blank" rel="noopener">https://hub.docker.com</a>）</li>
+<li>国内有镜像网站（例如：<a href="http://hub.daocloud.io" target="_blank" rel="noopener">DaoCloud</a>）</li>
+<li>公司有私服</li>
+</ul>
+<h3 id="配置私服"><a href="#配置私服" class="headerlink" title="配置私服"></a>配置私服</h3><h4 id="Linux-2"><a href="#Linux-2" class="headerlink" title="Linux"></a>Linux</h4><ul>
+<li>编辑<code>daemon.json</code>配置文件</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vim /etc/docker/daemon.json</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>修改配置文件</li>
+</ul>
+<blockquote>
+<p><code>&lt;ip&gt;</code>：私服ip<br><code>&lt;port&gt;</code>：私服端口号</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"registry-mirrors"</span>:[<span class="string">"https://registry.docker-cn.com"</span>],</span><br><span class="line">    <span class="string">"insecure-registries"</span>:[<span class="string">"&lt;ip&gt;:&lt;port&gt;"</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>重启两个服务</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">systemctl daemon-reload</span><br><span class="line">systemctl restart docker</span><br></pre></td></tr></table></figure>
+
+<h2 id="镜像操作"><a href="#镜像操作" class="headerlink" title="镜像操作"></a>镜像操作</h2><h3 id="拉取镜像到本地"><a href="#拉取镜像到本地" class="headerlink" title="拉取镜像到本地"></a>拉取镜像到本地</h3><blockquote>
+<p><code>&lt;name&gt;</code>：镜像名</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker pull &lt;name&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="指定版本"><a href="#指定版本" class="headerlink" title="指定版本"></a>指定版本</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker pull &lt;name&gt;:&lt;version&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="查看全部的镜像"><a href="#查看全部的镜像" class="headerlink" title="查看全部的镜像"></a>查看全部的镜像</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker images</span><br></pre></td></tr></table></figure>
+
+<h3 id="删除本地镜像"><a href="#删除本地镜像" class="headerlink" title="删除本地镜像"></a>删除本地镜像</h3><blockquote>
+<p><code>&lt;image_id&gt;</code>：镜像标识（可以简写）</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker rmi &lt;image_id&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="镜像的导入导出（不规范）"><a href="#镜像的导入导出（不规范）" class="headerlink" title="镜像的导入导出（不规范）"></a>镜像的导入导出（不规范）</h3><h4 id="导出"><a href="#导出" class="headerlink" title="导出"></a>导出</h4><blockquote>
+<p><code>&lt;src&gt;</code>：导出的路径<br><code>&lt;name&gt;</code>：导出后的文件名</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker save -o &lt;src&gt;/&lt;name&gt; &lt;image_id&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="导入"><a href="#导入" class="headerlink" title="导入"></a>导入</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker load -i &lt;src&gt;/&lt;name&gt;</span><br></pre></td></tr></table></figure>
+
+<h5 id="修改导入后的空名称"><a href="#修改导入后的空名称" class="headerlink" title="修改导入后的空名称"></a>修改导入后的空名称</h5><ul>
+<li>修改导入后默认的名称null</li>
+</ul>
+<blockquote>
+<p><code>:&lt;version&gt;</code>：版本号（可选）</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker tag &lt;image_id&gt; &lt;name_new&gt;:&lt;version&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="容器的操作"><a href="#容器的操作" class="headerlink" title="容器的操作"></a>容器的操作</h2><h3 id="运行容器"><a href="#运行容器" class="headerlink" title="运行容器"></a>运行容器</h3><blockquote>
+<p><code>:&lt;version&gt;</code>：版本号（可选）</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker run &lt;name&gt;:&lt;version&gt;</span><br><span class="line"></span><br><span class="line">docker run &lt;image_id&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h4><blockquote>
+<p><code>-d</code>：后台运行容器<br><code>-p</code>：为了映射当前宿主机的端口和容器的端口</p>
+<blockquote>
+<p><code>&lt;port_out&gt;</code>：宿主机端口<br><code>&lt;port_in&gt;</code>：容器端口</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p><code>--name</code>：指定容器名称</p>
+<blockquote>
+<p><code>&lt;name_in&gt;</code>：容器名称</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p><code>&lt;name&gt;</code>：镜像名<br><code>&lt;version&gt;</code>：版本（可选）</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker run -d -p &lt;port_out&gt;:&lt;port_in&gt; --name &lt;name_in&gt; &lt;name&gt;:&lt;version&gt;</span><br><span class="line"></span><br><span class="line">docker run -d -p &lt;port_out&gt;:&lt;port_in&gt; --name &lt;name_in&gt; &lt;image_id&gt;</span><br></pre></td></tr></table></figure>
+
+<h5 id="mysql在运行时指定初始密码"><a href="#mysql在运行时指定初始密码" class="headerlink" title="mysql在运行时指定初始密码"></a>mysql在运行时指定初始密码</h5><blockquote>
+<p><code>-e</code>：指定初始密码<br><code>&lt;password&gt;</code>：初始密码</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker run -d -p &lt;port_out&gt;:&lt;port_in&gt; --name &lt;name_in&gt; -e MYSQL_ROOT_PASSWORD=&lt;password&gt; &lt;image_id&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="查看正在进行的容器"><a href="#查看正在进行的容器" class="headerlink" title="查看正在进行的容器"></a>查看正在进行的容器</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker ps</span><br></pre></td></tr></table></figure>
+
+<h4 id="参数-1"><a href="#参数-1" class="headerlink" title="参数"></a>参数</h4><blockquote>
+<p><code>-a</code>：查看所有容器，包括未运行的容器<br><code>-q</code>：只查看标识，不查看别的内容</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker -a ps</span><br><span class="line"></span><br><span class="line">docker -q ps</span><br></pre></td></tr></table></figure>
+
+<h3 id="启动容器"><a href="#启动容器" class="headerlink" title="启动容器"></a>启动容器</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker start &lt;con_id&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="停止容器"><a href="#停止容器" class="headerlink" title="停止容器"></a>停止容器</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker stop &lt;con_id&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="停止全部容器"><a href="#停止全部容器" class="headerlink" title="停止全部容器"></a>停止全部容器</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker stop $(docker ps -qa)</span><br></pre></td></tr></table></figure>
+
+<h3 id="删除容器"><a href="#删除容器" class="headerlink" title="删除容器"></a>删除容器</h3><ul>
+<li>删除容器之前要停止容器</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker rm &lt;con_id&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="删除全部容器"><a href="#删除全部容器" class="headerlink" title="删除全部容器"></a>删除全部容器</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker rm $(docker ps -qa)</span><br></pre></td></tr></table></figure>
+
+<h3 id="进入到容器内部"><a href="#进入到容器内部" class="headerlink" title="进入到容器内部"></a>进入到容器内部</h3><ul>
+<li>不推荐在容器内部进行关闭服务的操作</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker <span class="built_in">exec</span> -it &lt;con_id&gt; bash</span><br></pre></td></tr></table></figure>
+
+<h3 id="查看容器的日志"><a href="#查看容器的日志" class="headerlink" title="查看容器的日志"></a>查看容器的日志</h3><blockquote>
+<p><code>-f</code>：滚动查看日志的最后几行<br><code>&lt;con_id&gt;</code>：容器唯一标识</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">docker logs -f &lt;con_id&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://www.bilibili.com/video/BV1sK4y1s7Cj" target="_blank" rel="noopener">哔哩哔哩——千锋Java学习营</a><br><a href="https://www.runoob.com/docker/docker-install-mysql.html" target="_blank" rel="noopener">菜鸟笔记</a></p>
+]]></content>
+      <categories>
+        <category>云计算</category>
       </categories>
   </entry>
 </search>

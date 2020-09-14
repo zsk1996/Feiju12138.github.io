@@ -24764,4 +24764,26 @@
         <category>Windows</category>
       </categories>
   </entry>
+  <entry>
+    <title>【笔记】批处理获取管理员权限</title>
+    <url>/2020/09/14/%E6%89%B9%E5%A4%84%E7%90%86%E8%8E%B7%E5%8F%96%E7%AE%A1%E7%90%86%E5%91%98%E6%9D%83%E9%99%90/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>批处理获取管理员权限</p>
+<a id="more"></a>
+
+<h2 id="脚本"><a href="#脚本" class="headerlink" title="脚本"></a>脚本</h2><h3 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">%1 mshta vbscript:CreateObject(<span class="string">"Shell.Application"</span>).ShellExecute(<span class="string">"cmd.exe"</span>,<span class="string">"/c %~s0 ::"</span>,<span class="string">""</span>,<span class="string">"runas"</span>,1)(window.close)&amp;&amp;<span class="built_in">exit</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">%1 start <span class="string">""</span> mshta vbscript:createobject(<span class="string">"shell.application"</span>).shellexecute(<span class="string">""</span><span class="string">"%~0"</span><span class="string">""</span>,<span class="string">"::"</span>,,<span class="string">"runas"</span>,1)(window.close)&amp;<span class="built_in">exit</span></span><br><span class="line"><span class="built_in">exit</span> /B</span><br></pre></td></tr></table></figure>
+
+<h3 id="方法三"><a href="#方法三" class="headerlink" title="方法三"></a>方法三</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">echo</span> Set UAC = CreateObject^(<span class="string">"Shell.Application"</span>^) &gt; <span class="string">"%temp%\getadmin.vbs"</span></span><br><span class="line"><span class="built_in">echo</span> UAC.ShellExecute <span class="string">"%~s0"</span>, <span class="string">""</span>, <span class="string">""</span>, <span class="string">"runas"</span>, 1 &gt;&gt; <span class="string">"%temp%\getadmin.vbs"</span></span><br><span class="line"><span class="string">"%temp%\getadmin.vbs"</span></span><br><span class="line">del /f /q <span class="string">"%temp%\getadmin.vbs"</span> &gt;nul</span><br><span class="line"><span class="built_in">exit</span> /B</span><br></pre></td></tr></table></figure>
+
+<h3 id="方法四"><a href="#方法四" class="headerlink" title="方法四"></a>方法四</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">nircmd elevate cmd /c <span class="string">"%0"</span></span><br><span class="line"><span class="built_in">exit</span> /B</span><br></pre></td></tr></table></figure>
+
+<h3 id="方法五"><a href="#方法五" class="headerlink" title="方法五"></a>方法五</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">runas /noprofile /user:Administrator <span class="string">"%0"</span></span><br><span class="line"><span class="built_in">exit</span> /B</span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://www.cnblogs.com/conducer/p/10591614.html" target="_blank" rel="noopener">博客园——conducer</a></p>
+]]></content>
+      <categories>
+        <category>Windows</category>
+      </categories>
+  </entry>
 </search>

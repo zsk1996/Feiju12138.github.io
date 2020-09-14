@@ -24786,4 +24786,20 @@
         <category>Windows</category>
       </categories>
   </entry>
+  <entry>
+    <title>【笔记】SpringBoot项目运行显示完整日志</title>
+    <url>/2020/09/14/SpringBoot%E9%A1%B9%E7%9B%AE%E8%BF%90%E8%A1%8C%E6%98%BE%E7%A4%BA%E5%AE%8C%E6%95%B4%E6%97%A5%E5%BF%97/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>SpringBoot项目运行显示完整log日志</p>
+<a id="more"></a>
+
+<h2 id="显示完整日志"><a href="#显示完整日志" class="headerlink" title="显示完整日志"></a>显示完整日志</h2><ul>
+<li>在JVM运行时添加参数</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">-XX:+TraceClassLoading</span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+  </entry>
 </search>

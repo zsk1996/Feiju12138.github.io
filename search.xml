@@ -24744,4 +24744,24 @@
         <category>Windows</category>
       </categories>
   </entry>
+  <entry>
+    <title>【笔记】Windows右键打开当前位置的CMD</title>
+    <url>/2020/09/14/Windows%E5%8F%B3%E9%94%AE%E6%89%93%E5%BC%80%E5%BD%93%E5%89%8D%E4%BD%8D%E7%BD%AE%E7%9A%84CMD/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Windows右键打开当前位置的CMD</p>
+<a id="more"></a>
+
+<h2 id="脚本"><a href="#脚本" class="headerlink" title="脚本"></a>脚本</h2><ul>
+<li>新建<code>.reg</code>文件，编辑内容并保存</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">Windows Registry Editor Version 5.00</span><br><span class="line"></span><br><span class="line">[HKEY_CLASSES_ROOT\Directory\Background\shell\OpenCMDHere]</span><br><span class="line"><span class="string">"ShowBasedOnVelocityId"</span>=dword:00639bc8</span><br><span class="line"></span><br><span class="line">[HKEY_CLASSES_ROOT\Directory\Background\shell\OpenCMDHere\<span class="built_in">command</span>]</span><br><span class="line">@=<span class="string">"cmd.exe /s /k pushd \"%V\""</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>执行脚本</li>
+</ul>
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://www.cnblogs.com/ssooking/p/8536468.html" target="_blank" rel="noopener">ssooking的博客</a></p>
+]]></content>
+      <categories>
+        <category>Windows</category>
+      </categories>
+  </entry>
 </search>

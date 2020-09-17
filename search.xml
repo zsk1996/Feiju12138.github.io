@@ -23441,6 +23441,10 @@
 <li><p>如果返回值不为void需要做额外的处理</p>
 </li>
 </ul>
+<h2 id="启动缓存"><a href="#启动缓存" class="headerlink" title="启动缓存"></a>启动缓存</h2><ul>
+<li>@EnableCaching</li>
+<li>标注在启动类上</li>
+</ul>
 <h2 id="未完待更"><a href="#未完待更" class="headerlink" title="未完待更"></a>未完待更</h2>]]></content>
       <categories>
         <category>Java</category>

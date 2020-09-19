@@ -23222,6 +23222,10 @@
 <li>@RestController</li>
 <li>等效于同时描述<code>@Controller</code>和<code>@ResponseBody</code></li>
 </ul>
+<h3 id="RestControllerAdvice"><a href="#RestControllerAdvice" class="headerlink" title="RestControllerAdvice"></a>RestControllerAdvice</h3><ul>
+<li>@RestControllerAdvice</li>
+<li>等效于同时描述<code>@ControllerAdvice</code>和<code>@ResponseBody</code></li>
+</ul>
 <h2 id="指定访问路径"><a href="#指定访问路径" class="headerlink" title="指定访问路径"></a>指定访问路径</h2><ul>
 <li>@RequestMapping(“”)</li>
 <li>可以描述类，也可以描述方法</li>
@@ -23246,6 +23250,23 @@
 <li>@SpringBootTest</li>
 <li>必须标注在SpringBoot项目的测试类上</li>
 <li>类中的方法由@Test方法标注，使用Junit进行单元测试</li>
+</ul>
+<h2 id="全局异常处理类"><a href="#全局异常处理类" class="headerlink" title="全局异常处理类"></a>全局异常处理类</h2><ul>
+<li>@ControllerAdvice</li>
+<li>由此注解描述的类为一个控制层全局异常处理类，在此类中可以定义异常处理方法，机遇这些异常处理方法对异常进行处理</li>
+</ul>
+<h3 id="异常处理方法"><a href="#异常处理方法" class="headerlink" title="异常处理方法"></a>异常处理方法</h3><ul>
+<li>@ExceptionHandler(RuntimeException.class)</li>
+<li>由此注解标注的方法为一个异常处理方法，在注解内部定义的异常类型为此方法可以处理的异常类型，包括异常的子类类型</li>
+<li>可以在方法的参数列表传递与异常处理的类型相同类型（或父类类型）的参数</li>
+</ul>
+<h2 id="配置类"><a href="#配置类" class="headerlink" title="配置类"></a>配置类</h2><ul>
+<li>@Configuration</li>
+<li>由此注解描述的类为一个配置类</li>
+</ul>
+<h2 id="Spring管理的Bean"><a href="#Spring管理的Bean" class="headerlink" title="Spring管理的Bean"></a>Spring管理的Bean</h2><ul>
+<li>@Bean</li>
+<li>Spring容器中整个第三方Bean对象时，可以将其Bean对象的创建放在一个方法中，然后使用@Bean注解进行描述，Spring容器管理Bean对象时就会将方法名作为key对Bean对象进行存储</li>
 </ul>
 <h2 id="延时加载"><a href="#延时加载" class="headerlink" title="延时加载"></a>延时加载</h2><h3 id="标注在类上"><a href="#标注在类上" class="headerlink" title="标注在类上"></a>标注在类上</h3><ul>
 <li>@Lazy(value=true)</li>
@@ -23430,20 +23451,26 @@
 </li>
 </ul>
 <h2 id="启动异步操作"><a href="#启动异步操作" class="headerlink" title="启动异步操作"></a>启动异步操作</h2><ul>
-<li><p>@EnableAsync</p>
-</li>
-<li><p>标注在启动类上</p>
-</li>
-<li><p>@Async</p>
-</li>
-<li><p>此注解描述的方法会运行在Spring框架提供的一个线程中</p>
-</li>
-<li><p>如果返回值不为void需要做额外的处理</p>
-</li>
+<li>@EnableAsync</li>
+<li>标注在启动类上</li>
+</ul>
+<h3 id="配置异步操作"><a href="#配置异步操作" class="headerlink" title="配置异步操作"></a>配置异步操作</h3><ul>
+<li>@Async</li>
+<li>此注解描述的方法会运行在Spring框架提供的一个线程中</li>
+<li>如果返回值不为void需要做额外的处理</li>
 </ul>
 <h2 id="启动缓存"><a href="#启动缓存" class="headerlink" title="启动缓存"></a>启动缓存</h2><ul>
 <li>@EnableCaching</li>
 <li>标注在启动类上</li>
+</ul>
+<h3 id="配置缓存操作"><a href="#配置缓存操作" class="headerlink" title="配置缓存操作"></a>配置缓存操作</h3><ul>
+<li>@Cacheable</li>
+</ul>
+<h4 id="指定缓存名称"><a href="#指定缓存名称" class="headerlink" title="指定缓存名称"></a>指定缓存名称</h4><ul>
+<li>@Cacheable(value=””)</li>
+</ul>
+<h4 id="清除所有缓存"><a href="#清除所有缓存" class="headerlink" title="清除所有缓存"></a>清除所有缓存</h4><ul>
+<li>@Cacheable(allEntries=true)</li>
 </ul>
 <h2 id="未完待更"><a href="#未完待更" class="headerlink" title="未完待更"></a>未完待更</h2>]]></content>
       <categories>
@@ -25002,6 +25029,62 @@
 <li>在service添加一个切面，用于添加代码执行的日志信息</li>
 </ul>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Aspect</span></span><br><span class="line"><span class="meta">@Slf</span>4j</span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SysLogAspect</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Pointcut</span>(<span class="string">"bean(sysUserServiceImpl)"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">logPointCut</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Around</span>(<span class="string">"logPointCut()"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Object <span class="title">around</span><span class="params">(ProceedingJoinPoint jp)</span></span></span><br><span class="line"><span class="function">            <span class="keyword">throws</span> Throwable</span>&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="keyword">long</span> t1 = System.currentTimeMillis();</span><br><span class="line">            Object result=jp.proceed();<span class="comment">//最终会调用目标方法</span></span><br><span class="line">            <span class="keyword">long</span> t2 = System.currentTimeMillis();</span><br><span class="line">            log.info(<span class="string">"目标方法执行时常: &#123;&#125;"</span>,t2-t1);</span><br><span class="line">            <span class="keyword">return</span> result;</span><br><span class="line">        &#125;<span class="keyword">catch</span>(Throwable e) &#123;</span><br><span class="line">            log.error(<span class="string">"目标方法执行过程中出现了问题: &#123;&#125;"</span>+e.getMessage());</span><br><span class="line">            <span class="keyword">throw</span> e;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【笔记】JSON学习笔记</title>
+    <url>/2020/09/19/JSON%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>JSON（JavaScript Object Notation，JavaScript对象表示法，读作/ˈdʒeɪsən/）是一种由道格拉斯·克罗克福特构想和设计、轻量级的资料交换语言，该语言以易于让人阅读的文字为基础，用来传输由属性值或者序列性的值组成的数据对象。尽管JSON是JavaScript的一个子集，但JSON是独立于语言的文本格式，并且采用了类似于C语言家族的一些习惯。（<a href="https://zh.wikipedia.org/wiki/JSON" target="_blank" rel="noopener">维基百科</a>）</p>
+<a id="more"></a>
+
+<h2 id="定义规则"><a href="#定义规则" class="headerlink" title="定义规则"></a>定义规则</h2><ul>
+<li>JSON的数据是由键值对构成的</li>
+<li>多组数据由逗号分隔</li>
+<li>键可以使用单引号定义，也可以使用双引号定义，还可以不使用引号定义</li>
+</ul>
+<h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><ul>
+<li>数字（整数或浮点数）</li>
+<li>字符串（通过双引号或单引号定义）</li>
+<li>布尔值（true或false）</li>
+<li>数组（通过方括号定义）</li>
+<li>对象（通过花括号定义）</li>
+</ul>
+<h3 id="定义数据"><a href="#定义数据" class="headerlink" title="定义数据"></a>定义数据</h3><blockquote>
+<p><code>&lt;key&gt;</code>键</p>
+</blockquote>
+<h4 id="数字"><a href="#数字" class="headerlink" title="数字"></a>数字</h4><figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;<span class="attr">"&lt;key&gt;"</span>:<span class="number">1</span>&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h4><figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;<span class="attr">"&lt;key&gt;"</span>:<span class="string">"str"</span>&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="布尔值"><a href="#布尔值" class="headerlink" title="布尔值"></a>布尔值</h4><figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;<span class="attr">"&lt;key&gt;"</span>:<span class="literal">true</span>&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h4><figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"&lt;key&gt;"</span>:[</span><br><span class="line">        &#123;&#125;,&#123;&#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h4><figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"&lt;key&gt;"</span>:&#123;</span><br><span class="line">        <span class="attr">""</span>:<span class="string">""</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="获取数据"><a href="#获取数据" class="headerlink" title="获取数据"></a>获取数据</h2><figure class="highlight"><table><tr><td class="code"><pre><span class="line">json对象.键名</span><br><span class="line"></span><br><span class="line">json对象["键名"]</span><br></pre></td></tr></table></figure>
+
+<h2 id="遍历JSON对象"><a href="#遍历JSON对象" class="headerlink" title="遍历JSON对象"></a>遍历JSON对象</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> key <span class="keyword">in</span> persion) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(key+<span class="string">":"</span>+persion[key]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://www.bilibili.com/video/BV1uJ411k7wy" target="_blank" rel="noopener">哔哩哔哩——黎曼的猜想</a></p>
+]]></content>
+      <categories>
+        <category>HTML/CSS/JS</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【代码】递归方法求质数</title>
+    <url>/2020/09/19/%E9%80%92%E5%BD%92%E6%96%B9%E6%B3%95%E6%B1%82%E8%B4%A8%E6%95%B0/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>通过递归的方法求一个数是否是质数</p>
+<a id="more"></a>
+
+<h2 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h2><h3 id="未使用递归"><a href="#未使用递归" class="headerlink" title="未使用递归"></a>未使用递归</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ApplicationDefault</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"输入一个数："</span>);</span><br><span class="line">        Scanner sc = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        <span class="keyword">int</span> num = sc.nextInt();</span><br><span class="line">        <span class="keyword">boolean</span> flag = <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; num; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (i==<span class="number">0</span> || i==<span class="number">1</span>) &#123;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (num%i==<span class="number">0</span>) &#123;</span><br><span class="line">                flag = <span class="keyword">false</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (flag) &#123;</span><br><span class="line">            System.out.println(<span class="string">"是质数"</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            System.out.println(<span class="string">"不是质数"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        sc.close();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="使用递归"><a href="#使用递归" class="headerlink" title="使用递归"></a>使用递归</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Application</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"输入一个数："</span>);</span><br><span class="line">        Scanner sc = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        <span class="keyword">int</span> num = sc.nextInt();</span><br><span class="line">        <span class="keyword">if</span> (num==<span class="number">0</span>) &#123;</span><br><span class="line">            System.out.println(<span class="string">"既不是质数，也不是合数"</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (num==<span class="number">1</span>) &#123;</span><br><span class="line">            System.out.println(<span class="string">"是质数"</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (num==<span class="number">2</span>) &#123;</span><br><span class="line">            System.out.println(<span class="string">"是质数"</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (num&lt;<span class="number">0</span>) &#123;</span><br><span class="line">            System.out.println(<span class="string">"输入的数字有误"</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">boolean</span> flag = isPrime(num);</span><br><span class="line">            <span class="keyword">if</span> (flag) &#123;</span><br><span class="line">                System.out.println(<span class="string">"是质数"</span>);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                System.out.println(<span class="string">"不是质数"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        sc.close();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">int</span> point = <span class="number">2</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isPrime</span><span class="params">(<span class="keyword">int</span> num)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (point==(num-<span class="number">1</span>)) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (num%point==<span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        point++;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>&amp;&amp;isPrime(num);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
       <categories>

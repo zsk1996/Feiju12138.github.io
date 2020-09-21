@@ -3,7 +3,7 @@ title: 【踩坑】解决 jQuery 冲突问题
 date: 2019-12-26 16:49:02
 tags:
 categories:
-- jQuery
+- HTML/CSS/JS
 ---
 
 ## 前言

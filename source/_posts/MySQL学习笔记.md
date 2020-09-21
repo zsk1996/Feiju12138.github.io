@@ -27,6 +27,30 @@ categories:
 /* 注释内容 */
 ```
 
+## 帮助
+
+### 查看所有帮助
+
+``` mysql
+mysql> help contents;
+
+mysql> ? contents;
+```
+
+### 查看所有函数帮助
+
+``` mysql
+mysql> help functions;
+```
+
+### 查看指定内容的帮助
+
+> `<msg>`：指定内容
+
+``` mysql
+mysql> help <msg>;
+```
+
 ## 对数据库的操作
 
 ### 查询所有数据库

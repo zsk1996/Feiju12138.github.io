@@ -3,7 +3,7 @@ title: 【笔记】jQuery 学习笔记
 date: 2019-11-22 13:55:21
 tags:
 categories:
-- jQuery
+- HTML/CSS/JS
 ---
 
 ## 前言
@@ -26,7 +26,7 @@ jQuery学习笔记
 
 - [HBuilder](https://dcloud.io)、[WebStrom](https://www.jetbrains.com/webstorm/)、[Dreamweaver](https://www.adobe.com/cn/products/dreamweaver.html)、[IDEA](https://www.jetbrains.com/idea/)
 
-### 使用
+### 预加载函数
 
 - 写在`<script></script>`标签内，如果写在`<head></head>`标签内需要预加载函数
 

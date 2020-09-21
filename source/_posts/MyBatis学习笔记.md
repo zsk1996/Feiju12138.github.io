@@ -279,6 +279,14 @@ public void testFin3() {
 - `${}`在接收到数据后，会直接将数据拼接到SQL语句中，适用于指定SQL子句
 - `${}`如果指定了POJO对象不存在的成员变量，只能用[map方式传参](/2020/08/20/MyBatis学习笔记/#通过map对象传参)
 
+## 参数
+
+### 返回值类型
+
+``` sh
+<select resultTypt=""></select>
+```
+
 ## log4j打印日志
 
 ### 引入log4j
@@ -459,6 +467,20 @@ public interface EmpMapper {
 ``` xml
 <![CDATA[>]]>
 <![CDATA[<]]>
+```
+
+## Mybatis的xml实现sql代码的复用
+
+- 将重复语句写在`<sql></sql>`标签内，在其他语句通过id属性引用
+
+``` xml
+<sql id="id1">
+    ...
+</sql>
+
+<select id="id2">
+    <include refid="id1" />
+</select>
 ```
 
 ## jdbc注册信息写入properties文件

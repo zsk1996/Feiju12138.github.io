@@ -124,6 +124,44 @@ function doAjaxPost(url, params, callback) {
     xhr.send(params);
 ```
 
+## 封装为框架
+
+- 创建`ajax.js`文件
+
+``` javascript
+(() => {
+    const ajax = function () {
+    }
+    ajax.prototype = {
+        doAjaxGet: function (url, params, callback) {
+            const xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    callback(xhr.responseText);
+                }
+            };
+            xhr.open("GET", `${url}?${params}`, true);
+            xhr.send(null);
+        }
+        ,
+        doAjaxPost: function (url, params, callback) {
+            const xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    callback(xhr.responseText);
+                }
+            };
+            xhr.open("POST", url, true);
+            // Post请求传参需要设置请求头
+            xhr.setRequestHeader("Content-Type",
+                "application/x-www-form-urlencoded");
+            xhr.send(params);
+        }
+    }
+    window.Ajax = new ajax();
+})()
+```
+
 ## 传参的几种方式
 
 - 以Post请求方式为例

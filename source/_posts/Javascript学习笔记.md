@@ -87,13 +87,13 @@ document.write(<<variable>>);
 var <<name>> = <<variable>>;
 ```
 
-### 变量（新版语法）
+### 变量（ES6新特性）
 
 ``` javascript
 let <<name>> = <<variable>>;
 ```
 
-### 常量（新版语法）
+### 常量（ES6新特性）
 
 ``` javascript
 const <<name>> = <<variable>>;
@@ -550,11 +550,35 @@ for (var i = 0; i < <<num>>; i++) {
 
 - 遍历指定数组或对象中的属性
 - 和java中的for each语句类似
+- 遍历数组时会跳过为定义的值，所以不适合遍历数组，主要用于遍历对象
 
 ``` javascript
 for (var o in obj) {
     ...
 }
+```
+
+### for of循环语句
+
+- 遍历指定数组或对象中的属性
+- 和java中的for each语句类似
+- ES6新特性
+
+``` javascript
+for (var o of obj) {
+    ...
+}
+```
+
+### for each循环语句
+
+- 遍历指定数组或对象中的属性
+- 和java中的for each语句类似
+
+``` javascript
+obj.forEach(function(o){
+    ...
+});
 ```
 
 ## 浏览器对象模型（Bower Object Model）
@@ -805,4 +829,6 @@ document.getElementById().onmouseout = function() {};
 
 [知乎——知乎用户](https://www.zhihu.com/question/52662013)
 [MDN web docs](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/for...in)
-[S3school](https://www.w3school.com.cn/jsref/met_win_open.asp)
+[W3school](https://www.w3school.com.cn/jsref/met_win_open.asp)
+[segmentfault——Jason](https://segmentfault.com/a/1190000023719797)
+

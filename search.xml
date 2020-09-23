@@ -23604,6 +23604,9 @@
 <h2 id="通过官网打包导入项目"><a href="#通过官网打包导入项目" class="headerlink" title="通过官网打包导入项目"></a>通过官网打包导入项目</h2><ul>
 <li>在官网配置项目参数，下载打包的新项目<a href="https://start.spring.io" target="_blank" rel="noopener">https://start.spring.io</a></li>
 </ul>
+<blockquote>
+<p><code>SNAPSHOT</code>：快照版本<br><code>M2</code>：增加重要功能的版本，不是正式版</p>
+</blockquote>
 <p><img src="/images/20200825170603/11.png" alt="11.png"></p>
 <ul>
 <li><p>解压，导入项目到STS</p>
@@ -25137,6 +25140,31 @@
 </ul>
 <p><img src="/images/20200923080734/01.png" alt="01.png"></p>
 <h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://blog.csdn.net/HeatDeath/article/details/79691506" target="_blank" rel="noopener">CSDN——HeatDeath</a><br><a href="https://segmentfault.com/a/1190000019766877" target="_blank" rel="noopener">segmentfault——御龙镜中潜</a></p>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【笔记】SpringBoot 发邮件</title>
+    <url>/2020/09/23/SpringBoot%E5%8F%91%E9%82%AE%E4%BB%B6/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>SpringBoot项目实现发邮件，案例通过QQ邮箱实现</p>
+<a id="more"></a>
+
+<h2 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h2><ul>
+<li>修改<code>application.properties</code>项目配置文件</li>
+</ul>
+<figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="meta">server.port</span>=<span class="string">80</span></span><br><span class="line"></span><br><span class="line"><span class="meta">spring.mail.host</span>=<span class="string">smtp.qq.com</span></span><br><span class="line"><span class="comment">#改成自己的邮箱</span></span><br><span class="line"><span class="meta">spring.mail.username</span>=<span class="string">000000@qq.com</span></span><br><span class="line"><span class="comment">#邮箱的密码(QQ邮箱需要使用授权码)</span></span><br><span class="line"><span class="meta">spring.mail.password</span>=<span class="string">000000</span></span><br><span class="line"><span class="meta">spring.mail.default-encoding</span>=<span class="string">utf-8</span></span><br><span class="line"><span class="meta">spring.mail.properties.mail.smtp.auth</span>=<span class="string">true</span></span><br><span class="line"><span class="meta">spring.mail.properties.mail.smtp.starttls.enable</span>=<span class="string">true</span></span><br><span class="line"><span class="meta">spring.mail.properties.mail.smtp.starttls.required</span>=<span class="string">true</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>创建Controller做测试</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">package com.cy.mail.pj;</span><br><span class="line"></span><br><span class="line">import org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line">import org.springframework.mail.SimpleMailMessage;</span><br><span class="line">import org.springframework.mail.javamail.JavaMailSender;</span><br><span class="line">import org.springframework.web.bind.annotation.RequestMapping;</span><br><span class="line">import org.springframework.web.bind.annotation.RestController;</span><br><span class="line"></span><br><span class="line">import java.io.PrintWriter;</span><br><span class="line">import java.io.StringWriter;</span><br><span class="line"></span><br><span class="line">@RestController</span><br><span class="line">public class MailController &#123;</span><br><span class="line"></span><br><span class="line">    //加上autowired之后，框架创建一个JavaMailSender，赋值给javaMailSender</span><br><span class="line">    @Autowired</span><br><span class="line">    JavaMailSender javaMailSender;</span><br><span class="line"></span><br><span class="line">    public void sendMail(String subject, String text) &#123;</span><br><span class="line">        //创建一封邮件</span><br><span class="line">        SimpleMailMessage mailMessage = new SimpleMailMessage();</span><br><span class="line">        //设置收件人</span><br><span class="line">        mailMessage.setTo(<span class="string">"000000@qq.com"</span>);</span><br><span class="line">        //设置发件人</span><br><span class="line">        mailMessage.setFrom(<span class="string">"000000@qq.com"</span>);</span><br><span class="line">        //设置标题</span><br><span class="line">        mailMessage.setSubject(subject);</span><br><span class="line">        //设置正文</span><br><span class="line">        mailMessage.setText(text);</span><br><span class="line">        //发送邮件</span><br><span class="line">        javaMailSender.send(mailMessage);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // 成功案例</span><br><span class="line">    @RequestMapping(<span class="string">"/send1"</span>)</span><br><span class="line">    public String <span class="function"><span class="title">send1</span></span>() &#123;</span><br><span class="line">        sendMail(<span class="string">"邮件标题"</span>, <span class="string">"邮件正文"</span>);</span><br><span class="line">        <span class="built_in">return</span> <span class="string">"发送成功"</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // 失败案例</span><br><span class="line">    @RequestMapping(<span class="string">"/send2"</span>)</span><br><span class="line">    public String <span class="function"><span class="title">send2</span></span>() &#123;</span><br><span class="line">        try &#123;</span><br><span class="line">            int n = 10 / 0;</span><br><span class="line">        &#125; catch (Exception e) &#123;</span><br><span class="line">            //异常信息打印到服务器中，程序员看不到</span><br><span class="line">            //e.printStackTrace();</span><br><span class="line">            //把异常信息转成字符串</span><br><span class="line">            StringWriter stingWriter = new StringWriter();</span><br><span class="line">            PrintWriter printWriter = new PrintWriter(stingWriter);</span><br><span class="line">            e.printStackTrace(printWriter);</span><br><span class="line">            String execeptionInfo = stingWriter.toString();</span><br><span class="line">            //<span class="built_in">return</span> execeptionInfo;</span><br><span class="line">            this.sendMail(<span class="string">"异常信息"</span>, execeptionInfo);</span><br><span class="line">            <span class="built_in">return</span> <span class="string">"发送失败"</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">return</span> <span class="string">"发送成功"</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><ul>
+<li>访问<code>http://localhost/send1</code>测试发送成功效果</li>
+<li>访问<code>http://localhost/send2</code>测试发送失败效果</li>
+</ul>
 ]]></content>
       <categories>
         <category>Java</category>

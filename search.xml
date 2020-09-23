@@ -11428,6 +11428,11 @@
 <li>@SpringBootApplication</li>
 <li>描述SpringBoot项目的启动类，在类中会定义一个main方法，main方法会在运行时读取配置文件，并且加载指定资源，进行初始化操作</li>
 </ul>
+<h2 id="添加包扫描"><a href="#添加包扫描" class="headerlink" title="添加包扫描"></a>添加包扫描</h2><ul>
+<li>@MapperScan(“”)</li>
+<li>描述SpringBoot项目的启动类</li>
+<li>将包名定义为参数，告诉Mybatis框架，为指定的包中所有的接口创建代理对象</li>
+</ul>
 <h2 id="定义普通的组件"><a href="#定义普通的组件" class="headerlink" title="定义普通的组件"></a>定义普通的组件</h2><ul>
 <li>@Component</li>
 <li>可以在业务类中通过@Autowired注解从Bean池中获取并注入对象</li>
@@ -25151,6 +25156,12 @@
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>SpringBoot项目实现发邮件，案例通过QQ邮箱实现</p>
 <a id="more"></a>
 
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
+<li>导入依赖</li>
+</ul>
+<blockquote>
+<p><code>Spring Web</code><br><code>Java Mail Sender</code></p>
+</blockquote>
 <h2 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h2><ul>
 <li>修改<code>application.properties</code>项目配置文件</li>
 </ul>

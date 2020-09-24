@@ -1,15 +1,1 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 24.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1"
-	 id="NexT" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg"
-	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
-	 style="enable-background:new 0 0 512 512;" xml:space="preserve">
-<style type="text/css">
-	.st0{fill:#222222;}
-</style>
-<path id="path3384" class="st0" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6
-	l-18.4,10.7l-18.6-11l0,0L200,212v142.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8l0,0L312,302V157.4l18.5-10.6l18.5,10.8V354.6
-	z"/>
-<image style="overflow:visible;" width="1001" height="1000" xlink:href="C00751CA09938F14.jpg"  transform="matrix(0.512 0 0 0.512 1.024 0)">
-</image>
-</svg>
+<?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="icon" width="200px" height="200.00px" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M512 812.086857h-73.142857V903.314286h-91.428572v-91.227429h-23.862857V811.885714H237.714286v-91.428571h85.851428V310.857143H237.714286v-91.428572h109.714285V128h91.428572v91.428571h73.142857V128h91.428571v91.428571h-21.942857c111.323429 0 181.138286 57.088 181.138286 147.858286 0 64.896-48.457143 119.113143-111.305143 128.548572v3.291428c80.493714 6.162286 139.648 64.896 139.648 143.341714 0 100.937143-73.453714 165.357714-192.841143 169.417143H603.428571v91.428572h-91.428571v-91.227429z m-64.384-500.242286v154.020572h89.124571c66.121143 0 103.899429-29.165714 103.899429-79.268572 0-47.652571-33.28-74.752-91.172571-74.752h-101.851429z m0 407.826286h106.788571c71.460571 0 110.061714-30.390857 110.061715-87.058286 0-55.460571-39.844571-85.028571-112.950857-85.028571H447.634286v172.086857z" fill="#d81e06" /></svg>

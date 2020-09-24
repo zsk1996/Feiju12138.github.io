@@ -9326,15 +9326,17 @@
       </categories>
   </entry>
   <entry>
-    <title>【笔记】PNG格式 转换 ICNS格式</title>
+    <title>【笔记】MacOS制作图标文件</title>
     <url>/2019/12/07/PNG%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2ICNS%E6%A0%BC%E5%BC%8F/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在MacOS上更换软件图标和Windows上有所不同，第一件事就是制作一个<code>.icns</code>格式的图标文件</p>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>MacOS制作图标文件</p>
 <a id="more"></a>
 
 <h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
-<li>1024*1024的<code>&lt;name&gt;.png</code>图片</li>
+<li><code>.png</code>格式文件</li>
 </ul>
-<h2 id="制作图标文件"><a href="#制作图标文件" class="headerlink" title="制作图标文件"></a>制作图标文件</h2><ul>
+<h2 id="安装icoutils"><a href="#安装icoutils" class="headerlink" title="安装icoutils"></a>安装icoutils</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">brew install icoutils</span><br></pre></td></tr></table></figure>
+
+<h2 id="准备各尺寸图标"><a href="#准备各尺寸图标" class="headerlink" title="准备各尺寸图标"></a>准备各尺寸图标</h2><ul>
 <li>创建一个临时目录存放不同大小的图片</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">mkdir tmp.iconset</span><br></pre></td></tr></table></figure>
@@ -9342,12 +9344,23 @@
 <ul>
 <li>把原图片转为不同大小的图片，并放入上面的临时目录</li>
 </ul>
+<blockquote>
+<p><code>&lt;name&gt;</code>：图片文件名</p>
+</blockquote>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sips -z 16 16 &lt;name&gt;.png --out tmp.iconset/icon_16x16.png</span><br><span class="line">sips -z 32 32 &lt;name&gt;.png --out tmp.iconset/icon_16x16@2x.png</span><br><span class="line">sips -z 32 32 &lt;name&gt;.png --out tmp.iconset/icon_32x32.png</span><br><span class="line">sips -z 64 64 &lt;name&gt;.png --out tmp.iconset/icon_32x32@2x.png</span><br><span class="line">sips -z 128 128 &lt;name&gt;.png --out tmp.iconset/icon_128x128.png</span><br><span class="line">sips -z 256 256 &lt;name&gt;.png --out tmp.iconset/icon_128x128@2x.png</span><br><span class="line">sips -z 256 256 &lt;name&gt;.png --out tmp.iconset/icon_256x256.png</span><br><span class="line">sips -z 512 512 &lt;name&gt;.png --out tmp.iconset/icon_256x256@2x.png</span><br><span class="line">sips -z 512 512 &lt;name&gt;.png --out tmp.iconset/icon_512x512.png</span><br><span class="line">sips -z 1024 1024 &lt;name&gt;.png --out tmp.iconset/icon_512x512@2x.png</span><br></pre></td></tr></table></figure>
 
-<ul>
-<li>使用<code>iconutil</code>工具将<code>tmp.iconset</code>目录转换为<code>Icon.icns</code>图标文件</li>
+<h2 id="转换为icns格式"><a href="#转换为icns格式" class="headerlink" title="转换为icns格式"></a>转换为icns格式</h2><ul>
+<li>使用<code>iconutil</code>工具将<code>tmp.iconset</code>目录转换为<code>.icns</code>图标文件</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">iconutil -c icns tmp.iconset -o Icon.icns</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><code>&lt;name_new&gt;</code>：转换后的图标文件名</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">iconutil -c icns tmp.iconset -o &lt;name_new&gt;.icns</span><br></pre></td></tr></table></figure>
+
+<h2 id="转换为ico格式"><a href="#转换为ico格式" class="headerlink" title="转换为ico格式"></a>转换为ico格式</h2><ul>
+<li>使用<code>icotool</code>工具将<code>tmp.iconset</code>目录内的所有图片转换为<code>.icns</code>图标文件</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> tmp.iconset</span><br><span class="line">icotool -c insong_16x16.png insong_32x32.png insong_64x64.png insong_128x128.png insong_256x256.png insong_512x512.png -o &lt;name_new&gt;.ico</span><br></pre></td></tr></table></figure>
 
 <h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
       <categories>

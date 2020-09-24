@@ -25255,4 +25255,38 @@
         <category>HTML/CSS/JS</category>
       </categories>
   </entry>
+  <entry>
+    <title>【笔记】IDEA快捷键</title>
+    <url>/2020/09/24/IDEA%E5%BF%AB%E6%8D%B7%E9%94%AE/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>IDEA快捷键</p>
+<a id="more"></a>
+
+<h2 id="Windows-amp-Linux"><a href="#Windows-amp-Linux" class="headerlink" title="Windows &amp; Linux"></a>Windows &amp; Linux</h2><p><img src="/images/20200924223230/01.jpg" alt="01.jpg"></p>
+<h2 id="MacOS"><a href="#MacOS" class="headerlink" title="MacOS"></a>MacOS</h2><p><img src="/images/20200924223230/02.jpg" alt="02.jpg"></p>
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【代码】Node创建简单的Web服务器</title>
+    <url>/2020/09/24/Node%E5%88%9B%E5%BB%BA%E7%AE%80%E5%8D%95%E7%9A%84Web%E6%9C%8D%E5%8A%A1%E5%99%A8/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>使用Nodejs，创建一个简单的Web服务器</p>
+<a id="more"></a>
+
+<h2 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h2><ul>
+<li>创建<code>server.js</code>文件</li>
+</ul>
+<h3 id="正常访问"><a href="#正常访问" class="headerlink" title="正常访问"></a>正常访问</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 引入http模块</span></span><br><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">"http"</span>);</span><br><span class="line"><span class="comment">// 创建web服务器</span></span><br><span class="line"><span class="keyword">const</span> app = http.createServer();</span><br><span class="line"><span class="comment">// 设置端口</span></span><br><span class="line">app.listen(<span class="number">80</span>);</span><br><span class="line"><span class="comment">// 回调函数</span></span><br><span class="line">app.on(<span class="string">"request"</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 获取请求的URL和请求的方法</span></span><br><span class="line">    <span class="built_in">console</span>.log(req.url, req.method);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 200，正常访问</span></span><br><span class="line">    res.writeHead(<span class="number">200</span>, &#123;</span><br><span class="line">        <span class="string">"Content-Type"</span>: <span class="string">"text/html;charset=utf-8"</span></span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="comment">// 设置相应内容</span></span><br><span class="line">    res.write(<span class="string">""</span>);</span><br><span class="line">    <span class="comment">// 结束并发送响应</span></span><br><span class="line">    res.end();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="异常访问"><a href="#异常访问" class="headerlink" title="异常访问"></a>异常访问</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 引入http模块</span></span><br><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">"http"</span>);</span><br><span class="line"><span class="comment">// 创建web服务器</span></span><br><span class="line"><span class="keyword">const</span> app = http.createServer();</span><br><span class="line"><span class="comment">// 设置端口</span></span><br><span class="line">app.listen(<span class="number">80</span>);</span><br><span class="line"><span class="comment">// 回调函数</span></span><br><span class="line">app.on(<span class="string">"request"</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 获取请求的URL和请求的方法</span></span><br><span class="line">    <span class="built_in">console</span>.log(req.url, req.method);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 404，异常访问</span></span><br><span class="line">    res.writeHead(<span class="number">404</span>);</span><br><span class="line">    <span class="comment">// 设置相应内容</span></span><br><span class="line">    res.write(<span class="string">""</span>);</span><br><span class="line">    <span class="comment">// 结束并发送响应</span></span><br><span class="line">    res.end();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="重定向"><a href="#重定向" class="headerlink" title="重定向"></a>重定向</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 引入http模块</span></span><br><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">"http"</span>);</span><br><span class="line"><span class="comment">// 创建web服务器</span></span><br><span class="line"><span class="keyword">const</span> app = http.createServer();</span><br><span class="line"><span class="comment">// 设置端口</span></span><br><span class="line">app.listen(<span class="number">80</span>);</span><br><span class="line"><span class="comment">// 回调函数</span></span><br><span class="line">app.on(<span class="string">"request"</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 获取请求的URL和请求的方法</span></span><br><span class="line">    <span class="built_in">console</span>.log(req.url, req.method);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 302，重定向</span></span><br><span class="line">    res.writeHead(<span class="number">302</span>, &#123;</span><br><span class="line">        Location: <span class="string">"https:feiju12138.github.io"</span></span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="comment">// 结束并发送响应</span></span><br><span class="line">    res.end();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="启动项目"><a href="#启动项目" class="headerlink" title="启动项目"></a>启动项目</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">node server.js</span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
+      <categories>
+        <category>HTML/CSS/JS</category>
+      </categories>
+  </entry>
 </search>

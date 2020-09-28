@@ -8158,6 +8158,8 @@
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mysql&gt; help &lt;msg&gt;;</span><br></pre></td></tr></table></figure>
 
+<h2 id="查看数据库状态"><a href="#查看数据库状态" class="headerlink" title="查看数据库状态"></a>查看数据库状态</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">mysql&gt; STATUS</span><br></pre></td></tr></table></figure>
+
 <h2 id="对数据库的操作"><a href="#对数据库的操作" class="headerlink" title="对数据库的操作"></a>对数据库的操作</h2><h3 id="查询所有数据库"><a href="#查询所有数据库" class="headerlink" title="查询所有数据库"></a>查询所有数据库</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">SHOW DATABASES;</span><br></pre></td></tr></table></figure>
 
 <h3 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">CREATE DATABASE &lt;database_name&gt;;</span><br></pre></td></tr></table></figure>
@@ -11092,6 +11094,12 @@
 </ul>
 <figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="meta">spring.datasource.url</span>=<span class="string">jdbc:mysql://localhost:3306/dbgoods?serverTimezone=UTC&amp;characterEncoding=utf8</span></span><br><span class="line"><span class="meta">spring.datasource.username</span>=<span class="string">root</span></span><br><span class="line"><span class="meta">spring.datasource.password</span>=<span class="string">123456</span></span><br></pre></td></tr></table></figure>
 
+<h3 id="更多配置"><a href="#更多配置" class="headerlink" title="更多配置"></a>更多配置</h3><ul>
+<li>在<code>src/main/resources/application.properties</code>配置连接池</li>
+<li>最大连接数通常设置为<code>最大线程数*核心数+硬盘数</code></li>
+</ul>
+<figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="meta">spring.datasource.type</span>=<span class="string">com.zaxxer.hikari.HikariDataSource</span></span><br><span class="line"><span class="meta">spring.datasource.hikari.minimum-idle</span>=<span class="string">5</span></span><br><span class="line"><span class="meta">spring.datasource.hikari.maximum-pool-size</span>=<span class="string">15</span></span><br><span class="line"><span class="meta">spring.datasource.hikari.auto-commit</span>=<span class="string">true</span></span><br><span class="line"><span class="meta">spring.datasource.hikari.idle-timeout</span>=<span class="string">30000</span></span><br><span class="line"><span class="meta">spring.datasource.hikari.pool-name</span>=<span class="string">DatebookHikariCP</span></span><br><span class="line"><span class="meta">spring.datasource.hikari.max-lifetime</span>=<span class="string">1800000</span></span><br><span class="line"><span class="meta">spring.datasource.hikari.connection-timeout</span>=<span class="string">30000</span></span><br><span class="line"><span class="meta">spring.datasource.hikari.connection-test-query</span>=<span class="string">SELECT 1</span></span><br></pre></td></tr></table></figure>
+
 <h2 id="创建测试类"><a href="#创建测试类" class="headerlink" title="创建测试类"></a>创建测试类</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@SpringBootTest</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DataSourceTests</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> DataSource dataSource;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testConnection</span><span class="params">()</span> <span class="keyword">throws</span> Exception</span>&#123;</span><br><span class="line">        System.out.println(dataSource.getConnection());</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
@@ -11416,22 +11424,6 @@
       </categories>
   </entry>
   <entry>
-    <title>【笔记】SpringBoot项目运行显示完整日志</title>
-    <url>/2020/09/14/SpringBoot%E9%A1%B9%E7%9B%AE%E8%BF%90%E8%A1%8C%E6%98%BE%E7%A4%BA%E5%AE%8C%E6%95%B4%E6%97%A5%E5%BF%97/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>SpringBoot项目运行显示完整log日志</p>
-<a id="more"></a>
-
-<h2 id="显示完整日志"><a href="#显示完整日志" class="headerlink" title="显示完整日志"></a>显示完整日志</h2><ul>
-<li>在JVM运行时添加参数</li>
-</ul>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">-XX:+TraceClassLoading</span><br></pre></td></tr></table></figure>
-
-<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-  </entry>
-  <entry>
     <title>【笔记】SpringBoot注解笔记</title>
     <url>/2020/08/26/SpringBoot%E6%B3%A8%E8%A7%A3%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>SpringBoot注解知识点笔记</p>
@@ -11442,13 +11434,18 @@
 <li>描述SpringBoot项目的启动类，在类中会定义一个main方法，main方法会在运行时读取配置文件，并且加载指定资源，进行初始化操作</li>
 </ul>
 <h2 id="添加包扫描"><a href="#添加包扫描" class="headerlink" title="添加包扫描"></a>添加包扫描</h2><ul>
-<li>@MapperScan(“”)</li>
+<li>@ComponentScan(“”)</li>
 <li>描述SpringBoot项目的启动类</li>
+<li>将包名定义为参数，将指定包及子包下的类定义为Bean</li>
+</ul>
+<ul>
+<li>@MapperScan(“”)</li>
 <li>将包名定义为参数，告诉Mybatis框架，为指定的包中所有的接口创建代理对象</li>
 </ul>
 <h2 id="定义普通的组件"><a href="#定义普通的组件" class="headerlink" title="定义普通的组件"></a>定义普通的组件</h2><ul>
 <li>@Component</li>
 <li>可以在业务类中通过@Autowired注解从Bean池中获取并注入对象</li>
+<li>如果没有指定bean的名字，则默认为类名首字母小写（前提是起名要规范）</li>
 </ul>
 <h2 id="SpringMVC"><a href="#SpringMVC" class="headerlink" title="SpringMVC"></a>SpringMVC</h2><h3 id="持久层"><a href="#持久层" class="headerlink" title="持久层"></a>持久层</h3><ul>
 <li>@Mapper</li>
@@ -11461,6 +11458,10 @@
 <h3 id="控制层"><a href="#控制层" class="headerlink" title="控制层"></a>控制层</h3><ul>
 <li>@Controller</li>
 <li>标注控制层，是一种特殊的@Component</li>
+</ul>
+<h2 id="描述数据层实现类对象"><a href="#描述数据层实现类对象" class="headerlink" title="描述数据层实现类对象"></a>描述数据层实现类对象</h2><ul>
+<li>@Repository</li>
+<li>描述在类上，是一种特殊的@Component</li>
 </ul>
 <h2 id="Rest风格的响应"><a href="#Rest风格的响应" class="headerlink" title="Rest风格的响应"></a>Rest风格的响应</h2><ul>
 <li>@ResponseBody</li>
@@ -11482,7 +11483,7 @@
 <li>@Param(“”)</li>
 <li>描述参数，可以指定参数</li>
 </ul>
-<h2 id="注入对象"><a href="#注入对象" class="headerlink" title="注入对象"></a>注入对象</h2><ul>
+<h2 id="DI注入对象"><a href="#DI注入对象" class="headerlink" title="DI注入对象"></a>DI注入对象</h2><ul>
 <li>@Autowired</li>
 <li>描述属性，可以从Bean池中获取并注入对象，前提是要求实现的类或继承的类由Spring的组件注解标注</li>
 <li>描述构造方法可以省略</li>
@@ -11491,8 +11492,9 @@
 </ul>
 <h3 id="指定注入对象名"><a href="#指定注入对象名" class="headerlink" title="指定注入对象名"></a>指定注入对象名</h3><ul>
 <li>@Qualifier(“”)</li>
+<li>需要配合@Autowired使用</li>
 <li>对象名首字母小写</li>
-<li>不能修饰方法</li>
+<li>可以描述属性、构造方法、set方法参数</li>
 </ul>
 <h2 id="测试类"><a href="#测试类" class="headerlink" title="测试类"></a>测试类</h2><ul>
 <li>@SpringBootTest</li>
@@ -11516,7 +11518,7 @@
 <li>@Bean</li>
 <li>Spring容器中整个第三方Bean对象时，可以将其Bean对象的创建放在一个方法中，然后使用@Bean注解进行描述，Spring容器管理Bean对象时就会将方法名作为key对Bean对象进行存储</li>
 </ul>
-<h2 id="允许任何网站通过javascript访问"><a href="#允许任何网站通过javascript访问" class="headerlink" title="// 允许任何网站通过javascript访问"></a>// 允许任何网站通过javascript访问</h2><ul>
+<h2 id="允许任何网站通过javascript访问"><a href="#允许任何网站通过javascript访问" class="headerlink" title="允许任何网站通过javascript访问"></a>允许任何网站通过javascript访问</h2><ul>
 <li>@CrossOrigin</li>
 <li>标注在类或方法上</li>
 </ul>
@@ -11532,17 +11534,18 @@
 <li>标注在类上</li>
 </ul>
 <h3 id="单实例"><a href="#单实例" class="headerlink" title="单实例"></a>单实例</h3><ul>
-<li>单例@Scope(“singleton”)</li>
+<li>@Scope(“singleton”)</li>
+<li>不写@Scope参数或不写@Scope默认为单例作用域</li>
 <li>单例会将创建的对象放在Bean池中</li>
 <li>每个类只会创建一个对象，可以反复被调用</li>
 </ul>
 <h3 id="多实例"><a href="#多实例" class="headerlink" title="多实例"></a>多实例</h3><ul>
-<li>多例@Scope(“prototype”)</li>
+<li>@Scope(“prototype”)</li>
 <li>多例在对象使用时创建，使用后销毁</li>
 <li>多例创建每个类可以创建多个对象</li>
 <li>这个实例创建以后，不会交给spring管理，spring可以对其初始化，但不负责销毁</li>
 </ul>
-<h3 id="初始化方法"><a href="#初始化方法" class="headerlink" title="初始化方法"></a>初始化方法</h3><ul>
+<h2 id="对象生命周期方法"><a href="#对象生命周期方法" class="headerlink" title="对象生命周期方法"></a>对象生命周期方法</h2><h3 id="初始化方法"><a href="#初始化方法" class="headerlink" title="初始化方法"></a>初始化方法</h3><ul>
 <li>@PostConstruct</li>
 <li>标注在方法上</li>
 <li>描述的方法会在对象构建以后执行</li>
@@ -25146,15 +25149,20 @@
 <a id="more"></a>
 
 <h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><ul>
-<li><code>@Autowired</code>注解为类型注入，<code>@Resource</code>注解为名称注入，所以IDEA在检查<code>@Autowired</code>拼写时，会检查类型，但是DAO层的实现类是由Mybatis框架创建，而且没有在<code>&lt;bean&gt;&lt;/bean&gt;</code>标签指定bean，所以会报错，但可以正常编译和运行</li>
+<li><code>@Autowired</code>注解为类型注入，<code>@Resource</code>注解为名称注入</li>
+<li>IDEA在检查<code>@Autowired</code>拼写时，会查找Bean对象，但是有些时候我们是通过添加@ComponentScan注解，使用Spring包扫描，来自动定义Bean对象。</li>
+<li>所以IDEA找不到Bean，所以会报错，但可以正常编译和运行</li>
 </ul>
-<h2 id="解决问题"><a href="#解决问题" class="headerlink" title="解决问题"></a>解决问题</h2><ul>
+<h2 id="解决问题"><a href="#解决问题" class="headerlink" title="解决问题"></a>解决问题</h2><ol>
+<li><p>将包扫描改为在类上定义Bean</p>
+</li>
 <li><p>将所有<code>@Autowired</code>注入改为<code>@Resource</code>注入</p>
 </li>
 <li><p>或者暴力的通过降低IDEA警告等级来解决</p>
 </li>
-<li><p><code>IntelliJ IDEA</code>-&gt;<code>Preferences</code>-&gt;<code>Editor</code>-&gt;<code>Inspactions</code>-&gt;搜索<code>Spring</code>-&gt;选中<code>Autowiring for bean class</code>并将<code>Serverity</code>的值由<code>Error</code>改为<code>Warning</code></p>
-</li>
+</ol>
+<ul>
+<li><code>IntelliJ IDEA</code>-&gt;<code>Preferences</code>-&gt;<code>Editor</code>-&gt;<code>Inspactions</code>-&gt;搜索<code>Spring</code>-&gt;选中<code>Autowiring for bean class</code>并将<code>Serverity</code>的值由<code>Error</code>改为<code>Warning</code></li>
 </ul>
 <p><img src="/images/20200923080734/01.png" alt="01.png"></p>
 <h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://blog.csdn.net/HeatDeath/article/details/79691506" target="_blank" rel="noopener">CSDN——HeatDeath</a><br><a href="https://segmentfault.com/a/1190000019766877" target="_blank" rel="noopener">segmentfault——御龙镜中潜</a></p>
@@ -25285,6 +25293,57 @@
 <h2 id="启动项目"><a href="#启动项目" class="headerlink" title="启动项目"></a>启动项目</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">node server.js</span><br></pre></td></tr></table></figure>
 
 <h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
+      <categories>
+        <category>HTML/CSS/JS</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【笔记】Java运行时参数</title>
+    <url>/2020/09/14/Java%E8%BF%90%E8%A1%8C%E6%97%B6%E5%8F%82%E6%95%B0/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Java运行时参数</p>
+<a id="more"></a>
+
+<h2 id="项目运行时参数参数"><a href="#项目运行时参数参数" class="headerlink" title="项目运行时参数参数"></a>项目运行时参数参数</h2><ul>
+<li>在<code>Program arguments</code>添加参数</li>
+<li>多个参数用空格隔开</li>
+</ul>
+<h2 id="JVM运行时参数"><a href="#JVM运行时参数" class="headerlink" title="JVM运行时参数"></a>JVM运行时参数</h2><ul>
+<li>在<code>VM options</code>添加参数</li>
+<li>多个参数用空格隔开</li>
+</ul>
+<h3 id="跟踪类的加载过程"><a href="#跟踪类的加载过程" class="headerlink" title="跟踪类的加载过程"></a>跟踪类的加载过程</h3><blockquote>
+<p><code>+</code>：添加参数<br><code>-</code>：减少参数</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">-XX:+TraceClassLoading</span><br></pre></td></tr></table></figure>
+
+<h3 id="显示GC执行过程"><a href="#显示GC执行过程" class="headerlink" title="显示GC执行过程"></a>显示GC执行过程</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">-XX:+PrintGCDetails</span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【骚操作】破解Chrome小恐龙游戏</title>
+    <url>/2020/09/28/%E7%A0%B4%E8%A7%A3Chrome%E5%B0%8F%E6%81%90%E9%BE%99%E6%B8%B8%E6%88%8F/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>通过在Chrome控制台修改Javascript代码，破解小恐龙游戏（<a href="chrome://dino/">chrome://dino</a>），实现无敌和加速</p>
+<a id="more"></a>
+
+<h2 id="无敌"><a href="#无敌" class="headerlink" title="无敌"></a>无敌</h2><ul>
+<li>将内置的<code>gameOver</code>条件从原来的判定函数改为空函数</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">Runner.prototype.gameOver = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="加速"><a href="#加速" class="headerlink" title="加速"></a>加速</h2><ul>
+<li>通过使用内置的<code>setSpeed()</code>函数修改速率</li>
+</ul>
+<blockquote>
+<p><code>&lt;num&gt;</code>：速率值</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">Runner.instance_.setSpeed(<span class="xml"><span class="tag">&lt;<span class="name">num</span>&gt;</span>)</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://xiaozhizsk.baklib.com/16e5/25d7" target="_blank" rel="noopener">小志知识库</a></p>
+]]></content>
       <categories>
         <category>HTML/CSS/JS</category>
       </categories>

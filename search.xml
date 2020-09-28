@@ -22073,38 +22073,6 @@
       </categories>
   </entry>
   <entry>
-    <title>【骚操作】破解Linux开机密码</title>
-    <url>/2020/06/09/%E7%A0%B4%E8%A7%A3Linux%E5%BC%80%E6%9C%BA%E5%AF%86%E7%A0%81/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>破解RedHat系列Linux开机密码</p>
-<a id="more"></a>
-
-<h2 id="修改启动参数"><a href="#修改启动参数" class="headerlink" title="修改启动参数"></a>修改启动参数</h2><ul>
-<li><p>开机后，在进入登录界面前的命令行界面时，按<code>e</code>键进入启动参数编辑界面</p>
-</li>
-<li><p>将光标移到<code>linux16 /vmlinuz ...</code>行，在末尾追加<code>rd.break console=tty0</code></p>
-</li>
-</ul>
-<p><img src="/images/20200609163317/01.png" alt="01.png"></p>
-<ul>
-<li><code>ctrl</code>+<code>x</code>保存并退出</li>
-</ul>
-<h2 id="修改新密码"><a href="#修改新密码" class="headerlink" title="修改新密码"></a>修改新密码</h2><blockquote>
-<p><code>&lt;password&gt;</code>：新密码</p>
-</blockquote>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">mount -o remount,rw /sysroot</span><br><span class="line">chroot /sysroot/</span><br><span class="line"><span class="built_in">echo</span> &lt;password&gt; | passwd --stdin root</span><br><span class="line">touch /.autorelabel</span><br><span class="line"><span class="built_in">exit</span></span><br></pre></td></tr></table></figure>
-
-<p><img src="/images/20200609163317/02.png" alt="02.png"></p>
-<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><ul>
-<li>重启系统</li>
-</ul>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">reboot</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>Linux</category>
-      </categories>
-  </entry>
-  <entry>
     <title>【骚操作】窗口轰炸</title>
     <url>/2019/11/28/%E7%AA%97%E5%8F%A3%E8%BD%B0%E7%82%B8/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Windows窗口轰炸代码，运行后无限弹出<code>命令提示符</code>窗口</p>
@@ -25364,6 +25332,65 @@
 <h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
       <categories>
         <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【骚操作】破解 CentOS Linux 开机密码</title>
+    <url>/2020/06/09/%E7%A0%B4%E8%A7%A3CentOSLinux%E5%BC%80%E6%9C%BA%E5%AF%86%E7%A0%81/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>破解RedHat系列Linux开机密码</p>
+<a id="more"></a>
+
+<h2 id="修改启动参数"><a href="#修改启动参数" class="headerlink" title="修改启动参数"></a>修改启动参数</h2><ul>
+<li><p>开机后，在进入登录界面前的命令行界面时，按<code>e</code>键进入启动参数编辑界面</p>
+</li>
+<li><p>将光标移到<code>linux16 /vmlinuz ...</code>行，在末尾追加<code>rd.break console=tty0</code></p>
+</li>
+</ul>
+<p><img src="/images/20200609163317/01.png" alt="01.png"></p>
+<ul>
+<li><code>ctrl</code>+<code>x</code>保存并退出</li>
+</ul>
+<h2 id="修改新密码"><a href="#修改新密码" class="headerlink" title="修改新密码"></a>修改新密码</h2><blockquote>
+<p><code>&lt;password&gt;</code>：新密码</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">mount -o remount,rw /sysroot</span><br><span class="line">chroot /sysroot/</span><br><span class="line"><span class="built_in">echo</span> &lt;password&gt; | passwd --stdin root</span><br><span class="line">touch /.autorelabel</span><br><span class="line"><span class="built_in">exit</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="/images/20200609163317/02.png" alt="02.png"></p>
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><ul>
+<li>重启系统</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">reboot</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【骚操作】破解 Kali Linux 开机密码</title>
+    <url>/2020/09/28/%E7%A0%B4%E8%A7%A3KaliLinux%E5%BC%80%E6%9C%BA%E5%AF%86%E7%A0%81/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>破解<code>Kali Linux</code>开机密码</p>
+<a id="more"></a>
+
+<h2 id="修改启动参数"><a href="#修改启动参数" class="headerlink" title="修改启动参数"></a>修改启动参数</h2><ul>
+<li><p>开机后，在进入登录界面前的命令行界面时，按e键进入启动参数编辑界面</p>
+</li>
+<li><p>将光标移到<code>linux /boot ...</code>行，修改<code>ro</code>为<code>rw</code>，并将其后所有字符串删除，修改为<code>init=/bin/bash</code></p>
+</li>
+</ul>
+<p><img src="/images/20200928195218/01.png" alt="01.png"></p>
+<ul>
+<li><code>ctrl</code>+<code>x</code>保存并退出</li>
+</ul>
+<h2 id="修改新密码"><a href="#修改新密码" class="headerlink" title="修改新密码"></a>修改新密码</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">passwd</span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><ul>
+<li>重启系统</li>
+</ul>
+<h2 id="完成-1"><a href="#完成-1" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://blog.csdn.net/wy_bk/article/details/88901882" target="_blank" rel="noopener">CSDN——zhaokaifeng.com</a></p>
+]]></content>
+      <categories>
+        <category>Linux</category>
       </categories>
   </entry>
 </search>

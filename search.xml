@@ -18437,7 +18437,7 @@
 <h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://sspai.com/post/33524" target="_blank" rel="noopener">少数派</a></p>
 ]]></content>
       <categories>
-        <category>MacOS</category>
+        <category>Apple</category>
       </categories>
   </entry>
   <entry>
@@ -25111,35 +25111,6 @@
       </categories>
   </entry>
   <entry>
-    <title>【踩坑】IDEA Spring Boot IOC 注入报错</title>
-    <url>/2020/09/23/IDEASpringBootIOC%E6%B3%A8%E5%85%A5%E6%8A%A5%E9%94%99/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>踩坑：IDEA Spring Boot IOC 注入报错</p>
-<a id="more"></a>
-
-<h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><ul>
-<li><code>@Autowired</code>注解为类型注入，<code>@Resource</code>注解为名称注入</li>
-<li>IDEA在检查<code>@Autowired</code>拼写时，会查找Bean对象，但是有些时候我们是通过添加@ComponentScan注解，使用Spring包扫描，来自动定义Bean对象。</li>
-<li>所以IDEA找不到Bean，所以会报错，但可以正常编译和运行</li>
-</ul>
-<h2 id="解决问题"><a href="#解决问题" class="headerlink" title="解决问题"></a>解决问题</h2><ol>
-<li><p>将包扫描改为在类上定义Bean</p>
-</li>
-<li><p>将所有<code>@Autowired</code>注入改为<code>@Resource</code>注入</p>
-</li>
-<li><p>或者暴力的通过降低IDEA警告等级来解决</p>
-</li>
-</ol>
-<ul>
-<li><code>IntelliJ IDEA</code>-&gt;<code>Preferences</code>-&gt;<code>Editor</code>-&gt;<code>Inspactions</code>-&gt;搜索<code>Spring</code>-&gt;选中<code>Autowiring for bean class</code>并将<code>Serverity</code>的值由<code>Error</code>改为<code>Warning</code></li>
-</ul>
-<p><img src="/images/20200923080734/01.png" alt="01.png"></p>
-<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://blog.csdn.net/HeatDeath/article/details/79691506" target="_blank" rel="noopener">CSDN——HeatDeath</a><br><a href="https://segmentfault.com/a/1190000019766877" target="_blank" rel="noopener">segmentfault——御龙镜中潜</a></p>
-]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-  </entry>
-  <entry>
     <title>【笔记】SpringBoot 发邮件</title>
     <url>/2020/09/23/SpringBoot%E5%8F%91%E9%82%AE%E4%BB%B6/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>SpringBoot项目实现发邮件，案例通过QQ邮箱实现</p>
@@ -25415,6 +25386,50 @@
 <li>双击进行添加依赖或移除依赖</li>
 </ul>
 <h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://blog.csdn.net/w1043203101/article/details/79688848" target="_blank" rel="noopener">CSDN——许洛以合</a><br><a href="https://blog.csdn.net/weixin_30363263/article/details/84380805" target="_blank" rel="noopener">CSDN——山鬼谣弋痕夕</a></p>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【踩坑】IDEA Spring Boot DI 注入报错</title>
+    <url>/2020/09/23/IDEASpringBootDI%E6%B3%A8%E5%85%A5%E6%8A%A5%E9%94%99/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>踩坑：IDEA Spring Boot DI 注入报错</p>
+<a id="more"></a>
+
+<h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><ul>
+<li><code>@Autowired</code>注解为类型注入，<code>@Resource</code>注解为名称注入</li>
+<li>IDEA在检查<code>@Autowired</code>拼写时，会查找Bean对象，但是有些时候我们是通过添加@ComponentScan注解，使用Spring包扫描，来自动定义Bean对象。</li>
+<li>所以IDEA找不到Bean，所以会报错，但可以正常编译和运行</li>
+</ul>
+<h2 id="解决问题"><a href="#解决问题" class="headerlink" title="解决问题"></a>解决问题</h2><ol>
+<li><p>将包扫描改为在类上定义Bean</p>
+</li>
+<li><p>将所有<code>@Autowired</code>注入改为<code>@Resource</code>注入</p>
+</li>
+<li><p>或者暴力的通过降低IDEA警告等级来解决</p>
+</li>
+</ol>
+<ul>
+<li><code>IntelliJ IDEA</code>-&gt;<code>Preferences</code>-&gt;<code>Editor</code>-&gt;<code>Inspactions</code>-&gt;搜索<code>Spring</code>-&gt;选中<code>Autowiring for bean class</code>并将<code>Serverity</code>的值由<code>Error</code>改为<code>Warning</code></li>
+</ul>
+<p><img src="/images/20200923080734/01.png" alt="01.png"></p>
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://blog.csdn.net/HeatDeath/article/details/79691506" target="_blank" rel="noopener">CSDN——HeatDeath</a><br><a href="https://segmentfault.com/a/1190000019766877" target="_blank" rel="noopener">segmentfault——御龙镜中潜</a></p>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【笔记】SpringBoot项目修改Banner图</title>
+    <url>/2020/09/29/SpringBoot%E9%A1%B9%E7%9B%AE%E4%BF%AE%E6%94%B9Banner%E5%9B%BE/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>SpringBoot项目修改Banner图</p>
+<a id="more"></a>
+
+<h2 id="修改Banner图"><a href="#修改Banner图" class="headerlink" title="修改Banner图"></a>修改Banner图</h2><ul>
+<li>在项目的<code>resources</code>目录下创建<code>banner.txt</code>、<code>banner.gif</code>、<code>banner.jpg</code>、<code>banner.png</code>的其中一种文件，SpringBoot会自动加载</li>
+</ul>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://juejin.im/post/6844903840936886280" target="_blank" rel="noopener">掘金——静默虚空</a><br><a href="https://www.bootschool.net/ascii-art" target="_blank" rel="noopener">BootSchool</a></p>
 ]]></content>
       <categories>
         <category>Java</category>

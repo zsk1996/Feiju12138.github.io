@@ -25402,15 +25402,15 @@
 <h2 id="添加依赖"><a href="#添加依赖" class="headerlink" title="添加依赖"></a>添加依赖</h2><ul>
 <li><code>Intellij IDEA</code>-&gt;<code>Preferences</code>-&gt;<code>Plugins</code>-&gt;<code>Marketplace</code>-&gt;搜索<code>EditStarters</code>-&gt;<code>Install</code></li>
 </ul>
-<p><a href="/images/20200929100456/01.png">01.png</a></p>
+<p><img src="/images/20200929100456/01.png" alt="01.png"></p>
 <ul>
 <li>打开项目<code>pom.xml</code>文件-&gt;将光标移到<code>&lt;dependencies&gt;&lt;/denpendencies&gt;</code>标签内-&gt;MacOS使用快捷键<code>ctrl</code>+<code>return</code>（或<code>command</code>+<code>n</code>），Windows使用<code>alt</code>+<code>insert</code>-&gt;<code>Edit Starters</code></li>
 </ul>
-<p><a href="/images/20200929100456/02.png">02.png</a></p>
+<p><img src="/images/20200929100456/02.png" alt="02.png"></p>
 <ul>
 <li>修改starter源-&gt;<code>OK</code></li>
 </ul>
-<p><a href="/images/20200929100456/03.png">03.png</a></p>
+<p><img src="/images/20200929100456/03.png" alt="03.png"></p>
 <ul>
 <li>双击进行添加依赖或移除依赖</li>
 </ul>

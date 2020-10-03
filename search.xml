@@ -25561,12 +25561,12 @@
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>JSON与Javascript格式互转</p>
 <a id="more"></a>
 
-<h2 id="互转"><a href="#互转" class="headerlink" title="互转"></a>互转</h2><h3 id="JSON转换为Javascript对象"><a href="#JSON转换为Javascript对象" class="headerlink" title="JSON转换为Javascript对象"></a>JSON转换为Javascript对象</h3><blockquote>
+<h2 id="互转"><a href="#互转" class="headerlink" title="互转"></a>互转</h2><h3 id="JSON对象转换为Javascript字符串"><a href="#JSON对象转换为Javascript字符串" class="headerlink" title="JSON对象转换为Javascript字符串"></a>JSON对象转换为Javascript字符串</h3><blockquote>
 <p><code>&lt;json&gt;</code>：JSON对象</p>
 </blockquote>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> js = <span class="built_in">JSON</span>.parse(<span class="xml"><span class="tag">&lt;<span class="name">json</span>&gt;</span>);</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="Javascript对象转换为JSON"><a href="#Javascript对象转换为JSON" class="headerlink" title="Javascript对象转换为JSON"></a>Javascript对象转换为JSON</h3><blockquote>
+<h3 id="Javascript字符串转换为JSON对象"><a href="#Javascript字符串转换为JSON对象" class="headerlink" title="Javascript字符串转换为JSON对象"></a>Javascript字符串转换为JSON对象</h3><blockquote>
 <p><code>&lt;js&gt;</code>：JSON格式的JS字符串</p>
 </blockquote>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> json = <span class="built_in">JSON</span>.stringiry(<span class="xml"><span class="tag">&lt;<span class="name">js</span>&gt;</span>)</span></span><br></pre></td></tr></table></figure>
@@ -25575,5 +25575,97 @@
       <categories>
         <category>HTML/CSS/JS</category>
       </categories>
+  </entry>
+  <entry>
+    <title>【笔记】Git学习笔记</title>
+    <url>/2020/10/03/Git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>git是一个分布式版本控制软件，最初由林纳斯·托瓦兹创作，于2005年以GPL发布。最初目的是为更好地管理Linux内核开发而设计。应注意的是，这与GNU Interactive Tools（一个类似Norton Commander界面的文件管理器）不同。（<a href="https://zh.wikipedia.org/wiki/Git" target="_blank" rel="noopener">维基百科</a>）</p>
+<a id="more"></a>
+
+<h2 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">brew install git</span><br></pre></td></tr></table></figure>
+
+<h2 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h2><h3 id="初始化当前目录"><a href="#初始化当前目录" class="headerlink" title="初始化当前目录"></a>初始化当前目录</h3><ul>
+<li>初始化成功会在当前目录下自动创建一个存放git配置信息的名为<code>.git</code>的隐藏目录</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure>
+
+<h3 id="查看状态"><a href="#查看状态" class="headerlink" title="查看状态"></a>查看状态</h3><ul>
+<li>查看当前目录下的git状态，可以通过状态指引完成提交</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure>
+
+<h3 id="新增"><a href="#新增" class="headerlink" title="新增"></a>新增</h3><ul>
+<li>将指定文件从工作空间添加到本地索引</li>
+</ul>
+<blockquote>
+<p><code>&lt;name&gt;</code>：文件名</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git add &lt;name&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="新增所有"><a href="#新增所有" class="headerlink" title="新增所有"></a>新增所有</h4><ul>
+<li>将当前目录及其子目录下的所有文件从工作空间添加到本地索引</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git add .</span><br></pre></td></tr></table></figure>
+
+<h3 id="提交"><a href="#提交" class="headerlink" title="提交"></a>提交</h3><ul>
+<li>将本地索引的所有文件提交到本地仓库</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git commit</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>通过vim键入提交的备注</p>
+</li>
+<li><p><code>:wq</code>保存并退出完成备注</p>
+</li>
+</ul>
+<h4 id="快速提交"><a href="#快速提交" class="headerlink" title="快速提交"></a>快速提交</h4><ul>
+<li>不需要打开vim而快速提交</li>
+</ul>
+<blockquote>
+<p><code>&lt;text&gt;</code>：需要提交的备注内容</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git commit -m <span class="string">"&lt;text&gt;"</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="直接提交"><a href="#直接提交" class="headerlink" title="直接提交"></a>直接提交</h4><ul>
+<li>将当前目录及其子目录下的所有文件从工作空间添加到本地索引，并直接进行提交</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git commit -a</span><br></pre></td></tr></table></figure>
+
+<h4 id="直接快速提交"><a href="#直接快速提交" class="headerlink" title="直接快速提交"></a>直接快速提交</h4><ul>
+<li>将当前目录及其子目录下的所有文件从工作空间添加到本地索引，不需要打开vim，并直接进行快速提交</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git commit -a -m <span class="string">"&lt;text&gt;"</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="推送"><a href="#推送" class="headerlink" title="推送"></a>推送</h3><ul>
+<li>预先在远程创建仓库，并将本地仓库的所有文件推送到远程仓库（公共仓库或自己搭建的私有仓库）</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git push</span><br></pre></td></tr></table></figure>
+
+<h3 id="克隆"><a href="#克隆" class="headerlink" title="克隆"></a>克隆</h3><ul>
+<li>首次将所有文件从远程仓库直接克隆到本地仓库（当前目录下）</li>
+</ul>
+<blockquote>
+<p><code>&lt;git&gt;</code>：远程仓库地址</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> &lt;git&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="拉取"><a href="#拉取" class="headerlink" title="拉取"></a>拉取</h3><ul>
+<li>在已经克隆的情况下，从远程仓库拉取新文件到本地仓库</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git pull</span><br></pre></td></tr></table></figure>
+
+<h3 id="git配置"><a href="#git配置" class="headerlink" title="git配置"></a>git配置</h3><h4 id="查看所有配置"><a href="#查看所有配置" class="headerlink" title="查看所有配置"></a>查看所有配置</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git config --list</span><br></pre></td></tr></table></figure>
+
+<h4 id="配置当前使用者的用户名"><a href="#配置当前使用者的用户名" class="headerlink" title="配置当前使用者的用户名"></a>配置当前使用者的用户名</h4><blockquote>
+<p><code>&lt;username&gt;</code>：用户名</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git config --global user.name <span class="string">"&lt;username&gt;"</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="配置当前使用者的邮箱"><a href="#配置当前使用者的邮箱" class="headerlink" title="配置当前使用者的邮箱"></a>配置当前使用者的邮箱</h4><blockquote>
+<p><code>&lt;email&gt;</code>：邮箱</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git config --clobal user.email <span class="string">"&lt;email&gt;"</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
   </entry>
 </search>

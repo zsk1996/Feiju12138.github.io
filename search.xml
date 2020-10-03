@@ -11484,6 +11484,14 @@
 <li>@Param(“”)</li>
 <li>描述参数，可以指定参数</li>
 </ul>
+<h3 id="指定请求参数"><a href="#指定请求参数" class="headerlink" title="指定请求参数"></a>指定请求参数</h3><ul>
+<li>@RequestParam</li>
+<li>描述参数，指定被描述的对象为请求接收对象</li>
+</ul>
+<h4 id="支持参数个数不匹配"><a href="#支持参数个数不匹配" class="headerlink" title="支持参数个数不匹配"></a>支持参数个数不匹配</h4><ul>
+<li>@RequestParam(required=false)</li>
+<li>required默认为true，表示必须匹配参数个数，否则会报错</li>
+</ul>
 <h2 id="DI注入对象"><a href="#DI注入对象" class="headerlink" title="DI注入对象"></a>DI注入对象</h2><ul>
 <li>@Autowired</li>
 <li>描述属性，可以从Bean池中获取并注入对象，前提是要求实现的类或继承的类由Spring的组件注解标注</li>
@@ -13267,7 +13275,7 @@
 
 <h2 id="post函数"><a href="#post函数" class="headerlink" title="post函数"></a>post函数</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//1.请求url</span></span><br><span class="line"><span class="keyword">var</span> url = <span class="string">"/jquery/doAjaxPost"</span>;</span><br><span class="line"><span class="comment">//2.请求参数</span></span><br><span class="line"><span class="keyword">var</span> params = <span class="string">"name=zhangsan"</span>;</span><br><span class="line"><span class="comment">//3.发送异步请求</span></span><br><span class="line">$.post(url, params, (result) =&gt; &#123;</span><br><span class="line">    $(<span class="string">"#resultId"</span>).html(result);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
-<h2 id="ajax函数"><a href="#ajax函数" class="headerlink" title="ajax函数"></a>ajax函数</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//1.请求url</span></span><br><span class="line"><span class="keyword">let</span> url = <span class="string">"/jquery/doAjaxPost"</span>;</span><br><span class="line"><span class="comment">//2.请求参数</span></span><br><span class="line"><span class="keyword">let</span> params = <span class="string">"name=zhangsan"</span>;</span><br><span class="line"><span class="comment">//3.发送异步请求</span></span><br><span class="line">$.ajax(&#123;</span><br><span class="line">    <span class="comment">// 可以省略（默认为GET请求）</span></span><br><span class="line">    type: <span class="string">"POST"</span>,</span><br><span class="line">    url: url,</span><br><span class="line">    <span class="comment">// 可以省略（如果无需向服务端传递参数）</span></span><br><span class="line">    data: params,</span><br><span class="line">    <span class="comment">// 可以省略（由ajax函数内部基于返回值进行匹配处理）</span></span><br><span class="line">    dataType: <span class="string">"text"</span>,</span><br><span class="line">    <span class="comment">// 可以省略（默认为true，表示异步）</span></span><br><span class="line">    <span class="keyword">async</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="comment">// 处理服务端返回的正常信息</span></span><br><span class="line">    success: <span class="function"><span class="keyword">function</span> (<span class="params">result</span>) </span>&#123;</span><br><span class="line">        $(<span class="string">"#resultId"</span>).html(result);</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// 处理服务端返回的异常信息</span></span><br><span class="line">    error: <span class="function"><span class="keyword">function</span> (<span class="params">result</span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(xhr.statusText);</span><br><span class="line">        $(<span class="string">"#resultId"</span>).html(xhr.statusText);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="ajax函数"><a href="#ajax函数" class="headerlink" title="ajax函数"></a>ajax函数</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//1.请求url</span></span><br><span class="line"><span class="keyword">let</span> url = <span class="string">"/jquery/doAjaxPost"</span>;</span><br><span class="line"><span class="comment">//2.请求参数</span></span><br><span class="line"><span class="keyword">let</span> params = <span class="string">"name=zhangsan"</span>;</span><br><span class="line"><span class="comment">//3.发送异步请求</span></span><br><span class="line">$.ajax(&#123;</span><br><span class="line">    <span class="comment">// 可以省略（默认为GET请求）</span></span><br><span class="line">    type: <span class="string">"POST"</span>,</span><br><span class="line">    url: url,</span><br><span class="line">    <span class="comment">// 可以省略</span></span><br><span class="line">    contentType: <span class="string">"application/json;charset=utf-8"</span>,</span><br><span class="line">    <span class="comment">// 可以省略（如果无需向服务端传递参数）</span></span><br><span class="line">    data: params,</span><br><span class="line">    <span class="comment">// 可以省略（由ajax函数内部基于返回值进行匹配处理）</span></span><br><span class="line">    <span class="comment">// 常见参数：html、xml、json、jsonp（跨域）</span></span><br><span class="line">    dataType: <span class="string">"text"</span>,</span><br><span class="line">    <span class="comment">// 可以省略（默认为true，表示异步）</span></span><br><span class="line">    <span class="keyword">async</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="comment">// 处理服务端返回的正常信息</span></span><br><span class="line">    success: <span class="function"><span class="keyword">function</span> (<span class="params">result</span>) </span>&#123;</span><br><span class="line">        $(<span class="string">"#resultId"</span>).html(result);</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// 处理服务端返回的异常信息</span></span><br><span class="line">    error: <span class="function"><span class="keyword">function</span> (<span class="params">result</span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(xhr.statusText);</span><br><span class="line">        $(<span class="string">"#resultId"</span>).html(xhr.statusText);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
 <h2 id="load函数"><a href="#load函数" class="headerlink" title="load函数"></a>load函数</h2><ul>
 <li>load会将响应直接返回到指定位置</li>
@@ -25489,6 +25497,83 @@
 <h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
       <categories>
         <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【踩坑】jar中没有主清单属性</title>
+    <url>/2020/10/01/jar%E4%B8%AD%E6%B2%A1%E6%9C%89%E4%B8%BB%E6%B8%85%E5%8D%95%E5%B1%9E%E6%80%A7/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>将打好的jar包通过命令行运行，报错：<code>...jar中没有主清单属性</code></p>
+<a id="more"></a>
+
+<h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><ul>
+<li>工具打包的时候没有指定程序入口</li>
+</ul>
+<h2 id="解决问题"><a href="#解决问题" class="headerlink" title="解决问题"></a>解决问题</h2><ul>
+<li><p>通过压缩工具打开.jar文件</p>
+</li>
+<li><p>在<code>/META-INF/MANIFEST.MF</code>文件内添加一行，用于指定程序入口</p>
+</li>
+</ul>
+<blockquote>
+<p><code>&lt;main&gt;</code>：包含主方法的类的全局限定名</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">Main-Class: &lt;main&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://blog.csdn.net/xqnode/article/details/86628794" target="_blank" rel="noopener">CSDN——xqnode</a></p>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【笔记】IDEA普通java项目导入jar包</title>
+    <url>/2020/10/02/IDEA%E6%99%AE%E9%80%9Ajava%E9%A1%B9%E7%9B%AE%E5%AF%BC%E5%85%A5jar%E5%8C%85/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>IDEA普通java项目导入jar包</p>
+<a id="more"></a>
+
+<h2 id="导入jar包"><a href="#导入jar包" class="headerlink" title="导入jar包"></a>导入jar包</h2><ul>
+<li>在项目根目录下新建名为<code>lib</code>的目录，并将需要导入的jar包复制到lib目录下</li>
+</ul>
+<p><img src="/images/20201002134007/01.png" alt="01.png"></p>
+<ul>
+<li><code>File</code>-&gt;<code>Project Structure</code>-&gt;<code>Modules</code>-&gt;选中项目-&gt;<code>Dependencies</code>-&gt;<code>+</code>-&gt;<code>JARs or directories</code></li>
+</ul>
+<p><img src="/images/20201002134007/02.png" alt="02.png"></p>
+<ul>
+<li>选中项目根目录中刚刚创建的lib目录</li>
+</ul>
+<p><img src="/images/20201002134007/03.png" alt="03.png"></p>
+<ul>
+<li><p><code>OK</code></p>
+</li>
+<li><p>此时jar包已经可以展开了，表示引入成功</p>
+</li>
+</ul>
+<p><img src="/images/20201002134007/04.png" alt="04.png"></p>
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【笔记】JSON与JS互转</title>
+    <url>/2020/10/03/JSON%E4%B8%8EJS%E4%BA%92%E8%BD%AC/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>JSON与Javascript格式互转</p>
+<a id="more"></a>
+
+<h2 id="互转"><a href="#互转" class="headerlink" title="互转"></a>互转</h2><h3 id="JSON转换为Javascript对象"><a href="#JSON转换为Javascript对象" class="headerlink" title="JSON转换为Javascript对象"></a>JSON转换为Javascript对象</h3><blockquote>
+<p><code>&lt;json&gt;</code>：JSON对象</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> js = <span class="built_in">JSON</span>.parse(<span class="xml"><span class="tag">&lt;<span class="name">json</span>&gt;</span>);</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Javascript对象转换为JSON"><a href="#Javascript对象转换为JSON" class="headerlink" title="Javascript对象转换为JSON"></a>Javascript对象转换为JSON</h3><blockquote>
+<p><code>&lt;js&gt;</code>：JSON格式的JS字符串</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> json = <span class="built_in">JSON</span>.stringiry(<span class="xml"><span class="tag">&lt;<span class="name">js</span>&gt;</span>)</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
+      <categories>
+        <category>HTML/CSS/JS</category>
       </categories>
   </entry>
 </search>

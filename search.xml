@@ -25691,4 +25691,114 @@
 
 <h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
   </entry>
+  <entry>
+    <title>【笔记】Vue学习笔记</title>
+    <url>/2020/10/03/Vue%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Vue.js是一个用于创建用户界面的开源JavaScript框架，也是一个创建单页应用的Web应用框架。 2016年一项针对JavaScript的调查表明，Vue有着89%的开发者满意度。在GitHub上，该项目平均每天能收获95颗星，为Github有史以来星标数第3多的项目。（<a href="https://zh.wikipedia.org/wiki/Vue.js" target="_blank" rel="noopener">维基百科</a>）</p>
+<a id="more"></a>
+
+<h2 id="引入Vue"><a href="#引入Vue" class="headerlink" title="引入Vue"></a>引入Vue</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;script src=<span class="string">"js/vue.min.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<h2 id="初次使用"><a href="#初次使用" class="headerlink" title="初次使用"></a>初次使用</h2><ul>
+<li>定义挂载点，数据可以展现在挂载点内</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div id=<span class="string">"app"</span>&gt;</span><br><span class="line">        ...</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>创建Vue对象</li>
+</ul>
+<blockquote>
+<p><code>el</code>：用于指定挂在点位置<br><code>data</code>：用于指定数据<br><code>methods</code>：用于指定函数</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">        el: <span class="string">"#app"</span>,</span><br><span class="line">        data: &#123;</span><br><span class="line">            ...</span><br><span class="line">        &#125;,</span><br><span class="line">        methods: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            ...</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h3><ul>
+<li>将数据展现在页面</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">    &lt;div id=<span class="string">"app"</span>&gt;</span><br><span class="line">        &#123;&#123;message&#125;&#125;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    </span></span><br><span class="line"><span class="regexp">    &lt;script&gt;</span></span><br><span class="line"><span class="regexp">        new Vue(&#123;</span></span><br><span class="line"><span class="regexp">            el: "#app",</span></span><br><span class="line"><span class="regexp">            data: &#123;</span></span><br><span class="line"><span class="regexp">                message: "Hello World"</span></span><br><span class="line"><span class="regexp">            &#125;</span></span><br><span class="line"><span class="regexp">        &#125;);</span></span><br><span class="line"><span class="regexp">    &lt;/</span>script&gt;</span><br><span class="line"></span><br><span class="line">&lt;<span class="regexp">/body&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="数据双向绑定"><a href="#数据双向绑定" class="headerlink" title="数据双向绑定"></a>数据双向绑定</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">    &lt;div id=<span class="string">"app"</span>&gt;</span><br><span class="line">        &lt;input type=<span class="string">"text"</span> v-model=<span class="string">"message"</span>&gt;</span><br><span class="line">        &#123;&#123;message&#125;&#125;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">    &lt;script&gt;</span></span><br><span class="line"><span class="regexp">        new Vue(&#123;</span></span><br><span class="line"><span class="regexp">            el: "#app",</span></span><br><span class="line"><span class="regexp">            data: &#123;</span></span><br><span class="line"><span class="regexp">                message: "Hello World"</span></span><br><span class="line"><span class="regexp">            &#125;</span></span><br><span class="line"><span class="regexp">        &#125;);</span></span><br><span class="line"><span class="regexp">    &lt;/</span>script&gt;</span><br><span class="line"></span><br><span class="line">&lt;<span class="regexp">/body&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="数据驱动"><a href="#数据驱动" class="headerlink" title="数据驱动"></a>数据驱动</h2><h3 id="v-text指定标签内文本（不解析标签）"><a href="#v-text指定标签内文本（不解析标签）" class="headerlink" title="v-text指定标签内文本（不解析标签）"></a>v-text指定标签内文本（不解析标签）</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">    &lt;div id=<span class="string">"app"</span>&gt;</span><br><span class="line">        &lt;div v-text=<span class="string">"message"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">    &lt;script&gt;</span></span><br><span class="line"><span class="regexp">        new Vue(&#123;</span></span><br><span class="line"><span class="regexp">            el: "#app",</span></span><br><span class="line"><span class="regexp">            data: &#123;</span></span><br><span class="line"><span class="regexp">                message: "Hello World"</span></span><br><span class="line"><span class="regexp">            &#125;</span></span><br><span class="line"><span class="regexp">        &#125;);</span></span><br><span class="line"><span class="regexp">    &lt;/</span>script&gt;</span><br><span class="line"></span><br><span class="line">&lt;<span class="regexp">/body&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="v-html指定标签内文本（解析标签）"><a href="#v-html指定标签内文本（解析标签）" class="headerlink" title="v-html指定标签内文本（解析标签）"></a>v-html指定标签内文本（解析标签）</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">    &lt;div id=<span class="string">"app"</span>&gt;</span><br><span class="line">        &lt;div v-html=<span class="string">"message"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">    &lt;script&gt;</span></span><br><span class="line"><span class="regexp">        new Vue(&#123;</span></span><br><span class="line"><span class="regexp">            el: "#app",</span></span><br><span class="line"><span class="regexp">            data: &#123;</span></span><br><span class="line"><span class="regexp">                message: "&lt;font color='red'&gt;Hello World&lt;/</span>font&gt;<span class="string">"</span></span><br><span class="line"><span class="string">            &#125;</span></span><br><span class="line"><span class="string">        &#125;);</span></span><br><span class="line"><span class="string">    &lt;/script&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">&lt;/body&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="v-if判断语句"><a href="#v-if判断语句" class="headerlink" title="v-if判断语句"></a>v-if判断语句</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">    &lt;div id=<span class="string">"app"</span>&gt;</span><br><span class="line">        &lt;div v-<span class="keyword">if</span>=<span class="string">"age&gt;18"</span>&gt;成年&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">        &lt;div v-if="age&lt;=18"&gt;未成年&lt;/</span>div&gt;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">    &lt;script&gt;</span></span><br><span class="line"><span class="regexp">        new Vue(&#123;</span></span><br><span class="line"><span class="regexp">            el: "#app",</span></span><br><span class="line"><span class="regexp">            data: &#123;</span></span><br><span class="line"><span class="regexp">                age: 18</span></span><br><span class="line"><span class="regexp">            &#125;</span></span><br><span class="line"><span class="regexp">        &#125;);</span></span><br><span class="line"><span class="regexp">    &lt;/</span>script&gt;</span><br><span class="line"></span><br><span class="line">&lt;<span class="regexp">/body&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="v-else两层判断"><a href="#v-else两层判断" class="headerlink" title="v-else两层判断"></a>v-else两层判断</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">    &lt;div id=<span class="string">"app"</span>&gt;</span><br><span class="line">        &lt;div v-<span class="keyword">if</span>=<span class="string">"age&gt;18"</span>&gt;成年&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">        &lt;div v-else&gt;未成年&lt;/</span>div&gt;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">    &lt;script&gt;</span></span><br><span class="line"><span class="regexp">        new Vue(&#123;</span></span><br><span class="line"><span class="regexp">            el: "#app",</span></span><br><span class="line"><span class="regexp">            data: &#123;</span></span><br><span class="line"><span class="regexp">                age: 18</span></span><br><span class="line"><span class="regexp">            &#125;</span></span><br><span class="line"><span class="regexp">        &#125;);</span></span><br><span class="line"><span class="regexp">    &lt;/</span>script&gt;</span><br><span class="line"></span><br><span class="line">&lt;<span class="regexp">/body&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="v-else-if多层判断"><a href="#v-else-if多层判断" class="headerlink" title="v-else-if多层判断"></a>v-else-if多层判断</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">    &lt;div id=<span class="string">"app"</span>&gt;</span><br><span class="line">        &lt;div v-<span class="keyword">if</span>=<span class="string">"age&gt;18"</span>&gt;成年&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">        &lt;div v-else-if="age&lt;0"&gt;输入有误&lt;/</span>div&gt;</span><br><span class="line">        &lt;div v-<span class="keyword">else</span>&gt;未成年&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>div&gt;</span><br><span class="line"></span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">            el: <span class="string">"#app"</span>,</span><br><span class="line">            data: &#123;</span><br><span class="line">                age: <span class="number">18</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;/</span>body&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="v-show展现"><a href="#v-show展现" class="headerlink" title="v-show展现"></a>v-show展现</h3><ul>
+<li>判断符合条件的展现标签</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">    &lt;div id=<span class="string">"app"</span>&gt;</span><br><span class="line">        &lt;div v-show=<span class="string">"age&gt;18"</span>&gt;成年&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>div&gt;</span><br><span class="line"></span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">            el: <span class="string">"#app"</span>,</span><br><span class="line">            data: &#123;</span><br><span class="line">                age: <span class="number">18</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;/</span>body&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="v-for循环"><a href="#v-for循环" class="headerlink" title="v-for循环"></a>v-for循环</h3><h4 id="遍历数组"><a href="#遍历数组" class="headerlink" title="遍历数组"></a>遍历数组</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">    &lt;div id=<span class="string">"app"</span>&gt;</span><br><span class="line">        &lt;div v-<span class="keyword">for</span>=<span class="string">"color in colors"</span>&gt;</span><br><span class="line">            &#123;&#123;color&#125;&#125;</span><br><span class="line">        &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>div&gt;</span><br><span class="line"></span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">            el: <span class="string">"#app"</span>,</span><br><span class="line">            data: &#123;</span><br><span class="line">                colors: [<span class="string">"red"</span>,<span class="string">"green"</span>,<span class="string">"blue"</span>]</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;/</span>body&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="遍历对象"><a href="#遍历对象" class="headerlink" title="遍历对象"></a>遍历对象</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">    &lt;div id=<span class="string">"app"</span>&gt;</span><br><span class="line">        &lt;div v-<span class="keyword">for</span>=<span class="string">"(value,key,index) in person"</span>&gt;</span><br><span class="line">            &#123;&#123;index&#125;&#125;,&#123;&#123;key&#125;&#125;,&#123;&#123;value&#125;&#125;</span><br><span class="line">        &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>div&gt;</span><br><span class="line"></span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">            el: <span class="string">"#app"</span>,</span><br><span class="line">            data: &#123;</span><br><span class="line">                person: &#123;</span><br><span class="line">                    name: <span class="string">"zhangsan"</span>,</span><br><span class="line">                    age: <span class="number">18</span>,</span><br><span class="line">                    address: <span class="string">"China"</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;/</span>body&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
+      <categories>
+        <category>HTML/CSS/JS</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【骚操作】Windows快速在当前目录下打开CMD</title>
+    <url>/2020/10/03/Windows%E5%BF%AB%E9%80%9F%E5%9C%A8%E5%BD%93%E5%89%8D%E7%9B%AE%E5%BD%95%E4%B8%8B%E6%89%93%E5%BC%80CMD/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Windows快速在当前目录下打开CMD</p>
+<a id="more"></a>
+
+<h2 id="打开CMD"><a href="#打开CMD" class="headerlink" title="打开CMD"></a>打开CMD</h2><ul>
+<li><p>进入想要使用CMD访问的目录</p>
+</li>
+<li><p>在资源管理器的路径栏，路径内容替换为<code>cmd</code>-&gt;回车</p>
+</li>
+</ul>
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
+      <categories>
+        <category>Windows</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【笔记】使用脚手架开发Vue项目</title>
+    <url>/2020/10/03/%E4%BD%BF%E7%94%A8%E8%84%9A%E6%89%8B%E6%9E%B6%E5%BC%80%E5%8F%91Vue%E9%A1%B9%E7%9B%AE/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>使用脚手架开发Vue项目</p>
+<a id="more"></a>
+
+<h2 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h2><h3 id="安装vue脚手架"><a href="#安装vue脚手架" class="headerlink" title="安装vue脚手架"></a>安装vue脚手架</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install vue-cli -g</span><br></pre></td></tr></table></figure>
+
+<h3 id="查看版本号"><a href="#查看版本号" class="headerlink" title="查看版本号"></a>查看版本号</h3><ul>
+<li>查看版本号，验证是否安装成功</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vue --version</span><br></pre></td></tr></table></figure>
+
+<h3 id="生成项目"><a href="#生成项目" class="headerlink" title="生成项目"></a>生成项目</h3><blockquote>
+<p><code>项目名</code></p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vue init webpack &lt;name&gt;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>配置：</p>
+<blockquote>
+<p>项目名：直接回车，默认为刚刚指定的项目名<br>项目描述：直接回车，默认为<code>A Vue.js project</code><br>作者信息：直接回车，默认为git的作者信息<br>Vue构建：直接回车，默认为<code>standalone</code><br>解决路由问题：输入<code>Y</code>，回车<br>Vue语法警告：输入<code>n</code>，回车<br>单元测试：输入<code>n</code>，回车<br>e2e测试：输入<code>n</code>，回车<br>构建工具：直接回车，默认为NPM</p>
+</blockquote>
+</blockquote>
+<h3 id="启动项目"><a href="#启动项目" class="headerlink" title="启动项目"></a>启动项目</h3><ul>
+<li>在开发环境启动</li>
+</ul>
+<blockquote>
+<p><code>&lt;name&gt;</code>：项目名</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> &lt;name&gt;</span><br><span class="line">npm run dev</span><br></pre></td></tr></table></figure>
+
+<h3 id="完成构建"><a href="#完成构建" class="headerlink" title="完成构建"></a>完成构建</h3><ul>
+<li>根据提示的域名访问项目</li>
+</ul>
+<p><img src="/images/20201003193755/01.png" alt="01.png"></p>
+<h2 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h2><h2 id="未完待更"><a href="#未完待更" class="headerlink" title="未完待更"></a>未完待更</h2>]]></content>
+      <categories>
+        <category>HTML/CSS/JS</category>
+      </categories>
+  </entry>
 </search>

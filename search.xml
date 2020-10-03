@@ -25641,6 +25641,22 @@
 </ul>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git push</span><br></pre></td></tr></table></figure>
 
+<h4 id="首次推送"><a href="#首次推送" class="headerlink" title="首次推送"></a>首次推送</h4><ul>
+<li>指定当前git目录对应的远程仓库地址</li>
+</ul>
+<blockquote>
+<p><code>&lt;url&gt;</code>：远程仓库地址</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git remote add origin &lt;url&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>首次推送要指定主分支</li>
+</ul>
+<blockquote>
+<p><code>master</code>：主分支名，可以自定义</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git push --<span class="built_in">set</span>-upstream origin master</span><br></pre></td></tr></table></figure>
+
 <h3 id="克隆"><a href="#克隆" class="headerlink" title="克隆"></a>克隆</h3><ul>
 <li>首次将所有文件从远程仓库直接克隆到本地仓库（当前目录下）</li>
 </ul>
@@ -25654,17 +25670,24 @@
 </ul>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git pull</span><br></pre></td></tr></table></figure>
 
-<h3 id="git配置"><a href="#git配置" class="headerlink" title="git配置"></a>git配置</h3><h4 id="查看所有配置"><a href="#查看所有配置" class="headerlink" title="查看所有配置"></a>查看所有配置</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git config --list</span><br></pre></td></tr></table></figure>
+<h3 id="切换分支"><a href="#切换分支" class="headerlink" title="切换分支"></a>切换分支</h3><blockquote>
+<p><code>&lt;name&gt;</code>：分支名</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git branch -M &lt;name&gt;</span><br></pre></td></tr></table></figure>
 
-<h4 id="配置当前使用者的用户名"><a href="#配置当前使用者的用户名" class="headerlink" title="配置当前使用者的用户名"></a>配置当前使用者的用户名</h4><blockquote>
+<h2 id="git配置"><a href="#git配置" class="headerlink" title="git配置"></a>git配置</h2><h3 id="查看所有配置"><a href="#查看所有配置" class="headerlink" title="查看所有配置"></a>查看所有配置</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git config --list</span><br></pre></td></tr></table></figure>
+
+<h3 id="配置当前使用者的用户名"><a href="#配置当前使用者的用户名" class="headerlink" title="配置当前使用者的用户名"></a>配置当前使用者的用户名</h3><blockquote>
 <p><code>&lt;username&gt;</code>：用户名</p>
 </blockquote>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git config --global user.name <span class="string">"&lt;username&gt;"</span></span><br></pre></td></tr></table></figure>
 
-<h4 id="配置当前使用者的邮箱"><a href="#配置当前使用者的邮箱" class="headerlink" title="配置当前使用者的邮箱"></a>配置当前使用者的邮箱</h4><blockquote>
+<h3 id="配置当前使用者的邮箱"><a href="#配置当前使用者的邮箱" class="headerlink" title="配置当前使用者的邮箱"></a>配置当前使用者的邮箱</h3><blockquote>
 <p><code>&lt;email&gt;</code>：邮箱</p>
 </blockquote>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git config --clobal user.email <span class="string">"&lt;email&gt;"</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="重置用户名密码信息"><a href="#重置用户名密码信息" class="headerlink" title="重置用户名密码信息"></a>重置用户名密码信息</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git config --system --<span class="built_in">unset</span> credential.helper</span><br></pre></td></tr></table></figure>
 
 <h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
   </entry>

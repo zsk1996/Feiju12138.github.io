@@ -16,10 +16,21 @@ SpringBoot注解知识点笔记
 - @SpringBootApplication
 - 描述SpringBoot项目的启动类，在类中会定义一个main方法，main方法会在运行时读取配置文件，并且加载指定资源，进行初始化操作
 
+## 添加包扫描
+
+- @ComponentScan("")
+- 描述SpringBoot项目的启动类
+- 将包名定义为参数，将指定包及子包下的类定义为Bean
+
+
+- @MapperScan("")
+- 将包名定义为参数，告诉Mybatis框架，为指定的包中所有的接口创建代理对象
+
 ## 定义普通的组件
 
 - @Component
 - 可以在业务类中通过@Autowired注解从Bean池中获取并注入对象
+- 如果没有指定bean的名字，则默认为类名首字母小写（前提是起名要规范）
 
 ## SpringMVC
 
@@ -38,10 +49,16 @@ SpringBoot注解知识点笔记
 - @Controller
 - 标注控制层，是一种特殊的@Component
 
-## Rest风格的响应
+## 描述数据层实现类对象
+
+- @Repository
+- 描述在类上，是一种特殊的@Component
+
+## 响应到客户端
 
 - @ResponseBody
-- 将字符串返回给AJAX
+- 当使用此注解描述控制层方法时，用于告诉Spring框架，这个方法返回值可以按照特定格式（例如JSON）进行转换，将转换以后的结果写到response对象的相应体中
+- 方法的返回值不在封装为ModelAndView对象，不会再交给解析器进行解析，而是直接基于response对象响应到客户端
 
 ### RestController
 
@@ -63,7 +80,17 @@ SpringBoot注解知识点笔记
 - @Param("")
 - 描述参数，可以指定参数
 
-## 注入对象
+### 指定请求参数
+
+- @RequestParam
+- 描述参数，指定被描述的对象为请求接收对象
+
+#### 支持参数个数不匹配
+
+- @RequestParam(required=false)
+- required默认为true，表示必须匹配参数个数，否则会报错
+
+## DI注入对象
 
 - @Autowired
 - 描述属性，可以从Bean池中获取并注入对象，前提是要求实现的类或继承的类由Spring的组件注解标注
@@ -74,8 +101,9 @@ SpringBoot注解知识点笔记
 ### 指定注入对象名
 
 - @Qualifier("")
+- 需要配合@Autowired使用
 - 对象名首字母小写
-- 不能修饰方法
+- 可以描述属性、构造方法、set方法参数
 
 ## 测试类
 
@@ -104,6 +132,11 @@ SpringBoot注解知识点笔记
 - @Bean
 - Spring容器中整个第三方Bean对象时，可以将其Bean对象的创建放在一个方法中，然后使用@Bean注解进行描述，Spring容器管理Bean对象时就会将方法名作为key对Bean对象进行存储
 
+## 允许任何网站通过javascript访问
+
+- @CrossOrigin
+- 标注在类或方法上
+
 ## 延时加载
 
 ### 标注在类上
@@ -121,16 +154,19 @@ SpringBoot注解知识点笔记
 
 ### 单实例
 
-- 单例@Scope("singleton")
+- @Scope("singleton")
+- 不写@Scope参数或不写@Scope默认为单例作用域
 - 单例会将创建的对象放在Bean池中
 - 每个类只会创建一个对象，可以反复被调用
 
 ### 多实例
 
-- 多例@Scope("prototype")
+- @Scope("prototype")
 - 多例在对象使用时创建，使用后销毁
 - 多例创建每个类可以创建多个对象
 - 这个实例创建以后，不会交给spring管理，spring可以对其初始化，但不负责销毁
+
+## 对象生命周期方法
 
 ### 初始化方法
 

@@ -49,9 +49,12 @@ $.ajax({
     // 可以省略（默认为GET请求）
     type: "POST",
     url: url,
+    // 可以省略
+    contentType: "application/json;charset=utf-8",
     // 可以省略（如果无需向服务端传递参数）
     data: params,
     // 可以省略（由ajax函数内部基于返回值进行匹配处理）
+    // 常见参数：html、xml、json、jsonp（跨域）
     dataType: "text",
     // 可以省略（默认为true，表示异步）
     async: true,

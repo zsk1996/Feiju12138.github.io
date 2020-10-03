@@ -1,7 +1,7 @@
 ---
 title: 【笔记】将iOS备份移到外置磁盘
 categories:
-  - MacOS
+  - Apple
 date: 2020-07-21 18:37:05
 ---
 

@@ -71,6 +71,9 @@ date: 2020-08-25 17:06:03
 
 - 在官网配置项目参数，下载打包的新项目[https://start.spring.io](https://start.spring.io)
 
+> `SNAPSHOT`：快照版本
+> `M2`：增加重要功能的版本，不是正式版
+
 ![11.png](/images/20200825170603/11.png)
 
 - 解压，导入项目到STS

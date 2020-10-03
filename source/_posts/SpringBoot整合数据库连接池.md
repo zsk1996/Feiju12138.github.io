@@ -48,6 +48,23 @@ spring.datasource.username=root
 spring.datasource.password=123456
 ```
 
+### 更多配置
+
+- 在`src/main/resources/application.properties`配置连接池
+- 最大连接数通常设置为`最大线程数*核心数+硬盘数`
+
+``` properties
+spring.datasource.type=com.zaxxer.hikari.HikariDataSource
+spring.datasource.hikari.minimum-idle=5
+spring.datasource.hikari.maximum-pool-size=15
+spring.datasource.hikari.auto-commit=true
+spring.datasource.hikari.idle-timeout=30000
+spring.datasource.hikari.pool-name=DatebookHikariCP
+spring.datasource.hikari.max-lifetime=1800000
+spring.datasource.hikari.connection-timeout=30000
+spring.datasource.hikari.connection-test-query=SELECT 1
+```
+
 ## 创建测试类
 
 ``` java

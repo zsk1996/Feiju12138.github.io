@@ -51,6 +51,12 @@ mysql> help functions;
 mysql> help <msg>;
 ```
 
+## 查看数据库状态
+
+``` mysql
+mysql> STATUS
+```
+
 ## 对数据库的操作
 
 ### 查询所有数据库

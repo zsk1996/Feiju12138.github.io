@@ -25796,7 +25796,7 @@
 <li>根据提示的域名访问项目</li>
 </ul>
 <p><img src="/images/20201003193755/01.png" alt="01.png"></p>
-<h2 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h2><ul>
+<h2 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h2><ol>
 <li><p>在<code>builde/webpack.dev.conf.js</code>文件内定义<code>index.html</code></p>
 </li>
 <li><p>在项目根目录的<code>index.html</code>文件定义了挂在点</p>
@@ -25809,17 +25809,25 @@
 </li>
 <li><p><code>.vue</code>文件中有三部分内容</p>
 </li>
-</ul>
+</ol>
 <blockquote>
 <p><code>&lt;template&gt;&lt;/template&gt;</code>：模版，实际上就是一段html代码<br><code>&lt;script&gt;&lt;/script&gt;</code>：js脚本<br><code>&lt;style&gt;&lt;/style&gt;</code>：样式</p>
 </blockquote>
-<ul>
+<ol start="7">
 <li><p>静态资源文件放在<code>src/assets</code></p>
 </li>
 <li><p>组件在页面中最终就是一个标签</p>
 </li>
-</ul>
-<h2 id="未完待更"><a href="#未完待更" class="headerlink" title="未完待更"></a>未完待更</h2>]]></content>
+<li><p>定义路由的文件放在<code>src/router/index.js</code></p>
+</li>
+</ol>
+<blockquote>
+<p><code>path</code>：定义访问路径<br><code>name</code>：定义组件的名称<br><code>component</code>：定义组件文件名（存放在<code>src/components/</code>目录下），不含后缀名</p>
+</blockquote>
+<ol start="10">
+<li>根据路由访问自定义组件</li>
+</ol>
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
       <categories>
         <category>HTML/CSS/JS</category>
       </categories>
@@ -25927,23 +25935,28 @@
 <h3 id="计划任务的操作"><a href="#计划任务的操作" class="headerlink" title="计划任务的操作"></a>计划任务的操作</h3><h4 id="加载计划任务"><a href="#加载计划任务" class="headerlink" title="加载计划任务"></a>加载计划任务</h4><ul>
 <li>start和unload之前必须先加载计划任务</li>
 </ul>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">launchctl load com.demo.plist</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><code>&lt;plist&gt;</code>：<code>.plist</code>结尾的计划任务配置文件</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">launchctl load &lt;plist&gt;</span><br></pre></td></tr></table></figure>
+
+<h5 id="将plist文件中无效的key覆盖掉"><a href="#将plist文件中无效的key覆盖掉" class="headerlink" title="将plist文件中无效的key覆盖掉"></a>将plist文件中无效的key覆盖掉</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">launchctl load -w &lt;plist&gt;</span><br></pre></td></tr></table></figure>
 
 <h4 id="删除计划任务"><a href="#删除计划任务" class="headerlink" title="删除计划任务"></a>删除计划任务</h4><ul>
 <li>如果任务修改了，那么必须先unload，然后重新load</li>
 </ul>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">launchctl unload com.demo.plist</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">launchctl unload &lt;plist&gt;</span><br></pre></td></tr></table></figure>
 
 <h4 id="查看所有计划任务"><a href="#查看所有计划任务" class="headerlink" title="查看所有计划任务"></a>查看所有计划任务</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">launchctl list</span><br></pre></td></tr></table></figure>
 
-<h5 id="查看指定计划任务"><a href="#查看指定计划任务" class="headerlink" title="查看指定计划任务"></a>查看指定计划任务</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">launchctl list | grep <span class="string">"com.demo"</span></span><br></pre></td></tr></table></figure>
+<h5 id="查看指定计划任务"><a href="#查看指定计划任务" class="headerlink" title="查看指定计划任务"></a>查看指定计划任务</h5><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">launchctl list | grep <span class="string">"&lt;plist&gt;"</span></span><br></pre></td></tr></table></figure>
 
 <h4 id="开始计划任务"><a href="#开始计划任务" class="headerlink" title="开始计划任务"></a>开始计划任务</h4><ul>
 <li>立即测试计划任务，不论时间到没到</li>
 </ul>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">launchctl start com.demo.plist</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">launchctl start &lt;plist&gt;</span><br></pre></td></tr></table></figure>
 
-<h4 id="结束计划任务"><a href="#结束计划任务" class="headerlink" title="结束计划任务"></a>结束计划任务</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">launchctl stop com.demo.plist</span><br></pre></td></tr></table></figure>
+<h4 id="结束计划任务"><a href="#结束计划任务" class="headerlink" title="结束计划任务"></a>结束计划任务</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">launchctl stop &lt;plist&gt;</span><br></pre></td></tr></table></figure>
 
 <h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://www.jianshu.com/p/4addd9b455f2" target="_blank" rel="noopener">间书——繁著</a></p>
 ]]></content>

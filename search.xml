@@ -3817,7 +3817,9 @@
 <p>与ping要等待某一主机连接超时或发回反馈信息不同，fping给一个主机发送完数据包后，马上给下一个主机发送数据包，实现多主机同时ping。如果某一主机ping通，则此主机将被打上标记，并从等待列表中移除，如果没ping通，说明主机无法到达，主机仍然留在等待列表中，等待后续操作。</p>
 <a id="more"></a>
 
-<h2 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h2><h3 id="Ping-网段"><a href="#Ping-网段" class="headerlink" title="Ping 网段"></a>Ping 网段</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">fping -g 192.168.1.1/32</span><br><span class="line">fping -g 192.168.1.0 192.168.1.255</span><br></pre></td></tr></table></figure>
+<h2 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h2><h3 id="Ping-网段"><a href="#Ping-网段" class="headerlink" title="Ping 网段"></a>Ping 网段</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">fping -g 192.168.1.0 192.168.1.255</span><br></pre></td></tr></table></figure>
+
+<h4 id="Ping全网段"><a href="#Ping全网段" class="headerlink" title="Ping全网段"></a>Ping全网段</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">fping -g 192.168.1.1/24</span><br></pre></td></tr></table></figure>
 
 <h3 id="显示可ping通的目标"><a href="#显示可ping通的目标" class="headerlink" title="显示可ping通的目标"></a>显示可ping通的目标</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">fping -a</span><br></pre></td></tr></table></figure>
 
@@ -6776,15 +6778,23 @@
 
 <h3 id="编辑配置文件-1"><a href="#编辑配置文件-1" class="headerlink" title="编辑配置文件"></a>编辑配置文件</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">vim /etc/ssh/sshd_config</span><br></pre></td></tr></table></figure>
 
-<h3 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h3><ul>
-<li>去掉<code>Port 22</code>、<code>ListenAddress ::</code>、<code>ListenAddress 0.0.0.0</code>前面的<code>#</code></li>
-<li>去掉<code>PermitRootLogin  without-password</code>前面的<code>#</code>并修改为<code>PermitRootLogin yes</code></li>
+<h3 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h3><h4 id="去除端口号注释-1"><a href="#去除端口号注释-1" class="headerlink" title="去除端口号注释"></a>去除端口号注释</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">Port 22</span><br></pre></td></tr></table></figure>
+
+<h4 id="去除监听地址注释-1"><a href="#去除监听地址注释-1" class="headerlink" title="去除监听地址注释"></a>去除监听地址注释</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">ListenAddress 0.0.0.0</span><br><span class="line">ListenAddress ::</span><br></pre></td></tr></table></figure>
+
+<h4 id="允许远程登录-1"><a href="#允许远程登录-1" class="headerlink" title="允许远程登录"></a>允许远程登录</h4><ul>
+<li>去掉<code>PermitRootLogin without-password</code>前面的<code>#</code>并修改为<code>PermitRootLogin yes</code></li>
 </ul>
+<p>Kali要严格的将<code>PermitRootLogin prohibit-password</code>改为<code>PermitRootLogin yes</code>才能实现远程使用root身份登陆</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">PermitRootLogin yes</span><br></pre></td></tr></table></figure>
+
 <h3 id="重启-ssh-服务"><a href="#重启-ssh-服务" class="headerlink" title="重启 ssh 服务"></a>重启 ssh 服务</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">/etc/init.d/ssh restart</span><br><span class="line">service ssh restart</span><br></pre></td></tr></table></figure>
 
 <h3 id="查看-ssh-状态"><a href="#查看-ssh-状态" class="headerlink" title="查看 ssh 状态"></a>查看 ssh 状态</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">service ssh status</span><br></pre></td></tr></table></figure>
 
-<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://blog.csdn.net/trackle400/article/details/52755571" target="_blank" rel="noopener">CSDN——dh2580</a><br><a href="https://www.cnblogs.com/yinheyi/p/6266748.html" target="_blank" rel="noopener">博客园——殷大侠</a></p>
+<h3 id="设置开机自启"><a href="#设置开机自启" class="headerlink" title="设置开机自启"></a>设置开机自启</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sudo systemctl <span class="built_in">enable</span> ssh</span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://blog.csdn.net/trackle400/article/details/52755571" target="_blank" rel="noopener">CSDN——dh2580</a><br><a href="https://www.cnblogs.com/yinheyi/p/6266748.html" target="_blank" rel="noopener">博客园——殷大侠</a><br><a href="https://blog.csdn.net/fandroid/article/details/86799932" target="_blank" rel="noopener">CSDN——fandroid</a><br><a href="https://blog.csdn.net/weixin_42551369/article/details/88946622" target="_blank" rel="noopener">CSDN——Tz.</a></p>
 ]]></content>
       <categories>
         <category>Linux</category>
@@ -25798,6 +25808,8 @@
 <li>根据提示的域名访问项目</li>
 </ul>
 <p><img src="/images/20201003193755/01.png" alt="01.png"></p>
+<h3 id="打包发布"><a href="#打包发布" class="headerlink" title="打包发布"></a>打包发布</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm run build</span><br></pre></td></tr></table></figure>
+
 <h2 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h2><ol>
 <li><p>在<code>builde/webpack.dev.conf.js</code>文件内定义<code>index.html</code></p>
 </li>

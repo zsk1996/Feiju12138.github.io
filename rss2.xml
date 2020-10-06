@@ -9,7 +9,7 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>捕捉一只爱折腾的绯鞠</description>
-    <pubDate>Mon, 05 Oct 2020 06:00:45 GMT</pubDate>
+    <pubDate>Mon, 05 Oct 2020 09:12:49 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
@@ -19,12 +19,13 @@
       <pubDate>Mon, 05 Oct 2020 04:43:27 GMT</pubDate>
       <description>
       
-        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;基于Vue，扩展第三方vue-element-admin，在它的上面进行二次开发&lt;/p&gt;
+        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;VEA是一套成熟的后台管理系统平台，是一个Vue项目半成品&lt;/p&gt;
+&lt;p&gt;基于Vue，扩展第三方vue-element-admin，在它的上面进行二次开发&lt;/p&gt;
       
       </description>
       
       
-      <content:encoded><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>基于Vue，扩展第三方vue-element-admin，在它的上面进行二次开发</p><a id="more"></a><h2 id="克隆项目"><a href="#克隆项目" class="headerlink" title="克隆项目"></a>克隆项目</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/PanJiaChen/vue-element-admin.git</span><br></pre></td></tr></table></figure><h2 id="下载依赖"><a href="#下载依赖" class="headerlink" title="下载依赖"></a>下载依赖</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> vue-element-admin</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure><h2 id="启动项目"><a href="#启动项目" class="headerlink" title="启动项目"></a>启动项目</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run dev</span><br></pre></td></tr></table></figure><h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content:encoded>
+      <content:encoded><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>VEA是一套成熟的后台管理系统平台，是一个Vue项目半成品</p><p>基于Vue，扩展第三方vue-element-admin，在它的上面进行二次开发</p><a id="more"></a><h2 id="克隆项目"><a href="#克隆项目" class="headerlink" title="克隆项目"></a>克隆项目</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/PanJiaChen/vue-element-admin.git</span><br></pre></td></tr></table></figure><h2 id="下载依赖"><a href="#下载依赖" class="headerlink" title="下载依赖"></a>下载依赖</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> vue-element-admin</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure><h2 id="启动项目"><a href="#启动项目" class="headerlink" title="启动项目"></a>启动项目</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run dev</span><br></pre></td></tr></table></figure><h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content:encoded>
       
       <comments>https://feiju12138.github.io/2020/10/05/VueElementAdmin%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/#disqus_thread</comments>
     </item>

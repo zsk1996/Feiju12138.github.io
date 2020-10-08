@@ -11798,7 +11798,7 @@
 <figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="meta">spring.thymeleaf.prefix</span>=<span class="string">classpath:/templates/</span></span><br><span class="line"><span class="meta">spring.thymeleaf.suffix</span>=<span class="string">.html</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="只跳转页面"><a href="#只跳转页面" class="headerlink" title="只跳转页面"></a>只跳转页面</h2><ul>
-<li>以后我们写代码可以单独写<code>PageController</code>用于处理页面跳转</li>
+<li>以后我们写代码可以单独写<code>TemplatePageController</code>用于处理页面跳转</li>
 </ul>
 <h3 id="返回字符串（常用）"><a href="#返回字符串（常用）" class="headerlink" title="返回字符串（常用）"></a>返回字符串（常用）</h3><ul>
 <li>通过返回的字符串(string)，根据prefix+string+suffix进行页面跳转</li>
@@ -11827,7 +11827,7 @@
 <h5 id="重定向到站外"><a href="#重定向到站外" class="headerlink" title="重定向到站外"></a>重定向到站外</h5><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@RequestMapping</span>(<span class="string">"/testRedirect"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">testRedirect</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"redirect:/http://localhost:8080/"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h2 id="只响应数据"><a href="#只响应数据" class="headerlink" title="只响应数据"></a>只响应数据</h2><ul>
-<li>以后我们写代码可以单独写<code>JSONController</code>用于响应数据</li>
+<li>以后我们写代码可以单独写<code>JsonObjectController</code>用于响应数据</li>
 </ul>
 <h3 id="返回Map对象（常用）"><a href="#返回Map对象（常用）" class="headerlink" title="返回Map对象（常用）"></a>返回Map对象（常用）</h3><ul>
 <li>由<code>@ResponseBody</code>注解标注，ModelAndView会自动将返回值转换为json格式字符串</li>
@@ -25620,7 +25620,7 @@
 <h3 id="Javascript字符串转换为JSON对象"><a href="#Javascript字符串转换为JSON对象" class="headerlink" title="Javascript字符串转换为JSON对象"></a>Javascript字符串转换为JSON对象</h3><blockquote>
 <p><code>&lt;js&gt;</code>：JSON格式的JS字符串</p>
 </blockquote>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> json = <span class="built_in">JSON</span>.stringiry(<span class="xml"><span class="tag">&lt;<span class="name">js</span>&gt;</span>)</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> json = <span class="built_in">JSON</span>.stringify(<span class="xml"><span class="tag">&lt;<span class="name">js</span>&gt;</span>)</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
       <categories>
@@ -26035,6 +26035,52 @@
 <h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
       <categories>
         <category>HTML/CSS/JS</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【笔记】Yaml学习笔记</title>
+    <url>/2020/10/08/Yaml%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>YAML是一个可读性高，用来表达资料序列化的格式。YAML参考了其他多种语言，包括：C语言、Python、Perl，并从XML、电子邮件的数据格式（RFC 2822）中获得灵感。Clark Evans在2001年首次发表了这种语言，另外Ingy döt Net与Oren Ben-Kiki也是这语言的共同设计者。目前已经有数种编程语言或脚本语言支持（或者说解析）这种语言。</p>
+<p>YAML是”YAML Ain’t a Markup Language”（YAML不是一种标记语言）的递归缩写。（<a href="https://zh.wikipedia.org/wiki/YAML" target="_blank" rel="noopener">维基百科</a>）</p>
+<a id="more"></a>
+
+<h2 id="文件格式"><a href="#文件格式" class="headerlink" title="文件格式"></a>文件格式</h2><ul>
+<li><code>.yml</code>文件</li>
+<li>键值对形式表述数据，中间用<code>:</code>分隔，<code>:</code>和值之间必须有一个空格分隔</li>
+<li>子级元素必须根据父级元素缩进，缩进必须为2个空格</li>
+</ul>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">father:</span></span><br><span class="line">  <span class="attr">son:</span> <span class="string">zhangsan</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><h3 id="字面量"><a href="#字面量" class="headerlink" title="字面量"></a>字面量</h3><ul>
+<li>字符串（可以不加引号）、数值、布尔值</li>
+</ul>
+<p>SpringBoot项目中配置数据库密码时，当表示0开头的字符串时，要加上引号，原因是0开头的数字会被解析为8进制数</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">student:</span></span><br><span class="line">  <span class="attr">string:</span> <span class="string">zhangsan</span></span><br><span class="line">  <span class="attr">number:</span> <span class="number">18</span></span><br><span class="line">  <span class="attr">boolean:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="对象、Map"><a href="#对象、Map" class="headerlink" title="对象、Map"></a>对象、Map</h3><ul>
+<li>常规写法</li>
+</ul>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">student:</span></span><br><span class="line">  <span class="attr">string:</span> <span class="string">zhangsan</span></span><br><span class="line">  <span class="attr">number:</span> <span class="number">18</span></span><br><span class="line">  <span class="attr">boolean:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>行内写法（与JSON格式相近，但注意空格）</li>
+</ul>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">student:</span> <span class="string">&#123;string:</span> <span class="string">zhangsan,</span> <span class="attr">number:</span> <span class="number">18</span><span class="string">,</span> <span class="attr">boolean:</span> <span class="literal">true</span><span class="string">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><ul>
+<li>常规写法</li>
+</ul>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">student:</span></span><br><span class="line">  <span class="attr">string:</span> </span><br><span class="line">  <span class="bullet">-</span> <span class="string">zhangsan</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">lisi</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>行内写法</li>
+</ul>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">student:</span></span><br><span class="line">  <span class="attr">string:</span> <span class="string">[zhangsan,</span> <span class="string">lisi]</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://www.bilibili.com/video/BV1KE411K7PH" target="_blank" rel="noopener">哔哩哔哩——黎曼的猜想</a></p>
+]]></content>
+      <categories>
+        <category>前言</category>
       </categories>
   </entry>
 </search>

@@ -9,8 +9,25 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>捕捉一只爱折腾的绯鞠</description>
-    <pubDate>Thu, 08 Oct 2020 07:34:57 GMT</pubDate>
+    <pubDate>Fri, 09 Oct 2020 06:44:46 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>【笔记】防止IDEA编辑thymeleaf渲染的html模版报错</title>
+      <link>https://feiju12138.github.io/2020/10/09/%E9%98%B2%E6%AD%A2IDEA%E7%BC%96%E8%BE%91thymeleaf%E6%B8%B2%E6%9F%93%E7%9A%84html%E6%A8%A1%E7%89%88%E6%8A%A5%E9%94%99/</link>
+      <guid>https://feiju12138.github.io/2020/10/09/%E9%98%B2%E6%AD%A2IDEA%E7%BC%96%E8%BE%91thymeleaf%E6%B8%B2%E6%9F%93%E7%9A%84html%E6%A8%A1%E7%89%88%E6%8A%A5%E9%94%99/</guid>
+      <pubDate>Fri, 09 Oct 2020 06:42:40 GMT</pubDate>
+      <description>
+      
+        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;防止IDEA编辑thymeleaf渲染的html模版报错&lt;/p&gt;
+      
+      </description>
+      
+      
+      <content:encoded><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>防止IDEA编辑thymeleaf渲染的html模版报错</p><a id="more"></a><h2 id="防止报错"><a href="#防止报错" class="headerlink" title="防止报错"></a>防止报错</h2><ul><li>在<code>&lt;html&gt;&lt;/html&gt;</code>标签内添加属性</li></ul><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">xmlns:th</span>=<span class="string">"http://www.thymeleaf.org"</span>&gt;</span></span><br><span class="line">    ...</span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure><h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content:encoded>
+      
+      <comments>https://feiju12138.github.io/2020/10/09/%E9%98%B2%E6%AD%A2IDEA%E7%BC%96%E8%BE%91thymeleaf%E6%B8%B2%E6%9F%93%E7%9A%84html%E6%A8%A1%E7%89%88%E6%8A%A5%E9%94%99/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>【笔记】Yaml学习笔记</title>
@@ -80,23 +97,6 @@
       <content:encoded><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Windows计划任务</p><a id="more"></a><h2 id="计划任务"><a href="#计划任务" class="headerlink" title="计划任务"></a>计划任务</h2><ul><li>搜索栏搜索<code>compmgmt.msc</code>打开<code>计算机管理</code></li></ul><p><img src="/images/20201004132939/01.png" alt="01.png"></p><ul><li><code>系统工具</code>-&gt;<code>任务计划程序</code>-&gt;<code>任务计划程序库</code></li></ul><p><img src="/images/20201004132939/02.png" alt="02.png"></p><ul><li>右键<code>任务计划程序库</code>-&gt;<code>新建基本任务</code></li></ul><p><img src="/images/20201004132939/03.png" alt="03.png"></p><ul><li>编辑计划任务的名称和描述</li></ul><p><img src="/images/20201004132939/04.png" alt="04.png"></p><ul><li>配置计划任务执行频率</li></ul><p><img src="/images/20201004132939/05.png" alt="05.png"></p><ul><li>配置计划任务执行时间</li></ul><p><img src="/images/20201004132939/06.png" alt="06.png"></p><ul><li>配置计划任务执行的操作</li></ul><p><img src="/images/20201004132939/07.png" alt="07.png"></p><ul><li>添加需要执行的脚本或程序</li></ul><p><img src="/images/20201004132939/08.png" alt="08.png"></p><ul><li>确认配置无误，点击<code>完成</code></li></ul><p><img src="/images/20201004132939/09.png" alt="09.png"></p><h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://blog.csdn.net/liu050604/article/details/82590504?utm_medium=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-BlogCommendFromMachineLearnPai2-1.channel_param" target="_blank" rel="noopener">CSDN——易轩风楊</a></p>]]></content:encoded>
       
       <comments>https://feiju12138.github.io/2020/10/04/Windows%E8%AE%A1%E5%88%92%E4%BB%BB%E5%8A%A1/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>【笔记】使用脚手架开发Vue项目</title>
-      <link>https://feiju12138.github.io/2020/10/03/%E4%BD%BF%E7%94%A8%E8%84%9A%E6%89%8B%E6%9E%B6%E5%BC%80%E5%8F%91Vue%E9%A1%B9%E7%9B%AE/</link>
-      <guid>https://feiju12138.github.io/2020/10/03/%E4%BD%BF%E7%94%A8%E8%84%9A%E6%89%8B%E6%9E%B6%E5%BC%80%E5%8F%91Vue%E9%A1%B9%E7%9B%AE/</guid>
-      <pubDate>Sat, 03 Oct 2020 11:37:55 GMT</pubDate>
-      <description>
-      
-        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;使用脚手架开发Vue项目&lt;/p&gt;
-      
-      </description>
-      
-      
-      <content:encoded><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>使用脚手架开发Vue项目</p><a id="more"></a><h2 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h2><h3 id="安装vue脚手架"><a href="#安装vue脚手架" class="headerlink" title="安装vue脚手架"></a>安装vue脚手架</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install vue-cli -g</span><br></pre></td></tr></table></figure><h3 id="查看版本号"><a href="#查看版本号" class="headerlink" title="查看版本号"></a>查看版本号</h3><ul><li>查看版本号，验证是否安装成功</li></ul><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vue --version</span><br></pre></td></tr></table></figure><h3 id="生成项目"><a href="#生成项目" class="headerlink" title="生成项目"></a>生成项目</h3><blockquote><p><code>项目名</code></p></blockquote><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vue init webpack &lt;name&gt;</span><br></pre></td></tr></table></figure><blockquote><p>配置：</p><blockquote><p>项目名：直接回车，默认为刚刚指定的项目名<br>项目描述：直接回车，默认为<code>A Vue.js project</code><br>作者信息：直接回车，默认为git的作者信息<br>Vue构建：直接回车，默认为<code>standalone</code><br>解决路由问题：输入<code>Y</code>，回车<br>Vue语法警告：输入<code>n</code>，回车<br>单元测试：输入<code>n</code>，回车<br>e2e测试：输入<code>n</code>，回车<br>构建工具：直接回车，默认为NPM</p></blockquote></blockquote><h3 id="启动项目"><a href="#启动项目" class="headerlink" title="启动项目"></a>启动项目</h3><ul><li>在开发环境启动</li></ul><blockquote><p><code>&lt;name&gt;</code>：项目名</p></blockquote><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> &lt;name&gt;</span><br><span class="line">npm run dev</span><br></pre></td></tr></table></figure><h3 id="完成构建"><a href="#完成构建" class="headerlink" title="完成构建"></a>完成构建</h3><ul><li>根据提示的域名访问项目</li></ul><p><img src="/images/20201003193755/01.png" alt="01.png"></p><h3 id="打包发布"><a href="#打包发布" class="headerlink" title="打包发布"></a>打包发布</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run build</span><br></pre></td></tr></table></figure><h2 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h2><ol><li><p>在<code>builde/webpack.dev.conf.js</code>文件内定义<code>index.html</code></p></li><li><p>在项目根目录的<code>index.html</code>文件定义了挂在点</p></li><li><p><code>index.html</code>文件会自动加载<code>src/mail.js</code>文件</p></li><li><p><code>src/mail.js</code>导入vue.js，并创建了Vue对象，引入了根组件<code>App</code>（src/App.vue）</p></li><li><p>网页内容写在自定义组件内，组件的存放位置<code>src/components/</code></p></li><li><p><code>.vue</code>文件中有三部分内容</p></li></ol><blockquote><p><code>&lt;template&gt;&lt;/template&gt;</code>：模版，实际上就是一段html代码<br><code>&lt;script&gt;&lt;/script&gt;</code>：js脚本<br><code>&lt;style&gt;&lt;/style&gt;</code>：样式</p></blockquote><ol start="7"><li><p>静态资源文件放在<code>src/assets</code></p></li><li><p>组件在页面中最终就是一个标签</p></li><li><p>定义路由的文件放在<code>src/router/index.js</code></p></li></ol><blockquote><p><code>path</code>：定义访问路径<br><code>name</code>：定义组件的名称<br><code>component</code>：定义组件文件名（存放在<code>src/components/</code>目录下），不含后缀名</p></blockquote><ol start="10"><li>根据路由访问自定义组件</li></ol><h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content:encoded>
-      
-      <comments>https://feiju12138.github.io/2020/10/03/%E4%BD%BF%E7%94%A8%E8%84%9A%E6%89%8B%E6%9E%B6%E5%BC%80%E5%8F%91Vue%E9%A1%B9%E7%9B%AE/#disqus_thread</comments>
     </item>
     
   </channel>

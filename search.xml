@@ -26292,8 +26292,13 @@
 </ul>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (colorIndex &lt; ((useAppleColor) ? sun_lwawt_macosx_LWCToolkit_NUM_APPLE_COLORS : java_awt_SystemColor_NUM_COLORS)) &#123;</span><br></pre></td></tr></table></figure>
 
-<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> build/macosx-x86_64-normal-server-release/jdk/bin </span><br><span class="line">./java -version</span><br><span class="line"></span><br><span class="line">openjdk version <span class="string">"11-internal"</span> 2018-09-25</span><br><span class="line">OpenJDK Runtime Environment (build 11-internal+0-adhoc.hatsunemiku.openjdk)</span><br><span class="line">OpenJDK 64-Bit Server VM (build 11-internal+0-adhoc.hatsunemiku.openjdk, mixed mode)</span><br></pre></td></tr></table></figure>
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> build/macosx-x86_64-normal-server-release/jdk/bin </span><br><span class="line">./java -version</span><br></pre></td></tr></table></figure>
 
+<p><img src="/images/20201011140803/01.png" alt="01.png"></p>
+<ul>
+<li>以后需要使用自己编译的jdk，只要把<code>build/macosx-x86_64-normal-server-release/images/jdk</code>目录拷贝出来即可</li>
+<li>源码为下载的源码</li>
+</ul>
 <h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://www.bilibili.com/video/BV1zT4y177Zf" target="_blank" rel="noopener">哔哩哔哩——CodeSheep</a><br><a href="https://codingnote.cc/p/234919" target="_blank" rel="noopener">CodingNote.cc的博客</a><br><a href="https://github.com/openjdk/jdk/commit/4622a18a" target="_blank" rel="noopener">Github——Matthias Baesken</a><br><a href="https://blog.csdn.net/qq_17239003/article/details/80001680" target="_blank" rel="noopener">CSDN——武泗海</a><br><a href="https://blog.csdn.net/wd2014610/article/details/81636417" target="_blank" rel="noopener">CSDN——向小凯同学学习</a></p>
 ]]></content>
       <categories>

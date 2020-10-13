@@ -62,7 +62,7 @@
 <meta property="og:description" content="前言在分布式模式下，实现“群启”">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-02-04T07:55:10.000Z">
-<meta property="article:modified_time" content="2020-04-25T02:20:25.000Z">
+<meta property="article:modified_time" content="2020-10-12T11:43:42.952Z">
 <meta property="article:author" content="绯鞠">
 <meta name="twitter:card" content="summary">
 
@@ -251,7 +251,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-04-25 10:20:25" itemprop="dateModified" datetime="2020-04-25T10:20:25+08:00">2020-04-25</time>
+                <time title="修改时间：2020-10-12 19:43:42" itemprop="dateModified" datetime="2020-10-12T19:43:42+08:00">2020-10-12</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -259,8 +259,8 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE/" itemprop="url" rel="index">
-                    <span itemprop="name">大数据</span>
+                  <a href="/categories/Big-Data/" itemprop="url" rel="index">
+                    <span itemprop="name">Big Data</span>
                   </a>
                 </span>
             </span>
@@ -293,7 +293,9 @@
 <h2 id="群启-HDFS"><a href="#群启-HDFS" class="headerlink" title="群启 HDFS"></a>群启 HDFS</h2><ul>
 <li>在配置了<code>NameNode</code>的<code>hadoop102</code>群启<code>HDFS</code></li>
 </ul>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">/usr/<span class="built_in">local</span>/Cellar/hadoop/3.2.1/sbin/start-dfs.sh</span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line"><span class="comment">## 确认</span></span><br><span class="line"></span><br><span class="line"><span class="comment">### 在各个计算机上查看程序运行情况</span></span><br><span class="line"></span><br><span class="line">``` sh</span><br><span class="line">jps</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/<span class="built_in">local</span>/Cellar/hadoop/3.2.1/sbin/start-dfs.sh</span><br></pre></td></tr></table></figure>
+
+<h2 id="确认"><a href="#确认" class="headerlink" title="确认"></a>确认</h2><h3 id="在各个计算机上查看程序运行情况"><a href="#在各个计算机上查看程序运行情况" class="headerlink" title="在各个计算机上查看程序运行情况"></a>在各个计算机上查看程序运行情况</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jps</span><br></pre></td></tr></table></figure>
 
 <h3 id="在浏览器上查看计算机运行情况"><a href="#在浏览器上查看计算机运行情况" class="headerlink" title="在浏览器上查看计算机运行情况"></a>在浏览器上查看计算机运行情况</h3><ul>
 <li>进入网页<code>hadoop102:50070</code></li>
@@ -303,7 +305,7 @@
 </ul>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/<span class="built_in">local</span>/Cellar/hadoop/3.2.1/sbin/start-yarn.sh</span><br></pre></td></tr></table></figure>
 
-<h2 id="确认"><a href="#确认" class="headerlink" title="确认"></a>确认</h2><h3 id="在各个计算机上查看程序运行情况"><a href="#在各个计算机上查看程序运行情况" class="headerlink" title="在各个计算机上查看程序运行情况"></a>在各个计算机上查看程序运行情况</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jps</span><br></pre></td></tr></table></figure>
+<h2 id="确认-1"><a href="#确认-1" class="headerlink" title="确认"></a>确认</h2><h3 id="在各个计算机上查看程序运行情况-1"><a href="#在各个计算机上查看程序运行情况-1" class="headerlink" title="在各个计算机上查看程序运行情况"></a>在各个计算机上查看程序运行情况</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jps</span><br></pre></td></tr></table></figure>
 
 <h3 id="在浏览器上查看计算机运行情况-1"><a href="#在浏览器上查看计算机运行情况-1" class="headerlink" title="在浏览器上查看计算机运行情况"></a>在浏览器上查看计算机运行情况</h3><ul>
 <li>进入网页<code>hadoop103:8088</code></li>
@@ -399,7 +401,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置从机"><span class="nav-number">2.</span> <span class="nav-text">配置从机</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#群启-HDFS"><span class="nav-number">3.</span> <span class="nav-text">群启 HDFS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#在浏览器上查看计算机运行情况"><span class="nav-number">3.1.</span> <span class="nav-text">在浏览器上查看计算机运行情况</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#群启-YARN"><span class="nav-number">4.</span> <span class="nav-text">群启 YARN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#确认"><span class="nav-number">5.</span> <span class="nav-text">确认</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#在各个计算机上查看程序运行情况"><span class="nav-number">5.1.</span> <span class="nav-text">在各个计算机上查看程序运行情况</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在浏览器上查看计算机运行情况-1"><span class="nav-number">5.2.</span> <span class="nav-text">在浏览器上查看计算机运行情况</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#完成"><span class="nav-number">6.</span> <span class="nav-text">完成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考文献"><span class="nav-number">7.</span> <span class="nav-text">参考文献</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置从机"><span class="nav-number">2.</span> <span class="nav-text">配置从机</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#群启-HDFS"><span class="nav-number">3.</span> <span class="nav-text">群启 HDFS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#确认"><span class="nav-number">4.</span> <span class="nav-text">确认</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#在各个计算机上查看程序运行情况"><span class="nav-number">4.1.</span> <span class="nav-text">在各个计算机上查看程序运行情况</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在浏览器上查看计算机运行情况"><span class="nav-number">4.2.</span> <span class="nav-text">在浏览器上查看计算机运行情况</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#群启-YARN"><span class="nav-number">5.</span> <span class="nav-text">群启 YARN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#确认-1"><span class="nav-number">6.</span> <span class="nav-text">确认</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#在各个计算机上查看程序运行情况-1"><span class="nav-number">6.1.</span> <span class="nav-text">在各个计算机上查看程序运行情况</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在浏览器上查看计算机运行情况-1"><span class="nav-number">6.2.</span> <span class="nav-text">在浏览器上查看计算机运行情况</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#完成"><span class="nav-number">7.</span> <span class="nav-text">完成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考文献"><span class="nav-number">8.</span> <span class="nav-text">参考文献</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -470,7 +472,7 @@
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">11:14</span>
+    <span title="站点阅读时长">11:16</span>
 </div>
 
         

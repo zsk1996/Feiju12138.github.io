@@ -26614,9 +26614,53 @@
       </categories>
   </entry>
   <entry>
-    <title>SpringAOP学习笔记</title>
+    <title>【笔记】Spring AOP 学习笔记</title>
     <url>/2020/10/17/SpringAOP%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>面向切面的程序设计（Aspect-oriented programming，AOP，又译作面向方面的程序设计、剖面导向程序设计）是计算机科学中的一种程序设计思想，旨在将横切关注点与业务主体进行进一步分离，以提高程序代码的模块化程度。通过在现有代码基础上增加额外的通知（Advice）机制，能够对被声明为“切点（Pointcut）”的代码块进行统一管理与装饰，如“对所有方法名以‘set*’开头的方法添加后台日志”。该思想使得开发人员能够将与代码核心业务逻辑关系不那么密切的功能（如日志功能）添加至程序中，同时又不降低业务代码的可读性。面向切面的程序设计思想也是面向切面软件开发的基础。（<a href="https://zh.wikipedia.org/wiki/面向切面的程序设计" target="_blank" rel="noopener">维基百科</a>）</p>
+<a id="more"></a>
+
+<h2 id="代理方式与配置"><a href="#代理方式与配置" class="headerlink" title="代理方式与配置"></a>代理方式与配置</h2><ul>
+<li><p>在SpringBoot项目中有两种代理对象可以实现AOP，一个是JDK代理，一个是CGLIB代理</p>
+</li>
+<li><p>CGLIB代理为SpringAOP的默认代理对象，它的原理是为目标方法所在的类实现一个子类，通过继承关系实现AOP</p>
+</li>
+<li><p>JDK代理的原理是为目标方法所在的类实现一个兄弟类（也就是说目标方法所在的类必须发生了继承关系，且为子类），JDK代理会实现与目标方法所在的类对应父类的继承关系，从而实现AOP，但JDK代理需要修改SpringBoot配置文件，以yml为例</p>
+</li>
+<li><p>配置的值默认为true表示CGLIB代理，改为false表示JDK代理</p>
+</li>
+</ul>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line">  <span class="attr">aop:</span></span><br><span class="line">    <span class="attr">proxy-target-class:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="实现AOP"><a href="#实现AOP" class="headerlink" title="实现AOP"></a>实现AOP</h2><h3 id="定义一个注解"><a href="#定义一个注解" class="headerlink" title="定义一个注解"></a>定义一个注解</h3><ul>
+<li>如果通过注解的方式定义切入点，首先定义一个自定义注解</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Retention</span>(RetentionPolicy.RUNTIME)</span><br><span class="line"><span class="meta">@Target</span>(ElementType.METHOD)</span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> RequiredLog &#123;</span><br><span class="line">    <span class="function">String <span class="title">value</span><span class="params">()</span> <span class="keyword">default</span> ""</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="定义一个切面"><a href="#定义一个切面" class="headerlink" title="定义一个切面"></a>定义一个切面</h3><ul>
+<li>通过@Aspect定义一个切面类</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Aspect</span></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SysLogAspect</span> </span>&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="在切面中定义切入点"><a href="#在切面中定义切入点" class="headerlink" title="在切面中定义切入点"></a>在切面中定义切入点</h3><ul>
+<li>通过@Pointcut定义一个切入点方法</li>
+</ul>
+<blockquote>
+<p>@annotation()： 通过注解的方式定义切入点，将注解的全局限定名作为参数<br>@bean()：通过指定bean的方式定义切入点，将交给Spring管理的bean名作为参数</p>
+</blockquote>
+<blockquote>
+<p><code>doLog()</code>：该方法仅仅是@Pointcut注解的一个载体，方法体内不需要写任何内容</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Pointcut</span>(<span class="string">"@annotation(com.RequiredLog)"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doLog</span><span class="params">()</span></span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="为切入点定义扩展方法"><a href="#为切入点定义扩展方法" class="headerlink" title="为切入点定义扩展方法"></a>为切入点定义扩展方法</h3><blockquote>
+<p><code>@Around</code>：通过该注解描述的方法可以在目标方法执行之前和之后做功能扩展</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//@Around("@annotation(com.RequiredLog)")</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@Around</span>(<span class="string">"doLog()"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> Object <span class="title">doAround</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
   </entry>
   <entry>
     <title>【恶意代码】蓝屏死机</title>
@@ -26756,6 +26800,22 @@
 ]]></content>
       <categories>
         <category>Windows</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【笔记】java字符串转换为json对象</title>
+    <url>/2020/10/19/java%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E6%8D%A2%E4%B8%BAjson%E5%AF%B9%E8%B1%A1/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>java中将json格式的字符串通过Jackson对象提供的方法转换为json对象</p>
+<a id="more"></a>
+
+<h2 id="转换"><a href="#转换" class="headerlink" title="转换"></a>转换</h2><blockquote>
+<p><code>&lt;str&gt;</code>：json格式的字符串</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">new</span> ObjectMapper().writeValueAsString(&lt;str&gt;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
+      <categories>
+        <category>Java</category>
       </categories>
   </entry>
 </search>

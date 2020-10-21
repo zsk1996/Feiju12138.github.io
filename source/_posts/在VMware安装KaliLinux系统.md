@@ -3,7 +3,7 @@ title: 【笔记】在 VMware 安装 Kali Linux 系统
 date: 2019-11-03 12:30:00
 tags:
 categories:
-- 虚拟机
+- System Installation
 ---
 
 ## 前言

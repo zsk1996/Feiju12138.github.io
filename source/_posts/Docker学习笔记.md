@@ -1,7 +1,7 @@
 ---
 title: 【笔记】Docker学习笔记
 categories:
-  - 云计算
+  - Cloud Computing
 date: 2020-09-10 12:03:32
 ---
 
@@ -181,7 +181,8 @@ docker run <image_id>
 >> `<port_in>`：容器端口
 
 > `--name`：指定容器名称
->> `<name_in>`：容器名称
+>
+> > `<name_in>`：容器名称
 
 ``` sh
 docker run -d -p <port_out>:<port_in> --name <name_in> <name>:<version>

@@ -1,13 +1,15 @@
 ---
 title: 【笔记】安装 Commando VM
 categories:
-  - 虚拟机
+  - Penetration Tests
 date: 2020-01-09 20:13:14
 ---
 
 ## 前言
 
 Commando VM使用Boxstarter，Chocolatey和MyGet软件包来安装软件，并提供许多工具和实用程序来支持渗透测试。Commando VM拥有170多种工具，并且在不断发展壮大，其目标是成为每个渗透测试人员和红军人员事实上的Windows计算机。（[官网](https://www.fireeye.com/blog/threat-research/2019/08/commando-vm-customization-containers-kali.html)）
+
+<font color="red">本文仅用于网络信息防御学习</font>
 
 <!-- more -->
 

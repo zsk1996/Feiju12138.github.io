@@ -1,7 +1,7 @@
 ---
 title: 【笔记】Hadoop 配置日志的聚集
 categories:
-  - 大数据
+  - Big Data
 date: 2020-02-04 16:17:05
 ---
 

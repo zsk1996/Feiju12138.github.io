@@ -279,42 +279,22 @@ public void testFin3() {
 - `${}`在接收到数据后，会直接将数据拼接到SQL语句中，适用于指定SQL子句
 - `${}`如果指定了POJO对象不存在的成员变量，只能用[map方式传参](/2020/08/20/MyBatis学习笔记/#通过map对象传参)
 
-## 参数
+## 标签和参数
 
-### 返回值类型
+> `<select></select>`：查询语句
+>> `id`：与`@Mapper`所标注的类中方法名相对应
+>> `resultType`：与`@Mapper`所标注的类中方法返回值类型（的别名）相对应
+>> `resultMap`：[传送门](/2020/08/20/MyBatis学习笔记/#自定义映射)
 
-``` sh
-<select resultTypt=""></select>
-```
+> `<insert></insert>`：插入语句
+>> `parameterType`：实体类的全局限定名
+>> `useGeneratedKeys`：值为true时表示使用主键
+>> `keyProperty`：指定主键名
 
-## log4j打印日志
+> `<update></update>`：修改语句
+> `<delete></delete>`：删除语句
 
-### 引入log4j
-
-- 在Maven项目中引入log4j的jar包
-
-- 编辑`pom.xml`文件
-
-``` xml
-<dependency>
-    <groupId>org.slf4j</groupId>
-    <artifactId>slf4j-log4j12</artifactId>
-    <version>1.6.4</version>
-</dependency>
-```
-
-### log4j配置文件
-
-- 在`src/main/resources`目录下新建`log4j.properties`配置文件
-
-``` properties
-# Global logging configuration
-log4j.rootLogger=DEBUG, stdout
-# Console output...
-log4j.appender.stdout=org.apache.log4j.ConsoleAppender
-log4j.appender.stdout.layout=org.apache.log4j.PatternLayout
-log4j.appender.stdout.layout.ConversionPattern=%5p [%t] - %m%n
-```
+> `<sql></sql>`：[传送门](/2020/08/20/MyBatis学习笔记/#Mybatis的xml实现sql代码的复用)
 
 ## MyBatis动态SQL标签
 
@@ -511,6 +491,58 @@ jdbc.password=123456
     <property name="username" value="${jdbc.username}"/>
     <property name="password" value="${jdbc.password}"/>
 </dataSource>
+```
+
+## 自定义映射
+
+- resultMap为框架中实现高级映射时采用的一种映射策略
+- 主要用于表中字段与类中属性不匹配、用于多表嵌套查询、用于多表关联查询
+
+### 定义一个查询
+
+``` xml
+<select id="" resultMap="">
+    ...
+</select>
+```
+
+#### 一对一
+
+> `resultMap`->`id`：与查询语句的`resultMap`值相对应
+> `resultMap`->`type`：返回值实体类的全局限定名
+> `<id></id>`：主键字段映射
+> `<result></result>`：自定义映射
+> `column`：对应的查询到结果的数据表字段
+> `property`：对应的类的属性名
+
+``` xml
+<resultMap id="" type="">
+    <id property="id" column="id"></id>
+    <result property="name" column="name"></result>
+</resultMap>
+```
+
+#### 一对多
+
+> `ofType`：结果集中每个结果的类型
+> `collection`->`select`：嵌套查询。@Mapper所标注的类中方法的全局限定名
+> `collection`->`column`与`result`->`column`：均为对应的查询到结果的数据表字段，如果相同可以省略`<result></result>`
+
+``` xml
+<resultMap id="" type="">
+    <collection id="" column="" property="" ofType="" select="">
+        <result column=""></result>
+    </collection>
+</resultMap>
+```
+
+#### 多对一
+
+``` xml
+<resultMap id="" type="">
+    <association id="" column="" property="" select="">
+    </association>
+</resultMap>
 ```
 
 ## 完成

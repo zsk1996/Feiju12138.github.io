@@ -3,7 +3,7 @@ title: 【笔记】安装 Windows 10 系统
 date: 2019-11-14 22:47:07
 tags:
 categories:
-- 系统安装
+- System Installation
 ---
 
 ## 前言

@@ -70,25 +70,50 @@ SpringBoot注解知识点笔记
 - @RestControllerAdvice
 - 等效于同时描述`@ControllerAdvice`和`@ResponseBody`
 
-## 指定访问路径
+## 处理一切的请求方式
 
 - @RequestMapping("")
+- 参数为跳转的链接地址
 - 可以描述类，也可以描述方法
+
+### 定义请求方式
+
+- @RequestMapping(value="",method=RequestMethod.GET)
+- @RequestMapping(value="",method=RequestMethod.POST)
+
+#### Get请求方式
+
+- @GetMapping()
+- 等效于@RequestMapping(method=RequestMethod.GET)
 
 ## 指定参数
 
 - @Param("")
 - 描述参数，可以指定参数
 
+### Rest风格的参数传递
+
+- @PathVariable("")
+- 描述参数，可以指定Rest风格的参数
+- 如果参数列表的参数名和链接的参数名相同，可以不加@PathVariable的参数
+
 ### 指定请求参数
 
 - @RequestParam
 - 描述参数，指定被描述的对象为请求接收对象
+- 用来接收`application/x-www-form-urlencoded`格式数据
 
 #### 支持参数个数不匹配
 
 - @RequestParam(required=false)
 - required默认为true，表示必须匹配参数个数，否则会报错
+
+### 指定请求参数
+
+- @RequestBody
+- 描述参数，指定被描述的对象为请求接收对象
+- `application/json`、`application/xml`格式数据必须用@RequestBody接收
+- 也可以用来接收`application/x-www-form-urlencoded`格式数据
 
 ## DI注入对象
 
@@ -118,7 +143,7 @@ SpringBoot注解知识点笔记
 
 ### 异常处理方法
 
-- @ExceptionHandler(RuntimeException.class)
+- @ExceptionHandler(Throwable.class)
 - 由此注解标注的方法为一个异常处理方法，在注解内部定义的异常类型为此方法可以处理的异常类型，包括异常的子类类型
 - 可以在方法的参数列表传递与异常处理的类型相同类型（或父类类型）的参数
 
@@ -451,5 +476,11 @@ public class SysTimeAspect {
 #### 清除所有缓存
 
 - @Cacheable(allEntries=true)
+
+## 支持跨域访问
+
+- @CrossOrigin
+- 标注在Controller的方法上
+- 使当前URL支持跨域访问
 
 ## 未完待更

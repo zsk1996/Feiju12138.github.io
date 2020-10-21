@@ -1,7 +1,7 @@
 ---
 title: 【笔记】msf 黑入安卓系统
 categories:
-  - 网络安全
+  - Penetration Tests
 date: 2020-01-10 17:29:40
 password: pass
 ---
@@ -9,6 +9,8 @@ password: pass
 ## 前言
 
 使用`msf`工具黑入手机安卓系统（局域网）
+
+<font color="red">本文仅用于网络信息防御学习</font>
 
 <!-- more -->
 

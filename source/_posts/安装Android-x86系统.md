@@ -3,7 +3,7 @@ title: 【笔记】安装 Android-x86 系统
 date: 2019-12-26 13:40:24
 tags:
 categories:
-- 系统安装
+- System Installation
 ---
 
 ## 前言

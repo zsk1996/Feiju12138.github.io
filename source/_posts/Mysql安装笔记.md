@@ -1,7 +1,7 @@
 ---
 title: 【笔记】Mysql安装笔记
 categories:
-  - 云计算
+  - Cloud Computing
 date: 2020-06-03 14:43:18
 ---
 

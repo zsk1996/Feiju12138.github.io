@@ -3,7 +3,7 @@ title: 【笔记】安装 Windows 7 系统
 date: 2019-12-20 15:34:10
 tags:
 categories:
-- 系统安装
+- System Installation
 ---
 
 ## 前言

@@ -3,12 +3,14 @@ title: 【笔记】攻击具有 永恒之蓝 漏洞的Windows
 date: 2019-11-16 17:14:28
 tags:
 categories:
-- 网络安全
+- Penetration Tests
 ---
 
 ## 前言
 
 永恒之蓝（英语：EternalBlue）是美国国家安全局开发的漏洞利用程序，于2017年4月14日被黑客组织影子掮客泄漏。该工具利用445/TCP端口的档案分享协议的漏洞进行散播。[维基百科](https://wikipedia.hk.wjbk.site/zh-hans/永恒之蓝)
+
+<font color="red">本文仅用于网络信息防御学习</font>
 
 <!-- more -->
 

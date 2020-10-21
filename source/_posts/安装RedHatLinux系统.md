@@ -3,7 +3,7 @@ title: 【笔记】安装 Red Hat Linux 系统
 date: 2019-12-22 13:52:31
 tags:
 categories:
-- 系统安装
+- System Installation
 ---
 
 ## 前言

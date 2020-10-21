@@ -1,13 +1,15 @@
 ---
 title: 【笔记】SQL Injection 注入攻击
 categories:
-  - 网络安全
+  - Penetration Tests
 date: 2020-03-27 23:46:23
 ---
 
 ## 前言
 
 SQL注入攻击入门学习笔记
+
+<font color="red">本文仅用于网络信息防御学习</font>
 
 <!-- more -->
 

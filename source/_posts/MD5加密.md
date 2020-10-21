@@ -45,5 +45,52 @@ public class CodeUtil {
 }
 ```
 
-## 完成
+## MD5盐值加密
+
+### 使用Spring中的工具类
+
+``` java
+import org.springframework.util.DigestUtils;
+
+import java.util.UUID;
+
+public class CodeUtil {
+
+    public static void main(String[] args) {
+
+        // 产生随机字符串，让此字符串作为一个加密盐
+        String salt = UUID.randomUUID().toString();
+
+        // 将加盐后的密码进行MD5加密并转换为16进制
+        String password = DigestUtils.md5DigestAsHex(("<pwd>"+salt).getBytes());
+
+    }
+
+}
+```
+
+### 使用Shiro中的工具类
+
+``` java
+import org.apache.shiro.crypto.hash.SimpleHash;
+
+import java.util.UUID;
+
+public class CodeUtil {
+
+    public static void main(String[] args) {
+
+        // 产生随机字符串，让此字符串作为一个加密盐
+        String salt = UUID.randomUUID().toString();
+
+        // 将加盐后的密码进行MD5加密1次并转换为16进制
+        SimpleHash simpleHash = new SimpleHash("MD5", "<pwd>", salt, 1);
+        String password = simpleHash.toHex();
+
+    }
+
+}
+```
+
+## 完成 
 

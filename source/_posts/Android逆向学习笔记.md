@@ -1,7 +1,7 @@
 ---
 title: 【笔记】Android逆向 学习笔记
 categories:
-  - 反编译
+  - Reverse Engineering
 date: 2020-02-14 21:26:03
 ---
 

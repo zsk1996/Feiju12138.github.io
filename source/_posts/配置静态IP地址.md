@@ -1,7 +1,7 @@
 ---
 title: 【笔记】配置静态IP地址
 categories:
-  - 云计算
+  - Cloud Computing
 date: 2020-06-11 16:45:20
 ---
 

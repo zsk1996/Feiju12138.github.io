@@ -1,7 +1,7 @@
 ---
 title: 【笔记】Hadoop 学习笔记
 categories:
-  - 大数据
+  - Big Data
 date: 2020-01-16 09:18:58
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: 【笔记】配置 Hadoop 运行环境
 categories:
-  - 大数据
+  - Big Data
 date: 2020-01-31 23:07:55
 ---
 

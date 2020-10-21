@@ -1,13 +1,15 @@
 ---
 title: 【笔记】通过XSS拿到网站cookie
 categories:
-  - 网络安全
+  - Penetration Tests
 date: 2020-03-27 18:10:13
 ---
 
 ## 前言
 
 通过XSS拿到网站cookie实现无密码登录
+
+<font color="red">本文仅用于网络信息防御学习</font>
 
 <!-- more -->
 

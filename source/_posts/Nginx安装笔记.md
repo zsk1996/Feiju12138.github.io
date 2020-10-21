@@ -1,7 +1,7 @@
 ---
 title: 【笔记】Nginx安装笔记
 categories:
-  - 云计算
+  - Cloud Computing
 date: 2020-06-17 12:00:05
 ---
 

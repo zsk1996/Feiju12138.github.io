@@ -3,12 +3,14 @@ title: 【笔记】安装配置 Metasploit Framework
 date: 2019-11-16 16:30:21
 tags:
 categories:
-- 网络安全
+- Penetration Tests
 ---
 
 ## 前言
 
 Metasploit项目是一个旨在提供安全漏洞信息计算机安全项目，可以协助安全工程师进行渗透测试（penetration testing）及入侵检测系统签名开发。[维基百科](https://wikipedia.hk.wjbk.site/zh-cn/Metasploit)
+
+<font color="red">本文仅用于网络信息防御学习</font>
 
 <!-- more -->
 

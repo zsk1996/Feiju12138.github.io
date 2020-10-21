@@ -3,7 +3,7 @@ title:  【笔记】安装 Deepin Linux 系统
 date: 2019-12-24 13:51:25
 tags:
 categories:
-- 系统安装
+- System Installation
 ---
 
 ## 前言

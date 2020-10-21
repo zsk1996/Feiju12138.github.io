@@ -1,7 +1,7 @@
 ---
 title: 【笔记】快速搭建LAMP架构网站
 categories:
-  - 云计算
+  - Cloud Computing
 date: 2020-02-23 18:02:56
 ---
 

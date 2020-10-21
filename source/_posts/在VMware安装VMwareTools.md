@@ -3,7 +3,7 @@ title: 【笔记】在VMware安装VMwareTools（Kali篇）
 date: 2019-11-03 20:12:19
 tags:
 categories:
-- 虚拟机
+- System Installation
 ---
 
 ## 前言

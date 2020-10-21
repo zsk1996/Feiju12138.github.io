@@ -3,7 +3,7 @@ title: 【笔记】安装 CentOS Linux 系统
 date: 2019-12-10 16:59:10
 tags:
 categories:
-- 系统安装
+- System Installation
 ---
 
 ## 前言

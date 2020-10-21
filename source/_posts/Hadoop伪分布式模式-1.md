@@ -1,7 +1,7 @@
 ---
 title: 【进阶】Hadoop 伪分布式模式
 categories:
-  - 大数据
+  - Big Data
 date: 2020-02-01 12:09:48
 ---
 

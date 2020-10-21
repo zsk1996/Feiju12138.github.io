@@ -1,7 +1,7 @@
 ---
 title: 【笔记】exe 查壳工具
 categories:
-  - 反编译
+  - Reverse Engineering
 date: 2020-03-16 12:58:52
 ---
 

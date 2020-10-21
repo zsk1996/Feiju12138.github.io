@@ -1,7 +1,7 @@
 ---
 title: 【笔记】Hadoop 伪分布式模式
 categories:
-  - 大数据
+  - Big Data
 date: 2020-01-31 23:36:54
 ---
 

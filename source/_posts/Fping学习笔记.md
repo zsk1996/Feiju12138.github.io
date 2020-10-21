@@ -3,7 +3,7 @@ title: 【笔记】Fping 学习笔记
 date: 2019-12-04 22:31:04
 tags:
 categories:
-- 网络安全
+- Penetration Tests
 ---
 
 ## 前言
@@ -12,6 +12,8 @@ Fping类似于ping，但比ping强大。Fping与ping不同的地方在于，fpin
 
 与ping要等待某一主机连接超时或发回反馈信息不同，fping给一个主机发送完数据包后，马上给下一个主机发送数据包，实现多主机同时ping。如果某一主机ping通，则此主机将被打上标记，并从等待列表中移除，如果没ping通，说明主机无法到达，主机仍然留在等待列表中，等待后续操作。
 
+<font color="red">本文仅用于网络信息防御学习</font>
+
 <!-- more -->
 
 ## 基本命令
@@ -19,8 +21,13 @@ Fping类似于ping，但比ping强大。Fping与ping不同的地方在于，fpin
 ### Ping 网段
 
 ``` bash
-fping -g 192.168.1.1/32
 fping -g 192.168.1.0 192.168.1.255
+```
+
+#### Ping全网段
+
+``` sh
+fping -g 192.168.1.1/24
 ```
 
 ### 显示可ping通的目标

@@ -1,7 +1,7 @@
 ---
 title: 【笔记】Java安装笔记
 categories:
-  - 云计算
+  - Cloud Computing
 date: 2020-04-26 21:14:16
 ---
 

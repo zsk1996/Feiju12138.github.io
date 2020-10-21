@@ -1,13 +1,15 @@
 ---
 title: 【笔记】Cookie 注入
 categories:
-  - 网络安全
+  - Penetration Tests
 date: 2020-03-28 09:38:59
 ---
 
 ## 前言
 
 由于SQL注入可能会被拦截，可以尝试采用Cookie注入的方式渗透测试
+
+<font color="red">本文仅用于网络信息防御学习</font>
 
 <!-- more -->
 

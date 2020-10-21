@@ -1,7 +1,7 @@
 ---
 title: 【笔记】在 Parallels 安装 Windows 10 系统
 categories:
-  - 虚拟机
+  - System Installation
 date: 2020-01-08 11:32:33
 ---
 

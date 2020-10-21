@@ -442,6 +442,12 @@ var 函数名 = (参数列表)=>{
 }
 ```
 
+#### 底层创建函数
+
+``` javascript
+var 函数名 = new Function('a','b','return a+b');
+```
+
 ### 匿名函数及自调用
 
 ``` javascript
@@ -470,6 +476,35 @@ var 函数名 = (参数列表)=>{
 window.onload = function(){
     ...
 }
+```
+
+### 构造函数
+
+``` javascript
+let point = function(x,y) {
+    this.x = x;
+    this.y = y;
+}
+```
+
+#### ES6新特性
+
+``` javascript
+class point {
+    constructor(x,y) {
+        this.x = x;
+        this.y = y;
+    }
+    toStr() {
+        console.log(this.x,this.y);
+    }
+}
+```
+
+#### 使用构造函数创建对象
+
+``` javascript
+var 对象名 = new point(10,20);
 ```
 
 ### 其他
@@ -666,16 +701,50 @@ element.parentNode
 element.innerHTML
 ```
 
-#### 通过id获取元素
+#### 获取特定元素
+
+##### 通过id获取元素
+
+- 返回指定id的元素对象
 
 ``` javascript
-var n = document.getElementById("n");
+document.getElementById("");
 ```
 
-#### 通过class获取元素
+##### 通过class获取元素
+
+- 返回指定class的元素对象数组
 
 ``` javascript
-var n = document.getElementByClass("a")[0];
+document.getElementByClass("")[0];
+```
+
+##### 通过标签名获取元素
+
+- 返回指定标签名的元素对象数组
+
+``` javascript
+document.getElementsByTagName("")[0];
+```
+
+#### 以query格式获取元素
+
+##### 通过id获取元素
+
+``` javascript
+document.querySelector("#a");
+```
+
+##### 通过class获取元素
+
+``` javascript
+document.querySelector(".a");
+```
+
+##### 通过标签名获取元素
+
+``` javascript
+document.querySelector("div");
 ```
 
 ### 设置标签的内容
@@ -741,18 +810,26 @@ var d = document.getElementById("d");
 d.innerHTML = "修改后的文字";
 ```
 
-## 弹窗接收字符串
+## 弹窗
+
+### 弹窗接收字符串
 
 ``` javascript
 var str = prompt();
 ```
 
-### 提示文字
+#### 提示文字
 
 > `<<text>>`：提示文字
 
 ``` javascript
 var str = prompt(<<text>>);
+```
+
+### 弹窗接收布尔值
+
+``` javascript
+var str = confirm(<<text>>);
 ```
 
 ## 事件
@@ -819,6 +896,62 @@ document.getElementById().onmouseover = function() {};
 
 ``` javascript
 document.getElementById().onmouseout = function() {};
+```
+
+## 模版字符串
+
+- ES6新标准
+- 使用模版字符串代替字符串拼接
+
+- 原字符串拼接
+
+``` javascript
+"name="+name.value;
+```
+
+- 新模版字符串
+
+``` javaascript
+`name=${name.value}`;
+```
+
+## 继承
+
+- 通过原型对象实现继承关系
+- 所有子对象会共享原型对象的值
+
+### 定义一个构造函数
+
+``` javascript
+let point = function(x,y) {
+    this.x = x;
+    this.y = y;
+}
+```
+
+### 通过构造函数创建对象
+
+``` javascript
+let p1 = new point(10,20);
+let p2 = new point(10,20);
+```
+
+### 在原型对象中添加值
+
+``` javascipt
+point.prototype.color = "red";
+```
+
+### 在子对象修改原型对象中的值
+
+``` javascript
+p1.__proto__.color = "black";
+```
+
+### 在子对象查看原型对象中的值
+
+``` javascript
+p2.__proto__.color;
 ```
 
 ## 更多

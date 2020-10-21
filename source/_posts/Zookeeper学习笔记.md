@@ -1,7 +1,7 @@
 ---
 title: 【笔记】Zookeeper 学习笔记
 categories:
-  - 大数据
+  - Big Data
 date: 2019-12-29 09:31:46
 ---
 
@@ -84,7 +84,7 @@ create /<name> <data>
 create -e /<name> <data>
 create -s /<name> <data>
 create -e -s /<name> <data>
-``` 
+```
 
 #### 查看数据
 

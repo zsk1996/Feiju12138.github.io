@@ -3,12 +3,14 @@ title: 【笔记】Fcrackzip 学习笔记
 date: 2019-12-05 16:06:17
 tags:
 categories:
-- 网络安全
+- Penetration Tests
 ---
 
 ## 前言
 
 fcrackzip是一款专门破解zip类型压缩文件密码的工具，工具小巧方便、破解速度快，能使用字典和指定字符集破解，适用于Linux、MacOS系统
+
+<font color="red">本文仅用于网络信息防御学习</font>
 
 <!-- more -->
 

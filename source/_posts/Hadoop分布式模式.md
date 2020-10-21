@@ -1,7 +1,7 @@
 ---
 title: 【笔记】Hadoop 分布式模式
 categories:
-  - 大数据
+  - Big Data
 date: 2020-02-02 12:00:11
 ---
 

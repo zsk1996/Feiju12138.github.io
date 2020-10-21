@@ -26,7 +26,7 @@ let js = JSON.parse(<json>);
 > `<js>`：JSON格式的JS字符串
 
 ``` javascript
-let json = JSON.stringiry(<js>)
+let json = JSON.stringify(<js>)
 ```
 
 ## 完成

@@ -1,7 +1,7 @@
 ---
 title: 【踩坑】CentOS Parallels Tools 安装失败
 categories:
-  - 虚拟机
+  - System Installation
 date: 2020-01-31 15:56:19
 ---
 

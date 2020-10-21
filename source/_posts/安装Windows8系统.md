@@ -3,7 +3,7 @@ title: 【笔记】安装 Windows 8 系统
 date: 2019-12-10 12:59:44
 tags:
 categories:
-- 系统安装
+- System Installation
 ---
 
 ## 前言

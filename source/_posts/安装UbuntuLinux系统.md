@@ -3,7 +3,7 @@ title: 【笔记】安装 Ubuntu Linux 系统
 date: 2019-11-16 19:56:10
 tags:
 categories:
-- 系统安装
+- System Installation
 ---
 
 ## 前言

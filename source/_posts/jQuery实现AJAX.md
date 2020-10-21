@@ -39,6 +39,8 @@ $.post(url, params, (result) => {
 
 ## ajax函数
 
+> `type`：标准写法type的值应该大写
+
 ``` javascript
 //1.请求url
 let url = "/jquery/doAjaxPost";
@@ -63,10 +65,31 @@ $.ajax({
         $("#resultId").html(result);
     },
     // 处理服务端返回的异常信息
-    error: function (result) {
+    error: function (xhr) {
         console.log(xhr.statusText);
         $("#resultId").html(xhr.statusText);
     }
+});
+```
+
+### 另一种方式
+
+``` javascript
+$.ajax({
+    type: "DELETE",
+    url: url
+})
+// 处理成功信息
+.done(function(result){
+    ...
+})
+// 处理失败信息
+.fail(function(){
+    ...
+})
+// 无论成功或失败都执行
+.always(function(){
+    ...
 });
 ```
 
@@ -84,3 +107,7 @@ $("#resultId").load(url, params);
 ```
 
 ## 完成
+
+## 参考文献
+
+[间书——涎涎](https://www.jianshu.com/p/b36481c4f3c9)

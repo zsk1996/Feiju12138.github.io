@@ -1,7 +1,7 @@
 ---
 title: 【踩坑】NameNode 格式化
 categories:
-  - 大数据
+  - Big Data
 date: 2020-02-01 12:00:04
 ---
 

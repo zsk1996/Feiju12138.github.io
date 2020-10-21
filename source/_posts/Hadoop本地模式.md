@@ -1,7 +1,7 @@
 ---
 title: 【笔记】Hadoop 本地模式
 categories:
-  - 大数据
+  - Big Data
 date: 2020-01-31 23:15:11
 ---
 

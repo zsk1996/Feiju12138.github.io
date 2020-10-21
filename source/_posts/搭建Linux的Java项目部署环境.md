@@ -1,7 +1,7 @@
 ---
 title: 【笔记】搭建Linux的Java项目部署环境
 categories:
-  - 云计算
+  - Cloud Computing
 date: 2020-09-06 14:44:26
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: 【笔记】Hadoop 群启
 categories:
-  - 大数据
+  - Big Data
 date: 2020-02-04 15:55:10
 ---
 
@@ -31,7 +31,7 @@ hadoop104
 
 ``` sh
 /usr/local/Cellar/hadoop/3.2.1/sbin/start-dfs.sh
-``` 
+```
 
 ## 确认
 

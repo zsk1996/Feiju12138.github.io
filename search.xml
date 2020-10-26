@@ -1421,7 +1421,7 @@
 <h2 id="BigDecimal除不尽时四舍五入"><a href="#BigDecimal除不尽时四舍五入" class="headerlink" title="BigDecimal除不尽时四舍五入"></a>BigDecimal除不尽时四舍五入</h2><blockquote>
 <p><code>bigDecimal_1</code>：被除数<br><code>bigDecimal_2</code>：除数<br><code>&lt;num&gt;</code>：保留小数点后的位数</p>
 </blockquote>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">bigDecimal_1.divide(bigDecimal_1, &lt;num&gt;, BigDecimal.ROUND_HALF_UP);</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">bigDecimal_1.divide(bigDecimal_2, &lt;num&gt;, BigDecimal.ROUND_HALF_UP);</span><br></pre></td></tr></table></figure>
 
 <h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://www.cnblogs.com/numen-fan/p/6500914.html" target="_blank" rel="noopener">博客园——小小范同学</a><br><a href="https://blog.csdn.net/jiangguangchao/article/details/101520017" target="_blank" rel="noopener">CSDN——大前端码农的自我修养</a></p>
 ]]></content>
@@ -12328,21 +12328,12 @@
 </ul>
 <h3 id="配置异步操作"><a href="#配置异步操作" class="headerlink" title="配置异步操作"></a>配置异步操作</h3><ul>
 <li>@Async</li>
-<li>此注解描述的方法会运行在Spring框架提供的一个线程中</li>
+<li>此注解描述的方法为一个异步切入点方法</li>
+<li>此方法会在执行时运行在Spring框架提供的一个独立的线程中</li>
 <li>如果返回值不为void需要做额外的处理</li>
 </ul>
-<h2 id="启动缓存"><a href="#启动缓存" class="headerlink" title="启动缓存"></a>启动缓存</h2><ul>
-<li>@EnableCaching</li>
-<li>标注在启动类上</li>
-</ul>
-<h3 id="配置缓存操作"><a href="#配置缓存操作" class="headerlink" title="配置缓存操作"></a>配置缓存操作</h3><ul>
-<li>@Cacheable</li>
-</ul>
-<h4 id="指定缓存名称"><a href="#指定缓存名称" class="headerlink" title="指定缓存名称"></a>指定缓存名称</h4><ul>
-<li>@Cacheable(value=””)</li>
-</ul>
-<h4 id="清除所有缓存"><a href="#清除所有缓存" class="headerlink" title="清除所有缓存"></a>清除所有缓存</h4><ul>
-<li>@Cacheable(allEntries=true)</li>
+<h2 id="缓存"><a href="#缓存" class="headerlink" title="缓存"></a>缓存</h2><ul>
+<li><a href="/2020/10/24/SpringBootCache/">传送门</a></li>
 </ul>
 <h2 id="支持跨域访问"><a href="#支持跨域访问" class="headerlink" title="支持跨域访问"></a>支持跨域访问</h2><ul>
 <li>@CrossOrigin</li>
@@ -26963,13 +26954,20 @@
   <entry>
     <title>【笔记】搭建用于激活Windows的KMS服务器</title>
     <url>/2020/10/24/%E6%90%AD%E5%BB%BA%E7%94%A8%E4%BA%8E%E6%BF%80%E6%B4%BBWindows%E7%9A%84KMS%E6%9C%8D%E5%8A%A1%E5%99%A8/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>搭建用于激活Windows的KMS服务器，本教程以MacOS为例<br>另一台Windows或Windows虚拟机也可以作为搭建的服务器</p>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>搭建用于激活Windows的KMS服务器，本教程以Windows服务器激活Windows10为例<br>虚拟机中运行的Windows也可以作为Windows服务器用于激活，用于激活的Windows服务器可以未激活状态</p>
+<a id="more"></a>
+
 <h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
 <li><code>vlmcsd</code></li>
 </ul>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/kkkgo/vlmcsd.git</span><br></pre></td></tr></table></figure>
 
-<h2 id="搭建服务器"><a href="#搭建服务器" class="headerlink" title="搭建服务器"></a>搭建服务器</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> vlmcsd/binaries/MacOSX/intel/</span><br></pre></td></tr></table></figure>
+<h2 id="配置防火墙"><a href="#配置防火墙" class="headerlink" title="配置防火墙"></a>配置防火墙</h2><h2 id="搭建服务器"><a href="#搭建服务器" class="headerlink" title="搭建服务器"></a>搭建服务器</h2><ul>
+<li>以管理员身份运行CMD</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
 
 <h2 id="未完待更"><a href="#未完待更" class="headerlink" title="未完待更"></a>未完待更</h2>]]></content>
       <categories>

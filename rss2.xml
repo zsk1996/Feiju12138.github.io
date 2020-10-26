@@ -9,7 +9,7 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>捕捉一只爱折腾的绯鞠</description>
-    <pubDate>Sat, 24 Oct 2020 12:02:23 GMT</pubDate>
+    <pubDate>Mon, 26 Oct 2020 01:09:59 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
@@ -19,15 +19,12 @@
       <pubDate>Sat, 24 Oct 2020 11:16:45 GMT</pubDate>
       <description>
       
-        
-        
-          &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;/assets/css/APlayer.min.css&quot;&gt;&lt;script src=&quot;/assets/js/APlayer.min.js&quot; cla
-        
+        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;搭建用于激活Windows的KMS服务器，本教程以Windows服务器激活Windows10为例&lt;br&gt;虚拟机中运行的Windows也可以作为Windows服务器用于激活，用于激活的Windows服务器可以未激活状态&lt;/p&gt;
       
       </description>
       
       
-      <content:encoded><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>搭建用于激活Windows的KMS服务器，本教程以MacOS为例<br>另一台Windows或Windows虚拟机也可以作为搭建的服务器</p><h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul><li><code>vlmcsd</code></li></ul><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/kkkgo/vlmcsd.git</span><br></pre></td></tr></table></figure><h2 id="搭建服务器"><a href="#搭建服务器" class="headerlink" title="搭建服务器"></a>搭建服务器</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> vlmcsd/binaries/MacOSX/intel/</span><br></pre></td></tr></table></figure><h2 id="未完待更"><a href="#未完待更" class="headerlink" title="未完待更"></a>未完待更</h2>]]></content:encoded>
+      <content:encoded><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>搭建用于激活Windows的KMS服务器，本教程以Windows服务器激活Windows10为例<br>虚拟机中运行的Windows也可以作为Windows服务器用于激活，用于激活的Windows服务器可以未激活状态</p><a id="more"></a><h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul><li><code>vlmcsd</code></li></ul><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/kkkgo/vlmcsd.git</span><br></pre></td></tr></table></figure><h2 id="配置防火墙"><a href="#配置防火墙" class="headerlink" title="配置防火墙"></a>配置防火墙</h2><h2 id="搭建服务器"><a href="#搭建服务器" class="headerlink" title="搭建服务器"></a>搭建服务器</h2><ul><li>以管理员身份运行CMD</li></ul><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure><h2 id="未完待更"><a href="#未完待更" class="headerlink" title="未完待更"></a>未完待更</h2>]]></content:encoded>
       
       <comments>https://feiju12138.github.io/2020/10/24/%E6%90%AD%E5%BB%BA%E7%94%A8%E4%BA%8E%E6%BF%80%E6%B4%BBWindows%E7%9A%84KMS%E6%9C%8D%E5%8A%A1%E5%99%A8/#disqus_thread</comments>
     </item>

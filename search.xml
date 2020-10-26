@@ -26974,4 +26974,82 @@
         <category>Cloud Computing</category>
       </categories>
   </entry>
+  <entry>
+    <title>【笔记】Spring框架中的线程池</title>
+    <url>/2020/10/26/Spring%E6%A1%86%E6%9E%B6%E4%B8%AD%E7%9A%84%E7%BA%BF%E7%A8%8B%E6%B1%A0/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>配置Spring框架中的线程池</p>
+<a id="more"></a>
+
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><blockquote>
+<p><code>pool</code></p>
+<blockquote>
+<p><code>core-size</code>：配置线程池中核心线程数，当池中线程没有达到这个值时，每次从池中请求线程都会创建一个新的线程<br><code>max-size</code>：配置线程池中最大线程数，当池中核心线程都在忙，任务队列也满了，此时又有新的任务要交给池中线程去执行，当池&gt;中线程没有达到最大值时，此时创建新的线程去执行任务<br><code>queue-capacity</code>：配置线程池中任务队列，当池中核心线程都在忙，又有新的任务要交给池中线程去执行，此时可以将任务存储到任务队列<br><code>keep-alive</code>：配置超时，当池中线程数大于核心线程数，又没有新的任务时，此时空闲下来的线程，超过keep-alive这个参数指定的值，线程会被释放</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p><code>thread-name-prefix</code>：定义池中线程名的前缀，默认为<code>task-</code></p>
+</blockquote>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line">  <span class="attr">task:</span></span><br><span class="line">    <span class="attr">execution:</span></span><br><span class="line">      <span class="attr">pool:</span></span><br><span class="line">        <span class="attr">core-size:</span> <span class="number">8</span></span><br><span class="line">        <span class="attr">max-size:</span> <span class="number">128</span></span><br><span class="line">        <span class="attr">queue-capacity:</span> <span class="number">256</span></span><br><span class="line">        <span class="attr">keep-alive:</span> <span class="string">120s</span></span><br><span class="line">      <span class="attr">thread-name-prefix:</span> <span class="string">task-</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="创建线程池对象"><a href="#创建线程池对象" class="headerlink" title="创建线程池对象"></a>创建线程池对象</h2><h3 id="创建线程工厂"><a href="#创建线程工厂" class="headerlink" title="创建线程工厂"></a>创建线程工厂</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">ThreadFactory threadFactory = <span class="keyword">new</span> ThreadFactory() &#123;</span><br><span class="line">    <span class="comment">// 创建一个线程安全的自增长整型数</span></span><br><span class="line">    <span class="keyword">private</span> AtomicLong atomicLong = <span class="keyword">new</span> AtomicLong(<span class="number">1</span>);</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Thread <span class="title">newThread</span><span class="params">(Runnable r)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// getAndIncrement()为先获取后自增</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> Thread(r, <span class="string">"thread-"</span>+atomicLong.getAndIncrement());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="创建线程池对象-1"><a href="#创建线程池对象-1" class="headerlink" title="创建线程池对象"></a>创建线程池对象</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">ThreadPoolExecutor threadPoolExecutor = <span class="keyword">new</span> ThreadPoolExecutor(</span><br><span class="line">        <span class="number">8</span>, <span class="comment">// 核心线程数</span></span><br><span class="line">        <span class="number">128</span>, <span class="comment">// 最大线程数</span></span><br><span class="line">        <span class="number">120</span>, <span class="comment">// 线程空闲时间</span></span><br><span class="line">        TimeUnit.SECONDS, <span class="comment">// 时间单位</span></span><br><span class="line">        <span class="keyword">new</span> ArrayBlockingQueue&lt;&gt;(<span class="number">1</span>), <span class="comment">// 任务队列</span></span><br><span class="line">        threadFactory, <span class="comment">// 线程工厂</span></span><br><span class="line">        <span class="keyword">new</span> ThreadPoolExecutor.CallerRunsPolicy()</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<h3 id="调用一个线程来执行任务"><a href="#调用一个线程来执行任务" class="headerlink" title="调用一个线程来执行任务"></a>调用一个线程来执行任务</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">threadPoolExecutor.execute(<span class="keyword">new</span> Runnable() &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        ...</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【笔记】Shiro快速入门</title>
+    <url>/2020/10/26/Shiro%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Shiro框架快速入门</p>
+<a id="more"></a>
+
+<h2 id="创建配置类"><a href="#创建配置类" class="headerlink" title="创建配置类"></a>创建配置类</h2><ul>
+<li>也可以在配置文件进行配置</li>
+</ul>
+<h3 id="新建一个配置类"><a href="#新建一个配置类" class="headerlink" title="新建一个配置类"></a>新建一个配置类</h3><ul>
+<li>新建一个类作为Shiro的配置类，并由<code>@Configuration</code>注解标注</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SpringShiroConfig</span> </span>&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="配置核心对象"><a href="#配置核心对象" class="headerlink" title="配置核心对象"></a>配置核心对象</h3><ul>
+<li>创建配置Shiro核心对象的方法，并交给Spring管理</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Bean</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> SecurityManager <span class="title">securityManager</span><span class="params">()</span></span>&#123;</span><br><span class="line">    DefaultWebSecurityManager securityManager=<span class="keyword">new</span> DefaultWebSecurityManager();</span><br><span class="line">    <span class="keyword">return</span> securityManager;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="配置访问规则"><a href="#配置访问规则" class="headerlink" title="配置访问规则"></a>配置访问规则</h3><ul>
+<li>创建配置Shiro访问规则的方法，配置匿名访问的资源和认证的访问的资源，并交给Spring管理</li>
+</ul>
+<blockquote>
+<p>Shiro中默认过滤器</p>
+<blockquote>
+<p><code>anon</code>：允许匿名访问<br><code>authc</code>：需要认证后访问<br><code>logout</code>：退出过滤器，一旦执行了退出操作，底层会将系统服务端存储的用户信息进行清除并且直接跳转到登陆页面</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p><code>**</code>：表示当前目录所有文件及其所有子目录</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Bean</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> ShiroFilterFactoryBean <span class="title">shiroFilterFactory</span><span class="params">( SecurityManager securityManager)</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">    ShiroFilterFactoryBean factoryBean = <span class="keyword">new</span> ShiroFilterFactoryBean();</span><br><span class="line">    <span class="comment">// securityManager对象负责去检测这个请求是否已经认证</span></span><br><span class="line">    factoryBean.setSecurityManager(securityManager);</span><br><span class="line">    <span class="comment">// 配置登陆页面的访问路径</span></span><br><span class="line">    factoryBean.setLoginUrl(<span class="string">"/doLoginUI"</span>);</span><br><span class="line"></span><br><span class="line">    Map&lt;String,String&gt; filterMap=<span class="keyword">new</span> LinkedHashMap&lt;&gt;();</span><br><span class="line">    <span class="comment">// 配置允许匿名访问的资源（通常为所有的静态资源）</span></span><br><span class="line">    filterMap.put(<span class="string">"/build/**"</span>,<span class="string">"anon"</span>);</span><br><span class="line">    <span class="comment">// 除了匿名访问的资源,其它都要认证后访问</span></span><br><span class="line">    filterMap.put(<span class="string">"/**"</span>,<span class="string">"authc"</span>);</span><br><span class="line">    <span class="comment">// 配置退出过滤器</span></span><br><span class="line">     </span><br><span class="line">    </span><br><span class="line">    factoryBean.setFilterChainDefinitionMap(filterMap);<span class="comment">//过滤链的定义</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> factoryBean;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="创建Realm类"><a href="#创建Realm类" class="headerlink" title="创建Realm类"></a>创建Realm类</h2><ul>
+<li>创建一个Realm类，继承AuthorizingRealm类并重写抽象方法，为这个类标注<code>@Component</code>注解定义为组建交给Spring管理</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ShiroUserRealm</span> <span class="keyword">extends</span> <span class="title">AuthorizingRealm</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 获取并封装授权信息（做授权业务时写此方法）</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> AuthorizationInfo <span class="title">doGetAuthorizationInfo</span><span class="params">(PrincipalCollection principalCollection)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 获取并封装认证信息</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> AuthenticationInfo <span class="title">doGetAuthenticationInfo</span><span class="params">(AuthenticationToken authenticationToken)</span> <span class="keyword">throws</span> AuthenticationException </span>&#123;</span><br><span class="line">        <span class="comment">// 获取登录时输入的用户名</span></span><br><span class="line">        UsernamePasswordToken uToken = (UsernamePasswordToken) authenticationToken;</span><br><span class="line">        String username = uToken.getUsername();</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 基于用户名查询数据库中的用户信息</span></span><br><span class="line">        SysUser user = sysUserDao.findUserByUserName(username);</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 校验用户是否存在</span></span><br><span class="line">        <span class="keyword">if</span> (user == <span class="keyword">null</span>) <span class="keyword">throw</span> <span class="keyword">new</span> UnknownAccountException();</span><br><span class="line">        <span class="comment">// 校验用户是否已被禁用</span></span><br><span class="line">        <span class="keyword">if</span> (user.getValid() == <span class="number">0</span>) <span class="keyword">throw</span> <span class="keyword">new</span> LockedAccountException();</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 封装用户信息由底层进行密码校验</span></span><br><span class="line">        ByteSource credentialsSalt = ByteSource.Util.bytes(user.getSalt());</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> SimpleAuthenticationInfo(user,<span class="comment">//principal 身份</span></span><br><span class="line">                user.getPassword(),<span class="comment">//hashedCredentials 已加密的密码</span></span><br><span class="line">                credentialsSalt,<span class="comment">//credentialsSalt 凭证盐</span></span><br><span class="line">                getName());</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="对用户输入的密码进行加密"><a href="#对用户输入的密码进行加密" class="headerlink" title="对用户输入的密码进行加密"></a>对用户输入的密码进行加密</h3><ul>
+<li>重写getCredentialsMatcher方法或setCredentialsMatcher方法其中一个，用于返回凭证加密对象，基于此对象对用户输入的密码进行加密操作</li>
+</ul>
+<h4 id="重写getCredentialsMatcher方法"><a href="#重写getCredentialsMatcher方法" class="headerlink" title="重写getCredentialsMatcher方法"></a>重写getCredentialsMatcher方法</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> CredentialsMatcher <span class="title">getCredentialsMatcher</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    HashedCredentialsMatcher credentialsMatcher = <span class="keyword">new</span> HashedCredentialsMatcher();</span><br><span class="line">    <span class="comment">// 定义加密类型</span></span><br><span class="line">    credentialsMatcher.setHashAlgorithmName(<span class="string">"MD5"</span>);</span><br><span class="line">    <span class="comment">// 定义加密次数</span></span><br><span class="line">    credentialsMatcher.setHashIterations(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">return</span> credentialsMatcher;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="重写getCredentialsMatcher方法-1"><a href="#重写getCredentialsMatcher方法-1" class="headerlink" title="重写getCredentialsMatcher方法"></a>重写getCredentialsMatcher方法</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setCredentialsMatcher</span><span class="params">(CredentialsMatcher credentialsMatcher)</span> </span>&#123;</span><br><span class="line">    HashedCredentialsMatcher cMatcher = <span class="keyword">new</span> HashedCredentialsMatcher();</span><br><span class="line">    <span class="comment">// 定义加密类型</span></span><br><span class="line">    cMatcher.setHashAlgorithmName(<span class="string">"MD5"</span>);</span><br><span class="line">    <span class="comment">// 定义加密次数</span></span><br><span class="line">    cMatcher.setHashIterations(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">super</span>.setCredentialsMatcher(cMatcher);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+  </entry>
 </search>

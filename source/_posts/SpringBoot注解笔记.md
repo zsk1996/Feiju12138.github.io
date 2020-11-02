@@ -70,21 +70,33 @@ SpringBoot注解知识点笔记
 - @RestControllerAdvice
 - 等效于同时描述`@ControllerAdvice`和`@ResponseBody`
 
-## 处理一切的请求方式
+## 处理请求
+
+### 处理所有请求
 
 - @RequestMapping("")
 - 参数为跳转的链接地址
 - 可以描述类，也可以描述方法
 
-### 定义请求方式
+#### 定义请求方式
 
 - @RequestMapping(value="",method=RequestMethod.GET)
 - @RequestMapping(value="",method=RequestMethod.POST)
 
-#### Get请求方式
+### 处理Get请求方式
 
 - @GetMapping()
 - 等效于@RequestMapping(method=RequestMethod.GET)
+
+### 处理POST请求
+
+- @PostMapping()
+- 等效于@RequestMapping(method=RequestMethod.POST)
+
+### 允许任何网站通过javascript访问
+
+- @CrossOrigin
+- 标注在类或方法上
 
 ## 指定参数
 
@@ -157,11 +169,6 @@ SpringBoot注解知识点笔记
 - @Bean
 - Spring容器中整个第三方Bean对象时，可以将其Bean对象的创建放在一个方法中，然后使用@Bean注解进行描述，Spring容器管理Bean对象时就会将方法名作为key对Bean对象进行存储
 
-## 允许任何网站通过javascript访问
-
-- @CrossOrigin
-- 标注在类或方法上
-
 ## 延时加载
 
 ### 标注在类上
@@ -220,234 +227,11 @@ SpringBoot注解知识点笔记
 
 ## Spring AOP
 
-### 切面类型
-
-- @Aspect
-- 注解用于标识或者描述AOP中的切面类型，基于切面类型构建的对象用于为目标对象进行功能扩展或控制目标对象的执行
-
-### 切入点
-
-- Pointcut("bean()")
-- 注解用于描述切面中的方法，并定义切面中的切入点（基于特定表达式的方式进行描述）
-- 切入点表达式用的是bean表达式，这个表达式以bean开头，bean括号中的内容为一个spring管理的某个bean对象的名字
-
-#### 切入点表达式增强
-
-##### bean
-
-- 用于指定bean对象的所有方法
-- bean表达式一般应用于类级别，实现粗粒度的切入点定义
-
-###### 指定一个类中所有方法
-
-> `<class>`：类名
-
-``` java
-bean("<class>")
-```
-
-###### 指定包含一个类名结尾的所有方法
-
-``` java
-bean("*<class>")
-```
-
-##### within
-
-- within表达式应用于类级别，实现粗粒度的切入点表达式定义
-
-###### 指定当前包中这个类内部的所有方法
-
-> `<package>`：包名
-
-``` java
-within("<package>.<class>")
-```
-
-###### 指定当前目录下的所有类的所有方法
-
-``` java
-within("<package>.*")
-```
-
-###### 指定当前目录以及子目录中类的所有方法
-
-``` java
-within("<package>..*")
-```
-
-##### execution
-
-- execution表达式应用于方法级别，实现细粒度的切入点表达式定义
-
-###### 匹配无参方法
-
-``` java
-execution(void <package>.<class>())
-```
-
-###### 匹配有参方法
-
-``` java
-execution(void <package>.<class>(String))
-```
-
-##### @annotation
-
-- @annotaion表达式应用于方法级别，实现细粒度的切入点表达式定义
-
-###### 匹配有指定自定义注解描述的方法
-
-- 定义自定义注解
-
-> `<aspect>`：自定义注解名注解名
-
-``` java
-@Retention(RetentionPolicy.RUNTIME)
-@Target(ElementType.METHOD)
-public @interface <aspect> {
-
-}
-```
-
-- 通过指定自定义注解，为此注解所标注的方法，定义切入点
-
-> `<method>`：方法名
-> `<notice>`：通知名
-
-``` java
-@Pointcut("@annotation(<package>.<aspect>)")
-public void <method>() {}
-
-@<notice>("<method>()")
-public void do<method>(){
-    ...
-}
-```
-
-### 通知方法
-
-#### 环绕通知
-
-- @Around("")
-- 注解用于描述切面中方法
-- 在目标方法执行之前（@Before之前）和目标方法结束之前（@After之前）都要执行
-- 注解内部value属性的值为一个切入点表达式或者是切入点表达式的一个引用，这个引用为一个@PointCut注解描述的方法的方法名（包括参数列表）
-- ProceedingJoinPoint只能作为环绕通知参数
-
-#### 其他通知
-
-- @Before("")
-- 在目标方法执行之前执行
-
-
-- @After("")
-- 在目标方法结束之前执行
-
-
-- @AfterReturning("")
-- 在目标方法正常结束之前执行
-
-- @AfterThrowing("")
-- @AfterThrowing(value="",throwing="e")
-- 在目标方法异常结束之前执行
-
-#### 测试类
-
-- 正常执行顺序：`@Around.before`->`@Before`->`@Around.after`->`@After`->`@AfterReturning`
-- 异常执行顺序：`@Around.before`->`@Before`->`@Around.error`->`@After`->`@AfterThrowing`
-
-``` java
-@Component
-@Aspect
-public class SysTimeAspect {
-    @Pointcut("bean(sysUserServiceImpl)")
-    public void doTime(){}
-
-    @Before("doTime()")
-    public void doBefore(JoinPoint jp){
-        System.out.println("@Before");
-    }
-    @After("doTime()")
-    public void doAfter(){
-        System.out.println("@After");
-    }
-    @AfterReturning("doTime()")
-    public void doAfterReturning(){
-        System.out.println("@AfterReturning");
-    }
-    @AfterThrowing("doTime()")
-    public void doAfterThrowing(){
-        System.out.println("@AfterThrowing");
-    }
-    @Around("doTime()")
-    public Object doAround(ProceedingJoinPoint jp)
-            throws Throwable{
-        System.out.println("@Around.before");
-        try{
-            Object obj=jp.proceed();
-            System.out.println("@Around.after");
-            return obj;
-        }catch(Throwable e){
-            System.out.println("@Around.error");
-            throw e;
-        }
-
-    }
-}
-```
-
-### 定义切面优先级
-
-- @Order(1)
-- 用于描述切面类
-- 数字越小，优先级越高
-- 可以是负数
+- [传送门](/2020/10/17/SpringAOP学习笔记/)
 
 ## 事务
 
-- @Transactional
-- 用于描述类或方法，方法的注解优先级高于类的注解优先级
-- 启动事务
-
-### 线程安全
-
-- @Transactional(readonly=false)
-- readonly默认为false
-- 查询建议readonly=true
-
-### 回滚策略
-
-- @Transactional(rollbackFor=Throwable.class)
-- 指定异常添加到回滚策略
-- 默认策略有RuntimeException和Error
-- 但是检查异常不回滚
-
-#### 不回滚策略
-
-- @Transactional(noRollbackFor=Throwable.class)
-
-### 是否超时
-
-- @Transactional(timeout=-1)
-- 是否支持事务超时
-- 默认值为-1，表示不支持事务超时，我们可以给定一个秒值
-
-### 隔离级别
-
-- @Transactional(isolation=Isolation.READ_COMMITTED)
-- 默认值
-
-- @Transactional(isolation=Isolation.SERIALIZABLE)
-
-- @Transactional(isolation=Isolation.REPEATABLE_READ)
-
-### 事务的传播特性
-
-- @Transactional(propagation=Propagation.REQUIRED)
-
-- @Transactional(propagation=Propagation.REQUIREDS_NEW)
-- 放在一个独立的事务中
+- [传送门](/2020/10/24/SpringBoot事务处理/)
 
 ## 启动异步操作
 
@@ -457,30 +241,40 @@ public class SysTimeAspect {
 ### 配置异步操作
 
 - @Async
-- 此注解描述的方法会运行在Spring框架提供的一个线程中
+- 此注解描述的方法为一个异步切入点方法
+- 此方法会在执行时运行在Spring框架提供的一个独立的线程中
 - 如果返回值不为void需要做额外的处理
 
-## 启动缓存
 
-- @EnableCaching
-- 标注在启动类上
+## 缓存
 
-### 配置缓存操作
-
-- @Cacheable
-
-#### 指定缓存名称
-
-- @Cacheable(value="")
-
-#### 清除所有缓存
-
-- @Cacheable(allEntries=true)
+- [传送门](/2020/10/24/SpringBootCache/)
 
 ## 支持跨域访问
 
 - @CrossOrigin
 - 标注在Controller的方法上
 - 使当前URL支持跨域访问
+
+## 通过配置文件为对象赋值
+
+- @Value("${father.son}")
+- 针对于`application.yml`配置文件
+- 标注在对象上
+- 为所标注的对象赋值
+- 参数为SPEL表达式
+
+### 通过自定义配置文件
+
+- 首先在`resources`目录下创建`properties`目录用于存放以`.properties`结尾的自定义配置
+- @PropertySource("classpath:/properties/redis.properties")
+- 标注在类上
+- 之后再通过@Value标注在对象上，为所标注的对象赋值
+- key必须唯一，因为当出现与全局配置`.yml`文件中的key同名时时，优先获取`.yml`文件中的配置
+
+#### 以UTF-8格式加载properties以解决乱码
+
+- 因为默认
+- @PropertySource(value="classpath:/properties/redis.properties",encoding="utf-8")
 
 ## 未完待更

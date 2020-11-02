@@ -139,7 +139,7 @@ bigInteger.toString();
 > `<num>`：保留小数点后的位数
 
 ``` java
-bigDecimal_1.divide(bigDecimal_1, <num>, BigDecimal.ROUND_HALF_UP);
+bigDecimal_1.divide(bigDecimal_2, <num>, BigDecimal.ROUND_HALF_UP);
 ```
 
 ## 参考文献

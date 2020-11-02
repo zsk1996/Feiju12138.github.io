@@ -111,6 +111,12 @@ MacOS无法选中根目录，需要指定到`SpringToolSuite4.ini`配置文件
 @Slf4j
 ```
 
+### 启动链式加载
+
+``` java
+@Accessors(chain = true)
+```
+
 ## 完成
 
 ## 参考文献

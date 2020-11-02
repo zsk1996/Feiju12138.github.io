@@ -13,13 +13,22 @@ jQuery实现AJAX，将响应结果返回到前端页面
 
 ## get函数
 
+> `<url>`：请求的url地址
+> `<params>`：请求的参数
+> `(result) => {...}`：回调函数，它是匿名函数，可以写成箭头函数
+> `<dataType>`：指定响应的数据类型。理论上可以省略，因为jQuery实现的ajax会自动识别
+
+
 ``` javascript
-//1.请求url
-var url = "/jquery/doAjaxGet";
-//2.请求参数
-var params = "name=zhangsan";
-//3.发送异步请求
-$.get(url, params, (result) => {
+$.get("<url>", "<params>", (result) => {
+    $("#resultId").html(result);
+}, "<dataType>");
+```
+
+### getJSON函数
+
+``` javascript
+$.getJSON("<url>", "<params>", (result) => {
     $("#resultId").html(result);
 });
 ```
@@ -27,14 +36,9 @@ $.get(url, params, (result) => {
 ## post函数
 
 ``` javascript
-//1.请求url
-var url = "/jquery/doAjaxPost";
-//2.请求参数
-var params = "name=zhangsan";
-//3.发送异步请求
-$.post(url, params, (result) => {
+$.post("<url>", "<params>", (result) => {
     $("#resultId").html(result);
-});
+}, "<dataType>");
 ```
 
 ## ajax函数
@@ -42,19 +46,14 @@ $.post(url, params, (result) => {
 > `type`：标准写法type的值应该大写
 
 ``` javascript
-//1.请求url
-let url = "/jquery/doAjaxPost";
-//2.请求参数
-let params = "name=zhangsan";
-//3.发送异步请求
 $.ajax({
     // 可以省略（默认为GET请求）
     type: "POST",
-    url: url,
+    url: "<url>",
     // 可以省略
     contentType: "application/json;charset=utf-8",
     // 可以省略（如果无需向服务端传递参数）
-    data: params,
+    data: "<params>",
     // 可以省略（由ajax函数内部基于返回值进行匹配处理）
     // 常见参数：html、xml、json、jsonp（跨域）
     dataType: "text",
@@ -98,12 +97,7 @@ $.ajax({
 - load会将响应直接返回到指定位置
 
 ``` javascript
-//1.请求url
-var url = "/jquery/doAjaxGet";
-//2.请求参数
-var params = "msg=hello jquery ajax get method";
-//3.发送异步请求，直接返回响应
-$("#resultId").load(url, params);
+$("#resultId").load("<url>", "<params>");
 ```
 
 ## 完成
@@ -111,3 +105,4 @@ $("#resultId").load(url, params);
 ## 参考文献
 
 [间书——涎涎](https://www.jianshu.com/p/b36481c4f3c9)
+

@@ -17,6 +17,27 @@ date: 2020-10-01 21:17:51
 
 ## 解决问题
 
+### 补齐Maven配置文件
+
+- SpringBoot项目可以在修复pom.xml文件后使用install工具重新打包
+
+- 在pom.xml文件添加构建的标签
+
+``` xml
+<build>
+    <plugins>
+        <plugin>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-maven-plugin</artifactId>
+        </plugin>
+    </plugins>
+</build>
+```
+
+### 手动修复
+
+- 非SpringBoot项目可以手动修复
+
 - 通过压缩工具打开.jar文件
 
 - 在`/META-INF/MANIFEST.MF`文件内添加一行，用于指定程序入口

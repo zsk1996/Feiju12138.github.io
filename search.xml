@@ -7064,6 +7064,8 @@
 </ul>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Slf</span>4j</span><br></pre></td></tr></table></figure>
 
+<h3 id="启动链式加载"><a href="#启动链式加载" class="headerlink" title="启动链式加载"></a>启动链式加载</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Accessors</span>(chain = <span class="keyword">true</span>)</span><br></pre></td></tr></table></figure>
+
 <h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://blog.csdn.net/lsqingfeng/article/details/89842258" target="_blank" rel="noopener">CSDN——一缕82年的清风</a></p>
 ]]></content>
       <categories>
@@ -12340,6 +12342,24 @@
 <li>标注在Controller的方法上</li>
 <li>使当前URL支持跨域访问</li>
 </ul>
+<h2 id="通过配置文件为对象赋值"><a href="#通过配置文件为对象赋值" class="headerlink" title="通过配置文件为对象赋值"></a>通过配置文件为对象赋值</h2><ul>
+<li>@Value(“${father.son}”)</li>
+<li>针对于<code>application.yml</code>配置文件</li>
+<li>标注在对象上</li>
+<li>为所标注的对象赋值</li>
+<li>参数为SPEL表达式</li>
+</ul>
+<h3 id="通过自定义配置文件"><a href="#通过自定义配置文件" class="headerlink" title="通过自定义配置文件"></a>通过自定义配置文件</h3><ul>
+<li>首先在<code>resources</code>目录下创建<code>properties</code>目录用于存放以<code>.properties</code>结尾的自定义配置</li>
+<li>@PropertySource(“classpath:/properties/redis.properties”)</li>
+<li>标注在类上</li>
+<li>之后再通过@Value标注在对象上，为所标注的对象赋值</li>
+<li>key必须唯一，因为当出现与全局配置<code>.yml</code>文件中的key同名时时，优先获取<code>.yml</code>文件中的配置</li>
+</ul>
+<h4 id="以UTF-8格式加载properties以解决乱码"><a href="#以UTF-8格式加载properties以解决乱码" class="headerlink" title="以UTF-8格式加载properties以解决乱码"></a>以UTF-8格式加载properties以解决乱码</h4><ul>
+<li>因为默认</li>
+<li>@PropertySource(value=”classpath:/properties/redis.properties”,encoding=”utf-8”)</li>
+</ul>
 <h2 id="未完待更"><a href="#未完待更" class="headerlink" title="未完待更"></a>未完待更</h2>]]></content>
       <categories>
         <category>Java</category>
@@ -14311,21 +14331,26 @@
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>jQuery实现AJAX，将响应结果返回到前端页面</p>
 <a id="more"></a>
 
-<h2 id="get函数"><a href="#get函数" class="headerlink" title="get函数"></a>get函数</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//1.请求url</span></span><br><span class="line"><span class="keyword">var</span> url = <span class="string">"/jquery/doAjaxGet"</span>;</span><br><span class="line"><span class="comment">//2.请求参数</span></span><br><span class="line"><span class="keyword">var</span> params = <span class="string">"name=zhangsan"</span>;</span><br><span class="line"><span class="comment">//3.发送异步请求</span></span><br><span class="line">$.<span class="keyword">get</span>(url, params, (result) =&gt; &#123;</span><br><span class="line">    $(<span class="string">"#resultId"</span>).html(result);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="get函数"><a href="#get函数" class="headerlink" title="get函数"></a>get函数</h2><blockquote>
+<p><code>&lt;url&gt;</code>：请求的url地址<br><code>&lt;params&gt;</code>：请求的参数<br><code>(result) =&gt; {...}</code>：回调函数，它是匿名函数，可以写成箭头函数<br><code>&lt;dataType&gt;</code>：指定响应的数据类型。理论上可以省略，因为jQuery实现的ajax会自动识别</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$.<span class="keyword">get</span>("&lt;url&gt;", "&lt;params&gt;", (result) =&gt; &#123;</span><br><span class="line">    $(<span class="string">"#resultId"</span>).html(result);</span><br><span class="line">&#125;, <span class="string">"&lt;dataType&gt;"</span>);</span><br></pre></td></tr></table></figure>
 
-<h2 id="post函数"><a href="#post函数" class="headerlink" title="post函数"></a>post函数</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//1.请求url</span></span><br><span class="line"><span class="keyword">var</span> url = <span class="string">"/jquery/doAjaxPost"</span>;</span><br><span class="line"><span class="comment">//2.请求参数</span></span><br><span class="line"><span class="keyword">var</span> params = <span class="string">"name=zhangsan"</span>;</span><br><span class="line"><span class="comment">//3.发送异步请求</span></span><br><span class="line">$.post(url, params, (result) =&gt; &#123;</span><br><span class="line">    $(<span class="string">"#resultId"</span>).html(result);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="getJSON函数"><a href="#getJSON函数" class="headerlink" title="getJSON函数"></a>getJSON函数</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$.getJSON(<span class="string">"&lt;url&gt;"</span>, <span class="string">"&lt;params&gt;"</span>, (result) =&gt; &#123;</span><br><span class="line">    $(<span class="string">"#resultId"</span>).html(result);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="post函数"><a href="#post函数" class="headerlink" title="post函数"></a>post函数</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$.post(<span class="string">"&lt;url&gt;"</span>, <span class="string">"&lt;params&gt;"</span>, (result) =&gt; &#123;</span><br><span class="line">    $(<span class="string">"#resultId"</span>).html(result);</span><br><span class="line">&#125;, <span class="string">"&lt;dataType&gt;"</span>);</span><br></pre></td></tr></table></figure>
 
 <h2 id="ajax函数"><a href="#ajax函数" class="headerlink" title="ajax函数"></a>ajax函数</h2><blockquote>
 <p><code>type</code>：标准写法type的值应该大写</p>
 </blockquote>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//1.请求url</span></span><br><span class="line"><span class="keyword">let</span> url = <span class="string">"/jquery/doAjaxPost"</span>;</span><br><span class="line"><span class="comment">//2.请求参数</span></span><br><span class="line"><span class="keyword">let</span> params = <span class="string">"name=zhangsan"</span>;</span><br><span class="line"><span class="comment">//3.发送异步请求</span></span><br><span class="line">$.ajax(&#123;</span><br><span class="line">    <span class="comment">// 可以省略（默认为GET请求）</span></span><br><span class="line">    type: <span class="string">"POST"</span>,</span><br><span class="line">    url: url,</span><br><span class="line">    <span class="comment">// 可以省略</span></span><br><span class="line">    contentType: <span class="string">"application/json;charset=utf-8"</span>,</span><br><span class="line">    <span class="comment">// 可以省略（如果无需向服务端传递参数）</span></span><br><span class="line">    data: params,</span><br><span class="line">    <span class="comment">// 可以省略（由ajax函数内部基于返回值进行匹配处理）</span></span><br><span class="line">    <span class="comment">// 常见参数：html、xml、json、jsonp（跨域）</span></span><br><span class="line">    dataType: <span class="string">"text"</span>,</span><br><span class="line">    <span class="comment">// 可以省略（默认为true，表示异步）</span></span><br><span class="line">    <span class="keyword">async</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="comment">// 处理服务端返回的正常信息</span></span><br><span class="line">    success: <span class="function"><span class="keyword">function</span> (<span class="params">result</span>) </span>&#123;</span><br><span class="line">        $(<span class="string">"#resultId"</span>).html(result);</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// 处理服务端返回的异常信息</span></span><br><span class="line">    error: <span class="function"><span class="keyword">function</span> (<span class="params">xhr</span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(xhr.statusText);</span><br><span class="line">        $(<span class="string">"#resultId"</span>).html(xhr.statusText);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">    <span class="comment">// 可以省略（默认为GET请求）</span></span><br><span class="line">    type: <span class="string">"POST"</span>,</span><br><span class="line">    url: <span class="string">"&lt;url&gt;"</span>,</span><br><span class="line">    <span class="comment">// 可以省略</span></span><br><span class="line">    contentType: <span class="string">"application/json;charset=utf-8"</span>,</span><br><span class="line">    <span class="comment">// 可以省略（如果无需向服务端传递参数）</span></span><br><span class="line">    data: <span class="string">"&lt;params&gt;"</span>,</span><br><span class="line">    <span class="comment">// 可以省略（由ajax函数内部基于返回值进行匹配处理）</span></span><br><span class="line">    <span class="comment">// 常见参数：html、xml、json、jsonp（跨域）</span></span><br><span class="line">    dataType: <span class="string">"text"</span>,</span><br><span class="line">    <span class="comment">// 可以省略（默认为true，表示异步）</span></span><br><span class="line">    <span class="keyword">async</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="comment">// 处理服务端返回的正常信息</span></span><br><span class="line">    success: <span class="function"><span class="keyword">function</span> (<span class="params">result</span>) </span>&#123;</span><br><span class="line">        $(<span class="string">"#resultId"</span>).html(result);</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// 处理服务端返回的异常信息</span></span><br><span class="line">    error: <span class="function"><span class="keyword">function</span> (<span class="params">xhr</span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(xhr.statusText);</span><br><span class="line">        $(<span class="string">"#resultId"</span>).html(xhr.statusText);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
 <h3 id="另一种方式"><a href="#另一种方式" class="headerlink" title="另一种方式"></a>另一种方式</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">    type: <span class="string">"DELETE"</span>,</span><br><span class="line">    url: url</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// 处理成功信息</span></span><br><span class="line">.done(<span class="function"><span class="keyword">function</span>(<span class="params">result</span>)</span>&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// 处理失败信息</span></span><br><span class="line">.fail(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// 无论成功或失败都执行</span></span><br><span class="line">.always(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
 <h2 id="load函数"><a href="#load函数" class="headerlink" title="load函数"></a>load函数</h2><ul>
 <li>load会将响应直接返回到指定位置</li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//1.请求url</span></span><br><span class="line"><span class="keyword">var</span> url = <span class="string">"/jquery/doAjaxGet"</span>;</span><br><span class="line"><span class="comment">//2.请求参数</span></span><br><span class="line"><span class="keyword">var</span> params = <span class="string">"msg=hello jquery ajax get method"</span>;</span><br><span class="line"><span class="comment">//3.发送异步请求，直接返回响应</span></span><br><span class="line">$(<span class="string">"#resultId"</span>).load(url, params);</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">$(<span class="string">"#resultId"</span>).load(<span class="string">"&lt;url&gt;"</span>, <span class="string">"&lt;params&gt;"</span>);</span><br></pre></td></tr></table></figure>
 
 <h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://www.jianshu.com/p/b36481c4f3c9" target="_blank" rel="noopener">间书——涎涎</a></p>
 ]]></content>
@@ -14910,7 +14935,17 @@
 <h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><ul>
 <li>工具打包的时候没有指定程序入口</li>
 </ul>
-<h2 id="解决问题"><a href="#解决问题" class="headerlink" title="解决问题"></a>解决问题</h2><ul>
+<h2 id="解决问题"><a href="#解决问题" class="headerlink" title="解决问题"></a>解决问题</h2><h3 id="补齐Maven配置文件"><a href="#补齐Maven配置文件" class="headerlink" title="补齐Maven配置文件"></a>补齐Maven配置文件</h3><ul>
+<li><p>SpringBoot项目可以在修复pom.xml文件后使用install工具重新打包</p>
+</li>
+<li><p>在pom.xml文件添加构建的标签</p>
+</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">build</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">plugins</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-maven-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">plugins</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">build</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="手动修复"><a href="#手动修复" class="headerlink" title="手动修复"></a>手动修复</h3><ul>
+<li><p>非SpringBoot项目可以手动修复</p>
+</li>
 <li><p>通过压缩工具打开.jar文件</p>
 </li>
 <li><p>在<code>/META-INF/MANIFEST.MF</code>文件内添加一行，用于指定程序入口</p>
@@ -22795,15 +22830,13 @@
       </categories>
   </entry>
   <entry>
-    <title>【笔记】检验软件的md5值</title>
+    <title>【笔记】MacOS校验文件的MD5值</title>
     <url>/2020/10/20/%E6%A3%80%E9%AA%8C%E8%BD%AF%E4%BB%B6%E7%9A%84md5%E5%80%BC/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ul>
-<li>检验软件的md5值</li>
-</ul>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>MacOS校验文件的MD5值</p>
 <a id="more"></a>
 
-<h2 id="检验"><a href="#检验" class="headerlink" title="检验"></a>检验</h2><blockquote>
-<p><code>&lt;file&gt;</code>：需要检验的文件</p>
+<h2 id="校验"><a href="#校验" class="headerlink" title="校验"></a>校验</h2><blockquote>
+<p><code>&lt;file&gt;</code>：需要校验的文件</p>
 </blockquote>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">md5 &lt;file&gt;</span><br></pre></td></tr></table></figure>
 
@@ -22892,11 +22925,23 @@
 <blockquote>
 <p>参数</p>
 <blockquote>
-<p>ElementType.TYPE：作用于类上<br>ElementType.METHOD：作用于方法上<br>ElementType.FIELD：作用于属性上</p>
+<p><code>ElementType.TYPE</code>：作用于类上<br><code>ElementType.METHOD</code>：作用于方法上<br><code>ElementType.FIELD</code>：作用于属性上</p>
 </blockquote>
 </blockquote>
 <h4 id="Retention"><a href="#Retention" class="headerlink" title="@Retention"></a>@Retention</h4><ul>
 <li>定义注解的生命周期</li>
+</ul>
+<blockquote>
+<p>参数</p>
+<blockquote>
+<p><code>RetentionPolicy.RUNTIME</code>：在运行时有效</p>
+</blockquote>
+</blockquote>
+<h4 id="Documented"><a href="#Documented" class="headerlink" title="@Documented"></a>@Documented</h4><ul>
+<li>动态生成文档</li>
+</ul>
+<h4 id="Inherited"><a href="#Inherited" class="headerlink" title="@Inherited"></a>@Inherited</h4><ul>
+<li>是否允许子注解继承注解</li>
 </ul>
 <h3 id="定义注解"><a href="#定义注解" class="headerlink" title="定义注解"></a>定义注解</h3><blockquote>
 <p><code>&lt;name&gt;</code>：注解名</p>
@@ -27122,6 +27167,155 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SpringWebConfig</span> <span class="keyword">implements</span> <span class="title">WebMvcConfigurer</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addInterceptors</span><span class="params">(InterceptorRegistry registry)</span> </span>&#123;</span><br><span class="line">        registry.addInterceptor(<span class="keyword">new</span> TimeAccessInterceptor()).addPathPatterns(<span class="string">"/user/doLogin"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【笔记】MacOS校验文件的SHA1值</title>
+    <url>/2020/10/28/MacOS%E6%A0%A1%E9%AA%8C%E6%96%87%E4%BB%B6%E7%9A%84SHA1%E5%80%BC/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>MacOS校验文件的SHA1值</p>
+<a id="more"></a>
+
+<h2 id="校验"><a href="#校验" class="headerlink" title="校验"></a>校验</h2><blockquote>
+<p><code>&lt;file&gt;</code>：需要校验的文件</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">shasum &lt;file&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://blog.csdn.net/aptentity/article/details/70545070" target="_blank" rel="noopener">CSDN——aptentity</a></p>
+]]></content>
+      <categories>
+        <category>MacOS</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【笔记】SpringBoot配置文件的环境切换</title>
+    <url>/2020/10/29/SpringBoot%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%9A%84%E7%8E%AF%E5%A2%83%E5%88%87%E6%8D%A2/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>SpringBoot配置文件的环境切换</p>
+<a id="more"></a>
+
+<h2 id="环境切换"><a href="#环境切换" class="headerlink" title="环境切换"></a>环境切换</h2><ul>
+<li>只能在<code>.yml</code>配置文件中进行多环境配置</li>
+<li>通过<code>---</code>将多套配置文件分割</li>
+<li>通过<code>profiles</code>配置定义当前配置的名称</li>
+<li>通过<code>active</code>配置定义首选配置</li>
+</ul>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">spring:</span></span><br><span class="line">  <span class="attr">profiles:</span></span><br><span class="line">    <span class="attr">active:</span> <span class="string">dev</span></span><br><span class="line"></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"></span><br><span class="line"><span class="attr">spring:</span></span><br><span class="line">  <span class="attr">profiles:</span> <span class="string">dev</span></span><br><span class="line"></span><br><span class="line"><span class="attr">server:</span></span><br><span class="line">  <span class="attr">port:</span> <span class="number">8080</span></span><br><span class="line"></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"></span><br><span class="line"><span class="attr">spring:</span></span><br><span class="line">  <span class="attr">profiles:</span> <span class="string">prod</span></span><br><span class="line"></span><br><span class="line"><span class="attr">server:</span></span><br><span class="line">  <span class="attr">port:</span> <span class="number">80</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2>]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>【笔记】Mybatis Plus 学习笔记</title>
+    <url>/2020/10/30/MybatisPlus%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>MyBatis-Plus（简称 MP）是一个 MyBatis 的增强工具，在 MyBatis 的基础上只做增强不做改变，为简化开发、提高效率而生。（(官网)[<a href="https://baomidou.com]）">https://baomidou.com]）</a></p>
+<a id="more"></a>
+
+<h2 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h2><h3 id="配置依赖"><a href="#配置依赖" class="headerlink" title="配置依赖"></a>配置依赖</h3><ul>
+<li>创建SpringBoot项目，编辑<code>pom.xml</code>文件，不引入（或在已有项目清除）Mybatis的依赖，然后配置MybatisPlus依赖</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.baomidou<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mybatis-plus-boot-starter<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.2.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="创建POJO类"><a href="#创建POJO类" class="headerlink" title="创建POJO类"></a>创建POJO类</h3><ul>
+<li>根据数据表的字段名作为属性，创建POJO类</li>
+<li>在类上标注<code>@TableName</code>注解，标识对象与表的映射关系，如果表名与对象名相同则可以省略不写</li>
+<li>在主键对应的属性上标注<code>@TableId</code>注解，标识主键</li>
+<li>在其他属性上标注<code>@TableField</code>注解，标识字段，如果字段名与属性名相同可以省略不写</li>
+</ul>
+<blockquote>
+<p><code>type = IdType.AUTO</code>：标识主键自增<br><code>value = &quot;id&quot;</code>、<code>value = &quot;name&quot;</code>：标识属性对应的字段名。如果属性名与字段名相同，可以省略不写这个参数</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="meta">@TableName</span>(<span class="string">"user"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@TableId</span>(type = IdType.AUTO, value = <span class="string">"id"</span>)</span><br><span class="line">    <span class="keyword">private</span> Integer id;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@TableField</span>(value = <span class="string">"name"</span>)</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>省略后的POJO类创建</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@TableId</span>(type = IdType.AUTO)</span><br><span class="line">    <span class="keyword">private</span> Integer id;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Dao层Mapper的配置"><a href="#Dao层Mapper的配置" class="headerlink" title="Dao层Mapper的配置"></a>Dao层Mapper的配置</h3><ul>
+<li>在主启动类添加Mapper扫描注解</li>
+</ul>
+<blockquote>
+<p><code>com.jt.mapper</code>：指定存放Mapper接口的包</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@MapperScan</span>(<span class="string">"com.jt.mapper"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SpringbootDemo2Application</span> </span>&#123;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>（并在已有项目去除@Mapper注解）</li>
+<li>在Mapper接口继承<code>BaseMapper</code>类</li>
+</ul>
+<blockquote>
+<p><code>User</code>：POJO类</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//@Mapper</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">UserMapper</span> <span class="keyword">extends</span> <span class="title">BaseMapper</span>&lt;<span class="title">User</span>&gt; </span>&#123;</span><br></pre></td></tr></table></figure>
+
+<h3 id="配置全局配置文件"><a href="#配置全局配置文件" class="headerlink" title="配置全局配置文件"></a>配置全局配置文件</h3><ul>
+<li>编辑<code>application.yml</code>全局配置文件</li>
+<li>将原来mybatis项目的配置中<code>mybatis</code>改为<code>mybatis-plus</code></li>
+</ul>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">mybatis-plus:</span></span><br><span class="line">  <span class="comment"># 别名包定义 Mapper的resultType中只需要写类名 之后自动拼接即可</span></span><br><span class="line">  <span class="attr">type-aliases-package:</span> <span class="string">com.jt.pojo</span></span><br><span class="line">  <span class="comment"># 加载指定的xml映射文件</span></span><br><span class="line">  <span class="attr">mapper-locations:</span> <span class="string">classpath:/mybatis/mappers/*.xml</span></span><br><span class="line">  <span class="comment"># 开启驼峰映射</span></span><br><span class="line">  <span class="attr">configuration:</span></span><br><span class="line">    <span class="attr">map-underscore-to-camel-case:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="启动log"><a href="#启动log" class="headerlink" title="启动log"></a>启动log</h4><blockquote>
+<p><code>com.jt.mapper</code>：指定存放Mapper接口的包</p>
+</blockquote>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">logging:</span></span><br><span class="line">  <span class="attr">level:</span></span><br><span class="line">    <span class="attr">com.jt.mapper:</span> <span class="string">debug</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="业务层使用内置的方法"><a href="#业务层使用内置的方法" class="headerlink" title="业务层使用内置的方法"></a>业务层使用内置的方法</h3><ul>
+<li>MybatisPlus提供了很多封装简单SQL语句的方法，可以直接调用</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Autowired</span></span><br><span class="line">UserMapper userMapper;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> List&lt;User&gt; <span class="title">findAll</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> userMapper.selectList(<span class="keyword">null</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Mybatis-Plus-API-实现增删改查"><a href="#Mybatis-Plus-API-实现增删改查" class="headerlink" title="Mybatis Plus API 实现增删改查"></a>Mybatis Plus API 实现增删改查</h2><h3 id="查"><a href="#查" class="headerlink" title="查"></a>查</h3><h4 id="查询所有"><a href="#查询所有" class="headerlink" title="查询所有"></a>查询所有</h4><ul>
+<li>返回POJO对象的集合</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">userMapper.selectList(<span class="keyword">null</span>);</span><br></pre></td></tr></table></figure>
+
+<h4 id="条件查询"><a href="#条件查询" class="headerlink" title="条件查询"></a>条件查询</h4><blockquote>
+<p>逻辑运算符</p>
+<blockquote>
+<p><code>eq</code>：相等<br><code>gt</code>：大于<br><code>lt</code>：小于<br><code>ge</code>：大于等于<br><code>le</code>：小于等于</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p><code>sex</code>：列名<br><code>女</code>：列值</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">QueryWrapper&lt;User&gt; queryWrapper = <span class="keyword">new</span> QueryWrapper&lt;&gt;();</span><br><span class="line">queryWrapper.eq(<span class="string">"sex"</span>, <span class="string">"女"</span>).gt(<span class="string">"age"</span>, <span class="number">18</span>);</span><br><span class="line">userMapper.selectList(queryWrapper);</span><br></pre></td></tr></table></figure>
+
+<h4 id="根据id查询"><a href="#根据id查询" class="headerlink" title="根据id查询"></a>根据id查询</h4><ul>
+<li>返回一个POJO对象</li>
+</ul>
+<blockquote>
+<p><code>&lt;id&gt;</code>：int类型的id值</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">userMapper.selectById(&lt;id&gt;);</span><br></pre></td></tr></table></figure>
+
+<h4 id="根据多条id查询"><a href="#根据多条id查询" class="headerlink" title="根据多条id查询"></a>根据多条id查询</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">ArrayList&lt;Integer&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">list.add(<span class="number">1</span>);</span><br><span class="line">list.add(<span class="number">3</span>);</span><br><span class="line">userMapper.selectBatchIds(list);</span><br></pre></td></tr></table></figure>
+
+<h4 id="统计查询到的数据数"><a href="#统计查询到的数据数" class="headerlink" title="统计查询到的数据数"></a>统计查询到的数据数</h4><blockquote>
+<p><code>null</code>：也可以添加queryWrapper对象的参数，作为查询条件</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">userMapper.selectCount(<span class="keyword">null</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="增"><a href="#增" class="headerlink" title="增"></a>增</h3><ul>
+<li>返回执行成功的行数</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">User user = <span class="keyword">new</span> User();</span><br><span class="line">user.setName(<span class="string">"貂蝉"</span>);</span><br><span class="line">user.setAge(<span class="number">18</span>);</span><br><span class="line">user.setSex(<span class="string">"女"</span>);</span><br><span class="line">userMapper.insert(user);</span><br></pre></td></tr></table></figure>
+
+<h3 id="删"><a href="#删" class="headerlink" title="删"></a>删</h3><ul>
+<li>返回执行成功的行数</li>
+</ul>
+<h4 id="根据id删除"><a href="#根据id删除" class="headerlink" title="根据id删除"></a>根据id删除</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">userMapper.deleteById(&lt;id&gt;);</span><br></pre></td></tr></table></figure>
+
+<h4 id="根据多条id删除"><a href="#根据多条id删除" class="headerlink" title="根据多条id删除"></a>根据多条id删除</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">List&lt;Integer&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">list.add(<span class="number">51</span>);</span><br><span class="line">list.add(<span class="number">52</span>);</span><br><span class="line">userMapper.deleteBatchIds(list);</span><br></pre></td></tr></table></figure>
+
+<h4 id="根据条件删除"><a href="#根据条件删除" class="headerlink" title="根据条件删除"></a>根据条件删除</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">QueryWrapper queryWrapper = <span class="keyword">new</span> QueryWrapper();</span><br><span class="line">queryWrapper.eq(<span class="string">"id"</span>, <span class="number">50</span>);</span><br><span class="line">userMapper.delete(queryWrapper);</span><br></pre></td></tr></table></figure>
+
+<h3 id="改"><a href="#改" class="headerlink" title="改"></a>改</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 封装修改后的数据为POJO对象</span></span><br><span class="line">User user = <span class="keyword">new</span> User();</span><br><span class="line">user.setName(<span class="string">"貂蝉"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 通过查询条件查找原数据</span></span><br><span class="line">QueryWrapper queryWrapper = <span class="keyword">new</span> QueryWrapper();</span><br><span class="line">queryWrapper.eq(<span class="string">"id"</span>, <span class="number">49</span>);</span><br><span class="line"></span><br><span class="line">userMapper.update(user, queryWrapper)</span><br></pre></td></tr></table></figure>
+
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><a href="https://blog.csdn.net/qq_16804847/article/details/109378783" target="_blank" rel="noopener">CSDN——闪耀太阳</a></p>
+]]></content>
       <categories>
         <category>Java</category>
       </categories>
